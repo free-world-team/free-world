@@ -1,0 +1,674 @@
+fileFormatVersion: 2
+guid: 4b108716b469e4d46b330e8e9632f3f0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8880018712905399641
+    second: grass-spirit-directional-animation-atlas_0
+  - first:
+      213: 3050387166726109474
+    second: grass-spirit-directional-animation-atlas_1
+  - first:
+      213: -2223210619791753209
+    second: grass-spirit-directional-animation-atlas_2
+  - first:
+      213: -4538444389556191949
+    second: grass-spirit-directional-animation-atlas_3
+  - first:
+      213: 2436167192112500008
+    second: grass-spirit-directional-animation-atlas_4
+  - first:
+      213: -5796196890612007643
+    second: grass-spirit-directional-animation-atlas_5
+  - first:
+      213: -2454745036953661623
+    second: grass-spirit-directional-animation-atlas_6
+  - first:
+      213: 6551172361636348739
+    second: grass-spirit-directional-animation-atlas_7
+  - first:
+      213: 8080215334147601257
+    second: grass-spirit-directional-animation-atlas_8
+  - first:
+      213: 4111924895295816041
+    second: grass-spirit-directional-animation-atlas_9
+  - first:
+      213: 7169379761704850925
+    second: grass-spirit-directional-animation-atlas_10
+  - first:
+      213: -285324684193473119
+    second: grass-spirit-directional-animation-atlas_11
+  - first:
+      213: -8234319564135244835
+    second: grass-spirit-directional-animation-atlas_12
+  - first:
+      213: 5487644754769127361
+    second: grass-spirit-directional-animation-atlas_13
+  - first:
+      213: -9050649091224473579
+    second: grass-spirit-directional-animation-atlas_14
+  - first:
+      213: -2168658035992874131
+    second: grass-spirit-directional-animation-atlas_15
+  - first:
+      213: 2695537490429102235
+    second: grass-spirit-directional-animation-atlas_16
+  - first:
+      213: 6422833503435912271
+    second: grass-spirit-directional-animation-atlas_17
+  - first:
+      213: -5013814171241718066
+    second: grass-spirit-directional-animation-atlas_18
+  - first:
+      213: 2069706973076307674
+    second: grass-spirit-directional-animation-atlas_19
+  - first:
+      213: -9185906178543593547
+    second: grass-spirit-directional-animation-atlas_20
+  - first:
+      213: -6063568809121666711
+    second: grass-spirit-directional-animation-atlas_21
+  - first:
+      213: -1419513222575524668
+    second: grass-spirit-directional-animation-atlas_22
+  - first:
+      213: -2027060744344948351
+    second: grass-spirit-directional-animation-atlas_23
+  - first:
+      213: 3126524381836605387
+    second: grass-spirit-directional-animation-atlas_24
+  - first:
+      213: -909172993437309765
+    second: grass-spirit-directional-animation-atlas_25
+  - first:
+      213: 6048053332722315699
+    second: grass-spirit-directional-animation-atlas_26
+  - first:
+      213: 1553569255049617684
+    second: grass-spirit-directional-animation-atlas_27
+  - first:
+      213: 8413126115948551152
+    second: grass-spirit-directional-animation-atlas_28
+  - first:
+      213: 8960503907986699827
+    second: grass-spirit-directional-animation-atlas_29
+  - first:
+      213: -168896294352421907
+    second: grass-spirit-directional-animation-atlas_30
+  - first:
+      213: -3840756842305606234
+    second: grass-spirit-directional-animation-atlas_31
+  - first:
+      213: -4912066898764259137
+    second: qinglan.enemy.grass-spirit.down.move
+  - first:
+      213: -243132931898133968
+    second: qinglan.enemy.grass-spirit.down.attack-windup
+  - first:
+      213: -112228164405437518
+    second: qinglan.enemy.grass-spirit.down.hit
+  - first:
+      213: 5843297708967725967
+    second: qinglan.enemy.grass-spirit.down.death
+  - first:
+      213: -7974605572005098094
+    second: qinglan.enemy.grass-spirit.left.move
+  - first:
+      213: -8611939340954173012
+    second: qinglan.enemy.grass-spirit.left.attack-windup
+  - first:
+      213: 7918989181231401739
+    second: qinglan.enemy.grass-spirit.left.hit
+  - first:
+      213: -2535685071128033892
+    second: qinglan.enemy.grass-spirit.left.death
+  - first:
+      213: -5488381419511391181
+    second: qinglan.enemy.grass-spirit.right.move
+  - first:
+      213: -7610618123204450668
+    second: qinglan.enemy.grass-spirit.right.attack-windup
+  - first:
+      213: 1624194074156089569
+    second: qinglan.enemy.grass-spirit.right.hit
+  - first:
+      213: -8180622063665782811
+    second: qinglan.enemy.grass-spirit.right.death
+  - first:
+      213: 5308133803875603438
+    second: qinglan.enemy.grass-spirit.up.move
+  - first:
+      213: -5748132758059993746
+    second: qinglan.enemy.grass-spirit.up.attack-windup
+  - first:
+      213: -4926517667325922717
+    second: qinglan.enemy.grass-spirit.up.hit
+  - first:
+      213: 6526837603716440019
+    second: qinglan.enemy.grass-spirit.up.death
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.down.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb0a33a4e25d4dbb0800000000000000
+      internalID: -4912066898764259137
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.down.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0323309f2e730acf0800000000000000
+      internalID: -243132931898133968
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.down.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bbd1de3419417ef0800000000000000
+      internalID: -112228164405437518
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.down.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8b00e3ae40971150800000000000000
+      internalID: 5843297708967725967
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.left.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d09c8cb72845190800000000000000
+      internalID: -7974605572005098094
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.left.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca107332cce3c7880800000000000000
+      internalID: -8611939340954173012
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.left.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0b857724b6e5ed60800000000000000
+      internalID: 7918989181231401739
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.left.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c950729ccdf6fccd0800000000000000
+      internalID: -2535685071128033892
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.right.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c5b2a7d2a55d3b0800000000000000
+      internalID: -5488381419511391181
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.right.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 496af35c327a16690800000000000000
+      internalID: -7610618123204450668
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.right.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e04e54b7eb4a8610800000000000000
+      internalID: 1624194074156089569
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.right.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ef5a7d6397987e80800000000000000
+      internalID: -8180622063665782811
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.up.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee39f3822974aa940800000000000000
+      internalID: 5308133803875603438
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.up.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e653c0226b78a30b0800000000000000
+      internalID: -5748132758059993746
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.up.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3623a5b884e71abb0800000000000000
+      internalID: -4926517667325922717
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.grass-spirit.up.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3df1e2c483cf39a50800000000000000
+      internalID: 6526837603716440019
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      grass-spirit-directional-animation-atlas_0: 8880018712905399641
+      grass-spirit-directional-animation-atlas_1: 3050387166726109474
+      grass-spirit-directional-animation-atlas_10: 7169379761704850925
+      grass-spirit-directional-animation-atlas_11: -285324684193473119
+      grass-spirit-directional-animation-atlas_12: -8234319564135244835
+      grass-spirit-directional-animation-atlas_13: 5487644754769127361
+      grass-spirit-directional-animation-atlas_14: -9050649091224473579
+      grass-spirit-directional-animation-atlas_15: -2168658035992874131
+      grass-spirit-directional-animation-atlas_16: 2695537490429102235
+      grass-spirit-directional-animation-atlas_17: 6422833503435912271
+      grass-spirit-directional-animation-atlas_18: -5013814171241718066
+      grass-spirit-directional-animation-atlas_19: 2069706973076307674
+      grass-spirit-directional-animation-atlas_2: -2223210619791753209
+      grass-spirit-directional-animation-atlas_20: -9185906178543593547
+      grass-spirit-directional-animation-atlas_21: -6063568809121666711
+      grass-spirit-directional-animation-atlas_22: -1419513222575524668
+      grass-spirit-directional-animation-atlas_23: -2027060744344948351
+      grass-spirit-directional-animation-atlas_24: 3126524381836605387
+      grass-spirit-directional-animation-atlas_25: -909172993437309765
+      grass-spirit-directional-animation-atlas_26: 6048053332722315699
+      grass-spirit-directional-animation-atlas_27: 1553569255049617684
+      grass-spirit-directional-animation-atlas_28: 8413126115948551152
+      grass-spirit-directional-animation-atlas_29: 8960503907986699827
+      grass-spirit-directional-animation-atlas_3: -4538444389556191949
+      grass-spirit-directional-animation-atlas_30: -168896294352421907
+      grass-spirit-directional-animation-atlas_31: -3840756842305606234
+      grass-spirit-directional-animation-atlas_4: 2436167192112500008
+      grass-spirit-directional-animation-atlas_5: -5796196890612007643
+      grass-spirit-directional-animation-atlas_6: -2454745036953661623
+      grass-spirit-directional-animation-atlas_7: 6551172361636348739
+      grass-spirit-directional-animation-atlas_8: 8080215334147601257
+      grass-spirit-directional-animation-atlas_9: 4111924895295816041
+      qinglan.enemy.grass-spirit.down.attack-windup: -243132931898133968
+      qinglan.enemy.grass-spirit.down.death: 5843297708967725967
+      qinglan.enemy.grass-spirit.down.hit: -112228164405437518
+      qinglan.enemy.grass-spirit.down.move: -4912066898764259137
+      qinglan.enemy.grass-spirit.left.attack-windup: -8611939340954173012
+      qinglan.enemy.grass-spirit.left.death: -2535685071128033892
+      qinglan.enemy.grass-spirit.left.hit: 7918989181231401739
+      qinglan.enemy.grass-spirit.left.move: -7974605572005098094
+      qinglan.enemy.grass-spirit.right.attack-windup: -7610618123204450668
+      qinglan.enemy.grass-spirit.right.death: -8180622063665782811
+      qinglan.enemy.grass-spirit.right.hit: 1624194074156089569
+      qinglan.enemy.grass-spirit.right.move: -5488381419511391181
+      qinglan.enemy.grass-spirit.up.attack-windup: -5748132758059993746
+      qinglan.enemy.grass-spirit.up.death: 6526837603716440019
+      qinglan.enemy.grass-spirit.up.hit: -4926517667325922717
+      qinglan.enemy.grass-spirit.up.move: 5308133803875603438
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

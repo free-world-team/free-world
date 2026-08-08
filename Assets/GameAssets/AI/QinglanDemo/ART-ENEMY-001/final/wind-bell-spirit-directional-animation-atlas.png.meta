@@ -1,0 +1,610 @@
+fileFormatVersion: 2
+guid: 3110cd3221af3774bbaae2bf845fe1f9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1712345430819258220
+    second: wind-bell-spirit-directional-animation-atlas_0
+  - first:
+      213: 6858959971873026242
+    second: wind-bell-spirit-directional-animation-atlas_1
+  - first:
+      213: 4611664933311854921
+    second: wind-bell-spirit-directional-animation-atlas_2
+  - first:
+      213: 5486933506420589011
+    second: wind-bell-spirit-directional-animation-atlas_3
+  - first:
+      213: -5776445510060427566
+    second: wind-bell-spirit-directional-animation-atlas_4
+  - first:
+      213: 5094117835418129373
+    second: wind-bell-spirit-directional-animation-atlas_5
+  - first:
+      213: -4290198725050727682
+    second: wind-bell-spirit-directional-animation-atlas_6
+  - first:
+      213: 2495888939625512829
+    second: wind-bell-spirit-directional-animation-atlas_7
+  - first:
+      213: -5605960256898553265
+    second: wind-bell-spirit-directional-animation-atlas_8
+  - first:
+      213: -3710832439486022118
+    second: wind-bell-spirit-directional-animation-atlas_9
+  - first:
+      213: -2712301806433615308
+    second: wind-bell-spirit-directional-animation-atlas_10
+  - first:
+      213: 5767272262278776597
+    second: wind-bell-spirit-directional-animation-atlas_11
+  - first:
+      213: -4770160883956747373
+    second: wind-bell-spirit-directional-animation-atlas_12
+  - first:
+      213: -6880698224685615735
+    second: wind-bell-spirit-directional-animation-atlas_13
+  - first:
+      213: 5225663795369080999
+    second: wind-bell-spirit-directional-animation-atlas_14
+  - first:
+      213: 1841625822305116679
+    second: wind-bell-spirit-directional-animation-atlas_15
+  - first:
+      213: -8307681142057476171
+    second: qinglan.enemy.wind-bell-spirit.down.move
+  - first:
+      213: 4021819537791177119
+    second: qinglan.enemy.wind-bell-spirit.down.attack-windup
+  - first:
+      213: -6870066687876430475
+    second: qinglan.enemy.wind-bell-spirit.down.hit
+  - first:
+      213: 520524708110153363
+    second: qinglan.enemy.wind-bell-spirit.down.death
+  - first:
+      213: -3706291902091438954
+    second: qinglan.enemy.wind-bell-spirit.left.move
+  - first:
+      213: 4844061839652828939
+    second: qinglan.enemy.wind-bell-spirit.left.attack-windup
+  - first:
+      213: -4820284925086772913
+    second: qinglan.enemy.wind-bell-spirit.left.hit
+  - first:
+      213: 6420962450467468736
+    second: qinglan.enemy.wind-bell-spirit.left.death
+  - first:
+      213: -3561255934289626267
+    second: qinglan.enemy.wind-bell-spirit.right.move
+  - first:
+      213: -4900151305297092710
+    second: qinglan.enemy.wind-bell-spirit.right.attack-windup
+  - first:
+      213: 5875380230445735424
+    second: qinglan.enemy.wind-bell-spirit.right.hit
+  - first:
+      213: 2547700239793151926
+    second: qinglan.enemy.wind-bell-spirit.right.death
+  - first:
+      213: -8665983816982482654
+    second: qinglan.enemy.wind-bell-spirit.up.move
+  - first:
+      213: -6866763910007915474
+    second: qinglan.enemy.wind-bell-spirit.up.attack-windup
+  - first:
+      213: -7565456161205764144
+    second: qinglan.enemy.wind-bell-spirit.up.hit
+  - first:
+      213: -4084248264832475468
+    second: qinglan.enemy.wind-bell-spirit.up.death
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.down.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bfd37c640035bc80800000000000000
+      internalID: -8307681142057476171
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.down.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f91d4c4af8f50d730800000000000000
+      internalID: 4021819537791177119
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.down.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57581ed1fbe98a0a0800000000000000
+      internalID: -6870066687876430475
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.down.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39638b3d676493700800000000000000
+      internalID: 520524708110153363
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.left.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 694deedd62b909cc0800000000000000
+      internalID: -3706291902091438954
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.left.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0738860490993340800000000000000
+      internalID: 4844061839652828939
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.left.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f41580c4668ea1db0800000000000000
+      internalID: -4820284925086772913
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.left.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c53c383457db1950800000000000000
+      internalID: 6420962450467468736
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.right.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56b3a6a9890e39ec0800000000000000
+      internalID: -3561255934289626267
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.right.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f9916995a2ffbb0800000000000000
+      internalID: -4900151305297092710
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.right.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00e1214c03b898150800000000000000
+      internalID: 5875380230445735424
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.right.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf5c0baedf3b5320800000000000000
+      internalID: 2547700239793151926
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.up.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 221b97ff1ad3cb780800000000000000
+      internalID: -8665983816982482654
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.up.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2c71830b9a54b0a0800000000000000
+      internalID: -6866763910007915474
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.up.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df3a8374b9120790800000000000000
+      internalID: -7565456161205764144
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wind-bell-spirit.up.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4be9728a7d5d157c0800000000000000
+      internalID: -4084248264832475468
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      qinglan.enemy.wind-bell-spirit.down.attack-windup: 4021819537791177119
+      qinglan.enemy.wind-bell-spirit.down.death: 520524708110153363
+      qinglan.enemy.wind-bell-spirit.down.hit: -6870066687876430475
+      qinglan.enemy.wind-bell-spirit.down.move: -8307681142057476171
+      qinglan.enemy.wind-bell-spirit.left.attack-windup: 4844061839652828939
+      qinglan.enemy.wind-bell-spirit.left.death: 6420962450467468736
+      qinglan.enemy.wind-bell-spirit.left.hit: -4820284925086772913
+      qinglan.enemy.wind-bell-spirit.left.move: -3706291902091438954
+      qinglan.enemy.wind-bell-spirit.right.attack-windup: -4900151305297092710
+      qinglan.enemy.wind-bell-spirit.right.death: 2547700239793151926
+      qinglan.enemy.wind-bell-spirit.right.hit: 5875380230445735424
+      qinglan.enemy.wind-bell-spirit.right.move: -3561255934289626267
+      qinglan.enemy.wind-bell-spirit.up.attack-windup: -6866763910007915474
+      qinglan.enemy.wind-bell-spirit.up.death: -4084248264832475468
+      qinglan.enemy.wind-bell-spirit.up.hit: -7565456161205764144
+      qinglan.enemy.wind-bell-spirit.up.move: -8665983816982482654
+      wind-bell-spirit-directional-animation-atlas_0: 1712345430819258220
+      wind-bell-spirit-directional-animation-atlas_1: 6858959971873026242
+      wind-bell-spirit-directional-animation-atlas_10: -2712301806433615308
+      wind-bell-spirit-directional-animation-atlas_11: 5767272262278776597
+      wind-bell-spirit-directional-animation-atlas_12: -4770160883956747373
+      wind-bell-spirit-directional-animation-atlas_13: -6880698224685615735
+      wind-bell-spirit-directional-animation-atlas_14: 5225663795369080999
+      wind-bell-spirit-directional-animation-atlas_15: 1841625822305116679
+      wind-bell-spirit-directional-animation-atlas_2: 4611664933311854921
+      wind-bell-spirit-directional-animation-atlas_3: 5486933506420589011
+      wind-bell-spirit-directional-animation-atlas_4: -5776445510060427566
+      wind-bell-spirit-directional-animation-atlas_5: 5094117835418129373
+      wind-bell-spirit-directional-animation-atlas_6: -4290198725050727682
+      wind-bell-spirit-directional-animation-atlas_7: 2495888939625512829
+      wind-bell-spirit-directional-animation-atlas_8: -5605960256898553265
+      wind-bell-spirit-directional-animation-atlas_9: -3710832439486022118
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

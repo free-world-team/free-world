@@ -1,0 +1,610 @@
+fileFormatVersion: 2
+guid: 27ac7209037e21e4bad13da8c285ab9a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2372943968155707930
+    second: paper-crane-spirit-directional-animation-atlas_0
+  - first:
+      213: 5046606865840217399
+    second: paper-crane-spirit-directional-animation-atlas_1
+  - first:
+      213: -3722853345022470209
+    second: paper-crane-spirit-directional-animation-atlas_2
+  - first:
+      213: 316838445734023309
+    second: paper-crane-spirit-directional-animation-atlas_3
+  - first:
+      213: -3565719783079273094
+    second: paper-crane-spirit-directional-animation-atlas_4
+  - first:
+      213: 1459318114307312075
+    second: paper-crane-spirit-directional-animation-atlas_5
+  - first:
+      213: -3097202268096455475
+    second: paper-crane-spirit-directional-animation-atlas_6
+  - first:
+      213: -3769229009082959688
+    second: paper-crane-spirit-directional-animation-atlas_7
+  - first:
+      213: 519806721259993169
+    second: paper-crane-spirit-directional-animation-atlas_8
+  - first:
+      213: 1015467030321098568
+    second: paper-crane-spirit-directional-animation-atlas_9
+  - first:
+      213: 8198073198325155969
+    second: paper-crane-spirit-directional-animation-atlas_10
+  - first:
+      213: 9161515779571761307
+    second: paper-crane-spirit-directional-animation-atlas_11
+  - first:
+      213: 1773817914235022919
+    second: paper-crane-spirit-directional-animation-atlas_12
+  - first:
+      213: 8583261440827647427
+    second: paper-crane-spirit-directional-animation-atlas_13
+  - first:
+      213: -2694566402276940599
+    second: paper-crane-spirit-directional-animation-atlas_14
+  - first:
+      213: -6638527366082599926
+    second: paper-crane-spirit-directional-animation-atlas_15
+  - first:
+      213: -1424202584365916938
+    second: qinglan.enemy.paper-crane-spirit.down.move
+  - first:
+      213: 6316063290003067317
+    second: qinglan.enemy.paper-crane-spirit.down.attack-windup
+  - first:
+      213: 7089203646231444587
+    second: qinglan.enemy.paper-crane-spirit.down.hit
+  - first:
+      213: 4602759233033422449
+    second: qinglan.enemy.paper-crane-spirit.down.death
+  - first:
+      213: 8311486189371067968
+    second: qinglan.enemy.paper-crane-spirit.left.move
+  - first:
+      213: 191229581573943037
+    second: qinglan.enemy.paper-crane-spirit.left.attack-windup
+  - first:
+      213: 5675078781104402957
+    second: qinglan.enemy.paper-crane-spirit.left.hit
+  - first:
+      213: 3198734181223532006
+    second: qinglan.enemy.paper-crane-spirit.left.death
+  - first:
+      213: 6694141576348531570
+    second: qinglan.enemy.paper-crane-spirit.right.move
+  - first:
+      213: 669791969321103046
+    second: qinglan.enemy.paper-crane-spirit.right.attack-windup
+  - first:
+      213: -7425287794991821013
+    second: qinglan.enemy.paper-crane-spirit.right.hit
+  - first:
+      213: 4978003420941652230
+    second: qinglan.enemy.paper-crane-spirit.right.death
+  - first:
+      213: 7774023652564501091
+    second: qinglan.enemy.paper-crane-spirit.up.move
+  - first:
+      213: 9159349155409247490
+    second: qinglan.enemy.paper-crane-spirit.up.attack-windup
+  - first:
+      213: -8225994274015480413
+    second: qinglan.enemy.paper-crane-spirit.up.hit
+  - first:
+      213: -5338713436746113567
+    second: qinglan.enemy.paper-crane-spirit.up.death
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.down.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fc1da69b473c3ce0800000000000000
+      internalID: -1424202584365916938
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.down.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b1948b291a27a750800000000000000
+      internalID: 6316063290003067317
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.down.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6c7702f729e16260800000000000000
+      internalID: 7089203646231444587
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.down.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1764b9fc22940ef30800000000000000
+      internalID: 4602759233033422449
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.left.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04e070137a4585370800000000000000
+      internalID: 8311486189371067968
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.left.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfee2409a4267a200800000000000000
+      internalID: 191229581573943037
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.left.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02b514651ee1ce40800000000000000
+      internalID: 5675078781104402957
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.left.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e58aba4acf246c20800000000000000
+      internalID: 3198734181223532006
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.right.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b7d6eeb4e56ec50800000000000000
+      internalID: 6694141576348531570
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.right.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce2bc45f349b4900800000000000000
+      internalID: 669791969321103046
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.right.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2f0870671414f890800000000000000
+      internalID: -7425287794991821013
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.right.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60118eb9cbb651540800000000000000
+      internalID: 4978003420941652230
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.up.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 362879ec251e2eb60800000000000000
+      internalID: 7774023652564501091
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.up.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d31fd478b8c1f70800000000000000
+      internalID: 9159349155409247490
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.up.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a5f8ec7ac567dd80800000000000000
+      internalID: -8225994274015480413
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.paper-crane-spirit.up.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ed942d3a6419e5b0800000000000000
+      internalID: -5338713436746113567
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      paper-crane-spirit-directional-animation-atlas_0: -2372943968155707930
+      paper-crane-spirit-directional-animation-atlas_1: 5046606865840217399
+      paper-crane-spirit-directional-animation-atlas_10: 8198073198325155969
+      paper-crane-spirit-directional-animation-atlas_11: 9161515779571761307
+      paper-crane-spirit-directional-animation-atlas_12: 1773817914235022919
+      paper-crane-spirit-directional-animation-atlas_13: 8583261440827647427
+      paper-crane-spirit-directional-animation-atlas_14: -2694566402276940599
+      paper-crane-spirit-directional-animation-atlas_15: -6638527366082599926
+      paper-crane-spirit-directional-animation-atlas_2: -3722853345022470209
+      paper-crane-spirit-directional-animation-atlas_3: 316838445734023309
+      paper-crane-spirit-directional-animation-atlas_4: -3565719783079273094
+      paper-crane-spirit-directional-animation-atlas_5: 1459318114307312075
+      paper-crane-spirit-directional-animation-atlas_6: -3097202268096455475
+      paper-crane-spirit-directional-animation-atlas_7: -3769229009082959688
+      paper-crane-spirit-directional-animation-atlas_8: 519806721259993169
+      paper-crane-spirit-directional-animation-atlas_9: 1015467030321098568
+      qinglan.enemy.paper-crane-spirit.down.attack-windup: 6316063290003067317
+      qinglan.enemy.paper-crane-spirit.down.death: 4602759233033422449
+      qinglan.enemy.paper-crane-spirit.down.hit: 7089203646231444587
+      qinglan.enemy.paper-crane-spirit.down.move: -1424202584365916938
+      qinglan.enemy.paper-crane-spirit.left.attack-windup: 191229581573943037
+      qinglan.enemy.paper-crane-spirit.left.death: 3198734181223532006
+      qinglan.enemy.paper-crane-spirit.left.hit: 5675078781104402957
+      qinglan.enemy.paper-crane-spirit.left.move: 8311486189371067968
+      qinglan.enemy.paper-crane-spirit.right.attack-windup: 669791969321103046
+      qinglan.enemy.paper-crane-spirit.right.death: 4978003420941652230
+      qinglan.enemy.paper-crane-spirit.right.hit: -7425287794991821013
+      qinglan.enemy.paper-crane-spirit.right.move: 6694141576348531570
+      qinglan.enemy.paper-crane-spirit.up.attack-windup: 9159349155409247490
+      qinglan.enemy.paper-crane-spirit.up.death: -5338713436746113567
+      qinglan.enemy.paper-crane-spirit.up.hit: -8225994274015480413
+      qinglan.enemy.paper-crane-spirit.up.move: 7774023652564501091
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: e2b8836ad5a8e9f4090060c726cacde3
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3741934180300522934
+    second: wind-bell-spirit-transparent_0
+  - first:
+      213: 1918199680087587384
+    second: wind-bell-spirit-transparent_1
+  - first:
+      213: 6596004263696864149
+    second: wind-bell-spirit-transparent_2
+  - first:
+      213: -5195822189454547818
+    second: wind-bell-spirit-transparent_3
+  - first:
+      213: 3017959586655574303
+    second: wind-bell-spirit-transparent_4
+  - first:
+      213: -8728132154196123890
+    second: wind-bell-spirit-transparent_5
+  - first:
+      213: -3536258219828454822
+    second: wind-bell-spirit-transparent_6
+  - first:
+      213: 7670754068140599829
+    second: wind-bell-spirit-transparent_7
+  - first:
+      213: -5433766334785105959
+    second: wind-bell-spirit-transparent_8
+  - first:
+      213: 4389714180428510019
+    second: wind-bell-spirit-transparent_9
+  - first:
+      213: 4875303013309017797
+    second: wind-bell-spirit-transparent_10
+  - first:
+      213: 3886752084544175965
+    second: wind-bell-spirit-transparent_11
+  - first:
+      213: 5966902801855300243
+    second: wind-bell-spirit-transparent_12
+  - first:
+      213: -8202276041568407539
+    second: wind-bell-spirit-transparent_13
+  - first:
+      213: 987152731969363827
+    second: wind-bell-spirit-transparent_14
+  - first:
+      213: 626068390561355969
+    second: wind-bell-spirit-transparent_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 936
+        width: 144
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4a7b4a40baf11cc0800000000000000
+      internalID: -3741934180300522934
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 936
+        width: 176
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83a73eb2270de9a10800000000000000
+      internalID: 1918199680087587384
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 936
+        width: 145
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5931d924ee6b98b50800000000000000
+      internalID: 6596004263696864149
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 945
+        width: 250
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69428715f3bb4e7b0800000000000000
+      internalID: -5195822189454547818
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 617
+        width: 138
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1917151142f1e920800000000000000
+      internalID: 3017959586655574303
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 615
+        width: 164
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f9974ac027fd680800000000000000
+      internalID: -8728132154196123890
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 617
+        width: 127
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5ad11d82efaceec0800000000000000
+      internalID: -3536258219828454822
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 626
+        width: 264
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51a27eefe2ef37a60800000000000000
+      internalID: 7670754068140599829
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 309
+        width: 129
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df48aece426794b0800000000000000
+      internalID: -5433766334785105959
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 308
+        width: 163
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 343bfe51ac56bec30800000000000000
+      internalID: 4389714180428510019
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 311
+        width: 148
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ceeca8924e88a340800000000000000
+      internalID: 4875303013309017797
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 308
+        width: 246
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5fb3419d6480f530800000000000000
+      internalID: 3886752084544175965
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 15
+        width: 126
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3924ed9fb72bec250800000000000000
+      internalID: 5966902801855300243
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 15
+        width: 157
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d003e90d569ab2e80800000000000000
+      internalID: -8202276041568407539
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 15
+        width: 148
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f1718fd2213bd00800000000000000
+      internalID: 987152731969363827
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-bell-spirit-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 32
+        width: 254
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c8928852ed30b800800000000000000
+      internalID: 626068390561355969
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      wind-bell-spirit-transparent_0: -3741934180300522934
+      wind-bell-spirit-transparent_1: 1918199680087587384
+      wind-bell-spirit-transparent_10: 4875303013309017797
+      wind-bell-spirit-transparent_11: 3886752084544175965
+      wind-bell-spirit-transparent_12: 5966902801855300243
+      wind-bell-spirit-transparent_13: -8202276041568407539
+      wind-bell-spirit-transparent_14: 987152731969363827
+      wind-bell-spirit-transparent_15: 626068390561355969
+      wind-bell-spirit-transparent_2: 6596004263696864149
+      wind-bell-spirit-transparent_3: -5195822189454547818
+      wind-bell-spirit-transparent_4: 3017959586655574303
+      wind-bell-spirit-transparent_5: -8728132154196123890
+      wind-bell-spirit-transparent_6: -3536258219828454822
+      wind-bell-spirit-transparent_7: 7670754068140599829
+      wind-bell-spirit-transparent_8: -5433766334785105959
+      wind-bell-spirit-transparent_9: 4389714180428510019
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

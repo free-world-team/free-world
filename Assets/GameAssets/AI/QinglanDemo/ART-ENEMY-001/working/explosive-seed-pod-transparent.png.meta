@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 335794b8e6d77664eaed1f1f440e557e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1547216359670376009
+    second: explosive-seed-pod-transparent_0
+  - first:
+      213: 6103657971016686523
+    second: explosive-seed-pod-transparent_1
+  - first:
+      213: -3791444442297175958
+    second: explosive-seed-pod-transparent_2
+  - first:
+      213: 2783873372782056072
+    second: explosive-seed-pod-transparent_3
+  - first:
+      213: -3289256525452451877
+    second: explosive-seed-pod-transparent_4
+  - first:
+      213: 3988502619501969944
+    second: explosive-seed-pod-transparent_5
+  - first:
+      213: 3621823246502224985
+    second: explosive-seed-pod-transparent_6
+  - first:
+      213: 6243489112215913516
+    second: explosive-seed-pod-transparent_7
+  - first:
+      213: -6522878112458489923
+    second: explosive-seed-pod-transparent_8
+  - first:
+      213: 241749022597672819
+    second: explosive-seed-pod-transparent_9
+  - first:
+      213: 5811100745905179526
+    second: explosive-seed-pod-transparent_10
+  - first:
+      213: 169361944238333527
+    second: explosive-seed-pod-transparent_11
+  - first:
+      213: 3844350024721384371
+    second: explosive-seed-pod-transparent_12
+  - first:
+      213: 3123412530725479085
+    second: explosive-seed-pod-transparent_13
+  - first:
+      213: -105283638825643096
+    second: explosive-seed-pod-transparent_14
+  - first:
+      213: -2959725206859427838
+    second: explosive-seed-pod-transparent_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 961
+        width: 215
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94663d4e411d87510800000000000000
+      internalID: 1547216359670376009
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 957
+        width: 213
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbb5ee8069c84b450800000000000000
+      internalID: 6103657971016686523
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 961
+        width: 233
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a607f3f1e55126bc0800000000000000
+      internalID: -3791444442297175958
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 957
+        width: 212
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 882d75c351e42a620800000000000000
+      internalID: 2783873372782056072
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 656
+        width: 192
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf55490e963a52d0800000000000000
+      internalID: -3289256525452451877
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 656
+        width: 213
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812412d10020a5730800000000000000
+      internalID: 3988502619501969944
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 656
+        width: 206
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 954640fad0d434230800000000000000
+      internalID: 3621823246502224985
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 661
+        width: 221
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2406a4a44455a650800000000000000
+      internalID: 6243489112215913516
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 353
+        width: 193
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbfbdb99ae41a75a0800000000000000
+      internalID: -6522878112458489923
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 346
+        width: 217
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37f6bb8847dda5300800000000000000
+      internalID: 241749022597672819
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 351
+        width: 205
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68b8fa1075d25a050800000000000000
+      internalID: 5811100745905179526
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 352
+        width: 214
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e9bcc7ac1b95200800000000000000
+      internalID: 169361944238333527
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 58
+        width: 205
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b348cfaaffd95530800000000000000
+      internalID: 3844350024721384371
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 54
+        width: 204
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da265ece527985b20800000000000000
+      internalID: 3123412530725479085
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 58
+        width: 221
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3132b9615f98ef0800000000000000
+      internalID: -105283638825643096
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: explosive-seed-pod-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 54
+        width: 210
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 200df5c0b91fce6d0800000000000000
+      internalID: -2959725206859427838
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      explosive-seed-pod-transparent_0: 1547216359670376009
+      explosive-seed-pod-transparent_1: 6103657971016686523
+      explosive-seed-pod-transparent_10: 5811100745905179526
+      explosive-seed-pod-transparent_11: 169361944238333527
+      explosive-seed-pod-transparent_12: 3844350024721384371
+      explosive-seed-pod-transparent_13: 3123412530725479085
+      explosive-seed-pod-transparent_14: -105283638825643096
+      explosive-seed-pod-transparent_15: -2959725206859427838
+      explosive-seed-pod-transparent_2: -3791444442297175958
+      explosive-seed-pod-transparent_3: 2783873372782056072
+      explosive-seed-pod-transparent_4: -3289256525452451877
+      explosive-seed-pod-transparent_5: 3988502619501969944
+      explosive-seed-pod-transparent_6: 3621823246502224985
+      explosive-seed-pod-transparent_7: 6243489112215913516
+      explosive-seed-pod-transparent_8: -6522878112458489923
+      explosive-seed-pod-transparent_9: 241749022597672819
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

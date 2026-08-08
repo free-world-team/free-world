@@ -1,0 +1,610 @@
+fileFormatVersion: 2
+guid: 0956e8e315aa90f488b6caf75e8eca67
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2025906288780131594
+    second: wooden-sword-puppet-directional-animation-atlas_0
+  - first:
+      213: 4925915435710742311
+    second: wooden-sword-puppet-directional-animation-atlas_1
+  - first:
+      213: 113249444924669069
+    second: wooden-sword-puppet-directional-animation-atlas_2
+  - first:
+      213: 2058586346798210454
+    second: wooden-sword-puppet-directional-animation-atlas_3
+  - first:
+      213: 4563705641142444332
+    second: wooden-sword-puppet-directional-animation-atlas_4
+  - first:
+      213: -3878806910215874651
+    second: wooden-sword-puppet-directional-animation-atlas_5
+  - first:
+      213: -6785102521011722842
+    second: wooden-sword-puppet-directional-animation-atlas_6
+  - first:
+      213: -9099974424901752402
+    second: wooden-sword-puppet-directional-animation-atlas_7
+  - first:
+      213: 3468240456536437861
+    second: wooden-sword-puppet-directional-animation-atlas_8
+  - first:
+      213: 9204648682110713909
+    second: wooden-sword-puppet-directional-animation-atlas_9
+  - first:
+      213: 9160990240009977759
+    second: wooden-sword-puppet-directional-animation-atlas_10
+  - first:
+      213: -1502621987020787780
+    second: wooden-sword-puppet-directional-animation-atlas_11
+  - first:
+      213: -420690167008114192
+    second: wooden-sword-puppet-directional-animation-atlas_12
+  - first:
+      213: 722206573327155150
+    second: wooden-sword-puppet-directional-animation-atlas_13
+  - first:
+      213: -226274450001492948
+    second: wooden-sword-puppet-directional-animation-atlas_14
+  - first:
+      213: -1148199199340697602
+    second: wooden-sword-puppet-directional-animation-atlas_15
+  - first:
+      213: 4124809864147097669
+    second: qinglan.enemy.wooden-sword-puppet.down.move
+  - first:
+      213: 6335100957936663005
+    second: qinglan.enemy.wooden-sword-puppet.down.attack-windup
+  - first:
+      213: -7755904277658340276
+    second: qinglan.enemy.wooden-sword-puppet.down.hit
+  - first:
+      213: 6848154632375661828
+    second: qinglan.enemy.wooden-sword-puppet.down.death
+  - first:
+      213: -725519157862953521
+    second: qinglan.enemy.wooden-sword-puppet.left.move
+  - first:
+      213: -5133834838526596390
+    second: qinglan.enemy.wooden-sword-puppet.left.attack-windup
+  - first:
+      213: -9099496996937120215
+    second: qinglan.enemy.wooden-sword-puppet.left.hit
+  - first:
+      213: 150418460154154642
+    second: qinglan.enemy.wooden-sword-puppet.left.death
+  - first:
+      213: -1489843613449023855
+    second: qinglan.enemy.wooden-sword-puppet.right.move
+  - first:
+      213: -3636759826766780269
+    second: qinglan.enemy.wooden-sword-puppet.right.attack-windup
+  - first:
+      213: -4850052915047183382
+    second: qinglan.enemy.wooden-sword-puppet.right.hit
+  - first:
+      213: -4758709646896729427
+    second: qinglan.enemy.wooden-sword-puppet.right.death
+  - first:
+      213: -7721854747682861234
+    second: qinglan.enemy.wooden-sword-puppet.up.move
+  - first:
+      213: -1358985644919892341
+    second: qinglan.enemy.wooden-sword-puppet.up.attack-windup
+  - first:
+      213: -7738191783426930234
+    second: qinglan.enemy.wooden-sword-puppet.up.hit
+  - first:
+      213: -5779586044625017971
+    second: qinglan.enemy.wooden-sword-puppet.up.death
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.down.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 548d38e97b44e3930800000000000000
+      internalID: 4124809864147097669
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.down.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd93d06a1cccae750800000000000000
+      internalID: 6335100957936663005
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.down.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c44fd3ae62e7d5490800000000000000
+      internalID: -7755904277658340276
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.down.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40572b5ea58890f50800000000000000
+      internalID: 6848154632375661828
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.left.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcd86dd7b207ee5f0800000000000000
+      internalID: -725519157862953521
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.left.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adae8122a64f0c8b0800000000000000
+      internalID: -5133834838526596390
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.left.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92644d641b718b180800000000000000
+      internalID: -9099496996937120215
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.left.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29e4625eac4661200800000000000000
+      internalID: 150418460154154642
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.right.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e8c798023035be0800000000000000
+      internalID: -1489843613449023855
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.right.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 398a728b432a78dc0800000000000000
+      internalID: -3636759826766780269
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.right.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aebc3c8029621bcb0800000000000000
+      internalID: -4850052915047183382
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.right.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da2fe73f9caa5fdb0800000000000000
+      internalID: -4758709646896729427
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.up.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f0335e40676d490800000000000000
+      internalID: -7721854747682861234
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.up.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b86d1b391c9e32de0800000000000000
+      internalID: -1358985644919892341
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.up.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c9cdf8529b6c9490800000000000000
+      internalID: -7738191783426930234
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.wooden-sword-puppet.up.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d83225d2d19cacfa0800000000000000
+      internalID: -5779586044625017971
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      qinglan.enemy.wooden-sword-puppet.down.attack-windup: 6335100957936663005
+      qinglan.enemy.wooden-sword-puppet.down.death: 6848154632375661828
+      qinglan.enemy.wooden-sword-puppet.down.hit: -7755904277658340276
+      qinglan.enemy.wooden-sword-puppet.down.move: 4124809864147097669
+      qinglan.enemy.wooden-sword-puppet.left.attack-windup: -5133834838526596390
+      qinglan.enemy.wooden-sword-puppet.left.death: 150418460154154642
+      qinglan.enemy.wooden-sword-puppet.left.hit: -9099496996937120215
+      qinglan.enemy.wooden-sword-puppet.left.move: -725519157862953521
+      qinglan.enemy.wooden-sword-puppet.right.attack-windup: -3636759826766780269
+      qinglan.enemy.wooden-sword-puppet.right.death: -4758709646896729427
+      qinglan.enemy.wooden-sword-puppet.right.hit: -4850052915047183382
+      qinglan.enemy.wooden-sword-puppet.right.move: -1489843613449023855
+      qinglan.enemy.wooden-sword-puppet.up.attack-windup: -1358985644919892341
+      qinglan.enemy.wooden-sword-puppet.up.death: -5779586044625017971
+      qinglan.enemy.wooden-sword-puppet.up.hit: -7738191783426930234
+      qinglan.enemy.wooden-sword-puppet.up.move: -7721854747682861234
+      wooden-sword-puppet-directional-animation-atlas_0: -2025906288780131594
+      wooden-sword-puppet-directional-animation-atlas_1: 4925915435710742311
+      wooden-sword-puppet-directional-animation-atlas_10: 9160990240009977759
+      wooden-sword-puppet-directional-animation-atlas_11: -1502621987020787780
+      wooden-sword-puppet-directional-animation-atlas_12: -420690167008114192
+      wooden-sword-puppet-directional-animation-atlas_13: 722206573327155150
+      wooden-sword-puppet-directional-animation-atlas_14: -226274450001492948
+      wooden-sword-puppet-directional-animation-atlas_15: -1148199199340697602
+      wooden-sword-puppet-directional-animation-atlas_2: 113249444924669069
+      wooden-sword-puppet-directional-animation-atlas_3: 2058586346798210454
+      wooden-sword-puppet-directional-animation-atlas_4: 4563705641142444332
+      wooden-sword-puppet-directional-animation-atlas_5: -3878806910215874651
+      wooden-sword-puppet-directional-animation-atlas_6: -6785102521011722842
+      wooden-sword-puppet-directional-animation-atlas_7: -9099974424901752402
+      wooden-sword-puppet-directional-animation-atlas_8: 3468240456536437861
+      wooden-sword-puppet-directional-animation-atlas_9: 9204648682110713909
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

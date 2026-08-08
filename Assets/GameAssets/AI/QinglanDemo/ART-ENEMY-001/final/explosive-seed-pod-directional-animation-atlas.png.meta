@@ -1,0 +1,610 @@
+fileFormatVersion: 2
+guid: df61964377b5d86439f8e2f74dde3cfa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1919107538109497695
+    second: explosive-seed-pod-directional-animation-atlas_0
+  - first:
+      213: -3711038394647751775
+    second: explosive-seed-pod-directional-animation-atlas_1
+  - first:
+      213: 1688480407590904447
+    second: explosive-seed-pod-directional-animation-atlas_2
+  - first:
+      213: 5339839506578585213
+    second: explosive-seed-pod-directional-animation-atlas_3
+  - first:
+      213: 2620455122227959866
+    second: explosive-seed-pod-directional-animation-atlas_4
+  - first:
+      213: -3704326805890514290
+    second: explosive-seed-pod-directional-animation-atlas_5
+  - first:
+      213: -7039897792602075118
+    second: explosive-seed-pod-directional-animation-atlas_6
+  - first:
+      213: 8083617109476378625
+    second: explosive-seed-pod-directional-animation-atlas_7
+  - first:
+      213: -6566391677103264579
+    second: explosive-seed-pod-directional-animation-atlas_8
+  - first:
+      213: 2721327519124283929
+    second: explosive-seed-pod-directional-animation-atlas_9
+  - first:
+      213: 7017389676491384733
+    second: explosive-seed-pod-directional-animation-atlas_10
+  - first:
+      213: -3383972594708976020
+    second: explosive-seed-pod-directional-animation-atlas_11
+  - first:
+      213: 4273355643804515535
+    second: explosive-seed-pod-directional-animation-atlas_12
+  - first:
+      213: -5113259099153851385
+    second: explosive-seed-pod-directional-animation-atlas_13
+  - first:
+      213: 1703299792695660828
+    second: explosive-seed-pod-directional-animation-atlas_14
+  - first:
+      213: 3202756075167956953
+    second: explosive-seed-pod-directional-animation-atlas_15
+  - first:
+      213: -1166677798839693807
+    second: qinglan.enemy.explosive-seed-pod.down.move
+  - first:
+      213: -5266737543159162412
+    second: qinglan.enemy.explosive-seed-pod.down.attack-windup
+  - first:
+      213: 5607595319726871801
+    second: qinglan.enemy.explosive-seed-pod.down.hit
+  - first:
+      213: -2166259987320243468
+    second: qinglan.enemy.explosive-seed-pod.down.death
+  - first:
+      213: -2993768111500205345
+    second: qinglan.enemy.explosive-seed-pod.left.move
+  - first:
+      213: 2943086614536792225
+    second: qinglan.enemy.explosive-seed-pod.left.attack-windup
+  - first:
+      213: -1908750373212692635
+    second: qinglan.enemy.explosive-seed-pod.left.hit
+  - first:
+      213: 6877267951751605470
+    second: qinglan.enemy.explosive-seed-pod.left.death
+  - first:
+      213: 3743531777052317881
+    second: qinglan.enemy.explosive-seed-pod.right.move
+  - first:
+      213: 5126490857389445116
+    second: qinglan.enemy.explosive-seed-pod.right.attack-windup
+  - first:
+      213: -4659919114112834061
+    second: qinglan.enemy.explosive-seed-pod.right.hit
+  - first:
+      213: -1248516874560865505
+    second: qinglan.enemy.explosive-seed-pod.right.death
+  - first:
+      213: 1419587884897274715
+    second: qinglan.enemy.explosive-seed-pod.up.move
+  - first:
+      213: -5324222369154875346
+    second: qinglan.enemy.explosive-seed-pod.up.attack-windup
+  - first:
+      213: -7628300638646136803
+    second: qinglan.enemy.explosive-seed-pod.up.hit
+  - first:
+      213: 970086137912806788
+    second: qinglan.enemy.explosive-seed-pod.up.death
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.down.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11e43d829b02fcfe0800000000000000
+      internalID: -1166677798839693807
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.down.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d9d8cedb1ac8e6b0800000000000000
+      internalID: -5266737543159162412
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.down.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f49674ab3e22dd40800000000000000
+      internalID: 5607595319726871801
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.down.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa72a4d406efe1e0800000000000000
+      internalID: -2166259987320243468
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.left.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd26326a3cff376d0800000000000000
+      internalID: -2993768111500205345
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.left.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a82caacea1f7d820800000000000000
+      internalID: 2943086614536792225
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.left.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56f53c706a1c285e0800000000000000
+      internalID: -1908750373212692635
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.left.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edc2559c3c6f07f50800000000000000
+      internalID: 6877267951751605470
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.right.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b817903152b3f330800000000000000
+      internalID: 3743531777052317881
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.right.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff4cf20644f42740800000000000000
+      internalID: 5126490857389445116
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.right.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f560494144a45fb0800000000000000
+      internalID: -4659919114112834061
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.right.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1bf7bb74806caee0800000000000000
+      internalID: -1248516874560865505
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.up.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5b00c6f8a363b310800000000000000
+      internalID: 1419587884897274715
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.up.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e20c555d6ff8c16b0800000000000000
+      internalID: -5324222369154875346
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.up.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d109c915cf4d22690800000000000000
+      internalID: -7628300638646136803
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.explosive-seed-pod.up.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48dc2d3e330767d00800000000000000
+      internalID: 970086137912806788
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      explosive-seed-pod-directional-animation-atlas_0: 1919107538109497695
+      explosive-seed-pod-directional-animation-atlas_1: -3711038394647751775
+      explosive-seed-pod-directional-animation-atlas_10: 7017389676491384733
+      explosive-seed-pod-directional-animation-atlas_11: -3383972594708976020
+      explosive-seed-pod-directional-animation-atlas_12: 4273355643804515535
+      explosive-seed-pod-directional-animation-atlas_13: -5113259099153851385
+      explosive-seed-pod-directional-animation-atlas_14: 1703299792695660828
+      explosive-seed-pod-directional-animation-atlas_15: 3202756075167956953
+      explosive-seed-pod-directional-animation-atlas_2: 1688480407590904447
+      explosive-seed-pod-directional-animation-atlas_3: 5339839506578585213
+      explosive-seed-pod-directional-animation-atlas_4: 2620455122227959866
+      explosive-seed-pod-directional-animation-atlas_5: -3704326805890514290
+      explosive-seed-pod-directional-animation-atlas_6: -7039897792602075118
+      explosive-seed-pod-directional-animation-atlas_7: 8083617109476378625
+      explosive-seed-pod-directional-animation-atlas_8: -6566391677103264579
+      explosive-seed-pod-directional-animation-atlas_9: 2721327519124283929
+      qinglan.enemy.explosive-seed-pod.down.attack-windup: -5266737543159162412
+      qinglan.enemy.explosive-seed-pod.down.death: -2166259987320243468
+      qinglan.enemy.explosive-seed-pod.down.hit: 5607595319726871801
+      qinglan.enemy.explosive-seed-pod.down.move: -1166677798839693807
+      qinglan.enemy.explosive-seed-pod.left.attack-windup: 2943086614536792225
+      qinglan.enemy.explosive-seed-pod.left.death: 6877267951751605470
+      qinglan.enemy.explosive-seed-pod.left.hit: -1908750373212692635
+      qinglan.enemy.explosive-seed-pod.left.move: -2993768111500205345
+      qinglan.enemy.explosive-seed-pod.right.attack-windup: 5126490857389445116
+      qinglan.enemy.explosive-seed-pod.right.death: -1248516874560865505
+      qinglan.enemy.explosive-seed-pod.right.hit: -4659919114112834061
+      qinglan.enemy.explosive-seed-pod.right.move: 3743531777052317881
+      qinglan.enemy.explosive-seed-pod.up.attack-windup: -5324222369154875346
+      qinglan.enemy.explosive-seed-pod.up.death: 970086137912806788
+      qinglan.enemy.explosive-seed-pod.up.hit: -7628300638646136803
+      qinglan.enemy.explosive-seed-pod.up.move: 1419587884897274715
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

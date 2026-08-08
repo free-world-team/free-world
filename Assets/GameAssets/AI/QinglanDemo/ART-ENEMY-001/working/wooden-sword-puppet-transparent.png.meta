@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: b6a0305760abec24d83cf3c28ccf566f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4689908921820769696
+    second: wooden-sword-puppet-transparent_0
+  - first:
+      213: -2050960508718395744
+    second: wooden-sword-puppet-transparent_1
+  - first:
+      213: -1871897356339905754
+    second: wooden-sword-puppet-transparent_2
+  - first:
+      213: -2818877079419906528
+    second: wooden-sword-puppet-transparent_3
+  - first:
+      213: 8608399619723917168
+    second: wooden-sword-puppet-transparent_4
+  - first:
+      213: 1797931231747164603
+    second: wooden-sword-puppet-transparent_5
+  - first:
+      213: 5532033972853640672
+    second: wooden-sword-puppet-transparent_6
+  - first:
+      213: 1182710892954558863
+    second: wooden-sword-puppet-transparent_7
+  - first:
+      213: 1456431011660453243
+    second: wooden-sword-puppet-transparent_8
+  - first:
+      213: 5080670915099720014
+    second: wooden-sword-puppet-transparent_9
+  - first:
+      213: 2779894232009093811
+    second: wooden-sword-puppet-transparent_10
+  - first:
+      213: -4116707215754085439
+    second: wooden-sword-puppet-transparent_11
+  - first:
+      213: 5114056812759972656
+    second: wooden-sword-puppet-transparent_12
+  - first:
+      213: 3419137368960944612
+    second: wooden-sword-puppet-transparent_13
+  - first:
+      213: -1580197167332664326
+    second: wooden-sword-puppet-transparent_14
+  - first:
+      213: 6958641026869776948
+    second: wooden-sword-puppet-transparent_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 940
+        width: 257
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0adef02f057e51140800000000000000
+      internalID: 4689908921820769696
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 945
+        width: 174
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ae4c75a8468983e0800000000000000
+      internalID: -2050960508718395744
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 940
+        width: 308
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62bfd5ba54fa506e0800000000000000
+      internalID: -1871897356339905754
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 928
+        width: 267
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0269fa73b3651e8d0800000000000000
+      internalID: -2818877079419906528
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 650
+        width: 183
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077704a48dd277770800000000000000
+      internalID: 8608399619723917168
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 656
+        width: 138
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9cedeede883f810800000000000000
+      internalID: 1797931231747164603
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 654
+        width: 237
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ed855d969bb5cc40800000000000000
+      internalID: 5532033972853640672
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 646
+        width: 293
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f81aa867a45d96010800000000000000
+      internalID: 1182710892954558863
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 372
+        width: 186
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7552e1e948463410800000000000000
+      internalID: 1456431011660453243
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 369
+        width: 132
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e497d2b574b228640800000000000000
+      internalID: 5080670915099720014
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 368
+        width: 180
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b23f04531b249620800000000000000
+      internalID: 2779894232009093811
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 354
+        width: 262
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cbb0b839948ed6c0800000000000000
+      internalID: -4116707215754085439
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 64
+        width: 219
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b79b56397c8f640800000000000000
+      internalID: 5114056812759972656
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 64
+        width: 174
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e94e2b5257337f20800000000000000
+      internalID: 3419137368960944612
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 68
+        width: 275
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afbde0e6c03021ae0800000000000000
+      internalID: -1580197167332664326
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wooden-sword-puppet-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 67
+        width: 258
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 432580e352f029060800000000000000
+      internalID: 6958641026869776948
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      wooden-sword-puppet-transparent_0: 4689908921820769696
+      wooden-sword-puppet-transparent_1: -2050960508718395744
+      wooden-sword-puppet-transparent_10: 2779894232009093811
+      wooden-sword-puppet-transparent_11: -4116707215754085439
+      wooden-sword-puppet-transparent_12: 5114056812759972656
+      wooden-sword-puppet-transparent_13: 3419137368960944612
+      wooden-sword-puppet-transparent_14: -1580197167332664326
+      wooden-sword-puppet-transparent_15: 6958641026869776948
+      wooden-sword-puppet-transparent_2: -1871897356339905754
+      wooden-sword-puppet-transparent_3: -2818877079419906528
+      wooden-sword-puppet-transparent_4: 8608399619723917168
+      wooden-sword-puppet-transparent_5: 1797931231747164603
+      wooden-sword-puppet-transparent_6: 5532033972853640672
+      wooden-sword-puppet-transparent_7: 1182710892954558863
+      wooden-sword-puppet-transparent_8: 1456431011660453243
+      wooden-sword-puppet-transparent_9: 5080670915099720014
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

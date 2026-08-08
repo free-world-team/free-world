@@ -206,6 +206,13 @@ namespace Game.Editor
                 return prefix + "." + directions[row] + "." + actions[column];
             }
 
+            if (rows == 4 && columns == 4)
+            {
+                var directions = new[] { "down", "left", "right", "up" };
+                var actions = new[] { "move", "attack-windup", "hit", "death" };
+                return prefix + "." + directions[row] + "." + actions[column];
+            }
+
             return prefix + ".r" + row.ToString(CultureInfo.InvariantCulture) +
                    ".c" + column.ToString(CultureInfo.InvariantCulture);
         }

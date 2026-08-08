@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 2,
+  "assetId": "ART-ENEMY-001-PROFILES",
+  "owner": "Qinglan Demo Visual Owner",
+  "relativePaths": [
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-ENEMY-001/grass-spirit-visual-profile.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-ENEMY-001/paper-crane-spirit-visual-profile.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-ENEMY-001/wooden-sword-puppet-visual-profile.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-ENEMY-001/stone-lantern-guard-visual-profile.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-ENEMY-001/wind-bell-spirit-visual-profile.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-ENEMY-001/explosive-seed-pod-visual-profile.asset"
+  ],
+  "sourceCategory": "first-party-unity-profiles-derived-from-approved-ai-assets",
+  "tool": "QinglanVisualAssetImporter.CreateVisualProfileAsset",
+  "modelVersion": "Unity 6000.3.20f1; semantic 4x4 enemy atlas importer",
+  "generatedOrAcquiredAt": "2026-08-09T04:02:21+08:00",
+  "operatorName": "Codex",
+  "promptFile": "Assets/GameAssets/AI/QinglanDemo/ART-ENEMY-001/prompt.txt",
+  "seed": "not-applicable-deterministic-profile-authoring",
+  "referenceInputs": [
+    "Assets/GameAssets/AI/QinglanDemo/ART-ENEMY-001/final/grass-spirit-directional-animation-atlas.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-ENEMY-001/final/paper-crane-spirit-directional-animation-atlas.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-ENEMY-001/final/wooden-sword-puppet-directional-animation-atlas.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-ENEMY-001/final/stone-lantern-guard-directional-animation-atlas.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-ENEMY-001/final/wind-bell-spirit-directional-animation-atlas.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-ENEMY-001/final/explosive-seed-pod-directional-animation-atlas.png"
+  ],
+  "referenceRightsConfirmed": true,
+  "humanEdits": [
+    "Bound each stable qinglan.enemy ContentId to the corresponding down.move Sprite subasset",
+    "Configured Actor kind, white tint, and unit presentation scale for all six profiles",
+    "No new artwork, runtime behavior, or simulation data was added"
+  ],
+  "sourceSha256": {
+    "grass-spirit-directional-animation-atlas.png": "3162f8823c91e34aa6255ed8e50f30c724ac4f60a098da757475130309880fd6",
+    "paper-crane-spirit-directional-animation-atlas.png": "6934df8d29f5c21e83c6b91163d804bb8d196cc3201a59a5c204a756f33ea4e6",
+    "wooden-sword-puppet-directional-animation-atlas.png": "c0598192cfd01ab2238b013c9c82f741e2dc5eb9c3b19c8871934d5301d0dc01",
+    "stone-lantern-guard-directional-animation-atlas.png": "1b7aa085d79db3dc49daf3e1c1bdd5fd19c9d7b6fecff6f39827163aeb573f90",
+    "wind-bell-spirit-directional-animation-atlas.png": "9942d3eb92d5537b68f4b34b3bfd6670d2094aa15a87506e35171f105eea8e3b",
+    "explosive-seed-pod-directional-animation-atlas.png": "b4843b5d8b6752bb2684535ff2183234ac194bded0dc60a8353ad6e8c43156f4"
+  },
+  "outputSha256": {
+    "grass-spirit-visual-profile.asset": "9a3a3abc6734e94d0aa5e2017561a6aa2b3ef010059a2734384580f968109ab7",
+    "paper-crane-spirit-visual-profile.asset": "4fe9ef302406608a0901f97082d67b18da440494059c153af785a52e25c93ad3",
+    "wooden-sword-puppet-visual-profile.asset": "0fe32d8706f6c7706460c5b8f1651b73e0b5f69a29242431635e0f55700d6e81",
+    "stone-lantern-guard-visual-profile.asset": "e5e9b643a37c59d5db64531ad8122b38d88344e75bd83c681eac8517dd32cb9d",
+    "wind-bell-spirit-visual-profile.asset": "63033c2e8d7a7be851d8205fe955cdd08b8ab6577bd8915652d1dd49cd911bd6",
+    "explosive-seed-pod-visual-profile.asset": "a8eb2dc76bd812f6f5177b60716408bc6c50d9dfd1975edf03ceb0c83c125ebb"
+  },
+  "licenseOrTermsUrl": "https://openai.com/policies/row-terms-of-use/",
+  "licenseOrTermsSnapshot": "Docs/AssetTerms/2026-08-09-openai-row-terms-review.md",
+  "termsReviewedAt": "2026-08-09",
+  "allowedPlatforms": [
+    "Windows x64",
+    "Steam"
+  ],
+  "allowedUses": [
+    "commercial game runtime",
+    "internal development and testing"
+  ],
+  "commercialUseReviewed": true,
+  "steamDisclosureCategory": "profiles reference six pre-generated generative-AI visual assets; no runtime generation",
+  "technicalReviewer": "Codex",
+  "creativeReviewer": "Codex",
+  "rightsReviewer": "Codex",
+  "reviewedAt": "2026-08-09T04:02:21+08:00",
+  "status": "approved-for-release",
+  "notes": "Profiles contain no new artwork and reference only approved ART-ENEMY-001 final atlases."
+}

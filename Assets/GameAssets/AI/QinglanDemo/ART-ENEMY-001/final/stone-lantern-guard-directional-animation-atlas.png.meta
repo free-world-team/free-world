@@ -1,0 +1,610 @@
+fileFormatVersion: 2
+guid: b636d277498b9aa4daddf3c56e8f5268
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4672098192473918452
+    second: stone-lantern-guard-directional-animation-atlas_0
+  - first:
+      213: 318922452785403181
+    second: stone-lantern-guard-directional-animation-atlas_1
+  - first:
+      213: 6871380137229283567
+    second: stone-lantern-guard-directional-animation-atlas_2
+  - first:
+      213: 518483082265756282
+    second: stone-lantern-guard-directional-animation-atlas_3
+  - first:
+      213: 6266575375039099383
+    second: stone-lantern-guard-directional-animation-atlas_4
+  - first:
+      213: 7195129131330775296
+    second: stone-lantern-guard-directional-animation-atlas_5
+  - first:
+      213: -5574362766080320396
+    second: stone-lantern-guard-directional-animation-atlas_6
+  - first:
+      213: 1515506857776870619
+    second: stone-lantern-guard-directional-animation-atlas_7
+  - first:
+      213: -2394182974742426665
+    second: stone-lantern-guard-directional-animation-atlas_8
+  - first:
+      213: 3068836457755361646
+    second: stone-lantern-guard-directional-animation-atlas_9
+  - first:
+      213: 2623091413627192115
+    second: stone-lantern-guard-directional-animation-atlas_10
+  - first:
+      213: 2898187117629150324
+    second: stone-lantern-guard-directional-animation-atlas_11
+  - first:
+      213: -1394363584649328197
+    second: stone-lantern-guard-directional-animation-atlas_12
+  - first:
+      213: 7210402947747208151
+    second: stone-lantern-guard-directional-animation-atlas_13
+  - first:
+      213: 8603488518896121251
+    second: stone-lantern-guard-directional-animation-atlas_14
+  - first:
+      213: -7109522106428000232
+    second: stone-lantern-guard-directional-animation-atlas_15
+  - first:
+      213: 8338245325697390495
+    second: qinglan.enemy.stone-lantern-guard.down.move
+  - first:
+      213: -5716639595189297782
+    second: qinglan.enemy.stone-lantern-guard.down.attack-windup
+  - first:
+      213: 1949086274779691894
+    second: qinglan.enemy.stone-lantern-guard.down.hit
+  - first:
+      213: -1400180532979530435
+    second: qinglan.enemy.stone-lantern-guard.down.death
+  - first:
+      213: 3342730780825301142
+    second: qinglan.enemy.stone-lantern-guard.left.move
+  - first:
+      213: 3436265629883698666
+    second: qinglan.enemy.stone-lantern-guard.left.attack-windup
+  - first:
+      213: -4212464571836106296
+    second: qinglan.enemy.stone-lantern-guard.left.hit
+  - first:
+      213: 4914913529138048201
+    second: qinglan.enemy.stone-lantern-guard.left.death
+  - first:
+      213: 5417676836425862617
+    second: qinglan.enemy.stone-lantern-guard.right.move
+  - first:
+      213: -4175521730320673070
+    second: qinglan.enemy.stone-lantern-guard.right.attack-windup
+  - first:
+      213: 3956705896239395118
+    second: qinglan.enemy.stone-lantern-guard.right.hit
+  - first:
+      213: 2294603020869774716
+    second: qinglan.enemy.stone-lantern-guard.right.death
+  - first:
+      213: -9113043450156335840
+    second: qinglan.enemy.stone-lantern-guard.up.move
+  - first:
+      213: 8391962270239711227
+    second: qinglan.enemy.stone-lantern-guard.up.attack-windup
+  - first:
+      213: 3685589545346869851
+    second: qinglan.enemy.stone-lantern-guard.up.hit
+  - first:
+      213: -1643422553493162313
+    second: qinglan.enemy.stone-lantern-guard.up.death
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.down.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f97114022f567b370800000000000000
+      internalID: 8338245325697390495
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.down.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d1fc3839a6aa0b0800000000000000
+      internalID: -5716639595189297782
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.down.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b35d4e3ab8c0b10800000000000000
+      internalID: 1949086274779691894
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.down.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d358656493f819ce0800000000000000
+      internalID: -1400180532979530435
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.left.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6903bd24fe3c36e20800000000000000
+      internalID: 3342730780825301142
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.left.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aed0a1f526110bf20800000000000000
+      internalID: 3436265629883698666
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.left.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c97ace5ac15a85c0800000000000000
+      internalID: -4212464571836106296
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.left.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cce80e70d7453440800000000000000
+      internalID: 4914913529138048201
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.right.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dd860fe0647f2b40800000000000000
+      internalID: 5417676836425862617
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.right.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d6df40fb119d06c0800000000000000
+      internalID: -4175521730320673070
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.right.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e21fa029c0b09e630800000000000000
+      internalID: 3956705896239395118
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.right.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7d2b774a4118df10800000000000000
+      internalID: 2294603020869774716
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.up.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02d3bbad347f78180800000000000000
+      internalID: -9113043450156335840
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.up.attack-windup
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff5e16e83d367470800000000000000
+      internalID: 8391962270239711227
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.up.hit
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5a2b461a28d52330800000000000000
+      internalID: 3685589545346869851
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.enemy.stone-lantern-guard.up.death
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b6bc2315e36139e0800000000000000
+      internalID: -1643422553493162313
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      qinglan.enemy.stone-lantern-guard.down.attack-windup: -5716639595189297782
+      qinglan.enemy.stone-lantern-guard.down.death: -1400180532979530435
+      qinglan.enemy.stone-lantern-guard.down.hit: 1949086274779691894
+      qinglan.enemy.stone-lantern-guard.down.move: 8338245325697390495
+      qinglan.enemy.stone-lantern-guard.left.attack-windup: 3436265629883698666
+      qinglan.enemy.stone-lantern-guard.left.death: 4914913529138048201
+      qinglan.enemy.stone-lantern-guard.left.hit: -4212464571836106296
+      qinglan.enemy.stone-lantern-guard.left.move: 3342730780825301142
+      qinglan.enemy.stone-lantern-guard.right.attack-windup: -4175521730320673070
+      qinglan.enemy.stone-lantern-guard.right.death: 2294603020869774716
+      qinglan.enemy.stone-lantern-guard.right.hit: 3956705896239395118
+      qinglan.enemy.stone-lantern-guard.right.move: 5417676836425862617
+      qinglan.enemy.stone-lantern-guard.up.attack-windup: 8391962270239711227
+      qinglan.enemy.stone-lantern-guard.up.death: -1643422553493162313
+      qinglan.enemy.stone-lantern-guard.up.hit: 3685589545346869851
+      qinglan.enemy.stone-lantern-guard.up.move: -9113043450156335840
+      stone-lantern-guard-directional-animation-atlas_0: 4672098192473918452
+      stone-lantern-guard-directional-animation-atlas_1: 318922452785403181
+      stone-lantern-guard-directional-animation-atlas_10: 2623091413627192115
+      stone-lantern-guard-directional-animation-atlas_11: 2898187117629150324
+      stone-lantern-guard-directional-animation-atlas_12: -1394363584649328197
+      stone-lantern-guard-directional-animation-atlas_13: 7210402947747208151
+      stone-lantern-guard-directional-animation-atlas_14: 8603488518896121251
+      stone-lantern-guard-directional-animation-atlas_15: -7109522106428000232
+      stone-lantern-guard-directional-animation-atlas_2: 6871380137229283567
+      stone-lantern-guard-directional-animation-atlas_3: 518483082265756282
+      stone-lantern-guard-directional-animation-atlas_4: 6266575375039099383
+      stone-lantern-guard-directional-animation-atlas_5: 7195129131330775296
+      stone-lantern-guard-directional-animation-atlas_6: -5574362766080320396
+      stone-lantern-guard-directional-animation-atlas_7: 1515506857776870619
+      stone-lantern-guard-directional-animation-atlas_8: -2394182974742426665
+      stone-lantern-guard-directional-animation-atlas_9: 3068836457755361646
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

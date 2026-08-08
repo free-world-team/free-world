@@ -1,0 +1,858 @@
+fileFormatVersion: 2
+guid: 27cd1e2a78ae6cc489ff7881c19bf080
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2919595929875353580
+    second: grass-spirit-transparent_0
+  - first:
+      213: -1132576875299154505
+    second: grass-spirit-transparent_1
+  - first:
+      213: 784556186657896327
+    second: grass-spirit-transparent_2
+  - first:
+      213: 6092792131638570273
+    second: grass-spirit-transparent_3
+  - first:
+      213: 1055839284674595522
+    second: grass-spirit-transparent_4
+  - first:
+      213: -677757106807106382
+    second: grass-spirit-transparent_5
+  - first:
+      213: -1367595821389260343
+    second: grass-spirit-transparent_6
+  - first:
+      213: 5752666959886545099
+    second: grass-spirit-transparent_7
+  - first:
+      213: 4347280619009183366
+    second: grass-spirit-transparent_8
+  - first:
+      213: -2671048422737835990
+    second: grass-spirit-transparent_9
+  - first:
+      213: -1049700981026165904
+    second: grass-spirit-transparent_10
+  - first:
+      213: -4606803515909584201
+    second: grass-spirit-transparent_11
+  - first:
+      213: 8698312179407528183
+    second: grass-spirit-transparent_12
+  - first:
+      213: 8979848850014489723
+    second: grass-spirit-transparent_13
+  - first:
+      213: -8629330393620501383
+    second: grass-spirit-transparent_14
+  - first:
+      213: -8519040670190211991
+    second: grass-spirit-transparent_15
+  - first:
+      213: -7161051926488410797
+    second: grass-spirit-transparent_16
+  - first:
+      213: 1568217674700681861
+    second: grass-spirit-transparent_17
+  - first:
+      213: 2914290718296716800
+    second: grass-spirit-transparent_18
+  - first:
+      213: -8400327731435216274
+    second: grass-spirit-transparent_19
+  - first:
+      213: 2122299078123411070
+    second: grass-spirit-transparent_20
+  - first:
+      213: 3069963436806686967
+    second: grass-spirit-transparent_21
+  - first:
+      213: 232911453799327683
+    second: grass-spirit-transparent_22
+  - first:
+      213: 3198136773211338099
+    second: grass-spirit-transparent_23
+  - first:
+      213: -7986981031108236292
+    second: grass-spirit-transparent_24
+  - first:
+      213: 8382174555232649828
+    second: grass-spirit-transparent_25
+  - first:
+      213: 8613448507905276769
+    second: grass-spirit-transparent_26
+  - first:
+      213: 9093893090679413653
+    second: grass-spirit-transparent_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: grass-spirit-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 952
+        width: 172
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cef85ef870d748820800000000000000
+      internalID: 2919595929875353580
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 976
+        width: 63
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b5d8f225574840f0800000000000000
+      internalID: -1132576875299154505
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 952
+        width: 250
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 787341ce1bd43ea00800000000000000
+      internalID: 784556186657896327
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 1042
+        width: 45
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12dac98a922fd8450800000000000000
+      internalID: 6092792131638570273
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 948
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ca8eee3c3817ae00800000000000000
+      internalID: 1055839284674595522
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 948
+        width: 249
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b414c4908f1896f0800000000000000
+      internalID: -677757106807106382
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 964
+        width: 65
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c9d8c5a8d2550de0800000000000000
+      internalID: -1367595821389260343
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 676
+        width: 172
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc0f92ffe1495df40800000000000000
+      internalID: 5752666959886545099
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 724
+        width: 41
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68e8bfaa0b4a45c30800000000000000
+      internalID: 4347280619009183366
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 788
+        width: 25
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2808d08c978eead0800000000000000
+      internalID: -2671048422737835990
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 677
+        width: 225
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b6e81f486be61f0800000000000000
+      internalID: -1049700981026165904
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 675
+        width: 181
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ba40343c985110c0800000000000000
+      internalID: -4606803515909584201
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 672
+        width: 248
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f02a0f67dc96b870800000000000000
+      internalID: 8698312179407528183
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 685
+        width: 82
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7c40d9a3f4de9c70800000000000000
+      internalID: 8979848850014489723
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 399
+        width: 173
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97ca4c62ab57e3880800000000000000
+      internalID: -8629330393620501383
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 397
+        width: 225
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96ce43275a946c980800000000000000
+      internalID: -8519040670190211991
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_16
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 405
+        width: 71
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3551887b635de9c90800000000000000
+      internalID: -7161051926488410797
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_17
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 436
+        width: 49
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 582f5079aad63c510800000000000000
+      internalID: 1568217674700681861
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_18
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 396
+        width: 174
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0063b4cb7f3a17820800000000000000
+      internalID: 2914290718296716800
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_19
+      rect:
+        serializedVersion: 2
+        x: 953
+        y: 388
+        width: 247
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e62e0f26f6a0c6b80800000000000000
+      internalID: -8400327731435216274
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_20
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 105
+        width: 171
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e765fa264cbe37d10800000000000000
+      internalID: 2122299078123411070
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_21
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 187
+        width: 38
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f8cc4cfa73ba9a20800000000000000
+      internalID: 3069963436806686967
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_22
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 105
+        width: 236
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c724d3bbb77b3300800000000000000
+      internalID: 232911453799327683
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_23
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 148
+        width: 35
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37530666370126c20800000000000000
+      internalID: 3198136773211338099
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_24
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 110
+        width: 180
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfba20da11b882190800000000000000
+      internalID: -7986981031108236292
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_25
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 102
+        width: 247
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 462c5f9e857735470800000000000000
+      internalID: 8382174555232649828
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_26
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 121
+        width: 59
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16bffcc28cd198770800000000000000
+      internalID: 8613448507905276769
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: grass-spirit-transparent_27
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 131
+        width: 47
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59b535f959ff33e70800000000000000
+      internalID: 9093893090679413653
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      grass-spirit-transparent_0: 2919595929875353580
+      grass-spirit-transparent_1: -1132576875299154505
+      grass-spirit-transparent_10: -1049700981026165904
+      grass-spirit-transparent_11: -4606803515909584201
+      grass-spirit-transparent_12: 8698312179407528183
+      grass-spirit-transparent_13: 8979848850014489723
+      grass-spirit-transparent_14: -8629330393620501383
+      grass-spirit-transparent_15: -8519040670190211991
+      grass-spirit-transparent_16: -7161051926488410797
+      grass-spirit-transparent_17: 1568217674700681861
+      grass-spirit-transparent_18: 2914290718296716800
+      grass-spirit-transparent_19: -8400327731435216274
+      grass-spirit-transparent_2: 784556186657896327
+      grass-spirit-transparent_20: 2122299078123411070
+      grass-spirit-transparent_21: 3069963436806686967
+      grass-spirit-transparent_22: 232911453799327683
+      grass-spirit-transparent_23: 3198136773211338099
+      grass-spirit-transparent_24: -7986981031108236292
+      grass-spirit-transparent_25: 8382174555232649828
+      grass-spirit-transparent_26: 8613448507905276769
+      grass-spirit-transparent_27: 9093893090679413653
+      grass-spirit-transparent_3: 6092792131638570273
+      grass-spirit-transparent_4: 1055839284674595522
+      grass-spirit-transparent_5: -677757106807106382
+      grass-spirit-transparent_6: -1367595821389260343
+      grass-spirit-transparent_7: 5752666959886545099
+      grass-spirit-transparent_8: 4347280619009183366
+      grass-spirit-transparent_9: -2671048422737835990
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

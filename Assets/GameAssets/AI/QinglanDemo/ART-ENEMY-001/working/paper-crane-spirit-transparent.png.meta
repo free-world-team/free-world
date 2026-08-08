@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 0abd713ea6782394facf22b30385304b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2820574576649306474
+    second: paper-crane-spirit-transparent_0
+  - first:
+      213: 5705775479499071253
+    second: paper-crane-spirit-transparent_1
+  - first:
+      213: 4119392900348393554
+    second: paper-crane-spirit-transparent_2
+  - first:
+      213: 3579753563737017245
+    second: paper-crane-spirit-transparent_3
+  - first:
+      213: 3591043929098266452
+    second: paper-crane-spirit-transparent_4
+  - first:
+      213: 5532356707307625659
+    second: paper-crane-spirit-transparent_5
+  - first:
+      213: -899514717141555836
+    second: paper-crane-spirit-transparent_6
+  - first:
+      213: 2375781766809481033
+    second: paper-crane-spirit-transparent_7
+  - first:
+      213: 7165543844476764261
+    second: paper-crane-spirit-transparent_8
+  - first:
+      213: -8209312225547633777
+    second: paper-crane-spirit-transparent_9
+  - first:
+      213: 6967861461305387230
+    second: paper-crane-spirit-transparent_10
+  - first:
+      213: -8302269137563966812
+    second: paper-crane-spirit-transparent_11
+  - first:
+      213: -2824443299781596250
+    second: paper-crane-spirit-transparent_12
+  - first:
+      213: -3020881385063334741
+    second: paper-crane-spirit-transparent_13
+  - first:
+      213: -2015932595575489797
+    second: paper-crane-spirit-transparent_14
+  - first:
+      213: -6336787920385063426
+    second: paper-crane-spirit-transparent_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 907
+        width: 297
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ef158dd5e4bd8d0800000000000000
+      internalID: -2820574576649306474
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 901
+        width: 118
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f1daf619cfe2f40800000000000000
+      internalID: 5705775479499071253
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 906
+        width: 199
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 258388374060b2930800000000000000
+      internalID: 4119392900348393554
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 926
+        width: 255
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9bcbfd56e6dda130800000000000000
+      internalID: 3579753563737017245
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 669
+        width: 285
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 457a9b66d63f5d130800000000000000
+      internalID: 3591043929098266452
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 662
+        width: 276
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbc12d51d11e6cc40800000000000000
+      internalID: 5532356707307625659
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 660
+        width: 278
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 485aa8e61284483f0800000000000000
+      internalID: -899514717141555836
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 661
+        width: 284
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f6782fde878f020800000000000000
+      internalID: 2375781766809481033
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 390
+        width: 291
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56046807920217360800000000000000
+      internalID: 7165543844476764261
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 385
+        width: 267
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8b36f1960aa21e80800000000000000
+      internalID: -8209312225547633777
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 382
+        width: 289
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8ed3de411d2b060800000000000000
+      internalID: 6967861461305387230
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 382
+        width: 276
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a2afc9e43a68cc80800000000000000
+      internalID: -8302269137563966812
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 62
+        width: 298
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ab294c88cf8dc8d0800000000000000
+      internalID: -2824443299781596250
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 56
+        width: 118
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bacb5b6b26ca316d0800000000000000
+      internalID: -3020881385063334741
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 58
+        width: 172
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfa77953cf7f504e0800000000000000
+      internalID: -2015932595575489797
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper-crane-spirit-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 72
+        width: 236
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5467cc5f43f08a0800000000000000
+      internalID: -6336787920385063426
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      paper-crane-spirit-transparent_0: -2820574576649306474
+      paper-crane-spirit-transparent_1: 5705775479499071253
+      paper-crane-spirit-transparent_10: 6967861461305387230
+      paper-crane-spirit-transparent_11: -8302269137563966812
+      paper-crane-spirit-transparent_12: -2824443299781596250
+      paper-crane-spirit-transparent_13: -3020881385063334741
+      paper-crane-spirit-transparent_14: -2015932595575489797
+      paper-crane-spirit-transparent_15: -6336787920385063426
+      paper-crane-spirit-transparent_2: 4119392900348393554
+      paper-crane-spirit-transparent_3: 3579753563737017245
+      paper-crane-spirit-transparent_4: 3591043929098266452
+      paper-crane-spirit-transparent_5: 5532356707307625659
+      paper-crane-spirit-transparent_6: -899514717141555836
+      paper-crane-spirit-transparent_7: 2375781766809481033
+      paper-crane-spirit-transparent_8: 7165543844476764261
+      paper-crane-spirit-transparent_9: -8209312225547633777
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

@@ -15,6 +15,30 @@ MonoBehaviour:
   m_GroupName: QinglanDemo-Visual
   m_GUID: 56945edad50defa47bb5b54075ebd4c4
   m_SerializeEntries:
+  - m_GUID: 0956e8e315aa90f488b6caf75e8eca67
+    m_Address: qinglan/enemy/wooden-sword-puppet/directional-animation-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 09718c6f7d8ebff45b73c786a6c8b92d
+    m_Address: qinglan/profile/enemy/wind-bell-spirit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17c50da720c0b5648940675cf6289876
+    m_Address: qinglan/profile/enemy/grass-spirit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1c3f6194f0aa60c44a1f6e81e88fdb8d
     m_Address: qinglan/character/lu-qingye/riding-wind/tier-3
     m_ReadOnly: 0
@@ -31,6 +55,38 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27ac7209037e21e4bad13da8c285ab9a
+    m_Address: qinglan/enemy/paper-crane-spirit/directional-animation-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30309108a75858d46b152d63145677f0
+    m_Address: qinglan/profile/enemy/paper-crane-spirit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3110cd3221af3774bbaae2bf845fe1f9
+    m_Address: qinglan/enemy/wind-bell-spirit/directional-animation-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4b108716b469e4d46b330e8e9632f3f0
+    m_Address: qinglan/enemy/grass-spirit/directional-animation-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5d6cc679b035bee42b42718e9a7397c7
     m_Address: qinglan/character/lu-qingye/silhouette
     m_ReadOnly: 0
@@ -39,8 +95,24 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 60ebb19218659cb4da2806673c580c9f
+    m_Address: qinglan/profile/enemy/explosive-seed-pod
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a0dbacbc4eca2b14f882c4452c14179a
     m_Address: qinglan/character/lu-qingye/riding-wind/tier-2
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a39a28e1bc3c5e341a4bd77623090de3
+    m_Address: qinglan/profile/enemy/stone-lantern-guard
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -63,6 +135,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a8b8cc87071843845b92defa1e9a88d9
+    m_Address: qinglan/profile/enemy/wooden-sword-puppet
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b01aa063ff0e00940b949dea9de1b81f
     m_Address: qinglan/profile/character/lu-qingye
     m_ReadOnly: 0
@@ -71,8 +151,24 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b636d277498b9aa4daddf3c56e8f5268
+    m_Address: qinglan/enemy/stone-lantern-guard/directional-animation-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d36371a8c18b3c444949e3c1c6eeee7c
     m_Address: qinglan/character/lu-qingye/riding-wind/tier-1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: df61964377b5d86439f8e2f74dde3cfa
+    m_Address: qinglan/enemy/explosive-seed-pod/directional-animation-atlas
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
