@@ -791,6 +791,12 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ec41980eabe5b1c49815180adcfbe594
+    m_Address: qinglan/runtime/formal-audio-catalog
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ef87c46839a39d44fbf55a770fdd3b1f
     m_Address: qinglan/audio/music/exploration-strings
     m_ReadOnly: 0

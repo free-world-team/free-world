@@ -1,0 +1,437 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d512fbbf560c747bec6bed06f1198a, type: 3}
+  m_Name: formal-audio-catalog
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.FormalAudioCatalog
+  schemaVersion: 1
+  bindings:
+  - stableKey: qinglan/audio/affix/barrier/activate
+    address: qinglan/audio/affix/barrier/activate
+    usage: 6
+    clip: {fileID: 8300000, guid: c994908afbd6edc4c9afdd32703e75cd, type: 3}
+  - stableKey: qinglan/audio/affix/barrier/pulse
+    address: qinglan/audio/affix/barrier/pulse
+    usage: 6
+    clip: {fileID: 8300000, guid: 0635cd6ebc66e4648a643cb260a2aa88, type: 3}
+  - stableKey: qinglan/audio/affix/quaking/activate
+    address: qinglan/audio/affix/quaking/activate
+    usage: 6
+    clip: {fileID: 8300000, guid: 70117719c2fe023439598d542e334c80, type: 3}
+  - stableKey: qinglan/audio/affix/quaking/pulse
+    address: qinglan/audio/affix/quaking/pulse
+    usage: 6
+    clip: {fileID: 8300000, guid: d4950cca482968845907f16a4e4c7c14, type: 3}
+  - stableKey: qinglan/audio/affix/rampaging/activate
+    address: qinglan/audio/affix/rampaging/activate
+    usage: 6
+    clip: {fileID: 8300000, guid: 10e360e02c63de347b9280d82a6360af, type: 3}
+  - stableKey: qinglan/audio/affix/rampaging/pulse
+    address: qinglan/audio/affix/rampaging/pulse
+    usage: 6
+    clip: {fileID: 8300000, guid: 95d3a7aea42db974fb264f178f9ea3bb, type: 3}
+  - stableKey: qinglan/audio/affix/splitting/activate
+    address: qinglan/audio/affix/splitting/activate
+    usage: 6
+    clip: {fileID: 8300000, guid: ce1e184276291f747a0c090a3957ebc9, type: 3}
+  - stableKey: qinglan/audio/affix/splitting/pulse
+    address: qinglan/audio/affix/splitting/pulse
+    usage: 6
+    clip: {fileID: 8300000, guid: c36f2640968868340b7ac227b86e056e, type: 3}
+  - stableKey: qinglan/audio/ambience/bamboo-leaves
+    address: qinglan/audio/ambience/bamboo-leaves
+    usage: 0
+    clip: {fileID: 8300000, guid: 53b60e6304260134897684adb433b0dc, type: 3}
+  - stableKey: qinglan/audio/ambience/courtyard-wind
+    address: qinglan/audio/ambience/courtyard-wind
+    usage: 0
+    clip: {fileID: 8300000, guid: 3264a44e221e6034a92b1c91f3a75bda, type: 3}
+  - stableKey: qinglan/audio/ambience/distant-bell
+    address: qinglan/audio/ambience/distant-bell
+    usage: 0
+    clip: {fileID: 8300000, guid: 6dd3adbcc354f5d48b8cdf161569eaaf, type: 3}
+  - stableKey: qinglan/audio/ambience/garden-water
+    address: qinglan/audio/ambience/garden-water
+    usage: 0
+    clip: {fileID: 8300000, guid: 5e503fdcc86d555479c0678d976cc776, type: 3}
+  - stableKey: qinglan/audio/ambience/old-timber-creak
+    address: qinglan/audio/ambience/old-timber-creak
+    usage: 0
+    clip: {fileID: 8300000, guid: ae3ca210d664d4a4c8f92242ea521817, type: 3}
+  - stableKey: qinglan/audio/ambience/stone-court-resonance
+    address: qinglan/audio/ambience/stone-court-resonance
+    usage: 0
+    clip: {fileID: 8300000, guid: ca4fb61dbdaf1ac4bbe9003f0cf558a8, type: 3}
+  - stableKey: qinglan/audio/boss/tingfeng/phase-one
+    address: qinglan/audio/boss/tingfeng/phase-one
+    usage: 2
+    clip: {fileID: 8300000, guid: 64c1664d74049794da81299619ef08f8, type: 3}
+  - stableKey: qinglan/audio/boss/tingfeng/phase-three
+    address: qinglan/audio/boss/tingfeng/phase-three
+    usage: 2
+    clip: {fileID: 8300000, guid: 639f8eaaa830a814f942264e7da37d4a, type: 3}
+  - stableKey: qinglan/audio/boss/tingfeng/phase-two
+    address: qinglan/audio/boss/tingfeng/phase-two
+    usage: 2
+    clip: {fileID: 8300000, guid: a36f035a79de89147aa1ca8f5a66f525, type: 3}
+  - stableKey: qinglan/audio/boss/zhezhi/phase-one
+    address: qinglan/audio/boss/zhezhi/phase-one
+    usage: 2
+    clip: {fileID: 8300000, guid: 61b935b225c74b84daa7ca9e8e94fa4b, type: 3}
+  - stableKey: qinglan/audio/boss/zhezhi/phase-three
+    address: qinglan/audio/boss/zhezhi/phase-three
+    usage: 2
+    clip: {fileID: 8300000, guid: 93c9484408d544f4a826ab7b61fd3be4, type: 3}
+  - stableKey: qinglan/audio/boss/zhezhi/phase-two
+    address: qinglan/audio/boss/zhezhi/phase-two
+    usage: 2
+    clip: {fileID: 8300000, guid: 8fc736b4efe12074a800c11a16b902ae, type: 3}
+  - stableKey: qinglan/audio/enemy/explosive-seed/attack
+    address: qinglan/audio/enemy/explosive-seed/attack
+    usage: 5
+    clip: {fileID: 8300000, guid: bf8b7854a8776944ba6ba3ab55b38a15, type: 3}
+  - stableKey: qinglan/audio/enemy/explosive-seed/death
+    address: qinglan/audio/enemy/explosive-seed/death
+    usage: 5
+    clip: {fileID: 8300000, guid: 414ed82cdad1a33469f5e372d3e031aa, type: 3}
+  - stableKey: qinglan/audio/enemy/explosive-seed/spawn
+    address: qinglan/audio/enemy/explosive-seed/spawn
+    usage: 5
+    clip: {fileID: 8300000, guid: c2c021c33c2ac1147ac7e6ff82293406, type: 3}
+  - stableKey: qinglan/audio/enemy/grass-spirit/attack
+    address: qinglan/audio/enemy/grass-spirit/attack
+    usage: 5
+    clip: {fileID: 8300000, guid: fde17c79d1f956845aecc6f588c82211, type: 3}
+  - stableKey: qinglan/audio/enemy/grass-spirit/death
+    address: qinglan/audio/enemy/grass-spirit/death
+    usage: 5
+    clip: {fileID: 8300000, guid: dbf21e72987e80a4d88b16b89771f040, type: 3}
+  - stableKey: qinglan/audio/enemy/grass-spirit/spawn
+    address: qinglan/audio/enemy/grass-spirit/spawn
+    usage: 5
+    clip: {fileID: 8300000, guid: cbe5921574f7e664480aeb180c63b104, type: 3}
+  - stableKey: qinglan/audio/enemy/paper-crane/attack
+    address: qinglan/audio/enemy/paper-crane/attack
+    usage: 5
+    clip: {fileID: 8300000, guid: 98af3495154b5e44dab1cd95bd4a4e78, type: 3}
+  - stableKey: qinglan/audio/enemy/paper-crane/death
+    address: qinglan/audio/enemy/paper-crane/death
+    usage: 5
+    clip: {fileID: 8300000, guid: a24d6f985b231b342ae075faea11bf68, type: 3}
+  - stableKey: qinglan/audio/enemy/paper-crane/spawn
+    address: qinglan/audio/enemy/paper-crane/spawn
+    usage: 5
+    clip: {fileID: 8300000, guid: 8153746f5312cba4db898f028d25fa60, type: 3}
+  - stableKey: qinglan/audio/enemy/stone-lantern/attack
+    address: qinglan/audio/enemy/stone-lantern/attack
+    usage: 5
+    clip: {fileID: 8300000, guid: 92a0aad422e66e84c9b29fc7ac6a95e4, type: 3}
+  - stableKey: qinglan/audio/enemy/stone-lantern/death
+    address: qinglan/audio/enemy/stone-lantern/death
+    usage: 5
+    clip: {fileID: 8300000, guid: 360b21db4793aa446af370c588123a61, type: 3}
+  - stableKey: qinglan/audio/enemy/stone-lantern/spawn
+    address: qinglan/audio/enemy/stone-lantern/spawn
+    usage: 5
+    clip: {fileID: 8300000, guid: 8b691c9480e20f54abf3ab72e183ea90, type: 3}
+  - stableKey: qinglan/audio/enemy/tingfeng/attack
+    address: qinglan/audio/enemy/tingfeng/attack
+    usage: 5
+    clip: {fileID: 8300000, guid: 39ecfb1749a8a2d4da1bf479032eae48, type: 3}
+  - stableKey: qinglan/audio/enemy/tingfeng/death
+    address: qinglan/audio/enemy/tingfeng/death
+    usage: 5
+    clip: {fileID: 8300000, guid: 8c4dd1200b9378947aa54300cf080861, type: 3}
+  - stableKey: qinglan/audio/enemy/tingfeng/spawn
+    address: qinglan/audio/enemy/tingfeng/spawn
+    usage: 5
+    clip: {fileID: 8300000, guid: babf970424750744784ce4eb701bf688, type: 3}
+  - stableKey: qinglan/audio/enemy/wind-bell-spirit/attack
+    address: qinglan/audio/enemy/wind-bell-spirit/attack
+    usage: 5
+    clip: {fileID: 8300000, guid: 1b508cb44d80a8947b0eead35986251c, type: 3}
+  - stableKey: qinglan/audio/enemy/wind-bell-spirit/death
+    address: qinglan/audio/enemy/wind-bell-spirit/death
+    usage: 5
+    clip: {fileID: 8300000, guid: 3bac9584db127dc41b465a92266ee628, type: 3}
+  - stableKey: qinglan/audio/enemy/wind-bell-spirit/spawn
+    address: qinglan/audio/enemy/wind-bell-spirit/spawn
+    usage: 5
+    clip: {fileID: 8300000, guid: 53a26fd30640b0143a0fbb46ee881c44, type: 3}
+  - stableKey: qinglan/audio/enemy/wooden-puppet/attack
+    address: qinglan/audio/enemy/wooden-puppet/attack
+    usage: 5
+    clip: {fileID: 8300000, guid: 96ae52ec37f6c6e4eb1008516595ee88, type: 3}
+  - stableKey: qinglan/audio/enemy/wooden-puppet/death
+    address: qinglan/audio/enemy/wooden-puppet/death
+    usage: 5
+    clip: {fileID: 8300000, guid: 18119aaf109b7d54ca2fa665528fed55, type: 3}
+  - stableKey: qinglan/audio/enemy/wooden-puppet/spawn
+    address: qinglan/audio/enemy/wooden-puppet/spawn
+    usage: 5
+    clip: {fileID: 8300000, guid: 028c8c71fd77da24487905e4743bd142, type: 3}
+  - stableKey: qinglan/audio/enemy/zhezhi/attack
+    address: qinglan/audio/enemy/zhezhi/attack
+    usage: 5
+    clip: {fileID: 8300000, guid: 156a1f4bef49dcd4f8c114e47a5510e2, type: 3}
+  - stableKey: qinglan/audio/enemy/zhezhi/death
+    address: qinglan/audio/enemy/zhezhi/death
+    usage: 5
+    clip: {fileID: 8300000, guid: a1356547b8935c64f948ccf0cb977946, type: 3}
+  - stableKey: qinglan/audio/enemy/zhezhi/spawn
+    address: qinglan/audio/enemy/zhezhi/spawn
+    usage: 5
+    clip: {fileID: 8300000, guid: d2aa2a5a7a929484db4df17e5bb4f03c, type: 3}
+  - stableKey: qinglan/audio/map/event/herb-garden-revival
+    address: qinglan/audio/map/event/herb-garden-revival
+    usage: 7
+    clip: {fileID: 8300000, guid: b6ce60067d1189e4990473de507ae7fa, type: 3}
+  - stableKey: qinglan/audio/map/event/old-sword-resonance
+    address: qinglan/audio/map/event/old-sword-resonance
+    usage: 7
+    clip: {fileID: 8300000, guid: 9da8ceb780ddfef4a8898f8156e0fd72, type: 3}
+  - stableKey: qinglan/audio/map/event/wind-vein-riot
+    address: qinglan/audio/map/event/wind-vein-riot
+    usage: 7
+    clip: {fileID: 8300000, guid: a2691b3ccab981a4c975e8e46d1105c0, type: 3}
+  - stableKey: qinglan/audio/map/landmark/broken-wall-sword-mark
+    address: qinglan/audio/map/landmark/broken-wall-sword-mark
+    usage: 7
+    clip: {fileID: 8300000, guid: af26e445c208e2549ac1ce1cf9c227b2, type: 3}
+  - stableKey: qinglan/audio/map/landmark/guest-pavilion-letter
+    address: qinglan/audio/map/landmark/guest-pavilion-letter
+    usage: 7
+    clip: {fileID: 8300000, guid: 111c99fadca66c44c8f672cb75edea23, type: 3}
+  - stableKey: qinglan/audio/map/landmark/herb-garden-variant
+    address: qinglan/audio/map/landmark/herb-garden-variant
+    usage: 7
+    clip: {fileID: 8300000, guid: a23f765be65a5004385e22a0474e2457, type: 3}
+  - stableKey: qinglan/audio/map/landmark/sealed-sword-cache
+    address: qinglan/audio/map/landmark/sealed-sword-cache
+    usage: 7
+    clip: {fileID: 8300000, guid: e0d14a07e4f26de4a856066c791ef480, type: 3}
+  - stableKey: qinglan/audio/map/landmark/wind-vein-stele
+    address: qinglan/audio/map/landmark/wind-vein-stele
+    usage: 7
+    clip: {fileID: 8300000, guid: 5d6cc8aeb53d7dc4e8cca3ef2583835e, type: 3}
+  - stableKey: qinglan/audio/map/objective/guide
+    address: qinglan/audio/map/objective/guide
+    usage: 7
+    clip: {fileID: 8300000, guid: 553fb5b065102a840a702840b5bc359a, type: 3}
+  - stableKey: qinglan/audio/map/objective/listen
+    address: qinglan/audio/map/objective/listen
+    usage: 7
+    clip: {fileID: 8300000, guid: eacbec7a0cdc73b4e953059c1d083520, type: 3}
+  - stableKey: qinglan/audio/map/objective/stop-balance
+    address: qinglan/audio/map/objective/stop-balance
+    usage: 7
+    clip: {fileID: 8300000, guid: 374fa31f429e4524a8e47fc360bd39c6, type: 3}
+  - stableKey: qinglan/audio/map/system/boundary-warning
+    address: qinglan/audio/map/system/boundary-warning
+    usage: 7
+    clip: {fileID: 8300000, guid: da492e11a9614d549908d94e60600a81, type: 3}
+  - stableKey: qinglan/audio/map/system/landmark-claim
+    address: qinglan/audio/map/system/landmark-claim
+    usage: 7
+    clip: {fileID: 8300000, guid: 3285f30d2e8b8c74f86677ab0222e1c5, type: 3}
+  - stableKey: qinglan/audio/map/system/objective-complete
+    address: qinglan/audio/map/system/objective-complete
+    usage: 7
+    clip: {fileID: 8300000, guid: ca49964d5a1de8e4e993219a93122dcf, type: 3}
+  - stableKey: qinglan/audio/music/combat-rhythm
+    address: qinglan/audio/music/combat-rhythm
+    usage: 1
+    clip: {fileID: 8300000, guid: f863dfb2013574c4c9153f1739fc9097, type: 3}
+  - stableKey: qinglan/audio/music/exploration-air
+    address: qinglan/audio/music/exploration-air
+    usage: 1
+    clip: {fileID: 8300000, guid: 95b6a864ceeec2a4dac5c036986c97d8, type: 3}
+  - stableKey: qinglan/audio/music/exploration-strings
+    address: qinglan/audio/music/exploration-strings
+    usage: 1
+    clip: {fileID: 8300000, guid: ef87c46839a39d44fbf55a770fdd3b1f, type: 3}
+  - stableKey: qinglan/audio/music/high-pressure-drive
+    address: qinglan/audio/music/high-pressure-drive
+    usage: 1
+    clip: {fileID: 8300000, guid: 39d34305640299d4995579abb7029c57, type: 3}
+  - stableKey: qinglan/audio/player/dash-ready
+    address: qinglan/audio/player/dash-ready
+    usage: 3
+    clip: {fileID: 8300000, guid: 2fd1a6dfcf8fb5f49aecdf69179a0cd8, type: 3}
+  - stableKey: qinglan/audio/player/dash-start
+    address: qinglan/audio/player/dash-start
+    usage: 3
+    clip: {fileID: 8300000, guid: 99653d49d0a6ad34387f209e0b605df7, type: 3}
+  - stableKey: qinglan/audio/player/level-up
+    address: qinglan/audio/player/level-up
+    usage: 3
+    clip: {fileID: 8300000, guid: f6dc2308375d4f14393441be3a65d81d, type: 3}
+  - stableKey: qinglan/audio/player/low-health
+    address: qinglan/audio/player/low-health
+    usage: 3
+    clip: {fileID: 8300000, guid: 3ade7a42ef0999c44bd2e42ac2ee3ae8, type: 3}
+  - stableKey: qinglan/audio/player/manifestation-ready
+    address: qinglan/audio/player/manifestation-ready
+    usage: 3
+    clip: {fileID: 8300000, guid: 4134a6ec3abdea54daa154bca7b8d32b, type: 3}
+  - stableKey: qinglan/audio/player/pickup
+    address: qinglan/audio/player/pickup
+    usage: 3
+    clip: {fileID: 8300000, guid: 9009f06f5c559a643a269bb362caff3e, type: 3}
+  - stableKey: qinglan/audio/player/player-defeat
+    address: qinglan/audio/player/player-defeat
+    usage: 3
+    clip: {fileID: 8300000, guid: 9fb934b34558d6b4b81c74c694b86426, type: 3}
+  - stableKey: qinglan/audio/player/player-hit
+    address: qinglan/audio/player/player-hit
+    usage: 3
+    clip: {fileID: 8300000, guid: 75018dad5e7048b449544da4e9379cdb, type: 3}
+  - stableKey: qinglan/audio/player/riding-wind-tier
+    address: qinglan/audio/player/riding-wind-tier
+    usage: 3
+    clip: {fileID: 8300000, guid: 8908f625240531d4ca51060bf76aacd0, type: 3}
+  - stableKey: qinglan/audio/player/skill-ready
+    address: qinglan/audio/player/skill-ready
+    usage: 3
+    clip: {fileID: 8300000, guid: f9ed84f398883dd4486a630e577f6398, type: 3}
+  - stableKey: qinglan/audio/player/sword-intent-full
+    address: qinglan/audio/player/sword-intent-full
+    usage: 3
+    clip: {fileID: 8300000, guid: 33c512af5a0bc7a4d8e0f12987bcb154, type: 3}
+  - stableKey: qinglan/audio/player/sword-intent-gain
+    address: qinglan/audio/player/sword-intent-gain
+    usage: 3
+    clip: {fileID: 8300000, guid: bce631b4f9022b149973a806f653df6c, type: 3}
+  - stableKey: qinglan/audio/ui/cancel
+    address: qinglan/audio/ui/cancel
+    usage: 8
+    clip: {fileID: 8300000, guid: c51a87238bf60c24aa1edcbc9124fd58, type: 3}
+  - stableKey: qinglan/audio/ui/choice-focus
+    address: qinglan/audio/ui/choice-focus
+    usage: 8
+    clip: {fileID: 8300000, guid: 15d995cd4d2c1894ebbae2871eeed49b, type: 3}
+  - stableKey: qinglan/audio/ui/choice-select
+    address: qinglan/audio/ui/choice-select
+    usage: 8
+    clip: {fileID: 8300000, guid: ae220aee90911f14c9fec7fe07f7cde8, type: 3}
+  - stableKey: qinglan/audio/ui/confirm
+    address: qinglan/audio/ui/confirm
+    usage: 8
+    clip: {fileID: 8300000, guid: 6bed281c0f2fc3a47a87d9c43c32042b, type: 3}
+  - stableKey: qinglan/audio/ui/error
+    address: qinglan/audio/ui/error
+    usage: 8
+    clip: {fileID: 8300000, guid: a1931f61f407c264b9bfc810b200afa7, type: 3}
+  - stableKey: qinglan/audio/ui/locked
+    address: qinglan/audio/ui/locked
+    usage: 8
+    clip: {fileID: 8300000, guid: 71b3803501534a64eb6df84e7abe8dea, type: 3}
+  - stableKey: qinglan/audio/ui/navigate
+    address: qinglan/audio/ui/navigate
+    usage: 8
+    clip: {fileID: 8300000, guid: 0e5f2daa2af45994aad3b466f18201af, type: 3}
+  - stableKey: qinglan/audio/ui/notification
+    address: qinglan/audio/ui/notification
+    usage: 8
+    clip: {fileID: 8300000, guid: a32acea7a65f1c34fbf5efbcacaae1a9, type: 3}
+  - stableKey: qinglan/audio/ui/page-close
+    address: qinglan/audio/ui/page-close
+    usage: 8
+    clip: {fileID: 8300000, guid: 924799aaeb92ff641abc9545ee3d5c92, type: 3}
+  - stableKey: qinglan/audio/ui/page-open
+    address: qinglan/audio/ui/page-open
+    usage: 8
+    clip: {fileID: 8300000, guid: 41cfdac912b58d445bdbb4ae8488eeac, type: 3}
+  - stableKey: qinglan/audio/ui/pause-toggle
+    address: qinglan/audio/ui/pause-toggle
+    usage: 8
+    clip: {fileID: 8300000, guid: 8b7db92c682b7194d83fd85616109882, type: 3}
+  - stableKey: qinglan/audio/ui/tab-change
+    address: qinglan/audio/ui/tab-change
+    usage: 8
+    clip: {fileID: 8300000, guid: 100a904bebb909b44a121c15cb55f998, type: 3}
+  - stableKey: qinglan/audio/weapon/chilu-hundred-craft-wheel
+    address: qinglan/audio/weapon/chilu-hundred-craft-wheel
+    usage: 4
+    clip: {fileID: 8300000, guid: f6c72bc869ef7c147811f8c884d9291b, type: 3}
+  - stableKey: qinglan/audio/weapon/earth-vein-spring-branch
+    address: qinglan/audio/weapon/earth-vein-spring-branch
+    usage: 4
+    clip: {fileID: 8300000, guid: 03125ccf29e3244458b9022b3b16f64f, type: 3}
+  - stableKey: qinglan/audio/weapon/lihuo-return-explosion
+    address: qinglan/audio/weapon/lihuo-return-explosion
+    usage: 4
+    clip: {fileID: 8300000, guid: cf8f426899e9e6d4fb91178b6bcfb65a, type: 3}
+  - stableKey: qinglan/audio/weapon/lihuo-wheel-cast
+    address: qinglan/audio/weapon/lihuo-wheel-cast
+    usage: 4
+    clip: {fileID: 8300000, guid: 6980cbbd220d18b49a06a8c10baaab64, type: 3}
+  - stableKey: qinglan/audio/weapon/mirror-sea-tide-wheel
+    address: qinglan/audio/weapon/mirror-sea-tide-wheel
+    usage: 4
+    clip: {fileID: 8300000, guid: 92ed3f89dca9b6e4a9ee21ded72b9e5f, type: 3}
+  - stableKey: qinglan/audio/weapon/mountain-boundary-seal
+    address: qinglan/audio/weapon/mountain-boundary-seal
+    usage: 4
+    clip: {fileID: 8300000, guid: 41a226aea4a0a544ea1496e4e1a99443, type: 3}
+  - stableKey: qinglan/audio/weapon/qinglan-flowing-shadow-sword
+    address: qinglan/audio/weapon/qinglan-flowing-shadow-sword
+    usage: 4
+    clip: {fileID: 8300000, guid: dc4e845e1e4fdcf449c26f240f9b1073, type: 3}
+  - stableKey: qinglan/audio/weapon/spirit-vine-seed-cast
+    address: qinglan/audio/weapon/spirit-vine-seed-cast
+    usage: 4
+    clip: {fileID: 8300000, guid: ca5f8ca638a9e614eb26887ffdfac297, type: 3}
+  - stableKey: qinglan/audio/weapon/taiyi-spirit-sealing-array
+    address: qinglan/audio/weapon/taiyi-spirit-sealing-array
+    usage: 4
+    clip: {fileID: 8300000, guid: 6c7dc8b3135d8474d82d7d44466a11f9, type: 3}
+  - stableKey: qinglan/audio/weapon/talisman-detonation
+    address: qinglan/audio/weapon/talisman-detonation
+    usage: 4
+    clip: {fileID: 8300000, guid: 045bc26e59b3c2446b6840910e31687b, type: 3}
+  - stableKey: qinglan/audio/weapon/tide-orb-cast
+    address: qinglan/audio/weapon/tide-orb-cast
+    usage: 4
+    clip: {fileID: 8300000, guid: d19cfd7efe8a1b94db85bf462bbab222, type: 3}
+  - stableKey: qinglan/audio/weapon/tide-phase-shift
+    address: qinglan/audio/weapon/tide-phase-shift
+    usage: 4
+    clip: {fileID: 8300000, guid: dfb2e5ad51a86124e9945602887709eb, type: 3}
+  - stableKey: qinglan/audio/weapon/vine-propagation
+    address: qinglan/audio/weapon/vine-propagation
+    usage: 4
+    clip: {fileID: 8300000, guid: 7d55fabaa3750cd48bba5f3fdbe26b89, type: 3}
+  - stableKey: qinglan/audio/weapon/yellow-talisman-cast
+    address: qinglan/audio/weapon/yellow-talisman-cast
+    usage: 4
+    clip: {fileID: 8300000, guid: b29bd8c776207ee45b838987ef9c3ab6, type: 3}
+  - stableKey: qinglan/audio/weapon/yufeng-return
+    address: qinglan/audio/weapon/yufeng-return
+    usage: 4
+    clip: {fileID: 8300000, guid: ebaf5e0d9f8434b48a91899b904068f6, type: 3}
+  - stableKey: qinglan/audio/weapon/yufeng-sword-cast
+    address: qinglan/audio/weapon/yufeng-sword-cast
+    usage: 4
+    clip: {fileID: 8300000, guid: 7ffe281e25c96944f937cf5a2f6b7040, type: 3}
+  - stableKey: qinglan/audio/weapon/zhenyue-countershock
+    address: qinglan/audio/weapon/zhenyue-countershock
+    usage: 4
+    clip: {fileID: 8300000, guid: b3ac8fa0a169e2d4993ff394ef9de332, type: 3}
+  - stableKey: qinglan/audio/weapon/zhenyue-seal-cast
+    address: qinglan/audio/weapon/zhenyue-seal-cast
+    usage: 4
+    clip: {fileID: 8300000, guid: efd136876032f1949864fab3f583be93, type: 3}
+  outputGroup: {fileID: 24300002, guid: 07b5086d2d83aec42a642597eff2380e, type: 2}
+  gameplaySnapshot: {fileID: 24500006, guid: 07b5086d2d83aec42a642597eff2380e, type: 2}
+  pausedSnapshot: {fileID: -6461907833352102065, guid: 07b5086d2d83aec42a642597eff2380e, type: 2}
+  storySnapshot: {fileID: 1053830824513463755, guid: 07b5086d2d83aec42a642597eff2380e, type: 2}
+  bossSnapshot: {fileID: 694686597688403891, guid: 07b5086d2d83aec42a642597eff2380e, type: 2}

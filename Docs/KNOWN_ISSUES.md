@@ -147,7 +147,7 @@
 |---|---|---|---|---|
 | QD-KI-001 | RESOLVED | High | CR-01—CR-11 曾未形成正式决定，G1/G2 多项核心能力被阻塞。 | G0.2 已形成 12 份正式 CR：CR-01—09 接受、CR-10 拆为属性/伤害策略两项接受、CR-11 延期；决定见 `DemoDevelopment/07_CHANGE_REQUEST_DECISIONS.md`。 |
 | QD-KI-002 | ACCEPTED | Medium | Demo 设计提交尚未合并 `main`；用户要求在单一新分支连续开发，与路线文档默认“每包独立分支并先合并”不同。 | 以 `codex/qinglan-demo-implementation` 为唯一 Owner 分支，每个工作包单独提交并 Push；未经新授权不自动合并 `main` 或打标签。 |
-| QD-KI-003 | IN PROGRESS | High | G3.1 已完成 27/27 正式视觉批次、完整 provenance、181 个 Release 地址和 Player 运行时消费；正式音频、字体、商业本地化与目标硬件证据仍缺实际文件或最终签字。 | 继续按 G0.4 的非视觉清单完成 G3.2—G3.5；任一剩余项缺失仍阻断 Release。 |
+| QD-KI-003 | IN PROGRESS | High | G3.1/G3.2 已完成正式视觉、9/9 音频批次、完整 provenance、104 音频地址和 Player 运行时消费；正式字体、商业本地化与目标硬件证据仍缺实际文件或最终签字。 | 继续按 G0.4 清单完成 G3.3—G3.5；任一剩余项缺失仍阻断 Release。 |
 | QD-KI-004 | RESOLVED | High | 已接受 CR 曾未形成 ADR、Schema 6、Profile Schema 3、公共 API Freeze、迁移和测试契约。 | G0.3 已由 ADR 0013—0015 和 `DemoDevelopment/08_G0_3_CONTRACT_FREEZE.md` 固化全部契约；现有 Hash 保持不变直到 G1.1 实现门禁。 |
 | QD-KI-005 | ACCEPTED | Low | CR-11 完整 Run Recovery 延期，Demo 不支持任意 Tick 继续本局。 | 只检测不完整记录、显示本地化提示并在明确开始新局后清理；不得显示 Continue 或把不完整 Run 结算为胜利。 |
 | QD-KI-006 | RESOLVED | High | Schema 6、Demo Pipeline、Profile 3 和批准公共 API 曾只有契约，尚未实现或取得新 Freeze Hash 证据。 | G1.1 已实现通用骨架/Codec/Migration/Fixture，保留旧 Hash 预期差异并完成 203 EditMode、9 PlayMode、Validation、配对性能短测和 Windows x64 Development Build；新 Hash 见 `PUBLIC_API_FREEZE.md`。 |
@@ -158,7 +158,7 @@
 | QD-KI-011 | RESOLVED | High | G1.6 Encounter 曾缺折枝/听风 BossDefinition、Boss Phase/BossRule、实际地图出生公平和过渡验证。 | G2.2 已追加两 Boss/三阶段/八组合；G2.8 真实 Factory 四局均两 Boss 一次、0 InvalidHandle，实际地图 21,600 Tick 的 2,552 普通出生全部 Walkable 且距离≥14。 |
 | QD-KI-012 | RESOLVED | Medium | G1.7 曾只有受控 Evolution 选择适配器；G2.3 已完成消费者，但缺实际选择页面、统一输入与可访问性。 | G2.6 已通过 `RunSession.CurrentRewardChoice` 接入键鼠/手柄实际 UI，覆盖奖励暂停、选择、焦点和结果保存门禁。 |
 | QD-KI-013 | RESOLVED | High | G2.4 的不可变 RunResult 曾未进入 Profile v3 原子事务、保存重试、Recovery 清理或平台事件。 | G2.5 已以稳定事务 ID 完成原子合并、失败重试、清理补偿与提交后事件；成功前保持 `HasUncommittedResult`。 |
-| QD-KI-014 | IN PROGRESS | High | G3.1 已完成正式 Catalog/Profile 装载、正式 UI/Status/Pickup/Affix 消费和 1080p 高密度可读性审查；正式音频、目标 GPU 帧时间/显存/1% Low 与最终视听签字尚未完成。 | 执行 G3.2 音频、G3.5 目标 GPU 和 G3.6 Release 门禁；不得用 G3.1 的 RTX 3060 Ti 可读性截图替代目标硬件性能证据。 |
+| QD-KI-014 | IN PROGRESS | High | G3.1/G3.2 已完成正式视听 Catalog、正式 UI/Status/Pickup/Affix/音频消费与自动混音门禁；目标 GPU 帧时间/显存/1% Low、目标声卡听音与最终视听签字尚未完成。 | 执行 G3.5 目标硬件视听性能和 G3.6 Release 门禁；不得用开发机自动化与 G3.1 截图替代目标硬件证据。 |
 
-G3.1 正式视觉门禁已完成，下一工作包为 G3.2；QD-KI-003/008/014 继续阻止 Release，必须按
-G3.2—G3.6 的音频、字体、本地化、目标 GPU 和合规证据关闭。
+G3.1 正式视觉与 G3.2 正式音频门禁已完成，下一工作包为 G3.3；QD-KI-003/008/014 继续阻止 Release，
+必须按 G3.3—G3.6 的字体、本地化、目标硬件和合规证据关闭。

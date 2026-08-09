@@ -322,6 +322,19 @@ M8 的 Presenter 仍只产生 Key；`UnityLocalizationService` 在 View 边界�
 `en`、`zh-Hans` 或 Pseudo。Project Validation 检查所有固定 UI/诊断 Key 与 baked 内容 Key 在英、
 中表均非空。设置只保存 Locale Code，不保存语言正文；所有可见文字继续在 View 边界解析。
 
+### 7.4 G3.2 正式音频目录、Mixer 与句柄生命周期
+
+G3.2 由 Addressable `FormalAudioCatalog` 以稳定地址登记 104 个 `audio.release` Clip，并提供语义 Cue、
+探索/战斗/高压 Stem 与折枝/听风三阶段 Boss Stem 查询。`QinglanFormalAudioLoader` 是 Catalog Handle
+唯一 Owner；Host 在低频启动装配时加载并注入 `PresentationCoordinator`，销毁时先关闭 Router/Source，
+再释放 Addressables Handle。Simulation/Application 只保留稳定 ContentId、BossId、Phase 和快照。
+
+生产 Router 的硬上限为 32 个 AudioSource：8 个 DSP 同步 Stem 通道和 24 个瞬态通道，瞬态中保留 8 个
+P0/机制容量。普通 Cue 冷却 40—120 ms；P0 对普通效果 Duck 为 -6 dB，Story 对环境 Duck 为 -4 dB。
+`qinglan-demo.mixer` 提供 Gameplay、Paused、Story、Boss 四个 Snapshot，四路用户音量继续作为独立乘区。
+Development 缺 Catalog 可使用程序化测试音并记录告警；Project Validation 阻断缺 Catalog、104 地址、
+Master 路由或任一 Snapshot 的构建。依赖与回滚边界见 ADR 0029。
+
 ## 8. 地图运行时
 
 > public interface IMapRuntime  

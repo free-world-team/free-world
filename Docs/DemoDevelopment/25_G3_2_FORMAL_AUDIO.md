@@ -1,6 +1,6 @@
 # 25 G3.2 正式音频、混音与 Addressables
 
-- 状态：`IN PROGRESS — GOVERNANCE PASS；9 / 9 AUDIO 批次；待 Final Integration`
+- 状态：`COMPLETE — GOVERNANCE、9 / 9 AUDIO 批次与 Final Integration PASS`
 - 日期：2026-08-10
 - 输入：G3.1 正式视觉、G0.4 Manifest、M13、M15、M16、ADR 0004/0025/0026
 - 非范围：G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -54,7 +54,33 @@ G3.2 开始时 `Assets/GameAssets` 为 477,068,081 Bytes，`.git` 为 476,914,00
 | 7 | AUDIO-AFFIX-001 | PASS | 狂奔/结界/分裂/震地各 Activation + Pulse；8 条 OGG Clip |
 | 8 | AUDIO-MAP-001 | PASS | 3 目标 + 3 事件 + 5 地标 + 3 通用地图 Cue；14 条 OGG Clip |
 | 9 | AUDIO-UI-001 | PASS | 12 条 0.08—0.42 秒 UI Cue；PCM24 Master + PCM16 Runtime WAV |
-| 10 | Final Integration | PENDING | Catalog、Mixer/Router、全量门禁与 Player Smoke |
+| 10 | Final Integration | PASS | 104 Clip Catalog、4 Snapshot Mixer、32/8/8 Router、全量门禁与 Player Smoke |
+
+## 5.1 Final Integration 结果
+
+- `FormalAudioCatalog` 以稳定地址映射 104 / 104 个 `audio.release` Clip，并提供语义 Cue 与双 Boss
+  三阶段 Stem 查询；Catalog 由 `QinglanFormalAudioLoader` 统一持有和释放 Addressables 句柄。
+- `qinglan-demo.mixer` 包含 Gameplay、Paused、Story、Boss 四个 Snapshot；运行时切换 Snapshot，同时保留
+  Master/Music/Ambience/Effects 四类用户音量的显式乘区。
+- 生产 Router 固定总容量 32、8 个同步 Stem 通道和 8 个 P0/机制预留；普通 SFX 冷却 40—120 ms，
+  P0 对普通效果 Duck 为 -6 dB，Story 对环境 Duck 为 -4 dB。
+- 探索四 Stem 在 120 秒进入战斗层、10:30 进入高压层；折枝/听风各三阶段按 BossId 与 Phase 切换，
+  同组通过同一 DSP 时间批量调度。
+- Development 在 Catalog 缺失时保留程序化 Test Tone 并告警；Release/Development Build 的项目治理
+  均要求正式 Catalog、104 地址、四 Snapshot 和 Master 路由完整。
+
+## 5.2 最终门禁证据
+
+| 门禁 | 结果 |
+|---|---|
+| G3.2 Focused EditMode | PASS；5 / 5 |
+| G2.7 音频池回归 | PASS；7 / 7 |
+| 完整 EditMode | PASS；419 / 419 |
+| 完整 PlayMode | PASS；18 / 18 |
+| Project Validation | PASS |
+| Addressables Player Content Build | PASS；674 Locations |
+| Windows x64 Development Build | PASS |
+| 构建后 Player Smoke | PASS；正式音频加载/Cue 路由、32/8/8 与完整 Demo 流程 |
 
 ## 5. 测试
 

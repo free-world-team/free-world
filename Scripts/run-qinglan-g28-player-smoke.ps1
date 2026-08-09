@@ -58,10 +58,15 @@ try {
     exit 5
 }
 if ($result.status -ne 'PASS' -or -not $result.titleVisited -or
+    -not $result.formalVisualsLoaded -or -not $result.formalAudioLoaded -or
+    -not $result.formalAudioCueRouted -or
     -not $result.activeRunVisited -or -not $result.resultVisited -or
     -not $result.saveCommitted -or -not $result.hubVisited -or
     -not $result.restartVisited -or [int]$result.activeViewsAfterHub -ne 0 -or
-    [int]$result.inputOwnerCount -ne 1) {
+    [int]$result.inputOwnerCount -ne 1 -or
+    [int]$result.audioSourceCapacity -ne 32 -or
+    [int]$result.audioStemCapacity -ne 8 -or
+    [int]$result.audioReservedCriticalCapacity -ne 8) {
     [Console]::Error.WriteLine('G2.8 Development Player did not complete the real UI lifecycle smoke.')
     exit 5
 }

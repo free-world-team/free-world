@@ -87,6 +87,7 @@ namespace Game.Editor
             var settings = AddressableAssetSettingsDefaultObject.GetSettings(false);
             var report = Validate(projectRoot, settings);
             QinglanG31FormalVisualIntegration.AppendCurrentProjectValidation(settings, report);
+            QinglanG32FormalAudioIntegration.AppendCurrentProjectValidation(settings, report);
             ContentProjectValidator.AppendCurrentProject(report);
             LocalizationProjectValidator.AppendCurrentProject(report);
             CoreApiFreezeValidator.AppendCurrentProject(report);

@@ -41,7 +41,15 @@ namespace Game.Presentation
         Objective = 5,
         Danger = 6,
         BossPhase = 7,
-        Confirm = 8
+        Confirm = 8,
+        UiNavigate = 9,
+        UiCancel = 10,
+        UiPageOpen = 11,
+        UiTabChange = 12,
+        UiChoiceSelect = 13,
+        UiLocked = 14,
+        UiNotification = 15,
+        UiPauseToggle = 16
     }
 
     /// <summary>Pure presentation values resolved from an authored stable profile identity.</summary>

@@ -22,6 +22,7 @@ namespace Game.Infrastructure
         private string lastLocaleCode = string.Empty;
         private bool initialized;
         private QinglanFormalVisualLoader formalVisualLoader;
+        private QinglanFormalAudioLoader formalAudioLoader;
 
         public QinglanDemoFlowController Flow { get; private set; }
         public M7InputRouter Input { get; private set; }
@@ -30,6 +31,7 @@ namespace Game.Infrastructure
         public ILocalizationService Localization { get; private set; }
         public QinglanPageViewModel CurrentPage => presenter?.CurrentPage;
         public bool FormalVisualsLoaded => formalVisualLoader?.IsLoaded == true;
+        public bool FormalAudioLoaded => formalAudioLoader?.IsLoaded == true;
 
         public void Initialize(
             GameApplication application,
@@ -51,6 +53,9 @@ namespace Game.Infrastructure
             formalVisualLoader = new QinglanFormalVisualLoader();
             if (!formalVisualLoader.LoadForStartup())
                 Debug.LogWarning("[Qinglan Formal Visuals] Development fallback: " + formalVisualLoader.LastError);
+            formalAudioLoader = new QinglanFormalAudioLoader();
+            if (!formalAudioLoader.LoadForStartup())
+                Debug.LogWarning("[Qinglan Formal Audio] Development fallback: " + formalAudioLoader.LastError);
 
             var uiObject = new GameObject("Qinglan_Demo_UI");
             uiObject.transform.SetParent(transform, false);
@@ -65,7 +70,8 @@ namespace Game.Infrastructure
                 Flow.Settings,
                 formalVisualLoader.Catalog == null ? null : formalVisualLoader.Catalog.CreateEntityCatalog(),
                 QinglanProceduralPresentationFactory.Build(application.ContentRegistry),
-                formalVisualLoader.Catalog);
+                formalVisualLoader.Catalog,
+                formalAudioLoader.Catalog);
             presenter = new QinglanDemoPresenter(Flow, Ui);
 
             if (presentationCamera == null)
@@ -79,7 +85,7 @@ namespace Game.Infrastructure
             cameraRig = presentationCamera.GetComponent<PresentationCameraRig>();
             if (cameraRig == null) cameraRig = presentationCamera.gameObject.AddComponent<PresentationCameraRig>();
 
-            Input.Navigate += presenter.Navigate;
+            Input.Navigate += OnNavigate;
             Input.Submit += OnSubmit;
             Input.Cancel += OnCancel;
             Input.Pause += OnPause;
@@ -180,24 +186,42 @@ namespace Game.Infrastructure
 
         private void OnPause()
         {
-            if (Flow.TogglePause()) { presenter.Refresh(true); ApplyInputMode(); }
+            if (Flow.TogglePause())
+            {
+                Presentation.RouteUiCue(PresentationAudioCue.UiPauseToggle);
+                presenter.Refresh(true);
+                ApplyInputMode();
+            }
         }
 
         private void OnSubmit()
         {
+            Presentation.RouteUiCue(PresentationAudioCue.Confirm);
             presenter.Submit();
             ApplyInputMode();
         }
 
         private void OnCancel()
         {
+            Presentation.RouteUiCue(PresentationAudioCue.UiCancel);
             presenter.Cancel();
             ApplyInputMode();
         }
 
         private void OnMap()
         {
-            if (Flow.ToggleRunMap()) { presenter.Refresh(true); ApplyInputMode(); }
+            if (Flow.ToggleRunMap())
+            {
+                Presentation.RouteUiCue(PresentationAudioCue.UiPageOpen);
+                presenter.Refresh(true);
+                ApplyInputMode();
+            }
+        }
+
+        private void OnNavigate(float value)
+        {
+            Presentation.RouteUiCue(PresentationAudioCue.UiNavigate);
+            presenter.Navigate(value);
         }
 
         private void OnFocusRestore()
@@ -212,9 +236,17 @@ namespace Game.Infrastructure
             if (Flow.Stage == DemoFlowStage.Active) Flow.TogglePause();
         }
 
-        private void OnTab(float value) => presenter.Tab(value > 0f ? 1 : -1);
+        private void OnTab(float value)
+        {
+            Presentation.RouteUiCue(PresentationAudioCue.UiTabChange);
+            presenter.Tab(value > 0f ? 1 : -1);
+        }
 
-        private void OnPage(float value) => presenter.Page(value > 0f ? 1 : -1);
+        private void OnPage(float value)
+        {
+            Presentation.RouteUiCue(PresentationAudioCue.UiPageOpen);
+            presenter.Page(value > 0f ? 1 : -1);
+        }
 
         private void OnDebugLevelUp()
         {
@@ -229,7 +261,7 @@ namespace Game.Infrastructure
         private void OnDestroy()
         {
             if (!initialized || Input == null) return;
-            Input.Navigate -= presenter.Navigate;
+            Input.Navigate -= OnNavigate;
             Input.Submit -= OnSubmit;
             Input.Cancel -= OnCancel;
             Input.Pause -= OnPause;
@@ -240,7 +272,10 @@ namespace Game.Infrastructure
             Input.GamepadDisconnected -= OnGamepadDisconnected;
             Input.DebugLevelUp -= OnDebugLevelUp;
             Input.DebugCompleteRun -= OnDebugCompleteRun;
+            Presentation?.Shutdown();
             Flow.Dispose();
+            formalAudioLoader?.Dispose();
+            formalAudioLoader = null;
             formalVisualLoader?.Dispose();
             formalVisualLoader = null;
             initialized = false;

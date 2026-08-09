@@ -194,7 +194,7 @@ M1 依赖 M0 的程序集和文档。M2 依赖 M1 的运行时定义。M3 依赖
 
 ## 9. 《剑起青岚》Demo 当前顺序
 
-G0.1—G3.1 已按 `Docs/DemoDevelopment/02_DELIVERY_ROADMAP.md` 完成单工作包门禁。G3.1 已完成 27/27
-正式视觉批次、Provenance/Hash、181 个 Release 地址、正式运行时目录、Addressables、1080p 可读性、
-Windows Development Build 与 Player Smoke。当前下一工作包只进入 G3.2 正式音频；G3.2 未通过前
-不得开始 G3.3 字体/正文、G3.4 平衡或后续 Release 工作。
+G0.1—G3.2 已按 `Docs/DemoDevelopment/02_DELIVERY_ROADMAP.md` 完成单工作包门禁。G3.1 已完成 27/27
+正式视觉批次与最终运行时集成；G3.2 已完成 9/9 正式音频批次、104 Clip Catalog、四 Snapshot Mixer、
+32/8/8 Router、完整测试、Addressables、Windows Development Build 与 Player Smoke。当前下一工作包
+只进入 G3.3 字体/正文与商业本地化；G3.3 未通过前不得开始 G3.4 平衡或后续 Release 工作。

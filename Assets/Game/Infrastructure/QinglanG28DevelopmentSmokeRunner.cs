@@ -44,7 +44,9 @@ namespace Game.Infrastructure
 
             result.titleVisited = host.Flow.Stage == DemoFlowStage.Title;
             result.formalVisualsLoaded = host.FormalVisualsLoaded;
+            result.formalAudioLoaded = host.FormalAudioLoaded;
             result.formalUiBackgroundApplied = host.Ui.FormalBackgroundApplied;
+            result.formalAudioCueRouted = host.Presentation.RouteUiCue(PresentationAudioCue.Confirm);
             if (!result.titleVisited || !host.Flow.Execute(QinglanUiCommand.Start, "start", 0))
             {
                 Finish(result, "Title to character selection failed.");
@@ -118,6 +120,9 @@ namespace Game.Infrastructure
             result.activeViewsAfterHub = host.Presentation.ActiveViewCount;
             result.vfxCreated = host.Presentation.CreatedVfxCount;
             result.audioSourcesCreated = host.Presentation.CreatedAudioSourceCount;
+            result.audioSourceCapacity = host.Presentation.AudioSourceCapacity;
+            result.audioStemCapacity = host.Presentation.AudioStemCapacity;
+            result.audioReservedCriticalCapacity = host.Presentation.AudioReservedCriticalCapacity;
             if (!result.hubVisited || result.activeViewsAfterHub != 0 ||
                 !host.Flow.Execute(QinglanUiCommand.StartAgain, "again", 0))
             {
@@ -129,12 +134,15 @@ namespace Game.Infrastructure
                 FindObjectsInactive.Include, FindObjectsSortMode.None).Length;
             var passed = result.titleVisited && result.characterSelectVisited &&
                          result.formalVisualsLoaded && result.formalUiBackgroundApplied &&
+                         result.formalAudioLoaded && result.formalAudioCueRouted &&
                          result.mapAndLoadoutVisited && result.activeRunVisited &&
                          result.pauseResumeVisited && result.accessibilityApplied &&
                          result.upgradeVisited && result.resultVisited && result.saveCommitted &&
                          result.hubVisited && result.restartVisited &&
                          result.activeViewsAfterHub == 0 && result.inputOwnerCount == 1 &&
-                         result.vfxCreated <= 200 && result.audioSourcesCreated <= 32;
+                         result.vfxCreated <= 200 && result.audioSourcesCreated <= 32 &&
+                         result.audioSourceCapacity == 32 && result.audioStemCapacity == 8 &&
+                         result.audioReservedCriticalCapacity == 8;
             result.status = passed ? "PASS" : "FAIL";
             result.error = passed ? string.Empty : "One or more Player smoke assertions failed.";
             WriteAndQuit(result, passed ? 0 : 2);
@@ -179,6 +187,8 @@ namespace Game.Infrastructure
             public string generatedAtUtc;
             public bool titleVisited;
             public bool formalVisualsLoaded;
+            public bool formalAudioLoaded;
+            public bool formalAudioCueRouted;
             public bool formalUiBackgroundApplied;
             public bool characterSelectVisited;
             public bool mapAndLoadoutVisited;
@@ -195,6 +205,9 @@ namespace Game.Infrastructure
             public int inputOwnerCount;
             public int vfxCreated;
             public int audioSourcesCreated;
+            public int audioSourceCapacity;
+            public int audioStemCapacity;
+            public int audioReservedCriticalCapacity;
         }
     }
 }

@@ -31,6 +31,7 @@ namespace Game.Presentation
         private AccessibilitySettings settings;
         private ProceduralPresentationCatalog proceduralProfiles;
         private FormalVisualCatalog formalVisuals;
+        private FormalAudioCatalog formalAudio;
         private ColorVisionMode lastColorVision;
         private PresentationMixState mixState;
         private long consumedTick = -1;
@@ -50,6 +51,10 @@ namespace Game.Presentation
         public int ActiveAudioCount => audioRouter?.ActiveCount ?? 0;
         public int CreatedVfxCount => vfx?.CreatedCount ?? 0;
         public int CreatedAudioSourceCount => audioRouter?.CreatedSourceCount ?? 0;
+        public int AudioSourceCapacity => audioRouter?.SourceCapacity ?? 0;
+        public int AudioStemCapacity => audioRouter?.StemCapacity ?? 0;
+        public int AudioReservedCriticalCapacity => audioRouter?.ReservedCriticalCapacity ?? 0;
+        public bool FormalAudioLoaded => audioRouter?.FormalCatalogLoaded == true;
         public long DroppedVfxRequestCount => vfx?.DroppedRequestCount ?? 0;
         public long DroppedAudioRequestCount => audioRouter?.DroppedRequestCount ?? 0;
         public int MapMarkerCount => mapPresentation?.MarkerCount ?? 0;
@@ -59,7 +64,8 @@ namespace Game.Presentation
             AccessibilitySettings accessibilitySettings,
             VisualProfileCatalog profileCatalog = null,
             ProceduralPresentationCatalog proceduralCatalog = null,
-            FormalVisualCatalog formalCatalog = null)
+            FormalVisualCatalog formalCatalog = null,
+            FormalAudioCatalog formalAudioCatalog = null)
         {
             if (initialized) throw new InvalidOperationException("PresentationCoordinator is already initialized.");
             settings = accessibilitySettings ?? throw new ArgumentNullException(nameof(accessibilitySettings));
@@ -67,13 +73,14 @@ namespace Game.Presentation
             var catalog = profileCatalog ?? new VisualProfileCatalog();
             proceduralProfiles = proceduralCatalog ?? new ProceduralPresentationCatalog();
             formalVisuals = formalCatalog;
+            formalAudio = formalAudioCatalog;
             actors = new EntityViewPool<ActorView>(transform, EntityKind.Actor, catalog, proceduralProfiles, settings, fallback, 8);
             projectiles = new EntityViewPool<ProjectileView>(transform, EntityKind.Projectile, catalog, proceduralProfiles, settings, fallback, 16);
             areas = new EntityViewPool<AreaView>(transform, EntityKind.Area, catalog, proceduralProfiles, settings, fallback, 8);
             pickups = new EntityViewPool<PickupView>(transform, EntityKind.Pickup, catalog, proceduralProfiles, settings, fallback, 16);
             vfx = new VfxRequestPool(transform, fallback, 200, 32);
             damageNumbers = new DamageNumberPool(sharedCanvas);
-            audioRouter = new AudioRequestRouter(transform);
+            audioRouter = new AudioRequestRouter(transform, formalAudio);
             lastColorVision = settings.ColorVision;
             initialized = true;
         }
@@ -228,6 +235,9 @@ namespace Game.Presentation
 
         public void SetMixState(PresentationMixState value) => mixState = value;
 
+        public bool RouteUiCue(PresentationAudioCue cue) =>
+            initialized && audioRouter.Route(cue, PresentationPriority.Mechanic, 0.72f);
+
         public void SetMap(ProceduralMapConfiguration configuration)
         {
             mapPresentation?.Dispose();
@@ -243,6 +253,7 @@ namespace Game.Presentation
         public void SyncRunState(RunUiSnapshot snapshot)
         {
             if (!initialized || snapshot == null) return;
+            audioRouter.SetStemState(snapshot.DurationSeconds, snapshot.HasBoss, snapshot.BossId, snapshot.BossPhase);
             if (lastMechanicTier < 0) lastMechanicTier = snapshot.MechanicTier;
             else if (snapshot.MechanicTier > lastMechanicTier)
             {
@@ -413,7 +424,7 @@ namespace Game.Presentation
             return selected == null ? Vector2.zero : (Vector2)selected.transform.position;
         }
 
-        private void OnDestroy()
+        public void Shutdown()
         {
             if (!initialized) return;
             Clear();
@@ -427,7 +438,10 @@ namespace Game.Presentation
             mapPresentation?.Dispose();
             mapPresentation = null;
             fallback.Dispose();
+            formalAudio = null;
             initialized = false;
         }
+
+        private void OnDestroy() => Shutdown();
     }
 }

@@ -329,7 +329,7 @@ namespace Game.Presentation
         public PresentationAudioCue Cue;
     }
 
-    /// <summary>Presentation-only mix state used by the generated Placeholder audio bed.</summary>
+    /// <summary>Presentation-only state mapped to the formal mixer snapshots.</summary>
     public enum PresentationMixState : byte
     {
         Gameplay = 0,
@@ -338,62 +338,112 @@ namespace Game.Presentation
         Boss = 3
     }
 
-    /// <summary>Bounded priority route for explicit generated test tones only.</summary>
+    /// <summary>Bounded priority router for formal clips with a Development-only test-tone fallback.</summary>
     public sealed class AudioRequestRouter : IDisposable
     {
+        public const int ProductionSourceCapacity = 32;
+        public const int ProductionReservedCriticalCapacity = 8;
+        public const int ProductionStemCapacity = 8;
+        public const float OrdinaryDuckLinear = 0.5011872f;
+        public const float StoryEnvironmentDuckLinear = 0.6309574f;
+
         private readonly List<RoutedAudioSource> all;
         private readonly Stack<RoutedAudioSource> available;
         private readonly List<RoutedAudioSource> active;
         private readonly Transform root;
         private readonly AudioClip[] cueClips;
         private readonly float[] cooldowns;
-        private readonly int maximumCapacity;
+        private readonly int transientCapacity;
         private readonly int reservedCriticalCapacity;
-        private readonly AudioSource musicSource;
-        private readonly AudioSource ambienceSource;
+        private readonly AudioSource[] stemSources;
+        private readonly FormalAudioCatalog formalCatalog;
+        private readonly bool ownsGeneratedClips;
         private float masterVolume = 1f;
         private float musicVolume = 1f;
         private float ambienceVolume = 1f;
         private float effectsVolume = 1f;
         private float effectsMix = 1f;
         private float duckRemaining;
+        private double runDurationSeconds;
+        private bool bossActive;
+        private string bossId = string.Empty;
+        private int bossPhase;
+        private bool hasMixState;
+        private PresentationMixState mixState;
 
         public AudioRequestRouter(Transform owner)
-            : this(owner, 32, 8, 8)
+            : this(owner, null)
+        {
+        }
+
+        public AudioRequestRouter(Transform owner, FormalAudioCatalog catalog)
+            : this(
+                owner,
+                ProductionSourceCapacity,
+                ProductionReservedCriticalCapacity,
+                8,
+                catalog,
+                catalog == null ? 2 : ProductionStemCapacity)
         {
         }
 
         public AudioRequestRouter(Transform owner, int maximumCapacity, int reservedCriticalCapacity, int prewarm)
+            : this(owner, maximumCapacity, reservedCriticalCapacity, prewarm, null, 2)
+        {
+        }
+
+        private AudioRequestRouter(
+            Transform owner,
+            int maximumCapacity,
+            int reservedCriticalCapacity,
+            int prewarm,
+            FormalAudioCatalog catalog,
+            int stemCapacity)
         {
             root = owner ?? throw new ArgumentNullException(nameof(owner));
-            if (maximumCapacity <= 2) throw new ArgumentOutOfRangeException(nameof(maximumCapacity));
-            var transientCapacity = maximumCapacity - 2;
+            if (maximumCapacity <= stemCapacity) throw new ArgumentOutOfRangeException(nameof(maximumCapacity));
+            transientCapacity = maximumCapacity - stemCapacity;
             if (reservedCriticalCapacity < 0 || reservedCriticalCapacity >= transientCapacity)
                 throw new ArgumentOutOfRangeException(nameof(reservedCriticalCapacity));
             if (prewarm < 0 || prewarm > transientCapacity) throw new ArgumentOutOfRangeException(nameof(prewarm));
-            this.maximumCapacity = transientCapacity;
             this.reservedCriticalCapacity = reservedCriticalCapacity;
+            formalCatalog = catalog;
+            ownsGeneratedClips = catalog == null;
             all = new List<RoutedAudioSource>(transientCapacity);
             available = new Stack<RoutedAudioSource>(transientCapacity);
             active = new List<RoutedAudioSource>(transientCapacity);
             cueClips = new AudioClip[Enum.GetValues(typeof(PresentationAudioCue)).Length];
             cooldowns = new float[cueClips.Length];
-            cueClips[(int)PresentationAudioCue.Hit] = CreateTestTone("G2_7_HitTone", 660f, 0.05f);
-            cueClips[(int)PresentationAudioCue.Death] = CreateTestTone("G2_7_DeathTone", 220f, 0.11f);
-            cueClips[(int)PresentationAudioCue.Pickup] = CreateTestTone("G2_7_PickupTone", 880f, 0.08f);
-            cueClips[(int)PresentationAudioCue.MechanicRise] = CreateTestTone("G2_7_MechanicTone", 520f, 0.16f);
-            cueClips[(int)PresentationAudioCue.Objective] = CreateTestTone("G2_7_ObjectiveTone", 740f, 0.14f);
-            cueClips[(int)PresentationAudioCue.Danger] = CreateTestTone("G2_7_DangerTone", 150f, 0.18f);
-            cueClips[(int)PresentationAudioCue.BossPhase] = CreateTestTone("G2_7_BossTone", 110f, 0.28f);
-            cueClips[(int)PresentationAudioCue.Confirm] = CreateTestTone("G2_7_ConfirmTone", 780f, 0.07f);
-            musicSource = CreateLoopSource("G2_7_GeneratedMusic", CreateLoop("G2_7_MusicLoop", 110f, 165f));
-            ambienceSource = CreateLoopSource("G2_7_GeneratedAmbience", CreateLoop("G2_7_AmbienceLoop", 55f, 82.5f));
+            stemSources = new AudioSource[stemCapacity];
+            if (formalCatalog == null) ConfigureFallbackClips();
+            else ConfigureFormalClips();
+            StartConfiguredStems();
             for (var index = 0; index < prewarm; index++) available.Push(Create());
             SetMix(1f, 1f, 1f, 1f, PresentationMixState.Gameplay);
         }
 
         public int ActiveCount => active.Count;
-        public int CreatedSourceCount => all.Count + 2;
+        public int CreatedSourceCount => all.Count + stemSources.Length;
+        public int SourceCapacity => transientCapacity + stemSources.Length;
+        public int StemCapacity => stemSources.Length;
+        public int ReservedCriticalCapacity => reservedCriticalCapacity;
+        public bool FormalCatalogLoaded => formalCatalog != null;
+        public bool UsingTestToneFallback => ownsGeneratedClips;
+        public bool HighPressureStemActive => runDurationSeconds >= 630d && !bossActive;
+        public int CurrentBossPhase => bossActive ? bossPhase : -1;
+        public PresentationMixState CurrentMixState => mixState;
+        public int SnapshotTransitionCount { get; private set; }
+        public int StemScheduleBatchCount { get; private set; }
+        public int ConfiguredStemCount
+        {
+            get
+            {
+                var count = 0;
+                for (var index = 0; index < stemSources.Length; index++)
+                    if (stemSources[index] != null && stemSources[index].clip != null) count++;
+                return count;
+            }
+        }
         public int PeakActiveCount { get; private set; }
         public long DroppedRequestCount { get; private set; }
         public long SuppressedCooldownCount { get; private set; }
@@ -418,7 +468,7 @@ namespace Game.Presentation
                 return false;
             }
 
-            var ordinaryLimit = maximumCapacity - reservedCriticalCapacity;
+            var ordinaryLimit = transientCapacity - reservedCriticalCapacity;
             RoutedAudioSource item = null;
             if (priority != PresentationPriority.CriticalDanger && active.Count >= ordinaryLimit)
             {
@@ -426,7 +476,7 @@ namespace Game.Presentation
                 return false;
             }
             if (available.Count > 0) item = available.Pop();
-            else if (all.Count < maximumCapacity) item = Create();
+            else if (all.Count < transientCapacity) item = Create();
             else
             {
                 var candidate = FindEvictionCandidate(priority);
@@ -481,6 +531,17 @@ namespace Game.Presentation
             musicVolume = Mathf.Clamp01(music);
             ambienceVolume = Mathf.Clamp01(ambience);
             effectsVolume = Mathf.Clamp01(effects);
+            if (!hasMixState || mixState != state)
+            {
+                mixState = state;
+                hasMixState = true;
+                var snapshot = formalCatalog == null ? null : formalCatalog.GetSnapshot(state);
+                if (snapshot != null)
+                {
+                    snapshot.TransitionTo(0.08f);
+                    SnapshotTransitionCount++;
+                }
+            }
             float musicMix;
             float ambienceMix;
             switch (state)
@@ -492,7 +553,7 @@ namespace Game.Presentation
                     break;
                 case PresentationMixState.Story:
                     musicMix = 0.2f;
-                    ambienceMix = 0.1f;
+                    ambienceMix = 0.2f * StoryEnvironmentDuckLinear;
                     effectsMix = 0.65f;
                     break;
                 case PresentationMixState.Boss:
@@ -506,9 +567,43 @@ namespace Game.Presentation
                     effectsMix = 1f;
                     break;
             }
-            musicSource.volume = masterVolume * musicVolume * musicMix;
-            ambienceSource.volume = masterVolume * ambienceVolume * ambienceMix;
+            ApplyStemVolumes(musicMix, ambienceMix);
             ApplyEffectVolumes();
+        }
+
+        public void SetStemState(double durationSeconds, bool hasBoss, string activeBossId, int activeBossPhase)
+        {
+            runDurationSeconds = Math.Max(0d, durationSeconds);
+            var normalizedBossId = activeBossId ?? string.Empty;
+            var normalizedPhase = Mathf.Clamp(activeBossPhase, 0, 2);
+            var identityChanged = !string.Equals(bossId, normalizedBossId, StringComparison.Ordinal);
+            bossActive = hasBoss;
+            bossId = normalizedBossId;
+            bossPhase = normalizedPhase;
+            if (formalCatalog != null && identityChanged) ConfigureBossStems();
+        }
+
+        public bool TryGetActiveCueVolume(PresentationAudioCue cue, out float volume)
+        {
+            for (var index = 0; index < active.Count; index++)
+            {
+                if (active[index].Cue != cue) continue;
+                volume = active[index].Source.volume;
+                return true;
+            }
+            volume = 0f;
+            return false;
+        }
+
+        public bool TryGetStemVolume(int index, out float volume)
+        {
+            if (index >= 0 && index < stemSources.Length && stemSources[index] != null)
+            {
+                volume = stemSources[index].volume;
+                return true;
+            }
+            volume = 0f;
+            return false;
         }
 
         public void Tick(float unscaledDeltaTime)
@@ -533,14 +628,16 @@ namespace Game.Presentation
         {
             for (var index = all.Count - 1; index >= 0; index--)
                 UnityObjectLifetime.Destroy(all[index].Source.gameObject);
-            for (var index = 0; index < cueClips.Length; index++)
-                if (cueClips[index] != null) UnityObjectLifetime.Destroy(cueClips[index]);
-            var musicClip = musicSource.clip;
-            var ambienceClip = ambienceSource.clip;
-            UnityObjectLifetime.Destroy(musicSource.gameObject);
-            UnityObjectLifetime.Destroy(ambienceSource.gameObject);
-            UnityObjectLifetime.Destroy(musicClip);
-            UnityObjectLifetime.Destroy(ambienceClip);
+            if (ownsGeneratedClips)
+                for (var index = 0; index < cueClips.Length; index++)
+                    if (cueClips[index] != null) UnityObjectLifetime.Destroy(cueClips[index]);
+            for (var index = 0; index < stemSources.Length; index++)
+            {
+                if (stemSources[index] == null) continue;
+                var clip = stemSources[index].clip;
+                UnityObjectLifetime.Destroy(stemSources[index].gameObject);
+                if (ownsGeneratedClips && clip != null) UnityObjectLifetime.Destroy(clip);
+            }
             all.Clear();
             active.Clear();
             available.Clear();
@@ -552,6 +649,7 @@ namespace Game.Presentation
             objectValue.transform.SetParent(root, false);
             var value = new RoutedAudioSource { Source = objectValue.AddComponent<AudioSource>() };
             value.Source.playOnAwake = false;
+            value.Source.outputAudioMixerGroup = formalCatalog == null ? null : formalCatalog.OutputGroup;
             all.Add(value);
             return value;
         }
@@ -564,8 +662,110 @@ namespace Game.Presentation
             source.playOnAwake = false;
             source.loop = true;
             source.clip = clip;
-            if (UnityEngine.Application.isPlaying) source.Play();
+            source.outputAudioMixerGroup = formalCatalog == null ? null : formalCatalog.OutputGroup;
             return source;
+        }
+
+        private void ConfigureFallbackClips()
+        {
+            cueClips[(int)PresentationAudioCue.Hit] = CreateTestTone("G2_7_HitTone", 660f, 0.05f);
+            cueClips[(int)PresentationAudioCue.Death] = CreateTestTone("G2_7_DeathTone", 220f, 0.11f);
+            cueClips[(int)PresentationAudioCue.Pickup] = CreateTestTone("G2_7_PickupTone", 880f, 0.08f);
+            cueClips[(int)PresentationAudioCue.MechanicRise] = CreateTestTone("G2_7_MechanicTone", 520f, 0.16f);
+            cueClips[(int)PresentationAudioCue.Objective] = CreateTestTone("G2_7_ObjectiveTone", 740f, 0.14f);
+            cueClips[(int)PresentationAudioCue.Danger] = CreateTestTone("G2_7_DangerTone", 150f, 0.18f);
+            cueClips[(int)PresentationAudioCue.BossPhase] = CreateTestTone("G2_7_BossTone", 110f, 0.28f);
+            cueClips[(int)PresentationAudioCue.Confirm] = CreateTestTone("G2_7_ConfirmTone", 780f, 0.07f);
+            cueClips[(int)PresentationAudioCue.UiNavigate] = CreateTestTone("G3_2_UiNavigateTone", 880f, 0.05f);
+            cueClips[(int)PresentationAudioCue.UiCancel] = CreateTestTone("G3_2_UiCancelTone", 420f, 0.08f);
+            cueClips[(int)PresentationAudioCue.UiPageOpen] = CreateTestTone("G3_2_UiPageTone", 560f, 0.1f);
+            cueClips[(int)PresentationAudioCue.UiTabChange] = CreateTestTone("G3_2_UiTabTone", 720f, 0.06f);
+            cueClips[(int)PresentationAudioCue.UiChoiceSelect] = CreateTestTone("G3_2_UiChoiceTone", 820f, 0.09f);
+            cueClips[(int)PresentationAudioCue.UiLocked] = CreateTestTone("G3_2_UiLockedTone", 260f, 0.12f);
+            cueClips[(int)PresentationAudioCue.UiNotification] = CreateTestTone("G3_2_UiNoticeTone", 940f, 0.14f);
+            cueClips[(int)PresentationAudioCue.UiPauseToggle] = CreateTestTone("G3_2_UiPauseTone", 480f, 0.09f);
+            stemSources[0] = CreateLoopSource("G2_7_GeneratedAmbience", CreateLoop("G2_7_AmbienceLoop", 55f, 82.5f));
+            stemSources[1] = CreateLoopSource("G2_7_GeneratedMusic", CreateLoop("G2_7_MusicLoop", 110f, 165f));
+        }
+
+        private void ConfigureFormalClips()
+        {
+            for (var index = 1; index < cueClips.Length; index++)
+                formalCatalog.TryResolveCue((PresentationAudioCue)index, out cueClips[index]);
+
+            SetStemClip(0, "Qinglan_Ambience", "qinglan/audio/ambience/courtyard-wind");
+            SetStemClip(1, "Qinglan_Music_Air", "qinglan/audio/music/exploration-air");
+            SetStemClip(2, "Qinglan_Music_Strings", "qinglan/audio/music/exploration-strings");
+            SetStemClip(3, "Qinglan_Music_Combat", "qinglan/audio/music/combat-rhythm");
+            SetStemClip(4, "Qinglan_Music_Pressure", "qinglan/audio/music/high-pressure-drive");
+            ConfigureBossStems();
+        }
+
+        private void ConfigureBossStems()
+        {
+            if (stemSources.Length < ProductionStemCapacity) return;
+            for (var phase = 0; phase < 3; phase++)
+            {
+                formalCatalog.TryResolveBossStem(bossId, phase, out var clip);
+                SetStemClip(phase + 5, "Qinglan_Boss_Phase_" + (phase + 1), clip);
+            }
+            if (UnityEngine.Application.isPlaying && hasMixState) ScheduleStems(5, 8);
+        }
+
+        private void SetStemClip(int index, string name, string address)
+        {
+            formalCatalog.TryResolveClip(address, out var clip);
+            SetStemClip(index, name, clip);
+        }
+
+        private void SetStemClip(int index, string name, AudioClip clip)
+        {
+            if (index < 0 || index >= stemSources.Length) return;
+            if (stemSources[index] == null)
+            {
+                stemSources[index] = CreateLoopSource(name, clip);
+                return;
+            }
+            if (stemSources[index].clip == clip) return;
+            stemSources[index].Stop();
+            stemSources[index].clip = clip;
+        }
+
+        private void StartConfiguredStems()
+        {
+            if (UnityEngine.Application.isPlaying) ScheduleStems(0, stemSources.Length);
+        }
+
+        private void ScheduleStems(int first, int exclusiveLast)
+        {
+            var dspStart = AudioSettings.dspTime + 0.08d;
+            for (var index = first; index < exclusiveLast; index++)
+            {
+                if (stemSources[index] == null || stemSources[index].clip == null) continue;
+                stemSources[index].Stop();
+                stemSources[index].PlayScheduled(dspStart);
+            }
+            StemScheduleBatchCount++;
+        }
+
+        private void ApplyStemVolumes(float musicMix, float ambienceMix)
+        {
+            if (stemSources.Length == 2)
+            {
+                stemSources[0].volume = masterVolume * ambienceVolume * ambienceMix;
+                stemSources[1].volume = masterVolume * musicVolume * musicMix;
+                return;
+            }
+
+            var ambience = masterVolume * ambienceVolume * ambienceMix;
+            var music = masterVolume * musicVolume * musicMix;
+            stemSources[0].volume = ambience;
+            stemSources[1].volume = music * (bossActive ? 0.18f : 0.82f);
+            stemSources[2].volume = music * (bossActive ? 0.12f : 0.62f);
+            stemSources[3].volume = music * (!bossActive && runDurationSeconds >= 120d ? 0.72f : 0f);
+            stemSources[4].volume = music * (!bossActive && runDurationSeconds >= 630d ? 0.76f : 0f);
+            for (var phase = 0; phase < 3; phase++)
+                stemSources[phase + 5].volume = music * (bossActive && bossPhase == phase ? 0.92f : 0f);
         }
 
         private int FindEvictionCandidate(PresentationPriority incoming)
@@ -597,7 +797,8 @@ namespace Game.Presentation
 
         private float ResolveEffectVolume(RoutedAudioSource item)
         {
-            var duck = duckRemaining > 0f && item.Priority != PresentationPriority.CriticalDanger ? 0.5f : 1f;
+            var duck = duckRemaining > 0f && item.Priority != PresentationPriority.CriticalDanger ?
+                OrdinaryDuckLinear : 1f;
             return item.BaseVolume * masterVolume * effectsVolume * effectsMix * duck;
         }
 
@@ -605,9 +806,11 @@ namespace Game.Presentation
         {
             switch (cue)
             {
-                case PresentationAudioCue.Hit: return 0.035f;
+                case PresentationAudioCue.Hit: return 0.04f;
                 case PresentationAudioCue.Pickup: return 0.08f;
                 case PresentationAudioCue.Danger: return 0.12f;
+                case PresentationAudioCue.UiNavigate: return 0.04f;
+                case PresentationAudioCue.UiTabChange: return 0.06f;
                 default: return 0.05f;
             }
         }

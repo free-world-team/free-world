@@ -62,6 +62,11 @@ G3.1 已在统一实现分支完成 27/27 Manifest ART 批次和最终运行时�
 `Docs/Reports/2026-08-10-g3-1-formal-visual-final-integration.md`。下一工作包只进入 G3.2 正式音频，
 不得提前制作 G3.3 字体/正文或执行 G3.4 数值冻结。
 
+G3.2 已在统一实现分支完成 9/9 Manifest AUDIO 批次、104 Clip Catalog、Mixer/Router 与最终构建门禁，
+实际证据见 `25_G3_2_FORMAL_AUDIO.md` 与
+`Docs/Reports/2026-08-10-g3-2-formal-audio-final-integration.md`。下一工作包只进入 G3.3 正式字体、
+简中/英文/Pseudo 与正文可读性，不得提前执行 G3.4 数值冻结。
+
 ## 5. G3 发布候选
 
 | 顺序 | 分支建议 | 交付物 | 退出门禁 |
