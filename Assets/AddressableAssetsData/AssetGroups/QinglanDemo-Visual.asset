@@ -343,6 +343,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6074d9dc6de5c4a4189ad5427857ccbe
+    m_Address: qinglan/objective/wind-altar/guide/state-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 60ebb19218659cb4da2806673c580c9f
     m_Address: qinglan/profile/enemy/explosive-seed-pod
     m_ReadOnly: 0
@@ -433,6 +441,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8e0812f9fe2e0cb469bc8ed871ba0c43
     m_Address: qinglan/map/old-court/region/south-guest-court/tile-kit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93ab4981dad43e74c844bffc2ca12856
+    m_Address: qinglan/objective/wind-altar/listen/state-atlas
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -553,6 +569,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c21c19e7f5d67d2409599036d6c07c4c
     m_Address: qinglan/skill/evolved/earth-vein-spring-branch/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c5e9fbfffec74514d8ce2df0051ef8aa
+    m_Address: qinglan/objective/wind-altar/stop-balance/state-atlas
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

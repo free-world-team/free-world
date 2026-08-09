@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 14 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 15 / 27 ART BATCHES`
 - 日期：2026-08-09
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -68,7 +68,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 12 | ART-RELIC-001 | PASS | 六战斗奇物各 1 张 256 Icon；EditMode 334/334、PlayMode 17/17、Validation PASS |
 | 13 | ART-MAP-001 | PASS | 五区域各 1 张 4096×1024 working master、2048×512 final、16 个 256×256 Tile；EditMode 337/337、PlayMode 17/17、Validation PASS |
 | 14 | ART-MAP-002 | PASS | 五区域各 1 张 4096×1024 working master、2048×512 final、16 个 256×256 Prop；EditMode 340/340、PlayMode 17/17、Validation PASS |
-| 15—27 | ART-OBJECTIVE-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 15 | ART-OBJECTIVE-001 | PASS | 听风/引风/止衡三座风脉台各 1 张 3×1、960×320 三态 Atlas；EditMode 343/343、PlayMode 17/17、Validation PASS |
+| 16—27 | ART-EVENT-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -172,3 +173,12 @@ soft matte/despill 去背、逐格 Alpha 裁切和安全边归一化后，派生
 安全边≥24 px，洋红残留和精确 P0 危险红均为 0。完整链第二次处理 15/15 Hash 字节一致。正式地址为
 `qinglan/map/old-court/region/<region>/prop-set`；场景摆放、遮挡排序、碰撞和正式目录接入由 G3.1 最终
 集成关闭。
+
+ART-OBJECTIVE-001 为听风台、引风台、止衡台分别生成 Idle/Active/Complete 三态。听风台初版因底座
+出现拟人面具式石雕在源级人工 QA 判定 `FAIL`，失败候选保留但不处理/寻址；重生成后使用纯几何圆环与
+听风翼。引风台用方台、四向风槽和风叶展开，止衡台用八角台、对向衡板和配重归位。三份批准 source
+经 soft matte/despill 去背后，派生 2048² source master、1920×640 state master 和 960×320 final；
+九个 320×320 状态均唯一，安全边≥20 px，覆盖率 41.49%—63.66%，Active/Complete 的青色能量像素均
+高于 Idle，洋红残留和精确 P0 危险红为 0。完整链第二次处理 12/12 Hash 字节一致。正式地址为
+`qinglan/objective/wind-altar/<listen|guide|stop-balance>/state-atlas`；状态机到 Sprite 切换由 G3.1
+最终集成关闭。

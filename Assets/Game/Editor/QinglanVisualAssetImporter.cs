@@ -244,6 +244,13 @@ namespace Game.Editor
         {
             if (rows == 1 && columns == 1) return prefix;
 
+            if (rows == 1 && columns == 3 &&
+                prefix.Contains(".objective.", StringComparison.Ordinal))
+            {
+                var states = new[] { "idle", "active", "complete" };
+                return prefix + "." + states[column];
+            }
+
             if (rows == 4 && columns == 6)
             {
                 var directions = new[] { "down", "left", "right", "up" };

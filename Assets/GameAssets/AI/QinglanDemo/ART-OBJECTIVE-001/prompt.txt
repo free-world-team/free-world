@@ -1,0 +1,32 @@
+ART-OBJECTIVE-001 — three approved text-only built-in ImageGen sources plus one rejected candidate
+Use case: stylized-concept
+Asset type: commercial Unity 2D wind-altar state sprite atlas for Qinglan Old Court
+Shared layout: exactly three variants in one strict horizontal row of equal cells, left-to-right Idle, Active, Complete, at least 15 percent clearance
+Shared camera/style: one altar identity per sheet, orthographic three-quarter top-down view, hand-painted Chinese-fantasy game sprite, low saturation, clean state silhouette progression
+Shared backdrop: flat pure chroma magenta #FF00FF across the image and gutters; no ground, shadow, scenery, frame, divider, caption, or UI
+Shared exclusions: no people, creatures, weapons, faces, masks, skulls, animals, statues, runes, seals, readable text, calligraphy, numbers, logo, watermark, brand, religious imagery, treasure chest, fire, danger red/orange, opaque magic backdrop, crop, or extra variants
+
+REJECTED CALL — listen-wind-altar initial candidate
+Requested a circular dark-stone hollow dais with three folded/listening fins and Idle/Active/Complete teal-wind progression.
+Rejected in source-level visual QA because the service added anthropomorphic mask-like stone carvings around the base.
+The rejected output is retained at source/rejected/listen-wind-altar-faces-rejected.png and is never processed or addressable.
+
+APPROVED CALL 1 — listen-wind-altar retry
+Idle: circular dark-stone hollow dais, three folded curved listening fins, no glow.
+Active: same dais, fins lifted, one teal spiral enters the hollow, pale-cyan resonance beads orbit.
+Complete: same dais, symmetric open listening crown, clean concentric teal/ivory wind rings, calm resolved energy.
+Retry added strict plain-geometry-only constraints and explicitly excluded faces, masks, heads, eyes, mouths, skulls, bones, animals, statues, figurines, gargoyles, totems, emblems, runes, seals, and carved symbols.
+
+APPROVED CALL 2 — guide-wind-altar
+Idle: chamfered square stone dais, four converging channels and four folded vane arms, no glow.
+Active: same dais, vanes rotate into a pinwheel silhouette, a broad teal stream crosses the channels, cyan flow beads mark direction without arrows.
+Complete: same dais, vanes align as an open diamond crown, two coherent wind paths and pale-ivory center resolve the flow.
+
+APPROVED CALL 3 — stop-balance-wind-altar
+Idle: octagonal dark-stone dais, opposing semicircular balance plates around an empty center, no glow.
+Active: same dais, plates offset asymmetrically, segmented teal/ivory balance arcs and four moving square counterweights.
+Complete: same dais, exact bilateral symmetry, locked double ring, evenly seated counterweights and restrained teal core halo.
+
+Input images for all calls: none.
+Reference images for all calls: none.
+Requested in-image text for all calls: none.
