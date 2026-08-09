@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 12 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 13 / 27 ART BATCHES`
 - 日期：2026-08-09
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -66,7 +66,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 10 | ART-STATUS-001 | PASS | 七状态＋两伤害策略各 1 张 1024 source、512 final；EditMode 328/328、PlayMode 17/17、Validation PASS |
 | 11 | ART-PICKUP-001 | PASS | 六即时灵物各 1 张 256 Sprite＋128 Icon；EditMode 331/331、PlayMode 17/17、Validation PASS |
 | 12 | ART-RELIC-001 | PASS | 六战斗奇物各 1 张 256 Icon；EditMode 334/334、PlayMode 17/17、Validation PASS |
-| 13—27 | ART-MAP-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 13 | ART-MAP-001 | PASS | 五区域各 1 张 4096×1024 working master、2048×512 final、16 个 256×256 Tile；EditMode 337/337、PlayMode 17/17、Validation PASS |
+| 14—27 | ART-MAP-002—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -155,3 +156,10 @@ ART-RELIC-001 对断剑穗、风脉铜片、药圃种囊、听风木芯、旧庭
 六张 256 Icon；Alpha≥16 覆盖率为 43.03%—53.61%，安全边≥16 px，四角透明，洋红残留和 P0 危险红
 均为 0，六种 Bounds 全部唯一；二次处理 12/12 working/final Hash 字节一致。正式地址为
 `qinglan/relic/<name>/icon`；RelicId 到 Icon 的运行时映射由 G3.1 最终集成关闭。
+
+ART-MAP-001 对中央练剑场、西侧药圃、东侧藏剑廊、北侧旧山门、南侧迎客庭分别执行一次无图片输入的
+ImageGen 调用。五份 1254×1254 全幅正交地表 source 被确定性归一化为 4×4 逻辑格，再打包为每区一张
+4096×1024 working master 和 2048×512 final；每张 final 含 16 个唯一 256×256 Tile，完全不透明，
+精确 P0 危险红为 0，逻辑格平均接缝差为 3.5992—8.6831（预算≤12）。二次处理 10/10 working/final
+Hash 字节一致。正式地址为 `qinglan/map/old-court/region/<region>/tile-kit`；地图绘制、Tile 规则与正式
+PresentationId 接入由 G3.1 最终集成关闭。

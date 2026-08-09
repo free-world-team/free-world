@@ -1,0 +1,36 @@
+ART-MAP-001 — five independent text-only built-in ImageGen calls
+Use case: stylized-concept
+Asset type: commercial Unity 2D tilemap material source for Qinglan Old Court
+Shared scene/backdrop: full-bleed ground texture filling the square edge to edge; no horizon, background, transparency, border, or vignette
+Shared style: hand-painted top-down 2D game environment texture, clean readable shapes, low-saturation Qinglan old-court palette, production-ready base material
+Shared composition: exact top-down orthographic, uniform scale, evenly distributed detail, no central focal object, suitable for deterministic tile derivation
+Shared lighting: neutral diffuse light with no directional cast shadows
+Shared constraints: no props, walls, weapons, people, text, calligraphy, logos, watermarks, religious or trademarked symbols; no exact #E45D45 danger red; no perspective or isometric view
+
+CALL 1 — central-training-ground
+Primary request: broad warm-gray stone slabs, sparse straight expansion joints, restrained pale-ivory aggregate, faint teal mineral weathering, and a few shallow scuff arcs that never form letters or symbols.
+Mood/function: clean, open, low-detail combat convergence and starting area.
+
+CALL 2 — west-herb-garden
+Primary request: muted brown garden soil with irregular celadon stepping-stone patches, soft moss seams, scattered broad herb leaves pressed flat into the material, and subtle pale-cyan moisture traces.
+Mood/function: organic growth region and narrower route identity.
+Avoid: standing plants, flowers, pots, tools, fences, creatures, dense grass, realistic mud photography.
+
+CALL 3 — east-sword-gallery
+Primary request: long cool slate paving strips arranged in alternating straight rows, aged copper divider inlays, restrained teal oxidation, small ivory stone chips, and repeated linear corridor rhythm.
+Mood/function: straight and angled combat corridors.
+Avoid: swords, racks, pillars, hallway perspective, strong reflections, checkerboard.
+
+CALL 4 — north-old-gate
+Primary request: large dark mountain-granite blocks, broad weathered joints, muted blue-green lichen, pale cold stone edges, sparse wind-polished grit, heavier and older than the central courtyard.
+Mood/function: final Boss forecourt, clear walkable ground without ominous horror styling.
+Avoid: gate, snow, dungeon floor, apocalypse, dramatic cracks or darkness.
+
+CALL 5 — south-guest-court
+Primary request: warm beige sandstone pavers with restrained honey-brown joints, thin desaturated teal rain channels, and a few pale fallen leaf silhouettes embedded flat into the paint.
+Mood/function: welcoming teaching, recovery and narrative region.
+Avoid: pavilion, furniture, lamps, bright autumn red, realistic photography, dramatic sunlight.
+
+Input images for all five calls: none.
+Reference images for all five calls: none.
+Requested in-image text for all five calls: none.

@@ -175,6 +175,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2898a5a0491acc048acb72669d77b0ed
+    m_Address: qinglan/map/old-court/region/east-sword-gallery/tile-kit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2a21df4c13cb7654a9039a5b81405c8f
     m_Address: qinglan/profile/skill/base/lihuo-wheel
     m_ReadOnly: 0
@@ -241,6 +249,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3b48322428307cd4baf260183de2c3fc
     m_Address: qinglan/boss/tingfeng/phase-3-overlay
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4a535121520e97740aa0fd471013ea82
+    m_Address: qinglan/map/old-court/region/west-herb-garden/tile-kit
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -391,6 +407,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e0812f9fe2e0cb469bc8ed871ba0c43
+    m_Address: qinglan/map/old-court/region/south-guest-court/tile-kit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 97be456b892f41f43a323761562b14b1
     m_Address: qinglan/status/slowed/visual
     m_ReadOnly: 0
@@ -495,6 +519,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c00719c9813b0dc49950471ebd6237a7
+    m_Address: qinglan/map/old-court/region/north-old-gate/tile-kit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c21c19e7f5d67d2409599036d6c07c4c
     m_Address: qinglan/skill/evolved/earth-vein-spring-branch/vfx
     m_ReadOnly: 0
@@ -561,6 +593,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d0c94528884dac7488fee971b412fc4b
     m_Address: qinglan/status/armor-broken/visual
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2a41ea0aafaad940ab81fb63b8dc7e4
+    m_Address: qinglan/map/old-court/region/central-training-ground/tile-kit
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
