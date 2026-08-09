@@ -56,9 +56,12 @@ namespace Game.Tests.EditMode
             var pack = RequirePack();
             var settings = AddressableAssetSettingsDefaultObject.GetSettings(false);
             Assert.That(settings, Is.Not.Null);
-            var english = LocalizationEditorSettings.GetStringTableCollection("UI")
+            // Wizard fixtures remain placeholder content and therefore stay outside the formal UI release table.
+            var english = LocalizationEditorSettings.GetStringTableCollection(
+                    QinglanG33LocalizationIntegration.LegacyUiCollection)
                 ?.GetTable("en") as StringTable;
-            var chinese = LocalizationEditorSettings.GetStringTableCollection("UI")
+            var chinese = LocalizationEditorSettings.GetStringTableCollection(
+                    QinglanG33LocalizationIntegration.LegacyUiCollection)
                 ?.GetTable("zh-Hans") as StringTable;
             Assert.That(english, Is.Not.Null);
             Assert.That(chinese, Is.Not.Null);

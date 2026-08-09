@@ -1,0 +1,790 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: f3a43a8b5a116634c8fa56e2b33e2ce8, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 916332544
+    m_Localized: The platform operation was cancelled.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 996024320
+    m_Localized: The platform operation failed; local play remains enabled.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218624
+    m_Localized: Platform services are unavailable; local play remains enabled.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218625
+    m_Localized: Saving was cancelled.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218626
+    m_Localized: The save checksum is invalid.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218627
+    m_Localized: The save format is invalid.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218628
+    m_Localized: The run result is invalid and was not saved.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218629
+    m_Localized: The save file could not be accessed.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218630
+    m_Localized: This save cannot be migrated.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218631
+    m_Localized: No previous save was found.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218632
+    m_Localized: This run cannot resume because content is missing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218633
+    m_Localized: Recovery rejection is not valid in the current state.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218634
+    m_Localized: A collectible in the result is unavailable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218635
+    m_Localized: The result contains duplicate currency entries.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218636
+    m_Localized: The result contains an invalid currency entry.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218637
+    m_Localized: A story in the result is unavailable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218638
+    m_Localized: A unique reward in the result is invalid.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218639
+    m_Localized: Unlocked result content is unavailable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218640
+    m_Localized: The run character or map is unavailable.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218641
+    m_Localized: This save requires a newer game version.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218642
+    m_Localized: The file could not be saved.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218643
+    m_Localized: The previous run cannot be continued. Start a new run to clear its
+      recovery marker.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218644
+    m_Localized: Progress saved.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218645
+    m_Localized: An unavailable unlock was retained for diagnostics.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218646
+    m_Localized: The previous save backup was restored.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218647
+    m_Localized: Starting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1000218648
+    m_Localized: Select Character
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412928
+    m_Localized: Apply
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412929
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412930
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412931
+    m_Localized: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412932
+    m_Localized: Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412933
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412934
+    m_Localized: Details
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412935
+    m_Localized: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412936
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412937
+    m_Localized: Off
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412938
+    m_Localized: On
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412939
+    m_Localized: Previous
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412940
+    m_Localized: Reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412941
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412942
+    m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412943
+    m_Localized: Content Error
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412944
+    m_Localized: Skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412945
+    m_Localized: Choose Upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412946
+    m_Localized: Loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412947
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412948
+    m_Localized: Start Test Run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412949
+    m_Localized: Free World Framework
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412950
+    m_Localized: Select Map
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412951
+    m_Localized: End Run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412952
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412953
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412954
+    m_Localized: Paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412955
+    m_Localized: "\u25B2 DANGER  \xB7  \u226B DIRECTION  \xB7  !!! IMPACT\nWarnings
+      retain shape, direction, boundary, and sound when color, flash, vibration,
+      or damage numbers are reduced."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412956
+    m_Localized: Evolution requirements met
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412957
+    m_Localized: New build branch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412958
+    m_Localized: Run reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412959
+    m_Localized: Upgrades current build
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412960
+    m_Localized: Evolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412961
+    m_Localized: Mind Art
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412962
+    m_Localized: Relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412963
+    m_Localized: Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412964
+    m_Localized: Weapon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412965
+    m_Localized: The Demo currently follows Lu Qingye.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412966
+    m_Localized: Choose a Sword Bearer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412967
+    m_Localized: Collected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412968
+    m_Localized: Explore landmarks and stories to reveal this record.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412969
+    m_Localized: Unknown
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412970
+    m_Localized: Unavailable content
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412971
+    m_Localized: Stable error code
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412972
+    m_Localized: Freezing the immutable run result.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412973
+    m_Localized: The Wind Settles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412974
+    m_Localized: Locked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412975
+    m_Localized: Return to Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412976
+    m_Localized: Spirit Sand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412977
+    m_Localized: Set Out Again
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412978
+    m_Localized: Four facilities consume the same permanent profile.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412979
+    m_Localized: Qinglan Mountain Gate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412980
+    m_Localized: Oath Keeper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412981
+    m_Localized: BUILD
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412982
+    m_Localized: Enemies Defeated
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412983
+    m_Localized: Elapsed Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412984
+    m_Localized: Elite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412985
+    m_Localized: Sword Insight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412986
+    m_Localized: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412987
+    m_Localized: Realm Level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412988
+    m_Localized: OBJECTIVES
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412989
+    m_Localized: Current Objective
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412990
+    m_Localized: Objective Complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412991
+    m_Localized: Objective Failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412992
+    m_Localized: Objective Nearby
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412993
+    m_Localized: RUN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412994
+    m_Localized: VITALS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412995
+    m_Localized: Windride
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412996
+    m_Localized: Reroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412997
+    m_Localized: Replace this frozen ordinary offer set.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412998
+    m_Localized: Skip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004412999
+    m_Localized: Consume this level-up without a selection.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413000
+    m_Localized: Cards describe behavior, level change, and build relation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413001
+    m_Localized: Choose a New Sword Path
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413002
+    m_Localized: Validating content and assembling the run.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413003
+    m_Localized: Opening the Old Court
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413004
+    m_Localized: Confirm Apply
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413005
+    m_Localized: This replaces the active branch and insert selection after validation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413006
+    m_Localized: Apply Loadout?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413007
+    m_Localized: Ride the Wind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413008
+    m_Localized: Load the Old Court and create one owned run.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413009
+    m_Localized: Only the saved, validated loadout enters the run.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413010
+    m_Localized: Set the Mountain-Vein Loadout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413011
+    m_Localized: Oath Keeper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413012
+    m_Localized: Landmark
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413013
+    m_Localized: Objective
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413014
+    m_Localized: Sword Bearer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413015
+    m_Localized: Shape and progress remain readable without color.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413016
+    m_Localized: Old Court Map
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413017
+    m_Localized: Objectives in the Old Court reshape the final oath.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413018
+    m_Localized: Choose a Realm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413019
+    m_Localized: Confirm Free Reset
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413020
+    m_Localized: The Profile owner validates capacity, prerequisites, and conflicts.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413021
+    m_Localized: Equipped
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413022
+    m_Localized: Owned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413023
+    m_Localized: Loadout saved
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413024
+    m_Localized: Leave This Run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413025
+    m_Localized: Keep only rewards permitted for an abandoned run.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413026
+    m_Localized: Return to the Wind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413027
+    m_Localized: Simulation is paused; interface input remains active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413028
+    m_Localized: Wind Paused
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413029
+    m_Localized: Local profile ready
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413030
+    m_Localized: Binding saved.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413031
+    m_Localized: That control is already bound; choose another.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413032
+    m_Localized: The requested binding is invalid.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413033
+    m_Localized: Returned Before the Oath
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413034
+    m_Localized: Return to the Mountain Gate
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413035
+    m_Localized: Available only after Profile save and Recovery cleanup.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413036
+    m_Localized: The Wind Has Fallen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413037
+    m_Localized: Not saved
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413038
+    m_Localized: Incomplete Record Rejected
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413039
+    m_Localized: Retry Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413040
+    m_Localized: Saved
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413041
+    m_Localized: "Saving\u2026"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413042
+    m_Localized: The frozen result is committed before this page can close.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413043
+    m_Localized: The Old Oath Is Quiet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413044
+    m_Localized: No valid card remains; the deterministic fallback was granted.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413045
+    m_Localized: Eligibility and conflicts were resolved before this page opened.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413046
+    m_Localized: Choose a Manifestation or Relic
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413047
+    m_Localized: Old Court
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413048
+    m_Localized: Ambience Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413049
+    m_Localized: Color Distinction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413050
+    m_Localized: All changes use one saved Settings owner.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413051
+    m_Localized: Effects Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413052
+    m_Localized: Font Size
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413053
+    m_Localized: 100%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413054
+    m_Localized: 125%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413055
+    m_Localized: 150%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413056
+    m_Localized: English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413057
+    m_Localized: Simplified Chinese
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413058
+    m_Localized: Master Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413059
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413060
+    m_Localized: Subtitles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413061
+    m_Localized: Accessibility
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413062
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413063
+    m_Localized: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413064
+    m_Localized: Gameplay
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413065
+    m_Localized: Display
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413066
+    m_Localized: Settings and Accessibility
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413067
+    m_Localized: This memory has not awakened.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413068
+    m_Localized: Story page
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413069
+    m_Localized: Sword Rises in Qinglan
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413070
+    m_Localized: Enter the Old Court
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413071
+    m_Localized: Select Lu Qingye and prepare this run.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413072
+    m_Localized: The old court waits for the wind to return.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413073
+    m_Localized: Progress Saved
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413074
+    m_Localized: Spirit Sand Acquired
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413075
+    m_Localized: Run Reward Secured
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413076
+    m_Localized: New Record Unlocked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413077
+    m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413078
+    m_Localized: Abandoned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413079
+    m_Localized: Completed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413080
+    m_Localized: Defeated
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413081
+    m_Localized: Run Result
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413082
+    m_Localized: Test Run
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413083
+    m_Localized: Auto Aim
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413084
+    m_Localized: Damage Numbers
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413085
+    m_Localized: Stick Deadzone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413086
+    m_Localized: Flash Intensity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413087
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413088
+    m_Localized: Rebind Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413089
+    m_Localized: Screen Shake
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413090
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1004413091
+    m_Localized: Vibration
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

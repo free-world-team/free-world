@@ -61,7 +61,9 @@ namespace Game.Tests.EditMode
             Assert.That(checkedIn.Value.Definitions.Count, Is.EqualTo(first.Value.Definitions.Count));
 
             var settings = AddressableAssetSettingsDefaultObject.GetSettings(false);
-            var collection = LocalizationEditorSettings.GetStringTableCollection("UI");
+            // G3.3 preserves development-only placeholder delivery in the non-release M8 legacy table.
+            var collection = LocalizationEditorSettings.GetStringTableCollection(
+                QinglanG33LocalizationIntegration.LegacyUiCollection);
             var english = collection?.GetTable("en") as StringTable;
             var chinese = collection?.GetTable("zh-Hans") as StringTable;
             Assert.That(settings, Is.Not.Null);

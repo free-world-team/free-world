@@ -37,11 +37,25 @@ namespace Game.Editor
             if (chinese == null) report.Add("M8-LOCALIZATION-TABLE-ZH-HANS", "The Simplified Chinese UI string table is missing.");
             if (english == null || chinese == null) return;
 
-            var keys = M8ProjectSetup.CollectRequiredKeys();
-            for (var index = 0; index < keys.Length; index++)
+            var sharedEntries = collection.SharedData.Entries;
+            if (sharedEntries.Count < QinglanG33UiLocalizationSource.MinimumCount)
+                report.Add(
+                    "G33-LOC-UI-COUNT",
+                    "The formal UI collection requires at least " +
+                    QinglanG33UiLocalizationSource.MinimumCount + " keys but found " + sharedEntries.Count + ".");
+            for (var index = 0; index < sharedEntries.Count; index++)
             {
-                ValidateEntry(english, keys[index], "en", report);
-                ValidateEntry(chinese, keys[index], "zh-Hans", report);
+                ValidateEntry(english, sharedEntries[index].Key, "en", report);
+                ValidateEntry(chinese, sharedEntries[index].Key, "zh-Hans", report);
+            }
+
+            if (pseudoFound)
+            {
+                var pseudo = LocalizationEditorSettings.GetPseudoLocales()[0];
+                var sample = english.GetEntry("ui.qinglan.title.subtitle");
+                if (sample == null || pseudo.Methods.Count == 0 ||
+                    string.Equals(pseudo.GetPseudoString(sample.Value), sample.Value, StringComparison.Ordinal))
+                    report.Add("G33-LOC-PSEUDO", "Pseudo locale must transform the formal English UI table.");
             }
         }
 
@@ -62,6 +76,9 @@ namespace Game.Editor
             var entry = table.GetEntry(key);
             if (entry == null || string.IsNullOrWhiteSpace(entry.Value))
                 report.Add("M8-LOCALIZATION-KEY", locale + " is missing non-empty UI entry '" + key + "'.");
+            else if (entry.Value.IndexOf("[Placeholder]", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                     entry.Value.IndexOf("[占位]", StringComparison.Ordinal) >= 0)
+                report.Add("G33-LOC-PLACEHOLDER", locale + " contains placeholder UI entry '" + key + "'.");
         }
     }
 }

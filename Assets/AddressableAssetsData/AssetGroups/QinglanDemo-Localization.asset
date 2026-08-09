@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: QinglanDemo-Localization
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: QinglanDemo-Localization
+  m_GUID: 2f149c7c3619c6142ab92ceb8c2bab43
+  m_SerializeEntries:
+  - m_GUID: 598d0ac97b0d63c4eb2c0919552321f9
+    m_Address: UI_en
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    - localization.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b876e58d4ed6964f9b2ae4d0d893149
+    m_Address: UI_zh-Hans
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-zh-Hans
+    - Preload
+    - localization.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f3a43a8b5a116634c8fa56e2b33e2ce8
+    m_Address: Assets/GameContent/QinglanDemo/Localization/LOC-UI-001/Tables/UI Shared
+      Data.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - localization.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 78cbfa92888072c49963101845d51bc0, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 54cc8021702d2e045ac1e5c35f245d0b, type: 2}
+    - {fileID: 11400000, guid: a5c3b8d46c642c54893f5c076abfab9a, type: 2}
