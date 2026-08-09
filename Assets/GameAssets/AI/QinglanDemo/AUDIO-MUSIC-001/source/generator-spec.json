@@ -1,0 +1,39 @@
+{
+  "assetId": "AUDIO-MUSIC-001",
+  "bpm": 96.0,
+  "deterministic": true,
+  "durationSeconds": 120.0,
+  "externalAudioInputs": [],
+  "meter": "4/4",
+  "rmsRangeDbfs": [
+    -32.0,
+    -7.0
+  ],
+  "runtimeEncoding": "OGG Vorbis mono streaming",
+  "sampleRate": 48000,
+  "sourceEncoding": "WAV PCM_24 mono",
+  "stems": [
+    {
+      "address": "qinglan/audio/music/exploration-air",
+      "name": "exploration-air",
+      "seed": 32101
+    },
+    {
+      "address": "qinglan/audio/music/exploration-strings",
+      "name": "exploration-strings",
+      "seed": 32102
+    },
+    {
+      "address": "qinglan/audio/music/combat-rhythm",
+      "name": "combat-rhythm",
+      "seed": 32103
+    },
+    {
+      "address": "qinglan/audio/music/high-pressure-drive",
+      "name": "high-pressure-drive",
+      "seed": 32104
+    }
+  ],
+  "targetPeakDbfs": -8.0,
+  "tonalLanguage": "D minor pentatonic"
+}

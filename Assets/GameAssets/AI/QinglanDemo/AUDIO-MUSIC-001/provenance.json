@@ -1,0 +1,69 @@
+{
+  "allowedPlatforms": [
+    "Windows x64",
+    "Steam"
+  ],
+  "allowedUses": [
+    "commercial game runtime",
+    "store and marketing capture",
+    "internal development and testing"
+  ],
+  "assetId": "AUDIO-MUSIC-001",
+  "commercialUseReviewed": true,
+  "creativeReviewer": "Codex",
+  "generatedOrAcquiredAt": "2026-08-10T16:30:00+08:00",
+  "humanEdits": [
+    "Defined four additive intensity stems on a shared 96 BPM and 120-second grid",
+    "Synthesized every sample from oscillators, envelopes, and seeded periodic control curves",
+    "Normalized stems to -8 dBFS and verified alignment, format, loudness, DC, finite samples, and loop seams",
+    "Derived deterministic runtime OGG/Vorbis streams from 48 kHz/24-bit mono WAV masters",
+    "No recording, sample library, voice, external reference, generative model, MIDI library, or reference-project asset was used"
+  ],
+  "licenseOrTermsSnapshot": "Docs/AssetTerms/2026-08-10-first-party-procedural-audio-rights-review.md",
+  "licenseOrTermsUrl": "repository://AGENTS.md#first-party-procedural-audio",
+  "modelVersion": "no-generative-model; batch-script-sha256:a6f6d43fba60a4ce5ed5b2027b7725f73eada1c9e28db386cd685c9d69520c51; shared-script-sha256:8da5f00030972ac3efca08a2a9f4257c600e58dbf891d703c76e85a72d44454b",
+  "notes": "Four synchronized 120-second mono stems at 96 BPM. Source masters are PCM_24 WAV and runtime files are deterministic OGG/Vorbis Streaming inputs.",
+  "operatorName": "Codex",
+  "outputSha256": {
+    "combat-rhythm.ogg": "9319f39e380fa1d94809f75e8975d01ed6721f63edc96f35e873acc053ac1d4e",
+    "exploration-air.ogg": "42f93d103aba83ccbec63ea8fa272ba8e08c4f50d58bcc138d59e705d16b0ea6",
+    "exploration-strings.ogg": "032ce04f4b8498836f932e1ca97a68c6711861b3645859de8e01c66541cf9062",
+    "high-pressure-drive.ogg": "3e8f50b16194ed07b4cf1abb6aaf3dd7e45909d2a50c8087eeb3e5e58be3737a",
+    "qa-report.json": "418f7194c1ff454ab61b55b9630bf505ca57c732d2b9fcd50eea0f1b1c9c23a7"
+  },
+  "owner": "Qinglan Demo Audio Owner",
+  "promptFile": "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/prompt.txt",
+  "referenceInputs": [],
+  "referenceRightsConfirmed": true,
+  "relativePaths": [
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/prompt.txt",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/source/generator-spec.json",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/source/exploration-air.wav",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/source/exploration-strings.wav",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/source/combat-rhythm.wav",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/source/high-pressure-drive.wav",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/final/exploration-air.ogg",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/final/exploration-strings.ogg",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/final/combat-rhythm.ogg",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/final/high-pressure-drive.ogg",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/qa-report.json"
+  ],
+  "reviewedAt": "2026-08-10T16:30:00+08:00",
+  "rightsReviewer": "Codex",
+  "schemaVersion": 2,
+  "seed": "32101-32104",
+  "sourceCategory": "first-party-procedural-synthesis",
+  "sourceSha256": {
+    "combat-rhythm.wav": "2727a8804a8fb2e39f5e45867cf247956946ae257da7bfd317cff49e398c67aa",
+    "exploration-air.wav": "e83b72383e54059851977c05f494e974db863664b5f90df354b684662ebbcbb7",
+    "exploration-strings.wav": "c9fbe3080fbfb77844a98a8f8392bd20bf6486af6861754cc3ba739274b3f420",
+    "generator-spec.json": "088b47d7722df78ea8883dca80af51a0b3028a00d6b3245142b1026eb20aeb57",
+    "high-pressure-drive.wav": "5a000385c3327891c6a1954664848631ef84c7d021ab01fe6ca317fcb2295701",
+    "prompt.txt": "93749b261d778a9759b7f45045af8413f610c93654c36e740f842d160be5cda1"
+  },
+  "status": "approved-for-release",
+  "steamDisclosureCategory": "first-party procedural music; no generative AI and no runtime generation",
+  "technicalReviewer": "Codex",
+  "termsReviewedAt": "2026-08-10",
+  "tool": "Python 3.11, NumPy and libsndfile via soundfile; no audio sample input"
+}

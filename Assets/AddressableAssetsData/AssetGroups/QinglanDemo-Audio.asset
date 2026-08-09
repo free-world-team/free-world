@@ -23,6 +23,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39d34305640299d4995579abb7029c57
+    m_Address: qinglan/audio/music/high-pressure-drive
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 53b60e6304260134897684adb433b0dc
     m_Address: qinglan/audio/ambience/bamboo-leaves
     m_ReadOnly: 0
@@ -47,6 +55,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 95b6a864ceeec2a4dac5c036986c97d8
+    m_Address: qinglan/audio/music/exploration-air
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ae3ca210d664d4a4c8f92242ea521817
     m_Address: qinglan/audio/ambience/old-timber-creak
     m_ReadOnly: 0
@@ -57,6 +73,22 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ca4fb61dbdaf1ac4bbe9003f0cf558a8
     m_Address: qinglan/audio/ambience/stone-court-resonance
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef87c46839a39d44fbf55a770fdd3b1f
+    m_Address: qinglan/audio/music/exploration-strings
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f863dfb2013574c4c9153f1739fc9097
+    m_Address: qinglan/audio/music/combat-rhythm
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release

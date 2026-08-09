@@ -1,0 +1,12 @@
+AUDIO-MUSIC-001 first-party procedural synthesis brief
+
+Create four synchronized 120-second music stems at 96 BPM: exploration air,
+exploration strings, combat rhythm, and high-pressure drive. Use a restrained
+D-minor pentatonic language, no vocals, and leave spectral room for gameplay SFX.
+All stems must start together, loop independently, and support additive intensity
+mixing. Do not use recordings, sample libraries, external references, generative
+audio models, MIDI libraries, trademarks, or reference-project assets.
+
+Source: mono 48 kHz / 24-bit PCM WAV. Runtime: OGG/Vorbis Streaming.
+Validate exact duration, finite samples, peak/RMS, DC, loop seam, deterministic
+SHA-256, rights, and canonical Addressables routing.
