@@ -15,7 +15,9 @@ namespace Game.Editor
         public const string ReleaseLabel = "release";
         public const string QinglanPackLabel = "pack.qinglan_demo";
         public const string VisualReleaseLabel = "visual.release";
+        public const string AudioReleaseLabel = "audio.release";
         public const string QinglanVisualGroup = "QinglanDemo-Visual";
+        public const string QinglanAudioGroup = "QinglanDemo-Audio";
 
         private static readonly Regex HashObjectPattern = new Regex(
             "\\\"(?<name>sourceSha256|outputSha256)\\\"\\s*:\\s*\\{(?<body>.*?)\\}",
@@ -148,13 +150,22 @@ namespace Game.Editor
             var issues = new List<ValidationIssue>();
             var hasRelease = ContainsLabel(labels, ReleaseLabel);
             var hasVisual = ContainsLabel(labels, VisualReleaseLabel);
-            if (!hasRelease && !hasVisual) return issues;
+            var hasAudio = ContainsLabel(labels, AudioReleaseLabel);
+            if (!hasRelease && !hasVisual && !hasAudio) return issues;
 
             if (!hasRelease)
             {
                 issues.Add(new ValidationIssue(
                     "M9-RELEASE-LABELS",
-                    assetPath + " carries " + VisualReleaseLabel + " without " + ReleaseLabel + "."));
+                    assetPath + " carries a category release label without " + ReleaseLabel + "."));
+                return issues;
+            }
+
+            if (hasVisual && hasAudio)
+            {
+                issues.Add(new ValidationIssue(
+                    "M9-RELEASE-CATEGORY",
+                    assetPath + " cannot carry both visual.release and audio.release."));
                 return issues;
             }
 
@@ -178,6 +189,16 @@ namespace Game.Editor
                     "M9-RELEASE-VISUAL-ROUTING",
                     normalized + " must use group " + QinglanVisualGroup + " and labels " +
                     QinglanPackLabel + ", " + ReleaseLabel + ", " + VisualReleaseLabel + "."));
+            }
+
+            if (hasAudio &&
+                (!ContainsLabel(labels, QinglanPackLabel) ||
+                 !string.Equals(groupName, QinglanAudioGroup, StringComparison.Ordinal)))
+            {
+                issues.Add(new ValidationIssue(
+                    "M9-RELEASE-AUDIO-ROUTING",
+                    normalized + " must use group " + QinglanAudioGroup + " and labels " +
+                    QinglanPackLabel + ", " + ReleaseLabel + ", " + AudioReleaseLabel + "."));
             }
 
             var absolute = Path.Combine(
