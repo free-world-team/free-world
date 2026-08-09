@@ -1,0 +1,32 @@
+ART-LANDMARK-001 ImageGen production record
+Generated: 2026-08-09 (Asia/Shanghai)
+Mode: Codex built-in ImageGen, text-only, one independent call per candidate
+Reference inputs: none
+Runtime state order: Undiscovered, Discovered, Claimed
+Shared requirements: original Qinglan xianxia action-roguelite landmark; orthographic three-quarter view; painterly stylized realism; identical object/camera/scale across three horizontal panels; flat RGB 255,0,255 chroma background; generous margins; no text, readable marks, logos, watermarks, people, faces, or reference-project input.
+
+Approved candidate: wind-vein-stele-imagegen.png
+Prompt: Three-state wind-vein old stele. Undiscovered is dusty and overgrown with nearly invisible grooves; Discovered clears the dust and reveals abstract non-linguistic wind grooves; Claimed gently illuminates the grooves and adds a calm cyan wind halo. No writing, characters, runes, face-like carvings, weapons, or symbols resembling language.
+Visual review: PASS. Same stele and camera in all states; geometric wind grooves are non-linguistic; no text, face, logo, watermark, or cropping.
+
+Approved candidate: sealed-sword-cache-imagegen.png
+Prompt: Three-state sealed sword-cache chest. Undiscovered is closed, dusty, and overgrown; Discovered is cleared with geometric bronze seals and a narrow cyan seam; Claimed opens the same chest and leaves it empty with fading afterglow. No sword, loot, text, glyph, rune, logo, face, or person.
+Visual review: PASS. Clear discovery and claim progression; empty claimed interior; no text, logo, face, weapon, or cropping.
+
+Approved candidate: herb-garden-variant-imagegen.png
+Prompt: Three-state compact broken-stone medicinal planter containing one unusual three-leaf plant. Undiscovered is hidden by weeds; Discovered exposes the plant and faint cyan veins; Claimed leaves neatly clipped healthy stems and fading motes. No buildings, altars, treasure, faces, text, runes, or logos.
+Visual review: PASS. Same circular planter and plant identity; harvested state is readable; no text, face, logo, or cropping.
+
+Approved candidate: broken-wall-sword-mark-imagegen.png
+Prompt: Three-state compact ruined courtyard wall with one simple physical diagonal sword cut. Undiscovered hides the cut under moss and vine; Discovered clears it and adds a faint cyan edge; Claimed leaves the same cut inert with fading motes. The slash must not resemble writing, a rune, a character, or a symbol. No visible sword, person, text, or logo.
+Visual review: PASS. Mark is a single physical slash; no writing, rune, character, visible weapon, person, logo, or cropping.
+
+Rejected candidate: rejected/guest-pavilion-letter-seal-glyph-rejected.png
+Prompt: Three-state pavilion old-letter ledge using a folded blank letter and plain round teal wax seal, with no emblem or mark.
+Visual review: FAIL. The generated wax seal contains an unrequested glyph-like impression. Retained only as non-addressable audit evidence and excluded from all processing.
+
+Approved retry: guest-pavilion-letter-imagegen.png
+Prompt: Three-state broken wooden pavilion ledge with one small blank folded cream paper packet tied only by plain hemp cord. Undiscovered hides it beneath leaves; Discovered clears it with subtle cyan rim light; Claimed removes packet and cord, leaving a dust outline and two fading motes. No wax seal, writing, lines, glyphs, symbols, stamps, coins, discs, medallions, calligraphy, or emblems.
+Visual review: PASS. Paper is blank and tied only with cord; claimed state removes it completely; no seal, glyph, text, logo, face, person, or cropping.
+
+The built-in service did not expose model version or seed. Original generated files remain in the project-bound generated-images directory; repository source files are byte copies. Approved sheets alone proceed through chroma removal and deterministic atlas processing.

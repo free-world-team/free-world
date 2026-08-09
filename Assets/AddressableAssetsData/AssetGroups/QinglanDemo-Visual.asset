@@ -159,6 +159,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23a773e57617e4947a8b3c90f1cdc854
+    m_Address: qinglan/landmark/sealed-sword-cache/state-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 27ac7209037e21e4bad13da8c285ab9a
     m_Address: qinglan/enemy/paper-crane-spirit/directional-animation-atlas
     m_ReadOnly: 0
@@ -185,6 +193,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2a21df4c13cb7654a9039a5b81405c8f
     m_Address: qinglan/profile/skill/base/lihuo-wheel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 302f1f295956b9341a5b85167b303b7a
+    m_Address: qinglan/landmark/wind-vein-stele/state-atlas
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -257,6 +273,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3b48322428307cd4baf260183de2c3fc
     m_Address: qinglan/boss/tingfeng/phase-3-overlay
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 412eef1354ebb424cadf33ad4af9432f
+    m_Address: qinglan/landmark/herb-garden-variant/state-atlas
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -551,6 +575,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: abb0affeb62eed54baebe730acd3c297
+    m_Address: qinglan/landmark/guest-pavilion-letter/state-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: af3b9f58763db3b4caaab6a315e866a7
     m_Address: qinglan/boss/tingfeng/phase-1-overlay
     m_ReadOnly: 0
@@ -665,6 +697,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cb52fdc74e1dab54b86f810f8246e94f
     m_Address: qinglan/skill/evolved/qinglan-flowing-shadow-sword/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf0b439d6ac277a4190eeb2b904f6747
+    m_Address: qinglan/landmark/broken-wall-sword-mark/state-atlas
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

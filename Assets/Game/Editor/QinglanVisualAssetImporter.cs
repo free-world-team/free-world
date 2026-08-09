@@ -245,6 +245,13 @@ namespace Game.Editor
             if (rows == 1 && columns == 1) return prefix;
 
             if (rows == 1 && columns == 3 &&
+                prefix.Contains(".landmark.", StringComparison.Ordinal))
+            {
+                var states = new[] { "undiscovered", "discovered", "claimed" };
+                return prefix + "." + states[column];
+            }
+
+            if (rows == 1 && columns == 3 &&
                 prefix.Contains(".objective.", StringComparison.Ordinal))
             {
                 var states = new[] { "idle", "active", "complete" };
