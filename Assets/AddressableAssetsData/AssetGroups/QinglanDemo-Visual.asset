@@ -47,6 +47,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c4d860f2f2f96a498b149c9377e9dce
+    m_Address: qinglan/damage-policy/contact-protection/visual
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0d85b3162b253c6499b361cfda47720f
     m_Address: qinglan/enemy/affix/splitting/overlay
     m_ReadOnly: 0
@@ -65,6 +73,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 17c50da720c0b5648940675cf6289876
     m_Address: qinglan/profile/enemy/grass-spirit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1a709ec40fbfc2a469744ed88ee4579a
+    m_Address: qinglan/status/rooted/visual
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -127,6 +143,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 303be8711f321584ca414bc0587a35c3
+    m_Address: qinglan/status/damage-immunity/visual
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3110cd3221af3774bbaae2bf845fe1f9
     m_Address: qinglan/enemy/wind-bell-spirit/directional-animation-atlas
     m_ReadOnly: 0
@@ -145,6 +169,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3482fa7cef9af684fb192fd2de4e3159
     m_Address: qinglan/boss/tingfeng/animation-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34ff66c6ab8bc27489d0b5df8dbf0bd6
+    m_Address: qinglan/damage-policy/boss-hazard/visual
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -177,6 +209,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4c8ffb909582dc445b8a69c1d2366db3
     m_Address: qinglan/profile/boss/tingfeng
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ec321d4e82190e4686c5dedbd04a704
+    m_Address: qinglan/status/burning/visual
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -273,6 +313,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7d2b88eca915a64479f22ac803ec8c76
     m_Address: qinglan/enemy/affix/barrier/overlay
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97be456b892f41f43a323761562b14b1
+    m_Address: qinglan/status/slowed/visual
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -407,6 +455,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d0c94528884dac7488fee971b412fc4b
+    m_Address: qinglan/status/armor-broken/visual
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d36371a8c18b3c444949e3c1c6eeee7c
     m_Address: qinglan/character/lu-qingye/riding-wind/tier-1
     m_ReadOnly: 0
@@ -473,6 +529,22 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ee272431205add34bb8f038a942f5586
     m_Address: qinglan/profile/skill/base/yellow-talisman
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1dd31a7973da07468a97902cf0d46a3
+    m_Address: qinglan/status/marked/visual
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f86045d4f53b3924abe6b66c32567326
+    m_Address: qinglan/status/poisoned/visual
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

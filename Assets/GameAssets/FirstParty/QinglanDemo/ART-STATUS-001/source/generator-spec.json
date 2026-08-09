@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "assetId": "ART-STATUS-001",
+  "seed": 31010,
+  "sourceSize": 1024,
+  "runtimeSize": 512,
+  "visuals": [
+    {"name":"burning","sourceFile":"burning-visual-source.png","finalFile":"burning-visual.png","palette":{"primary":"#F29B52","highlight":"#FFD0A3","deep":"#163D45","secondary":"#E7B85C"}},
+    {"name":"poisoned","sourceFile":"poisoned-visual-source.png","finalFile":"poisoned-visual.png","palette":{"primary":"#72B96B","highlight":"#D8E7A6","deep":"#163D45","secondary":"#876BB5"}},
+    {"name":"slowed","sourceFile":"slowed-visual-source.png","finalFile":"slowed-visual.png","palette":{"primary":"#5BAFC9","highlight":"#D9F2EF","deep":"#163D45","secondary":"#557FA6"}},
+    {"name":"rooted","sourceFile":"rooted-visual-source.png","finalFile":"rooted-visual.png","palette":{"primary":"#73B66B","highlight":"#D8E7A6","deep":"#163D45","secondary":"#9A744B"}},
+    {"name":"armor-broken","sourceFile":"armor-broken-visual-source.png","finalFile":"armor-broken-visual.png","palette":{"primary":"#B68D63","highlight":"#FFD0A3","deep":"#163D45","secondary":"#7B8588"}},
+    {"name":"marked","sourceFile":"marked-visual-source.png","finalFile":"marked-visual.png","palette":{"primary":"#D4A94C","highlight":"#F4EFD8","deep":"#163D45","secondary":"#59C7C1"}},
+    {"name":"damage-immunity","sourceFile":"damage-immunity-visual-source.png","finalFile":"damage-immunity-visual.png","palette":{"primary":"#59C7C1","highlight":"#F4EFD8","deep":"#163D45","secondary":"#6E9FA1"}},
+    {"name":"contact-protection","sourceFile":"contact-protection-visual-source.png","finalFile":"contact-protection-visual.png","palette":{"primary":"#59C7C1","highlight":"#F4EFD8","deep":"#163D45","secondary":"#6E9FA1"}},
+    {"name":"boss-hazard","sourceFile":"boss-hazard-visual-source.png","finalFile":"boss-hazard-visual.png","palette":{"primary":"#E45D45","highlight":"#FFD0A3","deep":"#3B2023","secondary":"#B93F35"}}
+  ]
+}
