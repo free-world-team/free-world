@@ -75,7 +75,8 @@ namespace Game.Tests.EditMode
                         "Unity.Localization",
                         "Unity.Localization.Editor",
                         "Unity.Addressables",
-                        "Unity.Addressables.Editor"
+                        "Unity.Addressables.Editor",
+                        "Unity.2D.Sprite.Editor"
                     }
                 },
                 {

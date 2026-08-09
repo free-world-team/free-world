@@ -1159,6 +1159,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f33c3fcc3626f794fb39fb75a2ce7941
+    m_Address: qinglan/ui/framework/atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f6427ac944f39d744b422f441aa94e63
     m_Address: qinglan/collectible/old-court-01/icon
     m_ReadOnly: 0

@@ -44,7 +44,7 @@
 | Game.UI                    | 菜单、HUD、升级选择、结算、本地化适配 | Unity、Game.Application、Unity Localization                               |
 | Game.Platform.Null         | 无平台环境实现                       | Game.Platform.Abstractions、Game.Core                                     |
 | Game.Platform.Steam        | 后续 Steam 适配（M0 未创建）         | Game.Platform.Abstractions                                                |
-| Game.Editor                | 验证、Bake、Placeholder、预览与构建工具 | Unity Editor、Addressables Editor、Game.Core、Game.Content.Authoring、Game.Content.Runtime、Game.Simulation、Game.Infrastructure |
+| Game.Editor                | 验证、Bake、Placeholder、预览与构建工具 | Unity Editor、Addressables Editor、2D Sprite Editor、Game.Core、Game.Content.Authoring、Game.Content.Runtime、Game.Simulation、Game.Infrastructure |
 | Game.Tests.EditMode        | 治理、内容与纯模拟内核测试           | 产品程序集、Game.Editor、Unity Test Framework                             |
 | Game.Tests.PlayMode        | Bootstrap 内容加载和生命周期测试     | Game.Core、Game.Content.Runtime、Game.Application、Game.Infrastructure、Game.Platform.Abstractions、Game.Platform.Null、Unity Test Framework |
 

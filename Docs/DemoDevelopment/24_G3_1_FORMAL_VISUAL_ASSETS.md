@@ -1,8 +1,8 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 23 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 24 / 27 ART BATCHES`
 - 日期：2026-08-10
-- 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
+- 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026/0027
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
 
 ## 1. 目标
@@ -77,7 +77,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 21 | ART-COLLECT-001 | PASS | 6 件旧庭藏品各 1 张 2048 source master＋1024 Illustration＋256 Icon；EditMode 362/362、PlayMode 17/17、Validation PASS |
 | 22 | ART-STORY-001 | PASS | 山脚听剑/旧剑与酒葫/不认传承各 1 张 4096×2304 source master＋1920×1080 Key Illustration；EditMode 365/365、PlayMode 17/17、Validation PASS |
 | 23 | ART-UI-001 | PASS | 标题主视觉/Logo 安全背景各 1 张 4096×2304 master＋2560×1440 final，Runtime 2048×1152；EditMode 368/368、PlayMode 17/17、Validation PASS |
-| 24—27 | ART-UI-002—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 24 | ART-UI-002 | PASS | 4×4、2048² RGBA UI Atlas；16 个语义 Sprite，8 个 64 px 九宫格 Frame/Panel；EditMode 371/371、PlayMode 17/17、Validation PASS |
+| 25—27 | ART-UI-003—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -266,3 +267,14 @@ P0 危险红均为 0，第二轮 4/4 master/final Hash 字节一致。Unity 以 
 交付图导入为 2048×1152 Single Sprite，避免超预算大图和 Multiple Sprite 的二次 Rect 缩放。正式地址为
 `qinglan/ui/title/key-art` 与 `qinglan/ui/title/logo-safe-background`；图片内不含标题文字，Localization/TMP
 叠加及标题页正式资产消费由 G3.1 最终集成/G3.3 接入。
+
+ART-UI-002 为纯 FirstParty 确定性矢量路径栅格资产，不使用 ImageGen、外部素材、字体或图片参考。
+4096² source 与 2048² final 均固定为 4×4 网格：首行为 Standard/Focused/Disabled/Danger Frame，
+第二行为 Solid/Translucent/Card/Tooltip Panel，后两行为 Health/Shield/Experience/Level/Time/Objective/
+Map/Lock Icon。16 格在彩色和灰阶下均唯一；final Frame 覆盖率 10.63%—26.06%、Panel 76.02%—76.43%、
+Icon 8.94%—20.56%，安全边分别为 28—38/31/112—132 px，四角透明。精确 P0 危险红只出现在
+Danger Frame，其他 15 格为 0；两次生成的 source/final 文件 Hash 均字节一致。Unity 导入为 16 个
+512² 语义 Sprite，Frame/Panel 使用 64 px Border、Icon 为零 Border；正式地址为
+`qinglan/ui/framework/atlas`。Unity 6 多 Sprite 数据改用官方 Sprite Data Provider 并按语义名复用
+Sprite ID，连续两次导入的 `.meta` SHA-256 一致；程序集影响由 ADR 0027 登记。正式 UI 页面消费、
+Localization/TMP 文本叠加与实际缩放截图由 G3.1 最终集成/G3.3 接入。

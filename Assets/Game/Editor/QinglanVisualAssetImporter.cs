@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Settings.GroupSchemas;
+using UnityEditor.U2D.Sprites;
 using UnityEngine;
 
 namespace Game.Editor
@@ -106,33 +107,55 @@ namespace Game.Editor
                 RegisterApprovedFile(assetPath, address);
                 return;
             }
+            importer = AssetImporter.GetAtPath(assetPath) as TextureImporter;
+            if (importer == null)
+                throw new InvalidOperationException("TextureImporter was unavailable after reimport for " + assetPath);
+
+            var factory = new SpriteDataProviderFactories();
+            factory.Init();
+            var dataProvider = factory.GetSpriteEditorDataProviderFromObject(importer);
+            if (dataProvider == null)
+                throw new InvalidOperationException("Sprite data provider is unavailable for " + assetPath);
+            dataProvider.InitSpriteEditorDataProvider();
+            var existingSpriteIds = new Dictionary<string, GUID>(StringComparer.Ordinal);
+            var existingSpriteRects = dataProvider.GetSpriteRects();
+            for (var index = 0; index < existingSpriteRects.Length; index++)
+                existingSpriteIds[existingSpriteRects[index].name] = existingSpriteRects[index].spriteID;
 
             var cellWidth = importedTexture.width / columns;
             var cellHeight = importedTexture.height / rows;
-            var sprites = new SpriteMetaData[columns * rows];
+            var spriteRects = new SpriteRect[columns * rows];
+            var nameFileIdPairs = new SpriteNameFileIdPair[columns * rows];
             for (var row = 0; row < rows; row++)
             {
                 for (var column = 0; column < columns; column++)
                 {
                     var index = row * columns + column;
-                    sprites[index] = new SpriteMetaData
+                    var spriteName = BuildSpriteName(spriteNamePrefix, row, column, rows, columns);
+                    var spriteId = existingSpriteIds.TryGetValue(spriteName, out var existingSpriteId)
+                        ? existingSpriteId
+                        : GUID.Generate();
+                    spriteRects[index] = new SpriteRect
                     {
-                        name = BuildSpriteName(spriteNamePrefix, row, column, rows, columns),
+                        name = spriteName,
                         rect = new Rect(
                             column * cellWidth,
                             importedTexture.height - (row + 1) * cellHeight,
                             cellWidth,
                             cellHeight),
-                        alignment = (int)SpriteAlignment.Custom,
+                        alignment = SpriteAlignment.Custom,
                         pivot = pivot,
-                        border = Vector4.zero
+                        border = BuildSpriteBorder(spriteNamePrefix, row, rows, columns)
                     };
+                    spriteRects[index].spriteID = spriteId;
+                    nameFileIdPairs[index] = new SpriteNameFileIdPair(spriteName, spriteId);
                 }
             }
 
-#pragma warning disable CS0618
-            importer.spritesheet = sprites;
-#pragma warning restore CS0618
+            dataProvider.SetSpriteRects(spriteRects);
+            var nameFileIdProvider = dataProvider.GetDataProvider<ISpriteNameFileIdDataProvider>();
+            nameFileIdProvider?.SetNameFileIdPairs(nameFileIdPairs);
+            dataProvider.Apply();
             importer.SaveAndReimport();
 
             RegisterApprovedFile(assetPath, address);
@@ -308,6 +331,19 @@ namespace Game.Editor
                 prefix.Contains(".event.", StringComparison.Ordinal))
                 return prefix + ".frame-" + column.ToString(CultureInfo.InvariantCulture);
 
+            if (rows == 4 && columns == 4 &&
+                prefix.EndsWith(".ui.framework", StringComparison.Ordinal))
+            {
+                var names = new[]
+                {
+                    "frame.standard", "frame.focused", "frame.disabled", "frame.danger",
+                    "panel.solid", "panel.translucent", "panel.card", "panel.tooltip",
+                    "icon.health", "icon.shield", "icon.experience", "icon.level",
+                    "icon.time", "icon.objective", "icon.map", "icon.lock"
+                };
+                return prefix + "." + names[row * columns + column];
+            }
+
             if (rows == 4 && columns == 6)
             {
                 var directions = new[] { "down", "left", "right", "up" };
@@ -341,6 +377,14 @@ namespace Game.Editor
 
             return prefix + ".r" + row.ToString(CultureInfo.InvariantCulture) +
                    ".c" + column.ToString(CultureInfo.InvariantCulture);
+        }
+
+        private static Vector4 BuildSpriteBorder(string prefix, int row, int rows, int columns)
+        {
+            if (rows == 4 && columns == 4 && row < 2 &&
+                prefix.EndsWith(".ui.framework", StringComparison.Ordinal))
+                return new Vector4(64f, 64f, 64f, 64f);
+            return Vector4.zero;
         }
     }
 

@@ -1,0 +1,28 @@
+{
+  "assetId": "ART-UI-002",
+  "seed": 31024,
+  "sourceSize": [4096, 4096],
+  "finalSize": [2048, 2048],
+  "grid": [4, 4],
+  "sourceCellSize": 1024,
+  "finalCellSize": 512,
+  "nineSliceBorder": [64, 64, 64, 64],
+  "spriteOrder": [
+    "frame.standard", "frame.focused", "frame.disabled", "frame.danger",
+    "panel.solid", "panel.translucent", "panel.card", "panel.tooltip",
+    "icon.health", "icon.shield", "icon.experience", "icon.level",
+    "icon.time", "icon.objective", "icon.map", "icon.lock"
+  ],
+  "palette": {
+    "ink": "#163D45",
+    "teal": "#59C7C1",
+    "paleTeal": "#A7E6DD",
+    "ivory": "#F4EFD8",
+    "warmStone": "#B69B78",
+    "gold": "#D7B85C",
+    "danger": "#E45D45",
+    "dangerEdge": "#FFD0A3"
+  },
+  "embeddedText": false,
+  "externalReferences": []
+}

@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: f33c3fcc3626f794fb39fb75a2ce7941
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8804110514409361332
+    second: ui-framework-atlas_0
+  - first:
+      213: 9168861670893229432
+    second: ui-framework-atlas_1
+  - first:
+      213: 305566959454379067
+    second: ui-framework-atlas_2
+  - first:
+      213: -1502237297585409084
+    second: ui-framework-atlas_3
+  - first:
+      213: -1507097679267091600
+    second: ui-framework-atlas_4
+  - first:
+      213: 3963749402393386680
+    second: ui-framework-atlas_5
+  - first:
+      213: -2098697639238971563
+    second: ui-framework-atlas_6
+  - first:
+      213: -5087892603033788270
+    second: ui-framework-atlas_7
+  - first:
+      213: 196407601088270857
+    second: ui-framework-atlas_8
+  - first:
+      213: 5088590593659958644
+    second: ui-framework-atlas_9
+  - first:
+      213: -6097706126235136232
+    second: ui-framework-atlas_10
+  - first:
+      213: -5020542809701922567
+    second: ui-framework-atlas_11
+  - first:
+      213: 4535386234525221674
+    second: ui-framework-atlas_12
+  - first:
+      213: 9058227834490116927
+    second: ui-framework-atlas_13
+  - first:
+      213: 6597086488069071389
+    second: ui-framework-atlas_14
+  - first:
+      213: -6207759735012293824
+    second: ui-framework-atlas_15
+  - first:
+      213: -8290778887244927837
+    second: ui-framework-atlas_16
+  - first:
+      213: 8706652587459363129
+    second: ui-framework-atlas_17
+  - first:
+      213: 4226227581677585341
+    second: ui-framework-atlas_18
+  - first:
+      213: -7646280483846355157
+    second: ui-framework-atlas_19
+  - first:
+      213: 1682336464092402358
+    second: ui-framework-atlas_20
+  - first:
+      213: 3413085803419036416
+    second: ui-framework-atlas_21
+  - first:
+      213: -4111543468038438816
+    second: ui-framework-atlas_22
+  - first:
+      213: -4276480416573074398
+    second: ui-framework-atlas_23
+  - first:
+      213: -8920185123441787936
+    second: ui-framework-atlas_24
+  - first:
+      213: -2992159157143149096
+    second: ui-framework-atlas_25
+  - first:
+      213: -2817442468039602283
+    second: ui-framework-atlas_26
+  - first:
+      213: 1325822917526946467
+    second: ui-framework-atlas_27
+  - first:
+      213: -1915096115895674752
+    second: ui-framework-atlas_28
+  - first:
+      213: -1617399450423041924
+    second: ui-framework-atlas_29
+  - first:
+      213: -8677915214157769557
+    second: ui-framework-atlas_30
+  - first:
+      213: -1620217383088696464
+    second: ui-framework-atlas_31
+  - first:
+      213: 8433455977445879981
+    second: ui-framework-atlas_32
+  - first:
+      213: 8097071893017558751
+    second: ui-framework-atlas_33
+  - first:
+      213: 7180675826347876327
+    second: ui-framework-atlas_34
+  - first:
+      213: -2471448693515201194
+    second: ui-framework-atlas_35
+  - first:
+      213: 642719840519936161
+    second: ui-framework-atlas_36
+  - first:
+      213: 2987285035260262435
+    second: ui-framework-atlas_37
+  - first:
+      213: -2426841612561126110
+    second: ui-framework-atlas_38
+  - first:
+      213: -9188716618292570952
+    second: ui-framework-atlas_39
+  - first:
+      213: -3885198412678356024
+    second: ui-framework-atlas_40
+  - first:
+      213: 7519204667628951345
+    second: ui-framework-atlas_41
+  - first:
+      213: 2229665996963274315
+    second: ui-framework-atlas_42
+  - first:
+      213: 2637092820897850157
+    second: ui-framework-atlas_43
+  - first:
+      213: -1623514784120025311
+    second: ui-framework-atlas_44
+  - first:
+      213: 8846548467580862718
+    second: ui-framework-atlas_45
+  - first:
+      213: -458337410980289455
+    second: ui-framework-atlas_46
+  - first:
+      213: 7697019820905694509
+    second: ui-framework-atlas_47
+  - first:
+      213: -9063821909790672675
+    second: ui-framework-atlas_48
+  - first:
+      213: 8967735305452155262
+    second: ui-framework-atlas_49
+  - first:
+      213: -2297781401576433733
+    second: ui-framework-atlas_50
+  - first:
+      213: -7372896416471651961
+    second: ui-framework-atlas_51
+  - first:
+      213: 205712720297284277
+    second: ui-framework-atlas_52
+  - first:
+      213: -3680305551395563090
+    second: ui-framework-atlas_53
+  - first:
+      213: 2570682195838529416
+    second: ui-framework-atlas_54
+  - first:
+      213: 3333453525042891720
+    second: ui-framework-atlas_55
+  - first:
+      213: -6917452450281952366
+    second: ui-framework-atlas_56
+  - first:
+      213: 3838240066230527162
+    second: ui-framework-atlas_57
+  - first:
+      213: 5152599817605936812
+    second: ui-framework-atlas_58
+  - first:
+      213: 3059465800364766149
+    second: ui-framework-atlas_59
+  - first:
+      213: 1146671834845689369
+    second: ui-framework-atlas_60
+  - first:
+      213: 1721500916736761118
+    second: ui-framework-atlas_61
+  - first:
+      213: -7546229338753637712
+    second: ui-framework-atlas_62
+  - first:
+      213: 5079733573319509050
+    second: ui-framework-atlas_63
+  - first:
+      213: 3342225384883631947
+    second: ui-framework-atlas_64
+  - first:
+      213: 533541637183480873
+    second: ui-framework-atlas_65
+  - first:
+      213: -4572109467198129400
+    second: ui-framework-atlas_66
+  - first:
+      213: 6819582639461174334
+    second: ui-framework-atlas_67
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.frame.standard
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55f2198b2f589a41bdbe3b26d643ee0
+      internalID: -2122982205
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.frame.focused
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bcde6b0816bd2c4d95e16d506a31361
+      internalID: 46218987
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.frame.disabled
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8c1b6f1334dd704a9714452e276c32d
+      internalID: -1447213519
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.frame.danger
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1536
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5833d5f34b0e23489c87ad6f38851fa
+      internalID: 28591742
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.panel.solid
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64558900a4e51dc43aa7bdfd743aa8ea
+      internalID: -1436663380
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.panel.translucent
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9664e6e0ed63474590c2fa0db4bf950
+      internalID: -593919789
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.panel.card
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3a549ff2edcb24ba2efb5d59c2d794
+      internalID: -1589934402
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.panel.tooltip
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 64, y: 64, z: 64, w: 64}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505a9e98aad62c144a52e33c87ea4b17
+      internalID: -840141513
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.icon.health
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5f69765f964064ca3c2fef617d50fd
+      internalID: -517207189
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.icon.shield
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e187810d0b32f74b85be8dc99a246df
+      internalID: -2082344039
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.icon.experience
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031f4b2fb4b45614787428e93facb630
+      internalID: -2114586005
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.icon.level
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f73e722313d48d46b2fb75ac3802524
+      internalID: 219626149
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.icon.time
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59b5d14558c685c41a0d443ac524c10a
+      internalID: -840292803
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.icon.objective
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 092249f8c2b61424eafb802d172d71e6
+      internalID: 172350731
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.icon.map
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40f8495a8b4d2bb49b9fa297ccc8a61f
+      internalID: 978526765
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.framework.icon.lock
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0010e2caea131c142a0452840338752d
+      internalID: -1529103404
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: 8124eca44cf099d498886249e6f4b055
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      qinglan.presentation.ui.framework.frame.danger: 28591742
+      qinglan.presentation.ui.framework.frame.disabled: -1447213519
+      qinglan.presentation.ui.framework.frame.focused: 46218987
+      qinglan.presentation.ui.framework.frame.standard: -2122982205
+      qinglan.presentation.ui.framework.icon.experience: -2114586005
+      qinglan.presentation.ui.framework.icon.health: -517207189
+      qinglan.presentation.ui.framework.icon.level: 219626149
+      qinglan.presentation.ui.framework.icon.lock: -1529103404
+      qinglan.presentation.ui.framework.icon.map: 978526765
+      qinglan.presentation.ui.framework.icon.objective: 172350731
+      qinglan.presentation.ui.framework.icon.shield: -2082344039
+      qinglan.presentation.ui.framework.icon.time: -840292803
+      qinglan.presentation.ui.framework.panel.card: -1589934402
+      qinglan.presentation.ui.framework.panel.solid: -1436663380
+      qinglan.presentation.ui.framework.panel.tooltip: -840141513
+      qinglan.presentation.ui.framework.panel.translucent: -593919789
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

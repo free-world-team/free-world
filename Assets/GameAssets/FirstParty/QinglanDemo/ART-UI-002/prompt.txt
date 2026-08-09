@@ -1,0 +1,18 @@
+ART-UI-002 first-party production specification
+Generated: 2026-08-10 (Asia/Shanghai)
+Method: deterministic Python/Pillow vector-path rasterization; no generative AI
+Seed: 31024 (recorded production identity; geometry contains no nondeterministic calls)
+Reference inputs: none
+
+Deliver one 4096×4096 RGBA source atlas and one 2048×2048 RGBA Runtime atlas arranged as a fixed 4×4 grid. Each source cell is 1024×1024 and each final cell is 512×512. Row-major semantics:
+
+Row 0 — frame.standard, frame.focused, frame.disabled, frame.danger.
+Row 1 — panel.solid, panel.translucent, panel.card, panel.tooltip.
+Row 2 — icon.health, icon.shield, icon.experience, icon.level.
+Row 3 — icon.time, icon.objective, icon.map, icon.lock.
+
+The visual language is clear eastern fantasy: dark teal structure, rice-white edges, pale cyan wind accents, warm stone, restrained gold, and reserved danger red only for the danger frame. Frame and panel sprites must support a 64-pixel final nine-slice border. Icons use shape and grayscale silhouette as well as color. Every cell preserves transparent corners and safe margins; frame centers stay transparent; panel centers remain readable and uniformly filled. No text, letter, numeral, calligraphy, pseudo-writing, font, logo, watermark, trademark, religious glyph, third-party asset, external reference, or manual raster repaint is allowed.
+
+Runtime address: qinglan/ui/framework/atlas
+Sprite prefix: qinglan.presentation.ui.framework
+Import: Multiple Sprite, 4 columns × 4 rows, centered pivots, no MipMap, Clamp, BC7, max 2048. Frames/panels receive border (64,64,64,64); icons receive zero border.

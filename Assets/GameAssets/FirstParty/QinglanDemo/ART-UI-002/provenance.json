@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 2,
+  "assetId": "ART-UI-002",
+  "owner": "Qinglan Demo Visual Owner",
+  "relativePaths": [
+    "Assets/GameAssets/FirstParty/QinglanDemo/ART-UI-002/prompt.txt",
+    "Assets/GameAssets/FirstParty/QinglanDemo/ART-UI-002/source/generator-spec.json",
+    "Assets/GameAssets/FirstParty/QinglanDemo/ART-UI-002/source/ui-framework-atlas-source.png",
+    "Assets/GameAssets/FirstParty/QinglanDemo/ART-UI-002/final/ui-framework-atlas.png"
+  ],
+  "sourceCategory": "first-party-procedural-vector-raster",
+  "tool": "Python 3.11.3, Pillow 12.3.0, and Scripts/generate-qinglan-ui-framework-atlas.py",
+  "modelVersion": "deterministic generator sha256:96eccc18df9b7bf9ca71c36081bf2d6bcef3f33f32af930ecc09eb28d4d81056",
+  "generatedOrAcquiredAt": "2026-08-10T03:23:20+08:00",
+  "operatorName": "Codex",
+  "promptFile": "Assets/GameAssets/FirstParty/QinglanDemo/ART-UI-002/prompt.txt",
+  "seed": "31024",
+  "referenceInputs": [],
+  "referenceRightsConfirmed": true,
+  "humanEdits": [
+    "Defined a fixed four-by-four semantic atlas containing four frames, four scalable panels, and eight HUD/page icons from repository UI requirements",
+    "Used distinct silhouette and grayscale motifs for standard, focused, disabled, danger, health, shield, experience, level, time, objective, map, and lock states",
+    "Reserved exact danger red only for frame.danger and retained color-independent triangular warning corners",
+    "Assigned 64-pixel final nine-slice borders to frame and panel sprites while icons retain zero border",
+    "Approved the first deterministic generation with source margins 57-264 pixels and final margins 28-132 pixels; all sixteen cells are unique in color and grayscale",
+    "No manual raster repaint, generative AI, external visual reference, third-party asset, text, font, logo, watermark, or trademark was used"
+  ],
+  "sourceSha256": {
+    "prompt.txt": "6b9ca3c02873f817b95c15262f243d6b5bd7e16136f971e4de469ed99283524c",
+    "generator-spec.json": "b76b891ab6ad59d35b993425477a8874ab37415b610c69960b10fb6cfddb71b0",
+    "ui-framework-atlas-source.png": "f9ab465847b4f1c79fd625a8740f39a28a60072cd931954bea12c6fef0c6e765"
+  },
+  "outputSha256": {
+    "ui-framework-atlas.png": "b6aef2171c7495ada1f9557555919a416cb89ef2d70567cfe74397b3efd90230"
+  },
+  "licenseOrTermsUrl": "repository://AGENTS.md",
+  "licenseOrTermsSnapshot": "Docs/AssetTerms/2026-08-09-first-party-procedural-rights-review.md",
+  "termsReviewedAt": "2026-08-09",
+  "allowedPlatforms": ["Windows x64", "Steam"],
+  "allowedUses": ["commercial game runtime", "store and marketing screenshots", "internal development and testing"],
+  "commercialUseReviewed": true,
+  "steamDisclosureCategory": "first-party deterministic procedural vector raster; no generative AI and no runtime generation",
+  "technicalReviewer": "Codex",
+  "creativeReviewer": "Codex",
+  "rightsReviewer": "Codex",
+  "reviewedAt": "2026-08-10T03:23:20+08:00",
+  "status": "approved-for-release",
+  "notes": "The 4096x4096 RGBA source and 2048x2048 RGBA final contain no embedded text. Final cells are 512x512 with transparent corners. Frame coverage is 10.63%-26.06%, panel coverage 76.02%-76.43%, and icon coverage 8.94%-20.56%. Only frame.danger contains reserved exact danger red."
+}
