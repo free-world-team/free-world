@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 20 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 21 / 27 ART BATCHES`
 - 日期：2026-08-10
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -74,7 +74,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 18 | ART-HUB-001 | PASS | 问脉台/藏卷楼/百器阁/万象阁各 1 张 1024 Panel＋256 Icon；EditMode 353/353、PlayMode 17/17、Validation PASS |
 | 19 | ART-META-001 | PASS | 本命/身法/心性三分支各 4 张 128 FirstParty 节点图标；EditMode 356/356、PlayMode 17/17、Validation PASS |
 | 20 | ART-META-002 | PASS | 青岚风纹片/药圃生春扣/旧庭寻脉针各 1 张 2048 source master＋256 Icon；EditMode 359/359、PlayMode 17/17、Validation PASS |
-| 21—27 | ART-COLLECT-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 21 | ART-COLLECT-001 | PASS | 6 件旧庭藏品各 1 张 2048 source master＋1024 Illustration＋256 Icon；EditMode 362/362、PlayMode 17/17、Validation PASS |
+| 22—27 | ART-STORY-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -231,3 +232,14 @@ ART-META-002 对青岚风纹片、药圃生春扣、旧庭寻脉针分别执行�
 全部唯一，四角 Alpha、洋红残留和精确 P0 危险红均为 0。完整处理链第二轮 9/9 文件 Hash 字节一致。
 正式地址为 `qinglan/hub/insert/<insert>/icon`；插片装配、候选约束与效果说明由通用 Meta UI/规则层接入，
 图标本身不承诺具体武器、精确唯一收藏位置或无上限恢复收益。
+
+ART-COLLECT-001 以 `qinglan.collectible.old_court.01`—`.06` 为稳定身份，为止衡剑庭、沈停云线索、旧庭
+生活三个专题各制作两件藏品；玩家可见正式名称仍留给 G3.3，不以资产文件名提前冻结。六份批准 source
+分别表现残缺风脉校衡盘、藏剑匣锁梁、行旅接草匣、折叠剑痕量规、迎客茶席遗物和三响听音悬叶。锁梁
+首版十字锁芯、量规首版点阵刻度、茶杯首版疑似字痕、悬叶首版装饰结/叶片数量歧义均在 source QA 判定
+`FAIL`，四份失败候选仅作 provenance。批准 source 经 soft matte/despill 去背和 Alpha<16 归零后，派生
+6×2048² source master、6×1024² illustration 与 6×256² icon；master/illustration/icon 安全边分别为
+128/64/16 px，覆盖率 14.06%—52.98%。三片分离悬叶因必要负空间单独使用 13% 下限，其余保持 18%；
+十二份 final 在各尺寸内的灰阶 Hash 均唯一，四角 Alpha、洋红残留和精确 P0 危险红均为 0，完整链第二轮
+24/24 文件 Hash 字节一致。正式地址为 `qinglan/collectible/old-court-<01..06>/<illustration|icon>`；
+Collectible PresentationId、专题页与玩家可见叙事由 G3.1 最终集成/G3.3 接入。

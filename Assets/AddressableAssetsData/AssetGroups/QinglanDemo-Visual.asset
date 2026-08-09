@@ -87,6 +87,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d1177f80da42424d8d8eb4d23346463
+    m_Address: qinglan/collectible/old-court-02/illustration
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0d85b3162b253c6499b361cfda47720f
     m_Address: qinglan/enemy/affix/splitting/overlay
     m_ReadOnly: 0
@@ -145,6 +153,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 180df4903fd04824e9448182506f0e0f
     m_Address: qinglan/pickup/riding-wind-feather/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 190ff2d75db414844ac884e000a585d3
+    m_Address: qinglan/collectible/old-court-03/illustration
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -239,6 +255,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 28af1fd8762ed174f8f151787b9bac3e
+    m_Address: qinglan/collectible/old-court-02/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2a21df4c13cb7654a9039a5b81405c8f
     m_Address: qinglan/profile/skill/base/lihuo-wheel
     m_ReadOnly: 0
@@ -319,6 +343,22 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 35c10ce4ef2fcf742b4267c8068af635
+    m_Address: qinglan/collectible/old-court-04/illustration
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37fb33bc02d81cb40816997d2fc8a40e
+    m_Address: qinglan/collectible/old-court-06/illustration
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3b19ce0a420a7434693ed4e015b3232b
     m_Address: qinglan/skill/base/tide-orb/vfx
     m_ReadOnly: 0
@@ -329,6 +369,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3b48322428307cd4baf260183de2c3fc
     m_Address: qinglan/boss/tingfeng/phase-3-overlay
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3f22b99fbfd87314595240cf9a723d51
+    m_Address: qinglan/collectible/old-court-06/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -759,6 +807,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c19dbcb4973f5c74cb9d5f38dbe006cb
+    m_Address: qinglan/collectible/old-court-03/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c21c19e7f5d67d2409599036d6c07c4c
     m_Address: qinglan/skill/evolved/earth-vein-spring-branch/vfx
     m_ReadOnly: 0
@@ -777,6 +833,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c5e9fbfffec74514d8ce2df0051ef8aa
     m_Address: qinglan/objective/wind-altar/stop-balance/state-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c60658efad6afd6448446bc3e1cd8afd
+    m_Address: qinglan/collectible/old-court-05/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -833,6 +897,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cb52fdc74e1dab54b86f810f8246e94f
     m_Address: qinglan/skill/evolved/qinglan-flowing-shadow-sword/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ccba00f1b2d01624b8462a270c53f4f6
+    m_Address: qinglan/collectible/old-court-01/illustration
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -991,6 +1063,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea970a1c7dd4c2147ad77319a70d3850
+    m_Address: qinglan/collectible/old-court-05/illustration
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ee272431205add34bb8f038a942f5586
     m_Address: qinglan/profile/skill/base/yellow-talisman
     m_ReadOnly: 0
@@ -1039,6 +1119,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6427ac944f39d744b422f441aa94e63
+    m_Address: qinglan/collectible/old-court-01/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f86045d4f53b3924abe6b66c32567326
     m_Address: qinglan/status/poisoned/visual
     m_ReadOnly: 0
@@ -1057,6 +1145,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fb9b2bdf994dd21408fa77c04ef3002e
     m_Address: qinglan/map/old-court/region/north-old-gate/prop-set
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fe07f45d780893a47a970048b2abf597
+    m_Address: qinglan/collectible/old-court-04/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

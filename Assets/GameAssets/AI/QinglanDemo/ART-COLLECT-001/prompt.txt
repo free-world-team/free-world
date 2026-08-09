@@ -1,0 +1,53 @@
+ART-COLLECT-001 ImageGen production record
+Generated: 2026-08-10 (Asia/Shanghai)
+Mode: Codex built-in ImageGen, text-only, one independent call per candidate
+Reference inputs: none
+Shared requirements: original Qinglan xianxia action-roguelite collectible; painterly stylized realism; orthographic three-quarter object view; strong silhouette and internal value contrast for 1024 illustration and 256 icon use; one centered complete object or connected keepsake arrangement with generous margin; flat RGB 255,0,255 chroma background; no external floor, cast shadow outside the object, text, readable marks, language-like glyphs, people, faces, hands, masks, skulls, religious imagery, logos, watermarks, borders, UI, or cropped parts.
+
+Approved candidate: source/old-court-01-imagegen.png
+Stable content: qinglan.collectible.old_court.01; topic qinglan.topic.old_court.balance_court; acquire source qinglan.landmark.wind_vein_stele.
+Prompt: Fractured circular black-stone wind-vein calibrator plate with muted bronze balance arms, three broad cyan channels, one missing wedge, and worn celadon inlay; archaeological instrument, not shield, weapon, coin, compass, religious object, or magic sigil.
+Visual review: PASS. The broken plate, three channels, balance arms, and missing sector are clear; no writing, symbol, figure, logo, watermark, or cropping.
+
+Rejected candidate: source/rejected/old-court-02-cross-lock-rejected.png
+Stable content: qinglan.collectible.old_court.02; topic qinglan.topic.old_court.balance_court; acquire source qinglan.landmark.sealed_sword_cache.
+Prompt: Heavy ancient sword-cache locking crossbar with rounded ends, central celadon locking cylinder, two clamp jaws, six empty scabbard sockets, broken sealing pin, and pale-blue cord remnant.
+Visual review: FAIL. The central locking face contains a clear plus/cross shape that may read as a medical or religious emblem. Retained only as rejected provenance; not processed or imported.
+
+Approved retry: source/old-court-02-imagegen.png
+Prompt: Same compact sword-cache latch concept, but with a smooth oval celadon drum and asymmetrical three-lobed mechanical key recess; absolutely no plus, cross, star, crest, rune, emblem, medical mark, or religious mark.
+Visual review: PASS. The horizontal latch, plain clamp jaws, empty sockets, asymmetric key recess, and frayed cord read as a sealed-cache mechanism; no prohibited mark, writing, weapon silhouette, logo, watermark, or cropping.
+
+Approved candidate: source/old-court-03-imagegen.png
+Stable content: qinglan.collectible.old_court.03; topic qinglan.topic.old_court.shen_tingyun; acquire source qinglan.landmark.herb_garden_variant.
+Prompt: Compact travel herb-grafting case opened to show a preserved pale-blue three-leaf cutting, two green seed pods, tiny blunt bronze grafting clasp, and weathered blue cord; implies careful field work and long travel, with no labels or paper.
+Visual review: PASS. The case, three-leaf cutting, seed pods, clasp, and travel binding are readable; no medical symbol, text, figure, logo, watermark, or cropping.
+
+Rejected candidate: source/rejected/old-court-04-dot-scale-rejected.png
+Stable content: qinglan.collectible.old_court.04; topic qinglan.topic.old_court.shen_tingyun; acquire source qinglan.landmark.broken_wall_sword_mark.
+Prompt: Folding blunt bronze sword-mark gauge with celadon arc scale, recessed dots/grooves, repaired joint, jade plumb weight, and blue cord.
+Visual review: FAIL. The repeated dot rows on the scale could be interpreted as Braille-like notation or language. Retained only as rejected provenance; not processed or imported.
+
+Approved retry: source/old-court-04-imagegen.png
+Prompt: Folding blunt bronze sword-mark gauge with a smooth celadon brace divided into three large plain segments of different widths, repaired copper joint, jade plumb weight, and blue cord; no dots, scales, ticks, numbers, letters, runes, or decorative symbols.
+Visual review: PASS. The plain folding gauge and repaired joint communicate measurement without written notation; no sharp edge, text, symbol, logo, watermark, or cropping.
+
+Rejected candidate: source/rejected/old-court-05-cup-mark-rejected.png
+Stable content: qinglan.collectible.old_court.05; topic qinglan.topic.old_court.daily_life; acquire source qinglan.landmark.guest_pavilion_letter.
+Prompt: Chipped celadon travel cup on a woven reed coaster with a second empty cup impression, plain folded blank paper sleeve, undecorated twine, and dried herb sprig.
+Visual review: FAIL. A dark cup-surface mark resembles a brush-written glyph. Retained only as rejected provenance; not processed or imported.
+
+Approved retry: source/old-court-05-imagegen.png
+Prompt: Same modest guest-pavilion keepsake, but with a completely undecorated smooth-glaze cup and every paper surface absolutely blank; no stains or scratches resembling writing, figures, seals, faces, animals, or symbols.
+Visual review: PASS. Plain chipped cup, paired cup impression, blank paper, twine, and three-leaf sprig read as daily-life remains; no text, symbol, figure, logo, watermark, or cropping.
+
+Rejected candidate: source/rejected/old-court-06-knot-extra-leaf-rejected.png
+Stable content: qinglan.collectible.old_court.06; topic qinglan.topic.old_court.daily_life; acquire source qinglan.story.lu_qingye.hearing_sword.
+Prompt: Listening-practice keepsake with curved wood hanger, three differently sized bronze chime leaves, celadon bead, teal tassel remnant, and rounded tapper.
+Visual review: FAIL. The left attachment forms a decorative lucky-knot-like motif, and the right chime appears doubled, making the specified three-note count ambiguous. Retained only as rejected provenance; not processed or imported.
+
+Approved retry: source/old-court-06-imagegen.png
+Prompt: Curved wood listening hanger with exactly three clearly separated plain bronze chime leaves, one celadon bead, a teal tassel attached by a simple binding, and one rounded wooden tapper; no extra leaves, decorative knots, lucky knots, bells, signs, or symbols.
+Visual review: PASS. Exactly three plain chime leaves remain clearly separated, with simple binding and no religious or decorative knot; no text, symbol, logo, watermark, or cropping.
+
+The built-in service did not expose model version or seed. Original generated files remain in the project-bound generated-images directory; repository source files are byte copies. Only the six approved sources proceed through chroma removal and deterministic 2048-pixel master / 1024-pixel illustration / 256-pixel icon processing. Stable filenames intentionally avoid freezing player-facing collectible names before G3.3 narrative and localization.
