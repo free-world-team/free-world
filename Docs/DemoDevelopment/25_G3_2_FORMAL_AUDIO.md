@@ -1,6 +1,6 @@
 # 25 G3.2 正式音频、混音与 Addressables
 
-- 状态：`IN PROGRESS — GOVERNANCE PASS；8 / 9 AUDIO 批次`
+- 状态：`IN PROGRESS — GOVERNANCE PASS；9 / 9 AUDIO 批次；待 Final Integration`
 - 日期：2026-08-10
 - 输入：G3.1 正式视觉、G0.4 Manifest、M13、M15、M16、ADR 0004/0025/0026
 - 非范围：G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -53,7 +53,7 @@ G3.2 开始时 `Assets/GameAssets` 为 477,068,081 Bytes，`.git` 为 476,914,00
 | 6 | AUDIO-ENEMY-001 | PASS | 6 普通敌人 + 2 Boss × Spawn/Attack/Death；24 条 OGG Clip |
 | 7 | AUDIO-AFFIX-001 | PASS | 狂奔/结界/分裂/震地各 Activation + Pulse；8 条 OGG Clip |
 | 8 | AUDIO-MAP-001 | PASS | 3 目标 + 3 事件 + 5 地标 + 3 通用地图 Cue；14 条 OGG Clip |
-| 9 | AUDIO-UI-001 | PENDING | 12 |
+| 9 | AUDIO-UI-001 | PASS | 12 条 0.08—0.42 秒 UI Cue；PCM24 Master + PCM16 Runtime WAV |
 | 10 | Final Integration | PENDING | Catalog、Mixer/Router、全量门禁与 Player Smoke |
 
 ## 5. 测试

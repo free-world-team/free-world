@@ -47,6 +47,22 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0e5f2daa2af45994aad3b466f18201af
+    m_Address: qinglan/audio/ui/navigate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 100a904bebb909b44a121c15cb55f998
+    m_Address: qinglan/audio/ui/tab-change
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 10e360e02c63de347b9280d82a6360af
     m_Address: qinglan/audio/affix/rampaging/activate
     m_ReadOnly: 0
@@ -65,6 +81,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 156a1f4bef49dcd4f8c114e47a5510e2
     m_Address: qinglan/audio/enemy/zhezhi/attack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15d995cd4d2c1894ebbae2871eeed49b
+    m_Address: qinglan/audio/ui/choice-focus
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -191,6 +215,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41cfdac912b58d445bdbb4ae8488eeac
+    m_Address: qinglan/audio/ui/page-open
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 53a26fd30640b0143a0fbb46ee881c44
     m_Address: qinglan/audio/enemy/wind-bell-spirit/spawn
     m_ReadOnly: 0
@@ -263,6 +295,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6bed281c0f2fc3a47a87d9c43c32042b
+    m_Address: qinglan/audio/ui/confirm
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6c7dc8b3135d8474d82d7d44466a11f9
     m_Address: qinglan/audio/weapon/taiyi-spirit-sealing-array
     m_ReadOnly: 0
@@ -281,6 +321,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 70117719c2fe023439598d542e334c80
     m_Address: qinglan/audio/affix/quaking/activate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71b3803501534a64eb6df84e7abe8dea
+    m_Address: qinglan/audio/ui/locked
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -335,6 +383,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b7db92c682b7194d83fd85616109882
+    m_Address: qinglan/audio/ui/pause-toggle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8c4dd1200b9378947aa54300cf080861
     m_Address: qinglan/audio/enemy/tingfeng/death
     m_ReadOnly: 0
@@ -353,6 +409,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9009f06f5c559a643a269bb362caff3e
     m_Address: qinglan/audio/player/pickup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 924799aaeb92ff641abc9545ee3d5c92
+    m_Address: qinglan/audio/ui/page-close
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -447,6 +511,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1931f61f407c264b9bfc810b200afa7
+    m_Address: qinglan/audio/ui/error
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a23f765be65a5004385e22a0474e2457
     m_Address: qinglan/audio/map/landmark/herb-garden-variant
     m_ReadOnly: 0
@@ -471,8 +543,24 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a32acea7a65f1c34fbf5efbcacaae1a9
+    m_Address: qinglan/audio/ui/notification
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a36f035a79de89147aa1ca8f5a66f525
     m_Address: qinglan/audio/boss/tingfeng/phase-two
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ae220aee90911f14c9fec7fe07f7cde8
+    m_Address: qinglan/audio/ui/choice-select
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -553,6 +641,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c36f2640968868340b7ac227b86e056e
     m_Address: qinglan/audio/affix/splitting/pulse
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c51a87238bf60c24aa1edcbc9124fd58
+    m_Address: qinglan/audio/ui/cancel
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release

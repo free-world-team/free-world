@@ -1,0 +1,8 @@
+AUDIO-UI-001 first-party procedural synthesis brief
+
+Create twelve concise, non-verbal interface cues for navigation, confirmation,
+cancellation, error, page transitions, tab changes, choices, locks,
+notifications, and pause toggling. Each cue must remain clear at low playback
+level and finish within 0.05-1.0 seconds. No recordings, samples, voices,
+external references, generative models, trademarks, or reference-project assets.
+Source PCM24 WAV; Runtime PCM16 WAV.
