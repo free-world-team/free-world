@@ -1,0 +1,44 @@
+ART-RELIC-001 — six independent text-only built-in ImageGen calls
+Use case: stylized-concept
+Asset type: commercial Unity survivor-game relic icon source
+Shared scene/backdrop: perfectly flat solid #FF00FF chroma-key background for local background removal
+Shared style: polished hand-painted 2.5D fantasy icon, chunky silhouette readable at 256 pixels, restrained Chinese-inspired craft language without readable glyphs, original design
+Shared composition: centered 1024 square, slight top-down three-quarter view, one fully visible opaque relic, generous even padding
+Shared constraints: uniform key background with no shadow, gradient, texture, reflection, floor plane or lighting variation; no #FF00FF in subject; no text, calligraphy, runes, letters, numbers, logo, watermark, UI frame, scene props, people, hands, religious or trademarked symbols
+
+CALL 1 — broken-sword-tassel
+Primary request: one short weathered sword fragment with a blunt broken edge, bound through a round jade collar to one thick compact rust-orange braided knot and three broad cloth tassel strips.
+Palette/material: dark teal steel, aged copper, ivory edge, rust-orange cloth, deep blue-green outline.
+Avoid: blood, intact full sword, loose threads, thin hair-like tassels, smoke, detached particles, photorealism.
+
+CALL 2 — wind-vein-copper
+Primary request: one thick circular aged-copper mechanism shaped as a three-lobed wind rotor, with three broad curved vanes around an open triangular jade hub and six shallow cyan airflow channels cut into the metal.
+Palette/material: aged copper, teal jade, cyan inlays, ivory highlights, deep blue-green outline.
+Constraints: this is a mechanism, not currency; no coin face.
+Avoid: real-world coin, swastika-like geometry, thin blades, external wind trails, smoke, particles, photorealism.
+
+CALL 3 — herb-garden-seed-pod
+Primary request: one sealed three-lobed celadon seed capsule held by a low copper cradle, with a tiny sturdy two-leaf jade sprout on top and a thick segmented pale-cyan protective overflow ring around its middle.
+Palette/material: celadon, muted leaf green, aged copper, cyan shield ring, ivory highlights, deep blue-green outline.
+Avoid: open flower, loose seeds, glass transparency, wispy glow, thin stems, photorealism.
+
+CALL 4 — listening-wind-core
+Primary request: one compact hexagonal dark-wood core with three large evenly spaced listening apertures, a central teal-jade lens, and three nested broken cyan echo bands inset into the wooden face.
+Palette/material: dark lacquered wood, teal jade, aged copper pins, cyan inlays, ivory highlights, deep blue-green outline.
+Constraints: abstract mechanical apertures only; no face or ear.
+Avoid: speaker brand, realistic eye, external sound-wave particles, smoke, photorealism, thin details.
+
+CALL 5 — old-court-bell
+Primary request: one squat ancient bronze courtyard bell with a large clean missing wedge on one lower side, a heavy visible jade clapper, four broad vertical ribs, and one segmented pale-cyan slow-pulse ring inset around the bell body.
+Palette/material: weathered bronze, dark patina, teal jade, cyan inlay, ivory highlights, deep outline.
+Avoid: inscription, hanging rope, temple or church scene, tiny cracks everywhere, external sound waves, smoke, photorealism.
+
+CALL 6 — blank-sword-trial-token
+Primary request: one thick blank cut-corner slate-jade trial plaque with a single bold sword-shaped recessed channel crossing diagonally, three blunt copper pressure clamps, and a narrow amber warning rim.
+Palette/material: charcoal slate jade, aged copper, restrained amber, ivory edge highlights, deep blue-green outline.
+Constraints: plaque face remains blank except for sword channel; do not use exact #E45D45 danger red.
+Avoid: written talisman, skull, blood, pentagram, full sword, external flames, smoke, particles, photorealism.
+
+Input images for all six calls: none.
+Reference images for all six calls: none.
+Requested in-image text for all six calls: none.

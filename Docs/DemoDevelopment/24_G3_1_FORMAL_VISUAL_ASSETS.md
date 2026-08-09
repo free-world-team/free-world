@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 11 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 12 / 27 ART BATCHES`
 - 日期：2026-08-09
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -65,7 +65,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 9 | ART-SKILL-002 | PASS | 六显化各 1 张 2048 source、1024 final 与正式 Profile；EditMode 325/325、PlayMode 17/17、Validation PASS |
 | 10 | ART-STATUS-001 | PASS | 七状态＋两伤害策略各 1 张 1024 source、512 final；EditMode 328/328、PlayMode 17/17、Validation PASS |
 | 11 | ART-PICKUP-001 | PASS | 六即时灵物各 1 张 256 Sprite＋128 Icon；EditMode 331/331、PlayMode 17/17、Validation PASS |
-| 12—27 | ART-RELIC-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 12 | ART-RELIC-001 | PASS | 六战斗奇物各 1 张 256 Icon；EditMode 334/334、PlayMode 17/17、Validation PASS |
+| 13—27 | ART-MAP-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -148,3 +149,9 @@ ImageGen 调用。六份服务原图均为 1254×1254 洋红键色 PNG；本地 
 Icon 为 30.52%—57.64%，安全边分别≥16/10 px，四角透明，洋红残留为 0，六种 Sprite Bounds 全部
 唯一；二次处理 18/18 working/final Hash 字节一致。正式地址为
 `qinglan/pickup/<name>/<sprite|icon>`；PickupId 到 Sprite/Icon 的运行时映射由 G3.1 最终集成关闭。
+
+ART-RELIC-001 对断剑穗、风脉铜片、药圃种囊、听风木芯、旧庭残钟、无字试剑牌分别执行一次无图片
+输入的 ImageGen 调用。六份 1254×1254 洋红键色 source 经本地 soft matte/despill 去背后，确定性派生
+六张 256 Icon；Alpha≥16 覆盖率为 43.03%—53.61%，安全边≥16 px，四角透明，洋红残留和 P0 危险红
+均为 0，六种 Bounds 全部唯一；二次处理 12/12 working/final Hash 字节一致。正式地址为
+`qinglan/relic/<name>/icon`；RelicId 到 Icon 的运行时映射由 G3.1 最终集成关闭。
