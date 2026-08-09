@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: 7c16e31c69db71b4d9e49a9ac2c7ae46
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7313270041405728503
+    second: south-guest-court-props-transparent_0
+  - first:
+      213: 4344223485820063700
+    second: south-guest-court-props-transparent_1
+  - first:
+      213: -4195530698951928597
+    second: south-guest-court-props-transparent_2
+  - first:
+      213: 2534234949119715617
+    second: south-guest-court-props-transparent_3
+  - first:
+      213: 6621505184036302700
+    second: south-guest-court-props-transparent_4
+  - first:
+      213: 3635785626659667648
+    second: south-guest-court-props-transparent_5
+  - first:
+      213: 742115083384779028
+    second: south-guest-court-props-transparent_6
+  - first:
+      213: 4241864208280090163
+    second: south-guest-court-props-transparent_7
+  - first:
+      213: -4911165975270356469
+    second: south-guest-court-props-transparent_8
+  - first:
+      213: -3354016163380190468
+    second: south-guest-court-props-transparent_9
+  - first:
+      213: -6628216975288008455
+    second: south-guest-court-props-transparent_10
+  - first:
+      213: -5389380428463046815
+    second: south-guest-court-props-transparent_11
+  - first:
+      213: 3298138642379182772
+    second: south-guest-court-props-transparent_12
+  - first:
+      213: -8382173439563747967
+    second: south-guest-court-props-transparent_13
+  - first:
+      213: 982139555466751737
+    second: south-guest-court-props-transparent_14
+  - first:
+      213: 8602657020795412385
+    second: south-guest-court-props-transparent_15
+  - first:
+      213: -7344468568793519673
+    second: south-guest-court-props-transparent_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 965
+        width: 278
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 909518b05ab028a90800000000000000
+      internalID: -7313270041405728503
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 976
+        width: 264
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dfc6316e38c94c30800000000000000
+      internalID: 4344223485820063700
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 954
+        width: 139
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be459b4ee0b76c5c0800000000000000
+      internalID: -4195530698951928597
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 965
+        width: 251
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12929af52496b2320800000000000000
+      internalID: 2534234949119715617
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 656
+        width: 257
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6f24e4f1ef44eb50800000000000000
+      internalID: 6621505184036302700
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 657
+        width: 150
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce3584a3c7e47230800000000000000
+      internalID: 3635785626659667648
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 658
+        width: 225
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 411fb978cb58c4a00800000000000000
+      internalID: 742115083384779028
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 657
+        width: 177
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3367af7e5012eda30800000000000000
+      internalID: 4241864208280090163
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 394
+        width: 216
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0a8603e09808dbb0800000000000000
+      internalID: -4911165975270356469
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 391
+        width: 242
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf22ecad1142471d0800000000000000
+      internalID: -3354016163380190468
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 372
+        width: 238
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f08ebd57c7d304a0800000000000000
+      internalID: -6628216975288008455
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 956
+        y: 379
+        width: 233
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f7402fd031535b0800000000000000
+      internalID: -5389380428463046815
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 91
+        width: 262
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b21007fe9755cd20800000000000000
+      internalID: 3298138642379182772
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 91
+        width: 238
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18da619daa98cab80800000000000000
+      internalID: -8382173439563747967
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 93
+        width: 245
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fea47bd8b241ad00800000000000000
+      internalID: 982139555466751737
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 959
+        y: 121
+        width: 241
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1afd7094bf6c26770800000000000000
+      internalID: 8602657020795412385
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: south-guest-court-props-transparent_16
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 99
+        width: 62
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c96a05dfb4331a90800000000000000
+      internalID: -7344468568793519673
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      south-guest-court-props-transparent_0: -7313270041405728503
+      south-guest-court-props-transparent_1: 4344223485820063700
+      south-guest-court-props-transparent_10: -6628216975288008455
+      south-guest-court-props-transparent_11: -5389380428463046815
+      south-guest-court-props-transparent_12: 3298138642379182772
+      south-guest-court-props-transparent_13: -8382173439563747967
+      south-guest-court-props-transparent_14: 982139555466751737
+      south-guest-court-props-transparent_15: 8602657020795412385
+      south-guest-court-props-transparent_16: -7344468568793519673
+      south-guest-court-props-transparent_2: -4195530698951928597
+      south-guest-court-props-transparent_3: 2534234949119715617
+      south-guest-court-props-transparent_4: 6621505184036302700
+      south-guest-court-props-transparent_5: 3635785626659667648
+      south-guest-court-props-transparent_6: 742115083384779028
+      south-guest-court-props-transparent_7: 4241864208280090163
+      south-guest-court-props-transparent_8: -4911165975270356469
+      south-guest-court-props-transparent_9: -3354016163380190468
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

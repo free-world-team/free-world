@@ -1,0 +1,622 @@
+fileFormatVersion: 2
+guid: 53fe809b5509ff045b47b16fa8d84e1d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5200760094293617419
+    second: south-guest-court-prop-set-atlas_0
+  - first:
+      213: 5963099658429133565
+    second: south-guest-court-prop-set-atlas_1
+  - first:
+      213: 3113860221528644033
+    second: south-guest-court-prop-set-atlas_2
+  - first:
+      213: 7333679287000107287
+    second: south-guest-court-prop-set-atlas_3
+  - first:
+      213: -6579063489250263833
+    second: south-guest-court-prop-set-atlas_4
+  - first:
+      213: -8945399697931682236
+    second: south-guest-court-prop-set-atlas_5
+  - first:
+      213: 8822945465632924408
+    second: south-guest-court-prop-set-atlas_6
+  - first:
+      213: -7382856160442789229
+    second: south-guest-court-prop-set-atlas_7
+  - first:
+      213: -2984155285787812864
+    second: south-guest-court-prop-set-atlas_8
+  - first:
+      213: -288980323872929840
+    second: south-guest-court-prop-set-atlas_9
+  - first:
+      213: -3060451716812452301
+    second: south-guest-court-prop-set-atlas_10
+  - first:
+      213: -2245189855359224232
+    second: south-guest-court-prop-set-atlas_11
+  - first:
+      213: 6156744802537220971
+    second: south-guest-court-prop-set-atlas_12
+  - first:
+      213: 4944373261460578500
+    second: south-guest-court-prop-set-atlas_13
+  - first:
+      213: -3411967387679971536
+    second: south-guest-court-prop-set-atlas_14
+  - first:
+      213: 611082026637839836
+    second: south-guest-court-prop-set-atlas_15
+  - first:
+      213: -2594333951753470949
+    second: south-guest-court-prop-set-atlas_16
+  - first:
+      213: -2411942814994904917
+    second: south-guest-court-prop-set-atlas_17
+  - first:
+      213: -2690812115791141934
+    second: south-guest-court-prop-set-atlas_18
+  - first:
+      213: -2161132718589994244
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c0
+  - first:
+      213: 1755778211403204700
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c1
+  - first:
+      213: 1873316749732644758
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c2
+  - first:
+      213: 8332412031120468655
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c3
+  - first:
+      213: -8082289436929440114
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c4
+  - first:
+      213: -408249557353554479
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c5
+  - first:
+      213: 7630368965936263173
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c6
+  - first:
+      213: 294188404586397288
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c7
+  - first:
+      213: -5362186223089328536
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c0
+  - first:
+      213: -8737982173364157183
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c1
+  - first:
+      213: 1532295559348434520
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c2
+  - first:
+      213: 4898044472040049819
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c3
+  - first:
+      213: 2779646090012969566
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c4
+  - first:
+      213: -6125351124164230232
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c5
+  - first:
+      213: -4937977036213849460
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c6
+  - first:
+      213: 7469488428051958568
+    second: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfa18fb1e3d1202e0800000000000000
+      internalID: -2161132718589994244
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c580f031bf6cd5810800000000000000
+      internalID: 1755778211403204700
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6978a9b98ab5ff910800000000000000
+      internalID: 1873316749732644758
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa6025689ca2a370800000000000000
+      internalID: 8332412031120468655
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e86cde33490f5df80800000000000000
+      internalID: -8082289436929440114
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dd1b3ac03b955af0800000000000000
+      internalID: -408249557353554479
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500bbc7a52484e960800000000000000
+      internalID: 7630368965936263173
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e39689bca251400800000000000000
+      internalID: 294188404586397288
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86e54494a00b595b0800000000000000
+      internalID: -5362186223089328536
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1050fe652837cb680800000000000000
+      internalID: -8737982173364157183
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8563fd951bec34510800000000000000
+      internalID: 1532295559348434520
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9c43021f7959f340800000000000000
+      internalID: 4898044472040049819
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5ac6844469439620800000000000000
+      internalID: 2779646090012969566
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3c6a72b916efaa0800000000000000
+      internalID: -6125351124164230232
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c82ff6f4c08c87bb0800000000000000
+      internalID: -4937977036213849460
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82b8de77624f8a760800000000000000
+      internalID: 7469488428051958568
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c0: -2161132718589994244
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c1: 1755778211403204700
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c2: 1873316749732644758
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c3: 8332412031120468655
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c4: -8082289436929440114
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c5: -408249557353554479
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c6: 7630368965936263173
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r0.c7: 294188404586397288
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c0: -5362186223089328536
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c1: -8737982173364157183
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c2: 1532295559348434520
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c3: 4898044472040049819
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c4: 2779646090012969566
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c5: -6125351124164230232
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c6: -4937977036213849460
+      qinglan.presentation.map.old_court.region.south_guest_court.prop.r1.c7: 7469488428051958568
+      south-guest-court-prop-set-atlas_0: -5200760094293617419
+      south-guest-court-prop-set-atlas_1: 5963099658429133565
+      south-guest-court-prop-set-atlas_10: -3060451716812452301
+      south-guest-court-prop-set-atlas_11: -2245189855359224232
+      south-guest-court-prop-set-atlas_12: 6156744802537220971
+      south-guest-court-prop-set-atlas_13: 4944373261460578500
+      south-guest-court-prop-set-atlas_14: -3411967387679971536
+      south-guest-court-prop-set-atlas_15: 611082026637839836
+      south-guest-court-prop-set-atlas_16: -2594333951753470949
+      south-guest-court-prop-set-atlas_17: -2411942814994904917
+      south-guest-court-prop-set-atlas_18: -2690812115791141934
+      south-guest-court-prop-set-atlas_2: 3113860221528644033
+      south-guest-court-prop-set-atlas_3: 7333679287000107287
+      south-guest-court-prop-set-atlas_4: -6579063489250263833
+      south-guest-court-prop-set-atlas_5: -8945399697931682236
+      south-guest-court-prop-set-atlas_6: 8822945465632924408
+      south-guest-court-prop-set-atlas_7: -7382856160442789229
+      south-guest-court-prop-set-atlas_8: -2984155285787812864
+      south-guest-court-prop-set-atlas_9: -288980323872929840
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

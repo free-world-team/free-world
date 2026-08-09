@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: c19e0437029ce9540b0d6190aabbba5a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5123352863114289103
+    second: west-herb-garden-props-transparent_0
+  - first:
+      213: -5498574449424515159
+    second: west-herb-garden-props-transparent_1
+  - first:
+      213: -8132697095506592050
+    second: west-herb-garden-props-transparent_2
+  - first:
+      213: 8144199368325678735
+    second: west-herb-garden-props-transparent_3
+  - first:
+      213: 4361464858350716861
+    second: west-herb-garden-props-transparent_4
+  - first:
+      213: -5448923789935243768
+    second: west-herb-garden-props-transparent_5
+  - first:
+      213: 3724891585451230464
+    second: west-herb-garden-props-transparent_6
+  - first:
+      213: -4068603635768409141
+    second: west-herb-garden-props-transparent_7
+  - first:
+      213: 4104870833414692460
+    second: west-herb-garden-props-transparent_8
+  - first:
+      213: -881848441394087111
+    second: west-herb-garden-props-transparent_9
+  - first:
+      213: 4112715851130662670
+    second: west-herb-garden-props-transparent_10
+  - first:
+      213: -407667141373502267
+    second: west-herb-garden-props-transparent_11
+  - first:
+      213: 5923982864990598293
+    second: west-herb-garden-props-transparent_12
+  - first:
+      213: 1558875825584724894
+    second: west-herb-garden-props-transparent_13
+  - first:
+      213: 4751626948665255135
+    second: west-herb-garden-props-transparent_14
+  - first:
+      213: -1075846281092152220
+    second: west-herb-garden-props-transparent_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 957
+        width: 300
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 130a71737b136e8b0800000000000000
+      internalID: -5123352863114289103
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 944
+        width: 283
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af3303cba321b3b0800000000000000
+      internalID: -5498574449424515159
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 933
+        width: 206
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ece7a7c941bd22f80800000000000000
+      internalID: -8132697095506592050
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 936
+        width: 246
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f864309fc22060170800000000000000
+      internalID: 8144199368325678735
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 673
+        width: 276
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db7085e3e29078c30800000000000000
+      internalID: 4361464858350716861
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 632
+        width: 212
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80e0cb4cea88164b0800000000000000
+      internalID: -5448923789935243768
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 663
+        width: 204
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00589a1692971b330800000000000000
+      internalID: 3724891585451230464
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 641
+        width: 268
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc34926bc8a6987c0800000000000000
+      internalID: -4068603635768409141
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 364
+        width: 264
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e5b82464e67f830800000000000000
+      internalID: 4104870833414692460
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 355
+        width: 190
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b39f8c38b03c3f0800000000000000
+      internalID: -881848441394087111
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 358
+        width: 269
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0fe2c8c64d431930800000000000000
+      internalID: 4112715851130662670
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 952
+        y: 339
+        width: 249
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cc55d315eca75af0800000000000000
+      internalID: -407667141373502267
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 90
+        width: 280
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 594f3437707363250800000000000000
+      internalID: 5923982864990598293
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 91
+        width: 242
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9bdbe8dd4d32a510800000000000000
+      internalID: 1558875825584724894
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 76
+        width: 242
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd4ad5cd88b21f140800000000000000
+      internalID: 4751626948665255135
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-props-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 88
+        width: 278
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 464c396e183d111f0800000000000000
+      internalID: -1075846281092152220
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      west-herb-garden-props-transparent_0: -5123352863114289103
+      west-herb-garden-props-transparent_1: -5498574449424515159
+      west-herb-garden-props-transparent_10: 4112715851130662670
+      west-herb-garden-props-transparent_11: -407667141373502267
+      west-herb-garden-props-transparent_12: 5923982864990598293
+      west-herb-garden-props-transparent_13: 1558875825584724894
+      west-herb-garden-props-transparent_14: 4751626948665255135
+      west-herb-garden-props-transparent_15: -1075846281092152220
+      west-herb-garden-props-transparent_2: -8132697095506592050
+      west-herb-garden-props-transparent_3: 8144199368325678735
+      west-herb-garden-props-transparent_4: 4361464858350716861
+      west-herb-garden-props-transparent_5: -5448923789935243768
+      west-herb-garden-props-transparent_6: 3724891585451230464
+      west-herb-garden-props-transparent_7: -4068603635768409141
+      west-herb-garden-props-transparent_8: 4104870833414692460
+      west-herb-garden-props-transparent_9: -881848441394087111
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

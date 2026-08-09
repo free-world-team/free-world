@@ -1,0 +1,618 @@
+fileFormatVersion: 2
+guid: 44038b83919801d4c97326804887dde9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9111983078535909708
+    second: east-sword-gallery-prop-set-atlas_0
+  - first:
+      213: 7956981105556158404
+    second: east-sword-gallery-prop-set-atlas_1
+  - first:
+      213: -5617264414079434017
+    second: east-sword-gallery-prop-set-atlas_2
+  - first:
+      213: -8227173967836563246
+    second: east-sword-gallery-prop-set-atlas_3
+  - first:
+      213: 7999365105588136297
+    second: east-sword-gallery-prop-set-atlas_4
+  - first:
+      213: -7121579071988709991
+    second: east-sword-gallery-prop-set-atlas_5
+  - first:
+      213: 7105772857289537882
+    second: east-sword-gallery-prop-set-atlas_6
+  - first:
+      213: -622573936508021892
+    second: east-sword-gallery-prop-set-atlas_7
+  - first:
+      213: 146262291027671613
+    second: east-sword-gallery-prop-set-atlas_8
+  - first:
+      213: -1553589289775150851
+    second: east-sword-gallery-prop-set-atlas_9
+  - first:
+      213: -6791873986867582122
+    second: east-sword-gallery-prop-set-atlas_10
+  - first:
+      213: 2872120216019870689
+    second: east-sword-gallery-prop-set-atlas_11
+  - first:
+      213: 4674155257552381446
+    second: east-sword-gallery-prop-set-atlas_12
+  - first:
+      213: -5416506333047712466
+    second: east-sword-gallery-prop-set-atlas_13
+  - first:
+      213: -3446786890524511700
+    second: east-sword-gallery-prop-set-atlas_14
+  - first:
+      213: 2677708527249738060
+    second: east-sword-gallery-prop-set-atlas_15
+  - first:
+      213: 5663022889621375909
+    second: east-sword-gallery-prop-set-atlas_16
+  - first:
+      213: -8845131661282697928
+    second: east-sword-gallery-prop-set-atlas_17
+  - first:
+      213: -1448260817590974180
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c0
+  - first:
+      213: -8605510983755589815
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c1
+  - first:
+      213: -390266933269215037
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c2
+  - first:
+      213: -3343273945771661894
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c3
+  - first:
+      213: 7050690979389467376
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c4
+  - first:
+      213: -6199869799320993916
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c5
+  - first:
+      213: 4980629406959543087
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c6
+  - first:
+      213: 6303384017265018398
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c7
+  - first:
+      213: -1409339943825022437
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c0
+  - first:
+      213: 7400077010390464187
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c1
+  - first:
+      213: -3144730166295907479
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c2
+  - first:
+      213: -6491131681795566899
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c3
+  - first:
+      213: 7998999333017058175
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c4
+  - first:
+      213: -2761206822024918611
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c5
+  - first:
+      213: 3596993703001001
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c6
+  - first:
+      213: -2333246397874610591
+    second: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c198f59a57eb6ebe0800000000000000
+      internalID: -1448260817590974180
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 947968eaa55139880800000000000000
+      internalID: -8605510983755589815
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c848eaba4e759af0800000000000000
+      internalID: -390266933269215037
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab5267b4f0e4a91d0800000000000000
+      internalID: -3343273945771661894
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa6f8fe61619d160800000000000000
+      internalID: 7050690979389467376
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48fbccd0443a5f9a0800000000000000
+      internalID: -6199869799320993916
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2320bf9e00ce1540800000000000000
+      internalID: 4980629406959543087
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e16c4ffed5e1a7750800000000000000
+      internalID: 6303384017265018398
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b126a80c9c4017ce0800000000000000
+      internalID: -1409339943825022437
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6bbda65da52b660800000000000000
+      internalID: 7400077010390464187
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9633a73439cab54d0800000000000000
+      internalID: -3144730166295907479
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc29a4c702edae5a0800000000000000
+      internalID: -6491131681795566899
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7b711b4387220f60800000000000000
+      internalID: 7998999333017058175
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da9c1dd56093ea9d0800000000000000
+      internalID: -2761206822024918611
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab3deb5277cc0000800000000000000
+      internalID: 3596993703001001
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16e593163c4ae9fd0800000000000000
+      internalID: -2333246397874610591
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      east-sword-gallery-prop-set-atlas_0: 9111983078535909708
+      east-sword-gallery-prop-set-atlas_1: 7956981105556158404
+      east-sword-gallery-prop-set-atlas_10: -6791873986867582122
+      east-sword-gallery-prop-set-atlas_11: 2872120216019870689
+      east-sword-gallery-prop-set-atlas_12: 4674155257552381446
+      east-sword-gallery-prop-set-atlas_13: -5416506333047712466
+      east-sword-gallery-prop-set-atlas_14: -3446786890524511700
+      east-sword-gallery-prop-set-atlas_15: 2677708527249738060
+      east-sword-gallery-prop-set-atlas_16: 5663022889621375909
+      east-sword-gallery-prop-set-atlas_17: -8845131661282697928
+      east-sword-gallery-prop-set-atlas_2: -5617264414079434017
+      east-sword-gallery-prop-set-atlas_3: -8227173967836563246
+      east-sword-gallery-prop-set-atlas_4: 7999365105588136297
+      east-sword-gallery-prop-set-atlas_5: -7121579071988709991
+      east-sword-gallery-prop-set-atlas_6: 7105772857289537882
+      east-sword-gallery-prop-set-atlas_7: -622573936508021892
+      east-sword-gallery-prop-set-atlas_8: 146262291027671613
+      east-sword-gallery-prop-set-atlas_9: -1553589289775150851
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c0: -1448260817590974180
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c1: -8605510983755589815
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c2: -390266933269215037
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c3: -3343273945771661894
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c4: 7050690979389467376
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c5: -6199869799320993916
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c6: 4980629406959543087
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r0.c7: 6303384017265018398
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c0: -1409339943825022437
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c1: 7400077010390464187
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c2: -3144730166295907479
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c3: -6491131681795566899
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c4: 7998999333017058175
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c5: -2761206822024918611
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c6: 3596993703001001
+      qinglan.presentation.map.old_court.region.east_sword_gallery.prop.r1.c7: -2333246397874610591
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

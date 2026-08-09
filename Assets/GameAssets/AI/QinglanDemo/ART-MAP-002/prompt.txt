@@ -1,0 +1,31 @@
+ART-MAP-002 — five independent text-only built-in ImageGen calls
+Use case: stylized-concept
+Asset type: commercial Unity 2D region prop-set sprite sheet for Qinglan Old Court
+Shared layout: exactly sixteen distinct non-interactive props in a strict 4 by 4 grid, one isolated prop per equal cell, at least 15 percent empty clearance
+Shared camera/style: consistent orthographic three-quarter top-down view, hand-painted Chinese-fantasy game sprites, low saturation, clean readable silhouettes, no photorealism
+Shared backdrop: flat pure chroma magenta #FF00FF covering the full image and gutters; no ground, shadow, scenery, frame, border, or presentation board
+Shared exclusions: no characters, creatures, objectives, events, landmarks, wind platforms, readable text, symbols, calligraphy, logo, watermark, brand, religious imagery, danger red/orange, glow, particles, or crop
+
+CALL 1 — central-training-ground
+Palette: warm-gray wood/stone, muted teal weathering, pale-ivory highlights.
+Row-major props: plain practice post; straw target; blank cracked stone marker; hemp rope coil; sandbag; swept leaf pile; broken blank practice board; water bucket; low bench; pebble cairn; rolled training mat; wicker utility basket; boundary bollard; roof-tile stack; step stool; bamboo-pole bundle without weapon tips.
+
+CALL 2 — west-herb-garden
+Palette: earth brown, celadon green, muted teal moisture, pale-ivory highlights.
+Row-major props: soil herb-bed border; broad-leaf cluster; unmarked watering jar; soil sack; harvest basket; empty bamboo trellis; mushroom cluster; seedling tray; plain stone basin; empty clay-pot stack; mossy stump; dried-stem bundle; compost mound; garden edging stakes; soil sieve; moss-stone cluster.
+
+CALL 3 — east-sword-gallery
+Palette: cool slate, dark wood, aged copper, muted teal oxidation, pale-ivory highlights.
+Row-major props: empty display rack; blank stone plinth; unlit copper brazier; shelf with blank rolled cloth; low abstract screen base; rope queue posts; cracked pedestal; ceramic jar; folded cleaning cloth; empty hook board; copper polishing basin; display-tray stack; unlit blank lantern stand; ordinary non-magical storage chest; bundled wooden practice sleeves without blades; maintenance tool box.
+
+CALL 4 — north-old-gate
+Palette: dark granite, charcoal wood, muted blue-green lichen, cold pale edges; no horror.
+Row-major props: broken gate timber; granite bollard; rope-wrapped post; blank torn teal pennant; stone debris; broken roof tiles; lichen boulder; iron ring stone; gravel mound; threshold block; snapped crossbeam; low standing-stone cluster; damaged fence; overturned empty bucket; straight-slot drainage grate; rope coil with peg.
+
+CALL 5 — south-guest-court
+Palette: warm beige, honey-brown wood, muted teal trim, celadon leaves, pale-ivory highlights.
+Row-major props: guest bench; empty tea tray with unmarked cups; unlit blank paper lantern; plain cushion stack; generic-leaf planter; empty umbrella stand; luggage stool without luggage; ceramic urn; completely blank welcome stone; leaf basket; handrail segment; shoe-removal step; plain folded table runner; empty birdbath basin; guest sandals; pale fallen-leaf cluster.
+
+Input images for all five calls: none.
+Reference images for all five calls: none.
+Requested in-image text for all five calls: none.

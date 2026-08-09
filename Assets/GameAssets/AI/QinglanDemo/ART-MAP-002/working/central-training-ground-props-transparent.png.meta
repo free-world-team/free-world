@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 51be804c57100d74988e55009e303e8b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4383909179102402539
+    second: central-training-ground-props-transparent_0
+  - first:
+      213: -5093350823524799258
+    second: central-training-ground-props-transparent_1
+  - first:
+      213: 4212068436744988808
+    second: central-training-ground-props-transparent_2
+  - first:
+      213: -4741823324334586730
+    second: central-training-ground-props-transparent_3
+  - first:
+      213: 3649746692599399019
+    second: central-training-ground-props-transparent_4
+  - first:
+      213: -6154856385701649222
+    second: central-training-ground-props-transparent_5
+  - first:
+      213: -1706446945324211033
+    second: central-training-ground-props-transparent_6
+  - first:
+      213: 7217404048285067480
+    second: central-training-ground-props-transparent_7
+  - first:
+      213: 9076105571321652475
+    second: central-training-ground-props-transparent_8
+  - first:
+      213: -6706623371182280743
+    second: central-training-ground-props-transparent_9
+  - first:
+      213: -3813515695817838260
+    second: central-training-ground-props-transparent_10
+  - first:
+      213: 1354113074762324469
+    second: central-training-ground-props-transparent_11
+  - first:
+      213: 4791077624275402394
+    second: central-training-ground-props-transparent_12
+  - first:
+      213: 1000243672187806945
+    second: central-training-ground-props-transparent_13
+  - first:
+      213: -6275884885213085110
+    second: central-training-ground-props-transparent_14
+  - first:
+      213: -8635640079156136779
+    second: central-training-ground-props-transparent_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 955
+        width: 153
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be719f3eb26c6dc30800000000000000
+      internalID: 4383909179102402539
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 955
+        width: 176
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ec6c576968c059b0800000000000000
+      internalID: -5093350823524799258
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 969
+        width: 159
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 888e1dd3de5447a30800000000000000
+      internalID: 4212068436744988808
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 972
+        width: 235
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 694006d4fc8a13eb0800000000000000
+      internalID: -4741823324334586730
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 678
+        width: 217
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b624b8c974186a230800000000000000
+      internalID: 3649746692599399019
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 678
+        width: 261
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab465be1abe859aa0800000000000000
+      internalID: -6154856385701649222
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 644
+        width: 192
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a466eb5b8b7158e0800000000000000
+      internalID: -1706446945324211033
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 655
+        width: 159
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d86f721ebe592460800000000000000
+      internalID: 7217404048285067480
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 377
+        width: 245
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf4229a0eedc4fd70800000000000000
+      internalID: 9076105571321652475
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 382
+        width: 167
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dfe85eb3994de2a0800000000000000
+      internalID: -6706623371182280743
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 378
+        width: 238
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c41b665fdaba31bc0800000000000000
+      internalID: -3813515695817838260
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 382
+        width: 248
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f99be6caa6cac210800000000000000
+      internalID: 1354113074762324469
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 74
+        width: 115
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9ef14e07b35d7240800000000000000
+      internalID: 4791077624275402394
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 63
+        width: 236
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e42691025491ed00800000000000000
+      internalID: 1000243672187806945
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 64
+        width: 211
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4281ada2f397e8a0800000000000000
+      internalID: -6275884885213085110
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-props-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 68
+        width: 274
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b4b5c10a1b082880800000000000000
+      internalID: -8635640079156136779
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      central-training-ground-props-transparent_0: 4383909179102402539
+      central-training-ground-props-transparent_1: -5093350823524799258
+      central-training-ground-props-transparent_10: -3813515695817838260
+      central-training-ground-props-transparent_11: 1354113074762324469
+      central-training-ground-props-transparent_12: 4791077624275402394
+      central-training-ground-props-transparent_13: 1000243672187806945
+      central-training-ground-props-transparent_14: -6275884885213085110
+      central-training-ground-props-transparent_15: -8635640079156136779
+      central-training-ground-props-transparent_2: 4212068436744988808
+      central-training-ground-props-transparent_3: -4741823324334586730
+      central-training-ground-props-transparent_4: 3649746692599399019
+      central-training-ground-props-transparent_5: -6154856385701649222
+      central-training-ground-props-transparent_6: -1706446945324211033
+      central-training-ground-props-transparent_7: 7217404048285067480
+      central-training-ground-props-transparent_8: 9076105571321652475
+      central-training-ground-props-transparent_9: -6706623371182280743
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

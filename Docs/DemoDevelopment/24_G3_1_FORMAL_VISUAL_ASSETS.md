@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 13 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 14 / 27 ART BATCHES`
 - 日期：2026-08-09
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -67,7 +67,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 11 | ART-PICKUP-001 | PASS | 六即时灵物各 1 张 256 Sprite＋128 Icon；EditMode 331/331、PlayMode 17/17、Validation PASS |
 | 12 | ART-RELIC-001 | PASS | 六战斗奇物各 1 张 256 Icon；EditMode 334/334、PlayMode 17/17、Validation PASS |
 | 13 | ART-MAP-001 | PASS | 五区域各 1 张 4096×1024 working master、2048×512 final、16 个 256×256 Tile；EditMode 337/337、PlayMode 17/17、Validation PASS |
-| 14—27 | ART-MAP-002—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 14 | ART-MAP-002 | PASS | 五区域各 1 张 4096×1024 working master、2048×512 final、16 个 256×256 Prop；EditMode 340/340、PlayMode 17/17、Validation PASS |
+| 15—27 | ART-OBJECTIVE-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -163,3 +164,11 @@ ImageGen 调用。五份 1254×1254 全幅正交地表 source 被确定性归一
 精确 P0 危险红为 0，逻辑格平均接缝差为 3.5992—8.6831（预算≤12）。二次处理 10/10 working/final
 Hash 字节一致。正式地址为 `qinglan/map/old-court/region/<region>/tile-kit`；地图绘制、Tile 规则与正式
 PresentationId 接入由 G3.1 最终集成关闭。
+
+ART-MAP-002 对五区域分别执行一次无图片输入的 ImageGen 调用，每张 source 固定 4×4、16 个非交互
+环境道具，并明确排除后续 Objective/Event/Landmark 独占物件。五份 1254×1254 洋红键色 source 经
+soft matte/despill 去背、逐格 Alpha 裁切和安全边归一化后，派生每区一张 4096×1024 working master
+和 2048×512 final；五张 final 共 80 个唯一 256×256 Prop，单格 Alpha≥16 覆盖率为 18.14%—47.49%，
+安全边≥24 px，洋红残留和精确 P0 危险红均为 0。完整链第二次处理 15/15 Hash 字节一致。正式地址为
+`qinglan/map/old-court/region/<region>/prop-set`；场景摆放、遮挡排序、碰撞和正式目录接入由 G3.1 最终
+集成关闭。

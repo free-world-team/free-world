@@ -207,6 +207,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 30aa10b17040d5343a5ba67c4389af8f
+    m_Address: qinglan/map/old-court/region/central-training-ground/prop-set
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3110cd3221af3774bbaae2bf845fe1f9
     m_Address: qinglan/enemy/wind-bell-spirit/directional-animation-atlas
     m_ReadOnly: 0
@@ -255,6 +263,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44038b83919801d4c97326804887dde9
+    m_Address: qinglan/map/old-court/region/east-sword-gallery/prop-set
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4a535121520e97740aa0fd471013ea82
     m_Address: qinglan/map/old-court/region/west-herb-garden/tile-kit
     m_ReadOnly: 0
@@ -297,6 +313,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5340c608d3ae7c949a20397d2d3038f6
     m_Address: qinglan/profile/skill/base/spirit-vine-seed
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53fe809b5509ff045b47b16fa8d84e1d
+    m_Address: qinglan/map/old-court/region/south-guest-court/prop-set
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -623,6 +647,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d51582dee1cd81f4a90d476766d7b476
+    m_Address: qinglan/map/old-court/region/west-herb-garden/prop-set
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d900c8095652f4b4c8a95ba6e53432d3
     m_Address: qinglan/enemy/affix/frenzy/overlay
     m_ReadOnly: 0
@@ -729,6 +761,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f86045d4f53b3924abe6b66c32567326
     m_Address: qinglan/status/poisoned/visual
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fb9b2bdf994dd21408fa77c04ef3002e
+    m_Address: qinglan/map/old-court/region/north-old-gate/prop-set
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

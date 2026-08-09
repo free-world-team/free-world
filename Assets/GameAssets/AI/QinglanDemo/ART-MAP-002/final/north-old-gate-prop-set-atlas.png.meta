@@ -1,0 +1,618 @@
+fileFormatVersion: 2
+guid: fb9b2bdf994dd21408fa77c04ef3002e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3887067445657521225
+    second: north-old-gate-prop-set-atlas_0
+  - first:
+      213: 8078715488654129223
+    second: north-old-gate-prop-set-atlas_1
+  - first:
+      213: -6999151879352576138
+    second: north-old-gate-prop-set-atlas_2
+  - first:
+      213: -3295342657222518324
+    second: north-old-gate-prop-set-atlas_3
+  - first:
+      213: 5316254868261859409
+    second: north-old-gate-prop-set-atlas_4
+  - first:
+      213: -8435861955054621667
+    second: north-old-gate-prop-set-atlas_5
+  - first:
+      213: -2212180154983679980
+    second: north-old-gate-prop-set-atlas_6
+  - first:
+      213: 183232782695157306
+    second: north-old-gate-prop-set-atlas_7
+  - first:
+      213: 139984266965804431
+    second: north-old-gate-prop-set-atlas_8
+  - first:
+      213: -1879205107691894880
+    second: north-old-gate-prop-set-atlas_9
+  - first:
+      213: -1174549880544668010
+    second: north-old-gate-prop-set-atlas_10
+  - first:
+      213: -3813911691265236370
+    second: north-old-gate-prop-set-atlas_11
+  - first:
+      213: -2602044335080951275
+    second: north-old-gate-prop-set-atlas_12
+  - first:
+      213: 110688673972266926
+    second: north-old-gate-prop-set-atlas_13
+  - first:
+      213: -238149484646976914
+    second: north-old-gate-prop-set-atlas_14
+  - first:
+      213: 5735887041719056938
+    second: north-old-gate-prop-set-atlas_15
+  - first:
+      213: 3015449686018327415
+    second: north-old-gate-prop-set-atlas_16
+  - first:
+      213: 7000634715581707862
+    second: north-old-gate-prop-set-atlas_17
+  - first:
+      213: -8005253123130954831
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c0
+  - first:
+      213: 6614263420544859262
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c1
+  - first:
+      213: -8231280590105301197
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c2
+  - first:
+      213: -5959729260366648613
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c3
+  - first:
+      213: 1903322339111206625
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c4
+  - first:
+      213: -8389358066406472208
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c5
+  - first:
+      213: 570744908341460895
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c6
+  - first:
+      213: 13182953027148589
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c7
+  - first:
+      213: 6565194417272237493
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c0
+  - first:
+      213: -8191854467212992126
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c1
+  - first:
+      213: -2078991742702797357
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c2
+  - first:
+      213: -429133271657525846
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c3
+  - first:
+      213: -101167494925101178
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c4
+  - first:
+      213: 7335195669602617942
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c5
+  - first:
+      213: -5788719623671777661
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c6
+  - first:
+      213: -5230213717136611849
+    second: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bb61bab2b0a7e090800000000000000
+      internalID: -8005253123130954831
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7cbf6089859acb50800000000000000
+      internalID: 6614263420544859262
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33fa43c1aed94cd80800000000000000
+      internalID: -8231280590105301197
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bda285e40d9ca4da0800000000000000
+      internalID: -5959729260366648613
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eef9cb4595f96a10800000000000000
+      internalID: 1903322339111206625
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f5c84e8943039b80800000000000000
+      internalID: -8389358066406472208
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f3e0f5871bbe700800000000000000
+      internalID: 570744908341460895
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b164073d5de2000800000000000000
+      internalID: 13182953027148589
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bda3e2e9814c1b50800000000000000
+      internalID: 6565194417272237493
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281a21ea3cfa05e80800000000000000
+      internalID: -8191854467212992126
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ddba356600f523e0800000000000000
+      internalID: -2078991742702797357
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aad4d8520996b0af0800000000000000
+      internalID: -429133271657525846
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6875c2a03b4989ef0800000000000000
+      internalID: -101167494925101178
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ac5a41999dbc560800000000000000
+      internalID: 7335195669602617942
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 386f5b61c265aafa0800000000000000
+      internalID: -5788719623671777661
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f562bac55c8a67b0800000000000000
+      internalID: -5230213717136611849
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      north-old-gate-prop-set-atlas_0: 3887067445657521225
+      north-old-gate-prop-set-atlas_1: 8078715488654129223
+      north-old-gate-prop-set-atlas_10: -1174549880544668010
+      north-old-gate-prop-set-atlas_11: -3813911691265236370
+      north-old-gate-prop-set-atlas_12: -2602044335080951275
+      north-old-gate-prop-set-atlas_13: 110688673972266926
+      north-old-gate-prop-set-atlas_14: -238149484646976914
+      north-old-gate-prop-set-atlas_15: 5735887041719056938
+      north-old-gate-prop-set-atlas_16: 3015449686018327415
+      north-old-gate-prop-set-atlas_17: 7000634715581707862
+      north-old-gate-prop-set-atlas_2: -6999151879352576138
+      north-old-gate-prop-set-atlas_3: -3295342657222518324
+      north-old-gate-prop-set-atlas_4: 5316254868261859409
+      north-old-gate-prop-set-atlas_5: -8435861955054621667
+      north-old-gate-prop-set-atlas_6: -2212180154983679980
+      north-old-gate-prop-set-atlas_7: 183232782695157306
+      north-old-gate-prop-set-atlas_8: 139984266965804431
+      north-old-gate-prop-set-atlas_9: -1879205107691894880
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c0: -8005253123130954831
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c1: 6614263420544859262
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c2: -8231280590105301197
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c3: -5959729260366648613
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c4: 1903322339111206625
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c5: -8389358066406472208
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c6: 570744908341460895
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r0.c7: 13182953027148589
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c0: 6565194417272237493
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c1: -8191854467212992126
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c2: -2078991742702797357
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c3: -429133271657525846
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c4: -101167494925101178
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c5: 7335195669602617942
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c6: -5788719623671777661
+      qinglan.presentation.map.old_court.region.north_old_gate.prop.r1.c7: -5230213717136611849
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: 5e2948073b7fb8642816785007263089
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6030836780456336563
+    second: north-old-gate-props-transparent_0
+  - first:
+      213: 7414038264140898942
+    second: north-old-gate-props-transparent_1
+  - first:
+      213: -2652111322885025114
+    second: north-old-gate-props-transparent_2
+  - first:
+      213: 3355476766067391647
+    second: north-old-gate-props-transparent_3
+  - first:
+      213: 5767970446336970612
+    second: north-old-gate-props-transparent_4
+  - first:
+      213: -2255540431186002668
+    second: north-old-gate-props-transparent_5
+  - first:
+      213: -984239372483363404
+    second: north-old-gate-props-transparent_6
+  - first:
+      213: 5153897812806873740
+    second: north-old-gate-props-transparent_7
+  - first:
+      213: 3395663834225458622
+    second: north-old-gate-props-transparent_8
+  - first:
+      213: -2720719669384623748
+    second: north-old-gate-props-transparent_9
+  - first:
+      213: 8425534527923795576
+    second: north-old-gate-props-transparent_10
+  - first:
+      213: 2148766270418894870
+    second: north-old-gate-props-transparent_11
+  - first:
+      213: 2853012113042018720
+    second: north-old-gate-props-transparent_12
+  - first:
+      213: 34289016530569704
+    second: north-old-gate-props-transparent_13
+  - first:
+      213: 1822554626382506544
+    second: north-old-gate-props-transparent_14
+  - first:
+      213: 2792039925663517198
+    second: north-old-gate-props-transparent_15
+  - first:
+      213: -7204786946700012915
+    second: north-old-gate-props-transparent_16
+  - first:
+      213: 3672563815763868953
+    second: north-old-gate-props-transparent_17
+  - first:
+      213: 3394425496841208397
+    second: north-old-gate-props-transparent_18
+  - first:
+      213: -4884178563516679425
+    second: north-old-gate-props-transparent_19
+  - first:
+      213: 4919153471701818625
+    second: north-old-gate-props-transparent_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 956
+        width: 258
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bcd57d5916d1b350800000000000000
+      internalID: 6030836780456336563
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 947
+        width: 163
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72a54d1584f3e660800000000000000
+      internalID: 7414038264140898942
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 953
+        width: 95
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a295a6adcec13bd0800000000000000
+      internalID: -2652111322885025114
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 931
+        width: 174
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9cf585375c019e20800000000000000
+      internalID: 3355476766067391647
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 709
+        width: 247
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47fcdd89f82fb0050800000000000000
+      internalID: 5767970446336970612
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 731
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41d70ae9de5b2b0e0800000000000000
+      internalID: -2255540431186002668
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 681
+        width: 254
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bdfc2561874752f0800000000000000
+      internalID: -984239372483363404
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 680
+        width: 258
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c82340511c2568740800000000000000
+      internalID: 5153897812806873740
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 670
+        width: 213
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebd36a72442df1f20800000000000000
+      internalID: 3395663834225458622
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 703
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7949ec20ef0e3ad0800000000000000
+      internalID: -2720719669384623748
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 697
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 876bfa343038de470800000000000000
+      internalID: 8425534527923795576
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 702
+        width: 34
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 610c8adc983f1dd10800000000000000
+      internalID: 2148766270418894870
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 408
+        width: 253
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a191c1a66fe79720800000000000000
+      internalID: 2853012113042018720
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 407
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e9800acda1d97000800000000000000
+      internalID: 34289016530569704
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 390
+        width: 261
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03a2641c6c30b4910800000000000000
+      internalID: 1822554626382506544
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 379
+        width: 251
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0ac1eff4815fb620800000000000000
+      internalID: 2792039925663517198
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_16
+      rect:
+        serializedVersion: 2
+        x: 958
+        y: 370
+        width: 240
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d82139fc174730c90800000000000000
+      internalID: -7204786946700012915
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_17
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 53
+        width: 237
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91dfe85155197f230800000000000000
+      internalID: 3672563815763868953
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_18
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 69
+        width: 227
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42cfb3410c6b1f20800000000000000
+      internalID: 3394425496841208397
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_19
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 65
+        width: 266
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffab2065979e73cb0800000000000000
+      internalID: -4884178563516679425
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: north-old-gate-props-transparent_20
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 63
+        width: 263
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10d9a6c0508544440800000000000000
+      internalID: 4919153471701818625
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      north-old-gate-props-transparent_0: 6030836780456336563
+      north-old-gate-props-transparent_1: 7414038264140898942
+      north-old-gate-props-transparent_10: 8425534527923795576
+      north-old-gate-props-transparent_11: 2148766270418894870
+      north-old-gate-props-transparent_12: 2853012113042018720
+      north-old-gate-props-transparent_13: 34289016530569704
+      north-old-gate-props-transparent_14: 1822554626382506544
+      north-old-gate-props-transparent_15: 2792039925663517198
+      north-old-gate-props-transparent_16: -7204786946700012915
+      north-old-gate-props-transparent_17: 3672563815763868953
+      north-old-gate-props-transparent_18: 3394425496841208397
+      north-old-gate-props-transparent_19: -4884178563516679425
+      north-old-gate-props-transparent_2: -2652111322885025114
+      north-old-gate-props-transparent_20: 4919153471701818625
+      north-old-gate-props-transparent_3: 3355476766067391647
+      north-old-gate-props-transparent_4: 5767970446336970612
+      north-old-gate-props-transparent_5: -2255540431186002668
+      north-old-gate-props-transparent_6: -984239372483363404
+      north-old-gate-props-transparent_7: 5153897812806873740
+      north-old-gate-props-transparent_8: 3395663834225458622
+      north-old-gate-props-transparent_9: -2720719669384623748
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

@@ -1,0 +1,634 @@
+fileFormatVersion: 2
+guid: d51582dee1cd81f4a90d476766d7b476
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1523320290663539711
+    second: west-herb-garden-prop-set-atlas_0
+  - first:
+      213: -1165926615881583394
+    second: west-herb-garden-prop-set-atlas_1
+  - first:
+      213: -3046247157962673616
+    second: west-herb-garden-prop-set-atlas_2
+  - first:
+      213: -6768077653382076171
+    second: west-herb-garden-prop-set-atlas_3
+  - first:
+      213: -4274714051458184246
+    second: west-herb-garden-prop-set-atlas_4
+  - first:
+      213: -3202754999800591830
+    second: west-herb-garden-prop-set-atlas_5
+  - first:
+      213: 7410229798001018505
+    second: west-herb-garden-prop-set-atlas_6
+  - first:
+      213: 7508111445518725514
+    second: west-herb-garden-prop-set-atlas_7
+  - first:
+      213: -2903998212868416663
+    second: west-herb-garden-prop-set-atlas_8
+  - first:
+      213: -7415462714118839450
+    second: west-herb-garden-prop-set-atlas_9
+  - first:
+      213: 6982670731920690650
+    second: west-herb-garden-prop-set-atlas_10
+  - first:
+      213: -3886735360493835214
+    second: west-herb-garden-prop-set-atlas_11
+  - first:
+      213: 6049476562493354131
+    second: west-herb-garden-prop-set-atlas_12
+  - first:
+      213: 8473034315168352263
+    second: west-herb-garden-prop-set-atlas_13
+  - first:
+      213: 4945617802677108049
+    second: west-herb-garden-prop-set-atlas_14
+  - first:
+      213: 3713044472621830296
+    second: west-herb-garden-prop-set-atlas_15
+  - first:
+      213: 5443979260635125002
+    second: west-herb-garden-prop-set-atlas_16
+  - first:
+      213: -6997983083381875010
+    second: west-herb-garden-prop-set-atlas_17
+  - first:
+      213: 2833652697330230774
+    second: west-herb-garden-prop-set-atlas_18
+  - first:
+      213: 5379361678181078083
+    second: west-herb-garden-prop-set-atlas_19
+  - first:
+      213: 5216726540076528276
+    second: west-herb-garden-prop-set-atlas_20
+  - first:
+      213: 1199225117393431262
+    second: west-herb-garden-prop-set-atlas_21
+  - first:
+      213: 7712174917167142351
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c0
+  - first:
+      213: 3507884276308265105
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c1
+  - first:
+      213: 5557211216332171573
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c2
+  - first:
+      213: 6275983981755313186
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c3
+  - first:
+      213: -1817970819226566749
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c4
+  - first:
+      213: 7601902111959600574
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c5
+  - first:
+      213: 4952739983139052810
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c6
+  - first:
+      213: 8497233837137996802
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c7
+  - first:
+      213: -3112075878813569423
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c0
+  - first:
+      213: 3878988923056589525
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c1
+  - first:
+      213: 5024419294284038731
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c2
+  - first:
+      213: -7104251414859791643
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c3
+  - first:
+      213: 507464743073740324
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c4
+  - first:
+      213: 6090957502855177460
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c5
+  - first:
+      213: -2641261518223436985
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c6
+  - first:
+      213: 3696397079345394940
+    second: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc5dc6fe936270b60800000000000000
+      internalID: 7712174917167142351
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 198488ae9228ea030800000000000000
+      internalID: 3507884276308265105
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 539ab4b682e2f1d40800000000000000
+      internalID: 5557211216332171573
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22c21980e26c81750800000000000000
+      internalID: 6275983981755313186
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af79f30c2545c6e0800000000000000
+      internalID: -1817970819226566749
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebdc4a8b1b16f7960800000000000000
+      internalID: 7601902111959600574
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0d90ef16caabb440800000000000000
+      internalID: 4952739983139052810
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c2a04972d3ce570800000000000000
+      internalID: 8497233837137996802
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17e61490a7fafc4d0800000000000000
+      internalID: -3112075878813569423
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5da867eafdfe4d530800000000000000
+      internalID: 3878988923056589525
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b424b664ab25ab540800000000000000
+      internalID: 5024419294284038731
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e247366af0a86d90800000000000000
+      internalID: -7104251414859791643
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 426f1f2ce70ea0700800000000000000
+      internalID: 507464743073740324
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f4eeabd39d678450800000000000000
+      internalID: 6090957502855177460
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7431267a4aa585bd0800000000000000
+      internalID: -2641261518223436985
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf47c2f2f8d3c4330800000000000000
+      internalID: 3696397079345394940
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c0: 7712174917167142351
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c1: 3507884276308265105
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c2: 5557211216332171573
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c3: 6275983981755313186
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c4: -1817970819226566749
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c5: 7601902111959600574
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c6: 4952739983139052810
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r0.c7: 8497233837137996802
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c0: -3112075878813569423
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c1: 3878988923056589525
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c2: 5024419294284038731
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c3: -7104251414859791643
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c4: 507464743073740324
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c5: 6090957502855177460
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c6: -2641261518223436985
+      qinglan.presentation.map.old_court.region.west_herb_garden.prop.r1.c7: 3696397079345394940
+      west-herb-garden-prop-set-atlas_0: 1523320290663539711
+      west-herb-garden-prop-set-atlas_1: -1165926615881583394
+      west-herb-garden-prop-set-atlas_10: 6982670731920690650
+      west-herb-garden-prop-set-atlas_11: -3886735360493835214
+      west-herb-garden-prop-set-atlas_12: 6049476562493354131
+      west-herb-garden-prop-set-atlas_13: 8473034315168352263
+      west-herb-garden-prop-set-atlas_14: 4945617802677108049
+      west-herb-garden-prop-set-atlas_15: 3713044472621830296
+      west-herb-garden-prop-set-atlas_16: 5443979260635125002
+      west-herb-garden-prop-set-atlas_17: -6997983083381875010
+      west-herb-garden-prop-set-atlas_18: 2833652697330230774
+      west-herb-garden-prop-set-atlas_19: 5379361678181078083
+      west-herb-garden-prop-set-atlas_2: -3046247157962673616
+      west-herb-garden-prop-set-atlas_20: 5216726540076528276
+      west-herb-garden-prop-set-atlas_21: 1199225117393431262
+      west-herb-garden-prop-set-atlas_3: -6768077653382076171
+      west-herb-garden-prop-set-atlas_4: -4274714051458184246
+      west-herb-garden-prop-set-atlas_5: -3202754999800591830
+      west-herb-garden-prop-set-atlas_6: 7410229798001018505
+      west-herb-garden-prop-set-atlas_7: 7508111445518725514
+      west-herb-garden-prop-set-atlas_8: -2903998212868416663
+      west-herb-garden-prop-set-atlas_9: -7415462714118839450
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

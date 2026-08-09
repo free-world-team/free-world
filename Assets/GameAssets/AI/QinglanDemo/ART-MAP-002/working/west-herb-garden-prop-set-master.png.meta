@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: 150b80564551ac543a8dfdd21c79095e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3791512907629372668
+    second: west-herb-garden-prop-set-master_0
+  - first:
+      213: -5385677953680559599
+    second: west-herb-garden-prop-set-master_1
+  - first:
+      213: 6944260127280044439
+    second: west-herb-garden-prop-set-master_2
+  - first:
+      213: 3981017544036143498
+    second: west-herb-garden-prop-set-master_3
+  - first:
+      213: -5692896646605148178
+    second: west-herb-garden-prop-set-master_4
+  - first:
+      213: 321051132255664032
+    second: west-herb-garden-prop-set-master_5
+  - first:
+      213: -7624209109714971650
+    second: west-herb-garden-prop-set-master_6
+  - first:
+      213: -4978625632242947944
+    second: west-herb-garden-prop-set-master_7
+  - first:
+      213: -4677229562162317375
+    second: west-herb-garden-prop-set-master_8
+  - first:
+      213: -2337248766697477848
+    second: west-herb-garden-prop-set-master_9
+  - first:
+      213: 2641302619903125379
+    second: west-herb-garden-prop-set-master_10
+  - first:
+      213: 8293472614468355252
+    second: west-herb-garden-prop-set-master_11
+  - first:
+      213: -8883811646192414519
+    second: west-herb-garden-prop-set-master_12
+  - first:
+      213: 8657786950869795321
+    second: west-herb-garden-prop-set-master_13
+  - first:
+      213: 7057972471035993014
+    second: west-herb-garden-prop-set-master_14
+  - first:
+      213: 3320135160252297521
+    second: west-herb-garden-prop-set-master_15
+  - first:
+      213: 1397208964674527568
+    second: west-herb-garden-prop-set-master_16
+  - first:
+      213: -2047814512115598178
+    second: west-herb-garden-prop-set-master_17
+  - first:
+      213: 5253211728261121497
+    second: west-herb-garden-prop-set-master_18
+  - first:
+      213: -5400004100497497922
+    second: west-herb-garden-prop-set-master_19
+  - first:
+      213: -1829676561075353755
+    second: west-herb-garden-prop-set-master_20
+  - first:
+      213: -3883323892551588739
+    second: west-herb-garden-prop-set-master_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_0
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 559
+        width: 411
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf4ae84b6e82e9430800000000000000
+      internalID: 3791512907629372668
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_1
+      rect:
+        serializedVersion: 2
+        x: 2643
+        y: 559
+        width: 345
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 112b7388f6a3245b0800000000000000
+      internalID: -5385677953680559599
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_2
+      rect:
+        serializedVersion: 2
+        x: 3280
+        y: 964
+        width: 102
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7999f622bc7fe5060800000000000000
+      internalID: 6944260127280044439
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_3
+      rect:
+        serializedVersion: 2
+        x: 3835
+        y: 968
+        width: 97
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a815fdc2d5a6f3730800000000000000
+      internalID: 3981017544036143498
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_4
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 624
+        width: 418
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eef661489a4cef0b0800000000000000
+      internalID: -5692896646605148178
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_5
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 709
+        width: 32
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a7f5d4cd4a947400800000000000000
+      internalID: 321051132255664032
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_6
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 610
+        width: 351
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef35422a53e513690800000000000000
+      internalID: -7624209109714971650
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_7
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 796
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89821888d5e58eab0800000000000000
+      internalID: -4978625632242947944
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_8
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 639
+        width: 37
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c7fb568e74271fb0800000000000000
+      internalID: -4677229562162317375
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_9
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 600
+        width: 314
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 829e64541ac609fd0800000000000000
+      internalID: -2337248766697477848
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_10
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 637
+        width: 418
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38762a31dbac7a420800000000000000
+      internalID: 2641302619903125379
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_11
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 559
+        width: 309
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b401d3f665581370800000000000000
+      internalID: 8293472614468355252
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_12
+      rect:
+        serializedVersion: 2
+        x: 3659
+        y: 559
+        width: 361
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c01931506c56b480800000000000000
+      internalID: -8883811646192414519
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_13
+      rect:
+        serializedVersion: 2
+        x: 3505
+        y: 640
+        width: 19
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f14b936c53a62870800000000000000
+      internalID: 8657786950869795321
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_14
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 98
+        width: 418
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bb16925194f2f160800000000000000
+      internalID: 7057972471035993014
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_15
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 47
+        width: 350
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1317f11665d731e20800000000000000
+      internalID: 3320135160252297521
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_16
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 86
+        width: 418
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 051aa609622e36310800000000000000
+      internalID: 1397208964674527568
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_17
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 47
+        width: 391
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9cb57f0d83b493e0800000000000000
+      internalID: -2047814512115598178
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_18
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 112
+        width: 418
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d58be0fb3827e840800000000000000
+      internalID: 5253211728261121497
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_19
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 106
+        width: 418
+        height: 300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb0a13c81e45f05b0800000000000000
+      internalID: -5400004100497497922
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_20
+      rect:
+        serializedVersion: 2
+        x: 3119
+        y: 85
+        width: 418
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 567ce3b9cdeab96e0800000000000000
+      internalID: -1829676561075353755
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: west-herb-garden-prop-set-master_21
+      rect:
+        serializedVersion: 2
+        x: 3631
+        y: 123
+        width: 418
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d74eca49e79ab1ac0800000000000000
+      internalID: -3883323892551588739
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      west-herb-garden-prop-set-master_0: 3791512907629372668
+      west-herb-garden-prop-set-master_1: -5385677953680559599
+      west-herb-garden-prop-set-master_10: 2641302619903125379
+      west-herb-garden-prop-set-master_11: 8293472614468355252
+      west-herb-garden-prop-set-master_12: -8883811646192414519
+      west-herb-garden-prop-set-master_13: 8657786950869795321
+      west-herb-garden-prop-set-master_14: 7057972471035993014
+      west-herb-garden-prop-set-master_15: 3320135160252297521
+      west-herb-garden-prop-set-master_16: 1397208964674527568
+      west-herb-garden-prop-set-master_17: -2047814512115598178
+      west-herb-garden-prop-set-master_18: 5253211728261121497
+      west-herb-garden-prop-set-master_19: -5400004100497497922
+      west-herb-garden-prop-set-master_2: 6944260127280044439
+      west-herb-garden-prop-set-master_20: -1829676561075353755
+      west-herb-garden-prop-set-master_21: -3883323892551588739
+      west-herb-garden-prop-set-master_3: 3981017544036143498
+      west-herb-garden-prop-set-master_4: -5692896646605148178
+      west-herb-garden-prop-set-master_5: 321051132255664032
+      west-herb-garden-prop-set-master_6: -7624209109714971650
+      west-herb-garden-prop-set-master_7: -4978625632242947944
+      west-herb-garden-prop-set-master_8: -4677229562162317375
+      west-herb-garden-prop-set-master_9: -2337248766697477848
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

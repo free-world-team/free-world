@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: 340b6be9794bae44d9bece547532e05a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2831402156803306650
+    second: central-training-ground-prop-set-master_0
+  - first:
+      213: 2701556596516791743
+    second: central-training-ground-prop-set-master_1
+  - first:
+      213: 2127253865256488901
+    second: central-training-ground-prop-set-master_2
+  - first:
+      213: -8677223209036363391
+    second: central-training-ground-prop-set-master_3
+  - first:
+      213: 9180352857576285478
+    second: central-training-ground-prop-set-master_4
+  - first:
+      213: -408369906839144428
+    second: central-training-ground-prop-set-master_5
+  - first:
+      213: 6492072496095218349
+    second: central-training-ground-prop-set-master_6
+  - first:
+      213: 8603126146855357489
+    second: central-training-ground-prop-set-master_7
+  - first:
+      213: 7767879353742943128
+    second: central-training-ground-prop-set-master_8
+  - first:
+      213: -8236640855392522344
+    second: central-training-ground-prop-set-master_9
+  - first:
+      213: -392935893230509038
+    second: central-training-ground-prop-set-master_10
+  - first:
+      213: -8885753451746448964
+    second: central-training-ground-prop-set-master_11
+  - first:
+      213: 8975598472687093674
+    second: central-training-ground-prop-set-master_12
+  - first:
+      213: -8675895211657658317
+    second: central-training-ground-prop-set-master_13
+  - first:
+      213: 4829574243757632285
+    second: central-training-ground-prop-set-master_14
+  - first:
+      213: -8335866129802911796
+    second: central-training-ground-prop-set-master_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_0
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 559
+        width: 248
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a94398c92492b4720800000000000000
+      internalID: 2831402156803306650
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_1
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 559
+        width: 297
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb52ffb396bdd7520800000000000000
+      internalID: 2701556596516791743
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_2
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 559
+        width: 295
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf80b9ae16858d10800000000000000
+      internalID: 2127253865256488901
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_3
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 607
+        width: 418
+        height: 323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 189cc9c177f449780800000000000000
+      internalID: -8677223209036363391
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_4
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 588
+        width: 418
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 625a39cc84a276f70800000000000000
+      internalID: 9180352857576285478
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_5
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 636
+        width: 418
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 418b4edbbbd255af0800000000000000
+      internalID: -408369906839144428
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_6
+      rect:
+        serializedVersion: 2
+        x: 3173
+        y: 559
+        width: 310
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daac6d9e989781a50800000000000000
+      internalID: 6492072496095218349
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_7
+      rect:
+        serializedVersion: 2
+        x: 3702
+        y: 559
+        width: 276
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c403536a1746770800000000000000
+      internalID: 8603126146855357489
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_8
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 91
+        width: 418
+        height: 331
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89360f1cd1d0dcb60800000000000000
+      internalID: 7767879353742943128
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_9
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 47
+        width: 342
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89febd718c291bd80800000000000000
+      internalID: -8236640855392522344
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_10
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 93
+        width: 418
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214ae7013e20c8af0800000000000000
+      internalID: -392935893230509038
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_11
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 104
+        width: 418
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb9a3fa70567fa480800000000000000
+      internalID: -8885753451746448964
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_12
+      rect:
+        serializedVersion: 2
+        x: 2190
+        y: 47
+        width: 227
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa78d03914bbf8c70800000000000000
+      internalID: 8975598472687093674
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_13
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 68
+        width: 418
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33002a89547099780800000000000000
+      internalID: -8675895211657658317
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_14
+      rect:
+        serializedVersion: 2
+        x: 3119
+        y: 53
+        width: 418
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1bac8fbf28160340800000000000000
+      internalID: 4829574243757632285
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: central-training-ground-prop-set-master_15
+      rect:
+        serializedVersion: 2
+        x: 3631
+        y: 103
+        width: 418
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf13e59bed015c80800000000000000
+      internalID: -8335866129802911796
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      central-training-ground-prop-set-master_0: 2831402156803306650
+      central-training-ground-prop-set-master_1: 2701556596516791743
+      central-training-ground-prop-set-master_10: -392935893230509038
+      central-training-ground-prop-set-master_11: -8885753451746448964
+      central-training-ground-prop-set-master_12: 8975598472687093674
+      central-training-ground-prop-set-master_13: -8675895211657658317
+      central-training-ground-prop-set-master_14: 4829574243757632285
+      central-training-ground-prop-set-master_15: -8335866129802911796
+      central-training-ground-prop-set-master_2: 2127253865256488901
+      central-training-ground-prop-set-master_3: -8677223209036363391
+      central-training-ground-prop-set-master_4: 9180352857576285478
+      central-training-ground-prop-set-master_5: -408369906839144428
+      central-training-ground-prop-set-master_6: 6492072496095218349
+      central-training-ground-prop-set-master_7: 8603126146855357489
+      central-training-ground-prop-set-master_8: 7767879353742943128
+      central-training-ground-prop-set-master_9: -8236640855392522344
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

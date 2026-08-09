@@ -1,0 +1,610 @@
+fileFormatVersion: 2
+guid: 30aa10b17040d5343a5ba67c4389af8f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4783927919397278084
+    second: central-training-ground-prop-set-atlas_0
+  - first:
+      213: -8587586530694387470
+    second: central-training-ground-prop-set-atlas_1
+  - first:
+      213: -6112900367773508865
+    second: central-training-ground-prop-set-atlas_2
+  - first:
+      213: -6650690478518705869
+    second: central-training-ground-prop-set-atlas_3
+  - first:
+      213: -7310138498532147101
+    second: central-training-ground-prop-set-atlas_4
+  - first:
+      213: 7922168518400205260
+    second: central-training-ground-prop-set-atlas_5
+  - first:
+      213: 1723149104710911147
+    second: central-training-ground-prop-set-atlas_6
+  - first:
+      213: 7891482451341076763
+    second: central-training-ground-prop-set-atlas_7
+  - first:
+      213: -6899488424685254379
+    second: central-training-ground-prop-set-atlas_8
+  - first:
+      213: 8165575877731791760
+    second: central-training-ground-prop-set-atlas_9
+  - first:
+      213: 4762847893421618002
+    second: central-training-ground-prop-set-atlas_10
+  - first:
+      213: -5695484767518452337
+    second: central-training-ground-prop-set-atlas_11
+  - first:
+      213: -7333236051901454526
+    second: central-training-ground-prop-set-atlas_12
+  - first:
+      213: 2785850754740555826
+    second: central-training-ground-prop-set-atlas_13
+  - first:
+      213: 1320350923575392176
+    second: central-training-ground-prop-set-atlas_14
+  - first:
+      213: 5825855250190178645
+    second: central-training-ground-prop-set-atlas_15
+  - first:
+      213: -4424351669393928480
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c0
+  - first:
+      213: 206520631512678659
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c1
+  - first:
+      213: -5239308232765418546
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c2
+  - first:
+      213: 2162319015824183757
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c3
+  - first:
+      213: -7682791670797459053
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c4
+  - first:
+      213: 3000448486893453880
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c5
+  - first:
+      213: 1542653884466840963
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c6
+  - first:
+      213: -2229485741768502137
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c7
+  - first:
+      213: 3220041442426041541
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c0
+  - first:
+      213: 6496804115878878242
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c1
+  - first:
+      213: 3885698153123048219
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c2
+  - first:
+      213: -813567693097254504
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c3
+  - first:
+      213: 5493721678511388723
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c4
+  - first:
+      213: -6067716448293474447
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c5
+  - first:
+      213: -3087122427577353356
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c6
+  - first:
+      213: 8486885655221987311
+    second: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee4e50199b8992c0800000000000000
+      internalID: -4424351669393928480
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3014a109b65bdd200800000000000000
+      internalID: 206520631512678659
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec3dc3ddbec3a47b0800000000000000
+      internalID: -5239308232765418546
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc1d54d30b9120e10800000000000000
+      internalID: 2162319015824183757
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 391a9ca3ead316590800000000000000
+      internalID: -7682791670797459053
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8328424700cb3a920800000000000000
+      internalID: 3000448486893453880
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385c50bd88b986510800000000000000
+      internalID: 1542653884466840963
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 784171ab7864f01e0800000000000000
+      internalID: -2229485741768502137
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c437d1a1a2efac20800000000000000
+      internalID: 3220041442426041541
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22c914efbe8492a50800000000000000
+      internalID: 6496804115878878242
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b6a4902e5cce530800000000000000
+      internalID: 3885698153123048219
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 891443c5e70a5b4f0800000000000000
+      internalID: -813567693097254504
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c4
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 338b88672ce9d3c40800000000000000
+      internalID: 5493721678511388723
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17f2ca5d9042bcba0800000000000000
+      internalID: -6067716448293474447
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c6
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b3c1622865825d0800000000000000
+      internalID: -3087122427577353356
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c7
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe76dd8b98977c570800000000000000
+      internalID: 8486885655221987311
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      central-training-ground-prop-set-atlas_0: 4783927919397278084
+      central-training-ground-prop-set-atlas_1: -8587586530694387470
+      central-training-ground-prop-set-atlas_10: 4762847893421618002
+      central-training-ground-prop-set-atlas_11: -5695484767518452337
+      central-training-ground-prop-set-atlas_12: -7333236051901454526
+      central-training-ground-prop-set-atlas_13: 2785850754740555826
+      central-training-ground-prop-set-atlas_14: 1320350923575392176
+      central-training-ground-prop-set-atlas_15: 5825855250190178645
+      central-training-ground-prop-set-atlas_2: -6112900367773508865
+      central-training-ground-prop-set-atlas_3: -6650690478518705869
+      central-training-ground-prop-set-atlas_4: -7310138498532147101
+      central-training-ground-prop-set-atlas_5: 7922168518400205260
+      central-training-ground-prop-set-atlas_6: 1723149104710911147
+      central-training-ground-prop-set-atlas_7: 7891482451341076763
+      central-training-ground-prop-set-atlas_8: -6899488424685254379
+      central-training-ground-prop-set-atlas_9: 8165575877731791760
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c0: -4424351669393928480
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c1: 206520631512678659
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c2: -5239308232765418546
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c3: 2162319015824183757
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c4: -7682791670797459053
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c5: 3000448486893453880
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c6: 1542653884466840963
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r0.c7: -2229485741768502137
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c0: 3220041442426041541
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c1: 6496804115878878242
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c2: 3885698153123048219
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c3: -813567693097254504
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c4: 5493721678511388723
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c5: -6067716448293474447
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c6: -3087122427577353356
+      qinglan.presentation.map.old_court.region.central_training_ground.prop.r1.c7: 8486885655221987311
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

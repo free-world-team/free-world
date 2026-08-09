@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 73c732a561e165c45923f25760dd5c94
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 190778496042217755
+    second: east-sword-gallery-prop-set-master_0
+  - first:
+      213: -6104056427175721309
+    second: east-sword-gallery-prop-set-master_1
+  - first:
+      213: -4976150507702038596
+    second: east-sword-gallery-prop-set-master_2
+  - first:
+      213: -450470601994067920
+    second: east-sword-gallery-prop-set-master_3
+  - first:
+      213: -7242684148500184739
+    second: east-sword-gallery-prop-set-master_4
+  - first:
+      213: -5711459793607350380
+    second: east-sword-gallery-prop-set-master_5
+  - first:
+      213: -8551339919745049115
+    second: east-sword-gallery-prop-set-master_6
+  - first:
+      213: 9084475492687236194
+    second: east-sword-gallery-prop-set-master_7
+  - first:
+      213: -5442895627422600425
+    second: east-sword-gallery-prop-set-master_8
+  - first:
+      213: 4471266939685349783
+    second: east-sword-gallery-prop-set-master_9
+  - first:
+      213: -290792662306039086
+    second: east-sword-gallery-prop-set-master_10
+  - first:
+      213: 7266397151957388047
+    second: east-sword-gallery-prop-set-master_11
+  - first:
+      213: -6788037094057088685
+    second: east-sword-gallery-prop-set-master_12
+  - first:
+      213: 3543617581602602739
+    second: east-sword-gallery-prop-set-master_13
+  - first:
+      213: 9056574033848268163
+    second: east-sword-gallery-prop-set-master_14
+  - first:
+      213: 8956169402964721695
+    second: east-sword-gallery-prop-set-master_15
+  - first:
+      213: -7135065298505802104
+    second: east-sword-gallery-prop-set-master_16
+  - first:
+      213: -1599788806545904567
+    second: east-sword-gallery-prop-set-master_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 562
+        width: 418
+        height: 413
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1131670808c5a200800000000000000
+      internalID: 190778496042217755
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_1
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 559
+        width: 252
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a6404925090a4ba0800000000000000
+      internalID: -6104056427175721309
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_2
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 559
+        width: 314
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf4a8f5a7921fab0800000000000000
+      internalID: -4976150507702038596
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_3
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 559
+        width: 375
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 030236acf5b9fb9f0800000000000000
+      internalID: -450470601994067920
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_4
+      rect:
+        serializedVersion: 2
+        x: 3784
+        y: 966
+        width: 31
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d514b4ce321dc7b90800000000000000
+      internalID: -7242684148500184739
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_5
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 576
+        width: 418
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 497ab1d0491dcb0b0800000000000000
+      internalID: -5711459793607350380
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_6
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 626
+        width: 418
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed9af166a9835980800000000000000
+      internalID: -8551339919745049115
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_7
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 577
+        width: 418
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c4d58345a821e70800000000000000
+      internalID: 9084475492687236194
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_8
+      rect:
+        serializedVersion: 2
+        x: 3738
+        y: 559
+        width: 203
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 713f2f9b343f674b0800000000000000
+      internalID: -5442895627422600425
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_9
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 159
+        width: 401
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799a4e387912d0e30800000000000000
+      internalID: 4471266939685349783
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_10
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 47
+        width: 389
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2da55f34d95e6fbf0800000000000000
+      internalID: -290792662306039086
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_11
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 116
+        width: 418
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0b845fe5bd67d460800000000000000
+      internalID: 7266397151957388047
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_12
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 71
+        width: 418
+        height: 370
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3596d8e3a3c0cc1a0800000000000000
+      internalID: -6788037094057088685
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_13
+      rect:
+        serializedVersion: 2
+        x: 2184
+        y: 47
+        width: 239
+        height: 418
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fe70436a657d2130800000000000000
+      internalID: 3543617581602602739
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_14
+      rect:
+        serializedVersion: 2
+        x: 2607
+        y: 84
+        width: 418
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3857d89991a6fad70800000000000000
+      internalID: 9056574033848268163
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_15
+      rect:
+        serializedVersion: 2
+        x: 3119
+        y: 79
+        width: 418
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f104fe3ce94ba4c70800000000000000
+      internalID: 8956169402964721695
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_16
+      rect:
+        serializedVersion: 2
+        x: 3631
+        y: 54
+        width: 418
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88e58590ae72bfc90800000000000000
+      internalID: -7135065298505802104
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: east-sword-gallery-prop-set-master_17
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 47
+        width: 98
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c6f267e886cc9e0800000000000000
+      internalID: -1599788806545904567
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      east-sword-gallery-prop-set-master_0: 190778496042217755
+      east-sword-gallery-prop-set-master_1: -6104056427175721309
+      east-sword-gallery-prop-set-master_10: -290792662306039086
+      east-sword-gallery-prop-set-master_11: 7266397151957388047
+      east-sword-gallery-prop-set-master_12: -6788037094057088685
+      east-sword-gallery-prop-set-master_13: 3543617581602602739
+      east-sword-gallery-prop-set-master_14: 9056574033848268163
+      east-sword-gallery-prop-set-master_15: 8956169402964721695
+      east-sword-gallery-prop-set-master_16: -7135065298505802104
+      east-sword-gallery-prop-set-master_17: -1599788806545904567
+      east-sword-gallery-prop-set-master_2: -4976150507702038596
+      east-sword-gallery-prop-set-master_3: -450470601994067920
+      east-sword-gallery-prop-set-master_4: -7242684148500184739
+      east-sword-gallery-prop-set-master_5: -5711459793607350380
+      east-sword-gallery-prop-set-master_6: -8551339919745049115
+      east-sword-gallery-prop-set-master_7: 9084475492687236194
+      east-sword-gallery-prop-set-master_8: -5442895627422600425
+      east-sword-gallery-prop-set-master_9: 4471266939685349783
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:
