@@ -39,6 +39,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 08863c3747dd61046a9c9250026265bf
+    m_Address: qinglan/hub/meta-node/mind/04/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0956e8e315aa90f488b6caf75e8eca67
     m_Address: qinglan/enemy/wooden-sword-puppet/directional-animation-atlas
     m_ReadOnly: 0
@@ -177,6 +185,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 23a773e57617e4947a8b3c90f1cdc854
     m_Address: qinglan/landmark/sealed-sword-cache/state-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 242bddb59e2a06c42b543fb0166551b8
+    m_Address: qinglan/hub/meta-node/movement/03/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -383,6 +399,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51a66b584db21234e873e29ca6bc4d33
+    m_Address: qinglan/hub/meta-node/innate/02/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5340c608d3ae7c949a20397d2d3038f6
     m_Address: qinglan/profile/skill/base/spirit-vine-seed
     m_ReadOnly: 0
@@ -393,6 +417,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 53fe809b5509ff045b47b16fa8d84e1d
     m_Address: qinglan/map/old-court/region/south-guest-court/prop-set
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b6081867923bb74c8c8965e3279fd15
+    m_Address: qinglan/hub/meta-node/movement/04/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -591,6 +623,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1e4439376869e9459e08290ab183b7b
+    m_Address: qinglan/hub/meta-node/movement/02/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a39a28e1bc3c5e341a4bd77623090de3
     m_Address: qinglan/profile/enemy/stone-lantern-guard
     m_ReadOnly: 0
@@ -671,6 +711,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bcaebc7764318a04298af29406b36e6f
+    m_Address: qinglan/hub/meta-node/innate/03/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bd7a5c1d5641ce24f930f9d9f74738e7
     m_Address: qinglan/skill/base/yellow-talisman/vfx
     m_ReadOnly: 0
@@ -681,6 +729,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c00719c9813b0dc49950471ebd6237a7
     m_Address: qinglan/map/old-court/region/north-old-gate/tile-kit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c02194b3ea33a624a875dcf4ee4381cd
+    m_Address: qinglan/hub/meta-node/innate/01/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -767,6 +823,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf1c317b17ad5fa42bfe76817f65d155
+    m_Address: qinglan/hub/meta-node/mind/02/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cf36558d863dddb4caed9b9c2651fd3e
     m_Address: qinglan/relic/herb-garden-seed-pod/icon
     m_ReadOnly: 0
@@ -817,6 +881,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d51582dee1cd81f4a90d476766d7b476
     m_Address: qinglan/map/old-court/region/west-herb-garden/prop-set
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d67570a2b01f7434994d9e9930fde9f2
+    m_Address: qinglan/hub/meta-node/mind/03/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -903,6 +975,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef520d0b4526b9845b9646a7ad48a7c7
+    m_Address: qinglan/hub/meta-node/innate/04/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f0c89a7516b2a2c4aa8e1df8dce789f2
     m_Address: qinglan/pickup/boundary-talisman/icon
     m_ReadOnly: 0
@@ -943,8 +1023,24 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f8b45aa4b6e13744aa3df3a620d8c2f9
+    m_Address: qinglan/hub/meta-node/movement/01/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fb9b2bdf994dd21408fa77c04ef3002e
     m_Address: qinglan/map/old-court/region/north-old-gate/prop-set
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff76e96306e71a74aaaedae54c48ce85
+    m_Address: qinglan/hub/meta-node/mind/01/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

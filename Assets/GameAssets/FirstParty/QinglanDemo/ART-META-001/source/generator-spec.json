@@ -1,0 +1,31 @@
+{
+  "assetId": "ART-META-001",
+  "generator": "Scripts/generate-qinglan-meta-node-icons.py",
+  "seed": 31019,
+  "sourceSize": 1024,
+  "finalSize": 128,
+  "alphaThreshold": 16,
+  "sourceSafeMargin": 80,
+  "finalSafeMargin": 10,
+  "branches": {
+    "innate": {
+      "frame": "octagon-with-four-round-anchors",
+      "accent": "#42C8C2",
+      "nodes": ["sword-wind-affinity", "wind-threshold-gauge", "preview-lens", "three-blade-terminal-crown"]
+    },
+    "movement": {
+      "frame": "broad-diamond-with-four-triangle-anchors",
+      "accent": "#78B7D0",
+      "nodes": ["buffered-footwork", "recovery-hourglass", "three-way-route", "stacked-route-terminal"]
+    },
+    "mind": {
+      "frame": "rounded-square-with-four-square-anchors",
+      "accent": "#D6A553",
+      "nodes": ["three-candidate-lens", "three-reserve-beads", "landmark-journey-trail", "calm-risk-terminal-fork"]
+    }
+  },
+  "terminalIndex": 4,
+  "terminalAccent": "#E8C56A",
+  "textOrFontUse": false,
+  "externalInputs": []
+}

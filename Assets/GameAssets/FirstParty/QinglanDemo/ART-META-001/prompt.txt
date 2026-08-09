@@ -1,0 +1,30 @@
+ART-META-001 first-party vector generation specification
+Generated: 2026-08-09 (Asia/Shanghai)
+Reference inputs: none
+Generative AI: none
+
+Produce twelve transparent meta-node icons for Lu Qingye, one 1024 source and one 128 runtime final each.
+Branches and semantic order are frozen by the content catalog:
+- innate.01 affinity: upright sword seed plus paired wind arcs
+- innate.02 riding-wind threshold: concentric wind gauge plus three threshold ticks
+- innate.03 build preview: open diamond lens plus a small sword silhouette
+- innate.04 final-form terminal: three-blade wind crown and terminal rays
+- movement.01 tolerance: forward boot silhouette plus two buffer arcs
+- movement.02 recovery window: hourglass core inside an open recovery ring
+- movement.03 route tolerance: one path branching to three collection nodes
+- movement.04 route terminal: three stacked forward chevrons and terminal rays
+- mind.01 candidate insight: central lens surrounded by three candidate diamonds
+- mind.02 choice reserve: three reserve beads linked by two circulation arcs
+- mind.03 journey record: dotted trail ending at a plain landmark stele
+- mind.04 risk-choice terminal: forked path between calm circle and spiked risk diamond, with terminal rays
+
+Non-color shape grammar:
+- Innate uses an octagonal ring with four round anchors.
+- Movement uses a broad diamond/wing frame with four triangular anchors.
+- Mind uses a rounded-square frame with four square anchors.
+- Every terminal node adds four outward crown rays and a gold inner ring.
+
+Use only first-party geometric paths, fills, strokes, circles, arcs and polygons. No font, text, letters, numerals,
+Chinese characters, runes, logos, external files, third-party assets, image references or manual raster repaint.
+Palette is secondary to shape: dark teal field, warm ivory line, branch accent teal/blue/amber, and gold terminal accent.
+Keep at least 80 source pixels and 10 final pixels of transparent safety margin; four corners must be Alpha 0.
