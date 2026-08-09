@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 4 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 5 / 27 ART BATCHES`
 - 日期：2026-08-09
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -58,7 +58,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 2 | ART-CHAR-002 | PASS | 陆青野 1024×1024 透明肖像与 256×256 双色轮廓；EditMode 300/300、PlayMode 17/17、Validation PASS |
 | 3 | ART-CHAR-003 | PASS | 4 张 1024 FirstParty 源图与 4 张 512 正式乘风档叠加图；EditMode 303/303、PlayMode 17/17、Validation PASS |
 | 4 | ART-ENEMY-001 | PASS | 6 张 1024×1024 敌人 Atlas、96 个语义 Sprite、6 个正式 VisualProfile；EditMode 307/307、PlayMode 17/17、Validation PASS |
-| 5—27 | ART-AFFIX-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 5 | ART-AFFIX-001 | PASS | 狂奔/结界/分裂/震地各 1 张 1024 FirstParty 源图与 512 final；EditMode 310/310、PlayMode 17/17、Validation PASS |
+| 6—27 | ART-BOSS-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -80,3 +81,10 @@ ImageGen 调用；每张 final 为 4×4、1024×1024，行序 Down/Left/Right/Up
 Move/AttackWindup/Hit/Death。初版色键视觉 QA 因细洋红边判定 `FAIL`，统一收边 1 px 后每格至少
 12 px Alpha 安全边且检测到的洋红残留为 0。六个 Profile 使用稳定 `qinglan.enemy.*` ContentId 并
 默认绑定 `down.move`；完整运行时动画驱动仍由 G3.1 最终集成关闭。
+
+ART-AFFIX-001 为纯 FirstParty 确定性程序化资产。狂奔使用三道切向风痕与六枚箭头，结界使用分段六边
+护罩与六枚锚点，分裂使用双断环、三道裂纹及两枚子体菱形，震地使用三层扁椭圆断环与八枚径向楔标；
+四者不依赖颜色即可区分。四张 512 final 的 Alpha≥16 覆盖率分别为 15.87%、18.33%、13.93%、
+19.12%，四角透明并保留至少 40 px 安全边；源与 final 两次生成 8/8 Hash 字节一致。正式地址为
+`qinglan/enemy/affix/<frenzy|barrier|splitting|quake>/overlay`；运行时 Affix 到叠加层的映射由 G3.1
+最终集成统一关闭。

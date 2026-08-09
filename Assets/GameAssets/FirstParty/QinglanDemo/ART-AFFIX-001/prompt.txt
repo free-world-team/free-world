@@ -1,0 +1,23 @@
+First-party deterministic construction specification for four elite-affix overlays used by all Qinglan Demo enemies.
+
+Create four transparent square overlays without an enemy body, environment, UI frame, text, logo, watermark, or
+third-party input. The center must remain open so the enemy silhouette and attack windup remain readable. Keep all
+visible pixels safely inside the canvas. Glow is subordinate to opaque geometry. Each mechanic must remain distinct
+in grayscale and common color-vision modes through its silhouette, marker shape, and spatial rhythm rather than hue.
+
+Frenzy: three continuous tangent speed lanes and six directional chevrons. Use warm orange-gold, cream highlights,
+and a dark earthen outline. The overlay communicates sustained movement and attack cadence without drawing a hazard
+area through the enemy body.
+
+Barrier: six separated shield facets forming a hexagonal shell, alternating facet values, plus six diamond anchors.
+Use warm mineral gold and ivory, not player teal. The gaps clearly distinguish the shell from an area-of-effect ring.
+
+Splitting: two broken rings, three outward crack marks, paired lower child diamonds, and two outward chevrons. Use a
+muted rose/mineral palette with a dark outline. Do not depict more than one split generation and do not cover center.
+
+Quake: three vertically compressed broken ground rings and eight radial triangular warning wedges. Use approved P0
+danger orange-red with pale warning highlights and a deep earthen outline. Preserve the transparent interior and make
+the ground-plane ellipse visually different from the other upright overlays.
+
+Generate one deterministic 1024x1024 RGBA source PNG per affix, then Lanczos-downsample each to one 512x512 RGBA
+runtime PNG. MipMaps remain off. Only runtime final files may enter QinglanDemo-Visual Addressables.

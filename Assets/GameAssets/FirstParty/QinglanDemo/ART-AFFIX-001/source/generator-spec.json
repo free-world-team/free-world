@@ -1,0 +1,37 @@
+{
+  "assetId": "ART-AFFIX-001",
+  "generator": "Scripts/generate-qinglan-elite-affix-overlays.py",
+  "seed": 31005,
+  "sourceSize": 1024,
+  "runtimeSize": 512,
+  "affixes": [
+    {
+      "name": "frenzy",
+      "shapeLanguage": "three tangent speed lanes with six directional chevrons",
+      "sourceFile": "elite-affix-frenzy-overlay-source.png",
+      "finalFile": "elite-affix-frenzy-overlay.png",
+      "palette": {"primary": "#E98A4A", "highlight": "#FFE0A3", "deep": "#4A261F", "secondary": "#F2B85B"}
+    },
+    {
+      "name": "barrier",
+      "shapeLanguage": "six separated hexagonal shield facets with six diamond anchors",
+      "sourceFile": "elite-affix-barrier-overlay-source.png",
+      "finalFile": "elite-affix-barrier-overlay.png",
+      "palette": {"primary": "#D9B36C", "highlight": "#FFF0C2", "deep": "#493823", "secondary": "#B8864F"}
+    },
+    {
+      "name": "splitting",
+      "shapeLanguage": "two broken rings, three cracks, two child diamonds, and outward chevrons",
+      "sourceFile": "elite-affix-splitting-overlay-source.png",
+      "finalFile": "elite-affix-splitting-overlay.png",
+      "palette": {"primary": "#C77D8B", "highlight": "#F7D5C8", "deep": "#4B2731", "secondary": "#9D6074"}
+    },
+    {
+      "name": "quake",
+      "shapeLanguage": "three compressed broken ground rings with eight radial warning wedges",
+      "sourceFile": "elite-affix-quake-overlay-source.png",
+      "finalFile": "elite-affix-quake-overlay.png",
+      "palette": {"primary": "#E45D45", "highlight": "#FFD0A3", "deep": "#4A211C", "secondary": "#F09A57"}
+    }
+  ]
+}
