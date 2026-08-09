@@ -105,3 +105,9 @@ ART-BOSS-002 为纯 FirstParty 确定性程序化资产，Seed 固定为 31007�
 Alpha≥16 覆盖率为 12.38%—22.81%，四角透明并保留至少 60 px 安全边；两次生成 12/12 Hash 字节一致。
 正式地址为 `qinglan/boss/<zhezhi|tingfeng>/phase-<1|2|3>-overlay`；阶段状态到 Overlay 的运行时映射、
 材质叠加和 Overdraw 压测由 G3.1 最终集成与 G3.5 关闭。
+
+进入 ART-SKILL-001 创建 Projectile/Area Profile 时发现，旧工具把从 1 开始的 `EntityKind` 底层值误作
+零基 `enumValueIndex`，导致此前 9 个 Actor Profile 序列化为 Projectile。已改用枚举底层 `intValue`，
+重写陆青野、六普通敌人和两 Boss Profile，更新三个 provenance 的实际 Hash，并在既有测试中加入
+`Actor=1` 回归断言；修复后 EditMode 317/317、PlayMode 17/17、Validation PASS。该缺陷修复不增加
+Manifest 完成数，ART-SKILL-001 仍按第 8 行独立提交。

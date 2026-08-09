@@ -82,6 +82,7 @@ namespace Game.Tests.EditMode
                 var enemy = Enemies[index];
                 var profile = AssetDatabase.LoadAssetAtPath<VisualProfile>(enemy.ProfilePath);
                 Assert.That(profile, Is.Not.Null, enemy.ProfilePath);
+                Assert.That(profile.EntityKind, Is.EqualTo(Game.Simulation.EntityKind.Actor));
                 Assert.That(profile.StableId, Is.EqualTo(enemy.StableId));
                 Assert.That(profile.Sprite, Is.Not.Null);
                 Assert.That(

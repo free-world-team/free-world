@@ -78,6 +78,7 @@ namespace Game.Tests.EditMode
 
             var profile = AssetDatabase.LoadAssetAtPath<Game.Presentation.VisualProfile>(ProfilePath);
             Assert.That(profile, Is.Not.Null);
+            Assert.That(profile.EntityKind, Is.EqualTo(Game.Simulation.EntityKind.Actor));
             Assert.That(profile.StableId, Is.EqualTo("qinglan.character.lu_qingye"));
             Assert.That(profile.Sprite, Is.Not.Null);
             Assert.That(profile.Sprite.name, Is.EqualTo("lu-qingye.down.idle"));

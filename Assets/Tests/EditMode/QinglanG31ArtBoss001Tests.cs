@@ -85,6 +85,7 @@ namespace Game.Tests.EditMode
                 var boss = Bosses[index];
                 var profile = AssetDatabase.LoadAssetAtPath<VisualProfile>(boss.ProfilePath);
                 Assert.That(profile, Is.Not.Null, boss.ProfilePath);
+                Assert.That(profile.EntityKind, Is.EqualTo(Game.Simulation.EntityKind.Actor));
                 Assert.That(profile.StableId, Is.EqualTo(boss.StableId));
                 Assert.That(profile.Sprite, Is.Not.Null);
                 Assert.That(profile.Sprite.name, Is.EqualTo("qinglan.boss." + boss.Name + ".down.move"));

@@ -8,7 +8,7 @@
   ],
   "sourceCategory": "first-party-unity-profiles-derived-from-approved-ai-assets",
   "tool": "QinglanVisualAssetImporter.CreateVisualProfileAsset",
-  "modelVersion": "Unity 6000.3.20f1; semantic 4x8 boss atlas importer",
+  "modelVersion": "Unity 6000.3.20f1; semantic 4x8 boss atlas importer; EntityKind underlying-value fix 2026-08-09",
   "generatedOrAcquiredAt": "2026-08-09T05:42:00+08:00",
   "operatorName": "Codex",
   "promptFile": "Assets/GameAssets/AI/QinglanDemo/ART-BOSS-001/prompt.txt",
@@ -21,15 +21,16 @@
   "humanEdits": [
     "Bound qinglan.enemy.boss.zhezhi and qinglan.enemy.boss.tingfeng to their approved down.move Sprite subassets",
     "Configured Actor kind, white tint, and unit presentation scale for both profiles",
-    "No new artwork, runtime behavior, or simulation data was added"
+    "No new artwork, runtime behavior, or simulation data was added",
+    "Re-authored both serialized EntityKind fields as their underlying value after detecting the former zero-based enum-index offset"
   ],
   "sourceSha256": {
     "zhezhi-boss-animation-atlas.png": "063f702cff8a513cd24a6635468363ae7e1551d893a280f94024501aa8058c90",
     "tingfeng-boss-animation-atlas.png": "a1502018487353ce3db16daf59fc70e916a15509911f64972933743593d55005"
   },
   "outputSha256": {
-    "zhezhi-visual-profile.asset": "88a848a8e9ea26cb9cc87bffcc6826eb5462e94fbcd793e535e1c5f0e5683425",
-    "tingfeng-visual-profile.asset": "bbfd95ed4d768e6c9b5133fe761388bb9d98a3783cdd516ce9cc99bfd8692c32"
+    "zhezhi-visual-profile.asset": "818cf8e32f1388336a4924a967973067b217a3ed23f92e81e9015331ef2a62ce",
+    "tingfeng-visual-profile.asset": "16aea5ed94c0b90eff81725f98ef358e4c56170558d2c2f2dab3fca919021da6"
   },
   "licenseOrTermsUrl": "https://openai.com/policies/row-terms-of-use/",
   "licenseOrTermsSnapshot": "Docs/AssetTerms/2026-08-09-openai-row-terms-review.md",
@@ -47,7 +48,7 @@
   "technicalReviewer": "Codex",
   "creativeReviewer": "Codex",
   "rightsReviewer": "Codex",
-  "reviewedAt": "2026-08-09T05:42:00+08:00",
+  "reviewedAt": "2026-08-09T15:00:30+08:00",
   "status": "approved-for-release",
-  "notes": "Profiles contain no new artwork and reference only approved ART-BOSS-001 final atlases."
+  "notes": "Profiles contain no new artwork and reference only approved ART-BOSS-001 final atlases. Both EntityKind fields are now verified as Actor=1."
 }

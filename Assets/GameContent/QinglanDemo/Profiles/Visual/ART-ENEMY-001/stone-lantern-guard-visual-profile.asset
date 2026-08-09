@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
   m_Name: stone-lantern-guard-visual-profile
   m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
-  entityKind: 2
+  entityKind: 1
   stableId: qinglan.enemy.stone_lantern_guard
   sprite: {fileID: 8338245325697390495, guid: b636d277498b9aa4daddf3c56e8f5268, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}

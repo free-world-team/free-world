@@ -12,7 +12,7 @@
   ],
   "sourceCategory": "first-party-unity-profiles-derived-from-approved-ai-assets",
   "tool": "QinglanVisualAssetImporter.CreateVisualProfileAsset",
-  "modelVersion": "Unity 6000.3.20f1; semantic 4x4 enemy atlas importer",
+  "modelVersion": "Unity 6000.3.20f1; semantic 4x4 enemy atlas importer; EntityKind underlying-value fix 2026-08-09",
   "generatedOrAcquiredAt": "2026-08-09T04:02:21+08:00",
   "operatorName": "Codex",
   "promptFile": "Assets/GameAssets/AI/QinglanDemo/ART-ENEMY-001/prompt.txt",
@@ -29,7 +29,8 @@
   "humanEdits": [
     "Bound each stable qinglan.enemy ContentId to the corresponding down.move Sprite subasset",
     "Configured Actor kind, white tint, and unit presentation scale for all six profiles",
-    "No new artwork, runtime behavior, or simulation data was added"
+    "No new artwork, runtime behavior, or simulation data was added",
+    "Re-authored every serialized EntityKind as its underlying value after detecting the former zero-based enum-index offset"
   ],
   "sourceSha256": {
     "grass-spirit-directional-animation-atlas.png": "3162f8823c91e34aa6255ed8e50f30c724ac4f60a098da757475130309880fd6",
@@ -40,12 +41,12 @@
     "explosive-seed-pod-directional-animation-atlas.png": "b4843b5d8b6752bb2684535ff2183234ac194bded0dc60a8353ad6e8c43156f4"
   },
   "outputSha256": {
-    "grass-spirit-visual-profile.asset": "9a3a3abc6734e94d0aa5e2017561a6aa2b3ef010059a2734384580f968109ab7",
-    "paper-crane-spirit-visual-profile.asset": "4fe9ef302406608a0901f97082d67b18da440494059c153af785a52e25c93ad3",
-    "wooden-sword-puppet-visual-profile.asset": "0fe32d8706f6c7706460c5b8f1651b73e0b5f69a29242431635e0f55700d6e81",
-    "stone-lantern-guard-visual-profile.asset": "e5e9b643a37c59d5db64531ad8122b38d88344e75bd83c681eac8517dd32cb9d",
-    "wind-bell-spirit-visual-profile.asset": "63033c2e8d7a7be851d8205fe955cdd08b8ab6577bd8915652d1dd49cd911bd6",
-    "explosive-seed-pod-visual-profile.asset": "a8eb2dc76bd812f6f5177b60716408bc6c50d9dfd1975edf03ceb0c83c125ebb"
+    "grass-spirit-visual-profile.asset": "769ca65211ca23c89922da5fa56912b5215968b9eeff5d8f46f124e6cd97ce0b",
+    "paper-crane-spirit-visual-profile.asset": "645225a3b7026b95c32053ea17801bf82da78bf8d4035eed77c2f1050b9876f1",
+    "wooden-sword-puppet-visual-profile.asset": "1a485312f7f786a8495079836a2b82a373aee866bb00672c808df4f3d6f3c0d3",
+    "stone-lantern-guard-visual-profile.asset": "d548320c40432aba6fb2bb825573d64645c87b8f60146cb5ec97e7cda796b80e",
+    "wind-bell-spirit-visual-profile.asset": "b7f44002faf33dacbbd8538adc0942c2496972b99c8a64070d760c35dcbfd628",
+    "explosive-seed-pod-visual-profile.asset": "0bfa4494877341ca2ecd08a331c58399396c5cdbe39009ad71a80a967c9db661"
   },
   "licenseOrTermsUrl": "https://openai.com/policies/row-terms-of-use/",
   "licenseOrTermsSnapshot": "Docs/AssetTerms/2026-08-09-openai-row-terms-review.md",
@@ -63,7 +64,7 @@
   "technicalReviewer": "Codex",
   "creativeReviewer": "Codex",
   "rightsReviewer": "Codex",
-  "reviewedAt": "2026-08-09T04:02:21+08:00",
+  "reviewedAt": "2026-08-09T15:00:30+08:00",
   "status": "approved-for-release",
-  "notes": "Profiles contain no new artwork and reference only approved ART-ENEMY-001 final atlases."
+  "notes": "Profiles contain no new artwork and reference only approved ART-ENEMY-001 final atlases. Every EntityKind is now verified as Actor=1."
 }

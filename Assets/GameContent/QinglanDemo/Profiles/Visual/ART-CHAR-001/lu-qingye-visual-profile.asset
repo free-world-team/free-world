@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
   m_Name: lu-qingye-visual-profile
   m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
-  entityKind: 2
+  entityKind: 1
   stableId: qinglan.character.lu_qingye
   sprite: {fileID: -4891710119343937332, guid: 1d98312cbb3aa0d40858b785a0db2a48, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}

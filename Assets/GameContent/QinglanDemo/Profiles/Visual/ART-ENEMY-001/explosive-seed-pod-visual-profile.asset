@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
   m_Name: explosive-seed-pod-visual-profile
   m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
-  entityKind: 2
+  entityKind: 1
   stableId: qinglan.enemy.explosive_seed_pod
   sprite: {fileID: -1166677798839693807, guid: df61964377b5d86439f8e2f74dde3cfa, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}

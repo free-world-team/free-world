@@ -21,6 +21,25 @@ namespace Game.Editor
             int maxTextureSize,
             string spriteNamePrefix)
         {
+            ImportSpriteAtlas(
+                assetPath,
+                address,
+                columns,
+                rows,
+                maxTextureSize,
+                spriteNamePrefix,
+                new Vector2(0.5f, 0.046875f));
+        }
+
+        public static void ImportSpriteAtlas(
+            string assetPath,
+            string address,
+            int columns,
+            int rows,
+            int maxTextureSize,
+            string spriteNamePrefix,
+            Vector2 pivot)
+        {
             if (string.IsNullOrWhiteSpace(assetPath) ||
                 !assetPath.Replace('\\', '/').Contains("/final/"))
                 throw new ArgumentException("Only an explicit final asset path can be imported.", nameof(assetPath));
@@ -28,6 +47,8 @@ namespace Game.Editor
                 !address.StartsWith("qinglan/", StringComparison.Ordinal))
                 throw new ArgumentException("A canonical qinglan/ address is required.", nameof(address));
             if (columns <= 0 || rows <= 0) throw new ArgumentOutOfRangeException(nameof(columns));
+            if (pivot.x < 0f || pivot.x > 1f || pivot.y < 0f || pivot.y > 1f)
+                throw new ArgumentOutOfRangeException(nameof(pivot));
 
             assetPath = assetPath.Replace('\\', '/');
             AssetDatabase.ImportAsset(
@@ -76,7 +97,7 @@ namespace Game.Editor
                             cellWidth,
                             cellHeight),
                         alignment = (int)SpriteAlignment.Custom,
-                        pivot = new Vector2(0.5f, 0.046875f),
+                        pivot = pivot,
                         border = Vector4.zero
                     };
                 }
@@ -96,6 +117,28 @@ namespace Game.Editor
             string profilePath,
             string stableId)
         {
+            CreateVisualProfileAsset(
+                atlasPath,
+                spriteName,
+                profilePath,
+                stableId,
+                Game.Simulation.EntityKind.Actor,
+                Vector2.one);
+        }
+
+        public static void CreateVisualProfileAsset(
+            string atlasPath,
+            string spriteName,
+            string profilePath,
+            string stableId,
+            Game.Simulation.EntityKind entityKind,
+            Vector2 size)
+        {
+            if (!Enum.IsDefined(typeof(Game.Simulation.EntityKind), entityKind))
+                throw new ArgumentOutOfRangeException(nameof(entityKind));
+            if (size.x <= 0f || size.y <= 0f)
+                throw new ArgumentOutOfRangeException(nameof(size));
+
             atlasPath = atlasPath.Replace('\\', '/');
             profilePath = profilePath.Replace('\\', '/');
             var assets = AssetDatabase.LoadAllAssetsAtPath(atlasPath);
@@ -123,11 +166,11 @@ namespace Game.Editor
             }
 
             var serialized = new SerializedObject(profile);
-            serialized.FindProperty("entityKind").enumValueIndex = (int)Game.Simulation.EntityKind.Actor;
+            serialized.FindProperty("entityKind").intValue = (int)entityKind;
             serialized.FindProperty("stableId").stringValue = stableId;
             serialized.FindProperty("sprite").objectReferenceValue = sprite;
             serialized.FindProperty("color").colorValue = Color.white;
-            serialized.FindProperty("size").vector2Value = Vector2.one;
+            serialized.FindProperty("size").vector2Value = size;
             serialized.ApplyModifiedPropertiesWithoutUndo();
             EditorUtility.SetDirty(profile);
             AssetDatabase.SaveAssets();
@@ -199,6 +242,8 @@ namespace Game.Editor
             int rows,
             int columns)
         {
+            if (rows == 1 && columns == 1) return prefix;
+
             if (rows == 4 && columns == 6)
             {
                 var directions = new[] { "down", "left", "right", "up" };
@@ -249,7 +294,10 @@ namespace Game.Editor
                     ParsePositive("QINGLAN_VISUAL_COLUMNS", 1),
                     ParsePositive("QINGLAN_VISUAL_ROWS", 1),
                     ParsePositive("QINGLAN_VISUAL_MAX_SIZE", 2048),
-                    Required("QINGLAN_VISUAL_SPRITE_PREFIX"));
+                    Required("QINGLAN_VISUAL_SPRITE_PREFIX"),
+                    new Vector2(
+                        ParseUnitFloat("QINGLAN_VISUAL_PIVOT_X", 0.5f),
+                        ParseUnitFloat("QINGLAN_VISUAL_PIVOT_Y", 0.046875f)));
                 Debug.Log("[Qinglan Visual Import] PASS");
             }
             catch (Exception exception)
@@ -277,6 +325,16 @@ namespace Game.Editor
                 throw new InvalidOperationException(name + " must be a positive integer.");
             return value;
         }
+
+        private static float ParseUnitFloat(string name, float fallback)
+        {
+            var text = Environment.GetEnvironmentVariable(name);
+            if (string.IsNullOrWhiteSpace(text)) return fallback;
+            if (!float.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out var value) ||
+                value < 0f || value > 1f)
+                throw new InvalidOperationException(name + " must be between zero and one.");
+            return value;
+        }
     }
 
     /// <summary>Batchmode entry point that authors a VisualProfile from an imported Sprite subasset.</summary>
@@ -291,7 +349,11 @@ namespace Game.Editor
                     Required("QINGLAN_VISUAL_ASSET_PATH"),
                     Required("QINGLAN_VISUAL_PROFILE_SPRITE"),
                     Required("QINGLAN_VISUAL_PROFILE_PATH"),
-                    Required("QINGLAN_VISUAL_PROFILE_STABLE_ID"));
+                    Required("QINGLAN_VISUAL_PROFILE_STABLE_ID"),
+                    ParseEntityKind(),
+                    new Vector2(
+                        ParsePositiveFloat("QINGLAN_VISUAL_PROFILE_SIZE_X", 1f),
+                        ParsePositiveFloat("QINGLAN_VISUAL_PROFILE_SIZE_Y", 1f)));
                 Debug.Log("[Qinglan Visual Profile Create] PASS");
             }
             catch (Exception exception)
@@ -306,6 +368,25 @@ namespace Game.Editor
         {
             var value = Environment.GetEnvironmentVariable(name);
             if (string.IsNullOrWhiteSpace(value)) throw new InvalidOperationException(name + " is required.");
+            return value;
+        }
+
+        private static Game.Simulation.EntityKind ParseEntityKind()
+        {
+            var text = Environment.GetEnvironmentVariable("QINGLAN_VISUAL_PROFILE_ENTITY_KIND");
+            if (string.IsNullOrWhiteSpace(text)) return Game.Simulation.EntityKind.Actor;
+            if (!Enum.TryParse(text, true, out Game.Simulation.EntityKind value) ||
+                !Enum.IsDefined(typeof(Game.Simulation.EntityKind), value))
+                throw new InvalidOperationException("QINGLAN_VISUAL_PROFILE_ENTITY_KIND is invalid.");
+            return value;
+        }
+
+        private static float ParsePositiveFloat(string name, float fallback)
+        {
+            var text = Environment.GetEnvironmentVariable(name);
+            if (string.IsNullOrWhiteSpace(text)) return fallback;
+            if (!float.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out var value) || value <= 0f)
+                throw new InvalidOperationException(name + " must be a positive number.");
             return value;
         }
     }

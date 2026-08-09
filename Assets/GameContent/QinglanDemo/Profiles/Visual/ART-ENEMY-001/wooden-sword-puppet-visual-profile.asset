@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
   m_Name: wooden-sword-puppet-visual-profile
   m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
-  entityKind: 2
+  entityKind: 1
   stableId: qinglan.enemy.wooden_sword_puppet
   sprite: {fileID: 4124809864147097669, guid: 0956e8e315aa90f488b6caf75e8eca67, type: 3}
   color: {r: 1, g: 1, b: 1, a: 1}
