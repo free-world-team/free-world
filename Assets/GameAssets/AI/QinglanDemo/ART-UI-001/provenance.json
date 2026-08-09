@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 2,
+  "assetId": "ART-UI-001",
+  "owner": "Qinglan Demo Visual Owner",
+  "relativePaths": [
+    "Assets/GameAssets/AI/QinglanDemo/ART-UI-001/prompt.txt",
+    "Assets/GameAssets/AI/QinglanDemo/ART-UI-001/source/title-key-art-imagegen.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-UI-001/source/logo-safe-background-imagegen.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-UI-001/working/title-key-art-source-master.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-UI-001/working/logo-safe-background-source-master.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-UI-001/final/title-key-art.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-UI-001/final/logo-safe-background.png"
+  ],
+  "sourceCategory": "original-ai-assisted-no-reference-input",
+  "tool": "Codex built-in ImageGen and Scripts/process-qinglan-title-key-art.py",
+  "modelVersion": "built-in ImageGen service model version not exposed; title processor sha256:63b74a69d6c3209ac90915e3c670461ec0dc72ab5bef002cf49ed70d8493e037",
+  "generatedOrAcquiredAt": "2026-08-10T02:49:47+08:00",
+  "operatorName": "Codex",
+  "promptFile": "Assets/GameAssets/AI/QinglanDemo/ART-UI-001/prompt.txt",
+  "seed": "not-provided-by-built-in-imagegen-service-for-either-independent-call",
+  "referenceInputs": [],
+  "referenceRightsConfirmed": true,
+  "humanEdits": [
+    "Generated the title key art and logo-safe background as two independent built-in ImageGen calls using only repository text design constraints and no visual reference",
+    "Approved both first candidates after checking subject placement, exactly three sword-call ripples in the key art, absence of people in the safe background, and deliberately quiet title-safe regions",
+    "Center-fitted the approved 1672x941 RGB sources to deterministic 4096x2304 masters and downsampled exact 2560x1440 RGB final sprites",
+    "Measured the configured title-safe regions for high mean luminance, low luminance deviation, and low edge density so localized dark typography remains readable",
+    "Imported the exact 2560x1440 delivery files with a 2048 Standalone maximum, producing budgeted 2048x1152 Runtime Sprites while retaining the auditable full-resolution finals",
+    "No external reference, reference-project asset, text, letters, logo, trademark, religious symbol, embedded UI, or manual creative repaint was added"
+  ],
+  "sourceSha256": {
+    "prompt.txt": "4501171cd32800deb4cc93df0280302b769b172259aa67ee12f7dc00d64d7da3",
+    "title-key-art-imagegen.png": "72a9c9ad0a925c85a17eaf1294b1013b7d8b611e8e0affbc92bccd2db879154a",
+    "logo-safe-background-imagegen.png": "e2da5df994a2f1a6cfaf03beb2ff6e396eed3081faed5f3eda98e1e8753c79ed"
+  },
+  "outputSha256": {
+    "title-key-art-source-master.png": "a2cc01e17dbde22f9656ffa77033c102d264dfe9366f2b8872d9ceaed9767eba",
+    "logo-safe-background-source-master.png": "c324315bde405c2b1d6b6ba10b6da22593a65de0b37a2a4a749d3bdbec9cedd7",
+    "title-key-art.png": "839592c729fa3c2356a7298bcfb37099badbe4ba2d621b42f19ee7b389d9792d",
+    "logo-safe-background.png": "54dd80714eb66abb52356994424c85477e943383267514e851446e18d38ccaca"
+  },
+  "licenseOrTermsUrl": "https://openai.com/policies/row-terms-of-use/",
+  "licenseOrTermsSnapshot": "Docs/AssetTerms/2026-08-09-openai-row-terms-review.md",
+  "termsReviewedAt": "2026-08-09",
+  "allowedPlatforms": ["Windows x64", "Steam"],
+  "allowedUses": ["commercial game runtime", "store and marketing screenshots", "internal development and testing"],
+  "commercialUseReviewed": true,
+  "steamDisclosureCategory": "two pre-generated generative-AI title presentation backgrounds; no runtime generation",
+  "technicalReviewer": "Codex",
+  "creativeReviewer": "Codex",
+  "rightsReviewer": "Codex",
+  "reviewedAt": "2026-08-10T02:49:47+08:00",
+  "status": "approved-for-release",
+  "notes": "Both approved title assets are original text-only generations. Auditable finals are exact 2560x1440 RGB images with no embedded title text; Unity imports them as centered 2048x1152 Runtime Sprites under the normal single-texture budget. The title-key-art safe region measured mean luma 231.83, standard deviation 9.18, edge ratio 0.00520; the logo-safe-background region measured 236.46, 8.70, and 0.00380. Both finals remain distinct in grayscale and contain no detected chroma-magenta or reserved exact danger-red pixels."
+}

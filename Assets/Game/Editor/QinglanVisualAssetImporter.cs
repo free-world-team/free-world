@@ -54,17 +54,24 @@ namespace Game.Editor
             AssetDatabase.ImportAsset(
                 assetPath,
                 ImportAssetOptions.ForceSynchronousImport | ImportAssetOptions.ForceUpdate);
-            var texture = AssetDatabase.LoadAssetAtPath<Texture2D>(assetPath);
-            if (texture == null) throw new InvalidOperationException(assetPath + " did not import as Texture2D.");
-            if (texture.width % columns != 0 || texture.height % rows != 0)
+            var sourceSize = ReadSourceDimensions(assetPath);
+            var sourceWidth = sourceSize.x;
+            var sourceHeight = sourceSize.y;
+            if (sourceWidth % columns != 0 || sourceHeight % rows != 0)
                 throw new InvalidOperationException("Texture dimensions are not divisible by the requested grid.");
-            if (texture.width > maxTextureSize || texture.height > maxTextureSize)
-                throw new InvalidOperationException("Texture exceeds its runtime maximum size.");
+            var useDownsampledSingleSprite =
+                columns == 1 && rows == 1 &&
+                (sourceWidth > maxTextureSize || sourceHeight > maxTextureSize);
+            if (!useDownsampledSingleSprite &&
+                (sourceWidth > maxTextureSize || sourceHeight > maxTextureSize))
+                throw new InvalidOperationException("Multi-sprite source exceeds its runtime maximum size.");
 
             var importer = AssetImporter.GetAtPath(assetPath) as TextureImporter;
             if (importer == null) throw new InvalidOperationException("TextureImporter is unavailable for " + assetPath);
             importer.textureType = TextureImporterType.Sprite;
-            importer.spriteImportMode = SpriteImportMode.Multiple;
+            importer.spriteImportMode = useDownsampledSingleSprite
+                ? SpriteImportMode.Single
+                : SpriteImportMode.Multiple;
             importer.spritePixelsPerUnit = 128f;
             importer.mipmapEnabled = false;
             importer.alphaIsTransparency = true;
@@ -79,9 +86,29 @@ namespace Game.Editor
             standalone.format = TextureImporterFormat.BC7;
             standalone.compressionQuality = 100;
             importer.SetPlatformTextureSettings(standalone);
+            if (useDownsampledSingleSprite)
+            {
+                var textureSettings = new TextureImporterSettings();
+                importer.ReadTextureSettings(textureSettings);
+                textureSettings.spriteAlignment = (int)SpriteAlignment.Custom;
+                textureSettings.spritePivot = pivot;
+                importer.SetTextureSettings(textureSettings);
+            }
+            importer.SaveAndReimport();
 
-            var cellWidth = texture.width / columns;
-            var cellHeight = texture.height / rows;
+            var importedTexture = AssetDatabase.LoadAssetAtPath<Texture2D>(assetPath);
+            if (importedTexture == null)
+                throw new InvalidOperationException(assetPath + " did not import as Texture2D.");
+            if (importedTexture.width > maxTextureSize || importedTexture.height > maxTextureSize)
+                throw new InvalidOperationException("Imported texture exceeds its runtime maximum size.");
+            if (useDownsampledSingleSprite)
+            {
+                RegisterApprovedFile(assetPath, address);
+                return;
+            }
+
+            var cellWidth = importedTexture.width / columns;
+            var cellHeight = importedTexture.height / rows;
             var sprites = new SpriteMetaData[columns * rows];
             for (var row = 0; row < rows; row++)
             {
@@ -93,7 +120,7 @@ namespace Game.Editor
                         name = BuildSpriteName(spriteNamePrefix, row, column, rows, columns),
                         rect = new Rect(
                             column * cellWidth,
-                            texture.height - (row + 1) * cellHeight,
+                            importedTexture.height - (row + 1) * cellHeight,
                             cellWidth,
                             cellHeight),
                         alignment = (int)SpriteAlignment.Custom,
@@ -109,6 +136,25 @@ namespace Game.Editor
             importer.SaveAndReimport();
 
             RegisterApprovedFile(assetPath, address);
+        }
+
+        private static Vector2Int ReadSourceDimensions(string assetPath)
+        {
+            var projectRoot = Directory.GetParent(UnityEngine.Application.dataPath)?.FullName;
+            if (string.IsNullOrWhiteSpace(projectRoot))
+                throw new InvalidOperationException("Unable to resolve project root.");
+            var sourcePath = Path.Combine(projectRoot, assetPath.Replace('/', Path.DirectorySeparatorChar));
+            var source = new Texture2D(2, 2, TextureFormat.RGBA32, false);
+            try
+            {
+                if (!ImageConversion.LoadImage(source, File.ReadAllBytes(sourcePath), false))
+                    throw new InvalidOperationException(assetPath + " could not be decoded for source dimensions.");
+                return new Vector2Int(source.width, source.height);
+            }
+            finally
+            {
+                UnityEngine.Object.DestroyImmediate(source);
+            }
         }
 
         public static void CreateVisualProfileAsset(

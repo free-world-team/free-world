@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 22 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 23 / 27 ART BATCHES`
 - 日期：2026-08-10
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -76,7 +76,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 20 | ART-META-002 | PASS | 青岚风纹片/药圃生春扣/旧庭寻脉针各 1 张 2048 source master＋256 Icon；EditMode 359/359、PlayMode 17/17、Validation PASS |
 | 21 | ART-COLLECT-001 | PASS | 6 件旧庭藏品各 1 张 2048 source master＋1024 Illustration＋256 Icon；EditMode 362/362、PlayMode 17/17、Validation PASS |
 | 22 | ART-STORY-001 | PASS | 山脚听剑/旧剑与酒葫/不认传承各 1 张 4096×2304 source master＋1920×1080 Key Illustration；EditMode 365/365、PlayMode 17/17、Validation PASS |
-| 23—27 | ART-UI-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 23 | ART-UI-001 | PASS | 标题主视觉/Logo 安全背景各 1 张 4096×2304 master＋2560×1440 final，Runtime 2048×1152；EditMode 368/368、PlayMode 17/17、Validation PASS |
+| 24—27 | ART-UI-002—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -255,3 +256,13 @@ ART-STORY-001 按稳定顺序制作山脚听剑、旧剑与酒葫、不认传承
 第二轮 6/6 master/final Hash 字节一致。正式地址为
 `qinglan/story/lu-qingye/<story>/key-illustration`；Story PresentationId、对白、本地化和跳过演出逻辑由
 G3.1 最终集成/G3.3 接入。
+
+ART-UI-001 分别以一次无图片输入的 ImageGen 调用制作标题主视觉和 Logo 安全背景。标题主视觉将陆青野
+置于画面右下、旧庭山门置于右侧，并保留恰好三道剑鸣风纹；左上至中左作为本地化标题留白。Logo 安全
+背景不出现人物/生物，以低位山门、两侧山峦和边缘残剑框出中央 60% 安静区。两份 1672×941 source 经
+确定性 center-fit 派生 4096×2304 master 与 2560×1440 RGB final；标题安全区亮度均值分别为
+231.83/236.46、标准差 9.18/8.70、边缘率 0.00520/0.00380，两份 final 灰阶 Hash 唯一，洋红键色和精确
+P0 危险红均为 0，第二轮 4/4 master/final Hash 字节一致。Unity 以 2048 Standalone 上限将两张磁盘
+交付图导入为 2048×1152 Single Sprite，避免超预算大图和 Multiple Sprite 的二次 Rect 缩放。正式地址为
+`qinglan/ui/title/key-art` 与 `qinglan/ui/title/logo-safe-background`；图片内不含标题文字，Localization/TMP
+叠加及标题页正式资产消费由 G3.1 最终集成/G3.3 接入。

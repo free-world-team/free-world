@@ -1,0 +1,17 @@
+ART-UI-001 ImageGen production record
+Generated: 2026-08-10 (Asia/Shanghai)
+Mode: Codex built-in ImageGen, text-only, one independent call per approved asset
+Reference inputs: none
+Shared requirements: original 16:9 title presentation art for the Qinglan Demo; bright, clear eastern fantasy after rainfall; painterly 2D game art; muted teal, warm stone, rice white, soft gold, and tiny restrained vermilion accents; intentionally quiet high-luma negative space for a separately rendered localized logo; no external visual reference, text, letters, readable marks, calligraphy, pseudo-writing, logo, watermark, UI, border, brand, known franchise, living-artist imitation, religious glyph, horror, skull, or modern object.
+
+Approved asset: source/title-key-art-imagegen.png
+Address: qinglan/ui/title/key-art
+Prompt: Create a sunlit abandoned mountain sword courtyard awakening after rain. Show a weathered warm-stone old gate, fresh green vines and grasses, pale mist, turquoise wind-vein ribbons, broken practice swords, and exactly three distant sword-call ripples. Place a small full-body Lu Qingye in the lower-right third: lean 18–19-year-old wandering swordsman with dark tied hair, practical teal-and-ivory travel clothes, and a worn nameless broken sword, facing into the court with no sect insignia. Preserve a very large calm low-detail logo/title safe area across the upper-left and center-left.
+Visual review: PASS. Exactly three sword-call ripples are visible; Lu remains a small right-side silhouette entering the bright old court; the upper-left/center-left 51%×59% safe region has high luminance, low variance, and low edge density for localized dark title text. No embedded text, logo, UI, watermark, brand, or prohibited imagery was found.
+
+Approved asset: source/logo-safe-background-imagegen.png
+Address: qinglan/ui/title/logo-safe-background
+Prompt: Create a serene Qinglan mountain threshold just after rain with a broad luminous misty sky, layered jade-green mountain silhouettes, a distant warm-stone old courtyard gate low on the horizon, subtle grasses, broken-sword-shaped stone markers only at the extreme lower edges, and restrained turquoise wind-vein currents curling outward. Show no people or creatures. Keep the central 60%, especially upper-center, quiet, low-detail, and evenly contrasted for a separate localized game logo; place decorative detail around the perimeter and bottom corners.
+Visual review: PASS. No person or creature is present; the distant gate stays low, the center remains calm and bright, and perimeter detail frames rather than competes with the later logo. The central 60%×56% safe region has high luminance, low variance, and low edge density. No embedded text, logo, UI, watermark, brand, or prohibited imagery was found.
+
+The built-in service did not expose model version or seed. Original generated files remain in the project-bound generated-images directory; repository source files are byte copies. Approved sources are center-fitted without creative repaint to deterministic 4096×2304 RGB masters and downsampled to exact 2560×1440 RGB final sprites. Player-visible game title and subtitle remain Localization/TMP content and are deliberately absent from both images.

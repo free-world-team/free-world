@@ -279,6 +279,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2de3edd55f8b19e469cacb3203fa6c40
+    m_Address: qinglan/ui/title/logo-safe-background
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 302f1f295956b9341a5b85167b303b7a
     m_Address: qinglan/landmark/wind-vein-stele/state-atlas
     m_ReadOnly: 0
@@ -777,6 +785,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b3e49451bf00d32499c59d75b4b3ac46
     m_Address: qinglan/skill/base/spirit-vine-seed/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3e7a14b1368a1a48a8278268e4ba978
+    m_Address: qinglan/ui/title/key-art
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
