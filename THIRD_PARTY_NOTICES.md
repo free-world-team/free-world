@@ -21,6 +21,21 @@
 - 复核日期：2026-08-10
 - 备注：下载地址固定到官方 Git 标签；源文件大小与 SHA-256 记录在 `source-record.json`。
 
+### Noto Serif CJK SC
+
+- 类型：字体
+- 版本或提交：Serif2.003 / `9b0f1436e455d902de067a2501422e5dc71ad16b`
+- 来源：https://github.com/notofonts/noto-cjk/tree/Serif2.003/Serif
+- 作者或权利人：The Noto Project Authors / Adobe
+- 许可证：SIL Open Font License 1.1
+- 许可证文件位置：`Assets/ThirdParty/Fonts/NotoCJKSC/FONT-002/LICENSE.txt`
+- 项目内路径：`Assets/ThirdParty/Fonts/NotoCJKSC/FONT-002/NotoSerifCJKsc-SemiBold.otf`、`Assets/ThirdParty/Fonts/NotoCJKSC/FONT-002/LICENSE.txt`、`Assets/ThirdParty/Fonts/NotoCJKSC/FONT-002/source-record.json`
+- 是否修改：原始 OTF 与许可证未修改；Unity 生成独立 TMP Font Asset 派生物
+- 必须署名内容：随发行保留 OFL 1.1 许可证与字体版权声明
+- 商业使用复核：允许嵌入商业游戏；不得单独销售字体；不得使用 Reserved Font Name 发布修改字体
+- 复核日期：2026-08-10
+- 备注：下载地址固定到官方 Git 标签；源文件大小与 SHA-256 记录在 `source-record.json`。
+
 ## 登记格式
 
 ### \<component-name\>

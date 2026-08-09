@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 2,
+  "assetId": "FONT-002",
+  "owner": "Qinglan Demo Localization Owner",
+  "relativePaths": [
+    "Assets/GameContent/QinglanDemo/Profiles/Font/FONT-002/NotoSerifCJKsc-SemiBold.asset"
+  ],
+  "sourceCategory": "third-party-font-derived-tmp-asset",
+  "tool": "Unity 6000.3.20f1 TextMeshPro font asset generator",
+  "modelVersion": "Noto Serif CJK Serif2.003 commit 9b0f1436e455d902de067a2501422e5dc71ad16b",
+  "generatedOrAcquiredAt": "2026-08-10",
+  "operatorName": "Codex",
+  "promptFile": "not-applicable://official-font-acquisition",
+  "seed": "not-applicable",
+  "referenceInputs": [],
+  "referenceRightsConfirmed": true,
+  "humanEdits": [
+    "Generated a dynamic 1024x1024 SDFAA TMP asset with multi-atlas support from the unmodified official OTF file",
+    "Reserved the serif face for narrative headings and story presentation without changing the Sans UI default"
+  ],
+  "sourceSha256": {},
+  "outputSha256": {
+    "NotoSerifCJKsc-SemiBold.asset": "1801baaf1c58314b9514f74450bf3d839f40ed92e2fe19333b1ae5c12f120ec6"
+  },
+  "licenseOrTermsUrl": "https://raw.githubusercontent.com/notofonts/noto-cjk/Serif2.003/Serif/LICENSE",
+  "licenseOrTermsSnapshot": "Assets/ThirdParty/Fonts/NotoCJKSC/FONT-002/LICENSE.txt",
+  "termsReviewedAt": "2026-08-10",
+  "allowedPlatforms": ["Windows x64", "Steam"],
+  "allowedUses": ["commercial game runtime", "store and marketing screenshots", "internal development and testing"],
+  "commercialUseReviewed": true,
+  "steamDisclosureCategory": "third-party font under SIL Open Font License 1.1; no generative AI",
+  "technicalReviewer": "Codex",
+  "creativeReviewer": "Codex",
+  "rightsReviewer": "Codex",
+  "reviewedAt": "2026-08-10",
+  "status": "approved-for-release",
+  "notes": "Original OTF file and license are governed by THIRD_PARTY_NOTICES.md and source-record.json."
+}

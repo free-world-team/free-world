@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "assetId": "FONT-002",
+  "family": "Noto Serif CJK SC",
+  "styles": ["SemiBold"],
+  "upstreamRepository": "https://github.com/notofonts/noto-cjk",
+  "upstreamTag": "Serif2.003",
+  "upstreamCommit": "9b0f1436e455d902de067a2501422e5dc71ad16b",
+  "acquiredAt": "2026-08-10",
+  "license": "SIL Open Font License 1.1",
+  "licenseUrl": "https://raw.githubusercontent.com/notofonts/noto-cjk/Serif2.003/Serif/LICENSE",
+  "files": [
+    {
+      "path": "Assets/ThirdParty/Fonts/NotoCJKSC/FONT-002/NotoSerifCJKsc-SemiBold.otf",
+      "bytes": 24700256,
+      "sha256": "d627b53dbcde61e07de1498d2623a8b287f78585ffbc90cc0618d0caaa2ed6b0"
+    },
+    {
+      "path": "Assets/ThirdParty/Fonts/NotoCJKSC/FONT-002/LICENSE.txt",
+      "bytes": 4393,
+      "sha256": "88f117575237307bdd86a17ef15e21790fc9a662fe4dfb103ca1ca077f0d9982"
+    }
+  ]
+}

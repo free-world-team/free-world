@@ -11,7 +11,7 @@ Localization 正式内容链路，覆盖简体中文、英文和伪本地化，�
 | 顺序 | 批次 | 最低交付 | 状态 |
 |---:|---|---|---|
 | 1 | FONT-001 | Noto Sans CJK SC Regular / Bold 两个 TMP Font Asset | PASS（5/5 EditMode + Project Validation） |
-| 2 | FONT-002 | Noto Serif CJK SC SemiBold TMP Font Asset | 待实现 |
+| 2 | FONT-002 | Noto Serif CJK SC SemiBold TMP Font Asset | PASS（3/3 EditMode + Project Validation） |
 | 3 | LOC-UI-001 | `UI` 集合不少于 180 个 Key | 待实现 |
 | 4 | LOC-CONTENT-001 | `QinglanContent` 集合不少于 296 个 Key | 待实现 |
 | 5 | LOC-NARRATIVE-001 | `QinglanNarrative` 集合不少于 120 个 Key | 待实现 |

@@ -15,6 +15,14 @@ MonoBehaviour:
   m_GroupName: ThirdParty-Fonts
   m_GUID: a1466324e6a97744b9113a5a9fc17bfb
   m_SerializeEntries:
+  - m_GUID: 3215cdc9eccb1b844bd11f2fba5e1936
+    m_Address: qinglan/font/noto-serif-cjk-sc/semibold
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - localization.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5671ab4239fe127449dadc73e7969e8a
     m_Address: qinglan/font/noto-sans-cjk-sc/regular
     m_ReadOnly: 0

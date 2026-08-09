@@ -22,6 +22,10 @@ namespace Game.Editor
         public const string SansBoldPath = Font001Root + "/NotoSansCJKsc-Bold.asset";
         public const string SansRegularAddress = "qinglan/font/noto-sans-cjk-sc/regular";
         public const string SansBoldAddress = "qinglan/font/noto-sans-cjk-sc/bold";
+        public const string Font002Root =
+            "Assets/GameContent/QinglanDemo/Profiles/Font/FONT-002";
+        public const string SerifSemiBoldPath = Font002Root + "/NotoSerifCJKsc-SemiBold.asset";
+        public const string SerifSemiBoldAddress = "qinglan/font/noto-serif-cjk-sc/semibold";
         public const string TmpSettingsPath =
             "Assets/TextMesh Pro/Resources/TMP Settings.asset";
 
@@ -29,6 +33,8 @@ namespace Game.Editor
             "Assets/ThirdParty/Fonts/NotoCJKSC/FONT-001/NotoSansCJKsc-Regular.otf";
         private const string SansBoldSource =
             "Assets/ThirdParty/Fonts/NotoCJKSC/FONT-001/NotoSansCJKsc-Bold.otf";
+        private const string SerifSemiBoldSource =
+            "Assets/ThirdParty/Fonts/NotoCJKSC/FONT-002/NotoSerifCJKsc-SemiBold.otf";
 
         public static void RunImportTmpEssentials()
         {
@@ -59,6 +65,23 @@ namespace Game.Editor
             EditorApplication.Exit(exitCode);
         }
 
+        public static void RunFont002()
+        {
+            var exitCode = 0;
+            try
+            {
+                BuildFont002();
+                Debug.Log("[Qinglan G3.3 FONT-002] PASS: Noto Serif CJK SC SemiBold TMP asset registered.");
+            }
+            catch (Exception exception)
+            {
+                Debug.LogException(exception);
+                exitCode = 1;
+            }
+
+            EditorApplication.Exit(exitCode);
+        }
+
         public static void BuildFont001()
         {
             EnsureTmpSettings();
@@ -75,6 +98,22 @@ namespace Game.Editor
             var group = EnsureFontGroup(settings);
             Register(settings, group, SansRegularPath, SansRegularAddress);
             Register(settings, group, SansBoldPath, SansBoldAddress);
+            AssetDatabase.SaveAssets();
+        }
+
+        public static void BuildFont002()
+        {
+            EnsureTmpSettings();
+            Directory.CreateDirectory(Font002Root);
+            CreateDynamicFontAsset(SerifSemiBoldSource, SerifSemiBoldPath);
+            AssetDatabase.SaveAssets();
+            WriteFont002Provenance();
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+
+            var settings = AddressableAssetSettingsDefaultObject.GetSettings(true);
+            if (settings == null) throw new InvalidOperationException("Addressables settings are unavailable.");
+            var group = EnsureFontGroup(settings);
+            Register(settings, group, SerifSemiBoldPath, SerifSemiBoldAddress);
             AssetDatabase.SaveAssets();
         }
 
@@ -296,6 +335,54 @@ namespace Game.Editor
                 .Replace("__REGULAR_HASH__", regularHash)
                 .Replace("__BOLD_HASH__", boldHash);
             File.WriteAllText(Font001Root + "/provenance.json", json, new UTF8Encoding(false));
+        }
+
+        private static void WriteFont002Provenance()
+        {
+            var outputHash = ComputeHash(SerifSemiBoldPath);
+            var template = @"{
+  ""schemaVersion"": 2,
+  ""assetId"": ""FONT-002"",
+  ""owner"": ""Qinglan Demo Localization Owner"",
+  ""relativePaths"": [
+    ""Assets/GameContent/QinglanDemo/Profiles/Font/FONT-002/NotoSerifCJKsc-SemiBold.asset""
+  ],
+  ""sourceCategory"": ""third-party-font-derived-tmp-asset"",
+  ""tool"": ""Unity 6000.3.20f1 TextMeshPro font asset generator"",
+  ""modelVersion"": ""Noto Serif CJK Serif2.003 commit 9b0f1436e455d902de067a2501422e5dc71ad16b"",
+  ""generatedOrAcquiredAt"": ""2026-08-10"",
+  ""operatorName"": ""Codex"",
+  ""promptFile"": ""not-applicable://official-font-acquisition"",
+  ""seed"": ""not-applicable"",
+  ""referenceInputs"": [],
+  ""referenceRightsConfirmed"": true,
+  ""humanEdits"": [
+    ""Generated a dynamic 1024x1024 SDFAA TMP asset with multi-atlas support from the unmodified official OTF file"",
+    ""Reserved the serif face for narrative headings and story presentation without changing the Sans UI default""
+  ],
+  ""sourceSha256"": {},
+  ""outputSha256"": {
+    ""NotoSerifCJKsc-SemiBold.asset"": ""__OUTPUT_HASH__""
+  },
+  ""licenseOrTermsUrl"": ""https://raw.githubusercontent.com/notofonts/noto-cjk/Serif2.003/Serif/LICENSE"",
+  ""licenseOrTermsSnapshot"": ""Assets/ThirdParty/Fonts/NotoCJKSC/FONT-002/LICENSE.txt"",
+  ""termsReviewedAt"": ""2026-08-10"",
+  ""allowedPlatforms"": [""Windows x64"", ""Steam""],
+  ""allowedUses"": [""commercial game runtime"", ""store and marketing screenshots"", ""internal development and testing""],
+  ""commercialUseReviewed"": true,
+  ""steamDisclosureCategory"": ""third-party font under SIL Open Font License 1.1; no generative AI"",
+  ""technicalReviewer"": ""Codex"",
+  ""creativeReviewer"": ""Codex"",
+  ""rightsReviewer"": ""Codex"",
+  ""reviewedAt"": ""2026-08-10"",
+  ""status"": ""approved-for-release"",
+  ""notes"": ""Original OTF file and license are governed by THIRD_PARTY_NOTICES.md and source-record.json.""
+}
+";
+            File.WriteAllText(
+                Font002Root + "/provenance.json",
+                template.Replace("__OUTPUT_HASH__", outputHash),
+                new UTF8Encoding(false));
         }
 
         private static string ComputeHash(string assetPath)
