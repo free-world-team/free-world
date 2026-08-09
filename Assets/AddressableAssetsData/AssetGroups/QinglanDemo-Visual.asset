@@ -31,6 +31,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 087663b86063fed458497e411694cd06
+    m_Address: qinglan/pickup/spirit-gourd/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0956e8e315aa90f488b6caf75e8eca67
     m_Address: qinglan/enemy/wooden-sword-puppet/directional-animation-atlas
     m_ReadOnly: 0
@@ -71,8 +79,32 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 15add32422d837943ae6bdfccac906d5
+    m_Address: qinglan/pickup/thunder-jade/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17135b83c7b4cce48b422975b7d3c0f4
+    m_Address: qinglan/pickup/spirit-gourd/sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 17c50da720c0b5648940675cf6289876
     m_Address: qinglan/profile/enemy/grass-spirit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 180df4903fd04824e9448182506f0e0f
+    m_Address: qinglan/pickup/riding-wind-feather/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -105,6 +137,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1d98312cbb3aa0d40858b785a0db2a48
     m_Address: qinglan/character/lu-qingye/directional-animation-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 21d53f301028a9e43a867aa2b5915761
+    m_Address: qinglan/pickup/boundary-talisman/sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -319,6 +359,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8ca80b6bb92c85d4ca50eddb46944859
+    m_Address: qinglan/pickup/riding-wind-feather/sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 97be456b892f41f43a323761562b14b1
     m_Address: qinglan/status/slowed/visual
     m_ReadOnly: 0
@@ -423,6 +471,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c686ee8338cb8b9468ddf148e54a5af2
+    m_Address: qinglan/pickup/greenwood-dew/sprite
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c756a1709438f0b4c985b2b8e3a8a8aa
     m_Address: qinglan/boss/zhezhi/phase-2-overlay
     m_ReadOnly: 0
@@ -457,6 +513,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d0c94528884dac7488fee971b412fc4b
     m_Address: qinglan/status/armor-broken/visual
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d31baace157f43d4caf43fe4361d4903
+    m_Address: qinglan/pickup/thunder-jade/sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -503,8 +567,24 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e20bf7e1758b15140be6248e5243d3bd
+    m_Address: qinglan/pickup/greenwood-dew/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e20eab9a226f2824ab8a8e669e8d3300
     m_Address: qinglan/skill/evolved/mountain-boundary-seal/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e4f626e8280cf154680188f9c600c16e
+    m_Address: qinglan/pickup/heart-guard-jade/sprite
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -535,8 +615,24 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f0c89a7516b2a2c4aa8e1df8dce789f2
+    m_Address: qinglan/pickup/boundary-talisman/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f1dd31a7973da07468a97902cf0d46a3
     m_Address: qinglan/status/marked/visual
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f278c57b9ee2edc47b4a1f8a68f82758
+    m_Address: qinglan/pickup/heart-guard-jade/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

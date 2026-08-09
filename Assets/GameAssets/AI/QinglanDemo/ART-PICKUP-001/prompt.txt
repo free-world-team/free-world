@@ -1,0 +1,43 @@
+ART-PICKUP-001 — six independent text-only built-in ImageGen calls
+Use case: stylized-concept
+Asset type: commercial Unity survivor-game pickup sprite and UI icon source
+Shared scene/backdrop: perfectly flat solid #FF00FF chroma-key background for local background removal
+Shared style: polished hand-painted 2.5D fantasy game asset, chunky readable silhouette, restrained Chinese-inspired craft language without readable glyphs, original design
+Shared composition: centered 1024 square, slight top-down three-quarter view, one fully visible opaque object, generous even padding
+Shared constraints: uniform key background with no shadow, gradient, texture, reflection, floor plane or lighting variation; no #FF00FF in subject; no text, letters, numbers, logo, watermark, UI frame, scene props, people, hands, religious or trademarked symbols
+
+CALL 1 — greenwood-dew
+Primary request: an original magical pickup object called Greenwood Dew, a small sealed celadon dew vial shaped like a plump leaf bud, containing luminous pale-cyan healing essence, with two simple carved leaf shoulders and a corkless jade cap.
+Palette/material: teal-jade ceramic, pale cyan glow, warm ivory edge highlights, deep blue-green outline.
+Avoid: glass transparency, smoke, wispy particles crossing the silhouette, photorealism, thin fragile details, excessive bloom.
+
+CALL 2 — boundary-talisman
+Primary request: an original magical pickup object called Boundary Talisman, a compact ivory cut-corner sealing plaque made from layered paper-fiber ceramic, held by four teal jade corner clamps around a blank central face, with a simple segmented cyan boundary ring motif made only of abstract bars and dots.
+Palette/material: ivory, muted gold, teal jade, pale cyan energy, deep blue-green outline.
+Constraints: blank central face; no calligraphy or readable runes.
+Avoid: scrolls, pentagrams, paper streamers, smoke, particles crossing the silhouette, photorealism, thin fragile details.
+
+CALL 3 — thunder-jade
+Primary request: an original magical pickup object called Thunder Jade, a dense faceted storm-jade polyhedron with six blunt points, a dark stone shell split by a single bold pale-cyan lightning-shaped inner seam and a warm-gold binding band.
+Palette/material: dark blue-green jade, cyan electric seam, warm gold, ivory edge highlights, deep outline.
+Avoid: realistic electricity outside silhouette, detached sparks, smoke, glass transparency, tiny fragments, photorealism, thin fragile details.
+
+CALL 4 — spirit-gourd
+Primary request: an original magical pickup object called Spirit Gourd, a squat teal-green double-lobed ceramic gourd with a broad ivory neck ring, three copper wind channels wrapping around the lower lobe, and a small cyan intake aperture on the front.
+Palette/material: teal-green ceramic, aged copper, ivory, cyan energy, deep blue-green outline.
+Avoid: rope, tassel, smoke, suction particles, glass transparency, realistic bottle label, thin handles, photorealism, wispy effects.
+
+CALL 5 — heart-guard-jade
+Primary request: an original magical pickup object called Heart Guard Jade, a thick rounded-square jade guard plate with a central ivory heart-shaped negative-space inlay, four blunt protective corner caps, and a segmented pale-cyan shield rim.
+Palette/material: desaturated sea-green jade, ivory heart inlay, cyan protective rim, warm-gold pins, deep blue-green outline.
+Avoid: medical cross, wearable necklace, chain, shield scene, smoke, translucent glass, photorealism, thin fragile details.
+
+CALL 6 — riding-wind-feather
+Primary request: an original magical pickup object called Riding Wind Feather, one broad stylized opaque jade feather token with a sturdy central spine, three large stepped vanes on each side, a curled copper base clasp, and two short cyan speed notches embedded inside the vane.
+Palette/material: pale teal jade, ivory highlights, copper clasp, cyan accents, deep blue-green outline.
+Composition: centered diagonal feather from lower-left to upper-right.
+Avoid: loose barbs, wispy trails, detached particles, realistic bird-feather micro-detail, white fluffy feather, smoke, transparency, photorealism, thin fragile tip.
+
+Input images for all six calls: none.
+Reference images for all six calls: none.
+Requested in-image text for all six calls: none.
