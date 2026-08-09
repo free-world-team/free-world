@@ -1,0 +1,48 @@
+{
+  "assetId": "AUDIO-AMB-001",
+  "deterministic": true,
+  "durationSeconds": 45.0,
+  "externalAudioInputs": [],
+  "layers": [
+    {
+      "address": "qinglan/audio/ambience/courtyard-wind",
+      "name": "courtyard-wind",
+      "seed": 32001
+    },
+    {
+      "address": "qinglan/audio/ambience/bamboo-leaves",
+      "name": "bamboo-leaves",
+      "seed": 32002
+    },
+    {
+      "address": "qinglan/audio/ambience/old-timber-creak",
+      "name": "old-timber-creak",
+      "seed": 32003
+    },
+    {
+      "address": "qinglan/audio/ambience/stone-court-resonance",
+      "name": "stone-court-resonance",
+      "seed": 32004
+    },
+    {
+      "address": "qinglan/audio/ambience/distant-bell",
+      "name": "distant-bell",
+      "seed": 32005
+    },
+    {
+      "address": "qinglan/audio/ambience/garden-water",
+      "name": "garden-water",
+      "seed": 32006
+    }
+  ],
+  "maximumDcOffset": 0.002,
+  "maximumLoopSeamAmplitude": 0.025,
+  "rmsRangeDbfs": [
+    -36.0,
+    -8.0
+  ],
+  "runtimeEncoding": "OGG Vorbis mono loop",
+  "sampleRate": 48000,
+  "sourceEncoding": "WAV PCM_24 mono",
+  "targetPeakDbfs": -9.0
+}

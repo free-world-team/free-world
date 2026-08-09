@@ -1,0 +1,12 @@
+AUDIO-AMB-001 first-party procedural synthesis brief
+
+Create six independent, non-musical old-court ambience layers: courtyard wind,
+bamboo leaves, old timber creaks, stone-court resonance, distant bell, and garden
+water. Each layer must be a seamless 45-second mono loop at 48 kHz. Keep each
+identity sparse enough to stack with the others. Do not use recordings, sample
+libraries, voices, external references, generative audio models, logos, or text.
+
+Source delivery: 48 kHz / 24-bit PCM WAV.
+Runtime delivery: 48 kHz OGG/Vorbis loop, imported by Unity as Streaming.
+Peak target: -9 dBFS. Validate finite samples, DC offset, RMS, loop seam, file
+format, duration, deterministic SHA-256, rights, and exact Addressables routing.

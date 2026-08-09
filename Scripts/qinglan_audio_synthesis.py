@@ -15,6 +15,7 @@ import soundfile as sf
 
 SAMPLE_RATE = 48_000
 EPSILON = 1.0e-12
+WRITE_BLOCK_FRAMES = 65_536
 
 
 def timeline(seconds: float) -> np.ndarray:
@@ -118,6 +119,54 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
+def write_audio_file(path: Path, samples: np.ndarray, *, format_name: str, subtype: str) -> None:
+    """Write bounded blocks so long Vorbis encodes cannot exhaust the Windows C stack."""
+    channels = 1 if samples.ndim == 1 else samples.shape[1]
+    with sf.SoundFile(
+        path,
+        mode="w",
+        samplerate=SAMPLE_RATE,
+        channels=channels,
+        format=format_name,
+        subtype=subtype,
+    ) as stream:
+        for start in range(0, samples.shape[0], WRITE_BLOCK_FRAMES):
+            stream.write(samples[start:start + WRITE_BLOCK_FRAMES])
+
+
+def canonicalize_ogg_stream(path: Path) -> None:
+    """Replace libsndfile's random Ogg serial and recompute page CRCs deterministically."""
+    data = bytearray(path.read_bytes())
+    serial = hashlib.sha256(path.name.encode("utf-8")).digest()[:4]
+    cursor = 0
+    page_count = 0
+    while cursor < len(data):
+        if data[cursor:cursor + 4] != b"OggS" or cursor + 27 > len(data):
+            raise ValueError(f"invalid Ogg page at byte {cursor}")
+        segment_count = data[cursor + 26]
+        header_end = cursor + 27 + segment_count
+        if header_end > len(data):
+            raise ValueError("truncated Ogg segment table")
+        payload_bytes = sum(data[cursor + 27:header_end])
+        page_end = header_end + payload_bytes
+        if page_end > len(data):
+            raise ValueError("truncated Ogg page payload")
+
+        data[cursor + 14:cursor + 18] = serial
+        data[cursor + 22:cursor + 26] = b"\0\0\0\0"
+        crc = 0
+        for value in data[cursor:page_end]:
+            crc ^= value << 24
+            for _ in range(8):
+                crc = ((crc << 1) & 0xFFFFFFFF) ^ (0x04C11DB7 if crc & 0x80000000 else 0)
+        data[cursor + 22:cursor + 26] = crc.to_bytes(4, "little")
+        cursor = page_end
+        page_count += 1
+    if page_count == 0:
+        raise ValueError("Ogg stream has no pages")
+    path.write_bytes(data)
+
+
 def metrics(samples: np.ndarray, loop: bool) -> dict[str, float | int | bool]:
     if samples.ndim == 1:
         samples = samples[:, None]
@@ -169,11 +218,12 @@ def write_master_and_runtime(
 
     source_path.parent.mkdir(parents=True, exist_ok=True)
     final_path.parent.mkdir(parents=True, exist_ok=True)
-    sf.write(source_path, samples, SAMPLE_RATE, format="WAV", subtype="PCM_24")
+    write_audio_file(source_path, samples, format_name="WAV", subtype="PCM_24")
     if final_path.suffix.lower() == ".ogg":
-        sf.write(final_path, samples, SAMPLE_RATE, format="OGG", subtype="VORBIS")
+        write_audio_file(final_path, samples, format_name="OGG", subtype="VORBIS")
+        canonicalize_ogg_stream(final_path)
     elif final_path.suffix.lower() == ".wav":
-        sf.write(final_path, samples, SAMPLE_RATE, format="WAV", subtype="PCM_16")
+        write_audio_file(final_path, samples, format_name="WAV", subtype="PCM_16")
     else:
         raise ValueError("runtime output must be .ogg or .wav")
 

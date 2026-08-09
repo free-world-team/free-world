@@ -1,0 +1,77 @@
+{
+  "allowedPlatforms": [
+    "Windows x64",
+    "Steam"
+  ],
+  "allowedUses": [
+    "commercial game runtime",
+    "store and marketing capture",
+    "internal development and testing"
+  ],
+  "assetId": "AUDIO-AMB-001",
+  "commercialUseReviewed": true,
+  "creativeReviewer": "Codex",
+  "generatedOrAcquiredAt": "2026-08-10T15:30:00+08:00",
+  "humanEdits": [
+    "Defined six old-court semantic layers and deterministic synthesis parameters",
+    "Synthesized all PCM samples from mathematical oscillators and seeded periodic control curves",
+    "Normalized each layer to -9 dBFS and measured format, duration, peak, RMS, DC, finite samples, and loop seam",
+    "Derived runtime OGG/Vorbis files from the approved 48 kHz/24-bit mono WAV masters",
+    "No recording, sample library, voice, external reference, generative audio model, trademark, or reference-project asset was used"
+  ],
+  "licenseOrTermsSnapshot": "Docs/AssetTerms/2026-08-10-first-party-procedural-audio-rights-review.md",
+  "licenseOrTermsUrl": "repository://AGENTS.md#first-party-procedural-audio",
+  "modelVersion": "no-generative-model; batch-script-sha256:5c5bcc9e8754755f88786d2e75733e01a8652ab314df973dc310542b8fba5f6a; shared-script-sha256:8da5f00030972ac3efca08a2a9f4257c600e58dbf891d703c76e85a72d44454b",
+  "notes": "Six exact 45-second mono loops at 48 kHz. Source masters are PCM_24 WAV and runtime files are OGG/Vorbis. Each layer is independently stackable and Unity-imported as Streaming.",
+  "operatorName": "Codex",
+  "outputSha256": {
+    "bamboo-leaves.ogg": "7dfa89563375949d207d61a219c0873f5c1cb8de5e59956a1ff0443613ff5286",
+    "courtyard-wind.ogg": "ccd3754fad4433892ea6d29a8ccd0f4ed0d1114c8ba5b017249f8804e7e4e5e4",
+    "distant-bell.ogg": "fd15c30578f2c56ee0720bddf4ca935df40651daff305e2c2218ddc2c79f2cd2",
+    "garden-water.ogg": "2d0145a4c2f2b610532be09e4684207adb516f7b1c1599a3b2464350a49654bb",
+    "old-timber-creak.ogg": "39dcd8de532a85ce777d4bf99301b21647dc08bec74bb665fca7c9798a7aa1aa",
+    "qa-report.json": "f13228c8496ae9d5cf27dd02ec98428b62b056b513f0fd85e4202b64d4bf962f",
+    "stone-court-resonance.ogg": "36284f8ff711ee69f7fe7910e68c873e61d4a2a57e43f185086398f2aa34fd4c"
+  },
+  "owner": "Qinglan Demo Audio Owner",
+  "promptFile": "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/prompt.txt",
+  "referenceInputs": [],
+  "referenceRightsConfirmed": true,
+  "relativePaths": [
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/prompt.txt",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/source/generator-spec.json",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/source/courtyard-wind.wav",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/source/bamboo-leaves.wav",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/source/old-timber-creak.wav",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/source/stone-court-resonance.wav",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/source/distant-bell.wav",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/source/garden-water.wav",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/final/courtyard-wind.ogg",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/final/bamboo-leaves.ogg",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/final/old-timber-creak.ogg",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/final/stone-court-resonance.ogg",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/final/distant-bell.ogg",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/final/garden-water.ogg",
+    "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/qa-report.json"
+  ],
+  "reviewedAt": "2026-08-10T15:30:00+08:00",
+  "rightsReviewer": "Codex",
+  "schemaVersion": 2,
+  "seed": "32001-32006",
+  "sourceCategory": "first-party-procedural-synthesis",
+  "sourceSha256": {
+    "bamboo-leaves.wav": "b026002529b3896971b168f2794d3500c07b8ff8fe8084455d14d142fd623f1d",
+    "courtyard-wind.wav": "2aeb6a801fcdd5c1f5d3a96a836a698e2fc80653859122f9a79b1ca96eff797b",
+    "distant-bell.wav": "c67ba5002552ca1477d485d6e61d26f0319c680a0af822884cca82157fc2a14e",
+    "garden-water.wav": "ef08718ff22cf5f803200208d33447b2785f69dad79f10cbe990f48aeb3f9ed2",
+    "generator-spec.json": "6f938d7ad3b810a2dc06f5dd2270f2530bd74cc77d0c669a82f20f0504fc99e6",
+    "old-timber-creak.wav": "167999e2a123fcc9a685d6f85bf3947d9d4a4b6a61d248f302e3f661b0fe87bb",
+    "prompt.txt": "dba16adf13dd5e1b90e17b122cb1682955f352c673c2ebc8583fac7031af4bb7",
+    "stone-court-resonance.wav": "a97a7de9bd8cc13fcbb8c93110c183fe19e2dc4c453fc7a8d1cbbe2d9978ed2c"
+  },
+  "status": "approved-for-release",
+  "steamDisclosureCategory": "first-party procedural audio; no generative AI and no runtime generation",
+  "technicalReviewer": "Codex",
+  "termsReviewedAt": "2026-08-10",
+  "tool": "Python 3.11, NumPy and libsndfile via soundfile; no audio sample input"
+}
