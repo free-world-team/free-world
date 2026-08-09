@@ -15,6 +15,14 @@ MonoBehaviour:
   m_GroupName: QinglanDemo-Visual
   m_GUID: 56945edad50defa47bb5b54075ebd4c4
   m_SerializeEntries:
+  - m_GUID: 014231d1974fdf14f9d5c8991653eb92
+    m_Address: qinglan/story/lu-qingye/refusing-inheritance/key-illustration
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0216c821b5ed38e4ebc967891a59ef0a
     m_Address: qinglan/profile/boss/zhezhi
     m_ReadOnly: 0
@@ -481,6 +489,22 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 53fe809b5509ff045b47b16fa8d84e1d
     m_Address: qinglan/map/old-court/region/south-guest-court/prop-set
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 54da0a1e91a63a241956fac47d853e16
+    m_Address: qinglan/story/lu-qingye/old-sword-and-gourd/key-illustration
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58eeaa7e23a69494080c398f6de676fb
+    m_Address: qinglan/story/lu-qingye/hearing-sword/key-illustration
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

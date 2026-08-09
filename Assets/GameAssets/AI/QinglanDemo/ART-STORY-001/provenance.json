@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 2,
+  "assetId": "ART-STORY-001",
+  "owner": "Qinglan Demo Visual Owner",
+  "relativePaths": [
+    "Assets/GameAssets/AI/QinglanDemo/ART-STORY-001/prompt.txt",
+    "Assets/GameAssets/AI/QinglanDemo/ART-STORY-001/source/hearing-sword-imagegen.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-STORY-001/source/old-sword-and-gourd-imagegen.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-STORY-001/source/refusing-inheritance-imagegen.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-STORY-001/source/rejected/refusing-inheritance-humanoid-guardian-rejected.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-STORY-001/working/hearing-sword-source-master.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-STORY-001/working/old-sword-and-gourd-source-master.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-STORY-001/working/refusing-inheritance-source-master.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-STORY-001/final/hearing-sword-key-illustration.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-STORY-001/final/old-sword-and-gourd-key-illustration.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-STORY-001/final/refusing-inheritance-key-illustration.png"
+  ],
+  "sourceCategory": "original-ai-assisted-no-reference-input",
+  "tool": "Codex built-in ImageGen and Scripts/process-qinglan-story-illustrations.py",
+  "modelVersion": "built-in ImageGen service model version not exposed; story processor sha256:29b3138d2c2b73d99bff43e6562ca821821d24f5dee7158f6be979964fb696e5",
+  "generatedOrAcquiredAt": "2026-08-10T02:16:54+08:00",
+  "operatorName": "Codex",
+  "promptFile": "Assets/GameAssets/AI/QinglanDemo/ART-STORY-001/prompt.txt",
+  "seed": "not-provided-by-built-in-imagegen-service-for-any-of-four-independent-calls",
+  "referenceInputs": [],
+  "referenceRightsConfirmed": true,
+  "humanEdits": [
+    "Generated each story candidate as one independent built-in ImageGen call using only text design constraints and no visual reference",
+    "Rejected the first Refusing Inheritance source because Tingfeng had a humanoid skeletal head and body, Lu's sword appeared intact, and the tally was ornamented; retained it only as non-runtime provenance",
+    "Generated the approved Refusing Inheritance retry with a visibly snapped blade, plain asymmetrical tally, plain sword casket, and a headless faceless bodyless wooden-ring guardian core",
+    "Center-fitted approved 1672x941 RGB sources to deterministic 4096x2304 masters and downsampled 1920x1080 final illustrations",
+    "No external reference, reference-project asset, text, logo, trademark, religious symbol, embedded UI, or manual creative repaint was added"
+  ],
+  "sourceSha256": {
+    "prompt.txt": "ff0185baaf01b47b3b1bfbbba6bf1b58ff10b1577b4f9cfa1f9d4a952935e264",
+    "hearing-sword-imagegen.png": "087af59a8618f278a71a671f969d180f1816df9e3ff6a1667bb0f260db59fedc",
+    "old-sword-and-gourd-imagegen.png": "e9b910756385fc385be5477893a53f55f72da106c3ef1a3875371292438338f5",
+    "refusing-inheritance-imagegen.png": "4e711f83412fefbccf0c2a3f0445613dcc0b545dc4b6f83b0f1cc14b06ecdf6f",
+    "refusing-inheritance-humanoid-guardian-rejected.png": "b45780555ef1c2436f8b5a4525e0ef7a550d4e7d1cf4033ed9e1f5b975e3ed62"
+  },
+  "outputSha256": {
+    "hearing-sword-source-master.png": "8ef8236a3348428117b32e07aad526445d0be62cb13a6ce6d2a225b0ce4c1e03",
+    "hearing-sword-key-illustration.png": "c5a158b3a08590321bc124f7aeab2ee8d3e94e68cdb8afc290dd9d961055d7fc",
+    "old-sword-and-gourd-source-master.png": "75d8afa7d89115729c556898ce2d0d9db1dbfb36aaee409035c59789e23839a6",
+    "old-sword-and-gourd-key-illustration.png": "318cdd7a2cd590b6c040dbfd1b2b93186d6940d1ddfdc574329ef219e80569fb",
+    "refusing-inheritance-source-master.png": "eecf4c6a28c3448cd3a33cac5999a6888b8787ad3b398e0406a26d2ba92762b4",
+    "refusing-inheritance-key-illustration.png": "4aba17ce5acd6dbd7834c2e4f2952c04eae2b7bf53f75c6ac154b4e3d55987fe"
+  },
+  "licenseOrTermsUrl": "https://openai.com/policies/row-terms-of-use/",
+  "licenseOrTermsSnapshot": "Docs/AssetTerms/2026-08-09-openai-row-terms-review.md",
+  "termsReviewedAt": "2026-08-09",
+  "allowedPlatforms": ["Windows x64", "Steam"],
+  "allowedUses": ["commercial game runtime", "store and marketing screenshots", "internal development and testing"],
+  "commercialUseReviewed": true,
+  "steamDisclosureCategory": "three pre-generated generative-AI story key illustrations; no runtime generation",
+  "technicalReviewer": "Codex",
+  "creativeReviewer": "Codex",
+  "rightsReviewer": "Codex",
+  "reviewedAt": "2026-08-10T02:16:54+08:00",
+  "status": "approved-for-release",
+  "notes": "All three approved story scenes are original text-only generations. The rejected humanoid guardian source is provenance-only and not Addressable. Approved finals are exact 1920x1080 RGB images, retain central framing, span full luma range with strong variance, remain distinct in grayscale, and contain no detected chroma-magenta or reserved exact danger-red pixels."
+}

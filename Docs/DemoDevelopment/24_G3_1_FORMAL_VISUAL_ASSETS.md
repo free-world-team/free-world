@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 21 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 22 / 27 ART BATCHES`
 - 日期：2026-08-10
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -75,7 +75,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 19 | ART-META-001 | PASS | 本命/身法/心性三分支各 4 张 128 FirstParty 节点图标；EditMode 356/356、PlayMode 17/17、Validation PASS |
 | 20 | ART-META-002 | PASS | 青岚风纹片/药圃生春扣/旧庭寻脉针各 1 张 2048 source master＋256 Icon；EditMode 359/359、PlayMode 17/17、Validation PASS |
 | 21 | ART-COLLECT-001 | PASS | 6 件旧庭藏品各 1 张 2048 source master＋1024 Illustration＋256 Icon；EditMode 362/362、PlayMode 17/17、Validation PASS |
-| 22—27 | ART-STORY-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 22 | ART-STORY-001 | PASS | 山脚听剑/旧剑与酒葫/不认传承各 1 张 4096×2304 source master＋1920×1080 Key Illustration；EditMode 365/365、PlayMode 17/17、Validation PASS |
+| 23—27 | ART-UI-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -243,3 +244,14 @@ ART-COLLECT-001 以 `qinglan.collectible.old_court.01`—`.06` 为稳定身份�
 十二份 final 在各尺寸内的灰阶 Hash 均唯一，四角 Alpha、洋红残留和精确 P0 危险红均为 0，完整链第二轮
 24/24 文件 Hash 字节一致。正式地址为 `qinglan/collectible/old-court-<01..06>/<illustration|icon>`；
 Collectible PresentationId、专题页与玩家可见叙事由 G3.1 最终集成/G3.3 接入。
+
+ART-STORY-001 按稳定顺序制作山脚听剑、旧剑与酒葫、不认传承三幅无字 16:9 Key Illustration。山脚听剑
+表现雨中旧庭侧门、陆青野与恰好三道剑鸣风痕；旧剑与酒葫以旧葫芦、空白信包、双杯和空席表达沈停云
+缺席，不绘制其人物形象；不认传承以残剑、无字身份牌、开启的剑匣和三条出庭风路表达“拒绝让身份代替
+选择”。不认传承首版因听风被绘成带头脸和骨架躯干的人形傀儡、残剑近似完整，在 source QA 判定
+`FAIL`；批准重试将听风限定为无头无脸无躯干的空心木环/断片风核，并明确半截断刃与素面牌。三份批准
+1672×941 source 通过确定性 center-fit 派生 4096×2304 master 与 1920×1080 RGB final；亮度均值
+75.03—89.91、标准差 53.24—61.92，三份 final 灰阶 Hash 全部唯一，洋红键色和精确 P0 危险红均为 0，
+第二轮 6/6 master/final Hash 字节一致。正式地址为
+`qinglan/story/lu-qingye/<story>/key-illustration`；Story PresentationId、对白、本地化和跳过演出逻辑由
+G3.1 最终集成/G3.3 接入。

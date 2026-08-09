@@ -1,0 +1,26 @@
+ART-STORY-001 ImageGen production record
+Generated: 2026-08-10 (Asia/Shanghai)
+Mode: Codex built-in ImageGen, text-only, one independent call per candidate
+Reference inputs: none
+Shared requirements: original cinematic 16:9 story key illustration for Qinglan Demo; hopeful eastern fantasy and painterly stylized realism; clear foreground/midground/background; key subjects kept inside the central 70–75% for safe final framing; Lu Qingye remains an original 18–19-year-old lean Chinese wandering swordsman with warm face, short high ponytail, muted-teal and stone-beige practical travel robes, dark trousers/boots, narrow cream accents, weathered nameless broken straight sword, and one small plain belt gourd; no external visual reference, text, readable marks, language-like glyphs, logos, watermarks, UI, borders, blood, gore, skulls, graves, or religious imagery.
+
+Approved candidate: source/hearing-sword-imagegen.png
+Stable story: qinglan.story.lu_qingye.hearing_sword; name key content.qinglan.story.lu_qingye.hearing_sword.name; trigger qinglan.landmark.wind_vein_stele.
+Prompt: During a cool mountain rain, Lu pauses outside the broken side gate of the abandoned Qinglan Old Court because exactly three broad separated pale-cyan sword-chime wind ripples emerge from the sunlit, grass-reclaimed steps; no visible speaker or ghost.
+Visual review: PASS. Lu, the broken gate, rain, sunbreak, reclaimed steps, and three separate wind ripples form a clear opening decision; no other person, horror treatment, text, symbol, logo, watermark, or cropping.
+
+Approved candidate: source/old-sword-and-gourd-imagegen.png
+Stable story: qinglan.story.lu_qingye.old_sword_and_gourd; name key content.qinglan.story.lu_qingye.old_sword_and_gourd.name; predecessor qinglan.story.lu_qingye.hearing_sword.
+Prompt: In the abandoned guest pavilion after rain, Lu quietly studies an older plain travel gourd, a tied blank letter parcel, two cups, and an empty worn seat while retaining his own broken sword and small belt gourd; the missing older swordsman is never shown.
+Visual review: PASS. Lu, two distinct gourds, blank parcel, paired cups, and empty chair communicate reflective absence without inventing the missing swordsman's appearance; all surfaces are blank, with no ghost, portrait, text, seal, logo, watermark, or cropping.
+
+Rejected candidate: source/rejected/refusing-inheritance-humanoid-guardian-rejected.png
+Stable story: qinglan.story.lu_qingye.refusing_inheritance; name key content.qinglan.story.lu_qingye.refusing_inheritance.name; victory-only trigger qinglan.progress.region_mark.qinglan.
+Prompt: At first dawn after releasing the old guardian oath, Lu stands before the sword casket, lowers his broken sword, and declines a blank identity tally while the former boss Tingfeng remains as an abstract wooden wind spirit.
+Visual review: FAIL. Tingfeng was rendered with a distinct humanoid head, face cavity, ribcage-like torso, arms, and legs, creating a skeletal figure that violates the non-humanoid/no-skull boundary. Lu's blade also appeared intact and the tally carried an ornamental top. Retained only as rejected provenance; not processed or imported.
+
+Approved retry: source/refusing-inheritance-imagegen.png
+Prompt: Same hopeful dawn decision, but Lu holds one visibly snapped half-length blade and declines a completely plain asymmetrical notched tally; the casket is plain, and Tingfeng exists only as a headless, faceless, bodyless empty wooden ring with abstract slats, joints, wind ribbons, and leaves. Three wind paths lead into the mountains.
+Visual review: PASS. The visibly broken sword, open palm, blank tally, plain open casket, non-humanoid ring guardian, lit court lamp, and outward paths communicate refusal of an imposed identity without refusing responsibility. No humanoid spirit, face, skeleton, emblem, worship posture, text, logo, watermark, or cropping.
+
+The built-in service did not expose model version or seed. Original generated files remain in the project-bound generated-images directory; repository source files are byte copies. Only the three approved sources proceed through deterministic 4096×2304 master and 1920×1080 final processing. Player-visible story text remains a G3.3 localization responsibility.
