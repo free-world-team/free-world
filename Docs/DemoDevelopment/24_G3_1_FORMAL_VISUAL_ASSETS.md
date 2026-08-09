@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 24 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 25 / 27 ART BATCHES`
 - 日期：2026-08-10
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026/0027
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -78,7 +78,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 22 | ART-STORY-001 | PASS | 山脚听剑/旧剑与酒葫/不认传承各 1 张 4096×2304 source master＋1920×1080 Key Illustration；EditMode 365/365、PlayMode 17/17、Validation PASS |
 | 23 | ART-UI-001 | PASS | 标题主视觉/Logo 安全背景各 1 张 4096×2304 master＋2560×1440 final，Runtime 2048×1152；EditMode 368/368、PlayMode 17/17、Validation PASS |
 | 24 | ART-UI-002 | PASS | 4×4、2048² RGBA UI Atlas；16 个语义 Sprite，8 个 64 px 九宫格 Frame/Panel；EditMode 371/371、PlayMode 17/17、Validation PASS |
-| 25—27 | ART-UI-003—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 25 | ART-UI-003 | PASS | 6 张 2560×1440 master＋1920×1080 RGB 页面背景；左侧 UI 安全区确定性校准；EditMode 374/374、PlayMode 17/17、Validation PASS |
+| 26—27 | ART-UI-004—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -278,3 +279,15 @@ Danger Frame，其他 15 格为 0；两次生成的 source/final 文件 Hash 均
 `qinglan/ui/framework/atlas`。Unity 6 多 Sprite 数据改用官方 Sprite Data Provider 并按语义名复用
 Sprite ID，连续两次导入的 `.meta` SHA-256 一致；程序集影响由 ADR 0027 登记。正式 UI 页面消费、
 Localization/TMP 文本叠加与实际缩放截图由 G3.1 最终集成/G3.3 接入。
+
+ART-UI-003 使用 mixed-source 流程，为角色选择、地图选择、构筑、升级/奖励选择、据点、故事/结算分别
+执行独立无图片输入 ImageGen 调用，再以第一方确定性脚本统一构图和 UI 安全区。地图选择首稿在浮雕
+案台生成 6 个区域，与中央练剑场＋东南西北四区的真值冲突，在 source 人工 QA 判定 `FAIL`；批准重试
+明确为中心圆庭＋四周区域共恰好 5 块。其余批准底稿分别保持空置角色展示台、空剑匣与三枚插槽、
+恰好三座空奖励台、四种据点设施轮廓，以及三张无字故事挂屏。六份 1672×941 source 经 center-fit
+派生 2560×1440 working master，并在左侧现有页面层 `(0.04,0.06)—(0.58,0.94)` 施加第一方米青色
+低细节渐隐层，最终输出 6 张 1920×1080 RGB Sprite。安全区亮度均值 208.45—229.31、标准差
+4.94—13.19、边缘率均为 0；六份 final 彩色/灰阶 Hash 均唯一，洋红键色与精确 P0 危险红均为 0，
+第二轮 12/12 master/final Hash 字节一致。正式地址为
+`qinglan/ui/page-background/<character-select|map-select|loadout|choice|hub|story-result>`；玩家可见文字、
+页面状态映射和实际 1080p/三档缩放截图仍由 G3.1 最终集成/G3.3 接入。

@@ -1,0 +1,53 @@
+ART-UI-003 — Page Background Variants
+Generation mode: Codex built-in ImageGen, one text-only call per distinct asset, no image input.
+Use case: stylized-concept. All images are original 16:9 game UI page backgrounds.
+
+Approved 01 — character-select
+An empty character-selection terrace inside the restored Old Sword Court: a modest circular stone presentation dais,
+hanging wind ribbons, pale jade screens, distant layered mountains and clear sky. Wide composition with the entire left
+60 percent kept bright, calm and low-detail for localized UI; focal architecture and dais in the right third. Polished
+hand-painted 2D environment illustration with subtle paper-and-gouache texture and light oblique perspective. Desaturated
+teal-green, warm stone, ivory and muted gold. No people, creatures, character silhouettes, UI, text, logo, watermark,
+brands, magenta or exact #E45D45 danger red.
+
+Rejected 02a — map-select-six-regions
+An empty old-court survey room with a low unlabeled relief-map table, wooden lattice windows, measuring cords and an open
+gate. Requested five abstract regions and a quiet left UI-safe region. Rejected because the generated relief contained six
+separate region shapes, contradicting the Demo's five-region map truth.
+
+Approved 02b — map-select
+An empty restored Old Sword Court survey pavilion with a low unlabeled relief-map table on the right. The map surface must
+contain exactly five large contiguous abstract courtyard regions total: one clear central circular practice court plus four
+surrounding regions at north, east, south and west; no sixth region, tiny islands or extra partitions. Left 60 percent is
+blank plaster wall, soft window light and open floor. No labels, compass letters, runes, markers, legends, grids, writing,
+people, creatures, UI, text, logo, watermark, brands, magenta or exact #E45D45 danger red.
+
+Approved 03 — loadout
+An empty sword-case workshop in the restored Old Sword Court: an open plain wooden sword case with empty fitted slots, a
+small workbench, wind-polished brass fittings, folded blank cloth, and three simple circular inlay sockets without symbols.
+Left 60 percent is calm wall and softly lit empty work surface; case and workshop detail remain in the right third. No
+actual sword, blade, weapon rack, talisman writing, people, creatures, UI, text, logo, watermark, brands, magenta or exact
+#E45D45 danger red.
+
+Approved 04 — choice
+An empty wind-attunement alcove with one low circular altar on the right and exactly three evenly spaced blank stone offering
+stands, gentle wind ribbons and floating pale leaves; each stand is empty. Left 60 percent is bright low-detail misty wall
+and open floor. No treasures, weapons, cards, labels, runes, talismans, people, creatures, UI, text, logo, watermark,
+brands, magenta or exact #E45D45 danger red.
+
+Approved 05 — hub
+The restored central courtyard hub of the Old Sword Court with exactly four facility silhouettes at the far-right edge: a
+circular pulse platform, a small archive pavilion, a compact craft kiosk and a quiet collection gallery. Fresh greenery,
+clean stone paths, wind ribbons and mountain haze; the left 60 percent is calm sunlit court and mist. No fifth focal
+facility, signs, shop goods, weapons, people, creatures, UI, text, logo, watermark, brands, magenta or exact #E45D45
+danger red.
+
+Approved 06 — story-result
+An empty memory gallery corridor with exactly three blank hanging paper screens, a plain closed old wine gourd, an empty
+sword case and distant rain clearing over the courtyard. Left 60 percent is calm pale wall and rain-lit haze for localized
+narrative/result UI. No portraits, silhouettes, calligraphy, seals, blade, people, creatures, UI, text, logo, watermark,
+brands, magenta or exact #E45D45 danger red.
+
+Shared constraints
+Bright eastern-fantasy Old Sword Court restoration theme; clean readable shapes; hopeful rather than ominous; no horror,
+decay, skulls, combat, photorealism or 3D-render look. All player-visible words remain Localization/TMP overlays.

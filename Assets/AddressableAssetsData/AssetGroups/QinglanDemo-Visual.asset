@@ -239,6 +239,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 269cd46e347400c4e9ababa0d6becdc6
+    m_Address: qinglan/ui/page-background/map-select
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 27ac7209037e21e4bad13da8c285ab9a
     m_Address: qinglan/enemy/paper-crane-spirit/directional-animation-atlas
     m_ReadOnly: 0
@@ -647,8 +655,24 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89355b643ebaacc46b7efc3b8f887cab
+    m_Address: qinglan/ui/page-background/story-result
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 89a7fbe8e90b8ca47ac3b9366e3c7333
     m_Address: qinglan/profile/event/old-sword-resonance
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8a1efa70ccedcc34c8c1e4a7849fb03f
+    m_Address: qinglan/ui/page-background/character-select
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -679,6 +703,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92b24349076f95f4ab4c57d77198fad3
+    m_Address: qinglan/ui/page-background/hub
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 93ab4981dad43e74c844bffc2ca12856
     m_Address: qinglan/objective/wind-altar/listen/state-atlas
     m_ReadOnly: 0
@@ -697,6 +729,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9a3be3358f30adc4084f5c1172d4a1e0
     m_Address: qinglan/relic/wind-vein-copper/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c73fcc65164dfc43a51c69c19460af6
+    m_Address: qinglan/ui/page-background/loadout
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -1169,6 +1209,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f6427ac944f39d744b422f441aa94e63
     m_Address: qinglan/collectible/old-court-01/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f7a640d723ce0ea4696e1b2018faf0ab
+    m_Address: qinglan/ui/page-background/choice
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

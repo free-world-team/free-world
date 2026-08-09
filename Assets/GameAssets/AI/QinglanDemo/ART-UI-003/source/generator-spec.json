@@ -1,0 +1,25 @@
+{
+  "assetId": "ART-UI-003",
+  "approvedVariantCount": 6,
+  "approvedVariants": [
+    "character-select",
+    "map-select",
+    "loadout",
+    "choice",
+    "hub",
+    "story-result"
+  ],
+  "sourceSize": [1672, 941],
+  "workingMasterSize": [2560, 1440],
+  "finalSize": [1920, 1080],
+  "runtimeFormat": "RGB Sprite",
+  "safeRegionNormalized": [0.04, 0.06, 0.58, 0.94],
+  "firstPartyLayer": "deterministic ivory-teal safe-area glaze, solid through x=0.60 and feathered to x=0.74",
+  "safeRegionBudgets": {
+    "lumaMean": [170, 245],
+    "lumaStandardDeviationMax": 34,
+    "edgeRatioMax": 0.04
+  },
+  "embeddedText": false,
+  "externalReferences": []
+}
