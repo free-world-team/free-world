@@ -16,7 +16,8 @@
     "Unity.InputSystem",
     "Unity.Localization",
     "Unity.Localization.Editor",
-    "Unity.Addressables.Editor"
+    "Unity.Addressables.Editor",
+    "Unity.TextMeshPro"
   ],
   "includePlatforms": [
     "Editor"

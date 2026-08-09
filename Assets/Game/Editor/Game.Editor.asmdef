@@ -14,7 +14,8 @@
     "Unity.Localization.Editor",
     "Unity.Addressables",
     "Unity.Addressables.Editor",
-    "Unity.2D.Sprite.Editor"
+    "Unity.2D.Sprite.Editor",
+    "Unity.TextMeshPro"
   ],
   "includePlatforms": [
     "Editor"

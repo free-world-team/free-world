@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 2,
+  "assetId": "FONT-001",
+  "owner": "Qinglan Demo Localization Owner",
+  "relativePaths": [
+    "Assets/GameContent/QinglanDemo/Profiles/Font/FONT-001/NotoSansCJKsc-Regular.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Font/FONT-001/NotoSansCJKsc-Bold.asset"
+  ],
+  "sourceCategory": "third-party-font-derived-tmp-asset",
+  "tool": "Unity 6000.3.20f1 TextMeshPro font asset generator",
+  "modelVersion": "Noto Sans CJK Sans2.004 commit 523d033d6cb47f4a80c58a35753646f5c3608a78",
+  "generatedOrAcquiredAt": "2026-08-10",
+  "operatorName": "Codex",
+  "promptFile": "not-applicable://official-font-acquisition",
+  "seed": "not-applicable",
+  "referenceInputs": [],
+  "referenceRightsConfirmed": true,
+  "humanEdits": [
+    "Generated dynamic 1024x1024 SDFAA TMP assets with multi-atlas support from unmodified official OTF files",
+    "Preserved source font data for deterministic Windows x64 runtime glyph expansion"
+  ],
+  "sourceSha256": {},
+  "outputSha256": {
+    "NotoSansCJKsc-Regular.asset": "86862c048454482a9ea3d2376a64c02d4aaceb1cbc44d2a22024ca3283192cbe",
+    "NotoSansCJKsc-Bold.asset": "df142dbe5121654d4506f363a82bbc8c26e856ba211bb690cce79ec1f40a9bb1"
+  },
+  "licenseOrTermsUrl": "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/LICENSE",
+  "licenseOrTermsSnapshot": "Assets/ThirdParty/Fonts/NotoCJKSC/FONT-001/LICENSE.txt",
+  "termsReviewedAt": "2026-08-10",
+  "allowedPlatforms": ["Windows x64", "Steam"],
+  "allowedUses": ["commercial game runtime", "store and marketing screenshots", "internal development and testing"],
+  "commercialUseReviewed": true,
+  "steamDisclosureCategory": "third-party font under SIL Open Font License 1.1; no generative AI",
+  "technicalReviewer": "Codex",
+  "creativeReviewer": "Codex",
+  "rightsReviewer": "Codex",
+  "reviewedAt": "2026-08-10",
+  "status": "approved-for-release",
+  "notes": "Original OTF files and license are governed by THIRD_PARTY_NOTICES.md and source-record.json."
+}

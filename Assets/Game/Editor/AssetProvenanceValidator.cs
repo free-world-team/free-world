@@ -16,8 +16,11 @@ namespace Game.Editor
         public const string QinglanPackLabel = "pack.qinglan_demo";
         public const string VisualReleaseLabel = "visual.release";
         public const string AudioReleaseLabel = "audio.release";
+        public const string LocalizationReleaseLabel = "localization.release";
         public const string QinglanVisualGroup = "QinglanDemo-Visual";
         public const string QinglanAudioGroup = "QinglanDemo-Audio";
+        public const string QinglanLocalizationGroup = "QinglanDemo-Localization";
+        public const string ThirdPartyFontGroup = "ThirdParty-Fonts";
 
         private static readonly Regex HashObjectPattern = new Regex(
             "\\\"(?<name>sourceSha256|outputSha256)\\\"\\s*:\\s*\\{(?<body>.*?)\\}",
@@ -151,7 +154,8 @@ namespace Game.Editor
             var hasRelease = ContainsLabel(labels, ReleaseLabel);
             var hasVisual = ContainsLabel(labels, VisualReleaseLabel);
             var hasAudio = ContainsLabel(labels, AudioReleaseLabel);
-            if (!hasRelease && !hasVisual && !hasAudio) return issues;
+            var hasLocalization = ContainsLabel(labels, LocalizationReleaseLabel);
+            if (!hasRelease && !hasVisual && !hasAudio && !hasLocalization) return issues;
 
             if (!hasRelease)
             {
@@ -161,11 +165,12 @@ namespace Game.Editor
                 return issues;
             }
 
-            if (hasVisual && hasAudio)
+            var categoryCount = (hasVisual ? 1 : 0) + (hasAudio ? 1 : 0) + (hasLocalization ? 1 : 0);
+            if (categoryCount > 1)
             {
                 issues.Add(new ValidationIssue(
                     "M9-RELEASE-CATEGORY",
-                    assetPath + " cannot carry both visual.release and audio.release."));
+                    assetPath + " cannot carry more than one category release label."));
                 return issues;
             }
 
@@ -199,6 +204,23 @@ namespace Game.Editor
                     "M9-RELEASE-AUDIO-ROUTING",
                     normalized + " must use group " + QinglanAudioGroup + " and labels " +
                     QinglanPackLabel + ", " + ReleaseLabel + ", " + AudioReleaseLabel + "."));
+            }
+
+            if (hasLocalization)
+            {
+                var expectedGroup = normalized.StartsWith(
+                    "Assets/GameContent/QinglanDemo/Profiles/Font/",
+                    StringComparison.OrdinalIgnoreCase)
+                    ? ThirdPartyFontGroup
+                    : QinglanLocalizationGroup;
+                if (!ContainsLabel(labels, QinglanPackLabel) ||
+                    !string.Equals(groupName, expectedGroup, StringComparison.Ordinal))
+                {
+                    issues.Add(new ValidationIssue(
+                        "M9-RELEASE-LOCALIZATION-ROUTING",
+                        normalized + " must use group " + expectedGroup + " and labels " +
+                        QinglanPackLabel + ", " + ReleaseLabel + ", " + LocalizationReleaseLabel + "."));
+                }
             }
 
             var absolute = Path.Combine(
