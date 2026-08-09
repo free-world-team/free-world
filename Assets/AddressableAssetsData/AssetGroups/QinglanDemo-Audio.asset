@@ -39,6 +39,22 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0635cd6ebc66e4648a643cb260a2aa88
+    m_Address: qinglan/audio/affix/barrier/pulse
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 10e360e02c63de347b9280d82a6360af
+    m_Address: qinglan/audio/affix/rampaging/activate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 156a1f4bef49dcd4f8c114e47a5510e2
     m_Address: qinglan/audio/enemy/zhezhi/attack
     m_ReadOnly: 0
@@ -223,6 +239,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 70117719c2fe023439598d542e334c80
+    m_Address: qinglan/audio/affix/quaking/activate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 75018dad5e7048b449544da4e9379cdb
     m_Address: qinglan/audio/player/player-hit
     m_ReadOnly: 0
@@ -321,6 +345,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 95b6a864ceeec2a4dac5c036986c97d8
     m_Address: qinglan/audio/music/exploration-air
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 95d3a7aea42db974fb264f178f9ea3bb
+    m_Address: qinglan/audio/affix/rampaging/pulse
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -439,6 +471,22 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c36f2640968868340b7ac227b86e056e
+    m_Address: qinglan/audio/affix/splitting/pulse
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c994908afbd6edc4c9afdd32703e75cd
+    m_Address: qinglan/audio/affix/barrier/activate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ca4fb61dbdaf1ac4bbe9003f0cf558a8
     m_Address: qinglan/audio/ambience/stone-court-resonance
     m_ReadOnly: 0
@@ -463,6 +511,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce1e184276291f747a0c090a3957ebc9
+    m_Address: qinglan/audio/affix/splitting/activate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cf8f426899e9e6d4fb91178b6bcfb65a
     m_Address: qinglan/audio/weapon/lihuo-return-explosion
     m_ReadOnly: 0
@@ -481,6 +537,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d2aa2a5a7a929484db4df17e5bb4f03c
     m_Address: qinglan/audio/enemy/zhezhi/spawn
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4950cca482968845907f16a4e4c7c14
+    m_Address: qinglan/audio/affix/quaking/pulse
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
