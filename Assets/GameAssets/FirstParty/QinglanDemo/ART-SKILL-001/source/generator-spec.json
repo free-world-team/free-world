@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "assetId": "ART-SKILL-001",
+  "seed": 31008,
+  "sourceSize": 1024,
+  "runtimeSize": 512,
+  "visuals": [
+    {"name":"yufeng-sword","sourceFile":"yufeng-sword-visual-source.png","finalFile":"yufeng-sword-visual.png","palette":{"primary":"#59C7C1","highlight":"#F4EFD8","deep":"#163D45","secondary":"#8CE1D5"}},
+    {"name":"yellow-talisman","sourceFile":"yellow-talisman-visual-source.png","finalFile":"yellow-talisman-visual.png","palette":{"primary":"#D4A94C","highlight":"#F4EFD8","deep":"#163D45","secondary":"#59C7C1"}},
+    {"name":"lihuo-wheel","sourceFile":"lihuo-wheel-visual-source.png","finalFile":"lihuo-wheel-visual.png","palette":{"primary":"#F29B52","highlight":"#F4EFD8","deep":"#163D45","secondary":"#59C7C1"}},
+    {"name":"tide-orb","sourceFile":"tide-orb-visual-source.png","finalFile":"tide-orb-visual.png","palette":{"primary":"#59C7C1","highlight":"#D9F2EF","deep":"#163D45","secondary":"#4E8FA6"}},
+    {"name":"zhenyue-seal","sourceFile":"zhenyue-seal-visual-source.png","finalFile":"zhenyue-seal-visual.png","palette":{"primary":"#C8A968","highlight":"#F4EFD8","deep":"#163D45","secondary":"#68B4AD"}},
+    {"name":"spirit-vine-seed","sourceFile":"spirit-vine-seed-visual-source.png","finalFile":"spirit-vine-seed-visual.png","palette":{"primary":"#73B66B","highlight":"#D8E7A6","deep":"#163D45","secondary":"#59C7C1"}}
+  ]
+}

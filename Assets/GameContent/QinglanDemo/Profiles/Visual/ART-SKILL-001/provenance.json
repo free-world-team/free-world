@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 2,
+  "assetId": "ART-SKILL-001-PROFILES",
+  "owner": "Qinglan Demo Visual Owner",
+  "relativePaths": [
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-SKILL-001/yufeng-sword-visual-profile.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-SKILL-001/yellow-talisman-visual-profile.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-SKILL-001/lihuo-wheel-visual-profile.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-SKILL-001/tide-orb-visual-profile.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-SKILL-001/zhenyue-seal-visual-profile.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-SKILL-001/spirit-vine-seed-visual-profile.asset"
+  ],
+  "sourceCategory": "first-party-unity-profiles-derived-from-approved-first-party-assets",
+  "tool": "QinglanVisualAssetImporter.CreateVisualProfileAsset",
+  "modelVersion": "Unity 6000.3.20f1; center-pivot single-sprite VFX importer; EntityKind underlying-value writer",
+  "generatedOrAcquiredAt": "2026-08-09T15:00:30+08:00",
+  "operatorName": "Codex",
+  "promptFile": "Assets/GameAssets/FirstParty/QinglanDemo/ART-SKILL-001/prompt.txt",
+  "seed": "not-applicable-deterministic-profile-authoring",
+  "referenceInputs": [
+    "Assets/GameAssets/FirstParty/QinglanDemo/ART-SKILL-001/final/yufeng-sword-visual.png",
+    "Assets/GameAssets/FirstParty/QinglanDemo/ART-SKILL-001/final/yellow-talisman-visual.png",
+    "Assets/GameAssets/FirstParty/QinglanDemo/ART-SKILL-001/final/lihuo-wheel-visual.png",
+    "Assets/GameAssets/FirstParty/QinglanDemo/ART-SKILL-001/final/tide-orb-visual.png",
+    "Assets/GameAssets/FirstParty/QinglanDemo/ART-SKILL-001/final/zhenyue-seal-visual.png",
+    "Assets/GameAssets/FirstParty/QinglanDemo/ART-SKILL-001/final/spirit-vine-seed-visual.png"
+  ],
+  "referenceRightsConfirmed": true,
+  "humanEdits": [
+    "Bound each stable qinglan.presentation.skill identity to its approved center-pivot Sprite subasset",
+    "Configured yufeng sword, yellow talisman, and lihuo wheel as Projectile profiles",
+    "Configured tide orb, zhenyue seal, and spirit vine seed as Area profiles with per-effect scale",
+    "No new artwork, runtime behavior, or simulation data was added"
+  ],
+  "sourceSha256": {
+    "yufeng-sword-visual.png": "c696f958d4247b997c19cdefd9cee3a01787fc42fedac23b25df971c9f35b766",
+    "yellow-talisman-visual.png": "f3aaab349dfaab5344f1ab043e27278b1d8a8b54644b6d6fdfd5ef2f7ca91c2e",
+    "lihuo-wheel-visual.png": "0ad911b6be6178a6ca8d13efe24bcc911827a738032d4dd2955098f972c7ea30",
+    "tide-orb-visual.png": "0a6252b3065ae017e19c8f87b094f5c7226865f5d64f51f25704fffa6868bf28",
+    "zhenyue-seal-visual.png": "2ff6b4d944e9a0409ccc49ebb31234602b8fdaf684537f0fddb2706dc6d6bdd4",
+    "spirit-vine-seed-visual.png": "dcbbb832bc05538538bf064a8a5119221dc70fd7316822e497d6299bb2932d4b"
+  },
+  "outputSha256": {
+    "yufeng-sword-visual-profile.asset": "387130f966cec45f0dfa88e9a062e37a10be4214a98285ab11f4a572cf7e8a96",
+    "yellow-talisman-visual-profile.asset": "7fcce76558c846bd8613e121cacb34260cd98519f4b675107d870fac2f4ba7d5",
+    "lihuo-wheel-visual-profile.asset": "e1c60a76b17e2bee263f13e5ef04d16becc644bbe6b7e53f0e27361293467628",
+    "tide-orb-visual-profile.asset": "363e9456f42b1dd79b16511a14e88b3a32cea4a422cb224f4fb2c92c17f07a56",
+    "zhenyue-seal-visual-profile.asset": "59c4c8cb6267ad52289327342248be57c0e585e063c1d586741b94288915a5ec",
+    "spirit-vine-seed-visual-profile.asset": "af8156006227435e0b3900b4f3fed5b9da8098b0c11ad9906dc381bdec51180c"
+  },
+  "licenseOrTermsUrl": "repository://AGENTS.md",
+  "licenseOrTermsSnapshot": "Docs/AssetTerms/2026-08-09-first-party-procedural-rights-review.md",
+  "termsReviewedAt": "2026-08-09",
+  "allowedPlatforms": [
+    "Windows x64",
+    "Steam"
+  ],
+  "allowedUses": [
+    "commercial game runtime",
+    "store and marketing screenshots",
+    "internal development and testing"
+  ],
+  "commercialUseReviewed": true,
+  "steamDisclosureCategory": "profiles reference first-party deterministic procedural visual assets; no generative AI and no runtime generation",
+  "technicalReviewer": "Codex",
+  "creativeReviewer": "Codex",
+  "rightsReviewer": "Codex",
+  "reviewedAt": "2026-08-09T15:00:30+08:00",
+  "status": "approved-for-release",
+  "notes": "Profiles contain no new artwork and reference only approved ART-SKILL-001 final textures. EntityKind values are verified as Projectile=2 or Area=3."
+}

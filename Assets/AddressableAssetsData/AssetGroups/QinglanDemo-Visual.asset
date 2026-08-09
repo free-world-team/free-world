@@ -87,6 +87,22 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 27fffc71c2b5e73418fdcd73b13adcff
+    m_Address: qinglan/skill/base/yufeng-sword/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2a21df4c13cb7654a9039a5b81405c8f
+    m_Address: qinglan/profile/skill/base/lihuo-wheel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 30309108a75858d46b152d63145677f0
     m_Address: qinglan/profile/enemy/paper-crane-spirit
     m_ReadOnly: 0
@@ -119,6 +135,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3b19ce0a420a7434693ed4e015b3232b
+    m_Address: qinglan/skill/base/tide-orb/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3b48322428307cd4baf260183de2c3fc
     m_Address: qinglan/boss/tingfeng/phase-3-overlay
     m_ReadOnly: 0
@@ -143,6 +167,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5340c608d3ae7c949a20397d2d3038f6
+    m_Address: qinglan/profile/skill/base/spirit-vine-seed
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5d6cc679b035bee42b42718e9a7397c7
     m_Address: qinglan/character/lu-qingye/silhouette
     m_ReadOnly: 0
@@ -161,6 +193,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 60ebb19218659cb4da2806673c580c9f
     m_Address: qinglan/profile/enemy/explosive-seed-pod
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61033ca9565062e4e9bda3c2d6022ed0
+    m_Address: qinglan/skill/base/lihuo-wheel/vfx
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -247,6 +287,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3e49451bf00d32499c59d75b4b3ac46
+    m_Address: qinglan/skill/base/spirit-vine-seed/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b636d277498b9aa4daddf3c56e8f5268
     m_Address: qinglan/enemy/stone-lantern-guard/directional-animation-atlas
     m_ReadOnly: 0
@@ -255,8 +303,32 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7fba04cf7cc98147b263aa8cfe1f350
+    m_Address: qinglan/profile/skill/base/zhenyue-seal
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bd7a5c1d5641ce24f930f9d9f74738e7
+    m_Address: qinglan/skill/base/yellow-talisman/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c756a1709438f0b4c985b2b8e3a8a8aa
     m_Address: qinglan/boss/zhezhi/phase-2-overlay
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c915fdff40295434a8d50c0719c2d5b5
+    m_Address: qinglan/profile/skill/base/yufeng-sword
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -279,8 +351,32 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da8799a2911ce5e48b4bea1fca9f526a
+    m_Address: qinglan/profile/skill/base/tide-orb
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df61964377b5d86439f8e2f74dde3cfa
     m_Address: qinglan/enemy/explosive-seed-pod/directional-animation-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ea84269a3c662fd41845022c348ff9d4
+    m_Address: qinglan/skill/base/zhenyue-seal/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ee272431205add34bb8f038a942f5586
+    m_Address: qinglan/profile/skill/base/yellow-talisman
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
