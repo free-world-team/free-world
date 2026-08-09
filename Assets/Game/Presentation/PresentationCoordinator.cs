@@ -30,6 +30,7 @@ namespace Game.Presentation
         private ProceduralMapPresentation mapPresentation;
         private AccessibilitySettings settings;
         private ProceduralPresentationCatalog proceduralProfiles;
+        private FormalVisualCatalog formalVisuals;
         private ColorVisionMode lastColorVision;
         private PresentationMixState mixState;
         private long consumedTick = -1;
@@ -57,13 +58,15 @@ namespace Game.Presentation
             Canvas sharedCanvas,
             AccessibilitySettings accessibilitySettings,
             VisualProfileCatalog profileCatalog = null,
-            ProceduralPresentationCatalog proceduralCatalog = null)
+            ProceduralPresentationCatalog proceduralCatalog = null,
+            FormalVisualCatalog formalCatalog = null)
         {
             if (initialized) throw new InvalidOperationException("PresentationCoordinator is already initialized.");
             settings = accessibilitySettings ?? throw new ArgumentNullException(nameof(accessibilitySettings));
             fallback = new ProceduralVisualLibrary();
             var catalog = profileCatalog ?? new VisualProfileCatalog();
             proceduralProfiles = proceduralCatalog ?? new ProceduralPresentationCatalog();
+            formalVisuals = formalCatalog;
             actors = new EntityViewPool<ActorView>(transform, EntityKind.Actor, catalog, proceduralProfiles, settings, fallback, 8);
             projectiles = new EntityViewPool<ProjectileView>(transform, EntityKind.Projectile, catalog, proceduralProfiles, settings, fallback, 16);
             areas = new EntityViewPool<AreaView>(transform, EntityKind.Area, catalog, proceduralProfiles, settings, fallback, 8);
@@ -375,7 +378,11 @@ namespace Game.Presentation
                             var statusColor = style.Color;
                             statusColor.a = settings.FlashIntensity * 0.7f;
                             style = style.WithColor(statusColor, style.OutlineColor);
-                            vfx.TrySpawn(new ProceduralVfxRequest(position, style, 0.7f, 0.2f));
+                            var effect = new ProceduralVfxRequest(position, style, 0.7f, 0.2f);
+                            if (formalVisuals != null && formalVisuals.TryResolveSprite(request.ContentId, out var sprite))
+                                vfx.TrySpawn(effect, sprite);
+                            else
+                                vfx.TrySpawn(effect);
                         }
                         break;
                 }

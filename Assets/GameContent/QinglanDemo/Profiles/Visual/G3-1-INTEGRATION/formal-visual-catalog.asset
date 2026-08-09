@@ -1,0 +1,1017 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8768184707540110455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
+  m_Name: runtime-profile-qinglan-affix-rampaging
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
+  entityKind: 1
+  stableId: qinglan.affix.rampaging
+  sprite: {fileID: 4366213214662717038, guid: d900c8095652f4b4c8a95ba6e53432d3, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: {x: 1.28, y: 1.28}
+--- !u!114 &-7497575564775254856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
+  m_Name: runtime-profile-qinglan-pickup-spirit_gourd
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
+  entityKind: 4
+  stableId: qinglan.pickup.spirit_gourd
+  sprite: {fileID: 162013920265813921, guid: 17135b83c7b4cce48b422975b7d3c0f4, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: {x: 0.58, y: 0.58}
+--- !u!114 &-6925842695881738770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
+  m_Name: runtime-profile-qinglan-pickup-greenwood_dew
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
+  entityKind: 4
+  stableId: qinglan.pickup.greenwood_dew
+  sprite: {fileID: 4644221491376143240, guid: c686ee8338cb8b9468ddf148e54a5af2, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: {x: 0.58, y: 0.58}
+--- !u!114 &-102002541584926829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
+  m_Name: runtime-profile-qinglan-pickup-thunder_jade
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
+  entityKind: 4
+  stableId: qinglan.pickup.thunder_jade
+  sprite: {fileID: -5059018259582323736, guid: d31baace157f43d4caf43fe4361d4903, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: {x: 0.58, y: 0.58}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a6e9a2e56d0bd46a54dad8c1453101, type: 3}
+  m_Name: formal-visual-catalog
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.FormalVisualCatalog
+  schemaVersion: 1
+  entityProfiles:
+  - {fileID: 11400000, guid: 0216c821b5ed38e4ebc967891a59ef0a, type: 2}
+  - {fileID: 11400000, guid: 09718c6f7d8ebff45b73c786a6c8b92d, type: 2}
+  - {fileID: 11400000, guid: 11c6fc24dfec0f347ad1e267a0bdffe3, type: 2}
+  - {fileID: 11400000, guid: 17c50da720c0b5648940675cf6289876, type: 2}
+  - {fileID: 11400000, guid: 1b62577106b49d846a362445593ab683, type: 2}
+  - {fileID: 11400000, guid: 2a21df4c13cb7654a9039a5b81405c8f, type: 2}
+  - {fileID: 11400000, guid: 30309108a75858d46b152d63145677f0, type: 2}
+  - {fileID: 11400000, guid: 4842f3bc8378ded40a93067ef40bdca8, type: 2}
+  - {fileID: 11400000, guid: 4c8ffb909582dc445b8a69c1d2366db3, type: 2}
+  - {fileID: 11400000, guid: 51a540f595451564eb101d02de97d0bb, type: 2}
+  - {fileID: 11400000, guid: 5340c608d3ae7c949a20397d2d3038f6, type: 2}
+  - {fileID: 11400000, guid: 60ebb19218659cb4da2806673c580c9f, type: 2}
+  - {fileID: 11400000, guid: 7c0243ffa026ec3479443b46516fe9f7, type: 2}
+  - {fileID: 11400000, guid: 891fd70fadc55c04498927765340a0af, type: 2}
+  - {fileID: 11400000, guid: 89a7fbe8e90b8ca47ac3b9366e3c7333, type: 2}
+  - {fileID: 11400000, guid: a39a28e1bc3c5e341a4bd77623090de3, type: 2}
+  - {fileID: 11400000, guid: a8b8cc87071843845b92defa1e9a88d9, type: 2}
+  - {fileID: 11400000, guid: b01aa063ff0e00940b949dea9de1b81f, type: 2}
+  - {fileID: 11400000, guid: b7fba04cf7cc98147b263aa8cfe1f350, type: 2}
+  - {fileID: 11400000, guid: c915fdff40295434a8d50c0719c2d5b5, type: 2}
+  - {fileID: 11400000, guid: cf93cc3d0919e30479e605f001eac64a, type: 2}
+  - {fileID: 11400000, guid: da8799a2911ce5e48b4bea1fca9f526a, type: 2}
+  - {fileID: 11400000, guid: e6f67bda72364704c8d966b9770ed909, type: 2}
+  - {fileID: 11400000, guid: ee272431205add34bb8f038a942f5586, type: 2}
+  - {fileID: 5355748081049439808}
+  - {fileID: -6925842695881738770}
+  - {fileID: 8686611775965607580}
+  - {fileID: 9174929943650953481}
+  - {fileID: -7497575564775254856}
+  - {fileID: -102002541584926829}
+  - {fileID: 4642312395730359902}
+  - {fileID: 3380477233914734052}
+  - {fileID: 6815025461066658889}
+  - {fileID: -8768184707540110455}
+  bindings:
+  - stableKey: qinglan.status.armor_broken
+    address: qinglan/status/armor-broken/visual
+    usage: 4
+    sprite: {fileID: -485697264113854658, guid: d0c94528884dac7488fee971b412fc4b, type: 3}
+  - stableKey: qinglan.status.burning
+    address: qinglan/status/burning/visual
+    usage: 4
+    sprite: {fileID: 2308167422915534799, guid: 4ec321d4e82190e4686c5dedbd04a704, type: 3}
+  - stableKey: qinglan.status.damage_immunity
+    address: qinglan/status/damage-immunity/visual
+    usage: 4
+    sprite: {fileID: 3531476703049163667, guid: 303be8711f321584ca414bc0587a35c3, type: 3}
+  - stableKey: qinglan.status.marked
+    address: qinglan/status/marked/visual
+    usage: 4
+    sprite: {fileID: 4433736866262151532, guid: f1dd31a7973da07468a97902cf0d46a3, type: 3}
+  - stableKey: qinglan.status.poisoned
+    address: qinglan/status/poisoned/visual
+    usage: 4
+    sprite: {fileID: -1887726679758046847, guid: f86045d4f53b3924abe6b66c32567326, type: 3}
+  - stableKey: qinglan.status.rooted
+    address: qinglan/status/rooted/visual
+    usage: 4
+    sprite: {fileID: 7707838471107881314, guid: 1a709ec40fbfc2a469744ed88ee4579a, type: 3}
+  - stableKey: qinglan.status.slowed
+    address: qinglan/status/slowed/visual
+    usage: 4
+    sprite: {fileID: 3766943508512803600, guid: 97be456b892f41f43a323761562b14b1, type: 3}
+  - stableKey: qinglan/boss/tingfeng/animation-atlas
+    address: qinglan/boss/tingfeng/animation-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/boss/tingfeng/phase-1-overlay
+    address: qinglan/boss/tingfeng/phase-1-overlay
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/boss/tingfeng/phase-2-overlay
+    address: qinglan/boss/tingfeng/phase-2-overlay
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/boss/tingfeng/phase-3-overlay
+    address: qinglan/boss/tingfeng/phase-3-overlay
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/boss/zhezhi/animation-atlas
+    address: qinglan/boss/zhezhi/animation-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/boss/zhezhi/phase-1-overlay
+    address: qinglan/boss/zhezhi/phase-1-overlay
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/boss/zhezhi/phase-2-overlay
+    address: qinglan/boss/zhezhi/phase-2-overlay
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/boss/zhezhi/phase-3-overlay
+    address: qinglan/boss/zhezhi/phase-3-overlay
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/character/lu-qingye/directional-animation-atlas
+    address: qinglan/character/lu-qingye/directional-animation-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/character/lu-qingye/portrait
+    address: qinglan/character/lu-qingye/portrait
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/character/lu-qingye/riding-wind/tier-0
+    address: qinglan/character/lu-qingye/riding-wind/tier-0
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/character/lu-qingye/riding-wind/tier-1
+    address: qinglan/character/lu-qingye/riding-wind/tier-1
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/character/lu-qingye/riding-wind/tier-2
+    address: qinglan/character/lu-qingye/riding-wind/tier-2
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/character/lu-qingye/riding-wind/tier-3
+    address: qinglan/character/lu-qingye/riding-wind/tier-3
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/character/lu-qingye/silhouette
+    address: qinglan/character/lu-qingye/silhouette
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/collectible/old-court-01/icon
+    address: qinglan/collectible/old-court-01/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/collectible/old-court-01/illustration
+    address: qinglan/collectible/old-court-01/illustration
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/collectible/old-court-02/icon
+    address: qinglan/collectible/old-court-02/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/collectible/old-court-02/illustration
+    address: qinglan/collectible/old-court-02/illustration
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/collectible/old-court-03/icon
+    address: qinglan/collectible/old-court-03/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/collectible/old-court-03/illustration
+    address: qinglan/collectible/old-court-03/illustration
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/collectible/old-court-04/icon
+    address: qinglan/collectible/old-court-04/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/collectible/old-court-04/illustration
+    address: qinglan/collectible/old-court-04/illustration
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/collectible/old-court-05/icon
+    address: qinglan/collectible/old-court-05/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/collectible/old-court-05/illustration
+    address: qinglan/collectible/old-court-05/illustration
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/collectible/old-court-06/icon
+    address: qinglan/collectible/old-court-06/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/collectible/old-court-06/illustration
+    address: qinglan/collectible/old-court-06/illustration
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/damage-policy/boss-hazard/visual
+    address: qinglan/damage-policy/boss-hazard/visual
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/damage-policy/contact-protection/visual
+    address: qinglan/damage-policy/contact-protection/visual
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/enemy/affix/barrier/overlay
+    address: qinglan/enemy/affix/barrier/overlay
+    usage: 1
+    sprite: {fileID: 7884413099922037076, guid: 7d2b88eca915a64479f22ac803ec8c76, type: 3}
+  - stableKey: qinglan/enemy/affix/frenzy/overlay
+    address: qinglan/enemy/affix/frenzy/overlay
+    usage: 1
+    sprite: {fileID: 4366213214662717038, guid: d900c8095652f4b4c8a95ba6e53432d3, type: 3}
+  - stableKey: qinglan/enemy/affix/quake/overlay
+    address: qinglan/enemy/affix/quake/overlay
+    usage: 1
+    sprite: {fileID: -2835128403195260437, guid: 33d76132c81ace24c9c03ddec224fb01, type: 3}
+  - stableKey: qinglan/enemy/affix/splitting/overlay
+    address: qinglan/enemy/affix/splitting/overlay
+    usage: 1
+    sprite: {fileID: -8122563451172391708, guid: 0d85b3162b253c6499b361cfda47720f, type: 3}
+  - stableKey: qinglan/enemy/explosive-seed-pod/directional-animation-atlas
+    address: qinglan/enemy/explosive-seed-pod/directional-animation-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/enemy/grass-spirit/directional-animation-atlas
+    address: qinglan/enemy/grass-spirit/directional-animation-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/enemy/paper-crane-spirit/directional-animation-atlas
+    address: qinglan/enemy/paper-crane-spirit/directional-animation-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/enemy/stone-lantern-guard/directional-animation-atlas
+    address: qinglan/enemy/stone-lantern-guard/directional-animation-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/enemy/wind-bell-spirit/directional-animation-atlas
+    address: qinglan/enemy/wind-bell-spirit/directional-animation-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/enemy/wooden-sword-puppet/directional-animation-atlas
+    address: qinglan/enemy/wooden-sword-puppet/directional-animation-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/event/herb-garden-revival/phase-atlas
+    address: qinglan/event/herb-garden-revival/phase-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/event/old-sword-resonance/phase-atlas
+    address: qinglan/event/old-sword-resonance/phase-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/event/wind-vein-riot/phase-atlas
+    address: qinglan/event/wind-vein-riot/phase-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/facility/hundred-artifact-pavilion/icon
+    address: qinglan/hub/facility/hundred-artifact-pavilion/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/facility/hundred-artifact-pavilion/panel
+    address: qinglan/hub/facility/hundred-artifact-pavilion/panel
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/facility/myriad-phenomena-pavilion/icon
+    address: qinglan/hub/facility/myriad-phenomena-pavilion/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/facility/myriad-phenomena-pavilion/panel
+    address: qinglan/hub/facility/myriad-phenomena-pavilion/panel
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/facility/scroll-pavilion/icon
+    address: qinglan/hub/facility/scroll-pavilion/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/facility/scroll-pavilion/panel
+    address: qinglan/hub/facility/scroll-pavilion/panel
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/facility/vein-inquiry-platform/icon
+    address: qinglan/hub/facility/vein-inquiry-platform/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/facility/vein-inquiry-platform/panel
+    address: qinglan/hub/facility/vein-inquiry-platform/panel
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/insert/herb-garden-spring-clasp/icon
+    address: qinglan/hub/insert/herb-garden-spring-clasp/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/insert/old-court-vein-needle/icon
+    address: qinglan/hub/insert/old-court-vein-needle/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/insert/qinglan-wind-pattern/icon
+    address: qinglan/hub/insert/qinglan-wind-pattern/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/meta-node/innate/01/icon
+    address: qinglan/hub/meta-node/innate/01/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/meta-node/innate/02/icon
+    address: qinglan/hub/meta-node/innate/02/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/meta-node/innate/03/icon
+    address: qinglan/hub/meta-node/innate/03/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/meta-node/innate/04/icon
+    address: qinglan/hub/meta-node/innate/04/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/meta-node/mind/01/icon
+    address: qinglan/hub/meta-node/mind/01/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/meta-node/mind/02/icon
+    address: qinglan/hub/meta-node/mind/02/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/meta-node/mind/03/icon
+    address: qinglan/hub/meta-node/mind/03/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/meta-node/mind/04/icon
+    address: qinglan/hub/meta-node/mind/04/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/meta-node/movement/01/icon
+    address: qinglan/hub/meta-node/movement/01/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/meta-node/movement/02/icon
+    address: qinglan/hub/meta-node/movement/02/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/meta-node/movement/03/icon
+    address: qinglan/hub/meta-node/movement/03/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/hub/meta-node/movement/04/icon
+    address: qinglan/hub/meta-node/movement/04/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/landmark/broken-wall-sword-mark/state-atlas
+    address: qinglan/landmark/broken-wall-sword-mark/state-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/landmark/guest-pavilion-letter/state-atlas
+    address: qinglan/landmark/guest-pavilion-letter/state-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/landmark/herb-garden-variant/state-atlas
+    address: qinglan/landmark/herb-garden-variant/state-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/landmark/sealed-sword-cache/state-atlas
+    address: qinglan/landmark/sealed-sword-cache/state-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/landmark/wind-vein-stele/state-atlas
+    address: qinglan/landmark/wind-vein-stele/state-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/map/old-court/region/central-training-ground/prop-set
+    address: qinglan/map/old-court/region/central-training-ground/prop-set
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/map/old-court/region/central-training-ground/tile-kit
+    address: qinglan/map/old-court/region/central-training-ground/tile-kit
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/map/old-court/region/east-sword-gallery/prop-set
+    address: qinglan/map/old-court/region/east-sword-gallery/prop-set
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/map/old-court/region/east-sword-gallery/tile-kit
+    address: qinglan/map/old-court/region/east-sword-gallery/tile-kit
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/map/old-court/region/north-old-gate/prop-set
+    address: qinglan/map/old-court/region/north-old-gate/prop-set
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/map/old-court/region/north-old-gate/tile-kit
+    address: qinglan/map/old-court/region/north-old-gate/tile-kit
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/map/old-court/region/south-guest-court/prop-set
+    address: qinglan/map/old-court/region/south-guest-court/prop-set
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/map/old-court/region/south-guest-court/tile-kit
+    address: qinglan/map/old-court/region/south-guest-court/tile-kit
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/map/old-court/region/west-herb-garden/prop-set
+    address: qinglan/map/old-court/region/west-herb-garden/prop-set
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/map/old-court/region/west-herb-garden/tile-kit
+    address: qinglan/map/old-court/region/west-herb-garden/tile-kit
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/objective/wind-altar/guide/state-atlas
+    address: qinglan/objective/wind-altar/guide/state-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/objective/wind-altar/listen/state-atlas
+    address: qinglan/objective/wind-altar/listen/state-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/objective/wind-altar/stop-balance/state-atlas
+    address: qinglan/objective/wind-altar/stop-balance/state-atlas
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/pickup/boundary-talisman/icon
+    address: qinglan/pickup/boundary-talisman/icon
+    usage: 1
+    sprite: {fileID: -6343812964767605332, guid: f0c89a7516b2a2c4aa8e1df8dce789f2, type: 3}
+  - stableKey: qinglan/pickup/boundary-talisman/sprite
+    address: qinglan/pickup/boundary-talisman/sprite
+    usage: 1
+    sprite: {fileID: -8060846809903404807, guid: 21d53f301028a9e43a867aa2b5915761, type: 3}
+  - stableKey: qinglan/pickup/greenwood-dew/icon
+    address: qinglan/pickup/greenwood-dew/icon
+    usage: 1
+    sprite: {fileID: 2395172068787262418, guid: e20bf7e1758b15140be6248e5243d3bd, type: 3}
+  - stableKey: qinglan/pickup/greenwood-dew/sprite
+    address: qinglan/pickup/greenwood-dew/sprite
+    usage: 1
+    sprite: {fileID: 4644221491376143240, guid: c686ee8338cb8b9468ddf148e54a5af2, type: 3}
+  - stableKey: qinglan/pickup/heart-guard-jade/icon
+    address: qinglan/pickup/heart-guard-jade/icon
+    usage: 1
+    sprite: {fileID: -2573057878446286518, guid: f278c57b9ee2edc47b4a1f8a68f82758, type: 3}
+  - stableKey: qinglan/pickup/heart-guard-jade/sprite
+    address: qinglan/pickup/heart-guard-jade/sprite
+    usage: 1
+    sprite: {fileID: 8299318920724718960, guid: e4f626e8280cf154680188f9c600c16e, type: 3}
+  - stableKey: qinglan/pickup/riding-wind-feather/icon
+    address: qinglan/pickup/riding-wind-feather/icon
+    usage: 1
+    sprite: {fileID: -2655917656763036249, guid: 180df4903fd04824e9448182506f0e0f, type: 3}
+  - stableKey: qinglan/pickup/riding-wind-feather/sprite
+    address: qinglan/pickup/riding-wind-feather/sprite
+    usage: 1
+    sprite: {fileID: -6268261074229420742, guid: 8ca80b6bb92c85d4ca50eddb46944859, type: 3}
+  - stableKey: qinglan/pickup/spirit-gourd/icon
+    address: qinglan/pickup/spirit-gourd/icon
+    usage: 1
+    sprite: {fileID: 3695856912895295354, guid: 087663b86063fed458497e411694cd06, type: 3}
+  - stableKey: qinglan/pickup/spirit-gourd/sprite
+    address: qinglan/pickup/spirit-gourd/sprite
+    usage: 1
+    sprite: {fileID: 162013920265813921, guid: 17135b83c7b4cce48b422975b7d3c0f4, type: 3}
+  - stableKey: qinglan/pickup/thunder-jade/icon
+    address: qinglan/pickup/thunder-jade/icon
+    usage: 1
+    sprite: {fileID: 3646426263008195991, guid: 15add32422d837943ae6bdfccac906d5, type: 3}
+  - stableKey: qinglan/pickup/thunder-jade/sprite
+    address: qinglan/pickup/thunder-jade/sprite
+    usage: 1
+    sprite: {fileID: -5059018259582323736, guid: d31baace157f43d4caf43fe4361d4903, type: 3}
+  - stableKey: qinglan/profile/boss/tingfeng
+    address: qinglan/profile/boss/tingfeng
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/boss/zhezhi
+    address: qinglan/profile/boss/zhezhi
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/character/lu-qingye
+    address: qinglan/profile/character/lu-qingye
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/enemy/explosive-seed-pod
+    address: qinglan/profile/enemy/explosive-seed-pod
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/enemy/grass-spirit
+    address: qinglan/profile/enemy/grass-spirit
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/enemy/paper-crane-spirit
+    address: qinglan/profile/enemy/paper-crane-spirit
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/enemy/stone-lantern-guard
+    address: qinglan/profile/enemy/stone-lantern-guard
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/enemy/wind-bell-spirit
+    address: qinglan/profile/enemy/wind-bell-spirit
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/enemy/wooden-sword-puppet
+    address: qinglan/profile/enemy/wooden-sword-puppet
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/event/herb-garden-revival
+    address: qinglan/profile/event/herb-garden-revival
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/event/old-sword-resonance
+    address: qinglan/profile/event/old-sword-resonance
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/event/wind-vein-riot
+    address: qinglan/profile/event/wind-vein-riot
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/skill/base/lihuo-wheel
+    address: qinglan/profile/skill/base/lihuo-wheel
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/skill/base/spirit-vine-seed
+    address: qinglan/profile/skill/base/spirit-vine-seed
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/skill/base/tide-orb
+    address: qinglan/profile/skill/base/tide-orb
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/skill/base/yellow-talisman
+    address: qinglan/profile/skill/base/yellow-talisman
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/skill/base/yufeng-sword
+    address: qinglan/profile/skill/base/yufeng-sword
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/skill/base/zhenyue-seal
+    address: qinglan/profile/skill/base/zhenyue-seal
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/skill/evolved/chilu-hundred-craft-wheel
+    address: qinglan/profile/skill/evolved/chilu-hundred-craft-wheel
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/skill/evolved/earth-vein-spring-branch
+    address: qinglan/profile/skill/evolved/earth-vein-spring-branch
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/skill/evolved/mirror-sea-tide-wheel
+    address: qinglan/profile/skill/evolved/mirror-sea-tide-wheel
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/skill/evolved/mountain-boundary-seal
+    address: qinglan/profile/skill/evolved/mountain-boundary-seal
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/skill/evolved/qinglan-flowing-shadow-sword
+    address: qinglan/profile/skill/evolved/qinglan-flowing-shadow-sword
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/profile/skill/evolved/taiyi-spirit-sealing-array
+    address: qinglan/profile/skill/evolved/taiyi-spirit-sealing-array
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/relic/blank-sword-trial-token/icon
+    address: qinglan/relic/blank-sword-trial-token/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/relic/broken-sword-tassel/icon
+    address: qinglan/relic/broken-sword-tassel/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/relic/herb-garden-seed-pod/icon
+    address: qinglan/relic/herb-garden-seed-pod/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/relic/listening-wind-core/icon
+    address: qinglan/relic/listening-wind-core/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/relic/old-court-bell/icon
+    address: qinglan/relic/old-court-bell/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/relic/wind-vein-copper/icon
+    address: qinglan/relic/wind-vein-copper/icon
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/skill/base/lihuo-wheel/vfx
+    address: qinglan/skill/base/lihuo-wheel/vfx
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/skill/base/spirit-vine-seed/vfx
+    address: qinglan/skill/base/spirit-vine-seed/vfx
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/skill/base/tide-orb/vfx
+    address: qinglan/skill/base/tide-orb/vfx
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/skill/base/yellow-talisman/vfx
+    address: qinglan/skill/base/yellow-talisman/vfx
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/skill/base/yufeng-sword/vfx
+    address: qinglan/skill/base/yufeng-sword/vfx
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/skill/base/zhenyue-seal/vfx
+    address: qinglan/skill/base/zhenyue-seal/vfx
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/skill/evolved/chilu-hundred-craft-wheel/vfx
+    address: qinglan/skill/evolved/chilu-hundred-craft-wheel/vfx
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/skill/evolved/earth-vein-spring-branch/vfx
+    address: qinglan/skill/evolved/earth-vein-spring-branch/vfx
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/skill/evolved/mirror-sea-tide-wheel/vfx
+    address: qinglan/skill/evolved/mirror-sea-tide-wheel/vfx
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/skill/evolved/mountain-boundary-seal/vfx
+    address: qinglan/skill/evolved/mountain-boundary-seal/vfx
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/skill/evolved/qinglan-flowing-shadow-sword/vfx
+    address: qinglan/skill/evolved/qinglan-flowing-shadow-sword/vfx
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/skill/evolved/taiyi-spirit-sealing-array/vfx
+    address: qinglan/skill/evolved/taiyi-spirit-sealing-array/vfx
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/status/armor-broken/visual
+    address: qinglan/status/armor-broken/visual
+    usage: 4
+    sprite: {fileID: -485697264113854658, guid: d0c94528884dac7488fee971b412fc4b, type: 3}
+  - stableKey: qinglan/status/burning/visual
+    address: qinglan/status/burning/visual
+    usage: 4
+    sprite: {fileID: 2308167422915534799, guid: 4ec321d4e82190e4686c5dedbd04a704, type: 3}
+  - stableKey: qinglan/status/damage-immunity/visual
+    address: qinglan/status/damage-immunity/visual
+    usage: 4
+    sprite: {fileID: 3531476703049163667, guid: 303be8711f321584ca414bc0587a35c3, type: 3}
+  - stableKey: qinglan/status/marked/visual
+    address: qinglan/status/marked/visual
+    usage: 4
+    sprite: {fileID: 4433736866262151532, guid: f1dd31a7973da07468a97902cf0d46a3, type: 3}
+  - stableKey: qinglan/status/poisoned/visual
+    address: qinglan/status/poisoned/visual
+    usage: 4
+    sprite: {fileID: -1887726679758046847, guid: f86045d4f53b3924abe6b66c32567326, type: 3}
+  - stableKey: qinglan/status/rooted/visual
+    address: qinglan/status/rooted/visual
+    usage: 4
+    sprite: {fileID: 7707838471107881314, guid: 1a709ec40fbfc2a469744ed88ee4579a, type: 3}
+  - stableKey: qinglan/status/slowed/visual
+    address: qinglan/status/slowed/visual
+    usage: 4
+    sprite: {fileID: 3766943508512803600, guid: 97be456b892f41f43a323761562b14b1, type: 3}
+  - stableKey: qinglan/story/lu-qingye/hearing-sword/key-illustration
+    address: qinglan/story/lu-qingye/hearing-sword/key-illustration
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/story/lu-qingye/old-sword-and-gourd/key-illustration
+    address: qinglan/story/lu-qingye/old-sword-and-gourd/key-illustration
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/story/lu-qingye/refusing-inheritance/key-illustration
+    address: qinglan/story/lu-qingye/refusing-inheritance/key-illustration
+    usage: 0
+    sprite: {fileID: 0}
+  - stableKey: qinglan/ui/framework/atlas
+    address: qinglan/ui/framework/atlas
+    usage: 3
+    sprite: {fileID: 0}
+  - stableKey: qinglan/ui/input-glyph/cursor/pointer
+    address: qinglan/ui/input-glyph/cursor/pointer
+    usage: 3
+    sprite: {fileID: 1772998854, guid: e9d08626c1a83dd41944708c9f14c627, type: 3}
+  - stableKey: qinglan/ui/input-glyph/focus/ring
+    address: qinglan/ui/input-glyph/focus/ring
+    usage: 3
+    sprite: {fileID: 1295407444, guid: 8e5da375dfd5c4243a3c7cafa9bf0589, type: 3}
+  - stableKey: qinglan/ui/input-glyph/gamepad/button-east
+    address: qinglan/ui/input-glyph/gamepad/button-east
+    usage: 3
+    sprite: {fileID: -1613506882, guid: 88920f1d88a08b248822fcf54f297817, type: 3}
+  - stableKey: qinglan/ui/input-glyph/gamepad/button-north
+    address: qinglan/ui/input-glyph/gamepad/button-north
+    usage: 3
+    sprite: {fileID: 117306933, guid: 6db21b6b612bab44d899dde2e10b5178, type: 3}
+  - stableKey: qinglan/ui/input-glyph/gamepad/button-south
+    address: qinglan/ui/input-glyph/gamepad/button-south
+    usage: 3
+    sprite: {fileID: 339245890, guid: 7e26e6793b3503a4faa14fc22caca5f2, type: 3}
+  - stableKey: qinglan/ui/input-glyph/gamepad/dpad
+    address: qinglan/ui/input-glyph/gamepad/dpad
+    usage: 3
+    sprite: {fileID: 572230469, guid: a7a9831cb13f19e4ca44a7f17653bf19, type: 3}
+  - stableKey: qinglan/ui/input-glyph/gamepad/left-shoulder
+    address: qinglan/ui/input-glyph/gamepad/left-shoulder
+    usage: 3
+    sprite: {fileID: 507270157, guid: 369afbc9596d7c04695040489a7a5c8f, type: 3}
+  - stableKey: qinglan/ui/input-glyph/gamepad/left-stick
+    address: qinglan/ui/input-glyph/gamepad/left-stick
+    usage: 3
+    sprite: {fileID: -2049838501, guid: 7e35e15116bf2824689a7e20f3228ed2, type: 3}
+  - stableKey: qinglan/ui/input-glyph/gamepad/left-trigger
+    address: qinglan/ui/input-glyph/gamepad/left-trigger
+    usage: 3
+    sprite: {fileID: 1994483681, guid: 13f9d9fa5458d1c49b74b792928c02e3, type: 3}
+  - stableKey: qinglan/ui/input-glyph/gamepad/right-shoulder
+    address: qinglan/ui/input-glyph/gamepad/right-shoulder
+    usage: 3
+    sprite: {fileID: 1376129522, guid: b95792df91f7aee4db58f5ccb5d9b7f5, type: 3}
+  - stableKey: qinglan/ui/input-glyph/gamepad/right-trigger
+    address: qinglan/ui/input-glyph/gamepad/right-trigger
+    usage: 3
+    sprite: {fileID: 2099390900, guid: 68ec1d9b93abd7145a214a6268301718, type: 3}
+  - stableKey: qinglan/ui/input-glyph/gamepad/select
+    address: qinglan/ui/input-glyph/gamepad/select
+    usage: 3
+    sprite: {fileID: -80588473, guid: 456686d765c137246b9e05d5ca242c46, type: 3}
+  - stableKey: qinglan/ui/input-glyph/gamepad/start
+    address: qinglan/ui/input-glyph/gamepad/start
+    usage: 3
+    sprite: {fileID: -1696450313, guid: ccb5d947d0e06ea449c9c6266f4e275c, type: 3}
+  - stableKey: qinglan/ui/input-glyph/keyboard/arrows
+    address: qinglan/ui/input-glyph/keyboard/arrows
+    usage: 3
+    sprite: {fileID: -299038570, guid: 11aa2df4b6dac9441b0f221dafa2d426, type: 3}
+  - stableKey: qinglan/ui/input-glyph/keyboard/enter
+    address: qinglan/ui/input-glyph/keyboard/enter
+    usage: 3
+    sprite: {fileID: -168390179, guid: cd012f744490a3646b083bca3f448163, type: 3}
+  - stableKey: qinglan/ui/input-glyph/keyboard/escape
+    address: qinglan/ui/input-glyph/keyboard/escape
+    usage: 3
+    sprite: {fileID: 1543944131, guid: 248bfb033e54381488c28ac28ef7ebbb, type: 3}
+  - stableKey: qinglan/ui/input-glyph/keyboard/key-e
+    address: qinglan/ui/input-glyph/keyboard/key-e
+    usage: 3
+    sprite: {fileID: 1693810004, guid: d52b36e1edcc58e479bf877b277ccc7c, type: 3}
+  - stableKey: qinglan/ui/input-glyph/keyboard/key-m
+    address: qinglan/ui/input-glyph/keyboard/key-m
+    usage: 3
+    sprite: {fileID: 1325341652, guid: 4c909cb0e9d7c6d40b5baeb528d3ac2e, type: 3}
+  - stableKey: qinglan/ui/input-glyph/keyboard/key-q
+    address: qinglan/ui/input-glyph/keyboard/key-q
+    usage: 3
+    sprite: {fileID: -1192548092, guid: eea9b24af7777d44fab56c666e99e17f, type: 3}
+  - stableKey: qinglan/ui/input-glyph/keyboard/page-axis
+    address: qinglan/ui/input-glyph/keyboard/page-axis
+    usage: 3
+    sprite: {fileID: 2125351446, guid: 0d1c1007d766a7245a4f1f122ebc5a36, type: 3}
+  - stableKey: qinglan/ui/input-glyph/keyboard/wasd
+    address: qinglan/ui/input-glyph/keyboard/wasd
+    usage: 3
+    sprite: {fileID: 616642962, guid: 7d6b31709ec81c247869778c9f8a9b30, type: 3}
+  - stableKey: qinglan/ui/input-glyph/mouse/left-button
+    address: qinglan/ui/input-glyph/mouse/left-button
+    usage: 3
+    sprite: {fileID: -1725126879, guid: 7698762f81705e349aa38fac260e704e, type: 3}
+  - stableKey: qinglan/ui/input-glyph/mouse/right-button
+    address: qinglan/ui/input-glyph/mouse/right-button
+    usage: 3
+    sprite: {fileID: 1681340471, guid: f040b229f7baab14b987294a18b3f555, type: 3}
+  - stableKey: qinglan/ui/input-glyph/mouse/scroll
+    address: qinglan/ui/input-glyph/mouse/scroll
+    usage: 3
+    sprite: {fileID: 360408157, guid: bf47e920ade177e48b39ffc14182953f, type: 3}
+  - stableKey: qinglan/ui/page-background/character-select
+    address: qinglan/ui/page-background/character-select
+    usage: 2
+    sprite: {fileID: 2017198552, guid: 8a1efa70ccedcc34c8c1e4a7849fb03f, type: 3}
+  - stableKey: qinglan/ui/page-background/choice
+    address: qinglan/ui/page-background/choice
+    usage: 2
+    sprite: {fileID: 471764427, guid: f7a640d723ce0ea4696e1b2018faf0ab, type: 3}
+  - stableKey: qinglan/ui/page-background/hub
+    address: qinglan/ui/page-background/hub
+    usage: 2
+    sprite: {fileID: -1915508247, guid: 92b24349076f95f4ab4c57d77198fad3, type: 3}
+  - stableKey: qinglan/ui/page-background/loadout
+    address: qinglan/ui/page-background/loadout
+    usage: 2
+    sprite: {fileID: 1237414336, guid: 9c73fcc65164dfc43a51c69c19460af6, type: 3}
+  - stableKey: qinglan/ui/page-background/map-select
+    address: qinglan/ui/page-background/map-select
+    usage: 2
+    sprite: {fileID: -1939691612, guid: 269cd46e347400c4e9ababa0d6becdc6, type: 3}
+  - stableKey: qinglan/ui/page-background/story-result
+    address: qinglan/ui/page-background/story-result
+    usage: 2
+    sprite: {fileID: -1340458143, guid: 89355b643ebaacc46b7efc3b8f887cab, type: 3}
+  - stableKey: qinglan/ui/telegraph-accessibility/atlas
+    address: qinglan/ui/telegraph-accessibility/atlas
+    usage: 3
+    sprite: {fileID: 0}
+  - stableKey: qinglan/ui/title/key-art
+    address: qinglan/ui/title/key-art
+    usage: 2
+    sprite: {fileID: 21300000, guid: b3e7a14b1368a1a48a8278268e4ba978, type: 3}
+  - stableKey: qinglan/ui/title/logo-safe-background
+    address: qinglan/ui/title/logo-safe-background
+    usage: 2
+    sprite: {fileID: 21300000, guid: 2de3edd55f8b19e469cacb3203fa6c40, type: 3}
+  - stableKey: ui.cursor.pointer
+    address: qinglan/ui/input-glyph/cursor/pointer
+    usage: 3
+    sprite: {fileID: 1772998854, guid: e9d08626c1a83dd41944708c9f14c627, type: 3}
+  - stableKey: ui.focus
+    address: qinglan/ui/input-glyph/focus/ring
+    usage: 3
+    sprite: {fileID: 1295407444, guid: 8e5da375dfd5c4243a3c7cafa9bf0589, type: 3}
+  - stableKey: ui.page.character_select
+    address: qinglan/ui/page-background/character-select
+    usage: 2
+    sprite: {fileID: 2017198552, guid: 8a1efa70ccedcc34c8c1e4a7849fb03f, type: 3}
+  - stableKey: ui.page.choice
+    address: qinglan/ui/page-background/choice
+    usage: 2
+    sprite: {fileID: 471764427, guid: f7a640d723ce0ea4696e1b2018faf0ab, type: 3}
+  - stableKey: ui.page.hub
+    address: qinglan/ui/page-background/hub
+    usage: 2
+    sprite: {fileID: -1915508247, guid: 92b24349076f95f4ab4c57d77198fad3, type: 3}
+  - stableKey: ui.page.loadout
+    address: qinglan/ui/page-background/loadout
+    usage: 2
+    sprite: {fileID: 1237414336, guid: 9c73fcc65164dfc43a51c69c19460af6, type: 3}
+  - stableKey: ui.page.map_select
+    address: qinglan/ui/page-background/map-select
+    usage: 2
+    sprite: {fileID: -1939691612, guid: 269cd46e347400c4e9ababa0d6becdc6, type: 3}
+  - stableKey: ui.page.story_result
+    address: qinglan/ui/page-background/story-result
+    usage: 2
+    sprite: {fileID: -1340458143, guid: 89355b643ebaacc46b7efc3b8f887cab, type: 3}
+  - stableKey: ui.page.title
+    address: qinglan/ui/title/key-art
+    usage: 2
+    sprite: {fileID: 21300000, guid: b3e7a14b1368a1a48a8278268e4ba978, type: 3}
+  - stableKey: ui.page.title_safe
+    address: qinglan/ui/title/logo-safe-background
+    usage: 2
+    sprite: {fileID: 21300000, guid: 2de3edd55f8b19e469cacb3203fa6c40, type: 3}
+  - stableKey: ui.panel
+    address: qinglan/ui/framework/atlas
+    usage: 3
+    sprite: {fileID: -593919789, guid: f33c3fcc3626f794fb39fb75a2ce7941, type: 3}
+--- !u!114 &3380477233914734052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
+  m_Name: runtime-profile-qinglan-affix-barrier
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
+  entityKind: 1
+  stableId: qinglan.affix.barrier
+  sprite: {fileID: 7884413099922037076, guid: 7d2b88eca915a64479f22ac803ec8c76, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: {x: 1.28, y: 1.28}
+--- !u!114 &4642312395730359902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
+  m_Name: runtime-profile-qinglan-affix-splitting
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
+  entityKind: 1
+  stableId: qinglan.affix.splitting
+  sprite: {fileID: -8122563451172391708, guid: 0d85b3162b253c6499b361cfda47720f, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: {x: 1.28, y: 1.28}
+--- !u!114 &5355748081049439808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
+  m_Name: runtime-profile-qinglan-pickup-boundary_talisman
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
+  entityKind: 4
+  stableId: qinglan.pickup.boundary_talisman
+  sprite: {fileID: -8060846809903404807, guid: 21d53f301028a9e43a867aa2b5915761, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: {x: 0.58, y: 0.58}
+--- !u!114 &6815025461066658889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
+  m_Name: runtime-profile-qinglan-affix-quaking
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
+  entityKind: 1
+  stableId: qinglan.affix.quaking
+  sprite: {fileID: -2835128403195260437, guid: 33d76132c81ace24c9c03ddec224fb01, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: {x: 1.28, y: 1.28}
+--- !u!114 &8686611775965607580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
+  m_Name: runtime-profile-qinglan-pickup-heart_guard_jade
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
+  entityKind: 4
+  stableId: qinglan.pickup.heart_guard_jade
+  sprite: {fileID: 8299318920724718960, guid: e4f626e8280cf154680188f9c600c16e, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: {x: 0.58, y: 0.58}
+--- !u!114 &9174929943650953481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
+  m_Name: runtime-profile-qinglan-pickup-riding_wind_feather
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
+  entityKind: 4
+  stableId: qinglan.pickup.riding_wind_feather
+  sprite: {fileID: -6268261074229420742, guid: 8ca80b6bb92c85d4ca50eddb46944859, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: {x: 0.58, y: 0.58}

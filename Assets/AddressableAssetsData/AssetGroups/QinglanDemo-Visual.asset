@@ -863,6 +863,12 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9eb8337c0c5ae0f498db3dde19f03f40
+    m_Address: qinglan/runtime/formal-visual-catalog
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9eebc6c9a2a82cb44befdab74d6efcaa
     m_Address: qinglan/hub/facility/hundred-artifact-pavilion/panel
     m_ReadOnly: 0

@@ -79,6 +79,8 @@ namespace Game.Tests.PlayMode
             Assert.That(host.Input.UiMap.enabled, Is.True);
             Assert.That(host.Input.GameplayMap.enabled, Is.False);
             Assert.That(host.Presentation.ActiveViewCount, Is.Zero);
+            Assert.That(host.FormalVisualsLoaded, Is.True);
+            Assert.That(host.Ui.FormalBackgroundApplied, Is.True);
         }
 
         [UnityTest]

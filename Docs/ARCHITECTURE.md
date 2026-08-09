@@ -306,6 +306,18 @@ P2/P3 可以丢弃/聚合并记录诊断。程序化 Map 只复制 RuntimeMapDef
 `RunUiSnapshot`，不参与地图判定。生成纹理和测试音均为 Development Placeholder；正式资源加载、
 Addressables 句柄和 GPU 门禁仍属于 G3。
 
+### 7.3 G3.1 正式视觉目录与加载生命周期
+
+G3.1 由 Addressable `FormalVisualCatalog` 间接登记全部正式视觉地址，并直接引用启动/运行热集所需的
+正式 `VisualProfile` 与 Sprite。`QinglanFormalVisualLoader` 位于 Infrastructure，是 Catalog Handle 的
+唯一 Owner：Bootstrap 低频装配时加载，Host 销毁时释放。Presentation 与 UI 只消费已解析 Profile 或
+只读 Sprite 查询接口，不调用 Addressables；Simulation/Application 仍只传稳定 ID 与快照。
+
+正式实体 Profile 优先于 G2.7 程序化样式，Pickup 与 Affix 使用目录内通用 Profile，Status Request 可
+解析正式 VFX Sprite。UI 使用正式标题/页面背景、Panel、焦点和指针，本地化正文不进入图片。Development
+加载/映射失败保留可诊断 Fallback；Project Validation 对缺 Catalog、181 个地址覆盖、必需 Runtime
+Alias/Profile 执行阻断。依赖与迁移理由见 ADR 0028。
+
 M8 的 Presenter 仍只产生 Key；`UnityLocalizationService` 在 View 边界从 `UI` String Table 解析
 `en`、`zh-Hans` 或 Pseudo。Project Validation 检查所有固定 UI/诊断 Key 与 baked 内容 Key 在英、
 中表均非空。设置只保存 Locale Code，不保存语言正文；所有可见文字继续在 View 边界解析。

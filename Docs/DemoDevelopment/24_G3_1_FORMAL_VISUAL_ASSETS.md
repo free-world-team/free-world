@@ -1,8 +1,8 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 27 / 27 ART BATCHES; FINAL INTEGRATION PENDING`
+- 状态：`COMPLETE — 27 / 27 ART BATCHES + FINAL INTEGRATION PASS`
 - 日期：2026-08-10
-- 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026/0027
+- 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026/0027/0028
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
 
 ## 1. 目标
@@ -81,6 +81,7 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 25 | ART-UI-003 | PASS | 6 张 2560×1440 master＋1920×1080 RGB 页面背景；左侧 UI 安全区确定性校准；EditMode 374/374、PlayMode 17/17、Validation PASS |
 | 26 | ART-UI-004 | PASS | 4×4、1024² RGBA 通用预警/无障碍图集；8 个形状＋8 个纹理语义 Sprite；EditMode 377/377、PlayMode 17/17、Validation PASS |
 | 27 | ART-UI-005 | PASS | 鼠标指针/焦点、键盘、鼠标和平台中性手柄共 24 个 128² Glyph；EditMode 380/380、PlayMode 17/17、Validation PASS |
+| 28 | Final Integration | PASS | 181/181 正式地址、34 个 Profile、199 个绑定；EditMode 384/384、PlayMode 17/17、Validation、Addressables、1080p 双模式截图、Development Build 与 Player Smoke PASS |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -312,3 +313,28 @@ Space 确认不进入 Release 集。每个 Glyph 由 512 RGBA source 确定性�
 P0 危险红均为 0。第二次完整生成的 48/48 source/final 文件 Hash 字节一致。正式地址为
 `qinglan/ui/input-glyph/<device>/<control>`；运行时最后活动设备、重绑定路径到 Glyph 的解析、TMP 提示
 组合与实际手柄复核由 G3.1 最终集成/G3.3 关闭。
+
+## 7. 最终集成结果
+
+ADR 0028 固化 `FormalVisualCatalog` 作为正式视觉运行时边界。Catalog 以 181 个稳定地址完整覆盖
+`visual.release` 输入，并登记 34 个实体/技能/区域 Profile、199 个正式绑定及 Pickup、Affix、Status、
+UI Runtime Alias。Infrastructure 在 Bootstrap 低频阶段拥有唯一 Addressables Handle，向 Presentation
+注入只读 Profile Catalog、向 UI 注入只读 Sprite 查询；Simulation/Application 仍只传稳定 ID 与快照。
+
+Player、普通敌人、Boss、Projectile、Area、Pickup 和 Affix 优先消费正式 Profile；Status VFX、标题和
+六类页面背景、九宫格 Panel、焦点环与鼠标指针消费正式 Sprite。目录或映射缺失在 Development 保留可
+诊断程序化 Fallback，Project Validation 对正式发布输入缺失执行阻断。方向动画、Objective/Event/
+Landmark 的状态切帧和地图 Tile/Prop 规则仍通过目录地址可取，但当前 Demo Presentation Snapshot 没有
+对应状态字段，未把这类状态驱动硬编码进 G3.1。
+
+最终完整 EditMode 为 384/384、PlayMode 为 17/17；1920×1080 标准/高对比高密度审查使用 600 个敌人、
+915 个活动 View、318 个 P0 危险 View，危险层最低 Sorting Order 40 高于战斗层最高 20。Addressables
+实际生成 568 个 Location；Windows x64 Development Player 内含 13 个 Addressables 文件并通过正式目录、
+正式 UI 背景、完整页面流、暂停/升级/结算、存档、据点与重开的端到端 Smoke。开发构建现在显式构建并
+检查 Addressables，失败会阻断 Player，不再由编辑器偏好决定是否产生内容。
+
+首轮全量 EditMode 因依赖图预期未登记 Infrastructure 的 Addressables 依赖而 383/384 `FAIL`；更新 ADR 与
+程序集治理期望后通过。首轮 PlayMode 因正式鼠标指针采用不可读 BC7 而 16/17 `FAIL`；只对 Pointer 使用
+Readable RGBA32 后通过，其余 23 个 Glyph 仍保持不可读 BC7。首轮无图形设备截图因 RenderTexture 创建
+失败，改用实际 D3D12 GPU 后通过。首个 Player 构建因隐式 Addressables 二次构建失败却继续产包，Smoke
+正确以正式目录未加载判定 `FAIL`；显式内容构建/错误阻断修复后重建与 Smoke 均通过。

@@ -21,6 +21,7 @@ namespace Game.Infrastructure
         private double uiRefreshAccumulator;
         private string lastLocaleCode = string.Empty;
         private bool initialized;
+        private QinglanFormalVisualLoader formalVisualLoader;
 
         public QinglanDemoFlowController Flow { get; private set; }
         public M7InputRouter Input { get; private set; }
@@ -28,6 +29,7 @@ namespace Game.Infrastructure
         public PresentationCoordinator Presentation { get; private set; }
         public ILocalizationService Localization { get; private set; }
         public QinglanPageViewModel CurrentPage => presenter?.CurrentPage;
+        public bool FormalVisualsLoaded => formalVisualLoader?.IsLoaded == true;
 
         public void Initialize(
             GameApplication application,
@@ -46,11 +48,14 @@ namespace Game.Infrastructure
             Input.Initialize(inputActions);
             Input.ApplyBindingOverrides(runtimeServices.Settings.BindingOverrides);
             Flow = new QinglanDemoFlowController(application, runtimeServices, Input, Localization);
+            formalVisualLoader = new QinglanFormalVisualLoader();
+            if (!formalVisualLoader.LoadForStartup())
+                Debug.LogWarning("[Qinglan Formal Visuals] Development fallback: " + formalVisualLoader.LastError);
 
             var uiObject = new GameObject("Qinglan_Demo_UI");
             uiObject.transform.SetParent(transform, false);
             Ui = uiObject.AddComponent<QinglanRuntimeUiRoot>();
-            Ui.Initialize(Localization, ResolveContentNameKey);
+            Ui.Initialize(Localization, ResolveContentNameKey, formalVisualLoader);
 
             var presentationObject = new GameObject("Qinglan_Demo_Presentation");
             presentationObject.transform.SetParent(transform, false);
@@ -58,8 +63,9 @@ namespace Game.Infrastructure
             Presentation.Initialize(
                 Ui.SharedCanvas,
                 Flow.Settings,
-                null,
-                QinglanProceduralPresentationFactory.Build(application.ContentRegistry));
+                formalVisualLoader.Catalog == null ? null : formalVisualLoader.Catalog.CreateEntityCatalog(),
+                QinglanProceduralPresentationFactory.Build(application.ContentRegistry),
+                formalVisualLoader.Catalog);
             presenter = new QinglanDemoPresenter(Flow, Ui);
 
             if (presentationCamera == null)
@@ -235,6 +241,8 @@ namespace Game.Infrastructure
             Input.DebugLevelUp -= OnDebugLevelUp;
             Input.DebugCompleteRun -= OnDebugCompleteRun;
             Flow.Dispose();
+            formalVisualLoader?.Dispose();
+            formalVisualLoader = null;
             initialized = false;
         }
     }

@@ -88,11 +88,15 @@ namespace Game.Editor
                 root = new GameObject("G2_8_Readability_Presentation");
                 var coordinator = root.AddComponent<PresentationCoordinator>();
                 var settings = new AccessibilitySettings();
+                var formal = AssetDatabase.LoadAssetAtPath<FormalVisualCatalog>(
+                    QinglanG31FormalVisualIntegration.CatalogPath);
+                if (formal == null) throw new InvalidOperationException("Formal visual catalog is missing.");
                 coordinator.Initialize(
                     canvas,
                     settings,
-                    null,
-                    QinglanProceduralPresentationFactory.Build(application.ContentRegistry));
+                    formal.CreateEntityCatalog(),
+                    QinglanProceduralPresentationFactory.Build(application.ContentRegistry),
+                    formal);
                 coordinator.SetMap(QinglanProceduralMapFactory.Build(
                     application.ContentRegistry, session.Descriptor.MapId));
                 coordinator.Sync(session.RenderSnapshot, session.InterpolationAlpha, session);
@@ -147,6 +151,7 @@ namespace Game.Editor
                              bossView.Shape == ProceduralShape.Hexagon &&
                              bossView.Priority == PresentationPriority.CriticalDanger &&
                              allHazardsVisible && criticalCount >= HazardCount + 1 &&
+                             coordinator.MissingProfileFallbackCount == HazardCount &&
                              lowestCriticalOrder > highestCombatOrder &&
                              File.Exists(standardPath) && File.Exists(highContrastPath);
                 var result = new QinglanG28ReadabilityResult
@@ -159,6 +164,8 @@ namespace Game.Editor
                     height = Height,
                     enemyCount = world.Enemies.Count,
                     activeViews = coordinator.ActiveViewCount,
+                    formalProfileCount = formal.EntityProfileCount,
+                    missingProfileFallbacks = coordinator.MissingProfileFallbackCount,
                     criticalDangerViews = criticalCount,
                     hazardViews = HazardCount,
                     playerShape = playerView.Shape.ToString(),
@@ -256,6 +263,8 @@ namespace Game.Editor
             public int height;
             public int enemyCount;
             public int activeViews;
+            public int formalProfileCount;
+            public int missingProfileFallbacks;
             public int criticalDangerViews;
             public int hazardViews;
             public string playerShape;

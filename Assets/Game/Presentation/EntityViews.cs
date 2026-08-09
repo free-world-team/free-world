@@ -32,6 +32,8 @@ namespace Game.Presentation
             profiles = source == null ? Array.Empty<VisualProfile>() : (VisualProfile[])source.Clone();
         }
 
+        public int Count => profiles.Length;
+
         public bool TryResolve(ContentId id, EntityKind kind, out VisualProfile profile)
         {
             for (var index = 0; index < profiles.Length; index++)
@@ -70,12 +72,42 @@ namespace Game.Presentation
 
         internal void Configure(Sprite sprite, Color color, Vector2 size)
         {
+            Configure(
+                sprite,
+                color,
+                size,
+                PresentationPriority.Decoration,
+                ProceduralShape.Square,
+                Color.clear,
+                false);
+        }
+
+        internal void Configure(
+            Sprite sprite,
+            Color color,
+            Vector2 size,
+            PresentationPriority priority,
+            ProceduralShape shape,
+            Color outlineColor,
+            bool showOutline)
+        {
             if (spriteRenderer == null) spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = sprite;
             spriteRenderer.color = color;
-            spriteRenderer.sortingOrder = SortingOrderFor(PresentationPriority.Decoration);
+            spriteRenderer.sortingOrder = SortingOrderFor(priority);
             transform.localScale = new Vector3(size.x, size.y, 1f);
-            if (outlineRenderer != null) outlineRenderer.gameObject.SetActive(false);
+            if (showOutline)
+            {
+                var outline = EnsureOutline();
+                outline.sprite = sprite;
+                outline.color = outlineColor;
+                outline.sortingOrder = spriteRenderer.sortingOrder - 1;
+                outline.transform.localScale = Vector3.one * 1.12f;
+                outline.gameObject.SetActive(true);
+            }
+            else if (outlineRenderer != null) outlineRenderer.gameObject.SetActive(false);
+            Priority = priority;
+            Shape = shape;
             ClearOverlays();
         }
 
@@ -113,6 +145,26 @@ namespace Game.Presentation
             renderer.sortingOrder = Math.Max(
                 spriteRenderer.sortingOrder + 1 + index,
                 SortingOrderFor(style.Priority) + index);
+            renderer.transform.localScale = Vector3.one * (1.28f + (index * 0.18f));
+            renderer.gameObject.SetActive(true);
+            if (index + 1 > ActiveOverlayCount) ActiveOverlayCount = index + 1;
+        }
+
+        internal void SetOverlay(
+            int index,
+            Sprite sprite,
+            Color color,
+            PresentationPriority priority)
+        {
+            if (index < 0 || index >= 2) throw new ArgumentOutOfRangeException(nameof(index));
+            if (sprite == null) throw new ArgumentNullException(nameof(sprite));
+            EnsureOverlays();
+            var renderer = overlayRenderers[index];
+            renderer.sprite = sprite;
+            renderer.color = color;
+            renderer.sortingOrder = Math.Max(
+                spriteRenderer.sortingOrder + 1 + index,
+                SortingOrderFor(priority) + index);
             renderer.transform.localScale = Vector3.one * (1.28f + (index * 0.18f));
             renderer.gameObject.SetActive(true);
             if (index + 1 > ActiveOverlayCount) ActiveOverlayCount = index + 1;

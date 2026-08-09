@@ -79,12 +79,18 @@ namespace Game.Editor
             importer.wrapMode = TextureWrapMode.Clamp;
             importer.filterMode = FilterMode.Bilinear;
             importer.maxTextureSize = maxTextureSize;
-            importer.textureCompression = TextureImporterCompression.CompressedHQ;
+            var runtimeCursor = string.Equals(
+                address,
+                "qinglan/ui/input-glyph/cursor/pointer",
+                StringComparison.Ordinal);
+            importer.isReadable = runtimeCursor;
+            importer.textureCompression = runtimeCursor ?
+                TextureImporterCompression.Uncompressed : TextureImporterCompression.CompressedHQ;
 
             var standalone = importer.GetPlatformTextureSettings("Standalone");
             standalone.overridden = true;
             standalone.maxTextureSize = maxTextureSize;
-            standalone.format = TextureImporterFormat.BC7;
+            standalone.format = runtimeCursor ? TextureImporterFormat.RGBA32 : TextureImporterFormat.BC7;
             standalone.compressionQuality = 100;
             importer.SetPlatformTextureSettings(standalone);
             if (useDownsampledSingleSprite)

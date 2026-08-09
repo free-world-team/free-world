@@ -49,7 +49,12 @@ namespace Game.Tests.EditMode
                 var standalone = importer.GetPlatformTextureSettings("Standalone");
                 Assert.That(standalone.overridden, Is.True, name);
                 Assert.That(standalone.maxTextureSize, Is.EqualTo(128), name);
-                Assert.That(standalone.format, Is.EqualTo(TextureImporterFormat.BC7), name);
+                var runtimeCursor = string.Equals(name, "cursor.pointer", StringComparison.Ordinal);
+                Assert.That(importer.isReadable, Is.EqualTo(runtimeCursor), name);
+                Assert.That(
+                    standalone.format,
+                    Is.EqualTo(runtimeCursor ? TextureImporterFormat.RGBA32 : TextureImporterFormat.BC7),
+                    name);
 
                 var sprites = FindSprites(path);
                 Assert.That(sprites.Count, Is.EqualTo(1), name);

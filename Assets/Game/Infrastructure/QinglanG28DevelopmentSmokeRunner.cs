@@ -43,6 +43,8 @@ namespace Game.Infrastructure
             }
 
             result.titleVisited = host.Flow.Stage == DemoFlowStage.Title;
+            result.formalVisualsLoaded = host.FormalVisualsLoaded;
+            result.formalUiBackgroundApplied = host.Ui.FormalBackgroundApplied;
             if (!result.titleVisited || !host.Flow.Execute(QinglanUiCommand.Start, "start", 0))
             {
                 Finish(result, "Title to character selection failed.");
@@ -126,6 +128,7 @@ namespace Game.Infrastructure
             result.inputOwnerCount = FindObjectsByType<M7InputRouter>(
                 FindObjectsInactive.Include, FindObjectsSortMode.None).Length;
             var passed = result.titleVisited && result.characterSelectVisited &&
+                         result.formalVisualsLoaded && result.formalUiBackgroundApplied &&
                          result.mapAndLoadoutVisited && result.activeRunVisited &&
                          result.pauseResumeVisited && result.accessibilityApplied &&
                          result.upgradeVisited && result.resultVisited && result.saveCommitted &&
@@ -175,6 +178,8 @@ namespace Game.Infrastructure
             public string error;
             public string generatedAtUtc;
             public bool titleVisited;
+            public bool formalVisualsLoaded;
+            public bool formalUiBackgroundApplied;
             public bool characterSelectVisited;
             public bool mapAndLoadoutVisited;
             public bool activeRunVisited;

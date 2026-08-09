@@ -41,6 +41,8 @@ namespace Game.Tests.EditMode
                         "Game.Simulation",
                         "Game.Presentation",
                         "Game.UI",
+                        "Unity.Addressables",
+                        "Unity.ResourceManager",
                         "Unity.InputSystem",
                         "Unity.Localization",
                         "Game.Platform.Abstractions",

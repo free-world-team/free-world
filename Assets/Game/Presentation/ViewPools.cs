@@ -55,7 +55,7 @@ namespace Game.Presentation
             var view = available.Count > 0 ? available.Pop() : Create();
             if (profiles.TryResolve(visualProfileId, kind, out var profile))
             {
-                view.Configure(profile.Sprite != null ? profile.Sprite : fallback.Sprite, profile.Color, profile.Size);
+                ConfigureFormal(view, profile, playerStyle);
                 usedFallback = profile.Sprite == null;
             }
             else
@@ -78,7 +78,7 @@ namespace Game.Presentation
             if (view == null || !view.IsBound) return;
             if (profiles.TryResolve(view.ProfileId, kind, out var profile))
             {
-                view.Configure(profile.Sprite != null ? profile.Sprite : fallback.Sprite, profile.Color, profile.Size);
+                ConfigureFormal(view, profile, view.UsesPlayerStyle);
                 return;
             }
             proceduralProfiles.TryResolve(
@@ -93,6 +93,15 @@ namespace Game.Presentation
         internal bool ApplyOverlay(T view, int index, ContentId overlayId)
         {
             if (view == null || !view.IsBound || !overlayId.IsValid) return false;
+            if (profiles.TryResolve(overlayId, kind, out var formal) && formal.Sprite != null)
+            {
+                view.SetOverlay(
+                    index,
+                    formal.Sprite,
+                    FormalTint(formal.Color, false),
+                    PresentationPriority.Mechanic);
+                return true;
+            }
             if (!proceduralProfiles.TryResolve(
                     overlayId,
                     kind,
@@ -102,6 +111,58 @@ namespace Game.Presentation
                 return false;
             view.SetOverlay(index, style, fallback);
             return true;
+        }
+
+        private void ConfigureFormal(T view, VisualProfile profile, bool playerStyle)
+        {
+            var outline = settings.ColorVision == ColorVisionMode.HighContrast ?
+                (playerStyle ? Color.white : Color.black) : new Color(0.04f, 0.05f, 0.05f, 0.78f);
+            view.Configure(
+                profile.Sprite != null ? profile.Sprite : fallback.Sprite,
+                FormalTint(profile.Color, playerStyle),
+                profile.Size,
+                FormalPriority(profile, playerStyle),
+                FormalShape(profile, playerStyle),
+                outline,
+                true);
+        }
+
+        private Color FormalTint(Color source, bool playerStyle)
+        {
+            if (settings.ColorVision == ColorVisionMode.Standard) return source;
+            var accessibility = ProceduralPresentationCatalog.ApplyColorVision(
+                ProceduralPresentationCatalog.Fallback(kind, playerStyle),
+                settings.ColorVision);
+            return new Color(
+                source.r * accessibility.Color.r,
+                source.g * accessibility.Color.g,
+                source.b * accessibility.Color.b,
+                source.a);
+        }
+
+        private PresentationPriority FormalPriority(VisualProfile profile, bool playerStyle)
+        {
+            if (playerStyle || kind == EntityKind.Pickup) return PresentationPriority.Mechanic;
+            if (kind == EntityKind.Area ||
+                (kind == EntityKind.Actor && profile.StableId.IndexOf(".boss.", StringComparison.Ordinal) >= 0))
+                return PresentationPriority.CriticalDanger;
+            return kind == EntityKind.Actor || kind == EntityKind.Projectile ?
+                PresentationPriority.Combat : PresentationPriority.Decoration;
+        }
+
+        private ProceduralShape FormalShape(VisualProfile profile, bool playerStyle)
+        {
+            if (playerStyle) return ProceduralShape.Triangle;
+            if (kind == EntityKind.Actor && profile.StableId.IndexOf(".boss.", StringComparison.Ordinal) >= 0)
+                return ProceduralShape.Hexagon;
+            switch (kind)
+            {
+                case EntityKind.Actor: return ProceduralShape.Circle;
+                case EntityKind.Projectile: return ProceduralShape.Diamond;
+                case EntityKind.Area: return ProceduralShape.Ring;
+                case EntityKind.Pickup: return ProceduralShape.Cross;
+                default: return ProceduralShape.Square;
+            }
         }
 
         public bool Release(T view)

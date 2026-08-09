@@ -2,6 +2,8 @@ using System;
 using System.IO;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Build;
+using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
@@ -101,7 +103,34 @@ namespace Game.Editor
                 options = BuildOptions.Development
             };
 
-            var report = BuildPipeline.BuildPlayer(options);
+            var addressableSettings = AddressableAssetSettingsDefaultObject.GetSettings(false);
+            if (addressableSettings == null)
+            {
+                throw new BuildFailedException("Addressables settings are unavailable.");
+            }
+
+            AddressableAssetSettings.BuildPlayerContent(out AddressablesPlayerBuildResult addressablesResult);
+            if (!string.IsNullOrEmpty(addressablesResult.Error))
+            {
+                throw new BuildFailedException(
+                    "Addressables content build failed: " + addressablesResult.Error);
+            }
+
+            var previousPlayerBuildOption = addressableSettings.BuildAddressablesWithPlayerBuild;
+            BuildReport report;
+            try
+            {
+                // The content build above is checked explicitly. Prevent the Player preprocessor from
+                // performing a second, preference-dependent build; it still copies the verified output.
+                addressableSettings.BuildAddressablesWithPlayerBuild =
+                    AddressableAssetSettings.PlayerBuildOption.DoNotBuildWithPlayer;
+                report = BuildPipeline.BuildPlayer(options);
+            }
+            finally
+            {
+                addressableSettings.BuildAddressablesWithPlayerBuild = previousPlayerBuildOption;
+            }
+
             if (report.summary.result != BuildResult.Succeeded)
             {
                 throw new BuildFailedException(

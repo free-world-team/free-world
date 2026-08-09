@@ -7,6 +7,11 @@ using UnityEngine.UI;
 
 namespace Game.UI
 {
+    public interface IQinglanUiVisualCatalog
+    {
+        bool TryResolveSprite(string stableKey, out Sprite sprite);
+    }
+
     /// <summary>Single procedural placeholder Canvas with separated page and HUD layers.</summary>
     public sealed class QinglanRuntimeUiRoot : MonoBehaviour, IQinglanDemoView
     {
@@ -19,12 +24,15 @@ namespace Game.UI
         private Canvas canvas;
         private CanvasScaler scaler;
         private Image pagePanel;
+        private Image pageBackground;
+        private Image focusMarker;
         private Text pageText;
         private Text hudText;
         private Text dangerText;
         private Font runtimeFont;
         private ILocalizationService localization;
         private Func<string, string> contentNameResolver;
+        private IQinglanUiVisualCatalog visualCatalog;
         private ColorVisionMode lastColorVision = (ColorVisionMode)255;
         private float lastFontScale = -1f;
 
@@ -35,14 +43,18 @@ namespace Game.UI
         public int HudRefreshCount { get; private set; }
         public string RenderedPageText => pageText == null ? string.Empty : pageText.text;
         public string RenderedHudText => hudText == null ? string.Empty : hudText.text;
+        public bool FormalBackgroundApplied { get; private set; }
+        public int FormalVisualMissCount { get; private set; }
 
         public void Initialize(
             ILocalizationService localizationService,
-            Func<string, string> resolveContentNameKey)
+            Func<string, string> resolveContentNameKey,
+            IQinglanUiVisualCatalog formalVisualCatalog = null)
         {
             if (canvas != null) return;
             localization = localizationService ?? throw new ArgumentNullException(nameof(localizationService));
             contentNameResolver = resolveContentNameKey ?? throw new ArgumentNullException(nameof(resolveContentNameKey));
+            visualCatalog = formalVisualCatalog;
             canvas = gameObject.AddComponent<Canvas>();
             canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             canvas.sortingOrder = 100;
@@ -54,6 +66,8 @@ namespace Game.UI
             runtimeFont = Font.CreateDynamicFontFromOSFont(RuntimeFontCandidates, 24);
             if (runtimeFont == null) runtimeFont = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
 
+            pageBackground = CreatePanel("Qinglan_FormalBackground", Vector2.zero, Vector2.one);
+            pageBackground.color = new Color(0.035f, 0.055f, 0.06f, 1f);
             pagePanel = CreatePanel("Qinglan_PageLayer", new Vector2(0.04f, 0.06f), new Vector2(0.58f, 0.94f));
             pageText = CreateText(pagePanel.transform, "Qinglan_PageText", 24, TextAnchor.UpperLeft,
                 new Vector2(34f, 30f), new Vector2(-34f, -30f));
@@ -63,6 +77,9 @@ namespace Game.UI
             var dangerPanel = CreatePanel("Qinglan_DangerLayer", new Vector2(0.62f, 0.06f), new Vector2(0.97f, 0.54f));
             dangerText = CreateText(dangerPanel.transform, "Qinglan_DangerText", 21, TextAnchor.UpperLeft,
                 new Vector2(24f, 20f), new Vector2(-24f, -20f));
+            focusMarker = CreatePanel("Qinglan_FormalFocus", new Vector2(0.025f, 0.45f), new Vector2(0.055f, 0.55f));
+            focusMarker.preserveAspect = true;
+            ApplyChrome();
             RefreshDangerLegend();
         }
 
@@ -72,6 +89,7 @@ namespace Game.UI
             CurrentPage = page.Page;
             RenderedOptionCount = page.OptionCount;
             RenderedSelectedIndex = page.SelectedIndex;
+            ApplyPageBackground(page.Page);
             pageBuilder.Clear();
             AppendKey(pageBuilder, page.TitleKey);
             if (!string.IsNullOrEmpty(page.SubtitleKey))
@@ -196,6 +214,61 @@ namespace Game.UI
             dangerText.text = "▲  ▶  ◆  " + Resolve("ui.qinglan.accessibility.danger_legend");
         }
 
+        private void ApplyChrome()
+        {
+            if (visualCatalog == null) return;
+            if (visualCatalog.TryResolveSprite("ui.focus", out var focus))
+            {
+                focusMarker.sprite = focus;
+                focusMarker.color = Color.white;
+            }
+            if (visualCatalog.TryResolveSprite("ui.panel", out var panel))
+            {
+                pagePanel.sprite = panel;
+                pagePanel.type = panel.border.sqrMagnitude > 0f ? Image.Type.Sliced : Image.Type.Simple;
+            }
+            if (visualCatalog.TryResolveSprite("ui.cursor.pointer", out var cursor) &&
+                cursor.texture != null && UnityEngine.Application.isPlaying)
+                Cursor.SetCursor(cursor.texture, Vector2.zero, CursorMode.Auto);
+        }
+
+        private void ApplyPageBackground(QinglanUiPageId page)
+        {
+            var key = BackgroundKey(page);
+            if (visualCatalog != null && visualCatalog.TryResolveSprite(key, out var sprite))
+            {
+                pageBackground.sprite = sprite;
+                pageBackground.color = Color.white;
+                FormalBackgroundApplied = true;
+                return;
+            }
+
+            pageBackground.sprite = null;
+            pageBackground.color = new Color(0.035f, 0.055f, 0.06f, 1f);
+            FormalBackgroundApplied = false;
+            if (visualCatalog != null) FormalVisualMissCount++;
+        }
+
+        private static string BackgroundKey(QinglanUiPageId page)
+        {
+            switch (page)
+            {
+                case QinglanUiPageId.TitleProfile: return "ui.page.title";
+                case QinglanUiPageId.CharacterSelect: return "ui.page.character_select";
+                case QinglanUiPageId.MapSelect: return "ui.page.map_select";
+                case QinglanUiPageId.Loadout:
+                case QinglanUiPageId.LoadoutConfirmation: return "ui.page.loadout";
+                case QinglanUiPageId.LevelUpChoice:
+                case QinglanUiPageId.RewardChoice: return "ui.page.choice";
+                case QinglanUiPageId.Hub:
+                case QinglanUiPageId.HubFacility:
+                case QinglanUiPageId.Collection: return "ui.page.hub";
+                case QinglanUiPageId.StoryOverlay:
+                case QinglanUiPageId.RunResult: return "ui.page.story_result";
+                default: return "ui.page.title_safe";
+            }
+        }
+
         private Image CreatePanel(string name, Vector2 anchorMin, Vector2 anchorMax)
         {
             var panelObject = new GameObject(name, typeof(RectTransform), typeof(Image));
@@ -282,5 +355,10 @@ namespace Game.UI
 
         private static Color DangerColor(ColorVisionMode mode) =>
             mode == ColorVisionMode.HighContrast ? Color.white : new Color(1f, 0.72f, 0.32f, 1f);
+
+        private void OnDestroy()
+        {
+            if (UnityEngine.Application.isPlaying) Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        }
     }
 }

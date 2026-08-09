@@ -84,9 +84,9 @@ namespace Game.Editor
                 return unresolved;
             }
 
-            var report = Validate(
-                projectRoot,
-                AddressableAssetSettingsDefaultObject.GetSettings(false));
+            var settings = AddressableAssetSettingsDefaultObject.GetSettings(false);
+            var report = Validate(projectRoot, settings);
+            QinglanG31FormalVisualIntegration.AppendCurrentProjectValidation(settings, report);
             ContentProjectValidator.AppendCurrentProject(report);
             LocalizationProjectValidator.AppendCurrentProject(report);
             CoreApiFreezeValidator.AppendCurrentProject(report);

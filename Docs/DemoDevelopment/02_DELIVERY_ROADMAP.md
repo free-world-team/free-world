@@ -57,6 +57,11 @@ G2.8 已在统一实现分支交付，实际证据见 `23_G2_8_VERTICAL_SLICE_GA
 `Docs/Reports/2026-08-09-g2-8-vertical-slice-gate.md`；G2 全部工作包退出门禁已通过。下一工作包只进入
 G3.1 正式视觉资产与 provenance/Addressables，不提前制作 G3.2 音频或 G3.3 字体/正文。
 
+G3.1 已在统一实现分支完成 27/27 Manifest ART 批次和最终运行时集成，实际证据见
+`24_G3_1_FORMAL_VISUAL_ASSETS.md` 与
+`Docs/Reports/2026-08-10-g3-1-formal-visual-final-integration.md`。下一工作包只进入 G3.2 正式音频，
+不得提前制作 G3.3 字体/正文或执行 G3.4 数值冻结。
+
 ## 5. G3 发布候选
 
 | 顺序 | 分支建议 | 交付物 | 退出门禁 |

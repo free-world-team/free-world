@@ -99,6 +99,11 @@ namespace Game.Presentation
 
         public bool TrySpawn(in ProceduralVfxRequest request)
         {
+            return TrySpawn(request, null);
+        }
+
+        public bool TrySpawn(in ProceduralVfxRequest request, Sprite formalSprite)
+        {
             PooledVfx effect = null;
             if (available.Count > 0)
             {
@@ -142,7 +147,8 @@ namespace Game.Presentation
                 new Vector3(request.Position.x, request.Position.y, -0.1f),
                 Quaternion.Euler(0f, 0f, request.RotationDegrees));
             effect.Object.transform.localScale = Vector3.one * request.Size;
-            effect.Renderer.sprite = library == null ? sprite : library.GetSprite(request.Style.Shape);
+            effect.Renderer.sprite = formalSprite != null ? formalSprite :
+                library == null ? sprite : library.GetSprite(request.Style.Shape);
             effect.Renderer.color = request.Style.Color;
             effect.Remaining = request.Duration;
             effect.Priority = request.Style.Priority;
