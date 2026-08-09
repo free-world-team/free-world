@@ -1,0 +1,23 @@
+ART-META-002 ImageGen production record
+Generated: 2026-08-10 (Asia/Shanghai)
+Mode: Codex built-in ImageGen, text-only, one independent call per candidate
+Reference inputs: none
+Shared requirements: original Qinglan xianxia action-roguelite insert item; compact readable inventory icon; painterly stylized realism; cool celadon, weathered wood, and muted bronze palette; one centered complete object with generous margin; flat RGB 255,0,255 chroma background; no text, readable marks, language-like glyphs, people, faces, masks, religious imagery, logos, watermarks, frames, or cropped parts.
+
+Rejected candidate: source/rejected/qinglan-wind-pattern-weapon-silhouette-rejected.png
+Prompt: A Qinglan Wind Pattern insert plate expressing movement and wind affinity through layered celadon, bronze, and pale wood construction.
+Visual review: FAIL. The long tapered body, sharp fins, and point-like terminal read as a weapon or blade. This conflicts with the insert-item semantic and could imply a guaranteed weapon offer. The file is retained only as rejected provenance and does not enter processing or runtime import.
+
+Approved retry: source/qinglan-wind-pattern-imagegen.png
+Prompt: Compact rounded trapezoid puzzle insert with dovetail tabs, round mounting holes, and a broad S-shaped wind channel. It must read as a socketable pattern plate rather than a blade, weapon, or attack icon. Decorative curves must not resemble writing or runes.
+Visual review: PASS. The compact plate, rounded profile, tabs, holes, and continuous wind channel communicate a movement/wind-affinity insert without reading as a weapon or promising a weapon reward. No text, logo, watermark, religious symbol, or cropping.
+
+Approved candidate: source/herb-garden-spring-clasp-imagegen.png
+Prompt: Compact two-jaw garden clasp made from celadon ceramic, pale wood, and muted bronze, with a central jade bead and simple leaf-shaped cutouts. It should suggest recovery, defense, and pickup efficiency while remaining a generic socketable insert, not medicine packaging or a guaranteed healing reward.
+Visual review: PASS. Rounded jaws, clasp construction, jade bead, and leaf cutouts communicate guarded recovery and collection efficiency. No text, medical emblem, logo, watermark, religious symbol, or cropping.
+
+Approved candidate: source/old-court-vein-needle-imagegen.png
+Prompt: Compact rounded triangular navigation insert housing with an entirely enclosed blunt double needle, small locator sockets, and broken route arcs. It should suggest exploration, landmark hints, and candidate control without depicting a map, exact location, compass lettering, or unique collectible.
+Visual review: PASS. The enclosed needle, sockets, and incomplete route arcs communicate bounded exploration guidance without exposing an exact location. No readable letters, map labels, text, logo, watermark, religious symbol, or cropping.
+
+The built-in service did not expose model version or seed. Original generated files remain in the project-bound generated-images directory; repository source files are byte copies. Only the three approved sources proceed through chroma removal and deterministic 2048-pixel master / 256-pixel final processing.

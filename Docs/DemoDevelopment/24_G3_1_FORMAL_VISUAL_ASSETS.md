@@ -1,7 +1,7 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 19 / 27 ART BATCHES`
-- 日期：2026-08-09
+- 状态：`IN PROGRESS — 20 / 27 ART BATCHES`
+- 日期：2026-08-10
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
 
@@ -73,7 +73,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 17 | ART-LANDMARK-001 | PASS | 五种地标各 1 张 3×1、960×320 Undiscovered/Discovered/Claimed Atlas；EditMode 350/350、PlayMode 17/17、Validation PASS |
 | 18 | ART-HUB-001 | PASS | 问脉台/藏卷楼/百器阁/万象阁各 1 张 1024 Panel＋256 Icon；EditMode 353/353、PlayMode 17/17、Validation PASS |
 | 19 | ART-META-001 | PASS | 本命/身法/心性三分支各 4 张 128 FirstParty 节点图标；EditMode 356/356、PlayMode 17/17、Validation PASS |
-| 20—27 | ART-META-002—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 20 | ART-META-002 | PASS | 青岚风纹片/药圃生春扣/旧庭寻脉针各 1 张 2048 source master＋256 Icon；EditMode 359/359、PlayMode 17/17、Validation PASS |
+| 21—27 | ART-COLLECT-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -221,3 +222,12 @@ ART-META-001 为纯 FirstParty 确定性矢量路径栅格资产，不使用 Ima
 唯一，完整生成第二轮 24/24 source/final Hash 字节一致。正式地址为
 `qinglan/hub/meta-node/<innate|movement|mind>/<01..04>/icon`；MetaNode PresentationId 与 Loadout UI 接入
 由 G3.1 最终集成关闭。
+
+ART-META-002 对青岚风纹片、药圃生春扣、旧庭寻脉针分别执行无图片输入的 ImageGen 调用。青岚风纹片
+首版因细长尖锐轮廓易读为武器，在 source 人工 QA 判定 `FAIL`；失败候选仅作 provenance，批准重试改为
+圆角梯形插片、榫接耳、安装孔与 S 形风道，不表达必定武器供给。三份批准 source 经 soft matte/despill
+去背、Alpha<16 归零和等比居中后，分别派生 2048² source master 与 256² final；master 安全边均为
+128 px，final 安全边均为 16 px，final 覆盖率为 47.04%—52.60%，三张图在丢弃色相后的灰阶 Hash 仍
+全部唯一，四角 Alpha、洋红残留和精确 P0 危险红均为 0。完整处理链第二轮 9/9 文件 Hash 字节一致。
+正式地址为 `qinglan/hub/insert/<insert>/icon`；插片装配、候选约束与效果说明由通用 Meta UI/规则层接入，
+图标本身不承诺具体武器、精确唯一收藏位置或无上限恢复收益。

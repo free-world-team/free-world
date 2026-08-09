@@ -63,6 +63,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0bf77286ab539c148acf4f69f6da8146
+    m_Address: qinglan/hub/insert/herb-garden-spring-clasp/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0c420abde7a511b4f8cc185b90554117
     m_Address: qinglan/hub/facility/vein-inquiry-platform/panel
     m_ReadOnly: 0
@@ -81,6 +89,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0d85b3162b253c6499b361cfda47720f
     m_Address: qinglan/enemy/affix/splitting/overlay
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0ecb403762c1ef749ae109f1c7645d53
+    m_Address: qinglan/hub/insert/qinglan-wind-pattern/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -745,6 +761,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c21c19e7f5d67d2409599036d6c07c4c
     m_Address: qinglan/skill/evolved/earth-vein-spring-branch/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c221125c61937a342a8eeef6cbccb827
+    m_Address: qinglan/hub/insert/old-court-vein-needle/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
