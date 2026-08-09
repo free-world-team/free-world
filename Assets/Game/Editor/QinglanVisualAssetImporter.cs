@@ -213,6 +213,23 @@ namespace Game.Editor
                 return prefix + "." + directions[row] + "." + actions[column];
             }
 
+            if (rows == 4 && columns == 8)
+            {
+                var directions = new[] { "down", "left", "right", "up" };
+                var actions = new[]
+                {
+                    "move",
+                    "hit",
+                    "phase-1-windup",
+                    "transition-2",
+                    "phase-2-windup",
+                    "transition-3",
+                    "phase-3-windup",
+                    "defeated"
+                };
+                return prefix + "." + directions[row] + "." + actions[column];
+            }
+
             return prefix + ".r" + row.ToString(CultureInfo.InvariantCulture) +
                    ".c" + column.ToString(CultureInfo.InvariantCulture);
         }

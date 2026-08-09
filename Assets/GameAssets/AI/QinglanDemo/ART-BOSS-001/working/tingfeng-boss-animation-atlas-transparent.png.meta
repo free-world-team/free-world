@@ -1,0 +1,1040 @@
+fileFormatVersion: 2
+guid: c7894ced7bbe98e4f9c55aafaadbdcee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6282452410697426357
+    second: tingfeng-boss-animation-atlas-transparent_0
+  - first:
+      213: 3971806324004733004
+    second: tingfeng-boss-animation-atlas-transparent_1
+  - first:
+      213: -4447964906402190265
+    second: tingfeng-boss-animation-atlas-transparent_2
+  - first:
+      213: 4265572609344977093
+    second: tingfeng-boss-animation-atlas-transparent_3
+  - first:
+      213: -8563807834944375976
+    second: tingfeng-boss-animation-atlas-transparent_4
+  - first:
+      213: -6388912715006931312
+    second: tingfeng-boss-animation-atlas-transparent_5
+  - first:
+      213: 254310892714313911
+    second: tingfeng-boss-animation-atlas-transparent_6
+  - first:
+      213: 2601208323750046926
+    second: tingfeng-boss-animation-atlas-transparent_7
+  - first:
+      213: 1909197350775080286
+    second: tingfeng-boss-animation-atlas-transparent_8
+  - first:
+      213: 681221689345114606
+    second: tingfeng-boss-animation-atlas-transparent_9
+  - first:
+      213: -4775049148752142676
+    second: tingfeng-boss-animation-atlas-transparent_10
+  - first:
+      213: 3969708130401467437
+    second: tingfeng-boss-animation-atlas-transparent_11
+  - first:
+      213: -6556520080587267935
+    second: tingfeng-boss-animation-atlas-transparent_12
+  - first:
+      213: -5604719860324403088
+    second: tingfeng-boss-animation-atlas-transparent_13
+  - first:
+      213: 4705275416065536748
+    second: tingfeng-boss-animation-atlas-transparent_14
+  - first:
+      213: -8174507113337910827
+    second: tingfeng-boss-animation-atlas-transparent_15
+  - first:
+      213: -272137128693710714
+    second: tingfeng-boss-animation-atlas-transparent_16
+  - first:
+      213: -3427168138304928344
+    second: tingfeng-boss-animation-atlas-transparent_17
+  - first:
+      213: 6360149137892622786
+    second: tingfeng-boss-animation-atlas-transparent_18
+  - first:
+      213: 8868474995301097956
+    second: tingfeng-boss-animation-atlas-transparent_19
+  - first:
+      213: 7532311137368259761
+    second: tingfeng-boss-animation-atlas-transparent_20
+  - first:
+      213: -3323380600947363077
+    second: tingfeng-boss-animation-atlas-transparent_21
+  - first:
+      213: -6891384180751207059
+    second: tingfeng-boss-animation-atlas-transparent_22
+  - first:
+      213: 2030890872664911384
+    second: tingfeng-boss-animation-atlas-transparent_23
+  - first:
+      213: 8147556800989199490
+    second: tingfeng-boss-animation-atlas-transparent_24
+  - first:
+      213: -8043380594857463048
+    second: tingfeng-boss-animation-atlas-transparent_25
+  - first:
+      213: 4541911659259422848
+    second: tingfeng-boss-animation-atlas-transparent_26
+  - first:
+      213: -1364726518041792148
+    second: tingfeng-boss-animation-atlas-transparent_27
+  - first:
+      213: 6507600328771306415
+    second: tingfeng-boss-animation-atlas-transparent_28
+  - first:
+      213: 8398716974421441009
+    second: tingfeng-boss-animation-atlas-transparent_29
+  - first:
+      213: -902958456085972841
+    second: tingfeng-boss-animation-atlas-transparent_30
+  - first:
+      213: 2243198607071239175
+    second: tingfeng-boss-animation-atlas-transparent_31
+  - first:
+      213: 8114201373989534371
+    second: tingfeng-boss-animation-atlas-transparent_32
+  - first:
+      213: 8463462997202354836
+    second: tingfeng-boss-animation-atlas-transparent_33
+  - first:
+      213: 7670435859966231856
+    second: tingfeng-boss-animation-atlas-transparent_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 671
+        width: 133
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4a551e71de30d8a0800000000000000
+      internalID: -6282452410697426357
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 669
+        width: 144
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c40c3f2eec0be1730800000000000000
+      internalID: 3971806324004733004
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_2
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 670
+        width: 180
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74c6e74eb77a542c0800000000000000
+      internalID: -4447964906402190265
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_3
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 670
+        width: 179
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c8b4af20bb523b30800000000000000
+      internalID: 4265572609344977093
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_4
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 670
+        width: 108
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 853fe69a52e372980800000000000000
+      internalID: -8563807834944375976
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_5
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 670
+        width: 169
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09e09015cb50657a0800000000000000
+      internalID: -6388912715006931312
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_6
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 670
+        width: 149
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b8cfb6d86e778300800000000000000
+      internalID: 254310892714313911
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_7
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 670
+        width: 141
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecc29eb4039591420800000000000000
+      internalID: 2601208323750046926
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_8
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 448
+        width: 125
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e55c01b00e4de7a10800000000000000
+      internalID: 1909197350775080286
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_9
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 450
+        width: 134
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee105b6648f247900800000000000000
+      internalID: 681221689345114606
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_10
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 450
+        width: 201
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caed897391e9bbdb0800000000000000
+      internalID: -4775049148752142676
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_11
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 449
+        width: 145
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2c3f8e138c371730800000000000000
+      internalID: 3969708130401467437
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_12
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 449
+        width: 86
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a061e189bf8205a0800000000000000
+      internalID: -6556520080587267935
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_13
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 450
+        width: 167
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07879cb6bf80832b0800000000000000
+      internalID: -5604719860324403088
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_14
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 450
+        width: 160
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce2f6f0bf0f7c4140800000000000000
+      internalID: 4705275416065536748
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_15
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 448
+        width: 155
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d9079f37115e8e80800000000000000
+      internalID: -8174507113337910827
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_16
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 231
+        width: 120
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680440a29bc293cf0800000000000000
+      internalID: -272137128693710714
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_17
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 235
+        width: 113
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a54cc27cb04070d0800000000000000
+      internalID: -3427168138304928344
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_18
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 411
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1c89281f9c34850800000000000000
+      internalID: 6360149137892622786
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_19
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 233
+        width: 196
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e12b526507231b70800000000000000
+      internalID: 8868474995301097956
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_20
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 231
+        width: 140
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bcbd805215288860800000000000000
+      internalID: 7532311137368259761
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_21
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 231
+        width: 86
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf2bb1393faf0e1d0800000000000000
+      internalID: -3323380600947363077
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_22
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 233
+        width: 164
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65f3978992ec50a0800000000000000
+      internalID: -6891384180751207059
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_23
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 233
+        width: 158
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81e66c21d7c2f2c10800000000000000
+      internalID: 2030890872664911384
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_24
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 386
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c774e2ebfe11170800000000000000
+      internalID: 8147556800989199490
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_25
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 230
+        width: 144
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f23042f6fb206090800000000000000
+      internalID: -8043380594857463048
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_26
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 20
+        width: 136
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 088ec5b079c180f30800000000000000
+      internalID: 4541911659259422848
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_27
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 159
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c61309466748f0de0800000000000000
+      internalID: -1364726518041792148
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_28
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 20
+        width: 119
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa301a03504af4a50800000000000000
+      internalID: 6507600328771306415
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_29
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 20
+        width: 191
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f9fe65079c3e8470800000000000000
+      internalID: 8398716974421441009
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_30
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 20
+        width: 147
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7987f0a711c0873f0800000000000000
+      internalID: -902958456085972841
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_31
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 20
+        width: 105
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70cd1278f31712f10800000000000000
+      internalID: 2243198607071239175
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_32
+      rect:
+        serializedVersion: 2
+        x: 1123
+        y: 20
+        width: 161
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aaf1a4a82f6b9070800000000000000
+      internalID: 8114201373989534371
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_33
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 20
+        width: 144
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 492c8ed21c2447570800000000000000
+      internalID: 8463462997202354836
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tingfeng-boss-animation-atlas-transparent_34
+      rect:
+        serializedVersion: 2
+        x: 1567
+        y: 16
+        width: 139
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03584b166ccd27a60800000000000000
+      internalID: 7670435859966231856
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tingfeng-boss-animation-atlas-transparent_0: -6282452410697426357
+      tingfeng-boss-animation-atlas-transparent_1: 3971806324004733004
+      tingfeng-boss-animation-atlas-transparent_10: -4775049148752142676
+      tingfeng-boss-animation-atlas-transparent_11: 3969708130401467437
+      tingfeng-boss-animation-atlas-transparent_12: -6556520080587267935
+      tingfeng-boss-animation-atlas-transparent_13: -5604719860324403088
+      tingfeng-boss-animation-atlas-transparent_14: 4705275416065536748
+      tingfeng-boss-animation-atlas-transparent_15: -8174507113337910827
+      tingfeng-boss-animation-atlas-transparent_16: -272137128693710714
+      tingfeng-boss-animation-atlas-transparent_17: -3427168138304928344
+      tingfeng-boss-animation-atlas-transparent_18: 6360149137892622786
+      tingfeng-boss-animation-atlas-transparent_19: 8868474995301097956
+      tingfeng-boss-animation-atlas-transparent_2: -4447964906402190265
+      tingfeng-boss-animation-atlas-transparent_20: 7532311137368259761
+      tingfeng-boss-animation-atlas-transparent_21: -3323380600947363077
+      tingfeng-boss-animation-atlas-transparent_22: -6891384180751207059
+      tingfeng-boss-animation-atlas-transparent_23: 2030890872664911384
+      tingfeng-boss-animation-atlas-transparent_24: 8147556800989199490
+      tingfeng-boss-animation-atlas-transparent_25: -8043380594857463048
+      tingfeng-boss-animation-atlas-transparent_26: 4541911659259422848
+      tingfeng-boss-animation-atlas-transparent_27: -1364726518041792148
+      tingfeng-boss-animation-atlas-transparent_28: 6507600328771306415
+      tingfeng-boss-animation-atlas-transparent_29: 8398716974421441009
+      tingfeng-boss-animation-atlas-transparent_3: 4265572609344977093
+      tingfeng-boss-animation-atlas-transparent_30: -902958456085972841
+      tingfeng-boss-animation-atlas-transparent_31: 2243198607071239175
+      tingfeng-boss-animation-atlas-transparent_32: 8114201373989534371
+      tingfeng-boss-animation-atlas-transparent_33: 8463462997202354836
+      tingfeng-boss-animation-atlas-transparent_34: 7670435859966231856
+      tingfeng-boss-animation-atlas-transparent_4: -8563807834944375976
+      tingfeng-boss-animation-atlas-transparent_5: -6388912715006931312
+      tingfeng-boss-animation-atlas-transparent_6: 254310892714313911
+      tingfeng-boss-animation-atlas-transparent_7: 2601208323750046926
+      tingfeng-boss-animation-atlas-transparent_8: 1909197350775080286
+      tingfeng-boss-animation-atlas-transparent_9: 681221689345114606
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

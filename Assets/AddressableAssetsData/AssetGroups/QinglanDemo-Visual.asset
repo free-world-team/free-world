@@ -15,6 +15,14 @@ MonoBehaviour:
   m_GroupName: QinglanDemo-Visual
   m_GUID: 56945edad50defa47bb5b54075ebd4c4
   m_SerializeEntries:
+  - m_GUID: 0216c821b5ed38e4ebc967891a59ef0a
+    m_Address: qinglan/profile/boss/zhezhi
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0956e8e315aa90f488b6caf75e8eca67
     m_Address: qinglan/enemy/wooden-sword-puppet/directional-animation-atlas
     m_ReadOnly: 0
@@ -95,8 +103,24 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3482fa7cef9af684fb192fd2de4e3159
+    m_Address: qinglan/boss/tingfeng/animation-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4b108716b469e4d46b330e8e9632f3f0
     m_Address: qinglan/enemy/grass-spirit/directional-animation-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c8ffb909582dc445b8a69c1d2366db3
+    m_Address: qinglan/profile/boss/tingfeng
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -113,6 +137,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 60ebb19218659cb4da2806673c580c9f
     m_Address: qinglan/profile/enemy/explosive-seed-pod
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c1995d93e8419b42a94e2a45fa8a4b9
+    m_Address: qinglan/boss/zhezhi/animation-atlas
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

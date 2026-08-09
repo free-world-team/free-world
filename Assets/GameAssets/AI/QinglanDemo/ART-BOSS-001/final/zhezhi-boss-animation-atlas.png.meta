@@ -1,0 +1,1090 @@
+fileFormatVersion: 2
+guid: 6c1995d93e8419b42a94e2a45fa8a4b9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -779612760738516350
+    second: zhezhi-boss-animation-atlas_0
+  - first:
+      213: 8489916459516939625
+    second: zhezhi-boss-animation-atlas_1
+  - first:
+      213: -4938825674996535912
+    second: zhezhi-boss-animation-atlas_2
+  - first:
+      213: -204486322440252955
+    second: zhezhi-boss-animation-atlas_3
+  - first:
+      213: -3964759389116587712
+    second: zhezhi-boss-animation-atlas_4
+  - first:
+      213: 4729456863120713838
+    second: zhezhi-boss-animation-atlas_5
+  - first:
+      213: -2693753415733760204
+    second: zhezhi-boss-animation-atlas_6
+  - first:
+      213: -3639948155487602352
+    second: zhezhi-boss-animation-atlas_7
+  - first:
+      213: -6265224041304484562
+    second: zhezhi-boss-animation-atlas_8
+  - first:
+      213: 9159349937418721745
+    second: zhezhi-boss-animation-atlas_9
+  - first:
+      213: 7772323362670126200
+    second: zhezhi-boss-animation-atlas_10
+  - first:
+      213: -2311676607260538211
+    second: zhezhi-boss-animation-atlas_11
+  - first:
+      213: 4761369193058178148
+    second: zhezhi-boss-animation-atlas_12
+  - first:
+      213: -7794575387905592672
+    second: zhezhi-boss-animation-atlas_13
+  - first:
+      213: 6960659847715390550
+    second: zhezhi-boss-animation-atlas_14
+  - first:
+      213: -7839703320785097618
+    second: zhezhi-boss-animation-atlas_15
+  - first:
+      213: 3689429486109285068
+    second: zhezhi-boss-animation-atlas_16
+  - first:
+      213: 4446429117198523900
+    second: zhezhi-boss-animation-atlas_17
+  - first:
+      213: -4373817434560206007
+    second: zhezhi-boss-animation-atlas_18
+  - first:
+      213: 3057005515322013
+    second: zhezhi-boss-animation-atlas_19
+  - first:
+      213: -8988937684153641353
+    second: zhezhi-boss-animation-atlas_20
+  - first:
+      213: -4924761027079327655
+    second: zhezhi-boss-animation-atlas_21
+  - first:
+      213: 2682484416497194885
+    second: zhezhi-boss-animation-atlas_22
+  - first:
+      213: 3536463615614084162
+    second: zhezhi-boss-animation-atlas_23
+  - first:
+      213: 148687887845761745
+    second: zhezhi-boss-animation-atlas_24
+  - first:
+      213: -8965230089591009084
+    second: zhezhi-boss-animation-atlas_25
+  - first:
+      213: 1917411606815507454
+    second: zhezhi-boss-animation-atlas_26
+  - first:
+      213: -2850034896009582918
+    second: zhezhi-boss-animation-atlas_27
+  - first:
+      213: 3286503075190136108
+    second: zhezhi-boss-animation-atlas_28
+  - first:
+      213: 9204623526158609766
+    second: zhezhi-boss-animation-atlas_29
+  - first:
+      213: 7779723693997076618
+    second: zhezhi-boss-animation-atlas_30
+  - first:
+      213: 640139083841743263
+    second: zhezhi-boss-animation-atlas_31
+  - first:
+      213: 1634006992558266120
+    second: qinglan.boss.zhezhi.down.move
+  - first:
+      213: 5928304100383457665
+    second: qinglan.boss.zhezhi.down.hit
+  - first:
+      213: 7523535786227567348
+    second: qinglan.boss.zhezhi.down.phase-1-windup
+  - first:
+      213: -43811282806986709
+    second: qinglan.boss.zhezhi.down.transition-2
+  - first:
+      213: 7966673157708769502
+    second: qinglan.boss.zhezhi.down.phase-2-windup
+  - first:
+      213: 7009901684109930711
+    second: qinglan.boss.zhezhi.down.transition-3
+  - first:
+      213: -3535964167745813465
+    second: qinglan.boss.zhezhi.down.phase-3-windup
+  - first:
+      213: 2830675886910819347
+    second: qinglan.boss.zhezhi.down.defeated
+  - first:
+      213: -7735183337956780715
+    second: qinglan.boss.zhezhi.left.move
+  - first:
+      213: 7242721941081765299
+    second: qinglan.boss.zhezhi.left.hit
+  - first:
+      213: -3693960016592924954
+    second: qinglan.boss.zhezhi.left.phase-1-windup
+  - first:
+      213: -1814938485800456277
+    second: qinglan.boss.zhezhi.left.transition-2
+  - first:
+      213: -7010654655053393001
+    second: qinglan.boss.zhezhi.left.phase-2-windup
+  - first:
+      213: -1512875820451501978
+    second: qinglan.boss.zhezhi.left.transition-3
+  - first:
+      213: 7935460048651094936
+    second: qinglan.boss.zhezhi.left.phase-3-windup
+  - first:
+      213: -1723736719202128736
+    second: qinglan.boss.zhezhi.left.defeated
+  - first:
+      213: -8784866615725969392
+    second: qinglan.boss.zhezhi.right.move
+  - first:
+      213: -636841233092166277
+    second: qinglan.boss.zhezhi.right.hit
+  - first:
+      213: 2925494523215538254
+    second: qinglan.boss.zhezhi.right.phase-1-windup
+  - first:
+      213: 7840164568018448331
+    second: qinglan.boss.zhezhi.right.transition-2
+  - first:
+      213: -7575304493237611649
+    second: qinglan.boss.zhezhi.right.phase-2-windup
+  - first:
+      213: -8703880471400755991
+    second: qinglan.boss.zhezhi.right.transition-3
+  - first:
+      213: 1488555235060797022
+    second: qinglan.boss.zhezhi.right.phase-3-windup
+  - first:
+      213: -7891322090280014469
+    second: qinglan.boss.zhezhi.right.defeated
+  - first:
+      213: 5416199487685645882
+    second: qinglan.boss.zhezhi.up.move
+  - first:
+      213: 7787490772018433644
+    second: qinglan.boss.zhezhi.up.hit
+  - first:
+      213: 7647788684055034128
+    second: qinglan.boss.zhezhi.up.phase-1-windup
+  - first:
+      213: 2150484942784307391
+    second: qinglan.boss.zhezhi.up.transition-2
+  - first:
+      213: 3684465519134112371
+    second: qinglan.boss.zhezhi.up.phase-2-windup
+  - first:
+      213: 8426215670116324800
+    second: qinglan.boss.zhezhi.up.transition-3
+  - first:
+      213: 4961051613880109014
+    second: qinglan.boss.zhezhi.up.phase-3-windup
+  - first:
+      213: -5552031667366751076
+    second: qinglan.boss.zhezhi.up.defeated
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.down.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80790ffc3b82da610800000000000000
+      internalID: 1634006992558266120
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.down.hit
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18109d77b21954250800000000000000
+      internalID: 5928304100383457665
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.down.phase-1-windup
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fa8809afe7f86860800000000000000
+      internalID: 7523535786227567348
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.down.transition-2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28a223ded9546ff0800000000000000
+      internalID: -43811282806986709
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.down.phase-2-windup
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed8eed6170f4f8e60800000000000000
+      internalID: 7966673157708769502
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.down.transition-3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d0f8cf017c284160800000000000000
+      internalID: 7009901684109930711
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.down.phase-3-windup
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7244003e25bbdeec0800000000000000
+      internalID: -3535964167745813465
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.down.defeated
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c4599b8b4984720800000000000000
+      internalID: 2830675886910819347
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.left.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 555d094acbb17a490800000000000000
+      internalID: -7735183337956780715
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.left.hit
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b53b195b31538460800000000000000
+      internalID: 7242721941081765299
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.left.phase-1-windup
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ee8b74bfea6cbcc0800000000000000
+      internalID: -3693960016592924954
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.left.transition-2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bafada8201b00d6e0800000000000000
+      internalID: -1814938485800456277
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.left.phase-2-windup
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7939a9a3cb625be90800000000000000
+      internalID: -7010654655053393001
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.left.transition-3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 668e5b4f47f210be0800000000000000
+      internalID: -1512875820451501978
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.left.phase-3-windup
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b0721deda602e60800000000000000
+      internalID: 7935460048651094936
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.left.defeated
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ace8ad269e0418e0800000000000000
+      internalID: -1723736719202128736
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.right.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01037727b52e51680800000000000000
+      internalID: -8784866615725969392
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.right.hit
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d383bc54c7927f0800000000000000
+      internalID: -636841233092166277
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.right.phase-1-windup
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e48ec98d4c1799820800000000000000
+      internalID: 2925494523215538254
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.right.transition-2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcfe759b22cddcc60800000000000000
+      internalID: 7840164568018448331
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.right.phase-2-windup
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f73d627f2bc1fd690800000000000000
+      internalID: -7575304493237611649
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.right.transition-3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ecc2be83da953780800000000000000
+      internalID: -8703880471400755991
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.right.phase-3-windup
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5ec85e791968a410800000000000000
+      internalID: 1488555235060797022
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.right.defeated
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7daaa07e546c7290800000000000000
+      internalID: -7891322090280014469
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.up.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a36d720ecb43a2b40800000000000000
+      internalID: 5416199487685645882
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.up.hit
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6e8ac5e899b21c60800000000000000
+      internalID: 7787490772018433644
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.up.phase-1-windup
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0193a56d947622a60800000000000000
+      internalID: 7647788684055034128
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.up.transition-2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb02c7569ae08dd10800000000000000
+      internalID: 2150484942784307391
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.up.phase-2-windup
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37af9275ed9d12330800000000000000
+      internalID: 3684465519134112371
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.up.transition-3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c51d1a028eefe470800000000000000
+      internalID: 8426215670116324800
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.up.phase-3-windup
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d7c3b5782239d440800000000000000
+      internalID: 4961051613880109014
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.zhezhi.up.defeated
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9492ec4d9833f2b0800000000000000
+      internalID: -5552031667366751076
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      qinglan.boss.zhezhi.down.defeated: 2830675886910819347
+      qinglan.boss.zhezhi.down.hit: 5928304100383457665
+      qinglan.boss.zhezhi.down.move: 1634006992558266120
+      qinglan.boss.zhezhi.down.phase-1-windup: 7523535786227567348
+      qinglan.boss.zhezhi.down.phase-2-windup: 7966673157708769502
+      qinglan.boss.zhezhi.down.phase-3-windup: -3535964167745813465
+      qinglan.boss.zhezhi.down.transition-2: -43811282806986709
+      qinglan.boss.zhezhi.down.transition-3: 7009901684109930711
+      qinglan.boss.zhezhi.left.defeated: -1723736719202128736
+      qinglan.boss.zhezhi.left.hit: 7242721941081765299
+      qinglan.boss.zhezhi.left.move: -7735183337956780715
+      qinglan.boss.zhezhi.left.phase-1-windup: -3693960016592924954
+      qinglan.boss.zhezhi.left.phase-2-windup: -7010654655053393001
+      qinglan.boss.zhezhi.left.phase-3-windup: 7935460048651094936
+      qinglan.boss.zhezhi.left.transition-2: -1814938485800456277
+      qinglan.boss.zhezhi.left.transition-3: -1512875820451501978
+      qinglan.boss.zhezhi.right.defeated: -7891322090280014469
+      qinglan.boss.zhezhi.right.hit: -636841233092166277
+      qinglan.boss.zhezhi.right.move: -8784866615725969392
+      qinglan.boss.zhezhi.right.phase-1-windup: 2925494523215538254
+      qinglan.boss.zhezhi.right.phase-2-windup: -7575304493237611649
+      qinglan.boss.zhezhi.right.phase-3-windup: 1488555235060797022
+      qinglan.boss.zhezhi.right.transition-2: 7840164568018448331
+      qinglan.boss.zhezhi.right.transition-3: -8703880471400755991
+      qinglan.boss.zhezhi.up.defeated: -5552031667366751076
+      qinglan.boss.zhezhi.up.hit: 7787490772018433644
+      qinglan.boss.zhezhi.up.move: 5416199487685645882
+      qinglan.boss.zhezhi.up.phase-1-windup: 7647788684055034128
+      qinglan.boss.zhezhi.up.phase-2-windup: 3684465519134112371
+      qinglan.boss.zhezhi.up.phase-3-windup: 4961051613880109014
+      qinglan.boss.zhezhi.up.transition-2: 2150484942784307391
+      qinglan.boss.zhezhi.up.transition-3: 8426215670116324800
+      zhezhi-boss-animation-atlas_0: -779612760738516350
+      zhezhi-boss-animation-atlas_1: 8489916459516939625
+      zhezhi-boss-animation-atlas_10: 7772323362670126200
+      zhezhi-boss-animation-atlas_11: -2311676607260538211
+      zhezhi-boss-animation-atlas_12: 4761369193058178148
+      zhezhi-boss-animation-atlas_13: -7794575387905592672
+      zhezhi-boss-animation-atlas_14: 6960659847715390550
+      zhezhi-boss-animation-atlas_15: -7839703320785097618
+      zhezhi-boss-animation-atlas_16: 3689429486109285068
+      zhezhi-boss-animation-atlas_17: 4446429117198523900
+      zhezhi-boss-animation-atlas_18: -4373817434560206007
+      zhezhi-boss-animation-atlas_19: 3057005515322013
+      zhezhi-boss-animation-atlas_2: -4938825674996535912
+      zhezhi-boss-animation-atlas_20: -8988937684153641353
+      zhezhi-boss-animation-atlas_21: -4924761027079327655
+      zhezhi-boss-animation-atlas_22: 2682484416497194885
+      zhezhi-boss-animation-atlas_23: 3536463615614084162
+      zhezhi-boss-animation-atlas_24: 148687887845761745
+      zhezhi-boss-animation-atlas_25: -8965230089591009084
+      zhezhi-boss-animation-atlas_26: 1917411606815507454
+      zhezhi-boss-animation-atlas_27: -2850034896009582918
+      zhezhi-boss-animation-atlas_28: 3286503075190136108
+      zhezhi-boss-animation-atlas_29: 9204623526158609766
+      zhezhi-boss-animation-atlas_3: -204486322440252955
+      zhezhi-boss-animation-atlas_30: 7779723693997076618
+      zhezhi-boss-animation-atlas_31: 640139083841743263
+      zhezhi-boss-animation-atlas_4: -3964759389116587712
+      zhezhi-boss-animation-atlas_5: 4729456863120713838
+      zhezhi-boss-animation-atlas_6: -2693753415733760204
+      zhezhi-boss-animation-atlas_7: -3639948155487602352
+      zhezhi-boss-animation-atlas_8: -6265224041304484562
+      zhezhi-boss-animation-atlas_9: 9159349937418721745
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

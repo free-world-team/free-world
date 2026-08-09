@@ -1,0 +1,962 @@
+fileFormatVersion: 2
+guid: d337d3762b61f474aa8db8895ed482ed
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8836186610916156463
+    second: zhezhi-boss-animation-atlas-normalized-4096_0
+  - first:
+      213: 5545382951277501613
+    second: zhezhi-boss-animation-atlas-normalized-4096_1
+  - first:
+      213: -1684059250762216398
+    second: zhezhi-boss-animation-atlas-normalized-4096_2
+  - first:
+      213: -324256044490763258
+    second: zhezhi-boss-animation-atlas-normalized-4096_3
+  - first:
+      213: 2019705691141911456
+    second: zhezhi-boss-animation-atlas-normalized-4096_4
+  - first:
+      213: 2591508287710759302
+    second: zhezhi-boss-animation-atlas-normalized-4096_5
+  - first:
+      213: 1413914973528107190
+    second: zhezhi-boss-animation-atlas-normalized-4096_6
+  - first:
+      213: -9161548364002334812
+    second: zhezhi-boss-animation-atlas-normalized-4096_7
+  - first:
+      213: 6247747764812874130
+    second: zhezhi-boss-animation-atlas-normalized-4096_8
+  - first:
+      213: -9020694345699286408
+    second: zhezhi-boss-animation-atlas-normalized-4096_9
+  - first:
+      213: 7529805994702189833
+    second: zhezhi-boss-animation-atlas-normalized-4096_10
+  - first:
+      213: -1814473916098416560
+    second: zhezhi-boss-animation-atlas-normalized-4096_11
+  - first:
+      213: -8750347277753365004
+    second: zhezhi-boss-animation-atlas-normalized-4096_12
+  - first:
+      213: 6290370900586180088
+    second: zhezhi-boss-animation-atlas-normalized-4096_13
+  - first:
+      213: -8018480370691709933
+    second: zhezhi-boss-animation-atlas-normalized-4096_14
+  - first:
+      213: 3871288263913113711
+    second: zhezhi-boss-animation-atlas-normalized-4096_15
+  - first:
+      213: 9144400512972003466
+    second: zhezhi-boss-animation-atlas-normalized-4096_16
+  - first:
+      213: 1426087577076670803
+    second: zhezhi-boss-animation-atlas-normalized-4096_17
+  - first:
+      213: 6883541624096006916
+    second: zhezhi-boss-animation-atlas-normalized-4096_18
+  - first:
+      213: -2875936624784269672
+    second: zhezhi-boss-animation-atlas-normalized-4096_19
+  - first:
+      213: 1982068326176371666
+    second: zhezhi-boss-animation-atlas-normalized-4096_20
+  - first:
+      213: -5624091332229562818
+    second: zhezhi-boss-animation-atlas-normalized-4096_21
+  - first:
+      213: -1457317366423813041
+    second: zhezhi-boss-animation-atlas-normalized-4096_22
+  - first:
+      213: -4957495525365147873
+    second: zhezhi-boss-animation-atlas-normalized-4096_23
+  - first:
+      213: 8965943264881759888
+    second: zhezhi-boss-animation-atlas-normalized-4096_24
+  - first:
+      213: 6264237882788739776
+    second: zhezhi-boss-animation-atlas-normalized-4096_25
+  - first:
+      213: 1286205947264297002
+    second: zhezhi-boss-animation-atlas-normalized-4096_26
+  - first:
+      213: 6532913933422247149
+    second: zhezhi-boss-animation-atlas-normalized-4096_27
+  - first:
+      213: 1762701321707390559
+    second: zhezhi-boss-animation-atlas-normalized-4096_28
+  - first:
+      213: -1658061130936415812
+    second: zhezhi-boss-animation-atlas-normalized-4096_29
+  - first:
+      213: -6891202373728780823
+    second: zhezhi-boss-animation-atlas-normalized-4096_30
+  - first:
+      213: 8048029134156374611
+    second: zhezhi-boss-animation-atlas-normalized-4096_31
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_0
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 1559
+        width: 170
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1db974fe71f8f5580800000000000000
+      internalID: -8836186610916156463
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_1
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 1559
+        width: 171
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dac176ad96825fc40800000000000000
+      internalID: 5545382951277501613
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_2
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 1559
+        width: 286
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23c8b91b80501a8e0800000000000000
+      internalID: -1684059250762216398
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_3
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 1559
+        width: 111
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 604dad378d2008bf0800000000000000
+      internalID: -324256044490763258
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_4
+      rect:
+        serializedVersion: 2
+        x: 2251
+        y: 1559
+        width: 106
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3395f00af670c10800000000000000
+      internalID: 2019705691141911456
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_5
+      rect:
+        serializedVersion: 2
+        x: 2744
+        y: 1559
+        width: 144
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6890b79ae03e6f320800000000000000
+      internalID: 2591508287710759302
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_6
+      rect:
+        serializedVersion: 2
+        x: 3263
+        y: 1559
+        width: 130
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b8afbb5d2c3f9310800000000000000
+      internalID: 1413914973528107190
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_7
+      rect:
+        serializedVersion: 2
+        x: 3792
+        y: 1559
+        width: 96
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a7641b8d44abd080800000000000000
+      internalID: -9161548364002334812
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_8
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 1047
+        width: 162
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29189e77d7574b650800000000000000
+      internalID: 6247747764812874130
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_9
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 1047
+        width: 164
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8722839494e00d280800000000000000
+      internalID: -9020694345699286408
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_10
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 1047
+        width: 291
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 905b4d558ae3f7860800000000000000
+      internalID: 7529805994702189833
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_11
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 1047
+        width: 84
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 050fdb83691b1d6e0800000000000000
+      internalID: -1814473916098416560
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_12
+      rect:
+        serializedVersion: 2
+        x: 2269
+        y: 1047
+        width: 70
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd44302385809680800000000000000
+      internalID: -8750347277753365004
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_13
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 1047
+        width: 158
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fda4ea9103eb4750800000000000000
+      internalID: 6290370900586180088
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_14
+      rect:
+        serializedVersion: 2
+        x: 3267
+        y: 1047
+        width: 122
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3146a7a2692a8b090800000000000000
+      internalID: -8018480370691709933
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_15
+      rect:
+        serializedVersion: 2
+        x: 3789
+        y: 1047
+        width: 102
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f680ea14a2499b530800000000000000
+      internalID: 3871288263913113711
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_16
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 535
+        width: 156
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a88989341df67ee70800000000000000
+      internalID: 9144400512972003466
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_17
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 535
+        width: 165
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 351a04a781b7ac310800000000000000
+      internalID: 1426087577076670803
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_18
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 535
+        width: 285
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 403abd4f2a0478f50800000000000000
+      internalID: 6883541624096006916
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_19
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 535
+        width: 83
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e923b80ee9618d0800000000000000
+      internalID: -2875936624784269672
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_20
+      rect:
+        serializedVersion: 2
+        x: 2268
+        y: 535
+        width: 71
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d3bb4624a8b18b10800000000000000
+      internalID: 1982068326176371666
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_21
+      rect:
+        serializedVersion: 2
+        x: 2739
+        y: 535
+        width: 153
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3e7a162bb633f1b0800000000000000
+      internalID: -5624091332229562818
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_22
+      rect:
+        serializedVersion: 2
+        x: 3268
+        y: 535
+        width: 119
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f440d41939196cbe0800000000000000
+      internalID: -1457317366423813041
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_23
+      rect:
+        serializedVersion: 2
+        x: 3790
+        y: 535
+        width: 100
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f17950be510733bb0800000000000000
+      internalID: -4957495525365147873
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_24
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 23
+        width: 165
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 096559355ed6d6c70800000000000000
+      internalID: 8965943264881759888
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_25
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 23
+        width: 159
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cafa204a2b0fe650800000000000000
+      internalID: 6264237882788739776
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_26
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 23
+        width: 257
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28eea29e7589d110800000000000000
+      internalID: 1286205947264297002
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_27
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 23
+        width: 112
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dec35dd0c9299aa50800000000000000
+      internalID: 6532913933422247149
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_28
+      rect:
+        serializedVersion: 2
+        x: 2251
+        y: 23
+        width: 105
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f560b7d438f567810800000000000000
+      internalID: 1762701321707390559
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_29
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 23
+        width: 157
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb907aaaf226df8e0800000000000000
+      internalID: -1658061130936415812
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_30
+      rect:
+        serializedVersion: 2
+        x: 3266
+        y: 23
+        width: 124
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed3196c3f78d50a0800000000000000
+      internalID: -6891202373728780823
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zhezhi-boss-animation-atlas-normalized-4096_31
+      rect:
+        serializedVersion: 2
+        x: 3795
+        y: 23
+        width: 90
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 352a2637bd750bf60800000000000000
+      internalID: 8048029134156374611
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zhezhi-boss-animation-atlas-normalized-4096_0: -8836186610916156463
+      zhezhi-boss-animation-atlas-normalized-4096_1: 5545382951277501613
+      zhezhi-boss-animation-atlas-normalized-4096_10: 7529805994702189833
+      zhezhi-boss-animation-atlas-normalized-4096_11: -1814473916098416560
+      zhezhi-boss-animation-atlas-normalized-4096_12: -8750347277753365004
+      zhezhi-boss-animation-atlas-normalized-4096_13: 6290370900586180088
+      zhezhi-boss-animation-atlas-normalized-4096_14: -8018480370691709933
+      zhezhi-boss-animation-atlas-normalized-4096_15: 3871288263913113711
+      zhezhi-boss-animation-atlas-normalized-4096_16: 9144400512972003466
+      zhezhi-boss-animation-atlas-normalized-4096_17: 1426087577076670803
+      zhezhi-boss-animation-atlas-normalized-4096_18: 6883541624096006916
+      zhezhi-boss-animation-atlas-normalized-4096_19: -2875936624784269672
+      zhezhi-boss-animation-atlas-normalized-4096_2: -1684059250762216398
+      zhezhi-boss-animation-atlas-normalized-4096_20: 1982068326176371666
+      zhezhi-boss-animation-atlas-normalized-4096_21: -5624091332229562818
+      zhezhi-boss-animation-atlas-normalized-4096_22: -1457317366423813041
+      zhezhi-boss-animation-atlas-normalized-4096_23: -4957495525365147873
+      zhezhi-boss-animation-atlas-normalized-4096_24: 8965943264881759888
+      zhezhi-boss-animation-atlas-normalized-4096_25: 6264237882788739776
+      zhezhi-boss-animation-atlas-normalized-4096_26: 1286205947264297002
+      zhezhi-boss-animation-atlas-normalized-4096_27: 6532913933422247149
+      zhezhi-boss-animation-atlas-normalized-4096_28: 1762701321707390559
+      zhezhi-boss-animation-atlas-normalized-4096_29: -1658061130936415812
+      zhezhi-boss-animation-atlas-normalized-4096_3: -324256044490763258
+      zhezhi-boss-animation-atlas-normalized-4096_30: -6891202373728780823
+      zhezhi-boss-animation-atlas-normalized-4096_31: 8048029134156374611
+      zhezhi-boss-animation-atlas-normalized-4096_4: 2019705691141911456
+      zhezhi-boss-animation-atlas-normalized-4096_5: 2591508287710759302
+      zhezhi-boss-animation-atlas-normalized-4096_6: 1413914973528107190
+      zhezhi-boss-animation-atlas-normalized-4096_7: -9161548364002334812
+      zhezhi-boss-animation-atlas-normalized-4096_8: 6247747764812874130
+      zhezhi-boss-animation-atlas-normalized-4096_9: -9020694345699286408
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

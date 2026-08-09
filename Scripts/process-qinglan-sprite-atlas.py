@@ -24,6 +24,14 @@ def parse_args() -> argparse.Namespace:
         help="Assign alpha-connected components to their nearest grid center before packing.",
     )
     parser.add_argument(
+        "--component-sequence-layout",
+        action="store_true",
+        help=(
+            "Find row separators from alpha-projection valleys, keep the largest component "
+            "for each requested column, and order those components left-to-right."
+        ),
+    )
+    parser.add_argument(
         "--row-order",
         default="0,2,1,3",
         help="Comma-separated source row indices for each destination row.",
@@ -105,6 +113,81 @@ def connected_component_frames(
     return frames
 
 
+def connected_component_sequence_frames(
+    source: Image.Image,
+    columns: int,
+    rows: int,
+    alpha_threshold: int = 2,
+) -> dict[tuple[int, int], Image.Image]:
+    """Recover a visually regular grid whose generated gutters are not evenly spaced."""
+    width, height = source.size
+    alpha = source.getchannel("A").tobytes()
+    row_coverage = [
+        sum(1 for value in alpha[y * width:(y + 1) * width] if value > alpha_threshold)
+        for y in range(height)
+    ]
+    boundaries = [0]
+    search_radius = max(1, round(height * 0.11))
+    for split in range(1, rows):
+        ideal = round(height * split / rows)
+        start = max(boundaries[-1] + 1, ideal - search_radius)
+        end = min(height - 1, ideal + search_radius)
+        if start >= end:
+            raise ValueError("Unable to search for a component-sequence row separator.")
+        separator = min(range(start, end + 1), key=lambda y: (row_coverage[y], abs(y - ideal)))
+        boundaries.append(separator)
+    boundaries.append(height)
+
+    frames: dict[tuple[int, int], Image.Image] = {}
+    for row in range(rows):
+        top = boundaries[row]
+        bottom = boundaries[row + 1]
+        visited = bytearray(width * (bottom - top))
+        components: list[list[int]] = []
+        for y in range(top, bottom):
+            for x in range(width):
+                local_index = (y - top) * width + x
+                global_index = y * width + x
+                if visited[local_index] or alpha[global_index] <= alpha_threshold:
+                    continue
+                queue: deque[tuple[int, int]] = deque([(x, y)])
+                visited[local_index] = 1
+                pixels: list[int] = []
+                while queue:
+                    current_x, current_y = queue.popleft()
+                    pixels.append(current_y * width + current_x)
+                    for neighbor_y in range(max(top, current_y - 1), min(bottom, current_y + 2)):
+                        for neighbor_x in range(max(0, current_x - 1), min(width, current_x + 2)):
+                            neighbor_local = (neighbor_y - top) * width + neighbor_x
+                            neighbor_global = neighbor_y * width + neighbor_x
+                            if visited[neighbor_local] or alpha[neighbor_global] <= alpha_threshold:
+                                continue
+                            visited[neighbor_local] = 1
+                            queue.append((neighbor_x, neighbor_y))
+                components.append(pixels)
+
+        if len(components) < columns:
+            raise ValueError(
+                f"Source row {row} exposes {len(components)} components; {columns} are required."
+            )
+        selected = sorted(components, key=len, reverse=True)[:columns]
+        selected.sort(key=lambda pixels: sum(index % width for index in pixels) / len(pixels))
+        for column, pixels in enumerate(selected):
+            xs = [index % width for index in pixels]
+            ys = [index // width for index in pixels]
+            left, right = min(xs), max(xs) + 1
+            frame_top, frame_bottom = min(ys), max(ys) + 1
+            mask = Image.new("L", (right - left, frame_bottom - frame_top), 0)
+            mask_pixels = mask.load()
+            for index in pixels:
+                y, x = divmod(index, width)
+                mask_pixels[x - left, y - frame_top] = 255
+            frame = Image.new("RGBA", mask.size, (0, 0, 0, 0))
+            frame.paste(source.crop((left, frame_top, right, frame_bottom)), (0, 0), mask)
+            frames[(row, column)] = frame
+    return frames
+
+
 def main() -> None:
     args = parse_args()
     if args.columns <= 0 or args.rows <= 0 or args.cell_size <= 0:
@@ -116,11 +199,13 @@ def main() -> None:
     source = Image.open(args.input).convert("RGBA")
     source_width, source_height = source.size
     frames: list[Image.Image] = []
-    component_frames = (
-        connected_component_frames(source, args.columns, args.rows)
-        if args.component_layout
-        else None
-    )
+    if args.component_layout and args.component_sequence_layout:
+        raise ValueError("Choose only one component layout mode.")
+    component_frames = None
+    if args.component_layout:
+        component_frames = connected_component_frames(source, args.columns, args.rows)
+    elif args.component_sequence_layout:
+        component_frames = connected_component_sequence_frames(source, args.columns, args.rows)
     for destination_row in range(args.rows):
         source_row = row_order[destination_row]
         top = round(source_row * source_height / args.rows)

@@ -1,0 +1,1090 @@
+fileFormatVersion: 2
+guid: 3482fa7cef9af684fb192fd2de4e3159
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1113774059467370318
+    second: tingfeng-boss-animation-atlas_0
+  - first:
+      213: -6936280617206385593
+    second: tingfeng-boss-animation-atlas_1
+  - first:
+      213: 258860414901904718
+    second: tingfeng-boss-animation-atlas_2
+  - first:
+      213: -9027261586049627312
+    second: tingfeng-boss-animation-atlas_3
+  - first:
+      213: 2756250523799824944
+    second: tingfeng-boss-animation-atlas_4
+  - first:
+      213: -1080005284890273454
+    second: tingfeng-boss-animation-atlas_5
+  - first:
+      213: -575521908452316622
+    second: tingfeng-boss-animation-atlas_6
+  - first:
+      213: 3425541114011946599
+    second: tingfeng-boss-animation-atlas_7
+  - first:
+      213: -6690298722067268685
+    second: tingfeng-boss-animation-atlas_8
+  - first:
+      213: -6120688907589646083
+    second: tingfeng-boss-animation-atlas_9
+  - first:
+      213: -1529900792844580570
+    second: tingfeng-boss-animation-atlas_10
+  - first:
+      213: -4156376507590422777
+    second: tingfeng-boss-animation-atlas_11
+  - first:
+      213: 1302713559754704408
+    second: tingfeng-boss-animation-atlas_12
+  - first:
+      213: -2425231142201773652
+    second: tingfeng-boss-animation-atlas_13
+  - first:
+      213: -7549175545689912347
+    second: tingfeng-boss-animation-atlas_14
+  - first:
+      213: 2633677806641064070
+    second: tingfeng-boss-animation-atlas_15
+  - first:
+      213: 5626886652675029770
+    second: tingfeng-boss-animation-atlas_16
+  - first:
+      213: -1489468107742730473
+    second: tingfeng-boss-animation-atlas_17
+  - first:
+      213: -2202931387431360941
+    second: tingfeng-boss-animation-atlas_18
+  - first:
+      213: 7626515712542512769
+    second: tingfeng-boss-animation-atlas_19
+  - first:
+      213: -7713733968616901762
+    second: tingfeng-boss-animation-atlas_20
+  - first:
+      213: -4233850021559159266
+    second: tingfeng-boss-animation-atlas_21
+  - first:
+      213: -823877370614243770
+    second: tingfeng-boss-animation-atlas_22
+  - first:
+      213: 4221010702507714454
+    second: tingfeng-boss-animation-atlas_23
+  - first:
+      213: 7363033570951424601
+    second: tingfeng-boss-animation-atlas_24
+  - first:
+      213: -8736635652939995486
+    second: tingfeng-boss-animation-atlas_25
+  - first:
+      213: 5758399042506704918
+    second: tingfeng-boss-animation-atlas_26
+  - first:
+      213: 8719320543625704157
+    second: tingfeng-boss-animation-atlas_27
+  - first:
+      213: 7586594299716805207
+    second: tingfeng-boss-animation-atlas_28
+  - first:
+      213: 1133075071467076809
+    second: tingfeng-boss-animation-atlas_29
+  - first:
+      213: 2071546630034665700
+    second: tingfeng-boss-animation-atlas_30
+  - first:
+      213: 5429705695285593907
+    second: tingfeng-boss-animation-atlas_31
+  - first:
+      213: 4003427638673071555
+    second: qinglan.boss.tingfeng.down.move
+  - first:
+      213: 1587720991840219400
+    second: qinglan.boss.tingfeng.down.hit
+  - first:
+      213: 1792692563671162792
+    second: qinglan.boss.tingfeng.down.phase-1-windup
+  - first:
+      213: -815899482351881225
+    second: qinglan.boss.tingfeng.down.transition-2
+  - first:
+      213: -2276768424229764041
+    second: qinglan.boss.tingfeng.down.phase-2-windup
+  - first:
+      213: -3247000330636465261
+    second: qinglan.boss.tingfeng.down.transition-3
+  - first:
+      213: 3539911439936797632
+    second: qinglan.boss.tingfeng.down.phase-3-windup
+  - first:
+      213: -2138238534325426824
+    second: qinglan.boss.tingfeng.down.defeated
+  - first:
+      213: -6662973878391809516
+    second: qinglan.boss.tingfeng.left.move
+  - first:
+      213: -1864562338247797969
+    second: qinglan.boss.tingfeng.left.hit
+  - first:
+      213: -637466186035728199
+    second: qinglan.boss.tingfeng.left.phase-1-windup
+  - first:
+      213: -7136226262460247409
+    second: qinglan.boss.tingfeng.left.transition-2
+  - first:
+      213: 863591480348807198
+    second: qinglan.boss.tingfeng.left.phase-2-windup
+  - first:
+      213: -3869130536469604814
+    second: qinglan.boss.tingfeng.left.transition-3
+  - first:
+      213: 4797560355839547718
+    second: qinglan.boss.tingfeng.left.phase-3-windup
+  - first:
+      213: -8947943066802105169
+    second: qinglan.boss.tingfeng.left.defeated
+  - first:
+      213: 9139773663864134272
+    second: qinglan.boss.tingfeng.right.move
+  - first:
+      213: 4793734753672134737
+    second: qinglan.boss.tingfeng.right.hit
+  - first:
+      213: -2798625477653009109
+    second: qinglan.boss.tingfeng.right.phase-1-windup
+  - first:
+      213: -8717556016877690975
+    second: qinglan.boss.tingfeng.right.transition-2
+  - first:
+      213: 5546871183039177663
+    second: qinglan.boss.tingfeng.right.phase-2-windup
+  - first:
+      213: 3097975585836807137
+    second: qinglan.boss.tingfeng.right.transition-3
+  - first:
+      213: 2442044739027976210
+    second: qinglan.boss.tingfeng.right.phase-3-windup
+  - first:
+      213: 2318402835452210277
+    second: qinglan.boss.tingfeng.right.defeated
+  - first:
+      213: 6224600344746036429
+    second: qinglan.boss.tingfeng.up.move
+  - first:
+      213: 2076125518474452919
+    second: qinglan.boss.tingfeng.up.hit
+  - first:
+      213: 4829020067874028218
+    second: qinglan.boss.tingfeng.up.phase-1-windup
+  - first:
+      213: -7554081339229083148
+    second: qinglan.boss.tingfeng.up.transition-2
+  - first:
+      213: -746759579955664401
+    second: qinglan.boss.tingfeng.up.phase-2-windup
+  - first:
+      213: 4055877700505071422
+    second: qinglan.boss.tingfeng.up.transition-3
+  - first:
+      213: -2672010733867338621
+    second: qinglan.boss.tingfeng.up.phase-3-windup
+  - first:
+      213: 8753272262810836291
+    second: qinglan.boss.tingfeng.up.defeated
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.down.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cdd61fe9380f8730800000000000000
+      internalID: 4003427638673071555
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.down.hit
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 801311974d7b80610800000000000000
+      internalID: 1587720991840219400
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.down.phase-1-windup
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af9a19736ce0e810800000000000000
+      internalID: 1792692563671162792
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.down.transition-2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3bdfd5eb75da4f0800000000000000
+      internalID: -815899482351881225
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.down.phase-2-windup
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73485f55e2b4760e0800000000000000
+      internalID: -2276768424229764041
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.down.transition-3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b66d2176650f2d0800000000000000
+      internalID: -3247000330636465261
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.down.phase-3-windup
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cb36c903ba402130800000000000000
+      internalID: 3539911439936797632
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.down.defeated
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8752b74c1637352e0800000000000000
+      internalID: -2138238534325426824
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.left.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41adfbe3f8c5883a0800000000000000
+      internalID: -6662973878391809516
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.left.hit
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f231b27ae6ebf16e0800000000000000
+      internalID: -1864562338247797969
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.left.phase-1-windup
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b0740991e34727f0800000000000000
+      internalID: -637466186035728199
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.left.transition-2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f825e3d060807fc90800000000000000
+      internalID: -7136226262460247409
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.left.phase-2-windup
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e109e3930e71cfb00800000000000000
+      internalID: 863591480348807198
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.left.transition-3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 236dc10d6461e4ac0800000000000000
+      internalID: -3869130536469604814
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.left.phase-3-windup
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 649105e99bb549240800000000000000
+      internalID: 4797560355839547718
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.left.defeated
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa457d0603582d380800000000000000
+      internalID: -8947943066802105169
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.right.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08a971209bff6de70800000000000000
+      internalID: 9139773663864134272
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.right.hit
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15082143c54c68240800000000000000
+      internalID: 4793734753672134737
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.right.phase-1-windup
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d6221b4f84929d0800000000000000
+      internalID: -2798625477653009109
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.right.transition-2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1af9f608df4050780800000000000000
+      internalID: -8717556016877690975
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.right.phase-2-windup
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb3a6efc3f17afc40800000000000000
+      internalID: 5546871183039177663
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.right.transition-3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e3b2aca1683efa20800000000000000
+      internalID: 3097975585836807137
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.right.phase-3-windup
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 210cf5b60c2e3e120800000000000000
+      internalID: 2442044739027976210
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.right.defeated
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56c236d681f9c2020800000000000000
+      internalID: 2318402835452210277
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.up.move
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcc8c51c809326650800000000000000
+      internalID: 6224600344746036429
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.up.hit
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bf1bc5c821efcc10800000000000000
+      internalID: 2076125518474452919
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.up.phase-1-windup
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aba3dde9a20240340800000000000000
+      internalID: 4829020067874028218
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.up.transition-2
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f9e7d29b038a2790800000000000000
+      internalID: -7554081339229083148
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.up.phase-2-windup
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe96f185e1af2a5f0800000000000000
+      internalID: -746759579955664401
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.up.transition-3
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f6807974f594830800000000000000
+      internalID: 4055877700505071422
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.up.phase-3-windup
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3847ecbf46c1bead0800000000000000
+      internalID: -2672010733867338621
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.boss.tingfeng.up.defeated
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.046875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34d9e170fbed97970800000000000000
+      internalID: 8753272262810836291
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      qinglan.boss.tingfeng.down.defeated: -2138238534325426824
+      qinglan.boss.tingfeng.down.hit: 1587720991840219400
+      qinglan.boss.tingfeng.down.move: 4003427638673071555
+      qinglan.boss.tingfeng.down.phase-1-windup: 1792692563671162792
+      qinglan.boss.tingfeng.down.phase-2-windup: -2276768424229764041
+      qinglan.boss.tingfeng.down.phase-3-windup: 3539911439936797632
+      qinglan.boss.tingfeng.down.transition-2: -815899482351881225
+      qinglan.boss.tingfeng.down.transition-3: -3247000330636465261
+      qinglan.boss.tingfeng.left.defeated: -8947943066802105169
+      qinglan.boss.tingfeng.left.hit: -1864562338247797969
+      qinglan.boss.tingfeng.left.move: -6662973878391809516
+      qinglan.boss.tingfeng.left.phase-1-windup: -637466186035728199
+      qinglan.boss.tingfeng.left.phase-2-windup: 863591480348807198
+      qinglan.boss.tingfeng.left.phase-3-windup: 4797560355839547718
+      qinglan.boss.tingfeng.left.transition-2: -7136226262460247409
+      qinglan.boss.tingfeng.left.transition-3: -3869130536469604814
+      qinglan.boss.tingfeng.right.defeated: 2318402835452210277
+      qinglan.boss.tingfeng.right.hit: 4793734753672134737
+      qinglan.boss.tingfeng.right.move: 9139773663864134272
+      qinglan.boss.tingfeng.right.phase-1-windup: -2798625477653009109
+      qinglan.boss.tingfeng.right.phase-2-windup: 5546871183039177663
+      qinglan.boss.tingfeng.right.phase-3-windup: 2442044739027976210
+      qinglan.boss.tingfeng.right.transition-2: -8717556016877690975
+      qinglan.boss.tingfeng.right.transition-3: 3097975585836807137
+      qinglan.boss.tingfeng.up.defeated: 8753272262810836291
+      qinglan.boss.tingfeng.up.hit: 2076125518474452919
+      qinglan.boss.tingfeng.up.move: 6224600344746036429
+      qinglan.boss.tingfeng.up.phase-1-windup: 4829020067874028218
+      qinglan.boss.tingfeng.up.phase-2-windup: -746759579955664401
+      qinglan.boss.tingfeng.up.phase-3-windup: -2672010733867338621
+      qinglan.boss.tingfeng.up.transition-2: -7554081339229083148
+      qinglan.boss.tingfeng.up.transition-3: 4055877700505071422
+      tingfeng-boss-animation-atlas_0: 1113774059467370318
+      tingfeng-boss-animation-atlas_1: -6936280617206385593
+      tingfeng-boss-animation-atlas_10: -1529900792844580570
+      tingfeng-boss-animation-atlas_11: -4156376507590422777
+      tingfeng-boss-animation-atlas_12: 1302713559754704408
+      tingfeng-boss-animation-atlas_13: -2425231142201773652
+      tingfeng-boss-animation-atlas_14: -7549175545689912347
+      tingfeng-boss-animation-atlas_15: 2633677806641064070
+      tingfeng-boss-animation-atlas_16: 5626886652675029770
+      tingfeng-boss-animation-atlas_17: -1489468107742730473
+      tingfeng-boss-animation-atlas_18: -2202931387431360941
+      tingfeng-boss-animation-atlas_19: 7626515712542512769
+      tingfeng-boss-animation-atlas_2: 258860414901904718
+      tingfeng-boss-animation-atlas_20: -7713733968616901762
+      tingfeng-boss-animation-atlas_21: -4233850021559159266
+      tingfeng-boss-animation-atlas_22: -823877370614243770
+      tingfeng-boss-animation-atlas_23: 4221010702507714454
+      tingfeng-boss-animation-atlas_24: 7363033570951424601
+      tingfeng-boss-animation-atlas_25: -8736635652939995486
+      tingfeng-boss-animation-atlas_26: 5758399042506704918
+      tingfeng-boss-animation-atlas_27: 8719320543625704157
+      tingfeng-boss-animation-atlas_28: 7586594299716805207
+      tingfeng-boss-animation-atlas_29: 1133075071467076809
+      tingfeng-boss-animation-atlas_3: -9027261586049627312
+      tingfeng-boss-animation-atlas_30: 2071546630034665700
+      tingfeng-boss-animation-atlas_31: 5429705695285593907
+      tingfeng-boss-animation-atlas_4: 2756250523799824944
+      tingfeng-boss-animation-atlas_5: -1080005284890273454
+      tingfeng-boss-animation-atlas_6: -575521908452316622
+      tingfeng-boss-animation-atlas_7: 3425541114011946599
+      tingfeng-boss-animation-atlas_8: -6690298722067268685
+      tingfeng-boss-animation-atlas_9: -6120688907589646083
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:
