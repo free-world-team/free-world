@@ -1,0 +1,7 @@
+AUDIO-MAP-001 first-party procedural synthesis brief
+
+Create fourteen cues covering three wind-altars, three dynamic events, five
+landmarks, map-boundary warning, objective completion, and landmark claim. Cues
+must be non-verbal, distinct, 0.2-5.0 seconds, and compatible with Pause/Story
+ducking. No recordings, samples, voices, external references, generative models,
+trademarks, or reference-project assets. Source PCM24 WAV; Runtime OGG/Vorbis.

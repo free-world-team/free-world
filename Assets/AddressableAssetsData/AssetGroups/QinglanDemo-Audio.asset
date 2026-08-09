@@ -55,6 +55,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 111c99fadca66c44c8f672cb75edea23
+    m_Address: qinglan/audio/map/landmark/guest-pavilion-letter
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 156a1f4bef49dcd4f8c114e47a5510e2
     m_Address: qinglan/audio/enemy/zhezhi/attack
     m_ReadOnly: 0
@@ -95,6 +103,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3285f30d2e8b8c74f86677ab0222e1c5
+    m_Address: qinglan/audio/map/system/landmark-claim
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 33c512af5a0bc7a4d8e0f12987bcb154
     m_Address: qinglan/audio/player/sword-intent-full
     m_ReadOnly: 0
@@ -105,6 +121,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 360b21db4793aa446af370c588123a61
     m_Address: qinglan/audio/enemy/stone-lantern/death
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 374fa31f429e4524a8e47fc360bd39c6
+    m_Address: qinglan/audio/map/objective/stop-balance
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -177,6 +201,22 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 53b60e6304260134897684adb433b0dc
     m_Address: qinglan/audio/ambience/bamboo-leaves
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 553fb5b065102a840a702840b5bc359a
+    m_Address: qinglan/audio/map/objective/guide
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d6cc8aeb53d7dc4e8cca3ef2583835e
+    m_Address: qinglan/audio/map/landmark/wind-vein-stele
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -383,6 +423,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9da8ceb780ddfef4a8898f8156e0fd72
+    m_Address: qinglan/audio/map/event/old-sword-resonance
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9fb934b34558d6b4b81c74c694b86426
     m_Address: qinglan/audio/player/player-defeat
     m_ReadOnly: 0
@@ -399,8 +447,24 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a23f765be65a5004385e22a0474e2457
+    m_Address: qinglan/audio/map/landmark/herb-garden-variant
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a24d6f985b231b342ae075faea11bf68
     m_Address: qinglan/audio/enemy/paper-crane/death
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a2691b3ccab981a4c975e8e46d1105c0
+    m_Address: qinglan/audio/map/event/wind-vein-riot
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -423,6 +487,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af26e445c208e2549ac1ce1cf9c227b2
+    m_Address: qinglan/audio/map/landmark/broken-wall-sword-mark
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b29bd8c776207ee45b838987ef9c3ab6
     m_Address: qinglan/audio/weapon/yellow-talisman-cast
     m_ReadOnly: 0
@@ -433,6 +505,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b3ac8fa0a169e2d4993ff394ef9de332
     m_Address: qinglan/audio/weapon/zhenyue-countershock
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b6ce60067d1189e4990473de507ae7fa
+    m_Address: qinglan/audio/map/event/herb-garden-revival
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -481,6 +561,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c994908afbd6edc4c9afdd32703e75cd
     m_Address: qinglan/audio/affix/barrier/activate
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca49964d5a1de8e4e993219a93122dcf
+    m_Address: qinglan/audio/map/system/objective-complete
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -551,6 +639,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da492e11a9614d549908d94e60600a81
+    m_Address: qinglan/audio/map/system/boundary-warning
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dbf21e72987e80a4d88b16b89771f040
     m_Address: qinglan/audio/enemy/grass-spirit/death
     m_ReadOnly: 0
@@ -569,6 +665,22 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dfb2e5ad51a86124e9945602887709eb
     m_Address: qinglan/audio/weapon/tide-phase-shift
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0d14a07e4f26de4a856066c791ef480
+    m_Address: qinglan/audio/map/landmark/sealed-sword-cache
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eacbec7a0cdc73b4e953059c1d083520
+    m_Address: qinglan/audio/map/objective/listen
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
