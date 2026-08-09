@@ -15,6 +15,14 @@ MonoBehaviour:
   m_GroupName: QinglanDemo-Audio
   m_GUID: 3ce42102dd829ec4c9ab11018be2d5bd
   m_SerializeEntries:
+  - m_GUID: 2fd1a6dfcf8fb5f49aecdf69179a0cd8
+    m_Address: qinglan/audio/player/dash-ready
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 3264a44e221e6034a92b1c91f3a75bda
     m_Address: qinglan/audio/ambience/courtyard-wind
     m_ReadOnly: 0
@@ -23,8 +31,32 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33c512af5a0bc7a4d8e0f12987bcb154
+    m_Address: qinglan/audio/player/sword-intent-full
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 39d34305640299d4995579abb7029c57
     m_Address: qinglan/audio/music/high-pressure-drive
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3ade7a42ef0999c44bd2e42ac2ee3ae8
+    m_Address: qinglan/audio/player/low-health
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4134a6ec3abdea54daa154bca7b8d32b
+    m_Address: qinglan/audio/player/manifestation-ready
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -79,8 +111,32 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 75018dad5e7048b449544da4e9379cdb
+    m_Address: qinglan/audio/player/player-hit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8908f625240531d4ca51060bf76aacd0
+    m_Address: qinglan/audio/player/riding-wind-tier
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8fc736b4efe12074a800c11a16b902ae
     m_Address: qinglan/audio/boss/zhezhi/phase-two
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9009f06f5c559a643a269bb362caff3e
+    m_Address: qinglan/audio/player/pickup
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -103,6 +159,22 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 99653d49d0a6ad34387f209e0b605df7
+    m_Address: qinglan/audio/player/dash-start
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9fb934b34558d6b4b81c74c694b86426
+    m_Address: qinglan/audio/player/player-defeat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a36f035a79de89147aa1ca8f5a66f525
     m_Address: qinglan/audio/boss/tingfeng/phase-two
     m_ReadOnly: 0
@@ -113,6 +185,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ae3ca210d664d4a4c8f92242ea521817
     m_Address: qinglan/audio/ambience/old-timber-creak
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bce631b4f9022b149973a806f653df6c
+    m_Address: qinglan/audio/player/sword-intent-gain
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -135,8 +215,24 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6dc2308375d4f14393441be3a65d81d
+    m_Address: qinglan/audio/player/level-up
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f863dfb2013574c4c9153f1739fc9097
     m_Address: qinglan/audio/music/combat-rhythm
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f9ed84f398883dd4486a630e577f6398
+    m_Address: qinglan/audio/player/skill-ready
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release

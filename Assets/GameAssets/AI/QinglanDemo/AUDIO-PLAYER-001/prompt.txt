@@ -1,0 +1,8 @@
+AUDIO-PLAYER-001 first-party procedural synthesis brief
+
+Create twelve short player mechanic/state cues for dash, dash ready, Riding Wind
+tier, sword-intent gain/full, skill ready, manifestation ready, pickup, hit,
+low-health, level-up, and defeat. Each cue must be recognizable without speech,
+fit 0.1-2.0 seconds, and leave combat mix headroom. Do not use recordings, sample
+libraries, voices, external references, generative audio models, trademarks, or
+reference-project assets. Source: mono 48 kHz/24-bit WAV. Runtime: OGG/Vorbis.
