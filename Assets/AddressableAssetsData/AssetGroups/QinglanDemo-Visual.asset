@@ -55,8 +55,24 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11c6fc24dfec0f347ad1e267a0bdffe3
+    m_Address: qinglan/profile/skill/evolved/mountain-boundary-seal
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 17c50da720c0b5648940675cf6289876
     m_Address: qinglan/profile/enemy/grass-spirit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b62577106b49d846a362445593ab683
+    m_Address: qinglan/profile/skill/evolved/mirror-sea-tide-wheel
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -167,6 +183,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 51a540f595451564eb101d02de97d0bb
+    m_Address: qinglan/profile/skill/evolved/earth-vein-spring-branch
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5340c608d3ae7c949a20397d2d3038f6
     m_Address: qinglan/profile/skill/base/spirit-vine-seed
     m_ReadOnly: 0
@@ -207,6 +231,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6567f1d1439286d418332a61018ce101
+    m_Address: qinglan/skill/evolved/mirror-sea-tide-wheel/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6c1995d93e8419b42a94e2a45fa8a4b9
     m_Address: qinglan/boss/zhezhi/animation-atlas
     m_ReadOnly: 0
@@ -217,6 +249,22 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7b96c83f236f5da468330fb13923c516
     m_Address: qinglan/boss/tingfeng/phase-2-overlay
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c0243ffa026ec3479443b46516fe9f7
+    m_Address: qinglan/profile/skill/evolved/qinglan-flowing-shadow-sword
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7c7128cf9627ff94f8347e3db68e9d09
+    m_Address: qinglan/skill/evolved/chilu-hundred-craft-wheel/vfx
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -319,6 +367,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c21c19e7f5d67d2409599036d6c07c4c
+    m_Address: qinglan/skill/evolved/earth-vein-spring-branch/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c756a1709438f0b4c985b2b8e3a8a8aa
     m_Address: qinglan/boss/zhezhi/phase-2-overlay
     m_ReadOnly: 0
@@ -329,6 +385,22 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c915fdff40295434a8d50c0719c2d5b5
     m_Address: qinglan/profile/skill/base/yufeng-sword
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cb52fdc74e1dab54b86f810f8246e94f
+    m_Address: qinglan/skill/evolved/qinglan-flowing-shadow-sword/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf93cc3d0919e30479e605f001eac64a
+    m_Address: qinglan/profile/skill/evolved/chilu-hundred-craft-wheel
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -359,8 +431,32 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dadbc1f9abeef11448b372a78876c2e2
+    m_Address: qinglan/skill/evolved/taiyi-spirit-sealing-array/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df61964377b5d86439f8e2f74dde3cfa
     m_Address: qinglan/enemy/explosive-seed-pod/directional-animation-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e20eab9a226f2824ab8a8e669e8d3300
+    m_Address: qinglan/skill/evolved/mountain-boundary-seal/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e6f67bda72364704c8d966b9770ed909
+    m_Address: qinglan/profile/skill/evolved/taiyi-spirit-sealing-array
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

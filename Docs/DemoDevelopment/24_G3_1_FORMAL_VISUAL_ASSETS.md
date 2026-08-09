@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 8 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 9 / 27 ART BATCHES`
 - 日期：2026-08-09
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -62,7 +62,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 6 | ART-BOSS-001 | PASS | 折枝/听风各 1 张 4096×2048 master、2048×1024 final、32 语义 Sprite 与正式 Profile；EditMode 314/314、PlayMode 17/17、Validation PASS |
 | 7 | ART-BOSS-002 | PASS | 折枝/听风各 3 张阶段与 Telegraph Overlay；6 张 2048 源图、6 张 1024 final；EditMode 317/317、PlayMode 17/17、Validation PASS |
 | 8 | ART-SKILL-001 | PASS | 六基础武器各 1 张 1024 source、512 final 与正式 Profile；EditMode 321/321、PlayMode 17/17、Validation PASS |
-| 9—27 | ART-SKILL-002—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 9 | ART-SKILL-002 | PASS | 六显化各 1 张 2048 source、1024 final 与正式 Profile；EditMode 325/325、PlayMode 17/17、Validation PASS |
+| 10—27 | ART-STATUS-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -121,3 +122,12 @@ ART-SKILL-001 为纯 FirstParty 确定性程序化资产，Seed 固定为 31008�
 `qinglan/skill/base/<weapon>/vfx`，Profile 地址为 `qinglan/profile/skill/base/<weapon>`；前三者为
 Projectile，后三者为 Area。正式技能内容仍引用 Placeholder PresentationId，统一替换与运行时加载由
 G3.1 最终集成关闭。
+
+ART-SKILL-002 为纯 FirstParty 确定性程序化资产，Seed 固定为 31009。青岚流影剑使用三影剑/折返轨迹/
+三风痕，太一镇灵符阵使用双层八角阵/八无文字符牌/聚合线，赤炉百工轮使用外八内六双环刃/八辐/
+炉心，镜海潮生轮使用纵向镜核/三重对向潮弧/八相位标，山河镇界印使用四角领域/双层山河/护域弧，
+地脉生春枝使用三节点地脉/中心主干/单代枝叶。六张 1024 final 的 Alpha≥16 覆盖率为
+13.60%—32.56%，安全边≥63 px，四角透明；两次批准轮 12/12 Hash 字节一致。赤炉 Profile 为 Projectile，
+其余五个为 Area；正式纹理/Profile 地址使用 `qinglan/skill/evolved/` 与
+`qinglan/profile/skill/evolved/` 前缀。显化内容 PresentationId 替换和通用周期 VFX 请求仍由 G3.1
+最终集成关闭。

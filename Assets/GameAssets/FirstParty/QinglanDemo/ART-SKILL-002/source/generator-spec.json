@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "assetId": "ART-SKILL-002",
+  "seed": 31009,
+  "sourceSize": 2048,
+  "runtimeSize": 1024,
+  "visuals": [
+    {"name":"qinglan-flowing-shadow-sword","sourceFile":"qinglan-flowing-shadow-sword-visual-source.png","finalFile":"qinglan-flowing-shadow-sword-visual.png","palette":{"primary":"#59C7C1","highlight":"#F4EFD8","deep":"#163D45","secondary":"#8CE1D5"}},
+    {"name":"taiyi-spirit-sealing-array","sourceFile":"taiyi-spirit-sealing-array-visual-source.png","finalFile":"taiyi-spirit-sealing-array-visual.png","palette":{"primary":"#D4A94C","highlight":"#F4EFD8","deep":"#163D45","secondary":"#59C7C1"}},
+    {"name":"chilu-hundred-craft-wheel","sourceFile":"chilu-hundred-craft-wheel-visual-source.png","finalFile":"chilu-hundred-craft-wheel-visual.png","palette":{"primary":"#F29B52","highlight":"#F4EFD8","deep":"#163D45","secondary":"#59C7C1"}},
+    {"name":"mirror-sea-tide-wheel","sourceFile":"mirror-sea-tide-wheel-visual-source.png","finalFile":"mirror-sea-tide-wheel-visual.png","palette":{"primary":"#59C7C1","highlight":"#D9F2EF","deep":"#163D45","secondary":"#4E8FA6"}},
+    {"name":"mountain-boundary-seal","sourceFile":"mountain-boundary-seal-visual-source.png","finalFile":"mountain-boundary-seal-visual.png","palette":{"primary":"#C8A968","highlight":"#F4EFD8","deep":"#163D45","secondary":"#68B4AD"}},
+    {"name":"earth-vein-spring-branch","sourceFile":"earth-vein-spring-branch-visual-source.png","finalFile":"earth-vein-spring-branch-visual.png","palette":{"primary":"#73B66B","highlight":"#D8E7A6","deep":"#163D45","secondary":"#59C7C1"}}
+  ]
+}
