@@ -103,6 +103,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0d1c1007d766a7245a4f1f122ebc5a36
+    m_Address: qinglan/ui/input-glyph/keyboard/page-axis
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0d85b3162b253c6499b361cfda47720f
     m_Address: qinglan/enemy/affix/splitting/overlay
     m_ReadOnly: 0
@@ -127,8 +135,24 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 11aa2df4b6dac9441b0f221dafa2d426
+    m_Address: qinglan/ui/input-glyph/keyboard/arrows
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 11c6fc24dfec0f347ad1e267a0bdffe3
     m_Address: qinglan/profile/skill/evolved/mountain-boundary-seal
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 13f9d9fa5458d1c49b74b792928c02e3
+    m_Address: qinglan/ui/input-glyph/gamepad/left-trigger
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -233,6 +257,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 242bddb59e2a06c42b543fb0166551b8
     m_Address: qinglan/hub/meta-node/movement/03/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 248bfb033e54381488c28ac28ef7ebbb
+    m_Address: qinglan/ui/input-glyph/keyboard/escape
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -375,6 +407,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 369afbc9596d7c04695040489a7a5c8f
+    m_Address: qinglan/ui/input-glyph/gamepad/left-shoulder
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 37fb33bc02d81cb40816997d2fc8a40e
     m_Address: qinglan/collectible/old-court-06/illustration
     m_ReadOnly: 0
@@ -431,6 +471,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 456686d765c137246b9e05d5ca242c46
+    m_Address: qinglan/ui/input-glyph/gamepad/select
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4842f3bc8378ded40a93067ef40bdca8
     m_Address: qinglan/profile/event/wind-vein-riot
     m_ReadOnly: 0
@@ -465,6 +513,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4c8ffb909582dc445b8a69c1d2366db3
     m_Address: qinglan/profile/boss/tingfeng
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4c909cb0e9d7c6d40b5baeb528d3ac2e
+    m_Address: qinglan/ui/input-glyph/keyboard/key-m
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -599,6 +655,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68ec1d9b93abd7145a214a6268301718
+    m_Address: qinglan/ui/input-glyph/gamepad/right-trigger
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6c1995d93e8419b42a94e2a45fa8a4b9
     m_Address: qinglan/boss/zhezhi/animation-atlas
     m_ReadOnly: 0
@@ -609,6 +673,22 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6d9964894a758b84cab0a5612bc0a2f7
     m_Address: qinglan/relic/listening-wind-core/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6db21b6b612bab44d899dde2e10b5178
+    m_Address: qinglan/ui/input-glyph/gamepad/button-north
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7698762f81705e349aa38fac260e704e
+    m_Address: qinglan/ui/input-glyph/mouse/left-button
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -641,6 +721,38 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7d2b88eca915a64479f22ac803ec8c76
     m_Address: qinglan/enemy/affix/barrier/overlay
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d6b31709ec81c247869778c9f8a9b30
+    m_Address: qinglan/ui/input-glyph/keyboard/wasd
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e26e6793b3503a4faa14fc22caca5f2
+    m_Address: qinglan/ui/input-glyph/gamepad/button-south
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7e35e15116bf2824689a7e20f3228ed2
+    m_Address: qinglan/ui/input-glyph/gamepad/left-stick
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 88920f1d88a08b248822fcf54f297817
+    m_Address: qinglan/ui/input-glyph/gamepad/button-east
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -689,6 +801,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8e0812f9fe2e0cb469bc8ed871ba0c43
     m_Address: qinglan/map/old-court/region/south-guest-court/tile-kit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8e5da375dfd5c4243a3c7cafa9bf0589
+    m_Address: qinglan/ui/input-glyph/focus/ring
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -791,6 +911,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a7a9831cb13f19e4ca44a7f17653bf19
+    m_Address: qinglan/ui/input-glyph/gamepad/dpad
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a8b8cc87071843845b92defa1e9a88d9
     m_Address: qinglan/profile/enemy/wooden-sword-puppet
     m_ReadOnly: 0
@@ -855,6 +983,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b95792df91f7aee4db58f5ccb5d9b7f5
+    m_Address: qinglan/ui/input-glyph/gamepad/right-shoulder
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bcaebc7764318a04298af29406b36e6f
     m_Address: qinglan/hub/meta-node/innate/03/icon
     m_ReadOnly: 0
@@ -865,6 +1001,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bd7a5c1d5641ce24f930f9d9f74738e7
     m_Address: qinglan/skill/base/yellow-talisman/vfx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf47e920ade177e48b39ffc14182953f
+    m_Address: qinglan/ui/input-glyph/mouse/scroll
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -983,8 +1127,24 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ccb5d947d0e06ea449c9c6266f4e275c
+    m_Address: qinglan/ui/input-glyph/gamepad/start
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ccba00f1b2d01624b8462a270c53f4f6
     m_Address: qinglan/collectible/old-court-01/illustration
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd012f744490a3646b083bca3f448163
+    m_Address: qinglan/ui/input-glyph/keyboard/enter
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -1071,6 +1231,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d52b36e1edcc58e479bf877b277ccc7c
+    m_Address: qinglan/ui/input-glyph/keyboard/key-e
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d67570a2b01f7434994d9e9930fde9f2
     m_Address: qinglan/hub/meta-node/mind/03/icon
     m_ReadOnly: 0
@@ -1143,6 +1311,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e9d08626c1a83dd41944708c9f14c627
+    m_Address: qinglan/ui/input-glyph/cursor/pointer
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ea84269a3c662fd41845022c348ff9d4
     m_Address: qinglan/skill/base/zhenyue-seal/vfx
     m_ReadOnly: 0
@@ -1167,8 +1343,24 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eea9b24af7777d44fab56c666e99e17f
+    m_Address: qinglan/ui/input-glyph/keyboard/key-q
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ef520d0b4526b9845b9646a7ad48a7c7
     m_Address: qinglan/hub/meta-node/innate/04/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f040b229f7baab14b987294a18b3f555
+    m_Address: qinglan/ui/input-glyph/mouse/right-button
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

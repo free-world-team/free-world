@@ -1,0 +1,42 @@
+ART-UI-005 第一方矢量制作说明
+
+目标：制作 24 个无文字依赖、无平台品牌的鼠标指针、焦点与输入控件图标，覆盖当前 Demo 的 Gameplay
+和 UI 默认绑定契约。图标只表达物理控件与方向，不拥有命令语义或重绑定真值。
+
+固定顺序：
+
+1. cursor.pointer
+2. focus.ring
+3. keyboard.wasd
+4. keyboard.arrows
+5. keyboard.enter
+6. keyboard.escape
+7. keyboard.key-e
+8. keyboard.key-m
+9. keyboard.key-q
+10. keyboard.page-axis
+11. mouse.left-button
+12. mouse.right-button
+13. mouse.scroll
+14. gamepad.left-stick
+15. gamepad.dpad
+16. gamepad.button-south
+17. gamepad.button-east
+18. gamepad.button-north
+19. gamepad.start
+20. gamepad.select
+21. gamepad.left-shoulder
+22. gamepad.right-shoulder
+23. gamepad.left-trigger
+24. gamepad.right-trigger
+
+视觉与技术约束：
+
+- 每个控件独立输出 512×512 RGBA source，并确定性降采样为 128×128 RGBA runtime Sprite。
+- 每个 final 至少 8 px 透明安全边，四角透明，中心 Pivot，MipMap 关闭，Standalone BC7。
+- 使用深青、米白、青色和金色；禁止精确 P0 危险红和洋红键色。
+- 键帽物理字母 W/A/S/D/E/M/Q 使用第一方线段路径绘制，不加载字体；其余图标使用方向/轮廓表达。
+- 手柄面键使用几何位置 South/East/North，不使用 A/B/X/Y、Xbox、PlayStation 或其他平台商标语言。
+- Debug F2/F3 不进入 Release 图标集；Space 是非主确认备选，正式提示以 Enter/面键 South 为主。
+- 所有 24 个图标在丢弃色相后的灰阶 Hash 仍唯一；不含正文、Logo、水印、品牌或第三方符号。
+- 不使用生成式 AI、外部图像、参考项目素材或第三方资产；仅由仓库脚本的第一方矢量路径栅格化。

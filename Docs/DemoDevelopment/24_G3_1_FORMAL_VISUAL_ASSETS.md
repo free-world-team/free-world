@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 26 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 27 / 27 ART BATCHES; FINAL INTEGRATION PENDING`
 - 日期：2026-08-10
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026/0027
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -80,7 +80,7 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 24 | ART-UI-002 | PASS | 4×4、2048² RGBA UI Atlas；16 个语义 Sprite，8 个 64 px 九宫格 Frame/Panel；EditMode 371/371、PlayMode 17/17、Validation PASS |
 | 25 | ART-UI-003 | PASS | 6 张 2560×1440 master＋1920×1080 RGB 页面背景；左侧 UI 安全区确定性校准；EditMode 374/374、PlayMode 17/17、Validation PASS |
 | 26 | ART-UI-004 | PASS | 4×4、1024² RGBA 通用预警/无障碍图集；8 个形状＋8 个纹理语义 Sprite；EditMode 377/377、PlayMode 17/17、Validation PASS |
-| 27 | ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 27 | ART-UI-005 | PASS | 鼠标指针/焦点、键盘、鼠标和平台中性手柄共 24 个 128² Glyph；EditMode 380/380、PlayMode 17/17、Validation PASS |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -302,3 +302,13 @@ ART-UI-004 为纯 FirstParty 确定性矢量路径栅格资产，不使用 Image
 字节一致。Unity 导入为 16 个 256² 语义 Sprite、BC7、无 MipMap/Border，连续两次 reimport 的 `.meta`
 SHA-256 一致；正式地址为 `qinglan/ui/telegraph-accessibility/atlas`。运行时危险来源到形状/纹理组合、
 低闪与色觉材质参数及实际混战可读性由 G3.1 最终集成/G3.5 关闭。
+
+ART-UI-005 为纯 FirstParty 确定性矢量路径栅格资产，不使用 ImageGen、外部素材、字体或图片参考。
+24 个正式 Glyph 包含鼠标指针与焦点环、WASD/方向键/Enter/Escape/E/M/Q/Page Axis 九种键盘控件、
+鼠标左/右键与滚轮、手柄左摇杆/D-pad/South/East/North/Start/Select/左右肩键/左右扳机。键帽字母由
+第一方线段路径绘制；面键只用方位，不复制平台 A/B/X/Y 或几何品牌。Development-only F2/F3 和次要
+Space 确认不进入 Release 集。每个 Glyph 由 512 RGBA source 确定性降采样为 128 RGBA final；final
+安全边 11—18 px、覆盖率 11.91%—44.25%、四角透明，24 个彩色/灰阶 Hash 均唯一，洋红键色与精确
+P0 危险红均为 0。第二次完整生成的 48/48 source/final 文件 Hash 字节一致。正式地址为
+`qinglan/ui/input-glyph/<device>/<control>`；运行时最后活动设备、重绑定路径到 Glyph 的解析、TMP 提示
+组合与实际手柄复核由 G3.1 最终集成/G3.3 关闭。

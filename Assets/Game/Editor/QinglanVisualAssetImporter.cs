@@ -458,6 +458,49 @@ namespace Game.Editor
         }
     }
 
+    /// <summary>Batchmode entry point for the fixed ART-UI-005 cursor/focus/input glyph set.</summary>
+    public static class QinglanUiGlyphSetImportCommand
+    {
+        private const string Root = "Assets/GameAssets/FirstParty/QinglanDemo/ART-UI-005/final/";
+
+        private static readonly string[] Names =
+        {
+            "cursor.pointer", "focus.ring", "keyboard.wasd", "keyboard.arrows",
+            "keyboard.enter", "keyboard.escape", "keyboard.key-e", "keyboard.key-m",
+            "keyboard.key-q", "keyboard.page-axis", "mouse.left-button", "mouse.right-button",
+            "mouse.scroll", "gamepad.left-stick", "gamepad.dpad", "gamepad.button-south",
+            "gamepad.button-east", "gamepad.button-north", "gamepad.start", "gamepad.select",
+            "gamepad.left-shoulder", "gamepad.right-shoulder", "gamepad.left-trigger", "gamepad.right-trigger"
+        };
+
+        public static void Run()
+        {
+            var exitCode = 0;
+            try
+            {
+                for (var index = 0; index < Names.Length; index++)
+                {
+                    var name = Names[index];
+                    QinglanVisualAssetImporter.ImportSpriteAtlas(
+                        Root + name.Replace('.', '-') + ".png",
+                        "qinglan/ui/input-glyph/" + name.Replace('.', '/'),
+                        1,
+                        1,
+                        128,
+                        "qinglan.presentation.ui.input-glyph." + name,
+                        new Vector2(0.5f, 0.5f));
+                }
+                Debug.Log("[Qinglan UI Glyph Set Import] PASS glyphs=" + Names.Length);
+            }
+            catch (Exception exception)
+            {
+                Debug.LogException(exception);
+                exitCode = 1;
+            }
+            EditorApplication.Exit(exitCode);
+        }
+    }
+
     /// <summary>Batchmode entry point that authors a VisualProfile from an imported Sprite subasset.</summary>
     public static class QinglanVisualProfileCreateCommand
     {
