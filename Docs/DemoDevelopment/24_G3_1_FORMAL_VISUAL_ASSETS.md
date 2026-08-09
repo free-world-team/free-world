@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 6 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 7 / 27 ART BATCHES`
 - 日期：2026-08-09
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -60,7 +60,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 4 | ART-ENEMY-001 | PASS | 6 张 1024×1024 敌人 Atlas、96 个语义 Sprite、6 个正式 VisualProfile；EditMode 307/307、PlayMode 17/17、Validation PASS |
 | 5 | ART-AFFIX-001 | PASS | 狂奔/结界/分裂/震地各 1 张 1024 FirstParty 源图与 512 final；EditMode 310/310、PlayMode 17/17、Validation PASS |
 | 6 | ART-BOSS-001 | PASS | 折枝/听风各 1 张 4096×2048 master、2048×1024 final、32 语义 Sprite 与正式 Profile；EditMode 314/314、PlayMode 17/17、Validation PASS |
-| 7—27 | ART-BOSS-002—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 7 | ART-BOSS-002 | PASS | 折枝/听风各 3 张阶段与 Telegraph Overlay；6 张 2048 源图、6 张 1024 final；EditMode 317/317、PlayMode 17/17、Validation PASS |
+| 8—27 | ART-SKILL-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -97,3 +98,10 @@ ImageGen 非等距留白漏格而 `FAIL` 且未输出，改用 Alpha 行谷＋�
 均非空、四角透明、格内安全边≥12 px、洋红残留为 0；二次后处理 4/4 Hash 字节一致。两个 Profile
 使用 `qinglan.enemy.boss.*` 稳定 ID 和 `down.move`；完整阶段动画与 Telegraph Overlay 由 G3.1 最终
 集成及下一批 ART-BOSS-002 关闭。
+
+ART-BOSS-002 为纯 FirstParty 确定性程序化资产，Seed 固定为 31007，不使用 ImageGen、外部素材或
+图片参考。折枝三阶段分别使用横向试炼长廊/楔形排线、三枚落木目标环、分段八角阵与四根阵桩；听风
+三阶段分别使用斜向冲锋走廊、破碎听风螺旋与残响菱标、交叉誓约通道与中心誓环。六张 1024 final 的
+Alpha≥16 覆盖率为 12.38%—22.81%，四角透明并保留至少 60 px 安全边；两次生成 12/12 Hash 字节一致。
+正式地址为 `qinglan/boss/<zhezhi|tingfeng>/phase-<1|2|3>-overlay`；阶段状态到 Overlay 的运行时映射、
+材质叠加和 Overdraw 压测由 G3.1 最终集成与 G3.5 关闭。

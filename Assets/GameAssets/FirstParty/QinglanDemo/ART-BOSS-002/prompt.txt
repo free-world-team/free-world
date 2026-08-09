@@ -1,0 +1,20 @@
+First-party deterministic construction specification for six Qinglan Demo Boss phase and telegraph overlays.
+
+Create six transparent square overlays without a Boss body, environment, UI frame, text, logo, watermark, or external
+input. Use the approved P0 danger core #E45D45, warning highlight #FFD0A3, deep outline, and restrained Boss-specific
+secondary values. Every overlay must communicate attack direction, occupied area, or phase rule through geometry and
+pattern as well as hue. Keep all visible pixels inside the canvas; glow remains subordinate to opaque boundaries.
+
+Zhezhi Phase 1 Horizontal Trial: a long horizontal two-boundary lane, forward wedge, repeated diagonal timber hatching,
+and two forward chevrons. Zhezhi Phase 2 Falling Wood: three separated elliptical impact targets, each split into four
+arc sectors with one descending branch wedge. Zhezhi Phase 3 Training Formation: one segmented octagonal near-area
+ring with four distinct post-shaped obstacle markers and short inward connectors.
+
+Tingfeng Phase 1 Gate Guard: a diagonal committed charge corridor with two solid boundaries, one large directional
+wedge and three repeated chevrons. Tingfeng Phase 2 Listening Wind: three broken spiral rings, four remnant-sword
+diamonds and two zigzag false-chime marks; the solid/dashed rhythm must survive objective-driven clarity reduction.
+Tingfeng Phase 3 Undying Oath: two crossing double-boundary lanes forming an X, four outward chevrons and one broken
+central oath ring. The X remains readable in grayscale and cannot become a full-screen opaque fill.
+
+Generate one deterministic 2048x2048 RGBA source PNG per overlay, then Lanczos-downsample each to one 1024x1024 RGBA
+runtime PNG. MipMaps remain off. Only runtime final files may enter QinglanDemo-Visual Addressables.

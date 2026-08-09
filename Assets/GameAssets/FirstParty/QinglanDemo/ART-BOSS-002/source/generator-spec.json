@@ -1,0 +1,15 @@
+{
+  "assetId": "ART-BOSS-002",
+  "generator": "Scripts/generate-qinglan-boss-telegraph-overlays.py",
+  "seed": 31007,
+  "sourceSize": 2048,
+  "runtimeSize": 1024,
+  "overlays": [
+    {"name": "zhezhi-phase-1", "sourceFile": "zhezhi-phase-1-horizontal-trial-source.png", "finalFile": "zhezhi-phase-1-horizontal-trial.png", "palette": {"primary": "#E45D45", "highlight": "#FFD0A3", "deep": "#4A211C", "secondary": "#C99555"}},
+    {"name": "zhezhi-phase-2", "sourceFile": "zhezhi-phase-2-falling-wood-source.png", "finalFile": "zhezhi-phase-2-falling-wood.png", "palette": {"primary": "#E45D45", "highlight": "#FFD0A3", "deep": "#4A211C", "secondary": "#B77B49"}},
+    {"name": "zhezhi-phase-3", "sourceFile": "zhezhi-phase-3-training-formation-source.png", "finalFile": "zhezhi-phase-3-training-formation.png", "palette": {"primary": "#E45D45", "highlight": "#FFD0A3", "deep": "#4A211C", "secondary": "#927047"}},
+    {"name": "tingfeng-phase-1", "sourceFile": "tingfeng-phase-1-gate-charge-source.png", "finalFile": "tingfeng-phase-1-gate-charge.png", "palette": {"primary": "#E45D45", "highlight": "#FFD0A3", "deep": "#321F1C", "secondary": "#C99355"}},
+    {"name": "tingfeng-phase-2", "sourceFile": "tingfeng-phase-2-listening-wind-source.png", "finalFile": "tingfeng-phase-2-listening-wind.png", "palette": {"primary": "#E45D45", "highlight": "#FFD0A3", "deep": "#321F1C", "secondary": "#8EA6A0"}},
+    {"name": "tingfeng-phase-3", "sourceFile": "tingfeng-phase-3-undying-oath-source.png", "finalFile": "tingfeng-phase-3-undying-oath.png", "palette": {"primary": "#E45D45", "highlight": "#FFD0A3", "deep": "#321F1C", "secondary": "#A97754"}}
+  ]
+}
