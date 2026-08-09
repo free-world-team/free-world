@@ -15,6 +15,22 @@ MonoBehaviour:
   m_GroupName: QinglanDemo-Audio
   m_GUID: 3ce42102dd829ec4c9ab11018be2d5bd
   m_SerializeEntries:
+  - m_GUID: 03125ccf29e3244458b9022b3b16f64f
+    m_Address: qinglan/audio/weapon/earth-vein-spring-branch
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 045bc26e59b3c2446b6840910e31687b
+    m_Address: qinglan/audio/weapon/talisman-detonation
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2fd1a6dfcf8fb5f49aecdf69179a0cd8
     m_Address: qinglan/audio/player/dash-ready
     m_ReadOnly: 0
@@ -63,6 +79,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 41a226aea4a0a544ea1496e4e1a99443
+    m_Address: qinglan/audio/weapon/mountain-boundary-seal
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 53b60e6304260134897684adb433b0dc
     m_Address: qinglan/audio/ambience/bamboo-leaves
     m_ReadOnly: 0
@@ -103,6 +127,22 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6980cbbd220d18b49a06a8c10baaab64
+    m_Address: qinglan/audio/weapon/lihuo-wheel-cast
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6c7dc8b3135d8474d82d7d44466a11f9
+    m_Address: qinglan/audio/weapon/taiyi-spirit-sealing-array
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6dd3adbcc354f5d48b8cdf161569eaaf
     m_Address: qinglan/audio/ambience/distant-bell
     m_ReadOnly: 0
@@ -113,6 +153,22 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 75018dad5e7048b449544da4e9379cdb
     m_Address: qinglan/audio/player/player-hit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7d55fabaa3750cd48bba5f3fdbe26b89
+    m_Address: qinglan/audio/weapon/vine-propagation
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7ffe281e25c96944f937cf5a2f6b7040
+    m_Address: qinglan/audio/weapon/yufeng-sword-cast
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -137,6 +193,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9009f06f5c559a643a269bb362caff3e
     m_Address: qinglan/audio/player/pickup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92ed3f89dca9b6e4a9ee21ded72b9e5f
+    m_Address: qinglan/audio/weapon/mirror-sea-tide-wheel
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -191,6 +255,22 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b29bd8c776207ee45b838987ef9c3ab6
+    m_Address: qinglan/audio/weapon/yellow-talisman-cast
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3ac8fa0a169e2d4993ff394ef9de332
+    m_Address: qinglan/audio/weapon/zhenyue-countershock
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bce631b4f9022b149973a806f653df6c
     m_Address: qinglan/audio/player/sword-intent-gain
     m_ReadOnly: 0
@@ -207,8 +287,72 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ca5f8ca638a9e614eb26887ffdfac297
+    m_Address: qinglan/audio/weapon/spirit-vine-seed-cast
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cf8f426899e9e6d4fb91178b6bcfb65a
+    m_Address: qinglan/audio/weapon/lihuo-return-explosion
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d19cfd7efe8a1b94db85bf462bbab222
+    m_Address: qinglan/audio/weapon/tide-orb-cast
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc4e845e1e4fdcf449c26f240f9b1073
+    m_Address: qinglan/audio/weapon/qinglan-flowing-shadow-sword
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dfb2e5ad51a86124e9945602887709eb
+    m_Address: qinglan/audio/weapon/tide-phase-shift
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ebaf5e0d9f8434b48a91899b904068f6
+    m_Address: qinglan/audio/weapon/yufeng-return
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: ef87c46839a39d44fbf55a770fdd3b1f
     m_Address: qinglan/audio/music/exploration-strings
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: efd136876032f1949864fab3f583be93
+    m_Address: qinglan/audio/weapon/zhenyue-seal-cast
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f6c72bc869ef7c147811f8c884d9291b
+    m_Address: qinglan/audio/weapon/chilu-hundred-craft-wheel
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release

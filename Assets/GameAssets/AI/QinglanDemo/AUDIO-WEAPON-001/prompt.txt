@@ -1,0 +1,8 @@
+AUDIO-WEAPON-001 first-party procedural synthesis brief
+
+Create eighteen weapon cues grounded in the Demo catalog: six base weapon casts,
+six Evolution identities, and six stable hidden/secondary mechanic cues. Distinguish
+wind blade, talisman, fire wheel, tide orb, mountain seal, and spirit vine families
+without speech. Each cue must fit 0.1-3.0 seconds and preserve enemy telegraph
+headroom. No recordings, samples, voices, references, generative audio models,
+trademarks, or reference-project assets. Source PCM24 WAV; Runtime OGG/Vorbis.
