@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 2,
+  "assetId": "ART-EVENT-001-PROFILES",
+  "owner": "Qinglan Demo Visual Owner",
+  "relativePaths": [
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-EVENT-001/wind-vein-riot-event-vfx-profile.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-EVENT-001/herb-garden-revival-event-vfx-profile.asset",
+    "Assets/GameContent/QinglanDemo/Profiles/Visual/ART-EVENT-001/old-sword-resonance-event-vfx-profile.asset"
+  ],
+  "sourceCategory": "first-party-unity-profiles-derived-from-approved-mixed-source-assets",
+  "tool": "QinglanVisualAssetImporter.CreateVisualProfileAsset",
+  "modelVersion": "Unity 6000.3.20f1; semantic four-frame event importer; EntityKind underlying-value writer",
+  "generatedOrAcquiredAt": "2026-08-09T20:31:33+08:00",
+  "operatorName": "Codex",
+  "promptFile": "Assets/GameAssets/AI/QinglanDemo/ART-EVENT-001/prompt.txt",
+  "seed": "not-applicable-deterministic-profile-authoring",
+  "referenceInputs": [
+    "Assets/GameAssets/AI/QinglanDemo/ART-EVENT-001/final/wind-vein-riot-phase-atlas.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-EVENT-001/final/herb-garden-revival-phase-atlas.png",
+    "Assets/GameAssets/AI/QinglanDemo/ART-EVENT-001/final/old-sword-resonance-phase-atlas.png"
+  ],
+  "referenceRightsConfirmed": true,
+  "humanEdits": [
+    "Bound each stable qinglan.event identity to frame-0 of its approved semantic phase atlas",
+    "Configured all three dynamic event profiles as EntityKind Area with presentation-only scale 3.0, 3.2, and 3.0",
+    "Applied profile scale without changing simulation ranges, event rules, rewards, or gameplay truth",
+    "No new artwork, runtime behavior, or simulation data was added"
+  ],
+  "sourceSha256": {
+    "wind-vein-riot-phase-atlas.png": "cc1895f7c6f01c1f168ea6c4ab75b9fc9e92f43990349eb58355c87b0c82839a",
+    "herb-garden-revival-phase-atlas.png": "93b01bff16d773fbb47e653c6f97a0f9e34efd99b413659c353734055469a7b6",
+    "old-sword-resonance-phase-atlas.png": "cd12d2393f7f6efa8e065164e442163c437f21a8817acc465c2637a9a2867643"
+  },
+  "outputSha256": {
+    "wind-vein-riot-event-vfx-profile.asset": "fb74dded05a0686b0dcdb396a42212e20aa13d53b63c123d58020810eed68f89",
+    "herb-garden-revival-event-vfx-profile.asset": "3737d591c386d8fdccbed016c333fae14ceb8a35d8863f0935e70fee7764be1d",
+    "old-sword-resonance-event-vfx-profile.asset": "2543033cdbe4a05e0998223ad2ef27e3cfa7c8d210049256c719b41d41b3f032"
+  },
+  "licenseOrTermsUrl": "repository://AGENTS.md",
+  "licenseOrTermsSnapshot": "Docs/AssetTerms/2026-08-09-first-party-procedural-rights-review.md",
+  "termsReviewedAt": "2026-08-09",
+  "allowedPlatforms": ["Windows x64", "Steam"],
+  "allowedUses": ["commercial game runtime", "store and marketing screenshots", "internal development and testing"],
+  "commercialUseReviewed": true,
+  "steamDisclosureCategory": "profiles reference three approved mixed-source pre-generated event visuals; no runtime generation",
+  "technicalReviewer": "Codex",
+  "creativeReviewer": "Codex",
+  "rightsReviewer": "Codex",
+  "reviewedAt": "2026-08-09T20:31:33+08:00",
+  "status": "approved-for-release",
+  "notes": "Profiles contain no new artwork. All three use EntityKind.Area and reference only approved ART-EVENT-001 frame-0 Sprite subassets."
+}

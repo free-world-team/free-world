@@ -1,0 +1,754 @@
+fileFormatVersion: 2
+guid: 596e66aebeacc1b4ba8d428321e6bdb5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4649681198484136073
+    second: wind-vein-riot-phase-atlas-master_0
+  - first:
+      213: 410620144266418485
+    second: wind-vein-riot-phase-atlas-master_1
+  - first:
+      213: 8292569703649290822
+    second: wind-vein-riot-phase-atlas-master_2
+  - first:
+      213: -5921951533059852250
+    second: wind-vein-riot-phase-atlas-master_3
+  - first:
+      213: -5199754541886147411
+    second: wind-vein-riot-phase-atlas-master_4
+  - first:
+      213: 1425911463244776355
+    second: wind-vein-riot-phase-atlas-master_5
+  - first:
+      213: 950600264397944063
+    second: wind-vein-riot-phase-atlas-master_6
+  - first:
+      213: 1211203217036695875
+    second: wind-vein-riot-phase-atlas-master_7
+  - first:
+      213: 2497471747591668385
+    second: wind-vein-riot-phase-atlas-master_8
+  - first:
+      213: -505962817485362202
+    second: wind-vein-riot-phase-atlas-master_9
+  - first:
+      213: 4580458185639562142
+    second: wind-vein-riot-phase-atlas-master_10
+  - first:
+      213: -2398453580357224483
+    second: wind-vein-riot-phase-atlas-master_11
+  - first:
+      213: 7911308649326482446
+    second: wind-vein-riot-phase-atlas-master_12
+  - first:
+      213: 7904755598649503129
+    second: wind-vein-riot-phase-atlas-master_13
+  - first:
+      213: -8180948343425745261
+    second: wind-vein-riot-phase-atlas-master_14
+  - first:
+      213: 408520389590797992
+    second: wind-vein-riot-phase-atlas-master_15
+  - first:
+      213: 1156840168090599768
+    second: wind-vein-riot-phase-atlas-master_16
+  - first:
+      213: -4373267712669734442
+    second: wind-vein-riot-phase-atlas-master_17
+  - first:
+      213: 9173242808908939651
+    second: wind-vein-riot-phase-atlas-master_18
+  - first:
+      213: -5024409001332164599
+    second: wind-vein-riot-phase-atlas-master_19
+  - first:
+      213: -3659549721883592148
+    second: wind-vein-riot-phase-atlas-master_20
+  - first:
+      213: 9176642662141743891
+    second: wind-vein-riot-phase-atlas-master_21
+  - first:
+      213: -2829854947411228130
+    second: wind-vein-riot-phase-atlas-master_22
+  - first:
+      213: 4621809399394237927
+    second: wind-vein-riot-phase-atlas-master_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_0
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 462
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77f5a85c593097fb0800000000000000
+      internalID: -4649681198484136073
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_1
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 454
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5399e9c78d0d2b500800000000000000
+      internalID: 410620144266418485
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_2
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 445
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64aae25a530251370800000000000000
+      internalID: 8292569703649290822
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_3
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 432
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62833eed47001dda0800000000000000
+      internalID: -5921951533059852250
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_4
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 435
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da4f6ab2bc2c6d7b0800000000000000
+      internalID: -5199754541886147411
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_5
+      rect:
+        serializedVersion: 2
+        x: 1917
+        y: 420
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a3ccd7cbead9c310800000000000000
+      internalID: 1425911463244776355
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_6
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 104
+        width: 447
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4f4da67e5313d00800000000000000
+      internalID: 950600264397944063
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_7
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 104
+        width: 383
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349584e98ee0fc010800000000000000
+      internalID: 1211203217036695875
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_8
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 104
+        width: 383
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a286cf725dc8a220800000000000000
+      internalID: 2497471747591668385
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_9
+      rect:
+        serializedVersion: 2
+        x: 1124
+        y: 401
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ebaa3a8f757af8f0800000000000000
+      internalID: -505962817485362202
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_10
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 104
+        width: 447
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b8397937e019f30800000000000000
+      internalID: 4580458185639562142
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_11
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 129
+        width: 178
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd73b8c1d2bf6bed0800000000000000
+      internalID: -2398453580357224483
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_12
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 329
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e049497fc4d9acd60800000000000000
+      internalID: 7911308649326482446
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_13
+      rect:
+        serializedVersion: 2
+        x: 814
+        y: 175
+        width: 178
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99da8c5f55553bd60800000000000000
+      internalID: 7904755598649503129
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_14
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 150
+        width: 120
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39eb94083de677e80800000000000000
+      internalID: -8180948343425745261
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_15
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 142
+        width: 119
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ae4011412b5ba500800000000000000
+      internalID: 408520389590797992
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_16
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 168
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85181f0f00ced0010800000000000000
+      internalID: 1156840168090599768
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_17
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 96
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d9a2a69f280f43c0800000000000000
+      internalID: -4373267712669734442
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_18
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 62
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3818c679bb7ed4f70800000000000000
+      internalID: 9173242808908939651
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_19
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 77
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 908325d32a6b54ab0800000000000000
+      internalID: -5024409001332164599
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_20
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 65
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2abf35caeaa63dc0800000000000000
+      internalID: -3659549721883592148
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_21
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 35
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31357ab91ebf95f70800000000000000
+      internalID: 9176642662141743891
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_22
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 43
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a0ca52be55ab8d0800000000000000
+      internalID: -2829854947411228130
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wind-vein-riot-phase-atlas-master_23
+      rect:
+        serializedVersion: 2
+        x: 1869
+        y: 52
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ed747e4927f32040800000000000000
+      internalID: 4621809399394237927
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      wind-vein-riot-phase-atlas-master_0: -4649681198484136073
+      wind-vein-riot-phase-atlas-master_1: 410620144266418485
+      wind-vein-riot-phase-atlas-master_10: 4580458185639562142
+      wind-vein-riot-phase-atlas-master_11: -2398453580357224483
+      wind-vein-riot-phase-atlas-master_12: 7911308649326482446
+      wind-vein-riot-phase-atlas-master_13: 7904755598649503129
+      wind-vein-riot-phase-atlas-master_14: -8180948343425745261
+      wind-vein-riot-phase-atlas-master_15: 408520389590797992
+      wind-vein-riot-phase-atlas-master_16: 1156840168090599768
+      wind-vein-riot-phase-atlas-master_17: -4373267712669734442
+      wind-vein-riot-phase-atlas-master_18: 9173242808908939651
+      wind-vein-riot-phase-atlas-master_19: -5024409001332164599
+      wind-vein-riot-phase-atlas-master_2: 8292569703649290822
+      wind-vein-riot-phase-atlas-master_20: -3659549721883592148
+      wind-vein-riot-phase-atlas-master_21: 9176642662141743891
+      wind-vein-riot-phase-atlas-master_22: -2829854947411228130
+      wind-vein-riot-phase-atlas-master_23: 4621809399394237927
+      wind-vein-riot-phase-atlas-master_3: -5921951533059852250
+      wind-vein-riot-phase-atlas-master_4: -5199754541886147411
+      wind-vein-riot-phase-atlas-master_5: 1425911463244776355
+      wind-vein-riot-phase-atlas-master_6: 950600264397944063
+      wind-vein-riot-phase-atlas-master_7: 1211203217036695875
+      wind-vein-riot-phase-atlas-master_8: 2497471747591668385
+      wind-vein-riot-phase-atlas-master_9: -505962817485362202
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

@@ -1,0 +1,302 @@
+fileFormatVersion: 2
+guid: c9f90307425ddbf428f42860922418ed
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5505697372057259751
+    second: wind-vein-riot-phase-atlas_0
+  - first:
+      213: 3256164991724610659
+    second: wind-vein-riot-phase-atlas_1
+  - first:
+      213: 1392800665223174088
+    second: wind-vein-riot-phase-atlas_2
+  - first:
+      213: -3158427070629963548
+    second: wind-vein-riot-phase-atlas_3
+  - first:
+      213: 5571695499668534952
+    second: wind-vein-riot-phase-atlas_4
+  - first:
+      213: 8049905087113318028
+    second: wind-vein-riot-phase-atlas_5
+  - first:
+      213: -4068653763843631477
+    second: wind-vein-riot-phase-atlas_6
+  - first:
+      213: 4926093324755741690
+    second: wind-vein-riot-phase-atlas_7
+  - first:
+      213: -4446242566844507023
+    second: wind-vein-riot-phase-atlas_8
+  - first:
+      213: 1239621707803559431
+    second: wind-vein-riot-phase-atlas_9
+  - first:
+      213: -7394498669551195721
+    second: wind-vein-riot-phase-atlas_10
+  - first:
+      213: 4717295992824729751
+    second: wind-vein-riot-phase-atlas_11
+  - first:
+      213: -7073936992564001892
+    second: wind-vein-riot-phase-atlas_12
+  - first:
+      213: 8311300910797216341
+    second: wind-vein-riot-phase-atlas_13
+  - first:
+      213: -4829081550143570449
+    second: wind-vein-riot-phase-atlas_14
+  - first:
+      213: 7209494120933878864
+    second: wind-vein-riot-phase-atlas_15
+  - first:
+      213: -4018195498507432697
+    second: wind-vein-riot-phase-atlas_16
+  - first:
+      213: -5076577159550733196
+    second: qinglan.presentation.event.old_court.wind_vein_riot.frame-0
+  - first:
+      213: -1736087763682656689
+    second: qinglan.presentation.event.old_court.wind_vein_riot.frame-1
+  - first:
+      213: -5411900488123283225
+    second: qinglan.presentation.event.old_court.wind_vein_riot.frame-2
+  - first:
+      213: 8784202779575876272
+    second: qinglan.presentation.event.old_court.wind_vein_riot.frame-3
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.presentation.event.old_court.wind_vein_riot.frame-0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 474fd1268ff5c89b0800000000000000
+      internalID: -5076577159550733196
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.event.old_court.wind_vein_riot.frame-1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4efaca806d28e7e0800000000000000
+      internalID: -1736087763682656689
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.event.old_court.wind_vein_riot.frame-2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e806a5fd2115e4b0800000000000000
+      internalID: -5411900488123283225
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.event.old_court.wind_vein_riot.frame-3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ba7e9723e1c7e970800000000000000
+      internalID: 8784202779575876272
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      qinglan.presentation.event.old_court.wind_vein_riot.frame-0: -5076577159550733196
+      qinglan.presentation.event.old_court.wind_vein_riot.frame-1: -1736087763682656689
+      qinglan.presentation.event.old_court.wind_vein_riot.frame-2: -5411900488123283225
+      qinglan.presentation.event.old_court.wind_vein_riot.frame-3: 8784202779575876272
+      wind-vein-riot-phase-atlas_0: -5505697372057259751
+      wind-vein-riot-phase-atlas_1: 3256164991724610659
+      wind-vein-riot-phase-atlas_10: -7394498669551195721
+      wind-vein-riot-phase-atlas_11: 4717295992824729751
+      wind-vein-riot-phase-atlas_12: -7073936992564001892
+      wind-vein-riot-phase-atlas_13: 8311300910797216341
+      wind-vein-riot-phase-atlas_14: -4829081550143570449
+      wind-vein-riot-phase-atlas_15: 7209494120933878864
+      wind-vein-riot-phase-atlas_16: -4018195498507432697
+      wind-vein-riot-phase-atlas_2: 1392800665223174088
+      wind-vein-riot-phase-atlas_3: -3158427070629963548
+      wind-vein-riot-phase-atlas_4: 5571695499668534952
+      wind-vein-riot-phase-atlas_5: 8049905087113318028
+      wind-vein-riot-phase-atlas_6: -4068653763843631477
+      wind-vein-riot-phase-atlas_7: 4926093324755741690
+      wind-vein-riot-phase-atlas_8: -4446242566844507023
+      wind-vein-riot-phase-atlas_9: 1239621707803559431
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

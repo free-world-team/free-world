@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc3d8d7825f0d474bb8ca8654cd640c5, type: 3}
+  m_Name: wind-vein-riot-event-vfx-profile
+  m_EditorClassIdentifier: Game.Presentation::Game.Presentation.VisualProfile
+  entityKind: 3
+  stableId: qinglan.event.wind_vein_riot
+  sprite: {fileID: -5076577159550733196, guid: c9f90307425ddbf428f42860922418ed, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  size: {x: 3, y: 3}

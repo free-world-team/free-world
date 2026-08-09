@@ -251,6 +251,10 @@ namespace Game.Editor
                 return prefix + "." + states[column];
             }
 
+            if (rows == 1 && columns == 4 &&
+                prefix.Contains(".event.", StringComparison.Ordinal))
+                return prefix + ".frame-" + column.ToString(CultureInfo.InvariantCulture);
+
             if (rows == 4 && columns == 6)
             {
                 var directions = new[] { "down", "left", "right", "up" };

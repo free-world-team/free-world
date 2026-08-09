@@ -271,6 +271,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4842f3bc8378ded40a93067ef40bdca8
+    m_Address: qinglan/profile/event/wind-vein-riot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4a535121520e97740aa0fd471013ea82
     m_Address: qinglan/map/old-court/region/west-herb-garden/tile-kit
     m_ReadOnly: 0
@@ -383,6 +391,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 67889ce848d4ba04b91d5064e76e1d4b
+    m_Address: qinglan/event/herb-garden-revival/phase-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6c1995d93e8419b42a94e2a45fa8a4b9
     m_Address: qinglan/boss/zhezhi/animation-atlas
     m_ReadOnly: 0
@@ -431,6 +447,22 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 891fd70fadc55c04498927765340a0af
+    m_Address: qinglan/profile/event/herb-garden-revival
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89a7fbe8e90b8ca47ac3b9366e3c7333
+    m_Address: qinglan/profile/event/old-sword-resonance
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8ca80b6bb92c85d4ca50eddb46944859
     m_Address: qinglan/pickup/riding-wind-feather/sprite
     m_ReadOnly: 0
@@ -441,6 +473,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8e0812f9fe2e0cb469bc8ed871ba0c43
     m_Address: qinglan/map/old-court/region/south-guest-court/tile-kit
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8f0456d1e28d87a48961bd8fd425364a
+    m_Address: qinglan/event/old-sword-resonance/phase-atlas
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -609,6 +649,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c9de74983bbf341419f5e969caa3378c
     m_Address: qinglan/relic/broken-sword-tassel/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9f90307425ddbf428f42860922418ed
+    m_Address: qinglan/event/wind-vein-riot/phase-atlas
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

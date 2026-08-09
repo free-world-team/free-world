@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 15 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 16 / 27 ART BATCHES`
 - 日期：2026-08-09
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -69,7 +69,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 13 | ART-MAP-001 | PASS | 五区域各 1 张 4096×1024 working master、2048×512 final、16 个 256×256 Tile；EditMode 337/337、PlayMode 17/17、Validation PASS |
 | 14 | ART-MAP-002 | PASS | 五区域各 1 张 4096×1024 working master、2048×512 final、16 个 256×256 Prop；EditMode 340/340、PlayMode 17/17、Validation PASS |
 | 15 | ART-OBJECTIVE-001 | PASS | 听风/引风/止衡三座风脉台各 1 张 3×1、960×320 三态 Atlas；EditMode 343/343、PlayMode 17/17、Validation PASS |
-| 16—27 | ART-EVENT-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 16 | ART-EVENT-001 | PASS | 风脉暴动/药圃复苏/旧剑共鸣各 1 张 4×1、1024×256 四相 Atlas＋Area Profile；EditMode 347/347、PlayMode 17/17、Validation PASS |
+| 17—27 | ART-LANDMARK-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -182,3 +183,12 @@ ART-OBJECTIVE-001 为听风台、引风台、止衡台分别生成 Idle/Active/C
 高于 Idle，洋红残留和精确 P0 危险红为 0。完整链第二次处理 12/12 Hash 字节一致。正式地址为
 `qinglan/objective/wind-altar/<listen|guide|stop-balance>/state-atlas`；状态机到 Sprite 切换由 G3.1
 最终集成关闭。
+
+ART-EVENT-001 使用 mixed-source 生产：风脉暴动四叶风结、药圃复苏普通三株生长簇、旧剑共鸣三枚断剑
+残片分别执行一次无图片输入的 ImageGen 调用；第一方确定性脚本再为三者添加四相风环/生长根脉/剑鸣
+回声动态层。药圃初版增长环与第二版根脉射线分别因安全边为 0 在处理门禁判定 `FAIL`，回收半径和中心
+后 final 安全边为 21 px。三套批准内容派生 2048² source master、2048×512 phase master 和
+1024×256 final；十二个 256×256 帧均唯一，安全边≥14 px，覆盖率 20.73%—28.90%，洋红残留和精确
+P0 危险红为 0，完整链第二次处理 12/12 Hash 字节一致。三个 Area Profile 使用稳定 Event ContentId，
+正式地址为 `qinglan/event/<event>/phase-atlas` 和 `qinglan/profile/event/<event>`；事件状态/相位驱动由
+G3.1 最终集成关闭。

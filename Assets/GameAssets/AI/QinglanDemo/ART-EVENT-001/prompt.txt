@@ -1,0 +1,26 @@
+ART-EVENT-001 — three independent text-only built-in ImageGen calls plus deterministic first-party phase overlays
+Use case: stylized-concept
+Asset type: commercial Unity 2D dynamic map-event VFX core for Qinglan Old Court
+Shared layout: one isolated compact event core, centered with at least 18 percent clearance
+Shared camera/style: orthographic three-quarter top-down, hand-painted Chinese-fantasy game VFX anchor, low saturation, strong readable silhouette
+Shared backdrop: flat pure chroma magenta #FF00FF; no ground, shadow, scenery, frame, caption, UI, or opaque magic backdrop
+Shared exclusions: no characters, creatures, faces, altar, landmark, readable text, calligraphy, numbers, logo, watermark, brand, religious imagery, fire, lightning, danger red/orange, crop, or duplicate variants
+
+CALL 1 — wind-vein-riot
+Core: four broken crescent-shaped dark-stone vanes around an open center, aged bronze clamps, muted-teal crystal beads and short pale-cyan wind wisps.
+Avoid: full-screen wind bands; the deterministic processor authors the four loop phases.
+
+CALL 2 — herb-garden-revival
+Core: three ordinary broad celadon herb sprouts from a shallow broken stone-and-soil bed, pale intertwined roots, moisture beads and young curled leaves.
+Avoid: flower, rare glowing specimen, landmark or giant tree; this is a repeatable regional event.
+
+CALL 3 — old-sword-resonance
+Core: three old broken blunt practice-sword fragments in a loose triangular orbit around a cracked stone resonance ring, restrained teal cloth remnants and close pale-cyan echo wisps.
+Avoid: complete usable weapon, legendary loot, blood, treasure display or full-screen resonance rings.
+
+FIRST-PARTY PHASE OVERLAYS
+`Scripts/process-qinglan-event-visuals.py` adds four deterministic frames per core. Wind Vein Riot receives rotating wind arcs and beads; Herb Garden Revival receives expanding growth rings, root rays and leaf markers; Old Sword Resonance receives echo arcs, triangular resonance lines and phase beads. No random input is used.
+
+Input images for all ImageGen calls: none.
+Reference images for all ImageGen calls: none.
+Requested in-image text for all ImageGen calls: none.
