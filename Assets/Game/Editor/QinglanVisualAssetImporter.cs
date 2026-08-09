@@ -344,6 +344,19 @@ namespace Game.Editor
                 return prefix + "." + names[row * columns + column];
             }
 
+            if (rows == 4 && columns == 4 &&
+                prefix.EndsWith(".ui.telegraph-accessibility", StringComparison.Ordinal))
+            {
+                var names = new[]
+                {
+                    "shape.area-circle", "shape.directional-line", "shape.fan-cone", "shape.point-impact",
+                    "shape.cross-lanes", "shape.hazard-ring", "shape.sweep-arc", "shape.direction-arrow",
+                    "texture.diagonal-stripes", "texture.crosshatch", "texture.dots", "texture.chevrons",
+                    "texture.radial-spokes", "texture.grid", "texture.broken-bars", "texture.concentric"
+                };
+                return prefix + "." + names[row * columns + column];
+            }
+
             if (rows == 4 && columns == 6)
             {
                 var directions = new[] { "down", "left", "right", "up" };

@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 25 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 26 / 27 ART BATCHES`
 - 日期：2026-08-10
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026/0027
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -79,7 +79,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 23 | ART-UI-001 | PASS | 标题主视觉/Logo 安全背景各 1 张 4096×2304 master＋2560×1440 final，Runtime 2048×1152；EditMode 368/368、PlayMode 17/17、Validation PASS |
 | 24 | ART-UI-002 | PASS | 4×4、2048² RGBA UI Atlas；16 个语义 Sprite，8 个 64 px 九宫格 Frame/Panel；EditMode 371/371、PlayMode 17/17、Validation PASS |
 | 25 | ART-UI-003 | PASS | 6 张 2560×1440 master＋1920×1080 RGB 页面背景；左侧 UI 安全区确定性校准；EditMode 374/374、PlayMode 17/17、Validation PASS |
-| 26—27 | ART-UI-004—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 26 | ART-UI-004 | PASS | 4×4、1024² RGBA 通用预警/无障碍图集；8 个形状＋8 个纹理语义 Sprite；EditMode 377/377、PlayMode 17/17、Validation PASS |
+| 27 | ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -291,3 +292,13 @@ ART-UI-003 使用 mixed-source 流程，为角色选择、地图选择、构筑�
 第二轮 12/12 master/final Hash 字节一致。正式地址为
 `qinglan/ui/page-background/<character-select|map-select|loadout|choice|hub|story-result>`；玩家可见文字、
 页面状态映射和实际 1080p/三档缩放截图仍由 G3.1 最终集成/G3.3 接入。
+
+ART-UI-004 为纯 FirstParty 确定性矢量路径栅格资产，不使用 ImageGen、外部素材、字体或图片参考。
+4×4 图集前两行提供圆形范围、定向通道、扇形、落点、交叉通道、危险环、扫掠弧和方向箭头八种通用
+预警形状；后两行提供斜纹、交叉纹、点阵、折线、辐条、网格、断条和同心边界八种中性可着色纹理。
+首版扇形 source 安全边仅 21 px，在生成门禁判定 `FAIL`；缩小半径后，2048 source 与 1024 final 的
+安全边分别为 45—95/22—47 px，final 覆盖率 5.74%—43.99%，四角透明，16 格彩色/灰阶 Hash 均唯一。
+精确 P0 危险红只存在于前八个形状通道，纹理通道保持中性；两次批准生成的 source/final 文件 Hash
+字节一致。Unity 导入为 16 个 256² 语义 Sprite、BC7、无 MipMap/Border，连续两次 reimport 的 `.meta`
+SHA-256 一致；正式地址为 `qinglan/ui/telegraph-accessibility/atlas`。运行时危险来源到形状/纹理组合、
+低闪与色觉材质参数及实际混战可读性由 G3.1 最终集成/G3.5 关闭。

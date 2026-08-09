@@ -1,0 +1,39 @@
+{
+  "assetId": "ART-UI-004",
+  "seed": 31026,
+  "sourceSize": [2048, 2048],
+  "finalSize": [1024, 1024],
+  "grid": [4, 4],
+  "sourceCellSize": 512,
+  "finalCellSize": 256,
+  "spriteOrder": [
+    "shape.area-circle",
+    "shape.directional-line",
+    "shape.fan-cone",
+    "shape.point-impact",
+    "shape.cross-lanes",
+    "shape.hazard-ring",
+    "shape.sweep-arc",
+    "shape.direction-arrow",
+    "texture.diagonal-stripes",
+    "texture.crosshatch",
+    "texture.dots",
+    "texture.chevrons",
+    "texture.radial-spokes",
+    "texture.grid",
+    "texture.broken-bars",
+    "texture.concentric"
+  ],
+  "palette": {
+    "danger": "#E45D45",
+    "dangerEdge": "#FFD0A3",
+    "deep": "#0C252C",
+    "ivory": "#F4EFD8",
+    "teal": "#59C7C1"
+  },
+  "shapeChannels": 8,
+  "neutralTextureChannels": 8,
+  "minimumFinalSafeMargin": 20,
+  "embeddedText": false,
+  "externalReferences": []
+}

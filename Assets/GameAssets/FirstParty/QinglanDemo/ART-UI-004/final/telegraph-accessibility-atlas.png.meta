@@ -1,0 +1,774 @@
+fileFormatVersion: 2
+guid: d1f5f0079c8487248b77b2e6bb74fe08
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7455085138037466244
+    second: telegraph-accessibility-atlas_0
+  - first:
+      213: -7633909851303096470
+    second: telegraph-accessibility-atlas_1
+  - first:
+      213: -7521578757287052103
+    second: telegraph-accessibility-atlas_2
+  - first:
+      213: -7622079611989238390
+    second: telegraph-accessibility-atlas_3
+  - first:
+      213: 9043439307408837253
+    second: telegraph-accessibility-atlas_4
+  - first:
+      213: -9057464636686043423
+    second: telegraph-accessibility-atlas_5
+  - first:
+      213: -2531153682043494296
+    second: telegraph-accessibility-atlas_6
+  - first:
+      213: 1572947206145759976
+    second: telegraph-accessibility-atlas_7
+  - first:
+      213: -5469662583169307092
+    second: telegraph-accessibility-atlas_8
+  - first:
+      213: 331439502000477967
+    second: telegraph-accessibility-atlas_9
+  - first:
+      213: 7642049667213623840
+    second: telegraph-accessibility-atlas_10
+  - first:
+      213: -8357152362466946714
+    second: telegraph-accessibility-atlas_11
+  - first:
+      213: -1929822425928564439
+    second: telegraph-accessibility-atlas_12
+  - first:
+      213: 5649835195472780446
+    second: telegraph-accessibility-atlas_13
+  - first:
+      213: 2654925783648536395
+    second: telegraph-accessibility-atlas_14
+  - first:
+      213: 7397608680154888856
+    second: telegraph-accessibility-atlas_15
+  - first:
+      213: 3736715026544215678
+    second: telegraph-accessibility-atlas_16
+  - first:
+      213: -4695440562407758290
+    second: telegraph-accessibility-atlas_17
+  - first:
+      213: 4995877777611902392
+    second: telegraph-accessibility-atlas_18
+  - first:
+      213: 649113441673113137
+    second: telegraph-accessibility-atlas_19
+  - first:
+      213: -2693783675054478057
+    second: telegraph-accessibility-atlas_20
+  - first:
+      213: -3015949279654011377
+    second: telegraph-accessibility-atlas_21
+  - first:
+      213: 2719880937985577543
+    second: telegraph-accessibility-atlas_22
+  - first:
+      213: 2236345006196733099
+    second: telegraph-accessibility-atlas_23
+  - first:
+      213: 9074148532723791991
+    second: telegraph-accessibility-atlas_24
+  - first:
+      213: -6035259406593323007
+    second: telegraph-accessibility-atlas_25
+  - first:
+      213: 2849196007168591712
+    second: telegraph-accessibility-atlas_26
+  - first:
+      213: -8204732483769126762
+    second: telegraph-accessibility-atlas_27
+  - first:
+      213: -1980226499857681601
+    second: telegraph-accessibility-atlas_28
+  - first:
+      213: 8863582703121911520
+    second: telegraph-accessibility-atlas_29
+  - first:
+      213: 9055351537319537752
+    second: telegraph-accessibility-atlas_30
+  - first:
+      213: 1867518830034714580
+    second: telegraph-accessibility-atlas_31
+  - first:
+      213: 201231386070109435
+    second: telegraph-accessibility-atlas_32
+  - first:
+      213: -6894691263547635753
+    second: telegraph-accessibility-atlas_33
+  - first:
+      213: -7541550885617020756
+    second: telegraph-accessibility-atlas_34
+  - first:
+      213: 3579845496823886884
+    second: telegraph-accessibility-atlas_35
+  - first:
+      213: -1264515851933037217
+    second: telegraph-accessibility-atlas_36
+  - first:
+      213: -943488248836010219
+    second: telegraph-accessibility-atlas_37
+  - first:
+      213: -5471081089889512748
+    second: telegraph-accessibility-atlas_38
+  - first:
+      213: -1947052580001554220
+    second: telegraph-accessibility-atlas_39
+  - first:
+      213: -1498335253061442663
+    second: telegraph-accessibility-atlas_40
+  - first:
+      213: -5332846483256228521
+    second: telegraph-accessibility-atlas_41
+  - first:
+      213: 1793021679067338211
+    second: telegraph-accessibility-atlas_42
+  - first:
+      213: -6170186314844130862
+    second: telegraph-accessibility-atlas_43
+  - first:
+      213: -3349786563742709235
+    second: telegraph-accessibility-atlas_44
+  - first:
+      213: -3402710658876533007
+    second: telegraph-accessibility-atlas_45
+  - first:
+      213: -77365976799744291
+    second: telegraph-accessibility-atlas_46
+  - first:
+      213: 807721867464932088
+    second: telegraph-accessibility-atlas_47
+  - first:
+      213: 2249521139013357948
+    second: telegraph-accessibility-atlas_48
+  - first:
+      213: 7778457835546751753
+    second: telegraph-accessibility-atlas_49
+  - first:
+      213: -1957668895208989690
+    second: telegraph-accessibility-atlas_50
+  - first:
+      213: 7829470201296192275
+    second: telegraph-accessibility-atlas_51
+  - first:
+      213: -4074402289135797993
+    second: telegraph-accessibility-atlas_52
+  - first:
+      213: -3194953607500387220
+    second: telegraph-accessibility-atlas_53
+  - first:
+      213: 6370239459425980120
+    second: telegraph-accessibility-atlas_54
+  - first:
+      213: -7938738247577269557
+    second: telegraph-accessibility-atlas_55
+  - first:
+      213: -2556929712552631371
+    second: telegraph-accessibility-atlas_56
+  - first:
+      213: -4317665764790664050
+    second: telegraph-accessibility-atlas_57
+  - first:
+      213: 3734305312894698749
+    second: telegraph-accessibility-atlas_58
+  - first:
+      213: 4039092472059764463
+    second: telegraph-accessibility-atlas_59
+  - first:
+      213: 7186152296147475273
+    second: telegraph-accessibility-atlas_60
+  - first:
+      213: -1298724497887652411
+    second: telegraph-accessibility-atlas_61
+  - first:
+      213: 1500914508185404622
+    second: telegraph-accessibility-atlas_62
+  - first:
+      213: -5456170052221517758
+    second: telegraph-accessibility-atlas_63
+  - first:
+      213: -5006500636156778109
+    second: telegraph-accessibility-atlas_64
+  - first:
+      213: -2597887132847841738
+    second: telegraph-accessibility-atlas_65
+  - first:
+      213: -1154580507584081016
+    second: telegraph-accessibility-atlas_66
+  - first:
+      213: -4643343001686840445
+    second: telegraph-accessibility-atlas_67
+  - first:
+      213: 8195476258081461440
+    second: telegraph-accessibility-atlas_68
+  - first:
+      213: -7212314072471029268
+    second: telegraph-accessibility-atlas_69
+  - first:
+      213: -5851991292513885611
+    second: telegraph-accessibility-atlas_70
+  - first:
+      213: 4536639592866067159
+    second: telegraph-accessibility-atlas_71
+  - first:
+      213: 2358542705823974640
+    second: telegraph-accessibility-atlas_72
+  - first:
+      213: 2054201815341453885
+    second: telegraph-accessibility-atlas_73
+  - first:
+      213: 117631736174771995
+    second: telegraph-accessibility-atlas_74
+  - first:
+      213: -4364758112599312294
+    second: telegraph-accessibility-atlas_75
+  - first:
+      213: -1211654291013904089
+    second: telegraph-accessibility-atlas_76
+  - first:
+      213: -6000387490845727753
+    second: telegraph-accessibility-atlas_77
+  - first:
+      213: -2464368138798281427
+    second: telegraph-accessibility-atlas_78
+  - first:
+      213: -391560708677996853
+    second: telegraph-accessibility-atlas_79
+  - first:
+      213: -2462044288682019054
+    second: telegraph-accessibility-atlas_80
+  - first:
+      213: -2750443570924996959
+    second: telegraph-accessibility-atlas_81
+  - first:
+      213: -5721051072467199649
+    second: telegraph-accessibility-atlas_82
+  - first:
+      213: 4552756386146756107
+    second: telegraph-accessibility-atlas_83
+  - first:
+      213: -6071102026260351692
+    second: telegraph-accessibility-atlas_84
+  - first:
+      213: 8279032979460042447
+    second: telegraph-accessibility-atlas_85
+  - first:
+      213: 7428960278878086140
+    second: telegraph-accessibility-atlas_86
+  - first:
+      213: -5351577921618519910
+    second: telegraph-accessibility-atlas_87
+  - first:
+      213: -999779303305120459
+    second: telegraph-accessibility-atlas_88
+  - first:
+      213: 1464161475409506894
+    second: telegraph-accessibility-atlas_89
+  - first:
+      213: 1140216600744079909
+    second: telegraph-accessibility-atlas_90
+  - first:
+      213: -1480406372667385798
+    second: telegraph-accessibility-atlas_91
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 128
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 25
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.shape.area-circle
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d55ab0a7adb42e4687d104d34cf5dfd
+      internalID: -1389883442
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.shape.directional-line
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf471b4fcf13e8340a005c672569bb8f
+      internalID: 287913161
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.shape.fan-cone
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f33364a0fa5a8346afa00f0b124e9b4
+      internalID: 1549512984
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.shape.point-impact
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 768
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc121d5124671a43b76e86d570f7892
+      internalID: -482568280
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.shape.cross-lanes
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d411cd39b0c7e8b4b9648ed1cd1c2d2f
+      internalID: -2015798607
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.shape.hazard-ring
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3325d5ee09f44a4a84aa509547eb35d
+      internalID: 151941141
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.shape.sweep-arc
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c9fcd46241c5f499851cc4e9439bfb
+      internalID: 911345749
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.shape.direction-arrow
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 512
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6966dfc66b3168542a74c79b608c7b0a
+      internalID: 281843620
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.texture.diagonal-stripes
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fc8b761a0997ab46856eacc5ed40c39
+      internalID: -839632865
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.texture.crosshatch
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 011e07b49a8810f49ba6714be4900f98
+      internalID: -519706590
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.texture.dots
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc9f831a2f23e44e8efa2bee0877fea
+      internalID: 831059386
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.texture.chevrons
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 256
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0dcd304a983a584d89c9162a5e3855c
+      internalID: -886684408
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.texture.radial-spokes
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59b57550d9504246b2576487dd33a2c
+      internalID: -654328054
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.texture.grid
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcef3b306e56630479a12341f2ac33fc
+      internalID: 658169617
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.texture.broken-bars
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32e216bda0fc6884d8f1af475313facb
+      internalID: -1973346399
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: qinglan.presentation.ui.telegraph-accessibility.texture.concentric
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 256
+        height: 256
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96fe6440653c1ab4fb82ffcc48565554
+      internalID: 1610812732
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID: a4d8ea03dfa7829418c66c96e2133984
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      qinglan.presentation.ui.telegraph-accessibility.shape.area-circle: -1389883442
+      qinglan.presentation.ui.telegraph-accessibility.shape.cross-lanes: -2015798607
+      qinglan.presentation.ui.telegraph-accessibility.shape.direction-arrow: 281843620
+      qinglan.presentation.ui.telegraph-accessibility.shape.directional-line: 287913161
+      qinglan.presentation.ui.telegraph-accessibility.shape.fan-cone: 1549512984
+      qinglan.presentation.ui.telegraph-accessibility.shape.hazard-ring: 151941141
+      qinglan.presentation.ui.telegraph-accessibility.shape.point-impact: -482568280
+      qinglan.presentation.ui.telegraph-accessibility.shape.sweep-arc: 911345749
+      qinglan.presentation.ui.telegraph-accessibility.texture.broken-bars: -1973346399
+      qinglan.presentation.ui.telegraph-accessibility.texture.chevrons: -886684408
+      qinglan.presentation.ui.telegraph-accessibility.texture.concentric: 1610812732
+      qinglan.presentation.ui.telegraph-accessibility.texture.crosshatch: -519706590
+      qinglan.presentation.ui.telegraph-accessibility.texture.diagonal-stripes: -839632865
+      qinglan.presentation.ui.telegraph-accessibility.texture.dots: 831059386
+      qinglan.presentation.ui.telegraph-accessibility.texture.grid: 658169617
+      qinglan.presentation.ui.telegraph-accessibility.texture.radial-spokes: -654328054
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

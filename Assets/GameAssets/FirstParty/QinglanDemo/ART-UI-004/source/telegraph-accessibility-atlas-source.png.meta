@@ -1,0 +1,2522 @@
+fileFormatVersion: 2
+guid: 64f8c5c948ff26b4888490ae00a1fdd9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3946883781030392252
+    second: telegraph-accessibility-atlas-source_0
+  - first:
+      213: -8876248459451169064
+    second: telegraph-accessibility-atlas-source_1
+  - first:
+      213: -620079461525430324
+    second: telegraph-accessibility-atlas-source_2
+  - first:
+      213: -7569648256405924464
+    second: telegraph-accessibility-atlas-source_3
+  - first:
+      213: -4660096854481369820
+    second: telegraph-accessibility-atlas-source_4
+  - first:
+      213: -6528177634397879729
+    second: telegraph-accessibility-atlas-source_5
+  - first:
+      213: 7316029868729067990
+    second: telegraph-accessibility-atlas-source_6
+  - first:
+      213: -313551469445560850
+    second: telegraph-accessibility-atlas-source_7
+  - first:
+      213: 6734865217426661762
+    second: telegraph-accessibility-atlas-source_8
+  - first:
+      213: 4425388996044144137
+    second: telegraph-accessibility-atlas-source_9
+  - first:
+      213: 2882006429228152431
+    second: telegraph-accessibility-atlas-source_10
+  - first:
+      213: -6049022723771013821
+    second: telegraph-accessibility-atlas-source_11
+  - first:
+      213: -4497975077379729781
+    second: telegraph-accessibility-atlas-source_12
+  - first:
+      213: -8866334728867508609
+    second: telegraph-accessibility-atlas-source_13
+  - first:
+      213: -1661089409712968871
+    second: telegraph-accessibility-atlas-source_14
+  - first:
+      213: 1677517867822575567
+    second: telegraph-accessibility-atlas-source_15
+  - first:
+      213: -9036358455061225789
+    second: telegraph-accessibility-atlas-source_16
+  - first:
+      213: 1240616725407096584
+    second: telegraph-accessibility-atlas-source_17
+  - first:
+      213: -1694460887547676826
+    second: telegraph-accessibility-atlas-source_18
+  - first:
+      213: -4400342532552265640
+    second: telegraph-accessibility-atlas-source_19
+  - first:
+      213: -887414883017169530
+    second: telegraph-accessibility-atlas-source_20
+  - first:
+      213: 2737150359786783951
+    second: telegraph-accessibility-atlas-source_21
+  - first:
+      213: -3207963240254420572
+    second: telegraph-accessibility-atlas-source_22
+  - first:
+      213: -6408503898498848264
+    second: telegraph-accessibility-atlas-source_23
+  - first:
+      213: -8598563885767698980
+    second: telegraph-accessibility-atlas-source_24
+  - first:
+      213: -8097535938503226146
+    second: telegraph-accessibility-atlas-source_25
+  - first:
+      213: 3489874738370679258
+    second: telegraph-accessibility-atlas-source_26
+  - first:
+      213: 7308725384187034206
+    second: telegraph-accessibility-atlas-source_27
+  - first:
+      213: 6149490480206318358
+    second: telegraph-accessibility-atlas-source_28
+  - first:
+      213: 2420569288073575420
+    second: telegraph-accessibility-atlas-source_29
+  - first:
+      213: -7802758334126580440
+    second: telegraph-accessibility-atlas-source_30
+  - first:
+      213: -3414398959166029577
+    second: telegraph-accessibility-atlas-source_31
+  - first:
+      213: 8424947161587383499
+    second: telegraph-accessibility-atlas-source_32
+  - first:
+      213: 3833228323620796183
+    second: telegraph-accessibility-atlas-source_33
+  - first:
+      213: 5113360255690197069
+    second: telegraph-accessibility-atlas-source_34
+  - first:
+      213: -4284629215364564242
+    second: telegraph-accessibility-atlas-source_35
+  - first:
+      213: 834861995227840760
+    second: telegraph-accessibility-atlas-source_36
+  - first:
+      213: -6766093450254370202
+    second: telegraph-accessibility-atlas-source_37
+  - first:
+      213: -7232224110799872429
+    second: telegraph-accessibility-atlas-source_38
+  - first:
+      213: 4985004805576169125
+    second: telegraph-accessibility-atlas-source_39
+  - first:
+      213: -3480445173938750795
+    second: telegraph-accessibility-atlas-source_40
+  - first:
+      213: -6256367327743484367
+    second: telegraph-accessibility-atlas-source_41
+  - first:
+      213: -4964349841536170979
+    second: telegraph-accessibility-atlas-source_42
+  - first:
+      213: 2585481695774910414
+    second: telegraph-accessibility-atlas-source_43
+  - first:
+      213: -5717174654628365180
+    second: telegraph-accessibility-atlas-source_44
+  - first:
+      213: -881539690099905618
+    second: telegraph-accessibility-atlas-source_45
+  - first:
+      213: 8144437024775579956
+    second: telegraph-accessibility-atlas-source_46
+  - first:
+      213: 5661172544229269533
+    second: telegraph-accessibility-atlas-source_47
+  - first:
+      213: -1773334555579001024
+    second: telegraph-accessibility-atlas-source_48
+  - first:
+      213: 1394503872579124796
+    second: telegraph-accessibility-atlas-source_49
+  - first:
+      213: 79728580919665219
+    second: telegraph-accessibility-atlas-source_50
+  - first:
+      213: 4867805148220289693
+    second: telegraph-accessibility-atlas-source_51
+  - first:
+      213: -5775145188499625898
+    second: telegraph-accessibility-atlas-source_52
+  - first:
+      213: -2495249004522011498
+    second: telegraph-accessibility-atlas-source_53
+  - first:
+      213: -4344234755449751444
+    second: telegraph-accessibility-atlas-source_54
+  - first:
+      213: 1566194344792436212
+    second: telegraph-accessibility-atlas-source_55
+  - first:
+      213: 3679473055984979633
+    second: telegraph-accessibility-atlas-source_56
+  - first:
+      213: 7437540849827501236
+    second: telegraph-accessibility-atlas-source_57
+  - first:
+      213: -705227407588862201
+    second: telegraph-accessibility-atlas-source_58
+  - first:
+      213: -3136789047572244753
+    second: telegraph-accessibility-atlas-source_59
+  - first:
+      213: 8174291648538444720
+    second: telegraph-accessibility-atlas-source_60
+  - first:
+      213: -341971725166057617
+    second: telegraph-accessibility-atlas-source_61
+  - first:
+      213: 5103228080556447663
+    second: telegraph-accessibility-atlas-source_62
+  - first:
+      213: -2847130423241395102
+    second: telegraph-accessibility-atlas-source_63
+  - first:
+      213: 330838331875906776
+    second: telegraph-accessibility-atlas-source_64
+  - first:
+      213: 4918706873111365137
+    second: telegraph-accessibility-atlas-source_65
+  - first:
+      213: 984608903974031350
+    second: telegraph-accessibility-atlas-source_66
+  - first:
+      213: 8053448018619364710
+    second: telegraph-accessibility-atlas-source_67
+  - first:
+      213: 918878519057220322
+    second: telegraph-accessibility-atlas-source_68
+  - first:
+      213: -3413780242090187123
+    second: telegraph-accessibility-atlas-source_69
+  - first:
+      213: 7979790845100363450
+    second: telegraph-accessibility-atlas-source_70
+  - first:
+      213: -2524359122321739185
+    second: telegraph-accessibility-atlas-source_71
+  - first:
+      213: -8961330990060383172
+    second: telegraph-accessibility-atlas-source_72
+  - first:
+      213: -5099807911461582059
+    second: telegraph-accessibility-atlas-source_73
+  - first:
+      213: -6484332389233645276
+    second: telegraph-accessibility-atlas-source_74
+  - first:
+      213: 325693825495017928
+    second: telegraph-accessibility-atlas-source_75
+  - first:
+      213: 8839166123514395239
+    second: telegraph-accessibility-atlas-source_76
+  - first:
+      213: 2421594275380920017
+    second: telegraph-accessibility-atlas-source_77
+  - first:
+      213: -2113929519760800401
+    second: telegraph-accessibility-atlas-source_78
+  - first:
+      213: 5438084832749451709
+    second: telegraph-accessibility-atlas-source_79
+  - first:
+      213: 5123222060502259451
+    second: telegraph-accessibility-atlas-source_80
+  - first:
+      213: 9085285364197449776
+    second: telegraph-accessibility-atlas-source_81
+  - first:
+      213: -1290226178518112755
+    second: telegraph-accessibility-atlas-source_82
+  - first:
+      213: 9064816948743869846
+    second: telegraph-accessibility-atlas-source_83
+  - first:
+      213: 7827494607906864234
+    second: telegraph-accessibility-atlas-source_84
+  - first:
+      213: 2313031639772792039
+    second: telegraph-accessibility-atlas-source_85
+  - first:
+      213: 8318288465894335626
+    second: telegraph-accessibility-atlas-source_86
+  - first:
+      213: -7412814764238666959
+    second: telegraph-accessibility-atlas-source_87
+  - first:
+      213: 6595835794441586795
+    second: telegraph-accessibility-atlas-source_88
+  - first:
+      213: 3393609613069593132
+    second: telegraph-accessibility-atlas-source_89
+  - first:
+      213: 8293243105431480523
+    second: telegraph-accessibility-atlas-source_90
+  - first:
+      213: 2298167097014317988
+    second: telegraph-accessibility-atlas-source_91
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 1590
+        width: 403
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1311a23e526c630800000000000000
+      internalID: 3946883781030392252
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_1
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1712
+        width: 411
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d60e44fd0b31d480800000000000000
+      internalID: -8876248459451169064
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_2
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 1580
+        width: 346
+        height: 423
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccfd24bd3090567f0800000000000000
+      internalID: -620079461525430324
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_3
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 1588
+        width: 407
+        height: 407
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 095154a340533f690800000000000000
+      internalID: -7569648256405924464
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_4
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 1084
+        width: 391
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42509b1e992045fb0800000000000000
+      internalID: -4660096854481369820
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_5
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1082
+        width: 395
+        height: 395
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f42801f77014765a0800000000000000
+      internalID: -6528177634397879729
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_6
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 1088
+        width: 377
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d96eb35762c78560800000000000000
+      internalID: 7316029868729067990
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_7
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 1090
+        width: 384
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee545ec899a06abf0800000000000000
+      internalID: -313551469445560850
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_8
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 617
+        width: 349
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 281a9de7b3c077d50800000000000000
+      internalID: 6734865217426661762
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_9
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 582
+        width: 366
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90e322e58d32a6d30800000000000000
+      internalID: 4425388996044144137
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_10
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 568
+        width: 399
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f66398ee391fef720800000000000000
+      internalID: 2882006429228152431
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_11
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 911
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 345ec5fb1ed8d0ca0800000000000000
+      internalID: -6049022723771013821
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_12
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 916
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8698389f7bf391c0800000000000000
+      internalID: -4497975077379729781
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_13
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 911
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7e842a3a8374f480800000000000000
+      internalID: -8866334728867508609
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_14
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 916
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95b25e19bff92f8e0800000000000000
+      internalID: -1661089409712968871
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_15
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 911
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf6fe7ec9db74710800000000000000
+      internalID: 1677517867822575567
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_16
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 916
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce5afe9cd7689280800000000000000
+      internalID: -9036358455061225789
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_17
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 856
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80f5c44b65e873110800000000000000
+      internalID: 1240616725407096584
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_18
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 856
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6677de7ecc01c78e0800000000000000
+      internalID: -1694460887547676826
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_19
+      rect:
+        serializedVersion: 2
+        x: 1874
+        y: 856
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 850fd29d7c7dee2c0800000000000000
+      internalID: -4400342532552265640
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_20
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 568
+        width: 337
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 685ed599dd44fa3f0800000000000000
+      internalID: -887414883017169530
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_21
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 850
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc48ceb00cf4cf520800000000000000
+      internalID: 2737150359786783951
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_22
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 845
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a9cf14fd660b73d0800000000000000
+      internalID: -3207963240254420572
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_23
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 850
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9254478ab6017a0800000000000000
+      internalID: -6408503898498848264
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_24
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 845
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5505af3b3cba880800000000000000
+      internalID: -8598563885767698980
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_25
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 850
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edc4e8d67f5cf9f80800000000000000
+      internalID: -8097535938503226146
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_26
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 845
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad1913b95968e6030800000000000000
+      internalID: 3489874738370679258
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_27
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 779
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a395d730fcd6560800000000000000
+      internalID: 7308725384187034206
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_28
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 784
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b0856a201675550800000000000000
+      internalID: 6149490480206318358
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_29
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 779
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfb78d951f6979120800000000000000
+      internalID: 2420569288073575420
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_30
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 784
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82d9a2ac2a807b390800000000000000
+      internalID: -7802758334126580440
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_31
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 779
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f00275ac3e9d90d0800000000000000
+      internalID: -3414398959166029577
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_32
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 784
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bccf9d16ecc6be470800000000000000
+      internalID: 8424947161587383499
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_33
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 732
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 717326cd9dc523530800000000000000
+      internalID: 3833228323620796183
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_34
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 732
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d48c3019f0e46f640800000000000000
+      internalID: 5113360255690197069
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_35
+      rect:
+        serializedVersion: 2
+        x: 1874
+        y: 732
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eea3fe7fd60f984c0800000000000000
+      internalID: -4284629215364564242
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_36
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 718
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f08706bf86069b00800000000000000
+      internalID: 834861995227840760
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_37
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 713
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66abd74fad10a12a0800000000000000
+      internalID: -6766093450254370202
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_38
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 718
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e12cb3d7af1ab90800000000000000
+      internalID: -7232224110799872429
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_39
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 713
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a69bff757b4e2540800000000000000
+      internalID: 4985004805576169125
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_40
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 718
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ba7823fd89f2bfc0800000000000000
+      internalID: -3480445173938750795
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_41
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 713
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13e5d75201bec29a0800000000000000
+      internalID: -6256367327743484367
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_42
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 647
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1448721f161b1bb0800000000000000
+      internalID: -4964349841536170979
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_43
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 652
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec720f167e971e320800000000000000
+      internalID: 2585481695774910414
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_44
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 647
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48c720841f388a0b0800000000000000
+      internalID: -5717174654628365180
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_45
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 652
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eabef2c825424c3f0800000000000000
+      internalID: -881539690099905618
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_46
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 647
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 439a94da25ad60170800000000000000
+      internalID: 8144437024775579956
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_47
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 652
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d10eafe4f66809e40800000000000000
+      internalID: 5661172544229269533
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_48
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 608
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 047d9c20e99d367e0800000000000000
+      internalID: -1773334555579001024
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_49
+      rect:
+        serializedVersion: 2
+        x: 1752
+        y: 608
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3e3cfa32e54a5310800000000000000
+      internalID: 1394503872579124796
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_50
+      rect:
+        serializedVersion: 2
+        x: 1874
+        y: 608
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 342a920d8b04b1100800000000000000
+      internalID: 79728580919665219
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_51
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 586
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d92fc77ddfaed8340800000000000000
+      internalID: 4867805148220289693
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_52
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 581
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6586c219c009adfa0800000000000000
+      internalID: -5775145188499625898
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_53
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 586
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 694815330481f5dd0800000000000000
+      internalID: -2495249004522011498
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_54
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 581
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c68f284b18d26b3c0800000000000000
+      internalID: -4344234755449751444
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_55
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 586
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd2492657d3cb510800000000000000
+      internalID: 1566194344792436212
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_56
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 584
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1be0b9eef3d101330800000000000000
+      internalID: 3679473055984979633
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_57
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 314
+        width: 76
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b4dc644ff3773760800000000000000
+      internalID: 7437540849827501236
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_58
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 328
+        width: 20
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 707dbc4c8678636f0800000000000000
+      internalID: -705227407588862201
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_59
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 314
+        width: 76
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe6de1c0bf2e774d0800000000000000
+      internalID: -3136789047572244753
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_60
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 74
+        width: 363
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b38391f1fae07170800000000000000
+      internalID: 8174291648538444720
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_61
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 381
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f67ef3e1782114bf0800000000000000
+      internalID: -341971725166057617
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_62
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 381
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa79d55b6ee42d640800000000000000
+      internalID: 5103228080556447663
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_63
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 381
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2643d7df6f5fc78d0800000000000000
+      internalID: -2847130423241395102
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_64
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 381
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4db81c5bf579400800000000000000
+      internalID: 330838331875906776
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_65
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 72
+        width: 367
+        height: 367
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 116431637d1c24440800000000000000
+      internalID: 4918706873111365137
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_66
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 284
+        width: 112
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff0f0cd4980aad00800000000000000
+      internalID: 984608903974031350
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_67
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 283
+        width: 112
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66571eecd4893cf60800000000000000
+      internalID: 8053448018619364710
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_68
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 311
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e28428052380cc00800000000000000
+      internalID: 918878519057220322
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_69
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 311
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d86a7f0f4f0df90d0800000000000000
+      internalID: -3413780242090187123
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_70
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 311
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abe0f10be79edbe60800000000000000
+      internalID: 7979790845100363450
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_71
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 311
+        width: 37
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f42fe7cb0cca7fcd0800000000000000
+      internalID: -2524359122321739185
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_72
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 246
+        width: 119
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3450c691f4f2a380800000000000000
+      internalID: -8961330990060383172
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_73
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 212
+        width: 87
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51b0b9679b7d939b0800000000000000
+      internalID: -5099807911461582059
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_74
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 245
+        width: 119
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4292b262c060306a0800000000000000
+      internalID: -6484332389233645276
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_75
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 241
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c92b260fc8158400800000000000000
+      internalID: 325693825495017928
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_76
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 241
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76afdb6e1c60baa70800000000000000
+      internalID: 8839166123514395239
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_77
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 241
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1def23ec92b3b9120800000000000000
+      internalID: 2421594275380920017
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_78
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 241
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6502764d40d9a2e0800000000000000
+      internalID: -2113929519760800401
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_79
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 152
+        width: 112
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db9787ad755f77b40800000000000000
+      internalID: 5438084832749451709
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_80
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 85
+        width: 76
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf69eade157591740800000000000000
+      internalID: 5123222060502259451
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_81
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 64
+        width: 20
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0306b0027ea651e70800000000000000
+      internalID: 9085285364197449776
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_82
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 85
+        width: 76
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d06a4856022381ee0800000000000000
+      internalID: -1290226178518112755
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_83
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 151
+        width: 112
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69591d7ccf2bccd70800000000000000
+      internalID: 9064816948743869846
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_84
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 171
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6cf291cfd8d0ac60800000000000000
+      internalID: 7827494607906864234
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_85
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 171
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e485ea750a891020800000000000000
+      internalID: 2313031639772792039
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_86
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 171
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a846cdc994f707370800000000000000
+      internalID: 8318288465894335626
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_87
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 171
+        width: 37
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13388c72f34602990800000000000000
+      internalID: -7412814764238666959
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_88
+      rect:
+        serializedVersion: 2
+        x: 1103
+        y: 101
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b684f7475bd198b50800000000000000
+      internalID: 6595835794441586795
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_89
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 101
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2a2d5586f5881f20800000000000000
+      internalID: 3393609613069593132
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_90
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 101
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc863373aa4871370800000000000000
+      internalID: 8293243105431480523
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: telegraph-accessibility-atlas-source_91
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 101
+        width: 61
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData:
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a3770c6ccab4ef10800000000000000
+      internalID: 2298167097014317988
+      vertices: []
+      indices:
+      edges: []
+      weights: []
+    outline: []
+    customData:
+    physicsShape: []
+    bones: []
+    spriteID:
+    internalID: 0
+    vertices: []
+    indices:
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      telegraph-accessibility-atlas-source_0: 3946883781030392252
+      telegraph-accessibility-atlas-source_1: -8876248459451169064
+      telegraph-accessibility-atlas-source_10: 2882006429228152431
+      telegraph-accessibility-atlas-source_11: -6049022723771013821
+      telegraph-accessibility-atlas-source_12: -4497975077379729781
+      telegraph-accessibility-atlas-source_13: -8866334728867508609
+      telegraph-accessibility-atlas-source_14: -1661089409712968871
+      telegraph-accessibility-atlas-source_15: 1677517867822575567
+      telegraph-accessibility-atlas-source_16: -9036358455061225789
+      telegraph-accessibility-atlas-source_17: 1240616725407096584
+      telegraph-accessibility-atlas-source_18: -1694460887547676826
+      telegraph-accessibility-atlas-source_19: -4400342532552265640
+      telegraph-accessibility-atlas-source_2: -620079461525430324
+      telegraph-accessibility-atlas-source_20: -887414883017169530
+      telegraph-accessibility-atlas-source_21: 2737150359786783951
+      telegraph-accessibility-atlas-source_22: -3207963240254420572
+      telegraph-accessibility-atlas-source_23: -6408503898498848264
+      telegraph-accessibility-atlas-source_24: -8598563885767698980
+      telegraph-accessibility-atlas-source_25: -8097535938503226146
+      telegraph-accessibility-atlas-source_26: 3489874738370679258
+      telegraph-accessibility-atlas-source_27: 7308725384187034206
+      telegraph-accessibility-atlas-source_28: 6149490480206318358
+      telegraph-accessibility-atlas-source_29: 2420569288073575420
+      telegraph-accessibility-atlas-source_3: -7569648256405924464
+      telegraph-accessibility-atlas-source_30: -7802758334126580440
+      telegraph-accessibility-atlas-source_31: -3414398959166029577
+      telegraph-accessibility-atlas-source_32: 8424947161587383499
+      telegraph-accessibility-atlas-source_33: 3833228323620796183
+      telegraph-accessibility-atlas-source_34: 5113360255690197069
+      telegraph-accessibility-atlas-source_35: -4284629215364564242
+      telegraph-accessibility-atlas-source_36: 834861995227840760
+      telegraph-accessibility-atlas-source_37: -6766093450254370202
+      telegraph-accessibility-atlas-source_38: -7232224110799872429
+      telegraph-accessibility-atlas-source_39: 4985004805576169125
+      telegraph-accessibility-atlas-source_4: -4660096854481369820
+      telegraph-accessibility-atlas-source_40: -3480445173938750795
+      telegraph-accessibility-atlas-source_41: -6256367327743484367
+      telegraph-accessibility-atlas-source_42: -4964349841536170979
+      telegraph-accessibility-atlas-source_43: 2585481695774910414
+      telegraph-accessibility-atlas-source_44: -5717174654628365180
+      telegraph-accessibility-atlas-source_45: -881539690099905618
+      telegraph-accessibility-atlas-source_46: 8144437024775579956
+      telegraph-accessibility-atlas-source_47: 5661172544229269533
+      telegraph-accessibility-atlas-source_48: -1773334555579001024
+      telegraph-accessibility-atlas-source_49: 1394503872579124796
+      telegraph-accessibility-atlas-source_5: -6528177634397879729
+      telegraph-accessibility-atlas-source_50: 79728580919665219
+      telegraph-accessibility-atlas-source_51: 4867805148220289693
+      telegraph-accessibility-atlas-source_52: -5775145188499625898
+      telegraph-accessibility-atlas-source_53: -2495249004522011498
+      telegraph-accessibility-atlas-source_54: -4344234755449751444
+      telegraph-accessibility-atlas-source_55: 1566194344792436212
+      telegraph-accessibility-atlas-source_56: 3679473055984979633
+      telegraph-accessibility-atlas-source_57: 7437540849827501236
+      telegraph-accessibility-atlas-source_58: -705227407588862201
+      telegraph-accessibility-atlas-source_59: -3136789047572244753
+      telegraph-accessibility-atlas-source_6: 7316029868729067990
+      telegraph-accessibility-atlas-source_60: 8174291648538444720
+      telegraph-accessibility-atlas-source_61: -341971725166057617
+      telegraph-accessibility-atlas-source_62: 5103228080556447663
+      telegraph-accessibility-atlas-source_63: -2847130423241395102
+      telegraph-accessibility-atlas-source_64: 330838331875906776
+      telegraph-accessibility-atlas-source_65: 4918706873111365137
+      telegraph-accessibility-atlas-source_66: 984608903974031350
+      telegraph-accessibility-atlas-source_67: 8053448018619364710
+      telegraph-accessibility-atlas-source_68: 918878519057220322
+      telegraph-accessibility-atlas-source_69: -3413780242090187123
+      telegraph-accessibility-atlas-source_7: -313551469445560850
+      telegraph-accessibility-atlas-source_70: 7979790845100363450
+      telegraph-accessibility-atlas-source_71: -2524359122321739185
+      telegraph-accessibility-atlas-source_72: -8961330990060383172
+      telegraph-accessibility-atlas-source_73: -5099807911461582059
+      telegraph-accessibility-atlas-source_74: -6484332389233645276
+      telegraph-accessibility-atlas-source_75: 325693825495017928
+      telegraph-accessibility-atlas-source_76: 8839166123514395239
+      telegraph-accessibility-atlas-source_77: 2421594275380920017
+      telegraph-accessibility-atlas-source_78: -2113929519760800401
+      telegraph-accessibility-atlas-source_79: 5438084832749451709
+      telegraph-accessibility-atlas-source_8: 6734865217426661762
+      telegraph-accessibility-atlas-source_80: 5123222060502259451
+      telegraph-accessibility-atlas-source_81: 9085285364197449776
+      telegraph-accessibility-atlas-source_82: -1290226178518112755
+      telegraph-accessibility-atlas-source_83: 9064816948743869846
+      telegraph-accessibility-atlas-source_84: 7827494607906864234
+      telegraph-accessibility-atlas-source_85: 2313031639772792039
+      telegraph-accessibility-atlas-source_86: 8318288465894335626
+      telegraph-accessibility-atlas-source_87: -7412814764238666959
+      telegraph-accessibility-atlas-source_88: 6595835794441586795
+      telegraph-accessibility-atlas-source_89: 3393609613069593132
+      telegraph-accessibility-atlas-source_9: 4425388996044144137
+      telegraph-accessibility-atlas-source_90: 8293243105431480523
+      telegraph-accessibility-atlas-source_91: 2298167097014317988
+  mipmapLimitGroupName:
+  pSDRemoveMatte: 0
+  userData:
+  assetBundleName:
+  assetBundleVariant:

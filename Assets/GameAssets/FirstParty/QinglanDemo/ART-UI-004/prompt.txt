@@ -1,0 +1,32 @@
+ART-UI-004 第一方矢量制作说明
+
+目标：制作一张无文字、透明底、可组合的战斗预警形状与无障碍纹理图集。图集不能拥有玩法真值；
+它只作为 Presentation 层的形状、方向、边界和纹理遮罩，由运行时按危险来源、色觉模式与低闪设置着色。
+
+固定结构：4×4，共 16 个语义格。
+
+1. shape.area-circle：完整圆形范围边界与四向三角锚点。
+2. shape.directional-line：带右向折线标记的长条通道。
+3. shape.fan-cone：带三层距离弧的扇形通道。
+4. shape.point-impact：圆、菱形和十字定位线组合的落点。
+5. shape.cross-lanes：正交交叉通道与四向楔标。
+6. shape.hazard-ring：保留透明安全中心的分段危险环。
+7. shape.sweep-arc：顺时针长弧、内弧与方向箭头。
+8. shape.direction-arrow：独立粗箭头和内部连续方向折线。
+9. texture.diagonal-stripes：单向斜纹。
+10. texture.crosshatch：双色值交叉斜纹。
+11. texture.dots：交替尺寸点阵。
+12. texture.chevrons：重复方向折线。
+13. texture.radial-spokes：中心环和交替辐条。
+14. texture.grid：正交网格。
+15. texture.broken-bars：错列断条。
+16. texture.concentric：低闪可用的多层边界纹理。
+
+视觉与技术约束：
+
+- 2048×2048 RGBA source，确定性降采样为 1024×1024 RGBA runtime final。
+- 每个 final Sprite 为 256×256，至少 20 px 透明安全边，四角透明，不使用九宫格 Border。
+- 前 8 个形状格使用 P0 危险核心 #E45D45、暖边 #FFD0A3 与深边；形状和方向必须脱离颜色可辨。
+- 后 8 个纹理格保持中性米白/青色，作为可着色的第二非颜色通道，不含精确 P0 危险红。
+- 所有格在灰阶下仍唯一；图片内不含文字、数字、字体、Logo、水印、品牌或第三方符号。
+- 不使用生成式 AI、外部图像、参考项目素材或第三方资产；仅由仓库脚本的第一方矢量路径栅格化。

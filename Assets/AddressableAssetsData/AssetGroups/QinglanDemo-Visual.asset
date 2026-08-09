@@ -1031,6 +1031,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d1f5f0079c8487248b77b2e6bb74fe08
+    m_Address: qinglan/ui/telegraph-accessibility/atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d2a41ea0aafaad940ab81fb63b8dc7e4
     m_Address: qinglan/map/old-court/region/central-training-ground/tile-kit
     m_ReadOnly: 0
