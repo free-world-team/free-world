@@ -55,6 +55,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c420abde7a511b4f8cc185b90554117
+    m_Address: qinglan/hub/facility/vein-inquiry-platform/panel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 0c4d860f2f2f96a498b149c9377e9dce
     m_Address: qinglan/damage-policy/contact-protection/visual
     m_ReadOnly: 0
@@ -151,6 +159,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1f421a42a8cbc5a4289f2ee1347480c9
+    m_Address: qinglan/hub/facility/myriad-phenomena-pavilion/panel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 21d53f301028a9e43a867aa2b5915761
     m_Address: qinglan/pickup/boundary-talisman/sprite
     m_ReadOnly: 0
@@ -239,6 +255,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 33306d385b889384ba4648fe01d14b0d
+    m_Address: qinglan/hub/facility/vein-inquiry-platform/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 33d76132c81ace24c9c03ddec224fb01
     m_Address: qinglan/enemy/affix/quake/overlay
     m_ReadOnly: 0
@@ -295,8 +319,24 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 44af7903261b1f64d9678ae6c61f7fad
+    m_Address: qinglan/hub/facility/hundred-artifact-pavilion/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4842f3bc8378ded40a93067ef40bdca8
     m_Address: qinglan/profile/event/wind-vein-riot
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4992abc90fac2fa429c574fdc02cf018
+    m_Address: qinglan/hub/facility/scroll-pavilion/panel
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -535,6 +575,14 @@ MonoBehaviour:
     - release
     - visual.release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9eebc6c9a2a82cb44befdab74d6efcaa
+    m_Address: qinglan/hub/facility/hundred-artifact-pavilion/panel
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a0dbacbc4eca2b14f882c4452c14179a
     m_Address: qinglan/character/lu-qingye/riding-wind/tier-2
     m_ReadOnly: 0
@@ -649,6 +697,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c5e9fbfffec74514d8ce2df0051ef8aa
     m_Address: qinglan/objective/wind-altar/stop-balance/state-atlas
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6152dca3d9f3c647a2ed3b6f7fcd80b
+    m_Address: qinglan/hub/facility/scroll-pavilion/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo
@@ -849,6 +905,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f0c89a7516b2a2c4aa8e1df8dce789f2
     m_Address: qinglan/pickup/boundary-talisman/icon
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - pack.qinglan_demo
+    - release
+    - visual.release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f0ee1fd4f562e764fa7fec37bb3a944b
+    m_Address: qinglan/hub/facility/myriad-phenomena-pavilion/icon
     m_ReadOnly: 0
     m_SerializedLabels:
     - pack.qinglan_demo

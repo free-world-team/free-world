@@ -1,0 +1,27 @@
+ART-HUB-001 ImageGen production record
+Generated: 2026-08-09 (Asia/Shanghai)
+Mode: Codex built-in ImageGen, text-only, one independent call per facility candidate
+Reference inputs: none
+Shared requirements: original Qinglan xianxia action-roguelite hub facility; orthographic three-quarter view; painterly stylized realism; cool teal-gray palette; one centered complete facility with generous margin; flat RGB 255,0,255 chroma background; no external floor, text, readable marks, language-like glyphs, people, faces, masks, religious imagery, logos, watermarks, frames, or cropped parts.
+
+No-output service attempt: vein-inquiry-platform
+Prompt: Compact octagonal stone navigation dais with central wind compass, three thin floating bronze rings, four directional fins, and an empty map tray for departure, wind-altar, and region-mark information.
+Result: No image or partial file was returned after more than fourteen minutes. The hanging service call was terminated and the exact facility specification was retried. There is no rejected source file to retain.
+
+Approved retry: vein-inquiry-platform-imagegen.png
+Prompt: Same Vein Inquiry Platform specification. Open, welcoming, functional; no throne, temple idol, writing, map lettering, runes, or symbols resembling language.
+Visual review: PASS. Octagonal compass platform, directional structure, and empty tray are readable; decorative grooves are non-linguistic; no text, figure, logo, watermark, or cropping.
+
+Approved candidate: scroll-pavilion-imagegen.png
+Prompt: Compact open-sided two-level wooden Scroll Pavilion with curved eaves, built-in scroll cubbies, central reading desk, blank cord-tied scrolls, and three cyan memory wisps. Every paper surface must be blank; not a temple.
+Visual review: PASS. Reading, archive, and memory functions are clear; all visible paper is blank; no text, seals, figures, logos, or cropping.
+
+Approved candidate: hundred-artifact-pavilion-imagegen.png
+Prompt: Compact open-front craft pavilion with curved eaves, low anvil-workbench, circular six-spoke calibration wheel, abstract generic blade/talisman-board/ring/bead/stone-seal/seed-pod silhouettes, and plain storage cabinets. Practical craft hall, not a branded arsenal.
+Visual review: PASS. Workshop and collection silhouette is distinct; displayed objects are generic and unlabelled; no text, people, logo, watermark, or cropping.
+
+Approved candidate: myriad-phenomena-pavilion-imagegen.png
+Prompt: Compact open-front natural-history archive with curved eaves, central multi-ring brass astrolabe, six distinct unlabelled artifact niches, three glass-front cabinets, and two cyan observation wisps. Not a shop, shrine, trophy hall, or laboratory.
+Visual review: PASS. Archive, collection, and observation functions are readable; no labels, figures, skulls, text, logos, or cropping.
+
+The built-in service did not expose model version or seed. Original generated files remain in the project-bound generated-images directory; repository source files are byte copies. Approved sources alone proceed through chroma removal and deterministic panel/icon processing.

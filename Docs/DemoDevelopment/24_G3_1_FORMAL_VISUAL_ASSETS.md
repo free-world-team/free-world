@@ -1,6 +1,6 @@
 # 24 G3.1 正式视觉资产、Provenance 与 Addressables
 
-- 状态：`IN PROGRESS — 17 / 27 ART BATCHES`
+- 状态：`IN PROGRESS — 18 / 27 ART BATCHES`
 - 日期：2026-08-09
 - 输入：G2.8 垂直切片、G0.4 Manifest、M13、M15、ADR 0004/0011/0012/0026
 - 非范围：G3.2 音频、G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -71,7 +71,8 @@ GPU/1% Low、正式音频、字体、Release Manifest 和平台合规不得在 G
 | 15 | ART-OBJECTIVE-001 | PASS | 听风/引风/止衡三座风脉台各 1 张 3×1、960×320 三态 Atlas；EditMode 343/343、PlayMode 17/17、Validation PASS |
 | 16 | ART-EVENT-001 | PASS | 风脉暴动/药圃复苏/旧剑共鸣各 1 张 4×1、1024×256 四相 Atlas＋Area Profile；EditMode 347/347、PlayMode 17/17、Validation PASS |
 | 17 | ART-LANDMARK-001 | PASS | 五种地标各 1 张 3×1、960×320 Undiscovered/Discovered/Claimed Atlas；EditMode 350/350、PlayMode 17/17、Validation PASS |
-| 18—27 | ART-HUB-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
+| 18 | ART-HUB-001 | PASS | 问脉台/藏卷楼/百器阁/万象阁各 1 张 1024 Panel＋256 Icon；EditMode 353/353、PlayMode 17/17、Validation PASS |
+| 19—27 | ART-META-001—ART-UI-005 | PENDING | 必须继续按第 3 节顺序执行，不得跳序 |
 
 ART-CHAR-001 的初版格切因风弧跨格判定 `FAIL`；第二次针对性技术修订经透明化、连通组件归位和
 左右行校正后，每格 Alpha Bounds 均保留至少 12 px 安全边，四角 Alpha=0。失败源/working 与最终源均
@@ -201,3 +202,11 @@ ImageGen 调用；旧信首版因封蜡出现类似字形的印记在源级人�
 安全边≥20 px，覆盖率 28.40%—47.93%，四角 Alpha=0，洋红残留和精确 P0 危险红均为 0。完整链两轮
 20/20 Hash 字节一致。正式地址为 `qinglan/landmark/<landmark>/state-atlas`；运行时发现/领取状态到
 Sprite 切换由 G3.1 最终集成关闭。
+
+ART-HUB-001 对问脉台、藏卷楼、百器阁、万象阁分别执行无图片输入的 ImageGen 调用；问脉台首个服务
+调用持续超过十四分钟且未产出任何文件，终止后按相同规格重试并取得批准源。四份 1254² source 经
+soft matte/despill 去背、Alpha<16 归零和等比居中后，分别派生 2048² source master、1024 panel 与
+256 icon；四张 panel 安全边≥64 px、覆盖率 40.94%—49.20%，四张 icon 安全边≥16 px、覆盖率
+41.65%—49.77%，八份 final Hash 均唯一，四角 Alpha、洋红残留和精确 P0 危险红均为 0。完整链第二轮
+16/16 Hash 字节一致。正式地址为 `qinglan/hub/facility/<facility>/<panel|icon>`；Facility Snapshot 到
+Panel/Icon 与 Locked/Available/Visited/Updated UI 表现由 G3.1 最终集成关闭。
