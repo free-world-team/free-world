@@ -1,0 +1,14 @@
+AUDIO-BOSS-001 first-party procedural composition brief
+
+Create six 90-second loopable Boss phase stems: three ordered phases for the
+mid-run sword-trial puppet Zhezhi and three ordered phases for the final court
+guardian Tingfeng. Zhezhi should progress from restrained wood-and-blade pulse to
+an accelerated training formation. Tingfeng should progress from listening wind
+and sword chime to crossing wind scars and the final undying oath. Use a shared
+96 BPM grid, no vocals, and preserve telegraph/SFX headroom.
+
+Do not use recordings, sample libraries, external references, generative audio
+models, MIDI libraries, trademarks, or reference-project assets. Deliver mono
+48 kHz/24-bit WAV masters and OGG/Vorbis Streaming runtime loops. Validate exact
+duration, peak/RMS, DC, finite samples, loop seam, deterministic hashes, rights,
+and canonical Addressables routing.

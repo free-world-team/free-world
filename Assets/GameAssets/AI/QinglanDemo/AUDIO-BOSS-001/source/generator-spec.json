@@ -1,0 +1,59 @@
+{
+  "assetId": "AUDIO-BOSS-001",
+  "bpm": 96.0,
+  "durationSeconds": 90.0,
+  "externalAudioInputs": [],
+  "meter": "4/4",
+  "rmsRangeDbfs": [
+    -32.0,
+    -6.0
+  ],
+  "runtimeEncoding": "OGG Vorbis mono streaming",
+  "sampleRate": 48000,
+  "sourceEncoding": "WAV PCM_24 mono",
+  "stems": [
+    {
+      "address": "qinglan/audio/boss/zhezhi/phase-one",
+      "boss": "zhezhi",
+      "name": "zhezhi-phase-one",
+      "phase": 1,
+      "seed": 32201
+    },
+    {
+      "address": "qinglan/audio/boss/zhezhi/phase-two",
+      "boss": "zhezhi",
+      "name": "zhezhi-phase-two",
+      "phase": 2,
+      "seed": 32202
+    },
+    {
+      "address": "qinglan/audio/boss/zhezhi/phase-three",
+      "boss": "zhezhi",
+      "name": "zhezhi-phase-three",
+      "phase": 3,
+      "seed": 32203
+    },
+    {
+      "address": "qinglan/audio/boss/tingfeng/phase-one",
+      "boss": "tingfeng",
+      "name": "tingfeng-phase-one",
+      "phase": 1,
+      "seed": 32204
+    },
+    {
+      "address": "qinglan/audio/boss/tingfeng/phase-two",
+      "boss": "tingfeng",
+      "name": "tingfeng-phase-two",
+      "phase": 2,
+      "seed": 32205
+    },
+    {
+      "address": "qinglan/audio/boss/tingfeng/phase-three",
+      "boss": "tingfeng",
+      "name": "tingfeng-phase-three",
+      "phase": 3,
+      "seed": 32206
+    }
+  ],
+  "targetPeakDbfs": -7.0
+}

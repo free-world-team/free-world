@@ -1,6 +1,6 @@
 # 25 G3.2 正式音频、混音与 Addressables
 
-- 状态：`IN PROGRESS — GOVERNANCE PASS；2 / 9 AUDIO 批次`
+- 状态：`IN PROGRESS — GOVERNANCE PASS；3 / 9 AUDIO 批次`
 - 日期：2026-08-10
 - 输入：G3.1 正式视觉、G0.4 Manifest、M13、M15、M16、ADR 0004/0025/0026
 - 非范围：G3.3 字体/正文、G3.4 平衡、G3.5 目标硬件性能、G3.6 Release
@@ -47,7 +47,7 @@ G3.2 开始时 `Assets/GameAssets` 为 477,068,081 Bytes，`.git` 为 476,914,00
 | 0 | G3.2 Governance | PASS | Validator、Importer、合成/QA 基础与容量评审 |
 | 1 | AUDIO-AMB-001 | PASS | 6 条 45 秒旧庭院环境循环；PCM24 Master + OGG Streaming |
 | 2 | AUDIO-MUSIC-001 | PASS | 4 条 120 秒、96 BPM 同步强度 Stem；PCM24 Master + OGG Streaming |
-| 3 | AUDIO-BOSS-001 | PENDING | 6 |
+| 3 | AUDIO-BOSS-001 | PASS | 折枝/听风各 3 条 90 秒相位 Stem；PCM24 Master + OGG Streaming |
 | 4 | AUDIO-PLAYER-001 | PENDING | 12 |
 | 5 | AUDIO-WEAPON-001 | PENDING | 18 |
 | 6 | AUDIO-ENEMY-001 | PENDING | 24 |

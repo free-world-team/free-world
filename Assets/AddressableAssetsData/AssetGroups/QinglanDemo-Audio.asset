@@ -47,6 +47,30 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 61b935b225c74b84daa7ca9e8e94fa4b
+    m_Address: qinglan/audio/boss/zhezhi/phase-one
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 639f8eaaa830a814f942264e7da37d4a
+    m_Address: qinglan/audio/boss/tingfeng/phase-three
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64c1664d74049794da81299619ef08f8
+    m_Address: qinglan/audio/boss/tingfeng/phase-one
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 6dd3adbcc354f5d48b8cdf161569eaaf
     m_Address: qinglan/audio/ambience/distant-bell
     m_ReadOnly: 0
@@ -55,8 +79,32 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8fc736b4efe12074a800c11a16b902ae
+    m_Address: qinglan/audio/boss/zhezhi/phase-two
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 93c9484408d544f4a826ab7b61fd3be4
+    m_Address: qinglan/audio/boss/zhezhi/phase-three
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 95b6a864ceeec2a4dac5c036986c97d8
     m_Address: qinglan/audio/music/exploration-air
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a36f035a79de89147aa1ca8f5a66f525
+    m_Address: qinglan/audio/boss/tingfeng/phase-two
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
