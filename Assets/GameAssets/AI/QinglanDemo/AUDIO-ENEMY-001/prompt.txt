@@ -1,0 +1,8 @@
+AUDIO-ENEMY-001 first-party procedural synthesis brief
+
+Create Spawn, Attack, and Death cues for the six Demo normal enemies (grass
+spirit, paper crane, wooden puppet, stone lantern, wind-bell spirit, explosive
+seed) and two Bosses (Zhezhi and Tingfeng): 24 cues total. Boss cues may be longer
+and heavier, but all cues must preserve telegraph clarity and fit 0.1-4 seconds.
+No recordings, samples, voices, references, generative models, trademarks, or
+reference-project assets. Source PCM24 WAV; Runtime OGG/Vorbis.

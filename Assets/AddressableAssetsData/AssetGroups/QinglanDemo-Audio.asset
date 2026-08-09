@@ -15,6 +15,14 @@ MonoBehaviour:
   m_GroupName: QinglanDemo-Audio
   m_GUID: 3ce42102dd829ec4c9ab11018be2d5bd
   m_SerializeEntries:
+  - m_GUID: 028c8c71fd77da24487905e4743bd142
+    m_Address: qinglan/audio/enemy/wooden-puppet/spawn
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 03125ccf29e3244458b9022b3b16f64f
     m_Address: qinglan/audio/weapon/earth-vein-spring-branch
     m_ReadOnly: 0
@@ -25,6 +33,30 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 045bc26e59b3c2446b6840910e31687b
     m_Address: qinglan/audio/weapon/talisman-detonation
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 156a1f4bef49dcd4f8c114e47a5510e2
+    m_Address: qinglan/audio/enemy/zhezhi/attack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 18119aaf109b7d54ca2fa665528fed55
+    m_Address: qinglan/audio/enemy/wooden-puppet/death
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1b508cb44d80a8947b0eead35986251c
+    m_Address: qinglan/audio/enemy/wind-bell-spirit/attack
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -55,8 +87,24 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 360b21db4793aa446af370c588123a61
+    m_Address: qinglan/audio/enemy/stone-lantern/death
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 39d34305640299d4995579abb7029c57
     m_Address: qinglan/audio/music/high-pressure-drive
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 39ecfb1749a8a2d4da1bf479032eae48
+    m_Address: qinglan/audio/enemy/tingfeng/attack
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -71,6 +119,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3bac9584db127dc41b465a92266ee628
+    m_Address: qinglan/audio/enemy/wind-bell-spirit/death
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4134a6ec3abdea54daa154bca7b8d32b
     m_Address: qinglan/audio/player/manifestation-ready
     m_ReadOnly: 0
@@ -79,8 +135,24 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 414ed82cdad1a33469f5e372d3e031aa
+    m_Address: qinglan/audio/enemy/explosive-seed/death
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 41a226aea4a0a544ea1496e4e1a99443
     m_Address: qinglan/audio/weapon/mountain-boundary-seal
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53a26fd30640b0143a0fbb46ee881c44
+    m_Address: qinglan/audio/enemy/wind-bell-spirit/spawn
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -175,8 +247,32 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8153746f5312cba4db898f028d25fa60
+    m_Address: qinglan/audio/enemy/paper-crane/spawn
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 8908f625240531d4ca51060bf76aacd0
     m_Address: qinglan/audio/player/riding-wind-tier
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b691c9480e20f54abf3ab72e183ea90
+    m_Address: qinglan/audio/enemy/stone-lantern/spawn
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8c4dd1200b9378947aa54300cf080861
+    m_Address: qinglan/audio/enemy/tingfeng/death
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -193,6 +289,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9009f06f5c559a643a269bb362caff3e
     m_Address: qinglan/audio/player/pickup
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 92a0aad422e66e84c9b29fc7ac6a95e4
+    m_Address: qinglan/audio/enemy/stone-lantern/attack
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -223,6 +327,22 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96ae52ec37f6c6e4eb1008516595ee88
+    m_Address: qinglan/audio/enemy/wooden-puppet/attack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 98af3495154b5e44dab1cd95bd4a4e78
+    m_Address: qinglan/audio/enemy/paper-crane/attack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 99653d49d0a6ad34387f209e0b605df7
     m_Address: qinglan/audio/player/dash-start
     m_ReadOnly: 0
@@ -233,6 +353,22 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9fb934b34558d6b4b81c74c694b86426
     m_Address: qinglan/audio/player/player-defeat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1356547b8935c64f948ccf0cb977946
+    m_Address: qinglan/audio/enemy/zhezhi/death
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a24d6f985b231b342ae075faea11bf68
+    m_Address: qinglan/audio/enemy/paper-crane/death
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -271,8 +407,32 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: babf970424750744784ce4eb701bf688
+    m_Address: qinglan/audio/enemy/tingfeng/spawn
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bce631b4f9022b149973a806f653df6c
     m_Address: qinglan/audio/player/sword-intent-gain
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bf8b7854a8776944ba6ba3ab55b38a15
+    m_Address: qinglan/audio/enemy/explosive-seed/attack
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c2c021c33c2ac1147ac7e6ff82293406
+    m_Address: qinglan/audio/enemy/explosive-seed/spawn
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -295,6 +455,14 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cbe5921574f7e664480aeb180c63b104
+    m_Address: qinglan/audio/enemy/grass-spirit/spawn
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cf8f426899e9e6d4fb91178b6bcfb65a
     m_Address: qinglan/audio/weapon/lihuo-return-explosion
     m_ReadOnly: 0
@@ -305,6 +473,22 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: d19cfd7efe8a1b94db85bf462bbab222
     m_Address: qinglan/audio/weapon/tide-orb-cast
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d2aa2a5a7a929484db4df17e5bb4f03c
+    m_Address: qinglan/audio/enemy/zhezhi/spawn
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dbf21e72987e80a4d88b16b89771f040
+    m_Address: qinglan/audio/enemy/grass-spirit/death
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
@@ -377,6 +561,14 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f9ed84f398883dd4486a630e577f6398
     m_Address: qinglan/audio/player/skill-ready
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - audio.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fde17c79d1f956845aecc6f588c82211
+    m_Address: qinglan/audio/enemy/grass-spirit/attack
     m_ReadOnly: 0
     m_SerializedLabels:
     - audio.release
