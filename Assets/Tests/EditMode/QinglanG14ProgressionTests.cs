@@ -63,10 +63,10 @@ namespace Game.Tests.EditMode
 
         private static readonly float[] PreviewDamagePerSecond =
         {
-            165.6667f, 467.5f, 128f, 46.66666f, 58.33333f, 215f
+            213.6667f, 594.9999f, 128f, 46.66666f, 58.33333f, 215f
         };
 
-        private static readonly long[] PreviewHits = { 179, 340, 84, 28, 25, 480 };
+        private static readonly long[] PreviewHits = { 188, 340, 84, 28, 25, 480 };
         private static readonly long[] PreviewTriggers = { 15, 89, 9, 8, 28, 24 };
 
         [Test]

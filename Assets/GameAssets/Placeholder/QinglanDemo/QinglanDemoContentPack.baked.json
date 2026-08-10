@@ -25010,7 +25010,7 @@
                 "enemy.ground",
                 "enemy.no_affix"
             ],
-            "baseMaxHealth": 50.0,
+            "baseMaxHealth": 800.0,
             "moveSpeed": 0.0,
             "startingSkillIds": [],
             "mechanicIds": [],
@@ -38982,5 +38982,5 @@
             "shieldCapacity": 0.0
         }
     ],
-    "contentHash": "62b73333da531e39407a15b778657da2b0870d6cbb78a71ea5dd78404e80e966"
+    "contentHash": "8900fedffde84c2d014c260d50bff1833a1a98f378a4b22ac08ea4a3ec40d21f"
 }

@@ -89,7 +89,7 @@ namespace Game.Editor
             SetEnemyDamageMultiplier("BossZhezhiEnemy.asset");
             SetEnemyDamageMultiplier("BossTingfengEnemy.asset");
             SetEnemyHealth("BossZhezhiEnemy.asset", 800f);
-            SetEnemyHealth("BossTingfengEnemy.asset", 50f);
+            SetEnemyHealth("BossTingfengEnemy.asset", 800f);
             SetEnemyExperience("GrassSpirit.asset", 1.25f);
             SetEnemyExperience("PaperCraneSpirit.asset", 1.875f);
             SetEnemyExperience("WoodenSwordPuppet.asset", 3.75f);

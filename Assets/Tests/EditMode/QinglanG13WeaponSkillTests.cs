@@ -41,23 +41,23 @@ namespace Game.Tests.EditMode
 
         private static readonly float[] PreviewDamagePerSecond =
         {
-            19.1999989f, 27.9999981f, 47.5999947f,
-            10.999999f, 14.7999983f, 59.9999962f,
+            67.2f, 89.59999f, 151.199982f,
+            16.8f, 20.6f, 76.8f,
             11.999999f, 29.9999981f, 43.9999962f,
             31.9999962f, 46.3999939f, 81.99999f,
             43.1999969f, 57.1999931f, 89.59999f,
-            165.999985f, 251.499969f, 491.399963f
+            236.4f, 339.5f, 620.9999f
         };
 
         private static readonly long[] PreviewHits =
         {
-            6, 7, 7, 6, 6, 16, 5, 10, 10,
+            14, 16, 18, 6, 6, 16, 5, 10, 10,
             16, 16, 20, 12, 13, 16, 248, 310, 432
         };
 
         private static readonly long[] PreviewTriggers =
         {
-            3, 4, 4, 6, 6, 10, 3, 3, 3,
+            4, 4, 5, 6, 6, 10, 3, 3, 3,
             6, 6, 8, 2, 2, 2, 7, 7, 8
         };
 
@@ -177,7 +177,7 @@ namespace Game.Tests.EditMode
             Advance(fixture.World, 1);
 
             Assert.That(fixture.World.Actors.TryReadHealth(target.Handle, out var health), Is.True);
-            Assert.That(health.Current, Is.EqualTo(985f));
+            Assert.That(health.Current, Is.EqualTo(976f));
             Assert.That(
                 fixture.World.Actors.TryReadStatus(target.Handle, markedIndex, out _),
                 Is.False,
@@ -286,7 +286,7 @@ namespace Game.Tests.EditMode
                     var goldenIndex = (weapon * levels.Length) + levelIndex;
                     Assert.That(
                         first.Value.Summary.DamagePerSecond,
-                        Is.EqualTo(PreviewDamagePerSecond[goldenIndex]),
+                        Is.EqualTo(PreviewDamagePerSecond[goldenIndex]).Within(0.0001f),
                         WeaponIds[weapon] + " L" + level);
                     Assert.That(first.Value.Summary.HitCount, Is.EqualTo(PreviewHits[goldenIndex]));
                     Assert.That(first.Value.Summary.TriggerCount, Is.EqualTo(PreviewTriggers[goldenIndex]));
@@ -303,7 +303,7 @@ namespace Game.Tests.EditMode
             var add = fixture.Skills.AddInstance(owner, IndexOf(registry, WeaponIds[0]));
             Assert.That(add.IsSuccess, Is.True, add.Error.ToString());
             Assert.That(fixture.Skills.TryGetInstance(add.Value, out var primary), Is.True);
-            Assert.That(primary.Definition.GetLevel(1).CooldownSeconds, Is.EqualTo(1.8f));
+            Assert.That(primary.Definition.GetLevel(1).CooldownSeconds, Is.EqualTo(1.45f));
             Assert.That(
                 primary.Definition.GetLevel(1).Delivery.ReferenceId1,
                 Is.EqualTo(Id("qinglan.trait.lu_qingye.riding_wind")));

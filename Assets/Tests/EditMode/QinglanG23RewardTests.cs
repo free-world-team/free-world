@@ -36,11 +36,11 @@ namespace Game.Tests.EditMode
         };
 
         [Test]
-        public void PackPointNineRetainsSixPickupsSixRelicsAndFixedBossRewards()
+        public void PackPointTenRetainsSixPickupsSixRelicsAndFixedBossRewards()
         {
             var first = Bake();
             var second = Bake();
-            Assert.That(first.Manifest.Version, Is.EqualTo(new ContentVersion(0, 9, 0)));
+            Assert.That(first.Manifest.Version, Is.EqualTo(new ContentVersion(0, 10, 0)));
             Assert.That(first.Manifest.SchemaVersion, Is.EqualTo(6));
             Assert.That(first.Definitions.Count, Is.EqualTo(193));
             Assert.That(second.ContentHash, Is.EqualTo(first.ContentHash));

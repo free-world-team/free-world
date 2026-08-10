@@ -60,7 +60,7 @@ namespace Game.Editor
                 EnemyMovementMode.Chase, 2.2f, 0.10f, 0.45f, 0.55f, 2.5f, 1.4f);
             var tingfengEnemy = Enemy(
                 "BossTingfengEnemy", "qinglan.enemy.boss.tingfeng", swordQi,
-                50f, 1.2f, 2.35f, 1f, 14f, 50f,
+                800f, 1.2f, 2.35f, 1f, 14f, 50f,
                 EnemyMovementMode.KeepDistance, 5.5f, 0.08f, 0.5f, 0.65f, 2.8f, 1.2f);
 
             var zhezhi = Boss(

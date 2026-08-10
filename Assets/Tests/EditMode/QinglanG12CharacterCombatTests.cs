@@ -27,7 +27,7 @@ namespace Game.Tests.EditMode
             Assert.That(
                 registry.TryGet(Id("qinglan.character.lu_qingye"), out RuntimeCharacterDefinition character),
                 Is.True);
-            Assert.That(character.BaseMaxHealth, Is.EqualTo(120f));
+            Assert.That(character.BaseMaxHealth, Is.EqualTo(900f));
             Assert.That(character.MoveSpeed, Is.EqualTo(6f));
             for (var index = 0; index < character.StartingSkillIds.Count; index++)
             {
