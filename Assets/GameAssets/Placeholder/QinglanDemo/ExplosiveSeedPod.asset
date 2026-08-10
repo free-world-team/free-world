@@ -25,10 +25,10 @@ MonoBehaviour:
   collisionRadius: 0.55
   m5RuntimeEnabled: 1
   baseMoveSpeed: 1.3
-  baseDamage: 8
+  baseDamage: 1
   attackRange: 1.5
   attackSkill: {fileID: 11400000, guid: 72eb517754ee03e49a72c42fa3330cf3, type: 2}
-  experienceReward: 2
+  experienceReward: 2.5
   lootReward: 0.06
   visualProfileId: placeholder.presentation.qinglan.enemy.explosive_seed_pod
   movementMode: 1

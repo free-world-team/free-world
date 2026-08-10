@@ -78,7 +78,7 @@ MonoBehaviour:
     tag1: 
   effects:
   - moduleId: base.effect.detonate_status
-    value0: 5
+    value0: 8
     value1: 0
     value2: 0
     int0: 6

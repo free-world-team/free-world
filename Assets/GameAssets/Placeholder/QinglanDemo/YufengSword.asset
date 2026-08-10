@@ -22,7 +22,7 @@ MonoBehaviour:
   - delivery.projectile
   - mechanic.return
   - mechanic.riding_wind_affinity
-  cooldownSeconds: 1.8
+  cooldownSeconds: 1.45
   resourceCost: 0
   modularRuntimeEnabled: 1
   trigger:
@@ -53,11 +53,11 @@ MonoBehaviour:
     tag1: 
   targeting:
     moduleId: base.targeting.nearest
-    value0: 18
+    value0: 20
     value1: 0
     value2: 0
     value3: 0
-    int0: 1
+    int0: 2
     int1: 0
     presentationId: 
     referenceId0: 
@@ -66,8 +66,8 @@ MonoBehaviour:
     tag1: 
   delivery:
     moduleId: base.delivery.outbound_return
-    value0: 14
-    value1: 18
+    value0: 16
+    value1: 20
     value2: 0.35
     value3: 7
     int0: 2
@@ -79,7 +79,7 @@ MonoBehaviour:
     tag1: 
   effects:
   - moduleId: base.effect.damage
-    value0: 16
+    value0: 24
     value1: 0.08
     value2: 0
     int0: 1

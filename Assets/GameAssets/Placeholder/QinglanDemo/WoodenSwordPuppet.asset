@@ -24,10 +24,10 @@ MonoBehaviour:
   collisionRadius: 0.65
   m5RuntimeEnabled: 1
   baseMoveSpeed: 1.7
-  baseDamage: 7
+  baseDamage: 1
   attackRange: 1.55
   attackSkill: {fileID: 11400000, guid: 05ad19de4167e8a4b87f30e001206ff3, type: 2}
-  experienceReward: 3
+  experienceReward: 3.75
   lootReward: 0.12
   visualProfileId: placeholder.presentation.qinglan.enemy.wooden_sword_puppet
   movementMode: 1

@@ -77,7 +77,7 @@ MonoBehaviour:
     tag1: 
   effects:
   - moduleId: base.effect.damage
-    value0: 2
+    value0: 1
     value1: 0
     value2: 0
     int0: 1

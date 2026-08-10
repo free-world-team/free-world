@@ -24,10 +24,10 @@ MonoBehaviour:
   collisionRadius: 0.45
   m5RuntimeEnabled: 1
   baseMoveSpeed: 2
-  baseDamage: 0
+  baseDamage: 1
   attackRange: 6
   attackSkill: {fileID: 11400000, guid: c95e283da9fb2c4458ce26ec50efe7d4, type: 2}
-  experienceReward: 2
+  experienceReward: 2.5
   lootReward: 0.1
   visualProfileId: placeholder.presentation.qinglan.enemy.wind_bell_spirit
   movementMode: 2

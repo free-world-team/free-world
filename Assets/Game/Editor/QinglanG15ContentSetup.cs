@@ -54,7 +54,7 @@ namespace Game.Editor
                     value1: 0.6f,
                     value2: 0.5f,
                     presentation: "placeholder.presentation.qinglan.enemy.grass_spirit_aura"),
-                Damage(2f, DamageType.Physical, DamageTags.Direct));
+                Damage(1f, DamageType.Physical, DamageTags.Direct));
             var craneAttack = Skill(
                 "EnemyPaperCraneDive",
                 "qinglan.skill.enemy.paper_crane_dive",
@@ -62,7 +62,7 @@ namespace Game.Editor
                 0.45f,
                 Module("base.targeting.nearest", value0: 1.1f, int0: 1),
                 Module("base.delivery.instant"),
-                Damage(4f, DamageType.Physical, DamageTags.Direct),
+                Damage(2f, DamageType.Physical, DamageTags.Direct),
                 ValueEffect("base.effect.knockback", 1.5f));
             var puppetSlash = Skill(
                 "EnemyWoodenPuppetHeavySlash",
@@ -71,7 +71,7 @@ namespace Game.Editor
                 1f,
                 Module("base.targeting.circle", value0: 1.75f, int0: 8),
                 Module("base.delivery.instant"),
-                Damage(8f, DamageType.Physical, DamageTags.Direct),
+                Damage(3f, DamageType.Physical, DamageTags.Direct),
                 ValueEffect("base.effect.knockback", 2.5f));
             var puppetAttack = Skill(
                 "EnemyWoodenPuppetAttack",
@@ -95,7 +95,7 @@ namespace Game.Editor
                     value2: 2.5f,
                     int0: 1,
                     presentation: "placeholder.presentation.qinglan.enemy.stone_lantern_bolt"),
-                Damage(5f, DamageType.Fire, DamageTags.Direct));
+                Damage(2f, DamageType.Fire, DamageTags.Direct));
             var windBellAttack = Skill(
                 "EnemyWindBellSupport",
                 "qinglan.skill.enemy.wind_bell_support",
@@ -116,38 +116,38 @@ namespace Game.Editor
                     value1: 0.25f,
                     value2: 0.25f,
                     presentation: "placeholder.presentation.qinglan.enemy.explosive_seed_burst"),
-                Damage(8f, DamageType.Fire, DamageTags.Direct),
+                Damage(3f, DamageType.Fire, DamageTags.Direct),
                 ValueEffect("base.effect.knockback", 2f));
 
             var grass = Enemy(
                 "GrassSpirit", "qinglan.enemy.grass_spirit",
                 new[] { "enemy.normal", "enemy.swarm", "enemy.ground" },
-                grassAttack, 18f, 0.4f, 2.8f, 2f, 1.2f, 1f, 0.05f,
+                grassAttack, 18f, 0.4f, 2.8f, 1f, 1.2f, 1.25f, 0.05f,
                 EnemyMovementMode.Chase, 1f, 0.12f, 0f, 0f, 1f, 0.6f, 1f, 0.55f);
             var crane = Enemy(
                 "PaperCraneSpirit", "qinglan.enemy.paper_crane_spirit",
                 new[] { "enemy.normal", "enemy.fast", "enemy.flying" },
-                craneAttack, 22f, 0.35f, 3.3f, 4f, 6f, 1.5f, 0.08f,
+                craneAttack, 22f, 0.35f, 3.3f, 1f, 6f, 1.875f, 0.08f,
                 EnemyMovementMode.Charge, 1f, 0.1f, 0.45f, 0.55f, 2.8f, 1.5f, 0.8f, 0.35f);
             var puppet = Enemy(
                 "WoodenSwordPuppet", "qinglan.enemy.wooden_sword_puppet",
                 new[] { "enemy.normal", "enemy.armored", "enemy.ground" },
-                puppetAttack, 65f, 0.65f, 1.7f, 7f, 1.55f, 3f, 0.12f,
+                puppetAttack, 65f, 0.65f, 1.7f, 1f, 1.55f, 3.75f, 0.12f,
                 EnemyMovementMode.Chase, 1.2f, 0.15f, 0f, 0f, 1f, 1.2f, 1.4f, 0.8f);
             var lantern = Enemy(
                 "StoneLanternGuard", "qinglan.enemy.stone_lantern_guard",
                 new[] { "enemy.normal", "enemy.ranged", "enemy.ground" },
-                lanternAttack, 35f, 0.55f, 1.6f, 5f, 14f, 2.5f, 0.1f,
+                lanternAttack, 35f, 0.55f, 1.6f, 1f, 14f, 3.125f, 0.1f,
                 EnemyMovementMode.Ranged, 9f, 0.2f, 0f, 0f, 1f, 2f, 1.2f, 0.45f);
             var bell = Enemy(
                 "WindBellSpirit", "qinglan.enemy.wind_bell_spirit",
                 new[] { "enemy.normal", "enemy.support", "enemy.flying" },
-                windBellAttack, 28f, 0.45f, 2f, 0f, 6f, 2f, 0.1f,
+                windBellAttack, 28f, 0.45f, 2f, 1f, 6f, 2.5f, 0.1f,
                 EnemyMovementMode.KeepDistance, 6f, 0.2f, 0f, 0f, 1f, 2.1f, 1.2f, 0.5f);
             var seed = Enemy(
                 "ExplosiveSeedPod", "qinglan.enemy.explosive_seed_pod",
                 new[] { "enemy.normal", "enemy.environment", "enemy.explosive", "enemy.ground" },
-                seedAttack, 26f, 0.55f, 1.3f, 8f, 1.5f, 2f, 0.06f,
+                seedAttack, 26f, 0.55f, 1.3f, 1f, 1.5f, 2.5f, 0.06f,
                 EnemyMovementMode.Chase, 1f, 0.2f, 0f, 0f, 1f, 2.8f, 1.3f, 0.45f);
 
             var rampagingTrait = Trait(

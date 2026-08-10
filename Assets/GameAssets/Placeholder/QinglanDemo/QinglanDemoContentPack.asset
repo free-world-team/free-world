@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: QinglanDemoContentPack
   m_EditorClassIdentifier: Game.Content.Authoring::Game.Content.Authoring.ContentPackAuthoring
   packId: qinglan.pack.demo
-  version: 0.9.0
+  version: 0.10.0
   schemaVersion: 6
   minimumGameVersion: 0.1.0
   maximumGameVersion: 

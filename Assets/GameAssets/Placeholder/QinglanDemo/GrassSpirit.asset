@@ -24,10 +24,10 @@ MonoBehaviour:
   collisionRadius: 0.4
   m5RuntimeEnabled: 1
   baseMoveSpeed: 2.8
-  baseDamage: 2
+  baseDamage: 1
   attackRange: 1.2
   attackSkill: {fileID: 11400000, guid: 5d2028c5ada7f7e49afd084aab4dfcf7, type: 2}
-  experienceReward: 1
+  experienceReward: 1.25
   lootReward: 0.05
   visualProfileId: placeholder.presentation.qinglan.enemy.grass_spirit
   movementMode: 1

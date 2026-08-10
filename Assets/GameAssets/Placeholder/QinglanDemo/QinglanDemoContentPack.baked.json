@@ -1,7 +1,7 @@
 {
     "manifest": {
         "packId": "qinglan.pack.demo",
-        "version": "0.9.0",
+        "version": "0.10.0",
         "schemaVersion": 6,
         "minimumGameVersion": "0.1.0",
         "maximumGameVersion": "",
@@ -23,7 +23,7 @@
                 "character.player",
                 "character.lu_qingye"
             ],
-            "baseMaxHealth": 120.0,
+            "baseMaxHealth": 900.0,
             "moveSpeed": 6.0,
             "startingSkillIds": [
                 "qinglan.skill.weapon.yufeng_sword"
@@ -2260,7 +2260,7 @@
             "moveSpeed": 0.0,
             "startingSkillIds": [],
             "mechanicIds": [],
-            "cooldownSeconds": 1.7999999523162842,
+            "cooldownSeconds": 1.4500000476837159,
             "modularSkill": true,
             "resourceCost": 0.0,
             "triggerModule": {
@@ -2293,11 +2293,11 @@
             },
             "targetingModule": {
                 "moduleId": "base.targeting.nearest",
-                "value0": 18.0,
+                "value0": 20.0,
                 "value1": 0.0,
                 "value2": 0.0,
                 "value3": 0.0,
-                "int0": 1,
+                "int0": 2,
                 "int1": 0,
                 "presentationId": "",
                 "referenceId0": "",
@@ -2307,8 +2307,8 @@
             },
             "deliveryModule": {
                 "moduleId": "base.delivery.outbound_return",
-                "value0": 14.0,
-                "value1": 18.0,
+                "value0": 16.0,
+                "value1": 20.0,
                 "value2": 0.3499999940395355,
                 "value3": 7.0,
                 "int0": 2,
@@ -2322,7 +2322,7 @@
             "effectOps": [
                 {
                     "moduleId": "base.effect.damage",
-                    "value0": 16.0,
+                    "value0": 24.0,
                     "value1": 0.07999999821186066,
                     "value2": 0.0,
                     "int0": 1,
@@ -2585,7 +2585,7 @@
             "effectOps": [
                 {
                     "moduleId": "base.effect.damage",
-                    "value0": 8.0,
+                    "value0": 12.0,
                     "value1": 0.05000000074505806,
                     "value2": 0.0,
                     "int0": 4,
@@ -3644,7 +3644,7 @@
             "effectOps": [
                 {
                     "moduleId": "base.effect.damage",
-                    "value0": 4.0,
+                    "value0": 6.0,
                     "value1": 0.0,
                     "value2": 0.0,
                     "int0": 5,
@@ -4361,7 +4361,7 @@
             "effectOps": [
                 {
                     "moduleId": "base.effect.detonate_status",
-                    "value0": 5.0,
+                    "value0": 8.0,
                     "value1": 0.0,
                     "value2": 0.0,
                     "int0": 6,
@@ -15024,7 +15024,7 @@
             "effectOps": [
                 {
                     "moduleId": "base.effect.damage",
-                    "value0": 2.0,
+                    "value0": 1.0,
                     "value1": 0.0,
                     "value2": 0.0,
                     "int0": 1,
@@ -15220,7 +15220,7 @@
             "effectOps": [
                 {
                     "moduleId": "base.effect.damage",
-                    "value0": 4.0,
+                    "value0": 2.0,
                     "value1": 0.0,
                     "value2": 0.0,
                     "int0": 1,
@@ -15429,7 +15429,7 @@
             "effectOps": [
                 {
                     "moduleId": "base.effect.damage",
-                    "value0": 8.0,
+                    "value0": 3.0,
                     "value1": 0.0,
                     "value2": 0.0,
                     "int0": 1,
@@ -15847,7 +15847,7 @@
             "effectOps": [
                 {
                     "moduleId": "base.effect.damage",
-                    "value0": 5.0,
+                    "value0": 2.0,
                     "value1": 0.0,
                     "value2": 0.0,
                     "int0": 2,
@@ -16239,7 +16239,7 @@
             "effectOps": [
                 {
                     "moduleId": "base.effect.damage",
-                    "value0": 8.0,
+                    "value0": 3.0,
                     "value1": 0.0,
                     "value2": 0.0,
                     "int0": 2,
@@ -16450,10 +16450,10 @@
             "collisionRadius": 0.4000000059604645,
             "enemyRuntime": {
                 "baseMoveSpeed": 2.799999952316284,
-                "baseDamage": 2.0,
+                "baseDamage": 1.0,
                 "attackRange": 1.2000000476837159,
                 "attackSkillId": "qinglan.skill.enemy.grass_spirit_aura",
-                "experienceReward": 1.0,
+                "experienceReward": 1.25,
                 "lootReward": 0.05000000074505806,
                 "visualProfileId": "placeholder.presentation.qinglan.enemy.grass_spirit",
                 "movementMode": 1,
@@ -16632,10 +16632,10 @@
             "collisionRadius": 0.3499999940395355,
             "enemyRuntime": {
                 "baseMoveSpeed": 3.299999952316284,
-                "baseDamage": 4.0,
+                "baseDamage": 1.0,
                 "attackRange": 6.0,
                 "attackSkillId": "qinglan.skill.enemy.paper_crane_dive",
-                "experienceReward": 1.5,
+                "experienceReward": 1.875,
                 "lootReward": 0.07999999821186066,
                 "visualProfileId": "placeholder.presentation.qinglan.enemy.paper_crane_spirit",
                 "movementMode": 3,
@@ -16814,10 +16814,10 @@
             "collisionRadius": 0.6499999761581421,
             "enemyRuntime": {
                 "baseMoveSpeed": 1.7000000476837159,
-                "baseDamage": 7.0,
+                "baseDamage": 1.0,
                 "attackRange": 1.5499999523162842,
                 "attackSkillId": "qinglan.skill.enemy.wooden_puppet_attack",
-                "experienceReward": 3.0,
+                "experienceReward": 3.75,
                 "lootReward": 0.11999999731779099,
                 "visualProfileId": "placeholder.presentation.qinglan.enemy.wooden_sword_puppet",
                 "movementMode": 1,
@@ -16996,10 +16996,10 @@
             "collisionRadius": 0.550000011920929,
             "enemyRuntime": {
                 "baseMoveSpeed": 1.600000023841858,
-                "baseDamage": 5.0,
+                "baseDamage": 1.0,
                 "attackRange": 14.0,
                 "attackSkillId": "qinglan.skill.enemy.stone_lantern_bolt",
-                "experienceReward": 2.5,
+                "experienceReward": 3.125,
                 "lootReward": 0.10000000149011612,
                 "visualProfileId": "placeholder.presentation.qinglan.enemy.stone_lantern_guard",
                 "movementMode": 4,
@@ -17178,10 +17178,10 @@
             "collisionRadius": 0.44999998807907107,
             "enemyRuntime": {
                 "baseMoveSpeed": 2.0,
-                "baseDamage": 0.0,
+                "baseDamage": 1.0,
                 "attackRange": 6.0,
                 "attackSkillId": "qinglan.skill.enemy.wind_bell_support",
-                "experienceReward": 2.0,
+                "experienceReward": 2.5,
                 "lootReward": 0.10000000149011612,
                 "visualProfileId": "placeholder.presentation.qinglan.enemy.wind_bell_spirit",
                 "movementMode": 2,
@@ -17361,10 +17361,10 @@
             "collisionRadius": 0.550000011920929,
             "enemyRuntime": {
                 "baseMoveSpeed": 1.2999999523162842,
-                "baseDamage": 8.0,
+                "baseDamage": 1.0,
                 "attackRange": 1.5,
                 "attackSkillId": "qinglan.skill.enemy.explosive_seed_burst",
-                "experienceReward": 2.0,
+                "experienceReward": 2.5,
                 "lootReward": 0.05999999865889549,
                 "visualProfileId": "placeholder.presentation.qinglan.enemy.explosive_seed_pod",
                 "movementMode": 1,
@@ -24828,7 +24828,7 @@
                 "enemy.ground",
                 "enemy.no_affix"
             ],
-            "baseMaxHealth": 1200.0,
+            "baseMaxHealth": 800.0,
             "moveSpeed": 0.0,
             "startingSkillIds": [],
             "mechanicIds": [],
@@ -24896,7 +24896,7 @@
             "collisionRadius": 1.0499999523162842,
             "enemyRuntime": {
                 "baseMoveSpeed": 2.1500000953674318,
-                "baseDamage": 11.0,
+                "baseDamage": 1.0,
                 "attackRange": 12.0,
                 "attackSkillId": "qinglan.skill.boss.zhezhi.horizontal_trial",
                 "experienceReward": 25.0,
@@ -25010,7 +25010,7 @@
                 "enemy.ground",
                 "enemy.no_affix"
             ],
-            "baseMaxHealth": 2600.0,
+            "baseMaxHealth": 50.0,
             "moveSpeed": 0.0,
             "startingSkillIds": [],
             "mechanicIds": [],
@@ -25078,7 +25078,7 @@
             "collisionRadius": 1.2000000476837159,
             "enemyRuntime": {
                 "baseMoveSpeed": 2.3499999046325685,
-                "baseDamage": 14.0,
+                "baseDamage": 1.0,
                 "attackRange": 14.0,
                 "attackSkillId": "qinglan.skill.boss.tingfeng.sword_qi",
                 "experienceReward": 50.0,
@@ -38982,5 +38982,5 @@
             "shieldCapacity": 0.0
         }
     ],
-    "contentHash": "d332199604988624b32837002059ed0218a4f89b947874810adfc2bfbf098d8d"
+    "contentHash": "62b73333da531e39407a15b778657da2b0870d6cbb78a71ea5dd78404e80e966"
 }

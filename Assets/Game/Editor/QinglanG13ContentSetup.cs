@@ -63,7 +63,7 @@ namespace Game.Editor
                     reference0: "qinglan.status.marked"),
                 Module("base.targeting.trigger_position", value0: 4f, int0: 12),
                 Module("base.delivery.instant"),
-                new[] { Detonate("qinglan.status.marked", 5f, 6) },
+                new[] { Detonate("qinglan.status.marked", 8f, 6) },
                 DamagePatches(0, 1f));
             var lihuoReturnExplosion = Skill(
                 "LihuoReturnExplosion",
@@ -180,21 +180,21 @@ namespace Game.Editor
                 "YufengSword",
                 "qinglan.skill.weapon.yufeng_sword",
                 new[] { "skill.player", "weapon.sword", "delivery.projectile", "mechanic.return", "mechanic.riding_wind_affinity" },
-                1.8f,
+                1.45f,
                 Module("base.trigger.timer"),
                 Module("base.condition.always"),
-                Module("base.targeting.nearest", value0: 18f, int0: 1),
+                Module("base.targeting.nearest", value0: 20f, int0: 2),
                 Module(
                     "base.delivery.outbound_return",
-                    value0: 14f,
-                    value1: 18f,
+                    value0: 16f,
+                    value1: 20f,
                     value2: 0.35f,
                     value3: 7f,
                     int0: 2,
                     presentation: "placeholder.presentation.qinglan.skill.yufeng_sword",
                     reference0: yufengReturn.ContentIdText,
                     reference1: "qinglan.trait.lu_qingye.riding_wind"),
-                new[] { Damage(16f, DamageType.Physical, DamageTags.Direct, 0.08f, true) },
+                new[] { Damage(24f, DamageType.Physical, DamageTags.Direct, 0.08f, true) },
                 new[]
                 {
                     Patch(2, "effects[0].value0", 4f),
@@ -223,7 +223,7 @@ namespace Game.Editor
                     presentation: "placeholder.presentation.qinglan.skill.yellow_talisman"),
                 new[]
                 {
-                    Damage(8f, DamageType.Lightning, DamageTags.Direct, 0.05f, true),
+                    Damage(12f, DamageType.Lightning, DamageTags.Direct, 0.05f, true),
                     ApplyStatus("qinglan.status.marked", 1f),
                     Spawn(talismanDetonation.ContentIdText)
                 },
@@ -329,7 +329,7 @@ namespace Game.Editor
                     presentation: "placeholder.presentation.qinglan.skill.spirit_vine_seed"),
                 new[]
                 {
-                    Damage(4f, DamageType.Poison, DamageTags.DamageOverTime),
+                    Damage(6f, DamageType.Poison, DamageTags.DamageOverTime),
                     ApplyStatus("qinglan.status.poisoned", 1f)
                 },
                 new[]
@@ -343,7 +343,7 @@ namespace Game.Editor
                     Patch(8, "delivery.value0", 0.75f)
                 });
 
-            character.Configure(120f, 6f, new[] { yufengSword });
+            character.Configure(900f, 6f, new[] { yufengSword });
             character.ConfigureMechanics(new[] { mechanic });
 
             var additions = new ContentAuthoringBase[]

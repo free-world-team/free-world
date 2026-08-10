@@ -24,10 +24,10 @@ MonoBehaviour:
   collisionRadius: 0.55
   m5RuntimeEnabled: 1
   baseMoveSpeed: 1.6
-  baseDamage: 5
+  baseDamage: 1
   attackRange: 14
   attackSkill: {fileID: 11400000, guid: f05ffee39a3f95c41bc1565708d556c9, type: 2}
-  experienceReward: 2.5
+  experienceReward: 3.125
   lootReward: 0.1
   visualProfileId: placeholder.presentation.qinglan.enemy.stone_lantern_guard
   movementMode: 4

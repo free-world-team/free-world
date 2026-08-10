@@ -48,6 +48,8 @@ namespace Game.Tests.EditMode
             Assert.That(catalogs.IsSuccess, Is.True, catalogs.Error.ToString());
             Assert.That(catalogs.Value, Has.Length.EqualTo(1));
             Assert.That(catalogs.Value[0].Manifest.PackId.Value, Is.EqualTo("qinglan.pack.demo"));
+            Assert.That(catalogs.Value[0].Manifest.Version.ToString(),
+                Is.EqualTo(QinglanG34BalanceContentSetup.FrozenPackVersion));
             for (var index = 0; index < catalogs.Value[0].Definitions.Count; index++)
                 Assert.That(catalogs.Value[0].Definitions[index].Id.Value, Does.Not.StartWith("test."));
         }

@@ -36,6 +36,10 @@ namespace Game.Editor
         private static readonly ContentId GuideObjectiveId = Id("qinglan.objective.wind_altar.guide");
         private static readonly ContentId ListenObjectiveId = Id("qinglan.objective.wind_altar.listen");
         private static readonly ContentId StopObjectiveId = Id("qinglan.objective.wind_altar.stop_balance");
+        private static readonly ContentId VictoryBossId = Id("qinglan.boss.tingfeng");
+        private static readonly ContentId VictoryBossEnemyId = Id("qinglan.enemy.boss.tingfeng");
+        private static readonly ContentId CompatibilityRewardId = Id("qinglan.reward.elite.afflicted_core");
+        private static readonly ContentId CompatibilitySourceId = Id("qinglan.balance.relic_compatibility");
 
         private static readonly RouteDefinition[] Routes =
         {
@@ -137,7 +141,7 @@ namespace Game.Editor
                     matrix = matrix,
                     goldenReplays = replays,
                     failureProbes = failureProbes,
-                    relicCompatibilityCases = Array.Empty<QinglanG34RelicCompatibilitySummary>()
+                    relicCompatibilityCases = RunRelicCompatibility(catalogs.Value)
                 };
                 QinglanG34BalanceRules.Evaluate(report);
                 WriteReport(report, ResolveOutputPath());
@@ -151,6 +155,22 @@ namespace Game.Editor
                 exitCode = 1;
             }
             EditorApplication.Exit(exitCode);
+        }
+
+        [MenuItem("Tools/Free World/Qinglan/G3.4 Diagnose Talisman Golden")]
+        public static void DiagnoseTalismanGolden()
+        {
+            var catalogs = BakeDemoCatalog();
+            if (!catalogs.IsSuccess) throw new InvalidOperationException(catalogs.Error.ToString());
+            var summary = Execute(
+                CreateApplication(catalogs.Value),
+                GetSeed(RouteTalisman, 1),
+                RouteTalisman,
+                false);
+            var output = Path.GetFullPath("TestResults/QinglanDemo/G3.4/talisman-golden-diagnostic.json");
+            Directory.CreateDirectory(Path.GetDirectoryName(output));
+            File.WriteAllText(output, JsonUtility.ToJson(summary, true) + "\n");
+            EditorApplication.Exit(0);
         }
 
         public static QinglanG34RunSummary Execute(
@@ -207,7 +227,7 @@ namespace Game.Editor
                         minimumHealth = Math.Min(minimumHealth, health.Current);
                         maximumHealth = Math.Max(maximumHealth, health.Maximum);
                     }
-                    if (world.Actors.TryRead(player, out var state))
+                    if (world.Actors.Contains(player) && world.Actors.TryRead(player, out var state))
                     {
                         if (hasPreviousPosition)
                             movementDistance += Vector2.Distance(previousPosition, state.Position);
@@ -216,6 +236,12 @@ namespace Game.Editor
                     }
                     if ((world.Tick % SimulationClock.TickRate) == 0)
                         positionsWalkable &= AllPositionsWalkable(world);
+                }
+
+                if (!session.HasEnded && world.Tick >= MaximumRunTicks)
+                {
+                    driver.ResolveChoices(session, ref rewardsSelected);
+                    session.Advance(0d);
                 }
 
                 return CreateSummary(
@@ -242,6 +268,118 @@ namespace Game.Editor
                 if (!handle.IsDisposed || handle.ActiveEntityCount != 0)
                     throw new InvalidOperationException("Balance run owner did not release all entities.");
             }
+        }
+
+        private static QinglanG34RelicCompatibilitySummary[] RunRelicCompatibility(
+            BakedContentCatalog[] catalogs)
+        {
+            var output = new QinglanG34RelicCompatibilitySummary[Routes.Length * AllRelicIds.Length];
+            var cursor = 0;
+            for (var route = 0; route < Routes.Length; route++)
+                for (var relic = 0; relic < AllRelicIds.Length; relic++)
+                    output[cursor++] = ExecuteRelicCompatibility(catalogs, route, relic);
+            return output;
+        }
+
+        private static QinglanG34RelicCompatibilitySummary ExecuteRelicCompatibility(
+            BakedContentCatalog[] catalogs,
+            int route,
+            int relicIndex)
+        {
+            const int compatibilityTicks = 1800;
+            var relicId = Id(AllRelicIds[relicIndex]);
+            for (var attempt = 1; attempt <= 64; attempt++)
+            {
+                var seed = 0x47333452454C0000UL |
+                           ((ulong)route << 12) |
+                           ((ulong)relicIndex << 8) |
+                           (uint)attempt;
+                var application = CreateApplication(catalogs);
+                var factory = new QinglanDemoRunFactory(application);
+                var descriptor = factory.CreateDescriptor(seed ^ 0x434F4D5041540000UL, seed);
+                if (!descriptor.IsSuccess) throw new InvalidOperationException(descriptor.Error.ToString());
+                var created = factory.Create(descriptor.Value, application.StateMachine);
+                if (!created.IsSuccess) throw new InvalidOperationException(created.Error.ToString());
+                var handle = created.Value as QinglanDemoRunHandle;
+                if (handle == null) throw new InvalidOperationException("Relic compatibility returned an unexpected handle.");
+                var session = handle.Session;
+                var world = handle.World;
+                var player = session.Player.Handle;
+                QinglanG34RelicCompatibilitySummary summary = null;
+                try
+                {
+                    var transaction = new RewardTransactionId(
+                        world.Qinglan.Rewards.RunId,
+                        CompatibilitySourceId,
+                        relicIndex);
+                    if (!world.Qinglan.Rewards.TryQueueDirect(
+                            CompatibilityRewardId,
+                            transaction,
+                            Vector2.Zero,
+                            new SpatialEntity(EntityKind.Actor, player)))
+                        throw new InvalidOperationException("Relic compatibility reward could not be queued.");
+                    session.Advance(SimulationClock.TickDurationSeconds);
+                    var choice = session.CurrentRewardChoice;
+                    var choiceIndex = -1;
+                    if (choice != null)
+                        for (var index = 0; index < choice.CandidateIds.Count; index++)
+                            if (choice.CandidateIds[index] == relicId) choiceIndex = index;
+                    if (choiceIndex < 0)
+                        continue;
+                    if (!session.SelectRewardAt(choiceIndex))
+                        throw new InvalidOperationException("Relic compatibility choice could not be selected.");
+
+                    var driver = new CommandOnlyAutoPlayer(
+                        application.ContentRegistry,
+                        GetRoute(route),
+                        seed,
+                        false);
+                    var startTick = world.Tick;
+                    var rewardsSelected = 1;
+                    var walkable = true;
+                    while (!session.HasEnded && world.Tick - startTick < compatibilityTicks)
+                    {
+                        driver.SubmitMovement(session, world, player);
+                        session.Advance(SimulationClock.TickDurationSeconds);
+                        driver.ResolveChoices(session, ref rewardsSelected);
+                        if ((world.Tick % SimulationClock.TickRate) == 0 &&
+                            world.Actors.Contains(player) && world.Actors.TryRead(player, out var playerState))
+                            walkable &= world.Map == null || world.Map.IsWalkable(playerState.Position);
+                    }
+                    var resolved = world.Qinglan.Rewards.Relics.TryGet(relicId, out _);
+                    summary = new QinglanG34RelicCompatibilitySummary
+                    {
+                        route = route,
+                        relicId = relicId.Value,
+                        tickCount = (int)(world.Tick - startTick),
+                        outputResolved = resolved,
+                        invalidHandleAccesses = world.Diagnostics.InvalidHandleAccesses,
+                        positionsWalkable = walkable,
+                        activeEntitiesBeforeDispose = handle.ActiveEntityCount,
+                        passed = !session.HasEnded &&
+                                 world.Tick - startTick == compatibilityTicks &&
+                                 resolved && walkable &&
+                                 world.Diagnostics.InvalidHandleAccesses == 0
+                    };
+                }
+                finally
+                {
+                    handle.Dispose();
+                    if (summary != null)
+                    {
+                        summary.cleanupPassed = handle.IsDisposed && handle.ActiveEntityCount == 0;
+                        summary.passed &= summary.cleanupPassed;
+                    }
+                }
+                if (summary != null) return summary;
+            }
+            return new QinglanG34RelicCompatibilitySummary
+            {
+                route = route,
+                relicId = relicId.Value,
+                tickCount = 0,
+                passed = false
+            };
         }
 
         public static int ChooseOfferIndex(UpgradeOfferSet offers, int route)
@@ -400,6 +538,11 @@ namespace Game.Editor
                 ticks,
                 route.Route,
                 ended ? (int)result.Reason : 0);
+            CaptureVictoryRewardState(
+                world,
+                out var victoryRewardCommitted,
+                out var victoryRewardPresent,
+                out var victoryRewardDistance);
             return new QinglanG34RunSummary
             {
                 seed = "0x" + seed.ToString("X16", CultureInfo.InvariantCulture),
@@ -434,6 +577,11 @@ namespace Game.Editor
                 positionsWalkable = positionsWalkable,
                 invalidHandleAccesses = world.Diagnostics.InvalidHandleAccesses,
                 activeEntitiesBeforeDispose = handle.ActiveEntityCount,
+                activeRewardPickups = world.Qinglan.Rewards.ActivePickupCount,
+                victoryRewardCommitted = victoryRewardCommitted,
+                victoryRewardPresent = victoryRewardPresent,
+                victoryRewardDistance = victoryRewardDistance,
+                applicationState = session.StateMachine.CurrentState.ToString(),
                 skills = skills,
                 passives = passives,
                 relics = relics,
@@ -445,6 +593,32 @@ namespace Game.Editor
                 buildChecksum = Hex(buildChecksum),
                 combinedChecksum = Hex(combinedChecksum)
             };
+        }
+
+        private static void CaptureVictoryRewardState(
+            SimulationWorld world,
+            out bool committed,
+            out bool present,
+            out float distance)
+        {
+            var rewards = world.Qinglan.Rewards;
+            committed = rewards.HasCommitted(new RewardTransactionId(rewards.RunId, VictoryBossId, 0));
+            present = false;
+            distance = -1f;
+            var player = default(SimulationEntityState);
+            var hasPlayer = world.Actors.Contains(world.Progression.Player.Handle) &&
+                            world.Actors.TryRead(world.Progression.Player.Handle, out player);
+            for (var index = 0; index < world.Pickups.Count; index++)
+            {
+                var handle = world.Pickups.GetHandleAt(index);
+                if (!rewards.TryGetPickup(handle, out var pickup) ||
+                    pickup.Transaction.SourceStableId != VictoryBossId) continue;
+                present = true;
+                distance = hasPlayer
+                    ? Vector2.Distance(player.Position, world.Pickups.GetStateAt(index).Position)
+                    : -1f;
+                return;
+            }
         }
 
         private static void CaptureBuildPeaks(
@@ -666,7 +840,10 @@ namespace Game.Editor
             Objective = 2,
             Boss = 3,
             Landmark = 4,
-            Patrol = 5
+            Pickup = 5,
+            Patrol = 6,
+            VictoryReward = 7,
+            FinalBoss = 8
         }
 
         private sealed class CommandOnlyAutoPlayer
@@ -700,10 +877,10 @@ namespace Game.Editor
                 TryChooseTarget(world, out var target, out var kind);
                 var direction = ComputeDirection(world, player, state.Position, target, kind);
                 session.SetMoveDirection(direction);
-                var interaction = (kind == NavigationTargetKind.Event ||
-                                   kind == NavigationTargetKind.Objective ||
-                                   kind == NavigationTargetKind.Landmark) &&
-                                  Vector2.DistanceSquared(state.Position, target) <= 2.2f * 2.2f;
+                var interaction = kind == NavigationTargetKind.Event ||
+                                  kind == NavigationTargetKind.Objective ||
+                                  (kind == NavigationTargetKind.Landmark &&
+                                   Vector2.DistanceSquared(state.Position, target) <= 2.45f * 2.45f);
                 session.SetInteractHeld(interaction);
             }
 
@@ -718,6 +895,9 @@ namespace Game.Editor
                     else
                     {
                         var index = ChooseOfferIndex(session.CurrentOffers, route.Route);
+                        if (index >= 0 && !ContainsCoreOffer(session.CurrentOffers, route) &&
+                            session.Reroll())
+                            index = ChooseOfferIndex(session.CurrentOffers, route.Route);
                         if (index < 0 || !session.SelectAt(index))
                             throw new InvalidOperationException("Balance driver could not select an offer.");
                     }
@@ -731,13 +911,32 @@ namespace Game.Editor
                 }
             }
 
+            private static bool ContainsCoreOffer(UpgradeOfferSet offers, RouteDefinition route)
+            {
+                if (offers == null) return false;
+                for (var index = 0; index < offers.Count; index++)
+                {
+                    var id = offers.GetAt(index).Source.TargetContentId.Value;
+                    if (id == route.CoreSkillId || id == route.CorePassiveId) return true;
+                }
+                return false;
+            }
+
             private void TryChooseTarget(
                 SimulationWorld world,
                 out Vector2 target,
                 out NavigationTargetKind kind)
             {
+                if (world.Progression.Statistics.BossDefeats >= 2 &&
+                    TryFindRewardPickup(world, VictoryBossId, out target))
+                {
+                    kind = NavigationTargetKind.VictoryReward;
+                    return;
+                }
                 var map = world.Qinglan.MapObjectives;
-                for (var index = 0; index < map.EventCount; index++)
+                var objectiveWindow = world.Tick % (20 * SimulationClock.TickRate) <
+                                      6 * SimulationClock.TickRate;
+                for (var index = 0; objectiveWindow && index < map.EventCount; index++)
                 {
                     var entry = map.GetEventAt(index);
                     if (entry.State == ObjectiveState.Defending && entry.ActiveAnchorId.IsValid &&
@@ -747,7 +946,7 @@ namespace Game.Editor
                         return;
                     }
                 }
-                for (var index = 0; index < map.ObjectiveCount; index++)
+                for (var index = 0; objectiveWindow && index < map.ObjectiveCount; index++)
                 {
                     var entry = map.GetObjectiveAt(index);
                     if (!WantsObjective(route.Route, entry.Id) || entry.State == ObjectiveState.Completed) continue;
@@ -765,7 +964,17 @@ namespace Game.Editor
                     var handle = world.Actors.GetHandleAt(index);
                     if (!world.Enemies.TryGetSnapshot(handle, out var enemy) || !enemy.Boss) continue;
                     target = world.Actors.GetStateAt(index).Position;
-                    kind = NavigationTargetKind.Boss;
+                    kind = enemy.EnemyId == VictoryBossEnemyId
+                        ? NavigationTargetKind.FinalBoss
+                        : NavigationTargetKind.Boss;
+                    return;
+                }
+                if (TryFindNearestPickup(world, world.Actors.TryRead(
+                        world.Progression.Player.Handle, out var playerState)
+                            ? playerState.Position
+                            : Vector2.Zero, 32f, out target))
+                {
+                    kind = NavigationTargetKind.Pickup;
                     return;
                 }
                 for (var index = 0; index < map.LandmarkCount; index++)
@@ -793,10 +1002,16 @@ namespace Game.Editor
                 var distance = offset.Length();
                 var direction = distance > 0.001f ? offset / distance : Vector2.Zero;
                 var clockwise = ((seed >> 8) & 1UL) == 0UL ? 1f : -1f;
-                if (kind == NavigationTargetKind.Boss)
+                if (kind == NavigationTargetKind.Boss || kind == NavigationTargetKind.FinalBoss)
                 {
                     var tangent = new Vector2(-direction.Y, direction.X) * clockwise;
-                    var radial = Math.Clamp((distance - 9f) / 3f, -1f, 1f);
+                    var aggressiveMidBoss = kind == NavigationTargetKind.Boss &&
+                                            route.Route == RouteTalisman &&
+                                            (seed & 0xFFUL) % 3UL == 1UL;
+                    var desiredDistance = kind == NavigationTargetKind.FinalBoss || aggressiveMidBoss
+                        ? 2.5f
+                        : 9f;
+                    var radial = Math.Clamp((distance - desiredDistance) / 3f, -1f, 1f);
                     direction = tangent + (direction * radial);
                 }
                 else if ((kind == NavigationTargetKind.Event || kind == NavigationTargetKind.Objective ||
@@ -806,37 +1021,93 @@ namespace Game.Editor
                     var radial = Math.Clamp((distance - 1.4f) / 0.8f, -1f, 1f);
                     direction = tangent + (direction * radial);
                 }
-                if (TryFindNearestEnemy(world, player, position, out var enemyPosition, out var enemyDistance) &&
-                    enemyDistance < 5.5f)
+                var avoidance = kind == NavigationTargetKind.VictoryReward
+                    ? Vector2.Zero
+                    : BuildEnemyAvoidance(
+                        world,
+                        player,
+                        position,
+                        kind == NavigationTargetKind.FinalBoss ||
+                        (kind == NavigationTargetKind.Boss && route.Route == RouteTalisman &&
+                         (seed & 0xFFUL) % 3UL == 1UL));
+                if (avoidance.LengthSquared() > 0f)
                 {
-                    var away = position - enemyPosition;
-                    if (away.LengthSquared() > 0.0001f)
-                        direction += Vector2.Normalize(away) * ((5.5f - enemyDistance) / 5.5f) * 2.2f;
+                    direction += avoidance;
+                }
+                if (kind != NavigationTargetKind.Boss && kind != NavigationTargetKind.FinalBoss &&
+                    kind != NavigationTargetKind.Pickup &&
+                    kind != NavigationTargetKind.VictoryReward &&
+                    TryFindNearestPickup(world, position, 12f, out var pickupPosition))
+                {
+                    var pickupOffset = pickupPosition - position;
+                    if (pickupOffset.LengthSquared() > 0.0001f)
+                        direction += Vector2.Normalize(pickupOffset) * 0.7f;
                 }
                 if (direction.LengthSquared() > 1f) direction = Vector2.Normalize(direction);
                 return direction;
             }
 
-            private static bool TryFindNearestEnemy(
+            private static Vector2 BuildEnemyAvoidance(
                 SimulationWorld world,
                 EntityHandle player,
                 Vector2 position,
-                out Vector2 enemyPosition,
-                out float enemyDistance)
+                bool ignoreBoss)
             {
-                enemyPosition = default;
-                enemyDistance = float.MaxValue;
+                var result = Vector2.Zero;
                 for (var index = 0; index < world.Actors.Count; index++)
                 {
                     var handle = world.Actors.GetHandleAt(index);
-                    if (handle == player || !world.Enemies.TryGetSnapshot(handle, out var enemy) || enemy.Boss) continue;
+                    if (handle == player || !world.Enemies.TryGetSnapshot(handle, out var enemy) ||
+                        (ignoreBoss && enemy.Boss)) continue;
                     var candidate = world.Actors.GetStateAt(index).Position;
-                    var distance = Vector2.Distance(position, candidate);
-                    if (distance >= enemyDistance) continue;
-                    enemyDistance = distance;
-                    enemyPosition = candidate;
+                    var away = position - candidate;
+                    var distanceSquared = away.LengthSquared();
+                    var radius = enemy.Boss ? 7f : 8f;
+                    if (distanceSquared <= 0.0001f || distanceSquared >= radius * radius) continue;
+                    var distance = (float)Math.Sqrt(distanceSquared);
+                    var weight = (radius - distance) / radius;
+                    result += (away / distance) * weight * weight * (enemy.Boss ? 3f : 1.35f);
                 }
-                return enemyDistance < float.MaxValue;
+                if (result.LengthSquared() > 9f) result = Vector2.Normalize(result) * 3f;
+                return result;
+            }
+
+            private static bool TryFindNearestPickup(
+                SimulationWorld world,
+                Vector2 position,
+                float maximumDistance,
+                out Vector2 pickupPosition)
+            {
+                pickupPosition = default;
+                var bestDistanceSquared = maximumDistance * maximumDistance;
+                var found = false;
+                for (var index = 0; index < world.Pickups.Count; index++)
+                {
+                    var candidate = world.Pickups.GetStateAt(index).Position;
+                    var distanceSquared = Vector2.DistanceSquared(position, candidate);
+                    if (distanceSquared >= bestDistanceSquared) continue;
+                    bestDistanceSquared = distanceSquared;
+                    pickupPosition = candidate;
+                    found = true;
+                }
+                return found;
+            }
+
+            private static bool TryFindRewardPickup(
+                SimulationWorld world,
+                ContentId transactionSourceId,
+                out Vector2 pickupPosition)
+            {
+                for (var index = 0; index < world.Pickups.Count; index++)
+                {
+                    var handle = world.Pickups.GetHandleAt(index);
+                    if (!world.Qinglan.Rewards.TryGetPickup(handle, out var reward) ||
+                        reward.Transaction.SourceStableId != transactionSourceId) continue;
+                    pickupPosition = world.Pickups.GetStateAt(index).Position;
+                    return true;
+                }
+                pickupPosition = default;
+                return false;
             }
 
             private static bool WantsObjective(int route, ContentId id)
@@ -1019,6 +1290,11 @@ namespace Game.Editor
         public bool positionsWalkable;
         public long invalidHandleAccesses;
         public int activeEntitiesBeforeDispose;
+        public int activeRewardPickups;
+        public bool victoryRewardCommitted;
+        public bool victoryRewardPresent;
+        public float victoryRewardDistance;
+        public string applicationState;
         public string[] skills;
         public string[] passives;
         public string[] relics;
@@ -1038,6 +1314,9 @@ namespace Game.Editor
         public string relicId;
         public int tickCount;
         public bool outputResolved;
+        public long invalidHandleAccesses;
+        public bool positionsWalkable;
+        public int activeEntitiesBeforeDispose;
         public bool cleanupPassed;
         public bool passed;
     }

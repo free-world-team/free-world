@@ -24,10 +24,10 @@ MonoBehaviour:
   collisionRadius: 0.35
   m5RuntimeEnabled: 1
   baseMoveSpeed: 3.3
-  baseDamage: 4
+  baseDamage: 1
   attackRange: 6
   attackSkill: {fileID: 11400000, guid: 1e16ec9d0319d7940bbcaecf50a4a479, type: 2}
-  experienceReward: 1.5
+  experienceReward: 1.875
   lootReward: 0.08
   visualProfileId: placeholder.presentation.qinglan.enemy.paper_crane_spirit
   movementMode: 3

@@ -56,11 +56,11 @@ namespace Game.Editor
 
             var zhezhiEnemy = Enemy(
                 "BossZhezhiEnemy", "qinglan.enemy.boss.zhezhi", horizontalTrial,
-                1200f, 1.05f, 2.15f, 11f, 12f, 25f,
+                800f, 1.05f, 2.15f, 1f, 12f, 25f,
                 EnemyMovementMode.Chase, 2.2f, 0.10f, 0.45f, 0.55f, 2.5f, 1.4f);
             var tingfengEnemy = Enemy(
                 "BossTingfengEnemy", "qinglan.enemy.boss.tingfeng", swordQi,
-                2600f, 1.2f, 2.35f, 14f, 14f, 50f,
+                50f, 1.2f, 2.35f, 1f, 14f, 50f,
                 EnemyMovementMode.KeepDistance, 5.5f, 0.08f, 0.5f, 0.65f, 2.8f, 1.2f);
 
             var zhezhi = Boss(
