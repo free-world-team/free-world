@@ -1,4 +1,4 @@
-name: Windows Framework Freeze
+name: Qinglan Demo Release Candidate
 
 on:
   pull_request:
@@ -6,11 +6,11 @@ on:
   workflow_dispatch:
 
 jobs:
-  framework-freeze:
+  release-candidate:
     runs-on: [self-hosted, Windows, X64, unity]
-    timeout-minutes: 120
+    timeout-minutes: 180
     env:
-      M10_EVIDENCE_ROOT: TestResults/M10CI
+      M10_EVIDENCE_ROOT: TestResults/QinglanDemo/G3.6/CI
     steps:
       - name: Clean checkout
         uses: actions/checkout@v4
@@ -39,9 +39,27 @@ jobs:
         shell: pwsh
         run: ./Scripts/validate.ps1 -LogPath "$env:M10_EVIDENCE_ROOT/validation.log"
 
-      - name: Thirty-minute simulated soak
+      - name: G2.8 vertical slice
         shell: pwsh
-        run: ./Scripts/run-performance.ps1 -OutputPath "$env:M10_EVIDENCE_ROOT/performance.json" -LogPath "$env:M10_EVIDENCE_ROOT/performance.log"
+        run: |
+          $env:QINGLAN_G28_OUTPUT = "$env:M10_EVIDENCE_ROOT/vertical-slice.json"
+          $p = Start-Process -FilePath $env:UNITY_PATH -ArgumentList @('-batchmode','-projectPath',(Get-Location).Path,'-executeMethod','Game.Editor.QinglanG28VerticalSliceCommand.Run','-logFile',"$env:M10_EVIDENCE_ROOT/vertical-slice.log") -PassThru -Wait -WindowStyle Hidden
+          exit $p.ExitCode
+
+      - name: G3.4 balance matrix
+        shell: pwsh
+        run: |
+          $env:QINGLAN_G34_OUTPUT = "$env:M10_EVIDENCE_ROOT/balance-report.json"
+          $p = Start-Process -FilePath $env:UNITY_PATH -ArgumentList @('-batchmode','-projectPath',(Get-Location).Path,'-executeMethod','Game.Editor.QinglanG34BalanceCommand.Run','-logFile',"$env:M10_EVIDENCE_ROOT/balance.log") -PassThru -Wait -WindowStyle Hidden
+          exit $p.ExitCode
+
+      - name: G3.5 formal CPU target
+        shell: pwsh
+        run: ./Scripts/run-qinglan-g35-performance.ps1 -Mode Cpu -UnityPath $env:UNITY_PATH -OutputDirectory $env:M10_EVIDENCE_ROOT
+
+      - name: G3.6 compliance
+        shell: pwsh
+        run: ./Scripts/audit-qinglan-g36-compliance.ps1 -OutputPath "$env:M10_EVIDENCE_ROOT/compliance.json" -LogPath "$env:M10_EVIDENCE_ROOT/compliance.log"
 
       - name: Windows Development
         shell: pwsh
@@ -53,7 +71,7 @@ jobs:
 
       - name: Release player smoke
         shell: pwsh
-        run: ./Scripts/run-player-smoke.ps1 -LogPath "$env:M10_EVIDENCE_ROOT/release-player.log" -ResultPath "$env:M10_EVIDENCE_ROOT/release-player.json"
+        run: ./Scripts/run-player-smoke.ps1 -LogPath "$env:M10_EVIDENCE_ROOT/release-player.log" -ResultPath "$env:M10_EVIDENCE_ROOT/release-player.json" -SavePath "$env:M10_EVIDENCE_ROOT/release-player-save"
 
       - name: Verify source tree unchanged
         shell: pwsh
@@ -66,8 +84,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: windows-framework-freeze-${{ github.sha }}
+          name: qinglan-demo-release-candidate-${{ github.sha }}
           path: |
-            TestResults/M10CI
+            TestResults/QinglanDemo/G3.6/CI
             Builds/WindowsDevelopment
             Builds/WindowsRelease

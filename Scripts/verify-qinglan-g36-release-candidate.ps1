@@ -81,10 +81,21 @@ $playerPassed = $null -ne $player -and $player.status -eq 'PASS' -and
 $verticalPassed = $null -ne $vertical -and $vertical.status -eq 'PASS' -and
     [bool]$vertical.deterministicReplay -and [bool]$vertical.threeBuildRoutesDistinct -and
     [bool]$vertical.spawnFairness.passed
+$balanceVictories = if ($null -ne $balance.totalVictories) {
+    [int]$balance.totalVictories
+} else { [int]$balance.matrix.victories }
+$balanceDefeats = if ($null -ne $balance.totalDefeats) {
+    [int]$balance.totalDefeats
+} else { [int]$balance.matrix.defeats }
+$relicCompatibilityPassed = if ($null -ne $balance.relicCompatibilityPassed) {
+    [bool]$balance.relicCompatibilityPassed
+} else { [bool]$balance.matrix.relicCompatibilityPassed }
+$relicCompatibilityCases = if ($null -ne $balance.relicCompatibilityCases) {
+    @($balance.relicCompatibilityCases).Count
+} else { [int]$balance.matrix.relicCompatibilityCases }
 $balancePassed = $null -ne $balance -and $balance.status -eq 'PASS' -and
-    ([int]$balance.matrix.victories + [int]$balance.matrix.defeats) -eq 15 -and
-    [int]$balance.matrix.victories -eq 12 -and
-    [bool]$balance.matrix.relicCompatibilityPassed -and [int]$balance.matrix.relicCompatibilityCases -eq 18
+    ($balanceVictories + $balanceDefeats) -eq 15 -and $balanceVictories -eq 12 -and
+    $relicCompatibilityPassed -and $relicCompatibilityCases -eq 18
 $cpuPassed = $null -ne $cpu -and $cpu.status -eq 'PASS' -and
     [int]$cpu.configuration.tickCount -ge 54000 -and $cpu.simulationTick.p99Milliseconds -lt 33.33 -and
     [long]$cpu.gc.hotPathManagedAllocationBytes -eq 0

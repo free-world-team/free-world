@@ -6,13 +6,14 @@
 ## 本地完整门禁
 
 ```powershell
-./Scripts/test.ps1 -Platform EditMode -ResultsDirectory TestResults/M10Final
-./Scripts/test.ps1 -Platform PlayMode -ResultsDirectory TestResults/M10Final
-./Scripts/validate.ps1 -LogPath TestResults/M10Final/validation.log
-./Scripts/run-performance.ps1 -OutputPath TestResults/M10Final/performance.json -LogPath TestResults/M10Final/performance.log
-./Scripts/build-windows.ps1 -OutputPath Builds/WindowsDevelopment/AzureSword.exe -LogPath TestResults/M10Final/build-development.log -EvidenceRoot TestResults/M10Final
-./Scripts/build-windows-release.ps1 -OutputPath Builds/WindowsRelease/AzureSword.exe -LogPath TestResults/M10Final/build-release.log -EvidenceRoot TestResults/M10Final
-./Scripts/run-player-smoke.ps1 -PlayerPath Builds/WindowsRelease/AzureSword.exe -OutputPath TestResults/M10Final/release-player.json -LogPath TestResults/M10Final/release-player.log
+$evidence = 'TestResults/QinglanDemo/G3.6/Candidate'
+./Scripts/test.ps1 -Platform EditMode -ResultsDirectory $evidence
+./Scripts/test.ps1 -Platform PlayMode -ResultsDirectory $evidence
+./Scripts/validate.ps1 -LogPath "$evidence/validation.log"
+./Scripts/run-qinglan-g35-performance.ps1 -Mode Cpu -OutputDirectory $evidence
+./Scripts/audit-qinglan-g36-compliance.ps1 -OutputPath "$evidence/compliance.json" -LogPath "$evidence/compliance.log"
+./Scripts/build-windows-release.ps1 -OutputPath Builds/WindowsRelease/AzureSword.exe -LogPath "$evidence/build-release.log" -EvidenceRoot $evidence
+./Scripts/run-player-smoke.ps1 -PlayerPath Builds/WindowsRelease/AzureSword.exe -OutputPath "$evidence/release-player.json" -LogPath "$evidence/release-player.log" -SavePath "$evidence/release-player-save"
 ```
 
 `run-performance.ps1` 默认推进 54,000 Tick；预热不计入分位数据。输出记录 Tick/渲染 CPU 的
@@ -23,11 +24,11 @@ average/p95/p99/max、分系统计时、托管/Native/GC 内存采样、GC 次�
 
 - Development：使用正常 Bootstrap Scene 和开发内容，允许程序化 Placeholder，生成
   `WindowsDevelopment` Manifest。
-- Release verification：非 Development Player，使用临时生成的纯程序化 Smoke Scene；本次构建
-  输入显式排除 placeholder/development-only Addressables Group，构建后恢复原设置。实际纳入的
-  Scene/Addressables 仍执行 Release 门禁，Manifest 的 `placeholderCount` 必须为 0。
-- Release verification 只证明冻结框架能生成并启动 Release Player，不代表已有正式可销售内容。
-  正式内容仍必须通过 provenance、许可证、本地化、Addressables 和 Release 标签审核。
+- Release candidate：非 Development Player，构建期生成真实 `GameBootstrapper` Scene，只引用
+  `qinglan.pack.demo` `0.10.0` 的正式运行时 Catalog、正式输入和正式 Addressables。默认开发组和所有
+  Placeholder 作者资产不进入 Player；Manifest 的正式 Pack 数必须为 `1`，`placeholderCount` 必须为 `0`。
+- Release Player 使用 `NullPlatformFacade` 离线完成标题、选择、Run、暂停、升级、结算、原子保存、据点和
+  再次出发，要求正式视觉/音频/字体/本地化全部就绪并以退出码 `0` 结束。
 
 每份 `BuildManifest.json` 记录实际构建结果、配置、Git 来源状态、Unity、Schema、Pack 与 Catalog
 Hash、Package/Addressables Hash、Placeholder/未批准资产计数、测试证据、UTC 和 EXE SHA-256。
@@ -36,11 +37,12 @@ Git “clean” 使用内容差异而非仅依赖文件 stat，避免 Unity YAML
 ## 干净克隆验证
 
 ```powershell
-./Scripts/verify-clean-clone.ps1 -SourceRepository . -EvidenceOutput TestResults/M10CleanCloneEvidence -KeepClone
+./Scripts/verify-clean-clone.ps1 -SourceRepository . -EvidenceOutput TestResults/QinglanDemo/G3.6/CleanClone -KeepClone
 ```
 
-脚本创建唯一的本地克隆，核对 Unity 精确版本，然后运行完整测试、验证、目标规模性能、两个
-Build 和 Release Player Smoke。它复制结果与 Manifest 到指定证据目录，并保留克隆路径供审计。
+脚本创建唯一的本地克隆，核对 Unity 精确版本，然后运行完整测试、验证、G2.8 垂直切片、G3.4 平衡、
+G3.5 正式 CPU、G3.6 合规、两个 Build 和 Release Player。它复制结果、Manifest 与带 Commit 的
+`clean-clone-summary.json` 到指定证据目录，并保留克隆路径供审计。
 不得使用当前工作区的 Library 或未跟踪输出补全干净克隆结果。
 
 ## GitHub Actions
@@ -52,8 +54,9 @@ self-hosted, Windows, X64, unity
 ```
 
 Runner 必须预装且已激活 Unity `6000.3.20f1`，并通过 `UNITY_PATH` 指向 `Unity.exe`。工作流不读取、
-写入或上传 Unity License Secret。门禁顺序与本地一致，并上传 XML、日志、性能 JSON、Player Smoke
-和两个 Build Manifest。工作流只有实际在 GitHub Runner 上执行成功后才可报告 `PASS`；仅提交 YAML
+写入或上传 Unity License Secret。门禁顺序与本地一致，并上传 XML、日志、垂直切片、平衡、性能、
+合规、Player Smoke 和两个 Build Manifest。工作流只有实际在 GitHub Runner 上执行成功后才可报告
+`PASS`；仅提交 YAML
 时状态是 `NOT RUN`。
 
 ## 失败处理
