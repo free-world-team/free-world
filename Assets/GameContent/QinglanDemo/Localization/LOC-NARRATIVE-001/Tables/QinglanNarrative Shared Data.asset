@@ -1,0 +1,520 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: QinglanNarrative Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: QinglanNarrative
+  m_TableCollectionNameGuidString: 4d1f74ce3eba7b443a68e4b25da75978
+  m_Entries:
+  - m_Id: 769531904
+    m_Key: collectible.qinglan.collectible.old_court.01.annotation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 899555328
+    m_Key: collectible.qinglan.collectible.old_court.01.body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749632
+    m_Key: collectible.qinglan.collectible.old_court.01.inscription.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749633
+    m_Key: collectible.qinglan.collectible.old_court.01.inscription.02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749634
+    m_Key: collectible.qinglan.collectible.old_court.02.annotation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749635
+    m_Key: collectible.qinglan.collectible.old_court.02.body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749636
+    m_Key: collectible.qinglan.collectible.old_court.02.inscription.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749637
+    m_Key: collectible.qinglan.collectible.old_court.02.inscription.02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749638
+    m_Key: collectible.qinglan.collectible.old_court.03.annotation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749639
+    m_Key: collectible.qinglan.collectible.old_court.03.body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749640
+    m_Key: collectible.qinglan.collectible.old_court.03.inscription.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749641
+    m_Key: collectible.qinglan.collectible.old_court.03.inscription.02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749642
+    m_Key: collectible.qinglan.collectible.old_court.04.annotation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749643
+    m_Key: collectible.qinglan.collectible.old_court.04.body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749644
+    m_Key: collectible.qinglan.collectible.old_court.04.inscription.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749645
+    m_Key: collectible.qinglan.collectible.old_court.04.inscription.02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749646
+    m_Key: collectible.qinglan.collectible.old_court.05.annotation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749647
+    m_Key: collectible.qinglan.collectible.old_court.05.body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749648
+    m_Key: collectible.qinglan.collectible.old_court.05.inscription.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749649
+    m_Key: collectible.qinglan.collectible.old_court.05.inscription.02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749650
+    m_Key: collectible.qinglan.collectible.old_court.06.annotation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749651
+    m_Key: collectible.qinglan.collectible.old_court.06.body
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749652
+    m_Key: collectible.qinglan.collectible.old_court.06.inscription.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749653
+    m_Key: collectible.qinglan.collectible.old_court.06.inscription.02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749654
+    m_Key: narrative.qinglan.boss.tingfeng.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749655
+    m_Key: narrative.qinglan.boss.tingfeng.02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749656
+    m_Key: narrative.qinglan.boss.tingfeng.03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749657
+    m_Key: narrative.qinglan.boss.tingfeng.04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749658
+    m_Key: narrative.qinglan.boss.tingfeng.05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749659
+    m_Key: narrative.qinglan.boss.tingfeng.06
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749660
+    m_Key: narrative.qinglan.boss.tingfeng.07
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749661
+    m_Key: narrative.qinglan.boss.tingfeng.08
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749662
+    m_Key: narrative.qinglan.boss.tingfeng.09
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749663
+    m_Key: narrative.qinglan.boss.tingfeng.10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749664
+    m_Key: narrative.qinglan.boss.tingfeng.11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749665
+    m_Key: narrative.qinglan.boss.tingfeng.12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749666
+    m_Key: narrative.qinglan.boss.tingfeng.13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749667
+    m_Key: narrative.qinglan.boss.tingfeng.14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749668
+    m_Key: narrative.qinglan.boss.tingfeng.15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749669
+    m_Key: narrative.qinglan.boss.tingfeng.16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749670
+    m_Key: narrative.qinglan.boss.tingfeng.17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749671
+    m_Key: narrative.qinglan.boss.tingfeng.18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749672
+    m_Key: narrative.qinglan.boss.zhezhi.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749673
+    m_Key: narrative.qinglan.boss.zhezhi.02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749674
+    m_Key: narrative.qinglan.boss.zhezhi.03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749675
+    m_Key: narrative.qinglan.boss.zhezhi.04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749676
+    m_Key: narrative.qinglan.boss.zhezhi.05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749677
+    m_Key: narrative.qinglan.boss.zhezhi.06
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749678
+    m_Key: narrative.qinglan.boss.zhezhi.07
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749679
+    m_Key: narrative.qinglan.boss.zhezhi.08
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749680
+    m_Key: narrative.qinglan.boss.zhezhi.09
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749681
+    m_Key: narrative.qinglan.boss.zhezhi.10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749682
+    m_Key: narrative.qinglan.boss.zhezhi.11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749683
+    m_Key: narrative.qinglan.boss.zhezhi.12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749684
+    m_Key: narrative.qinglan.event.herb_garden_revival.complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749685
+    m_Key: narrative.qinglan.event.herb_garden_revival.failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749686
+    m_Key: narrative.qinglan.event.herb_garden_revival.progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749687
+    m_Key: narrative.qinglan.event.herb_garden_revival.prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749688
+    m_Key: narrative.qinglan.event.old_sword_resonance.complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749689
+    m_Key: narrative.qinglan.event.old_sword_resonance.failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749690
+    m_Key: narrative.qinglan.event.old_sword_resonance.progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749691
+    m_Key: narrative.qinglan.event.old_sword_resonance.prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749692
+    m_Key: narrative.qinglan.event.wind_vein_riot.complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749693
+    m_Key: narrative.qinglan.event.wind_vein_riot.failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749694
+    m_Key: narrative.qinglan.event.wind_vein_riot.progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749695
+    m_Key: narrative.qinglan.event.wind_vein_riot.prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749696
+    m_Key: narrative.qinglan.landmark.broken_wall_sword_mark.approach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749697
+    m_Key: narrative.qinglan.landmark.broken_wall_sword_mark.insight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749698
+    m_Key: narrative.qinglan.landmark.broken_wall_sword_mark.inspect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749699
+    m_Key: narrative.qinglan.landmark.guest_pavilion_letter.approach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749700
+    m_Key: narrative.qinglan.landmark.guest_pavilion_letter.insight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749701
+    m_Key: narrative.qinglan.landmark.guest_pavilion_letter.inspect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749702
+    m_Key: narrative.qinglan.landmark.herb_garden_variant.approach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749703
+    m_Key: narrative.qinglan.landmark.herb_garden_variant.insight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749704
+    m_Key: narrative.qinglan.landmark.herb_garden_variant.inspect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749705
+    m_Key: narrative.qinglan.landmark.sealed_sword_cache.approach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749706
+    m_Key: narrative.qinglan.landmark.sealed_sword_cache.insight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749707
+    m_Key: narrative.qinglan.landmark.sealed_sword_cache.inspect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749708
+    m_Key: narrative.qinglan.landmark.wind_vein_stele.approach
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749709
+    m_Key: narrative.qinglan.landmark.wind_vein_stele.insight
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749710
+    m_Key: narrative.qinglan.landmark.wind_vein_stele.inspect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749711
+    m_Key: narrative.qinglan.map.old_court.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749712
+    m_Key: narrative.qinglan.map.old_court.02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749713
+    m_Key: narrative.qinglan.map.old_court.03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749714
+    m_Key: narrative.qinglan.map.old_court.04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749715
+    m_Key: narrative.qinglan.map.old_court.05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749716
+    m_Key: narrative.qinglan.map.old_court.06
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749717
+    m_Key: narrative.qinglan.objective.wind_altar.guide.complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749718
+    m_Key: narrative.qinglan.objective.wind_altar.guide.failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749719
+    m_Key: narrative.qinglan.objective.wind_altar.guide.progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749720
+    m_Key: narrative.qinglan.objective.wind_altar.guide.prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749721
+    m_Key: narrative.qinglan.objective.wind_altar.listen.complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749722
+    m_Key: narrative.qinglan.objective.wind_altar.listen.failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749723
+    m_Key: narrative.qinglan.objective.wind_altar.listen.progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749724
+    m_Key: narrative.qinglan.objective.wind_altar.listen.prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749725
+    m_Key: narrative.qinglan.objective.wind_altar.stop_balance.complete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749726
+    m_Key: narrative.qinglan.objective.wind_altar.stop_balance.failed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749727
+    m_Key: narrative.qinglan.objective.wind_altar.stop_balance.progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749728
+    m_Key: narrative.qinglan.objective.wind_altar.stop_balance.prompt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749729
+    m_Key: story.qinglan.story.lu_qingye.hearing_sword.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749730
+    m_Key: story.qinglan.story.lu_qingye.hearing_sword.02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749731
+    m_Key: story.qinglan.story.lu_qingye.hearing_sword.03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749732
+    m_Key: story.qinglan.story.lu_qingye.hearing_sword.04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749733
+    m_Key: story.qinglan.story.lu_qingye.hearing_sword.05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749734
+    m_Key: story.qinglan.story.lu_qingye.hearing_sword.06
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749735
+    m_Key: story.qinglan.story.lu_qingye.hearing_sword.07
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749736
+    m_Key: story.qinglan.story.lu_qingye.hearing_sword.08
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749737
+    m_Key: story.qinglan.story.lu_qingye.old_sword_and_gourd.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749738
+    m_Key: story.qinglan.story.lu_qingye.old_sword_and_gourd.02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749739
+    m_Key: story.qinglan.story.lu_qingye.old_sword_and_gourd.03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749740
+    m_Key: story.qinglan.story.lu_qingye.old_sword_and_gourd.04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749741
+    m_Key: story.qinglan.story.lu_qingye.old_sword_and_gourd.05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749742
+    m_Key: story.qinglan.story.lu_qingye.old_sword_and_gourd.06
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749743
+    m_Key: story.qinglan.story.lu_qingye.old_sword_and_gourd.07
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749744
+    m_Key: story.qinglan.story.lu_qingye.old_sword_and_gourd.08
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749745
+    m_Key: story.qinglan.story.lu_qingye.refusing_inheritance.01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749746
+    m_Key: story.qinglan.story.lu_qingye.refusing_inheritance.02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749747
+    m_Key: story.qinglan.story.lu_qingye.refusing_inheritance.03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749748
+    m_Key: story.qinglan.story.lu_qingye.refusing_inheritance.04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749749
+    m_Key: story.qinglan.story.lu_qingye.refusing_inheritance.05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749750
+    m_Key: story.qinglan.story.lu_qingye.refusing_inheritance.06
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749751
+    m_Key: story.qinglan.story.lu_qingye.refusing_inheritance.07
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749752
+    m_Key: story.qinglan.story.lu_qingye.refusing_inheritance.08
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8426469325530464256
+  references:
+    version: 2
+    RefIds:
+    - rid: 8426469325530464256
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1786320958357

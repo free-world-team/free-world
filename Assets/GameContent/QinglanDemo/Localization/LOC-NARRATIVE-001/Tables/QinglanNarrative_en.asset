@@ -1,0 +1,590 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: QinglanNarrative_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 4d1f74ce3eba7b443a68e4b25da75978, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 769531904
+    m_Localized: 'Archive note: the seventh line is absent from every surviving copy
+      outside Qinglan.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 899555328
+    m_Localized: 'Balance Court rule, seventh line: no disciple may draw steel when
+      the wind bells are silent.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749632
+    m_Localized: 'A later hand added: If the bells ring below ground, leave the court
+      without looking back.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749633
+    m_Localized: The ink of the warning is newer than the paper by at least thirty
+      years.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749634
+    m_Localized: 'Archive note: no enrollment record matches the absent disciple''s
+      name.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749635
+    m_Localized: 'Duty roster: tend the herb beds, oil the training puppets, and
+      count the wind bells before dusk.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749636
+    m_Localized: For thirteen consecutive days, the same name is marked absent while
+      every assigned task is marked complete.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749637
+    m_Localized: Pressed between the pages is a fresh blade of grass from a garden
+      abandoned decades ago.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749638
+    m_Localized: 'Archive note: Shen Tingyun later left the Old Court carrying an
+      unnamed broken sword.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749639
+    m_Localized: 'Senior Shen: the sealed hall breathes after midnight. I heard it
+      behind the western wall.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749640
+    m_Localized: Do not bring the wardens. Bring the small bronze mirror and the
+      sword that refuses to chime.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749641
+    m_Localized: The letter ends before the meeting place. Its lower half was cut
+      away with a very sharp edge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749642
+    m_Localized: 'Archive note: the oath uses the same cadence as Tingfeng''s surviving
+      sword forms.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749643
+    m_Localized: I swear to hold the court until every disciple has crossed the mountain
+      gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749644
+    m_Localized: If none return, I will still answer the bell, so the mountain does
+      not mistake silence for surrender.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749645
+    m_Localized: The signature has been burned away, but a shallow sword mark divides
+      the ash without tearing the page.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749646
+    m_Localized: 'Archive note: the garden cauldron is missing, but its stone hearth
+      remains warm.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749647
+    m_Localized: 'Herb-garden broth: two greenwood leaves, one spirit seed, and enough
+      ginger to wake a freezing disciple.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749648
+    m_Localized: Do not use dew gathered under a red moon. It makes the broth remember
+      conversations.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749649
+    m_Localized: 'Several stains beside the recipe form the words: It remembers songs
+      too.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749650
+    m_Localized: 'Archive note: the ledger date is one day after the Old Court was
+      officially abandoned.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749651
+    m_Localized: 'Repair ledger: west wall, twelve bricks; guest pavilion, three
+      tiles; bell line, one hundred knots.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749652
+    m_Localized: 'Final entry: sealed hall threshold, no material accepted the repair.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749653
+    m_Localized: 'Below it, the caretaker wrote a smaller line: perhaps the crack
+      is meant to open, not close.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749654
+    m_Localized: Stop. The last disciple has not yet crossed the mountain gate.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749655
+    m_Localized: I am Tingfeng, keeper of the Old Court. State whom you came to retrieve.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749656
+    m_Localized: No name? Then the court still counts you among the missing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749657
+    m_Localized: "Sword qi\u2014first warning."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749658
+    m_Localized: The wind behind you is not an escape. It is my second blade.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749659
+    m_Localized: False chime. Trust the ground beneath your feet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749660
+    m_Localized: I held this gate while the bells burned red.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749661
+    m_Localized: I held it when the elders fled with the true records.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749662
+    m_Localized: 'Phase two: the obscuring windfield fills the court.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749663
+    m_Localized: If sight fails, listen for the oath between the chimes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749664
+    m_Localized: Remnant swords, answer the roll.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749665
+    m_Localized: "Crossing wind scar\u2014do not stand where the memory divides."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749666
+    m_Localized: You carry the old man's plain cut. Why did he send you back?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749667
+    m_Localized: No. He would never ask another person to finish his choice.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749668
+    m_Localized: Then this oath has mistaken endurance for purpose.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749669
+    m_Localized: 'Final form: Undying Oath.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749670
+    m_Localized: Break the gate, Lu Qingye. Let the mountain count us both as returned.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749671
+    m_Localized: "The bells are quiet at last. Take the records\u2014and leave the
+      door open."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749672
+    m_Localized: 'Training manifestation Zhezhi: court protocol restored. Present
+      your opening stance.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749673
+    m_Localized: Your feet arrive before your blade. Again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749674
+    m_Localized: A branch bends because it understands the weight above it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749675
+    m_Localized: Horizontal trial. Read the empty space, not the wooden edge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749676
+    m_Localized: Falling wood casts more than one shadow.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749677
+    m_Localized: The court once taught patience before power. Show me what remains.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749678
+    m_Localized: 'Second measure: the training ring contracts.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749679
+    m_Localized: Do not confuse retreat with surrender.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749680
+    m_Localized: Good. The pause in your form belongs to you, not the manual.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749681
+    m_Localized: Final measure. Cross the line without abandoning your center.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749682
+    m_Localized: Protocol complete. The court records your cadence.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749683
+    m_Localized: Seek the keeper below. He has forgotten that a gate may open both
+      ways.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749684
+    m_Localized: The garden flowers at once and leaves greenwood dew among the stones.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749685
+    m_Localized: The roots recoiled from corrupted wind. Clear the garden before
+      guiding them again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749686
+    m_Localized: One bed has awakened. Its roots are carrying the trail onward.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749687
+    m_Localized: Dormant roots stir beneath the herb garden. Lead living wind across
+      all three beds.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749688
+    m_Localized: The final resonance opens the sealed cache without breaking its
+      ward.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749689
+    m_Localized: The remembered form collapsed. Begin again from the first marked
+      stone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749690
+    m_Localized: The sword remembers the next stance. Let your movement settle into
+      it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749691
+    m_Localized: A buried sword answers your weapon. Stand on the marked stones to
+      complete its final form.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749692
+    m_Localized: The vein accepts the altar's cadence and sinks back below the stone.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749693
+    m_Localized: The surge escaped into the outer court. Expect denser enemy waves.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749694
+    m_Localized: Wind scars are crossing the ground. Move between the quiet gaps.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749695
+    m_Localized: The buried wind vein surges. Listen at the altar before the pressure
+      tears through the court.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749696
+    m_Localized: The wall was not cut through; the stone seems to have stepped aside.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749697
+    m_Localized: The stroke ends with the same deliberate pause as Riding Wind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749698
+    m_Localized: Dust inside the mark still drifts upward in a windless court.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749699
+    m_Localized: The guest pavilion table is set for two, though one cup is fused
+      to the wood.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749700
+    m_Localized: The final blank line carries the scent of fresh ink whenever the
+      bell rings.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749701
+    m_Localized: An unfinished letter asks whether an oath can protect people after
+      it begins protecting itself.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749702
+    m_Localized: The garden repeats the same three beds in a pattern that changes
+      whenever no one watches.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749703
+    m_Localized: A single red flower turns to face every sword drawn nearby.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749704
+    m_Localized: Roots avoid the sealed hall but grow eagerly toward the guest pavilion.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749705
+    m_Localized: Seven locks remain; the eighth was opened from inside.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749706
+    m_Localized: The ward recognizes balanced wind, not blood or sect authority.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749707
+    m_Localized: No rust touches the gap around its lid, though the hinges have not
+      moved for years.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749708
+    m_Localized: The stele hums one note below the surrounding wind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749709
+    m_Localized: A worn handprint fits Lu Qingye's palm too closely to be chance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749710
+    m_Localized: Its carved channels map a vein that should pass directly beneath
+      the sealed hall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749711
+    m_Localized: The Old Court receives no visitors, yet its wind bells count one
+      arrival.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749712
+    m_Localized: Follow the broken wall east. The wind altar lies beyond the silent
+      training rings.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749713
+    m_Localized: Something beneath the sealed hall has begun matching your footsteps.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749714
+    m_Localized: The court's three memories are awake. Their paths now converge below
+      the central hall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749715
+    m_Localized: The keeper's oath is released. Dawn reaches the training court for
+      the first time in years.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749716
+    m_Localized: "Not every bell rang, and not every name returned\u2014but the gate
+      remains open."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749717
+    m_Localized: The returned wisps circle the altar and reopen a path through the
+      herb garden.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749718
+    m_Localized: The last wisp dispersed. Gather a new trail before the altar closes
+      again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749719
+    m_Localized: A wisp follows your wake. Keep moving, but do not let the court
+      walls cut the trail.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749720
+    m_Localized: Guide three wandering wind wisps back to the altar.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749721
+    m_Localized: The altar answers with a clear sword chime. Its memory is now recorded.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749722
+    m_Localized: The resonance broke before it could settle. Return when the court
+      is quieter.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749723
+    m_Localized: Hold still. The altar is separating your footsteps from an older
+      rhythm.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749724
+    m_Localized: Reach the wind altar and listen without attacking.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749725
+    m_Localized: The opposing currents align. A sealed sword cache rises from beneath
+      the court.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749726
+    m_Localized: The sequence was disturbed. Let the stones fall silent before trying
+      again.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749727
+    m_Localized: The next stone answers only after your momentum has fully settled.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749728
+    m_Localized: Stop on the marked stones and restore the altar's broken balance.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749729
+    m_Localized: When the wind crossed the ruined stele, Lu Qingye heard a sword
+      chime where no sword remained.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749730
+    m_Localized: It was not a voice calling his name, but an unfinished stroke asking
+      to be remembered.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749731
+    m_Localized: He set two fingers against the cold stone. The echo climbed his
+      arm like a waking pulse.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749732
+    m_Localized: 'For one breath, the broken court returned: disciples laughing,
+      leaves turning, wooden swords meeting at dusk.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749733
+    m_Localized: Then the vision split beneath a single forbidden note, and every
+      figure looked toward the sealed hall.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749734
+    m_Localized: Lu Qingye withdrew his hand before the memory could borrow his eyes
+      for its final moment.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749735
+    m_Localized: 'The stele fell silent, but the cadence remained in his steps: three
+      light, one still.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749736
+    m_Localized: He named the cadence Riding Wind, and carried the old court's unanswered
+      question onward.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749737
+    m_Localized: The sword was too rusted to draw and the gourd was too dry to pour,
+      yet the old man kept both within reach.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749738
+    m_Localized: He told Lu Qingye that a useless thing could still hold a promise
+      better than a polished treasure.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749739
+    m_Localized: Each morning they climbed the ridge. The old man watched the clouds;
+      the boy practiced one plain cut.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749740
+    m_Localized: 'Each evening the cut was judged by the gourd''s shadow: hurried,
+      proud, hesitant, or finally clear.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749741
+    m_Localized: On the last morning, only the sword and gourd waited beside a line
+      of footprints leading into fog.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749742
+    m_Localized: Lu Qingye did not follow. He finished the plain cut before lifting
+      either keepsake.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749743
+    m_Localized: 'The sword opened without resistance. Inside the scabbard, a strip
+      of paper read: Leave room for the wind.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749744
+    m_Localized: He tied the empty gourd at his waist so every silent step would
+      remind him of that space.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749745
+    m_Localized: The inheritance hall offered Lu Qingye a complete sword path, sealed
+      against doubt and deviation.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749746
+    m_Localized: Its first lesson named every enemy. Its final lesson left no name
+      for the person holding the sword.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749747
+    m_Localized: The elders called that emptiness discipline. Lu Qingye heard in
+      it the same forbidden note from the old court.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749748
+    m_Localized: He bowed to the tablets, returned the jade seal, and asked for nothing
+      but his weathered sword.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749749
+    m_Localized: No thunder answered. Only the hall doors opened, and ordinary mountain
+      wind crossed the threshold.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749750
+    m_Localized: The first step outside cost him a title. The second cost him a home.
+      The third felt like his own.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749751
+    m_Localized: He would learn from every road, but let no road decide where his
+      blade must end.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 903749752
+    m_Localized: Years later, he returned to Qinglan not as an heir, but as a witness
+      willing to hear what remained.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

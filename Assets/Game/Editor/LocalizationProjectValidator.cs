@@ -79,6 +79,36 @@ namespace Game.Editor
                 }
             }
 
+            var narrativeCollection = LocalizationEditorSettings.GetStringTableCollection("QinglanNarrative");
+            if (narrativeCollection == null)
+            {
+                report.Add("G33-LOC-NARRATIVE-TABLE", "The formal QinglanNarrative string table collection is missing.");
+            }
+            else
+            {
+                var narrativeEnglish = narrativeCollection.GetTable(englishLocale.Identifier) as StringTable;
+                var narrativeChinese = narrativeCollection.GetTable(chineseLocale.Identifier) as StringTable;
+                if (narrativeEnglish == null)
+                    report.Add("G33-LOC-NARRATIVE-EN", "The English QinglanNarrative table is missing.");
+                if (narrativeChinese == null)
+                    report.Add("G33-LOC-NARRATIVE-ZH-HANS", "The Simplified Chinese QinglanNarrative table is missing.");
+                if (narrativeCollection.SharedData.Entries.Count < QinglanG33NarrativeLocalizationSource.MinimumCount)
+                    report.Add(
+                        "G33-LOC-NARRATIVE-COUNT",
+                        "The formal narrative collection requires at least " +
+                        QinglanG33NarrativeLocalizationSource.MinimumCount + " keys but found " +
+                        narrativeCollection.SharedData.Entries.Count + ".");
+                if (narrativeEnglish != null && narrativeChinese != null)
+                {
+                    var narrativeEntries = narrativeCollection.SharedData.Entries;
+                    for (var index = 0; index < narrativeEntries.Count; index++)
+                    {
+                        ValidateEntry(narrativeEnglish, narrativeEntries[index].Key, "en", report);
+                        ValidateEntry(narrativeChinese, narrativeEntries[index].Key, "zh-Hans", report);
+                    }
+                }
+            }
+
             if (pseudoFound)
             {
                 var pseudo = LocalizationEditorSettings.GetPseudoLocales()[0];

@@ -24,6 +24,15 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d1f74ce3eba7b443a68e4b25da75978
+    m_Address: Assets/GameContent/QinglanDemo/Localization/LOC-NARRATIVE-001/Tables/QinglanNarrative
+      Shared Data.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - localization.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 598d0ac97b0d63c4eb2c0919552321f9
     m_Address: UI_en
     m_ReadOnly: 0
@@ -53,11 +62,29 @@ MonoBehaviour:
     - pack.qinglan_demo
     - release
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e0eb5a896296b047865fefd598ecd2f
+    m_Address: QinglanNarrative_en
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-en
+    - localization.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9e41a48ca544e4a44890bdb8b9c173eb
     m_Address: Assets/GameContent/QinglanDemo/Localization/LOC-CONTENT-001/Tables/QinglanContent
       Shared Data.asset
     m_ReadOnly: 0
     m_SerializedLabels:
+    - localization.release
+    - pack.qinglan_demo
+    - release
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c84a70a03af8b5e4c9d31615c6067fdb
+    m_Address: QinglanNarrative_zh-Hans
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Locale-zh-Hans
     - localization.release
     - pack.qinglan_demo
     - release

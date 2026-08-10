@@ -14,7 +14,7 @@ Localization 正式内容链路，覆盖简体中文、英文和伪本地化，�
 | 2 | FONT-002 | Noto Serif CJK SC SemiBold TMP Font Asset | PASS（3/3 EditMode + Project Validation） |
 | 3 | LOC-UI-001 | `UI` 集合不少于 180 个 Key | PASS（191 Key，5/5 聚焦 + 22/22 回归） |
 | 4 | LOC-CONTENT-001 | `QinglanContent` 集合不少于 296 个 Key | PASS（492 Key，4/4 聚焦 + 5/5 UI 回归 + Project Validation） |
-| 5 | LOC-NARRATIVE-001 | `QinglanNarrative` 集合不少于 120 个 Key | 待实现 |
+| 5 | LOC-NARRATIVE-001 | `QinglanNarrative` 集合不少于 120 个 Key | PASS（123 Key，5/5 EditMode + Project Validation） |
 | 6 | G3.3 集成 | TMP 运行时、三 Locale、伪本地化、字形与布局门禁 | 待实现 |
 
 ## 3. FONT-001 设计
@@ -63,3 +63,16 @@ Localization 正式内容链路，覆盖简体中文、英文和伪本地化，�
 - Shared Data、en、zh-Hans 三个正式资产进入 `QinglanDemo-Localization`，地址为
   `QinglanContent_en`、`QinglanContent_zh-Hans` 及稳定 Shared Data 地址，并带
   `pack.qinglan_demo`、`release`、`localization.release` 标签；Pseudo 继续从英文动态生成。
+
+## 7. LOC-NARRATIVE-001 设计
+
+- `QinglanNarrative` 共 123 个双语 Key：3 篇陆青野故事 24 条、6 份旧庭藏录 24 条、三座风脉台
+  目标 12 条、三个地图事件 12 条、五处地标 15 条、折枝/听风首领对白 30 条、旧庭开场与收束 6 条。
+- 当前 Bake Catalog 引用的 6 个 `story.*` Sequence Key 和 6 个 `collectible.*.body` Key 必须全部命中；
+  其余 Key 使用 `narrative.qinglan.<domain>.<id>.<state-or-index>` 约定，为最终演出与状态提示提供稳定入口。
+- 剧情身份严格遵守总纲与剧情设定：沈停云是抚养陆青野、后携无名残剑离开的老剑客；听风是由守庭剑傀、
+  门人愿念与封庭古誓维系的守誓灵结，不把二者合并为同一角色。
+- 目标与事件统一使用 `prompt/progress/complete/failed` 四状态；连续对白使用两位数字顺序号，避免把文案顺序
+  硬编码进 UI 或首领专用类。
+- Shared Data、en、zh-Hans 三个正式资产进入 `QinglanDemo-Localization`，稳定地址为
+  `QinglanNarrative_en`、`QinglanNarrative_zh-Hans` 及 Shared Data 地址，并由 Pseudo Locale 动态生成伪本地化。
