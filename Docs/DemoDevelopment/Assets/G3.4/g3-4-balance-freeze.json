@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "milestone": "G3.4",
+  "status": "PASS",
+  "pack": {
+    "id": "qinglan.pack.demo",
+    "version": "0.10.0",
+    "schemaVersion": 6,
+    "bakedContentHash": "8900fedffde84c2d014c260d50bff1833a1a98f378a4b22ac08ea4a3ec40d21f"
+  },
+  "controlledValues": {
+    "playerBaseHealth": 900.0,
+    "yufengSwordCooldownSeconds": 1.45,
+    "yufengSwordBaseDamage": 24.0,
+    "yellowTalismanBaseDamage": 12.0,
+    "talismanDetonationDamage": 8.0,
+    "spiritVineSeedBaseDamage": 6.0,
+    "normalEnemyDamage": [1.0, 2.0, 3.0, 2.0, 3.0],
+    "enemyBaseDamageMultiplier": 1.0,
+    "zhezhiBaseHealth": 800.0,
+    "tingfengBaseHealth": 800.0,
+    "experienceMultiplier": 1.25
+  },
+  "matrix": {
+    "victories": 12,
+    "defeats": 3,
+    "failureRate": 0.2,
+    "routeVictories": [3, 4, 5],
+    "deterministicGoldenReplay": true,
+    "failureProbesPassed": true,
+    "relicCompatibilityPassed": true,
+    "relicCompatibilityCases": 18
+  },
+  "evidence": [
+    {
+      "path": "g3-4-balance-report.json",
+      "sha256": "f11543b3b6700f98debea15d9da6599727bb20ebf6f8ce60e3811392ffba9cce"
+    },
+    {
+      "path": "golden-moving-sword.json",
+      "sha256": "fe538f37e86b7cbf50c2b969c4e827c42f8bd73c5b7f1fd87f4c071b312bb2ab"
+    },
+    {
+      "path": "golden-talisman-burst.json",
+      "sha256": "c1d527d3946ebbfa0b5140d2ebef542c00f6d16a9b517c62697523a3bfb26554"
+    },
+    {
+      "path": "golden-living-field.json",
+      "sha256": "3cb448b5e965f4a787b1227c6aebe746edd4774433821404ed2d204c867ebf21"
+    }
+  ]
+}

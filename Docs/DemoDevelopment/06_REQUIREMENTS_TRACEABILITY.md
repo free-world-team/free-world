@@ -6,14 +6,14 @@
 |---|---|---|---|---|
 | R-001 | 标题至再次出发闭环 | M01、M11、M14 | PlayMode/Player | G2.6 键盘/手柄＋G2.8 独立 Development Player 闭环 PASS；Release Player 待 G3.6 |
 | R-002 | 陆青野与真实位移乘风 | M02 | EditMode/PlayMode | G1.2 EditMode、G2.6 两种输入 PlayMode PASS |
-| R-003 | 六把武器与等级成长 | M04 | Preview/EditMode | G1.3/G1.4 Preview 与 G2.8 12 分钟真实升级 PASS；正式手感待 G3.4 |
+| R-003 | 六把武器与等级成长 | M04 | Preview/EditMode | G1.3/G1.4 Preview、G2.8 真实升级与 G3.4 三路线 15 Seed 数值 Golden PASS |
 | R-004 | 六心诀与六显化 | M05 | Validation/Build Matrix | G1.4 资格/转换、G1.7 选择事务、G2.3 消费与 G2.8 实际路线 PASS |
-| R-005 | 三种目标构筑 | M04、M05、M16 | Seed/人工矩阵 | G2.8 三 Seed/路线 Decision Checksum 互异 PASS；正式平衡/手感待 G3.4 |
-| R-006 | 六即时灵物与六奇物 | M06 | EditMode/PlayMode | G2.3 内容/事务＋G2.8 真实奖励选择 PASS |
+| R-005 | 三种目标构筑 | M04、M05、M16 | Seed/人工矩阵 | G3.4 无作弊矩阵 12/15 胜、路线 3/4/5 胜、Golden 重放 PASS |
+| R-006 | 六即时灵物与六奇物 | M06 | EditMode/PlayMode | G2.3 内容/事务、G2.8 真实奖励与 G3.4 三构筑×六奇物 18/18 PASS |
 | R-007 | 六敌人与四词缀 | M07 | Headless/Validation | G1.5 行为/组合 PASS；G1.6 两次固定词缀精英与 21,600 Tick PASS |
 | R-008 | 12 分钟时间轴 | M09 | Timeline/Headless | G2.8 真实 Factory 四局各≥21,600 Tick、两 Boss、停止边界 PASS |
 | R-009 | 三风脉台、三事件、五地标 | M08 | PlayMode/State Trace | G2.8 路线完成 1/2/3 目标、3 Event、5 Landmark PASS |
-| R-010 | 折枝和听风三阶段 | M10 | EditMode/PlayMode | G2.2 阶段专项＋G2.8 四局两 Boss 三阶段 PASS |
+| R-010 | 折枝和听风三阶段 | M10 | EditMode/PlayMode | G2.2 阶段专项＋G2.8 四局两 Boss 三阶段 PASS；G3.4 800 生命冻结复验 PASS |
 | R-011 | 风脉台改变最终 Boss | M08、M10 | 参数快照/PlayMode | G2.2 八组合＋G2.8 实际 Rule Mask 1/6/7 PASS |
 | R-012 | 胜败/首通/重复通关 | M01、M11、M14 | Save Fixture/PlayMode | G2.4/G2.5 四结果与事务 PASS；G2.8 Victory Player 提交 PASS |
 | R-013 | 12 行脉、3 嵌片、4 设施 | M11 | EditMode/UI/Save | G2.5 真值、G2.6 四设施/确认 UI PASS |

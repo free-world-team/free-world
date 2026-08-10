@@ -103,3 +103,34 @@ Spawn/Objective/Boss/Decision/Combined Checksum。任一差异即 `FAIL`。
 | 构建后 Player Smoke | `PASS` |
 
 任一强制项为 `FAIL` 或 `NOT RUN` 时，G3.4 结论只能是 `INCOMPLETE`，不得开始 G3.5。
+
+## 9. 最终冻结结果（2026-08-10）
+
+G3.4 最终结论为 `PASS`。Demo Pack 冻结为 `0.10.0`，Baked Content Hash 为
+`8900fedffde84c2d014c260d50bff1833a1a98f378a4b22ac08ea4a3ec40d21f`。
+
+| 指标 | 结果 |
+|---|---:|
+| 15 局矩阵 | 12 胜 / 3 负 |
+| 路线胜局 | 移动御剑 3、符阵爆发 4、草木铺场 5 |
+| Golden 重放 | 3/3 确定性一致 |
+| 失败探针 | 3/3 `PlayerDefeated` |
+| 奇物兼容 | 18/18 PASS，六件均在矩阵中被选择 |
+| 无效 Handle | 0 |
+
+有效候选迭代没有被隐藏：最终 Boss 生命 50 的候选虽通过平衡矩阵，但使 G2.8 听风阶段覆盖退化为 `3/7`；
+2600 的可读性候选保留三阶段，却只产生 2 胜并造成多条路线超时；最终 800 候选同时得到 12/15 目标胜率和
+G2.8 四路线三阶段覆盖，因此作为正式冻结值。浮点 Preview Golden 使用 `0.0001` 容差，双跑 Summary 仍保持
+精确相等。
+
+## 10. 最终证据
+
+- 冻结清单：[g3-4-balance-freeze.json](Assets/G3.4/g3-4-balance-freeze.json)
+- 完整矩阵：[g3-4-balance-report.json](Assets/G3.4/g3-4-balance-report.json)
+- Golden：[移动御剑](Assets/G3.4/golden-moving-sword.json)、[符阵爆发](Assets/G3.4/golden-talisman-burst.json)、
+  [草木铺场](Assets/G3.4/golden-living-field.json)
+- 全量 EditMode：451/451 `PASS`
+- 全量 PlayMode：20/20 `PASS`
+- 项目治理验证、Windows x64 Development Build、独立 Player Smoke：全部 `PASS`
+
+G3.4 门禁已关闭，可以按单里程碑纪律进入 G3.5。
