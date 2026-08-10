@@ -3,6 +3,7 @@ using System.Globalization;
 using System.IO;
 using System.Numerics;
 using Game.Application;
+using Game.Content.Authoring;
 using Game.Content.Runtime;
 using Game.Core;
 using Game.Infrastructure;
@@ -104,7 +105,7 @@ namespace Game.Editor
             var exitCode = 0;
             try
             {
-                var catalogs = ContentEditorCatalog.BakeAll();
+                var catalogs = BakeDemoCatalog();
                 if (!catalogs.IsSuccess) throw new InvalidOperationException(catalogs.Error.ToString());
                 var matrix = new QinglanG34RunSummary[Routes.Length * MatrixSeedsPerRoute];
                 var cursor = 0;
@@ -302,6 +303,28 @@ namespace Game.Editor
         }
 
         public static string[] GetAllRelicIds() => (string[])AllRelicIds.Clone();
+
+        /// <summary>
+        /// Bakes only the shippable Demo pack. Editor test packs intentionally share the
+        /// project but must never enter a balance candidate or its offer pool.
+        /// </summary>
+        public static Result<BakedContentCatalog[]> BakeDemoCatalog()
+        {
+            var pack = AssetDatabase.LoadAssetAtPath<ContentPackAuthoring>(QinglanG12ContentSetup.PackPath);
+            if (pack == null)
+            {
+                return Result<BakedContentCatalog[]>.Failure(new Error(
+                    ErrorCode.MissingReference,
+                    "Qinglan Demo content pack is missing.",
+                    default,
+                    default,
+                    QinglanG12ContentSetup.PackPath));
+            }
+            var baked = ContentBakeUtility.Bake(pack);
+            return baked.IsSuccess
+                ? Result<BakedContentCatalog[]>.Success(new[] { baked.Value })
+                : Result<BakedContentCatalog[]>.Failure(baked.Error);
+        }
 
         private static int ScoreOffer(CompiledUpgradeOfferDefinition offer, RouteDefinition route)
         {

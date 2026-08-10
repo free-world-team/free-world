@@ -42,6 +42,17 @@ namespace Game.Tests.EditMode
         }
 
         [Test]
+        public void BalanceCatalogContainsOnlyTheShippableQinglanPack()
+        {
+            var catalogs = QinglanG34BalanceCommand.BakeDemoCatalog();
+            Assert.That(catalogs.IsSuccess, Is.True, catalogs.Error.ToString());
+            Assert.That(catalogs.Value, Has.Length.EqualTo(1));
+            Assert.That(catalogs.Value[0].Manifest.PackId.Value, Is.EqualTo("qinglan.pack.demo"));
+            for (var index = 0; index < catalogs.Value[0].Definitions.Count; index++)
+                Assert.That(catalogs.Value[0].Definitions[index].Id.Value, Does.Not.StartWith("test."));
+        }
+
+        [Test]
         public void CommandOnlyDriverSourceRejectsCombatAndStoreMutationApis()
         {
             var source = File.ReadAllText(Path.GetFullPath(
