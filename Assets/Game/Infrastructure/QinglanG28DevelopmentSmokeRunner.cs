@@ -3,6 +3,7 @@ using System.Collections;
 using System.Globalization;
 using System.IO;
 using Game.Application;
+using Game.Platform.Null;
 using Game.Presentation;
 using Game.Simulation;
 using Game.UI;
@@ -17,13 +18,23 @@ namespace Game.Infrastructure
     /// </summary>
     internal sealed class QinglanG28DevelopmentSmokeRunner : MonoBehaviour
     {
-        private const string Argument = "-qinglanG28Smoke";
+        private const string DevelopmentArgument = "-qinglanG28Smoke";
+        private const string ReleaseArgument = "-qinglanG36ReleaseSmoke";
 
         internal static bool IsRequested()
         {
             var arguments = Environment.GetCommandLineArgs();
             for (var index = 0; index < arguments.Length; index++)
-                if (string.Equals(arguments[index], Argument, StringComparison.OrdinalIgnoreCase)) return true;
+                if (string.Equals(arguments[index], DevelopmentArgument, StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(arguments[index], ReleaseArgument, StringComparison.OrdinalIgnoreCase)) return true;
+            return false;
+        }
+
+        private static bool IsReleaseRequested()
+        {
+            var arguments = Environment.GetCommandLineArgs();
+            for (var index = 0; index < arguments.Length; index++)
+                if (string.Equals(arguments[index], ReleaseArgument, StringComparison.OrdinalIgnoreCase)) return true;
             return false;
         }
 
@@ -31,10 +42,17 @@ namespace Game.Infrastructure
         {
             yield return null;
             var host = GetComponent<QinglanDemoRuntimeHost>();
+            var bootstrapper = GetComponent<GameBootstrapper>();
+            var releaseRequested = IsReleaseRequested();
             var result = new QinglanG28PlayerSmokeResult
             {
-                schemaVersion = 2,
+                schemaVersion = 3,
                 generatedAtUtc = DateTime.UtcNow.ToString("O", CultureInfo.InvariantCulture),
+                releaseCandidateRequested = releaseRequested,
+                debugBuild = Debug.isDebugBuild,
+                nullPlatform = bootstrapper?.PlatformFacade is NullPlatformFacade,
+                contentPackCount = bootstrapper?.ContentSummary.PackCount ?? 0,
+                contentDefinitionCount = bootstrapper?.ContentSummary.DefinitionCount ?? 0,
                 status = "FAIL"
             };
             if (host == null)
@@ -120,6 +138,9 @@ namespace Game.Infrastructure
                 yield return null;
             }
             result.saveCommitted = host.Flow.LastCommit.IsSuccess;
+            var saveRoot = GameBootstrapper.ResolveSaveRoot();
+            result.profileSavePresent = File.Exists(Path.Combine(saveRoot, SaveSlots.Profile));
+            result.runRecoveryCleared = !File.Exists(Path.Combine(saveRoot, SaveSlots.RunRecovery));
             if (!result.resultVisited || !result.saveCommitted ||
                 !host.Flow.Execute(QinglanUiCommand.ContinueToHub, "hub", 0))
             {
@@ -148,6 +169,11 @@ namespace Game.Infrastructure
             result.layoutDiagnostic = BuildLayoutDiagnostic(host.Ui);
             result.inputOwnerCount = FindObjectsByType<M7InputRouter>(
                 FindObjectsInactive.Include, FindObjectsSortMode.None).Length;
+            result.releaseContractPassed = !releaseRequested ||
+                                           (!result.debugBuild && result.nullPlatform &&
+                                            result.contentPackCount == 1 &&
+                                            result.contentDefinitionCount == 193 &&
+                                            result.profileSavePresent && result.runRecoveryCleared);
             var passed = result.titleVisited && result.characterSelectVisited &&
                          result.formalVisualsLoaded && result.formalUiBackgroundApplied &&
                          result.formalAudioLoaded && result.formalAudioCueRouted &&
@@ -161,7 +187,7 @@ namespace Game.Infrastructure
                          result.activeViewsAfterHub == 0 && result.inputOwnerCount == 1 &&
                          result.vfxCreated <= 200 && result.audioSourcesCreated <= 32 &&
                          result.audioSourceCapacity == 32 && result.audioStemCapacity == 8 &&
-                         result.audioReservedCriticalCapacity == 8;
+                         result.audioReservedCriticalCapacity == 8 && result.releaseContractPassed;
             result.status = passed ? "PASS" : "FAIL";
             result.error = passed ? string.Empty : "One or more Player smoke assertions failed.";
             WriteAndQuit(result, passed ? 0 : 2);
@@ -228,16 +254,25 @@ namespace Game.Infrastructure
         {
             try
             {
-                var path = Environment.GetEnvironmentVariable("QINGLAN_G28_PLAYER_RESULT");
+                var path = result.releaseCandidateRequested
+                    ? Environment.GetEnvironmentVariable("QINGLAN_G36_RELEASE_PLAYER_RESULT")
+                    : Environment.GetEnvironmentVariable("QINGLAN_G28_PLAYER_RESULT");
                 if (string.IsNullOrWhiteSpace(path))
-                    path = Path.Combine(UnityEngine.Application.persistentDataPath, "QinglanG28PlayerSmoke.json");
+                    path = Path.Combine(
+                        UnityEngine.Application.persistentDataPath,
+                        result.releaseCandidateRequested
+                            ? "QinglanG36ReleasePlayer.json"
+                            : "QinglanG28PlayerSmoke.json");
                 path = Path.GetFullPath(path);
                 var directory = Path.GetDirectoryName(path);
                 if (string.IsNullOrEmpty(directory)) throw new InvalidOperationException("Invalid smoke result path.");
                 Directory.CreateDirectory(directory);
                 File.WriteAllText(path, JsonUtility.ToJson(result, true) + "\n");
-                if (exitCode == 0) Debug.Log("[Qinglan G2.8 Player Smoke] PASS: " + path);
-                else Debug.LogError("[Qinglan G2.8 Player Smoke] FAIL: " + result.error);
+                var marker = result.releaseCandidateRequested
+                    ? "[Qinglan G3.6 Release Player]"
+                    : "[Qinglan G2.8 Player Smoke]";
+                if (exitCode == 0) Debug.Log(marker + " PASS: " + path);
+                else Debug.LogError(marker + " FAIL: " + result.error);
             }
             catch (Exception exception)
             {
@@ -254,6 +289,12 @@ namespace Game.Infrastructure
             public string status;
             public string error;
             public string generatedAtUtc;
+            public bool releaseCandidateRequested;
+            public bool releaseContractPassed;
+            public bool debugBuild;
+            public bool nullPlatform;
+            public int contentPackCount;
+            public int contentDefinitionCount;
             public bool titleVisited;
             public bool formalVisualsLoaded;
             public bool formalAudioLoaded;
@@ -274,6 +315,8 @@ namespace Game.Infrastructure
             public bool upgradeVisited;
             public bool resultVisited;
             public bool saveCommitted;
+            public bool profileSavePresent;
+            public bool runRecoveryCleared;
             public bool hubVisited;
             public bool restartVisited;
             public int activeViews;
