@@ -58,6 +58,7 @@ $cpu = Read-Json 'cpu-target.json'
 $gpu = Read-Json 'target-player.json'
 $cleanClone = Read-Json 'clean-clone-summary.json'
 $manual = Read-Json 'manual-review.json'
+$manualValidation = Read-Json 'manual-review-validation.json'
 $minimumSpec = Read-Json 'minimum-spec-review.json'
 $profilePath = Join-Path $root 'release-player-save/profile.json'
 $candidateRef = if ([string]::IsNullOrWhiteSpace($CandidateCommit)) { 'HEAD' } else { $CandidateCommit }
@@ -113,10 +114,11 @@ $compliancePassed = $null -ne $compliance -and $compliance.status -eq 'PASS' -an
     [int]$compliance.issueCount -eq 0 -and [int]$compliance.placeholderCount -eq 0
 $cleanClonePassed = $null -ne $cleanClone -and $cleanClone.status -eq 'PASS' -and
     $cleanClone.commit -eq $head
-$manualRun = $null -ne $manual -and $manual.status -ne 'NOT_RUN' -and $manual.reviewerKind -eq 'human'
-$manualPassed = $manualRun -and $manual.status -eq 'PASS' -and
-    $manual.visualReadability -eq 'PASS' -and $manual.buildDecisionDifference -eq 'PASS' -and
-    $manual.audioMasking -eq 'PASS' -and $manual.rightsAndLicenses -eq 'PASS'
+$manualHash = Hash 'manual-review.json'
+$manualRun = $null -ne $manual -and [int]$manual.schemaVersion -eq 2 -and
+    $null -ne $manualValidation -and $manualValidation.status -ne 'NOT_RUN' -and
+    $manualValidation.candidateCommit -eq $head -and $manualValidation.sourceSha256 -eq $manualHash
+$manualPassed = $manualRun -and $manual.status -eq 'PASS' -and $manualValidation.status -eq 'PASS'
 $minimumSpecRun = $null -ne $minimumSpec -and $minimumSpec.status -ne 'NOT_RUN'
 $minimumSpecPassed = $minimumSpecRun -and $minimumSpec.status -eq 'PASS' -and
     [bool]$minimumSpec.physicalHardware -and $minimumSpec.commit -eq $head
@@ -178,7 +180,8 @@ $result = [ordered]@{
         releaseManifest = Hash 'release-build-manifest.json'
         releasePlayer = Hash 'release-player.json'
         cleanClone = Hash 'clean-clone-summary.json'
-        manualReview = Hash 'manual-review.json'
+        manualReview = $manualHash
+        manualReviewValidation = Hash 'manual-review-validation.json'
         minimumSpec = Hash 'minimum-spec-review.json'
     }
     knownIssues = @(

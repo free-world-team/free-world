@@ -108,6 +108,9 @@ Placeholder、空本地化 Key、Package/Project 版本与 API Freeze。以下�
 - 简中/英文叙事、危险可读性、三构筑决策差异和音频遮蔽人工评审；
 - 最低规格机器认证；当前只有 i7-12700F/RTX 3060 Ti 参考目标机证据。
 
+人工/法律评审必须使用 `G3_6_MANUAL_REVIEW_GUIDE.md` 的 Schema 2 表、证据 Hash 和校验器；候选汇总只接受
+与候选 Commit 匹配的 `manual-review-validation.json=PASS`，不再直接信任手填顶层状态。
+
 ## 8. 测试与退出门禁
 
 最低实际执行：聚焦 EditMode、全量 EditMode、全量 PlayMode、项目验证、G2.8 Vertical Slice、G3.4

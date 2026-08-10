@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 2,
+  "candidateCommit": "",
+  "candidateTag": "",
+  "status": "NOT_RUN",
+  "reviews": {
+    "visualReadability": {
+      "status": "NOT_RUN",
+      "reviewer": {
+        "kind": "human",
+        "name": "",
+        "role": ""
+      },
+      "reviewedAtUtc": "",
+      "notes": "",
+      "evidence": []
+    },
+    "buildDecisionDifference": {
+      "status": "NOT_RUN",
+      "reviewer": {
+        "kind": "human",
+        "name": "",
+        "role": ""
+      },
+      "reviewedAtUtc": "",
+      "notes": "",
+      "evidence": []
+    },
+    "audioMasking": {
+      "status": "NOT_RUN",
+      "reviewer": {
+        "kind": "human",
+        "name": "",
+        "role": ""
+      },
+      "reviewedAtUtc": "",
+      "notes": "",
+      "evidence": []
+    },
+    "rightsAndLicenses": {
+      "status": "NOT_RUN",
+      "reviewer": {
+        "kind": "human",
+        "name": "",
+        "role": ""
+      },
+      "reviewedAtUtc": "",
+      "notes": "",
+      "checks": {
+        "commercialRights": "NOT_RUN",
+        "steamAiDisclosure": "NOT_RUN",
+        "notoOflDistribution": "NOT_RUN",
+        "storeLegalText": "NOT_RUN"
+      },
+      "evidence": []
+    }
+  },
+  "attestation": {
+    "signed": false,
+    "signerKind": "human",
+    "signerName": "",
+    "signedAtUtc": "",
+    "statement": "I personally reviewed the listed Qinglan G3.6 RC evidence and attest that these results are accurate."
+  }
+}
