@@ -194,9 +194,12 @@ M1 依赖 M0 的程序集和文档。M2 依赖 M1 的运行时定义。M3 依赖
 
 ## 9. 《剑起青岚》Demo 当前顺序
 
-G0.1—G3.4 已按 `Docs/DemoDevelopment/02_DELIVERY_ROADMAP.md` 完成单工作包门禁。G3.1 已完成 27/27
+G0.1—G3.5 已按 `Docs/DemoDevelopment/02_DELIVERY_ROADMAP.md` 完成单工作包门禁。G3.1 已完成 27/27
 正式视觉批次与最终运行时集成；G3.2 已完成 9/9 正式音频批次、104 Clip Catalog、四 Snapshot Mixer、
 32/8/8 Router、完整测试、Addressables、Windows Development Build 与 Player Smoke；G3.3 已完成三套正式
 TMP 字体、806 个双语 Key、Pseudo、全量测试、Build 与 Player Smoke；G3.4 已完成 15 局无作弊三构筑
 Seed 矩阵（12 胜 3 负）、三 Golden 重放、三失败探针、18 奇物兼容、全量测试、Build 与 Player Smoke。
-当前只进入 G3.5 目标硬件性能优化；G3.5 未通过前不得开始 G3.6 Release Candidate。
+G3.5 已完成参考目标机 54,000 Tick CPU、1080p 30 分钟 GPU、完整回归与 Development Player；2,000
+敌人扩展压力 `FAIL` 作为非阻断容量限制保留。当前只进入 G3.6 Release Candidate，并按
+`Docs/DemoDevelopment/29_G3_6_RELEASE_CANDIDATE.md` 实现正式输入、Release Player、Manifest、合规、
+干净克隆和 DOD-01—10 证据；不得提前进入后续发布或商店工作。

@@ -86,6 +86,10 @@ G3.5 已在参考目标机完成 54,000 Tick CPU 与 1080p 30 分钟 GPU Target�
 `Docs/Reports/2026-08-10-g3-5-target-hardware-performance-final-integration.md`。下一工作包只进入 G3.6
 Release Candidate。
 
+G3.6 已按 `29_G3_6_RELEASE_CANDIDATE.md` 冻结：现有 M10 纯框架 Release Smoke 不作为 Demo 发布
+证据；候选必须只装载正式青岚 Catalog 和正式 Addressables，并完成 Null Platform Release Player、
+Manifest、合规、干净克隆与 DOD-01—10 当前提交证据。当前不进入后续发布或商店工作。
+
 ## 5. G3 发布候选
 
 | 顺序 | 分支建议 | 交付物 | 退出门禁 |
