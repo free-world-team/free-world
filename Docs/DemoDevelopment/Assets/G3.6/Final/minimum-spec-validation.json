@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "status": "NOT_RUN",
+  "generatedAtUtc": "2026-08-10T09:46:16.5023448Z",
+  "candidateCommit": "9984bcc5582bd827372768993953645d754cc463",
+  "candidateTag": "qinglan-demo-g3.6-rc2",
+  "sourceSha256": "97decf845601d46ca07c02ccddb03c13899d8e48c95761f1d61f088cb6acffa6",
+  "evidenceSha256": {
+    "hardware": "",
+    "performance": "",
+    "releasePlayer": "",
+    "developmentManifest": "",
+    "releaseManifest": ""
+  },
+  "issueCount": 5
+}

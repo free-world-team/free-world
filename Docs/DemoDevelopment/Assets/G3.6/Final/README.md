@@ -30,6 +30,10 @@ Null Platform，只装载一个正式 `qinglan.pack.demo` Pack（193 Definitions
 - `cpu-target.json`、`target-player.json`：CPU 与 1080p 30 分钟目标机证据。
 - `vertical-slice.json`、`balance-freeze.json`：完整切片与 15 局平衡矩阵。
 - `audio-masking-review.json`：客观遮蔽压力分析，不等同于人类目标声卡试听。
-- `manual-review.json`、`minimum-spec-review.json`：必须由外部结果替换的 `NOT_RUN` 记录。
+- `manual-review.json`、`manual-review-validation.json`：Schema 2 人工/法律评审表与当前 `NOT_RUN` Hash 配对。
+- `minimum-spec-review.json`、`minimum-spec-validation.json`：Schema 2 实体机认证表与当前 `NOT_RUN` Hash 配对。
+
+两组 Validation 的存在不代表评审已运行；其作用是锁定当前候选、Schema 和 Review Hash，阻止仅修改顶层
+状态绕过门禁。真实结果必须按对应指南重新生成并以 `PASS` 替换。
 
 2,000 Enemy 扩展压力仍为已知非阻断 `FAIL`；最低规格 `NOT_RUN` 是本次 Release 阻断项。

@@ -1,45 +1,64 @@
 {
-  "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-10T08:57:00.0000000Z",
-  "commit": "9984bcc5582bd827372768993953645d754cc463",
-  "tag": "qinglan-demo-g3.6-rc2",
+  "schemaVersion": 2,
+  "candidateCommit": "9984bcc5582bd827372768993953645d754cc463",
+  "candidateTag": "qinglan-demo-g3.6-rc2",
   "status": "NOT_RUN",
-  "reviewer": "Codex objective evidence preparation only; independent human/legal sign-off not supplied",
-  "reviewerKind": "none",
-  "visualReadability": "NOT_RUN",
-  "buildDecisionDifference": "NOT_RUN",
-  "audioMasking": "NOT_RUN",
-  "rightsAndLicenses": "NOT_RUN",
-  "evidence": {
-    "visualReadability": [
-      "Docs/Reports/2026-08-10-g3-1-formal-visual-final-integration.md",
-      "TestResults/QinglanDemo/G3.6/Candidate/target-player.json"
-    ],
-    "buildDecisionDifference": [
-      "Docs/Reports/2026-08-10-g3-4-balance-freeze-final-integration.md",
-      "TestResults/QinglanDemo/G3.6/Candidate/balance-freeze.json"
-    ],
-    "audioMasking": [
-      "Docs/Reports/2026-08-10-g3-2-formal-audio-final-integration.md",
-      "TestResults/QinglanDemo/G3.6/Candidate/audio-masking-review.json",
-      "TestResults/QinglanDemo/G3.6/Candidate/audio-masking-stress.ogg"
-    ],
-    "rightsAndLicenses": [
-      "TestResults/QinglanDemo/G3.6/Candidate/compliance.json",
-      "ASSET_REGISTRY.md",
-      "THIRD_PARTY_NOTICES.md"
-    ]
+  "reviews": {
+    "visualReadability": {
+      "status": "NOT_RUN",
+      "reviewer": { "kind": "human", "name": "", "role": "" },
+      "reviewedAtUtc": "",
+      "notes": "",
+      "evidence": [
+        { "path": "Docs/DemoDevelopment/Assets/G3.6/Final/target-player.json", "sha256": "c1026054bef1883836826a537c0939196ceb2d9ef697e002f45d44630664859e" },
+        { "path": "Docs/Reports/2026-08-10-g3-1-formal-visual-final-integration.md", "sha256": "eef1abf3ca4d75327270553cb2fde549f62c3e91b7600eb5613104d125dfed5a" }
+      ]
+    },
+    "buildDecisionDifference": {
+      "status": "NOT_RUN",
+      "reviewer": { "kind": "human", "name": "", "role": "" },
+      "reviewedAtUtc": "",
+      "notes": "",
+      "evidence": [
+        { "path": "Docs/DemoDevelopment/Assets/G3.6/Final/balance-freeze.json", "sha256": "7c234fd654e710d4443eefd673b7c4cdd94f71673b9d1b7f3c3a3db6aa7b88c1" },
+        { "path": "Docs/Reports/2026-08-10-g3-4-balance-freeze-final-integration.md", "sha256": "facf92cc1656cf1d52c93c9076286aefff154dca5e168ee75effe6a3b4d26dbb" }
+      ]
+    },
+    "audioMasking": {
+      "status": "NOT_RUN",
+      "reviewer": { "kind": "human", "name": "", "role": "" },
+      "reviewedAtUtc": "",
+      "notes": "",
+      "evidence": [
+        { "path": "Docs/DemoDevelopment/Assets/G3.6/Final/audio-masking-review.json", "sha256": "ec3e6d56d54ed04e8beca8f1aea4d904ddd111577c4f7c53c284493b35c19736" },
+        { "path": "Docs/Reports/2026-08-10-g3-2-formal-audio-final-integration.md", "sha256": "2976816a01e9d8807914f99477a3158abdf1063afb1c60039ddde04ea797be3d" }
+      ]
+    },
+    "rightsAndLicenses": {
+      "status": "NOT_RUN",
+      "reviewer": { "kind": "human", "name": "", "role": "" },
+      "reviewedAtUtc": "",
+      "notes": "",
+      "checks": {
+        "commercialRights": "NOT_RUN",
+        "steamAiDisclosure": "NOT_RUN",
+        "notoOflDistribution": "NOT_RUN",
+        "storeLegalText": "NOT_RUN"
+      },
+      "evidence": [
+        { "path": "Docs/DemoDevelopment/Assets/G3.6/Final/compliance.json", "sha256": "bc8ce3e6f2765ae4cf228fca1f305ff3bd5eba29d5175ed1cb1bb495129eff35" },
+        { "path": "Docs/DemoDevelopment/Assets/G0_4_ASSET_MANIFEST.csv", "sha256": "56e711df9445a0771bc3d7e8b415ba19fc4d254ae6a17149fb77f9faff9ae37d" },
+        { "path": "Docs/Reports/2026-08-09-g3-1-formal-asset-governance.md", "sha256": "e1091512e5ed7a02c2949da5d799ed6c08990e6b7fb8e826d72aed9f7f73bfae" },
+        { "path": "THIRD_PARTY_NOTICES.md", "sha256": "7064793174fcf607a9b40de590bf8a1c4352cd7873d162932c43677ef7daaad1" },
+        { "path": "Assets/ThirdParty/Fonts/NotoCJKSC/FONT-002/LICENSE.txt", "sha256": "88f117575237307bdd86a17ef15e21790fc9a662fe4dfb103ca1ca077f0d9982" }
+      ]
+    }
   },
-  "observations": {
-    "visual": "The final 1920x1080 target-player capture and the G3.1 standard/high-contrast review preserve player, telegraph, objective and UI readability at the formal load.",
-    "builds": "The G3.4 matrix contains three distinct routes (moving_sword, talisman_burst and living_field), route victories of 3/4/5, distinct decisions, skills and evolutions, and deterministic replay.",
-    "audio": "An eight-second worst-load stress render exercises four music stems, ambience, ordinary effects at 10 Hz, -6 dB ordinary ducking and the unducked boundary warning. The warning has +10.557 dB SNR in its dominant energy band, and routing assertions reserve eight critical sources and bypass ordinary cooldown/capacity.",
-    "rights": "The G3.6 compliance audit reports zero issues, zero placeholders, one official formal pack, and no unapproved assets. Every governed formal asset remains linked to provenance and QA records."
-  },
-  "limitations": {
-    "independentHumanReview": "NOT_RUN",
-    "commercialRightsAndSteamDisclosureSignOff": "NOT_RUN",
-    "targetSoundCardSubjectiveListening": "NOT_RUN",
-    "note": "The evidence above is ready for human review but does not constitute the human/legal sign-off required by section 7 of 29_G3_6_RELEASE_CANDIDATE.md. Objective audio masking passed, but this is not an independently certified listening session. The deliberately unbounded diagnostic sum reached +4.140 dBFS before monitor normalization; runtime concurrency, priority eviction and ducking are the release controls."
+  "attestation": {
+    "signed": false,
+    "signerKind": "human",
+    "signerName": "",
+    "signedAtUtc": "",
+    "statement": "I personally reviewed the listed Qinglan G3.6 RC evidence and attest that these results are accurate."
   }
 }

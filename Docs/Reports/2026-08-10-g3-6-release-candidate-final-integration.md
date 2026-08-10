@@ -14,6 +14,10 @@ Addressables、Null Platform、Release Manifest、真实 Player Smoke、Complian
 GitHub Actions 和 DOD 汇总。修正汇总器，使人类 Reviewer 与最低规格物理机器成为真实阻断门禁，并支持
 在证据提交晚于候选 Tag 时通过 `-CandidateCommit` 复核指定候选。
 
+后续已把两个外部门禁升级为 Review/Validation Hash 配对：人工/法律使用 Schema 2 具名表，最低规格使用
+CIM/WMI、本 Commit Development 性能 Player 与 Release Smoke 双构建证据。当前归档已迁移到新 Schema，
+但状态仍为 `NOT_RUN`。
+
 全部可自动化项目已完成；没有把缺失的外部人工/法律签字或最低规格硬件认证伪报为通过。因此当前里程碑
 仍为 `INCOMPLETE`，发布决定为 `NO-GO`。
 
@@ -29,7 +33,7 @@ GitHub Actions 和 DOD 汇总。修正汇总器，使人类 Reviewer 与最低�
 | `Scripts/verify-qinglan-g36-release-candidate.ps1` | DOD 汇总、指定候选 Tag、人工 Reviewer 与最低规格阻断 |
 | `.github/workflows/windows-self-hosted.yml` | Windows/Unity 自托管完整候选门禁 |
 | `.gitattributes`、`QinglanG33AddressableGroupRules*` | 冷克隆 Hash/换行稳定性与 Localization Group 持久路由 |
-| `Docs/DemoDevelopment/Assets/G3.6/Final/*` | RC2 Manifest、Player、CI、性能、合规、DOD 和未执行证据 |
+| `Docs/DemoDevelopment/Assets/G3.6/Final/*` | RC2 Manifest、Player、CI、性能、合规、DOD 和 Hash 配对的外部 `NOT_RUN` 证据 |
 | Demo Roadmap、Traceability、Known Issues、Execution Order | 更新为 RC2 实际 `NO-GO / INCOMPLETE` 状态 |
 
 ## 3. 关键架构决定
@@ -120,8 +124,10 @@ GitHub Actions 成功 Run：<https://github.com/free-world-team/free-world/actio
 
 ## 10. 下一步前置条件
 
-- `manual-review.json` 必须由人类 Reviewer 签署，设置 `reviewerKind=human`，四项结论全部为 `PASS`。
-- `minimum-spec-review.json` 必须来自真实最低规格机器，设置 `physicalHardware=true` 且 Commit 为 RC2。
+- 按 `G3_6_MANUAL_REVIEW_GUIDE.md` 由具名人类 Reviewer 完成四项与法律子项，并取得
+  `manual-review-validation.json=PASS`。
+- 按 `G3_6_MINIMUM_SPEC_CERTIFICATION_GUIDE.md` 在真实最低规格物理机运行双 Player 流程，并取得
+  `minimum-spec-validation.json=PASS`。
 - 执行：`Scripts/verify-qinglan-g36-release-candidate.ps1 -CiStatus PASS -CandidateCommit qinglan-demo-g3.6-rc2`。
 
 ## 11. 结论

@@ -16,7 +16,10 @@ function Resolve-ProjectPath([string]$Value) {
     return [IO.Path]::GetFullPath((Join-Path $projectRoot $Value))
 }
 function Relative-ProjectPath([string]$Value) {
-    return [IO.Path]::GetRelativePath($projectRoot, (Resolve-Path -LiteralPath $Value).Path).Replace('\', '/')
+    $rootWithSeparator = $projectRoot.TrimEnd('\', '/') + [IO.Path]::DirectorySeparatorChar
+    $rootUri = [Uri]::new($rootWithSeparator)
+    $valueUri = [Uri]::new((Resolve-Path -LiteralPath $Value).Path)
+    return [Uri]::UnescapeDataString($rootUri.MakeRelativeUri($valueUri).ToString()).Replace('\', '/')
 }
 function Evidence([string]$Value) {
     $path = Resolve-ProjectPath $Value
@@ -43,7 +46,7 @@ if ($LASTEXITCODE -ne 0 -or $tagCommit -ne $commit) {
 }
 
 $templatePath = Join-Path $projectRoot 'Templates/QINGLAN_G36_MANUAL_REVIEW_TEMPLATE.json'
-$review = Get-Content -LiteralPath $templatePath -Raw | ConvertFrom-Json
+$review = Get-Content -LiteralPath $templatePath -Raw -Encoding UTF8 | ConvertFrom-Json
 $review.candidateCommit = $commit
 $review.candidateTag = $CandidateTag
 $review.reviews.visualReadability.evidence = @(

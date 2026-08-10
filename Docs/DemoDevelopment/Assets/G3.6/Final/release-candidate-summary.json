@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAtUtc": "2026-08-10T09:13:41.4399874Z",
+  "generatedAtUtc": "2026-08-10T09:49:34.1140233Z",
   "status": "NOT_RUN",
   "decision": "NO-GO",
   "commit": "9984bcc5582bd827372768993953645d754cc463",
@@ -49,8 +49,10 @@
     "releaseManifest": "0eb04d0ca6519ee48dd865feb321bc76ff0255e63803d73ca449445ae42b6b6a",
     "releasePlayer": "76994f33873eb983d370b9d02087b662bfd33622923e45afb64760bae65d4983",
     "cleanClone": "377fb4e346189b2f0552052eed34334c51eb6a2bc9ce0a7c0d664024d4e2e49f",
-    "manualReview": "2d48aff378a408bf1af7ea66bf895f688ab644788dddba9e677e2ee408d0e7ff",
-    "minimumSpec": "dcd7e37b87f3325253b03d7495b3aed1d2043f431fb0fe0309fb008f50cd7743"
+    "manualReview": "6a6c7896f90924131d05a81cecb57e17527acdba8b535c1f08db036e846801b0",
+    "manualReviewValidation": "1f8d201abbca6ccbde760fb94e51a618ce0282d45d2741474a9bbe4aedfc802f",
+    "minimumSpec": "97decf845601d46ca07c02ccddb03c13899d8e48c95761f1d61f088cb6acffa6",
+    "minimumSpecValidation": "8fb31127260b03a57f473dafce0b31fd102227b66fa3289278090da278357c31"
   },
   "knownIssues": [
     {
@@ -63,7 +65,7 @@
       "id": "G3.5-MIN-SPEC",
       "status": "NOT_RUN",
       "releaseBlocking": true,
-      "summary": "Minimum-spec certification is not available; target evidence is RTX 3060 Ti / i7-12700F."
+      "summary": "Physical minimum-spec certification is not available or did not pass."
     }
   ]
 }

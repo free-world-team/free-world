@@ -22,14 +22,14 @@ $output = Resolve-ProjectPath $OutputPath
 function Read-Json([string]$Name) {
     $path = Join-Path $root $Name
     if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { return $null }
-    try { return Get-Content -LiteralPath $path -Raw | ConvertFrom-Json }
+    try { return Get-Content -LiteralPath $path -Raw -Encoding UTF8 | ConvertFrom-Json }
     catch { return $null }
 }
 function Test-XmlPassed([string]$Name) {
     $path = Join-Path $root $Name
     if (-not (Test-Path -LiteralPath $path -PathType Leaf)) { return $false }
     try {
-        [xml]$document = Get-Content -LiteralPath $path -Raw
+        [xml]$document = Get-Content -LiteralPath $path -Raw -Encoding UTF8
         return $document.'test-run'.result -eq 'Passed' -and [int]$document.'test-run'.failed -eq 0
     } catch { return $false }
 }

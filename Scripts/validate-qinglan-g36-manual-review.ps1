@@ -14,6 +14,12 @@ function Resolve-ProjectPath([string]$Value) {
     if ([IO.Path]::IsPathRooted($Value)) { return [IO.Path]::GetFullPath($Value) }
     return [IO.Path]::GetFullPath((Join-Path $projectRoot $Value))
 }
+function Relative-ProjectPath([string]$Value) {
+    $rootWithSeparator = $projectRoot.TrimEnd('\', '/') + [IO.Path]::DirectorySeparatorChar
+    $rootUri = [Uri]::new($rootWithSeparator)
+    $valueUri = [Uri]::new([IO.Path]::GetFullPath($Value))
+    return [Uri]::UnescapeDataString($rootUri.MakeRelativeUri($valueUri).ToString()).Replace('\', '/')
+}
 function Has-Text($Value) { return $null -ne $Value -and -not [string]::IsNullOrWhiteSpace([string]$Value) }
 
 $reviewFile = Resolve-ProjectPath $ReviewPath
@@ -28,7 +34,7 @@ $review = $null
 if (-not (Test-Path -LiteralPath $reviewFile -PathType Leaf)) {
     $issues.Add('manual-review.json is missing.')
 } else {
-    try { $review = Get-Content -LiteralPath $reviewFile -Raw | ConvertFrom-Json }
+    try { $review = Get-Content -LiteralPath $reviewFile -Raw -Encoding UTF8 | ConvertFrom-Json }
     catch { $issues.Add("manual-review.json is invalid JSON: $($_.Exception.Message)") }
 }
 
@@ -134,7 +140,7 @@ $result = [ordered]@{
     generatedAtUtc = [DateTime]::UtcNow.ToString('O')
     status = $status
     candidateCommit = $commit
-    sourcePath = [IO.Path]::GetRelativePath($projectRoot, $reviewFile).Replace('\', '/')
+    sourcePath = Relative-ProjectPath $reviewFile
     sourceSha256 = $sourceHash
     issueCount = $issues.Count
     issues = $issues.ToArray()
