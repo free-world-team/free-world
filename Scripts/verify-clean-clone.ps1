@@ -49,7 +49,18 @@ try {
     $evidence = Join-Path $cloneRoot 'TestResults/QinglanDemo/G3.6/CleanClone'
     & (Join-Path $cloneRoot 'Scripts/test.ps1') -Platform EditMode `
         -ProjectPath $cloneRoot -ResultsDirectory $evidence
-    if ($LASTEXITCODE -ne 0) { throw 'Clean-clone EditMode failed.' }
+    $editModeExit = $LASTEXITCODE
+    $editModeResults = Join-Path $evidence 'editmode.xml'
+    $editModeLog = Join-Path $evidence 'editmode.log'
+    if ($editModeExit -ne 0 -and -not (Test-Path -LiteralPath $editModeResults) -and
+        (Test-Path -LiteralPath $editModeLog) -and
+        (Select-String -LiteralPath $editModeLog -SimpleMatch 'Failed to resolve packages: operation cancelled.' -Quiet)) {
+        Write-Warning 'Unity Package Manager cancelled the first cold resolve; retrying EditMode once.'
+        & (Join-Path $cloneRoot 'Scripts/test.ps1') -Platform EditMode `
+            -ProjectPath $cloneRoot -ResultsDirectory $evidence
+        $editModeExit = $LASTEXITCODE
+    }
+    if ($editModeExit -ne 0) { throw 'Clean-clone EditMode failed.' }
     & (Join-Path $cloneRoot 'Scripts/test.ps1') -Platform PlayMode `
         -ProjectPath $cloneRoot -ResultsDirectory $evidence
     if ($LASTEXITCODE -ne 0) { throw 'Clean-clone PlayMode failed.' }
