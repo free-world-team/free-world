@@ -1,5 +1,6 @@
 using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleTo("Game.Editor")]
+[assembly: InternalsVisibleTo("Game.Infrastructure")]
 [assembly: InternalsVisibleTo("Game.Tests.EditMode")]
 [assembly: InternalsVisibleTo("Game.Tests.PlayMode")]

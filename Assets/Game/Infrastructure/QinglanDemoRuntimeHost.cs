@@ -32,6 +32,7 @@ namespace Game.Infrastructure
         public ILocalizationService Localization { get; private set; }
         public QinglanPageViewModel CurrentPage => presenter?.CurrentPage;
         public bool FormalVisualsLoaded => formalVisualLoader?.IsLoaded == true;
+        internal FormalVisualCatalog FormalVisualCatalog => formalVisualLoader?.Catalog;
         public bool FormalAudioLoaded => formalAudioLoader?.IsLoaded == true;
         public bool FormalFontsLoaded => formalFontLoader?.IsLoaded == true;
 
