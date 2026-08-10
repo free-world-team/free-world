@@ -180,6 +180,40 @@ namespace Game.Tests.PlayMode
             AssertPage(host, DemoFlowStage.CharacterSelect, QinglanUiPageId.CharacterSelect);
         }
 
+        [UnityTest]
+        public IEnumerator ActiveRunHudRevealsBattlefieldAndMapUsesOnlyAForegroundOverlay()
+        {
+            yield return LoadBootstrapScene();
+            var host = RequireHost();
+
+            Tap(keyboard.enterKey);
+            Tap(keyboard.enterKey);
+            Tap(keyboard.enterKey);
+            Tap(keyboard.enterKey);
+            StartPreparedRun(host);
+
+            var background = host.Ui.transform.Find("Qinglan_FormalBackground");
+            var pageLayer = host.Ui.transform.Find("Qinglan_PageLayer");
+            var hudLayer = host.Ui.transform.Find("Qinglan_HudLayer");
+            Assert.That(background, Is.Not.Null);
+            Assert.That(pageLayer, Is.Not.Null);
+            Assert.That(hudLayer, Is.Not.Null);
+            Assert.That(host.Ui.GameplayWorldVisible, Is.True,
+                "the full-screen formal page background must not cover camera-rendered gameplay");
+            Assert.That(background.gameObject.activeSelf, Is.False);
+            Assert.That(pageLayer.gameObject.activeSelf, Is.False);
+            Assert.That(hudLayer.gameObject.activeSelf, Is.True);
+
+            Tap(keyboard.mKey);
+            Assert.That(background.gameObject.activeSelf, Is.False,
+                "the map overlay must retain the live battlefield behind it");
+            Assert.That(pageLayer.gameObject.activeSelf, Is.True);
+            Assert.That(host.Ui.GameplayWorldVisible, Is.False);
+
+            Tap(keyboard.escapeKey);
+            Assert.That(host.Ui.GameplayWorldVisible, Is.True);
+        }
+
         private void Tap(ButtonControl control)
         {
             fixture.Press(control);

@@ -20,6 +20,7 @@ namespace Game.Infrastructure
     {
         private const string DevelopmentArgument = "-qinglanG28Smoke";
         private const string ReleaseArgument = "-qinglanG36ReleaseSmoke";
+        private const string ScreenshotDirectoryVariable = "QINGLAN_G36_RELEASE_SCREENSHOT_DIR";
 
         internal static bool IsRequested()
         {
@@ -98,6 +99,8 @@ namespace Game.Infrastructure
             host.TickRuntime(SimulationClock.TickDurationSeconds);
             result.activeRunVisited = host.Flow.Stage == DemoFlowStage.Active;
             result.activeViews = host.Presentation.ActiveViewCount;
+            result.gameplayWorldVisible = host.Ui.GameplayWorldVisible;
+            yield return CaptureScreenshotIfRequested(result, "active-gameplay");
             if (!result.activeRunVisited || result.activeViews <= 0 || !host.Flow.TogglePause() ||
                 host.Flow.Stage != DemoFlowStage.UserPaused || !host.Flow.TogglePause())
             {
@@ -181,6 +184,7 @@ namespace Game.Infrastructure
                          result.formalLocalizationResolved && result.localeCyclePassed &&
                          result.layoutScalePassed &&
                          result.mapAndLoadoutVisited && result.activeRunVisited &&
+                         result.gameplayWorldVisible && result.screenshotsPassed &&
                          result.pauseResumeVisited && result.accessibilityApplied &&
                          result.upgradeVisited && result.resultVisited && result.saveCommitted &&
                          result.hubVisited && result.restartVisited &&
@@ -191,6 +195,38 @@ namespace Game.Infrastructure
             result.status = passed ? "PASS" : "FAIL";
             result.error = passed ? string.Empty : "One or more Player smoke assertions failed.";
             WriteAndQuit(result, passed ? 0 : 2);
+        }
+
+        private static IEnumerator CaptureScreenshotIfRequested(
+            QinglanG28PlayerSmokeResult result,
+            string name)
+        {
+            var directory = Environment.GetEnvironmentVariable(ScreenshotDirectoryVariable);
+            if (string.IsNullOrWhiteSpace(directory))
+            {
+                result.screenshotsPassed = true;
+                yield break;
+            }
+
+            directory = Path.GetFullPath(directory);
+            Directory.CreateDirectory(directory);
+            var path = Path.Combine(directory, name + ".png");
+            if (File.Exists(path)) File.Delete(path);
+            Canvas.ForceUpdateCanvases();
+            yield return new WaitForEndOfFrame();
+            ScreenCapture.CaptureScreenshot(path);
+            for (var frame = 0; frame < 120; frame++)
+            {
+                if (File.Exists(path) && new FileInfo(path).Length > 0)
+                {
+                    result.activeGameplayScreenshot = path;
+                    result.screenshotsPassed = true;
+                    yield break;
+                }
+                yield return null;
+            }
+
+            result.screenshotsPassed = false;
         }
 
         private static bool VerifyFormalLocalization(
@@ -310,6 +346,9 @@ namespace Game.Infrastructure
             public bool characterSelectVisited;
             public bool mapAndLoadoutVisited;
             public bool activeRunVisited;
+            public bool gameplayWorldVisible;
+            public bool screenshotsPassed;
+            public string activeGameplayScreenshot;
             public bool pauseResumeVisited;
             public bool accessibilityApplied;
             public bool upgradeVisited;

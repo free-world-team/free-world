@@ -54,6 +54,10 @@ namespace Game.UI
         public bool FormalBackgroundApplied { get; private set; }
         public int FormalVisualMissCount { get; private set; }
         public bool UsesFormalTmpFonts => regularFont != null && pageText != null && pageText.font != null;
+        /// <summary>True when the active Run HUD leaves the camera-rendered battlefield unobstructed.</summary>
+        public bool GameplayWorldVisible => CurrentPage == QinglanUiPageId.RunHud &&
+                                            pageBackground != null && !pageBackground.gameObject.activeSelf &&
+                                            pagePanel != null && !pagePanel.gameObject.activeSelf;
         public bool HasAnyTextOverflow
         {
             get
@@ -112,6 +116,12 @@ namespace Game.UI
             if (canvas == null) throw new InvalidOperationException("UI root is not initialized.");
             CurrentPage = page.Page;
             var runHudVisible = page.Page == QinglanUiPageId.RunHud;
+            var runMapOverlayVisible = runHudVisible &&
+                                       (!string.IsNullOrEmpty(page.SubtitleKey) || page.OptionCount > 0);
+            pageBackground.gameObject.SetActive(!runHudVisible);
+            pagePanel.gameObject.SetActive(!runHudVisible || runMapOverlayVisible);
+            focusMarker.gameObject.SetActive(page.OptionCount > 0 &&
+                                             (!runHudVisible || runMapOverlayVisible));
             hudPanel.gameObject.SetActive(runHudVisible);
             dangerPanel.gameObject.SetActive(runHudVisible);
             pagePanel.rectTransform.anchorMax = new Vector2(runHudVisible ? 0.66f : 0.98f, 0.96f);
@@ -122,7 +132,7 @@ namespace Game.UI
                             page.Page == QinglanUiPageId.RunResult
                 ? narrativeFont
                 : regularFont;
-            ApplyPageBackground(page.Page);
+            if (!runHudVisible) ApplyPageBackground(page.Page);
             pageBuilder.Clear();
             AppendKey(pageBuilder, page.TitleKey);
             if (!string.IsNullOrEmpty(page.SubtitleKey))
