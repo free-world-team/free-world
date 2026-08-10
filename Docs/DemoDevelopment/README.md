@@ -69,6 +69,7 @@ G3 发布候选
 | [25_G3_2_FORMAL_AUDIO.md](25_G3_2_FORMAL_AUDIO.md) | G3.2 正式音频生产、Mixer/Router 与运行时集成 |
 | [26_G3_3_FORMAL_FONT_LOCALIZATION.md](26_G3_3_FORMAL_FONT_LOCALIZATION.md) | G3.3 正式 TMP 字体、双语正文、Pseudo 与布局门禁 |
 | [27_G3_4_BALANCE_FREEZE.md](27_G3_4_BALANCE_FREEZE.md) | G3.4 无作弊三构筑 Seed 矩阵、失败率、Golden 与数值冻结 |
+| [28_G3_5_TARGET_HARDWARE_PERFORMANCE.md](28_G3_5_TARGET_HARDWARE_PERFORMANCE.md) | G3.5 目标硬件 CPU/GPU、1% Low、GC、内存与池容量门禁 |
 
 G3.4 已于 2026-08-10 关闭：Pack `0.10.0`，15 局 12 胜 3 负，三路线胜场 `3/4/5`，三 Golden、三失败
 探针和 18 奇物兼容全部通过。机器可读证据位于 [Assets/G3.4](Assets/G3.4)。当前里程碑为 G3.5。

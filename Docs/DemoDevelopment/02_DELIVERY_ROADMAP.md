@@ -73,6 +73,12 @@ G3.3 已在统一实现分支完成三套正式 TMP 字体、806 个双语 Key�
 `Docs/Reports/2026-08-10-g3-3-formal-font-localization-final-integration.md`。下一工作包只进入 G3.4
 数值冻结与 Seed 矩阵，不提前执行 G3.5 性能优化或 G3.6 Release Candidate。
 
+G3.4 已在统一实现分支完成 Pack `0.10.0` 数值冻结：15 局矩阵取得 12 胜 3 负，三路线胜场为
+`3/4/5`，三 Golden、三失败探针和 18 奇物兼容全部通过，实际证据见
+`27_G3_4_BALANCE_FREEZE.md` 与
+`Docs/Reports/2026-08-10-g3-4-balance-freeze-final-integration.md`。当前工作包只进入 G3.5 目标
+硬件 CPU/GPU/GC/池容量取证，不提前执行 G3.6 Release Candidate。
+
 ## 5. G3 发布候选
 
 | 顺序 | 分支建议 | 交付物 | 退出门禁 |
