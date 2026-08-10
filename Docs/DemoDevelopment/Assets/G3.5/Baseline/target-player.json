@@ -1,0 +1,367 @@
+{
+    "schemaVersion": 1,
+    "status": "PASS",
+    "failureReason": "",
+    "generatedAtUtc": "2026-08-10T05:20:09.1085374Z",
+    "configuration": {
+        "profile": "target",
+        "seed": "5562308243845666138",
+        "warmupTicks": 300,
+        "tickCount": 54000,
+        "enemies": 1200,
+        "projectiles": 900,
+        "pickups": 500,
+        "vfx": 200,
+        "simulationHz": 30,
+        "targetFrameRate": 60,
+        "certificationEligible": true
+    },
+    "environment": {
+        "unityVersion": "6000.3.20f1",
+        "operatingSystem": "Windows 11  (10.0.26200)",
+        "processor": "12th Gen Intel(R) Core(TM) i7-12700F",
+        "processorCount": 20,
+        "systemMemoryMegabytes": 32577,
+        "graphicsDevice": "NVIDIA GeForce RTX 3060 Ti",
+        "graphicsDeviceType": "Direct3D11",
+        "graphicsDeviceVersion": "Direct3D 11.0 [level 11.1]",
+        "graphicsMemoryMegabytes": 8024,
+        "screenWidth": 1920,
+        "screenHeight": 1080,
+        "quality": "Ultra",
+        "vSyncCount": 0,
+        "batchMode": false,
+        "frameTimingFeatureEnabled": true,
+        "focusLost": false,
+        "remoteDisplayAdapter": false,
+        "gitSha": "395560775f9cdae9a4bf49ed9ed2e21ef3554ce3",
+        "packVersion": "0.10.0",
+        "packHash": "8900fedffde84c2d014c260d50bff1833a1a98f378a4b22ac08ea4a3ec40d21f"
+    },
+    "wallFrame": {
+        "samples": 107986,
+        "averageMilliseconds": 16.668943171563876,
+        "p95Milliseconds": 16.670797020196916,
+        "p99Milliseconds": 16.697101294994356,
+        "maximumMilliseconds": 19.819898530840875,
+        "averageFps": 59.99180570163167,
+        "onePercentLowFps": 59.89063504692226
+    },
+    "cpuFrame": {
+        "samples": 107986,
+        "averageMilliseconds": 16.66894323430808,
+        "p95Milliseconds": 16.6819,
+        "p99Milliseconds": 16.7169,
+        "maximumMilliseconds": 19.8161,
+        "averageFps": 59.991805475814228,
+        "onePercentLowFps": 59.819703413910477
+    },
+    "gpuFrame": {
+        "samples": 107826,
+        "averageMilliseconds": 1.9063133804462587,
+        "p95Milliseconds": 1.982464,
+        "p99Milliseconds": 2.162688,
+        "maximumMilliseconds": 9.233408,
+        "averageFps": 524.5727225425575,
+        "onePercentLowFps": 462.3875473484848
+    },
+    "simulationTick": {
+        "samples": 54000,
+        "averageMilliseconds": 11.760999761111182,
+        "p95Milliseconds": 12.2614,
+        "p99Milliseconds": 12.7601,
+        "maximumMilliseconds": 16.8261,
+        "averageFps": 85.02678516384222,
+        "onePercentLowFps": 78.36929177671022
+    },
+    "memory": {
+        "samples": [
+            {
+                "simulatedMinute": 0.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240263502,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 1.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240268816,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 2.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240275946,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 3.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240285630,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 4.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240292590,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 5.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240296430,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 6.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240296430,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 7.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240296422,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 8.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240296486,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 9.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240296486,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 10.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240296598,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 11.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240296638,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 12.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240296638,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 13.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240296662,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 14.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240296702,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 15.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240346958,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 16.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240347014,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 17.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240346928,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 18.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240346976,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 19.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240346203,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 20.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240347072,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 21.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240347072,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 22.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240347072,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 23.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240347112,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 24.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240347112,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 25.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240347176,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 26.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240345975,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 27.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240347176,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 28.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240347176,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 29.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240347058,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            },
+            {
+                "simulatedMinute": 30.0,
+                "managedBytes": 26910720,
+                "nativeBytes": 240347098,
+                "gcHeapBytes": 26910720,
+                "graphicsDriverBytes": 141104345
+            }
+        ],
+        "peakManagedBytes": 26910720,
+        "peakNativeBytes": 240347176,
+        "peakGcHeapBytes": 26910720,
+        "peakGraphicsDriverBytes": 141104345,
+        "managedGrowthBytes": 0,
+        "nativeGrowthBytes": 83596,
+        "managedSustainedGrowth": false,
+        "nativeSustainedGrowth": false
+    },
+    "gc": {
+        "generation0Collections": 0,
+        "generation1Collections": 0,
+        "generation2Collections": 0,
+        "hotPathManagedAllocationBytes": 0,
+        "hotPathManagedBytesPerFrame": 0.0,
+        "profilerSamples": 107986,
+        "profilerAllocatedBytes": 0,
+        "profilerMaximumAllocatedBytesPerFrame": 0
+    },
+    "render": {
+        "samples": 107986,
+        "drawCallsRecorderValid": true,
+        "setPassRecorderValid": true,
+        "trianglesRecorderValid": true,
+        "averageDrawCalls": 0.011307021280536366,
+        "maximumDrawCalls": 21,
+        "averageSetPassCalls": 0.03435630544700239,
+        "maximumSetPassCalls": 20,
+        "maximumTriangles": 22906,
+        "frameSampleOverflow": false
+    },
+    "pools": {
+        "expectedViews": 2801,
+        "createdViews": 2801,
+        "expectedSpriteRenderers": 5402,
+        "createdSpriteRenderers": 5402,
+        "peakActiveViews": 2801,
+        "expansionsAfterWarmup": 0,
+        "droppedRequests": 0,
+        "invalidBindings": 0,
+        "resolvedFormalProfiles": 5
+    },
+    "budgets": {
+        "averageFpsMinimum": 59.0,
+        "onePercentLowFpsMinimum": 45.0,
+        "gpuP99BudgetMilliseconds": 16.67,
+        "tickP99BudgetMilliseconds": 33.33,
+        "configurationMatchesProfile": true,
+        "exactEntityCounts": true,
+        "formalAssetsResolved": true,
+        "averageFpsWithinBudget": true,
+        "onePercentLowWithinBudget": true,
+        "gpuP99WithinBudget": true,
+        "tickP99WithinBudget": true,
+        "gpuSamplesAvailable": true,
+        "zeroHotPathManagedAllocation": true,
+        "zeroProfilerGcAllocation": true,
+        "noGcCollections": true,
+        "noSustainedMemoryGrowth": true,
+        "renderRecordersAvailable": true,
+        "noPoolExpansionOrDrops": true,
+        "correctResolution": true,
+        "correctGraphicsApi": true,
+        "correctQuality": true,
+        "uninterruptedFocus": true,
+        "physicalDisplayAdapter": true,
+        "provenanceRecorded": true,
+        "noFrameSampleOverflow": true
+    },
+    "checksum": "dbd76d45a0eeb892"
+}
