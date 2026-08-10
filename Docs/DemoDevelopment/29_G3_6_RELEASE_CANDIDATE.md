@@ -117,3 +117,17 @@ CI 需真实自托管 Runner Job；仅存在 YAML 为 `NOT RUN`。
 G3.6 只有在 DOD-01—10 全部 `PASS`、Release Manifest 与 Player 属于同一候选 Commit、无 Release
 阻断项、候选分支已 Push 后才可关闭。若外部人工/法律/最低规格或 CI 无法取得实际结果，必须报告
 `NO-GO / INCOMPLETE`，不能用用户概括授权伪造签字或硬件证据。
+
+## 9. RC2 实际结果（2026-08-10）
+
+- 候选：`9984bcc5582bd827372768993953645d754cc463` / `qinglan-demo-g3.6-rc2`。
+- 自托管 GitHub Actions Run `31370035860`：`PASS`；Clean Checkout、Unity 版本、460 EditMode、
+  20 PlayMode、Validation、Vertical Slice、Balance、CPU、Compliance、Development/Release Build、
+  Release Player、源树清洁和产物上传全部成功。
+- Release：非 Development、Null Platform、一个正式 Pack、193 Definitions、Placeholder 0、未批准资产 0。
+- DOD-01—08：`PASS`。
+- 独立人工/法律签字：`NOT_RUN`；最低规格物理机器认证：`NOT_RUN`。
+- DOD-09—10：`NOT_RUN`；最终决定：`NO-GO / INCOMPLETE`。
+
+完整机器证据见 `Docs/DemoDevelopment/Assets/G3.6/Final`。首次 CI Run `31367990349` 仅在 Checkout
+因 `curl 56 connection reset` 失败，未运行任何 Unity/代码门禁；失败历史保留在 `ci-summary.json`。

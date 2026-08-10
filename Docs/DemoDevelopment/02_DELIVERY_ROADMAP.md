@@ -88,7 +88,9 @@ Release Candidate。
 
 G3.6 已按 `29_G3_6_RELEASE_CANDIDATE.md` 冻结：现有 M10 纯框架 Release Smoke 不作为 Demo 发布
 证据；候选必须只装载正式青岚 Catalog 和正式 Addressables，并完成 Null Platform Release Player、
-Manifest、合规、干净克隆与 DOD-01—10 当前提交证据。当前不进入后续发布或商店工作。
+Manifest、合规、干净克隆与 DOD-01—10 当前提交证据。RC2 `9984bcc` 的自动测试、Release、Player、
+合规、干净 Checkout 与 CI 已全部 `PASS`；独立人工/法律签字和最低规格实机认证仍为 `NOT_RUN`，故
+当前发布决定是 `NO-GO / INCOMPLETE`，不进入后续发布或商店工作。
 
 ## 5. G3 发布候选
 

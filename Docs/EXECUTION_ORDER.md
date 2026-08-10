@@ -200,6 +200,6 @@ G0.1—G3.5 已按 `Docs/DemoDevelopment/02_DELIVERY_ROADMAP.md` 完成单工作
 TMP 字体、806 个双语 Key、Pseudo、全量测试、Build 与 Player Smoke；G3.4 已完成 15 局无作弊三构筑
 Seed 矩阵（12 胜 3 负）、三 Golden 重放、三失败探针、18 奇物兼容、全量测试、Build 与 Player Smoke。
 G3.5 已完成参考目标机 54,000 Tick CPU、1080p 30 分钟 GPU、完整回归与 Development Player；2,000
-敌人扩展压力 `FAIL` 作为非阻断容量限制保留。当前只进入 G3.6 Release Candidate，并按
-`Docs/DemoDevelopment/29_G3_6_RELEASE_CANDIDATE.md` 实现正式输入、Release Player、Manifest、合规、
-干净克隆和 DOD-01—10 证据；不得提前进入后续发布或商店工作。
+敌人扩展压力 `FAIL` 作为非阻断容量限制保留。G3.6 RC2 已完成正式输入、Release Player、Manifest、
+合规、干净 Checkout 和自托管 CI，全部自动化为 `PASS`；但独立人工/法律签字与最低规格物理机器认证
+仍为 `NOT_RUN`，DOD-09—10 未关闭。当前保持 `NO-GO / INCOMPLETE`，不得进入后续发布或商店工作。

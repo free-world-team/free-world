@@ -1,0 +1,69 @@
+{
+    "schemaVersion": 2,
+    "productName": "AzureSword",
+    "gameVersion": "1.0",
+    "buildNumber": 1,
+    "buildConfiguration": "WindowsReleaseCandidate",
+    "targetPlatform": "Windows x64",
+    "unityVersion": "6000.3.20f1",
+    "buildTarget": "StandaloneWindows64",
+    "development": false,
+    "executable": "E:/ai/free-world/Temp/actions-runner-g36/runner/_work/free-world/free-world/Builds/WindowsRelease/AzureSword.exe",
+    "result": "Succeeded",
+    "git": {
+        "commit": "9984bcc5582bd827372768993953645d754cc463",
+        "branch": "codex/qinglan-demo-implementation",
+        "tag": "qinglan-demo-g3.6-rc2",
+        "workingTreeClean": true
+    },
+    "builtAtUtc": "2026-08-10T08:56:04.6499035Z",
+    "generatedAtUtc": "2026-08-10T08:56:04.6514080Z",
+    "contentSchemaVersion": 6,
+    "saveSchemaVersion": 3,
+    "settingsSaveSchemaVersion": 3,
+    "profileSaveSchemaVersion": 3,
+    "runRecoverySaveSchemaVersion": 2,
+    "contentPacks": [
+        {
+            "packId": "qinglan.pack.demo",
+            "version": "0.10.0",
+            "contentHash": "4b6786249a9dc1c69ce353b96351a64d194ba8ed460ec6db1e42c967147e2e17",
+            "catalogHash": "ada6ba8d0ca22f17bbc08a4bcc7f43704ce1b9159b0adb87e43c0da00f82b6d1",
+            "catalogSha256": "62e69c00b6d908faea6efe23d3581561624640f76e6c2f5755235010bedece15",
+            "includedInPlayer": true,
+            "placeholder": false,
+            "official": true,
+            "sourceAssetPath": "Assets/GameContent/QinglanDemo/Runtime/QinglanDemoContentPack.release.json"
+        }
+    ],
+    "packagesLockSha256": "22d4d124d40d0bcead59fc1d3cb513d884a2754d6c17cadb605709b40ff1a833",
+    "packagesManifestSha256": "704a2dce100dd24b2d0b2e2349e5eea6eb43e924a613c184e65466f96372af62",
+    "projectVersionSha256": "4b4da11ed5c64178395a0d9608426c71cbde17a006c5bc42e752ffdb4bae7540",
+    "addressablesSettingsSha256": "b905c6f4a3fb52242e0c36d0e984e304d4167c7758fb85c15750235a6f81d5ff",
+    "publicApiFreezeSha256": "32c7a2d1133c2fbbd8e896596b6204915faed06285ebacee1a5f94608eeaf5e8",
+    "thirdPartyNoticesSha256": "7064793174fcf607a9b40de590bf8a1c4352cd7873d162932c43677ef7daaad1",
+    "assetProvenanceSha256": "628919b6de7b471095570ad03910f2e65ae538c793c861f41139ce7518c07dbb",
+    "addressablesBuildHash": "5c6a3ae014999e6dcb26c8fc57ff536c24cb185505ff2dae704e401f81d3a65f",
+    "placeholderCount": 0,
+    "unapprovedAssetCount": 0,
+    "formalContentPackCount": 1,
+    "releaseValidator": "PASS",
+    "platformBackend": "NullPlatformFacade",
+    "offlineRequired": true,
+    "tests": {
+        "editMode": "PASS",
+        "playMode": "PASS",
+        "contentValidation": "PASS",
+        "soak": "PASS",
+        "editModeSha256": "aabd28576cf851fe3efe059350463ef85f1b8293d402000551cf5b4a7d36e364",
+        "playModeSha256": "0cf2b9e375121ebff4f95d6850ccbb066bf5aa1e5aa5a79f509412c9c4c71059",
+        "contentValidationSha256": "406191dd283e25599cef8c73d670d57abbe32d180a6d29742250a791e5af36a1",
+        "performanceSha256": "e600d436dc049e89b589a4e404c96b8e40c187285ef0d18f1c3a64479cd79530"
+    },
+    "artifacts": [
+        {
+            "path": "E:/ai/free-world/Temp/actions-runner-g36/runner/_work/free-world/free-world/Builds/WindowsRelease/AzureSword.exe",
+            "sha256": "34c4e304e53e56499267dfd9c975c63dc279ed3011a69a8ca16eb207f1856a8f"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-08-10T09:04:00.0000000Z",
+  "commit": "9984bcc5582bd827372768993953645d754cc463",
+  "tag": "qinglan-demo-g3.6-rc2",
+  "status": "NOT_RUN",
+  "requiredEnvironment": "4-core CPU, 8 GB RAM, DirectX 11 GPU with 2 GB VRAM",
+  "availableEnvironment": "Intel Core i7-12700F, 32 GB RAM, NVIDIA GeForce RTX 3060 Ti 8 GB",
+  "reason": "No physical minimum-spec machine or equivalent independently certified hardware session was available. The reference target-machine PASS is retained separately and is not relabeled as minimum-spec evidence.",
+  "releaseBlocking": true,
+  "contract": "Docs/DemoDevelopment/29_G3_6_RELEASE_CANDIDATE.md sections 7 and 8"
+}

@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-08-10T08:57:00.0000000Z",
+  "commit": "9984bcc5582bd827372768993953645d754cc463",
+  "tag": "qinglan-demo-g3.6-rc2",
+  "status": "NOT_RUN",
+  "reviewer": "Codex objective evidence preparation only; independent human/legal sign-off not supplied",
+  "reviewerKind": "none",
+  "visualReadability": "NOT_RUN",
+  "buildDecisionDifference": "NOT_RUN",
+  "audioMasking": "NOT_RUN",
+  "rightsAndLicenses": "NOT_RUN",
+  "evidence": {
+    "visualReadability": [
+      "Docs/Reports/2026-08-10-g3-1-formal-visual-final-integration.md",
+      "TestResults/QinglanDemo/G3.6/Candidate/target-player.json"
+    ],
+    "buildDecisionDifference": [
+      "Docs/Reports/2026-08-10-g3-4-balance-freeze-final-integration.md",
+      "TestResults/QinglanDemo/G3.6/Candidate/balance-freeze.json"
+    ],
+    "audioMasking": [
+      "Docs/Reports/2026-08-10-g3-2-formal-audio-final-integration.md",
+      "TestResults/QinglanDemo/G3.6/Candidate/audio-masking-review.json",
+      "TestResults/QinglanDemo/G3.6/Candidate/audio-masking-stress.ogg"
+    ],
+    "rightsAndLicenses": [
+      "TestResults/QinglanDemo/G3.6/Candidate/compliance.json",
+      "ASSET_REGISTRY.md",
+      "THIRD_PARTY_NOTICES.md"
+    ]
+  },
+  "observations": {
+    "visual": "The final 1920x1080 target-player capture and the G3.1 standard/high-contrast review preserve player, telegraph, objective and UI readability at the formal load.",
+    "builds": "The G3.4 matrix contains three distinct routes (moving_sword, talisman_burst and living_field), route victories of 3/4/5, distinct decisions, skills and evolutions, and deterministic replay.",
+    "audio": "An eight-second worst-load stress render exercises four music stems, ambience, ordinary effects at 10 Hz, -6 dB ordinary ducking and the unducked boundary warning. The warning has +10.557 dB SNR in its dominant energy band, and routing assertions reserve eight critical sources and bypass ordinary cooldown/capacity.",
+    "rights": "The G3.6 compliance audit reports zero issues, zero placeholders, one official formal pack, and no unapproved assets. Every governed formal asset remains linked to provenance and QA records."
+  },
+  "limitations": {
+    "independentHumanReview": "NOT_RUN",
+    "commercialRightsAndSteamDisclosureSignOff": "NOT_RUN",
+    "targetSoundCardSubjectiveListening": "NOT_RUN",
+    "note": "The evidence above is ready for human review but does not constitute the human/legal sign-off required by section 7 of 29_G3_6_RELEASE_CANDIDATE.md. Objective audio masking passed, but this is not an independently certified listening session. The deliberately unbounded diagnostic sum reached +4.140 dBFS before monitor normalization; runtime concurrency, priority eviction and ducking are the release controls."
+  }
+}

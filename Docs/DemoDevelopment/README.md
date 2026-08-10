@@ -77,8 +77,12 @@ G3.4 已于 2026-08-10 关闭：Pack `0.10.0`，15 局 12 胜 3 负，三路线�
 
 G3.5 已于 2026-08-10 关闭：CPU 54,000 Tick 与 1080p GPU 30 分钟 Target 均通过，平均 59.992 FPS、
 1% Low 59.891、GPU p99 2.163 ms、稳态 0 B/GC 0。2,000 Enemy 非阻断扩展实际记录为 `FAIL`，明确了
-CPU 容量拐点。机器可读证据位于 [Assets/G3.5](Assets/G3.5)。G3.6 已冻结 Release Candidate 契约，
-当前正在实现正式 Demo 输入、Release Player 与 DOD-01—10 证据包。
+CPU 容量拐点。机器可读证据位于 [Assets/G3.5](Assets/G3.5)。
+
+G3.6 RC2 已于 2026-08-10 完成全部自动化：正式 Demo 输入、非 Development Release Player、Manifest、
+Compliance、干净 Checkout 与 GitHub Actions 均 `PASS`。当前决定仍为 `NO-GO / INCOMPLETE`：独立人工/
+法律签字与最低规格物理机器认证为 `NOT_RUN`，因此 DOD-09—10 未关闭。机器可读证据位于
+[Assets/G3.6/Final](Assets/G3.6/Final)。
 
 ## 4. 模块分支
 

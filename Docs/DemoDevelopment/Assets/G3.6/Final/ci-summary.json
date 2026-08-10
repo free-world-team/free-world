@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-08-10T09:01:46.0000000Z",
+  "status": "PASS",
+  "candidateCommit": "9984bcc5582bd827372768993953645d754cc463",
+  "candidateTag": "qinglan-demo-g3.6-rc2",
+  "successfulRun": {
+    "runId": 31370035860,
+    "jobId": 93396722736,
+    "event": "push",
+    "url": "https://github.com/free-world-team/free-world/actions/runs/31370035860",
+    "createdAtUtc": "2026-08-10T08:25:56Z",
+    "completedAtUtc": "2026-08-10T09:01:46Z",
+    "conclusion": "success",
+    "artifact": {
+      "id": 9056682211,
+      "name": "qinglan-demo-release-candidate-9984bcc5582bd827372768993953645d754cc463",
+      "sizeBytes": 358377900,
+      "expired": false
+    },
+    "steps": {
+      "cleanCheckout": "PASS",
+      "lockedUnity": "PASS",
+      "editMode": "PASS",
+      "playMode": "PASS",
+      "validation": "PASS",
+      "verticalSlice": "PASS",
+      "balanceMatrix": "PASS",
+      "cpuTarget": "PASS",
+      "compliance": "PASS",
+      "developmentBuild": "PASS",
+      "releaseBuild": "PASS",
+      "releasePlayer": "PASS",
+      "sourceTreeClean": "PASS",
+      "artifactUpload": "PASS"
+    }
+  },
+  "priorAttempts": [
+    {
+      "runId": 31367990349,
+      "candidateCommit": "65e99c025d63b545f439bcc87af4fe9b6a3e911b",
+      "conclusion": "failure",
+      "failedStep": "Clean checkout",
+      "error": "RPC failed; curl 56 Recv failure: Connection was reset",
+      "codeOrUnityGateExecuted": false,
+      "url": "https://github.com/free-world-team/free-world/actions/runs/31367990349"
+    }
+  ]
+}

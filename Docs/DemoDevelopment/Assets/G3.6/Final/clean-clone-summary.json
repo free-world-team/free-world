@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-08-10T09:01:46.0000000Z",
+  "status": "PASS",
+  "commit": "9984bcc5582bd827372768993953645d754cc463",
+  "branch": "codex/qinglan-demo-implementation",
+  "unityVersion": "6000.3.20f1",
+  "method": "GitHub Actions self-hosted Windows runner clean checkout and complete candidate gate sequence",
+  "ciRunId": 31370035860,
+  "ciRunUrl": "https://github.com/free-world-team/free-world/actions/runs/31370035860",
+  "gates": {
+    "editMode": "PASS",
+    "playMode": "PASS",
+    "validation": "PASS",
+    "verticalSlice": "PASS",
+    "balance": "PASS",
+    "cpuTarget": "PASS",
+    "compliance": "PASS",
+    "developmentBuild": "PASS",
+    "releaseBuild": "PASS",
+    "releasePlayer": "PASS",
+    "sourceTreeClean": "PASS",
+    "artifactUpload": "PASS"
+  }
+}

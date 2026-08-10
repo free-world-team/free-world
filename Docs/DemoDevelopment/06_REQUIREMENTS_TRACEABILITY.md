@@ -4,7 +4,7 @@
 
 | Req | 总纲需求 | Owner 模块 | 主要证据 | 状态 |
 |---|---|---|---|---|
-| R-001 | 标题至再次出发闭环 | M01、M11、M14 | PlayMode/Player | G2.6 键盘/手柄＋G2.8 独立 Development Player 闭环 PASS；Release Player 待 G3.6 |
+| R-001 | 标题至再次出发闭环 | M01、M11、M14 | PlayMode/Player | G2.6/G2.8 Development 与 G3.6 非 Development Release Player 闭环 PASS |
 | R-002 | 陆青野与真实位移乘风 | M02 | EditMode/PlayMode | G1.2 EditMode、G2.6 两种输入 PlayMode PASS |
 | R-003 | 六把武器与等级成长 | M04 | Preview/EditMode | G1.3/G1.4 Preview、G2.8 真实升级与 G3.4 三路线 15 Seed 数值 Golden PASS |
 | R-004 | 六心诀与六显化 | M05 | Validation/Build Matrix | G1.4 资格/转换、G1.7 选择事务、G2.3 消费与 G2.8 实际路线 PASS |
@@ -20,10 +20,10 @@
 | R-014 | 6 藏品、3 故事 | M11、M14 | Save/Localization | G2.5 真值、G2.6 页面/Localization PASS |
 | R-015 | 键鼠/手柄完整流程 | M12 | PlayMode | G2.6 键盘与手柄独立闭环 PASS |
 | R-016 | 可访问性与双语 | M12、M14 | Locale/Layout/PlayMode | G3.3 正式字体、806 双语 Key、Pseudo、布局与 Player Smoke PASS |
-| R-017 | 东方清朗视听与危险可读 | M13 | 资产评审/GPU 捕获 | G2.8 Placeholder 600 敌人 P0 自动/人工 PASS；正式视听/GPU 待 G3 |
-| R-018 | 1080p 60 与 1% Low 警报 | M16 | 目标硬件 JSON | G3 |
-| R-019 | 正式资产合规/Release | M13、M15、M16 | provenance/Manifest | G3 |
-| R-020 | 离线完整运行 | M01、M14、M16 | Null Platform Player | G2.8 Null Platform Development Player 完整闭环 PASS；Release 待 G3.6 |
+| R-017 | 东方清朗视听与危险可读 | M13 | 资产评审/GPU 捕获 | G3.1/G3.2 正式视听、G3.5 1080p Target 与 G3.6 客观遮蔽均 PASS；独立人工最终签字 NOT_RUN |
+| R-018 | 1080p 60 与 1% Low 警报 | M16 | 目标硬件 JSON | G3.5 30 分钟 Target PASS；最低规格物理机器认证 NOT_RUN |
+| R-019 | 正式资产合规/Release | M13、M15、M16 | provenance/Manifest | G3.6 Compliance、Release Manifest PASS；商业权利/Steam AI 披露法律签字 NOT_RUN |
+| R-020 | 离线完整运行 | M01、M14、M16 | Null Platform Player | G2.8 Development 与 G3.6 Release Null Platform Player 完整闭环 PASS |
 
 ## 2. Demo 完成定义映射
 

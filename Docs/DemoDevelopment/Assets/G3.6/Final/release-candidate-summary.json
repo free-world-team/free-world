@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "generatedAtUtc": "2026-08-10T09:13:41.4399874Z",
+  "status": "NOT_RUN",
+  "decision": "NO-GO",
+  "commit": "9984bcc5582bd827372768993953645d754cc463",
+  "branch": "codex/qinglan-demo-implementation",
+  "ci": {
+    "status": "PASS",
+    "runUrl": "https://github.com/free-world-team/free-world/actions/runs/31370035860"
+  },
+  "gates": {
+    "editMode": "PASS",
+    "playMode": "PASS",
+    "validation": "PASS",
+    "verticalSlice": "PASS",
+    "balance": "PASS",
+    "cpuTarget": "PASS",
+    "gpuTarget": "PASS",
+    "releaseManifest": "PASS",
+    "releasePlayer": "PASS",
+    "compliance": "PASS",
+    "cleanClone": "PASS",
+    "manualReview": "NOT_RUN",
+    "minimumSpec": "NOT_RUN",
+    "ci": "PASS"
+  },
+  "dod": {
+    "DOD-01": "PASS",
+    "DOD-02": "PASS",
+    "DOD-03": "PASS",
+    "DOD-04": "PASS",
+    "DOD-05": "PASS",
+    "DOD-06": "PASS",
+    "DOD-07": "PASS",
+    "DOD-08": "PASS",
+    "DOD-09": "NOT_RUN",
+    "DOD-10": "NOT_RUN"
+  },
+  "hashes": {
+    "editMode": "aabd28576cf851fe3efe059350463ef85f1b8293d402000551cf5b4a7d36e364",
+    "playMode": "0cf2b9e375121ebff4f95d6850ccbb066bf5aa1e5aa5a79f509412c9c4c71059",
+    "validation": "406191dd283e25599cef8c73d670d57abbe32d180a6d29742250a791e5af36a1",
+    "verticalSlice": "a3814cbdbfbbac89866652d9b12c8de8ee5baf3432debdcad68153543d6870ad",
+    "balance": "7c234fd654e710d4443eefd673b7c4cdd94f71673b9d1b7f3c3a3db6aa7b88c1",
+    "cpuTarget": "e600d436dc049e89b589a4e404c96b8e40c187285ef0d18f1c3a64479cd79530",
+    "gpuTarget": "c1026054bef1883836826a537c0939196ceb2d9ef697e002f45d44630664859e",
+    "compliance": "bc8ce3e6f2765ae4cf228fca1f305ff3bd5eba29d5175ed1cb1bb495129eff35",
+    "releaseManifest": "0eb04d0ca6519ee48dd865feb321bc76ff0255e63803d73ca449445ae42b6b6a",
+    "releasePlayer": "76994f33873eb983d370b9d02087b662bfd33622923e45afb64760bae65d4983",
+    "cleanClone": "377fb4e346189b2f0552052eed34334c51eb6a2bc9ce0a7c0d664024d4e2e49f",
+    "manualReview": "2d48aff378a408bf1af7ea66bf895f688ab644788dddba9e677e2ee408d0e7ff",
+    "minimumSpec": "dcd7e37b87f3325253b03d7495b3aed1d2043f431fb0fe0309fb008f50cd7743"
+  },
+  "knownIssues": [
+    {
+      "id": "G3.5-EXT-2000",
+      "status": "FAIL",
+      "releaseBlocking": false,
+      "summary": "The advisory 2000-enemy extension is CPU-bound below the frame target."
+    },
+    {
+      "id": "G3.5-MIN-SPEC",
+      "status": "NOT_RUN",
+      "releaseBlocking": true,
+      "summary": "Minimum-spec certification is not available; target evidence is RTX 3060 Ti / i7-12700F."
+    }
+  ]
+}

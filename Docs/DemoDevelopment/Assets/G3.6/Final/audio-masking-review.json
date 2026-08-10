@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS",
+  "reviewType": "objective stress mix plus routing review",
+  "sampleRate": 48000,
+  "durationSeconds": 8,
+  "criticalCue": "qinglan/audio/map/system/boundary-warning",
+  "stressConditions": {
+    "musicStemCount": 4,
+    "ambienceStemCount": 1,
+    "ordinaryCueIntervalSeconds": 0.1,
+    "ordinaryDuckLinear": 0.5011872,
+    "ordinaryDuckDb": -6.0,
+    "criticalReservedSources": 8
+  },
+  "measurements": {
+    "criticalRmsDbfs": -11.682760029915238,
+    "backgroundRmsDbfsDuringCue": -8.972725541842482,
+    "broadbandCriticalToBackgroundDb": -2.710034488072756,
+    "criticalEnergyBandSnrDb": 10.556894323556099,
+    "unlimitedMixPeakDbfs": 4.139790510983011
+  },
+  "routingAssertions": {
+    "criticalBypassesCooldown": true,
+    "criticalBypassesOrdinaryCapacityLimit": true,
+    "criticalEvictsLowerPriorityOrMerges": true,
+    "criticalRemainsUnducked": true,
+    "ordinaryEffectsDuck350ms": true
+  },
+  "files": {
+    "danger": "Assets/GameAssets/AI/QinglanDemo/AUDIO-MAP-001/final/map-boundary-warning.ogg",
+    "ambience": "Assets/GameAssets/AI/QinglanDemo/AUDIO-AMB-001/final/courtyard-wind.ogg",
+    "air": "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/final/exploration-air.ogg",
+    "strings": "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/final/exploration-strings.ogg",
+    "combat": "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/final/combat-rhythm.ogg",
+    "pressure": "Assets/GameAssets/AI/QinglanDemo/AUDIO-MUSIC-001/final/high-pressure-drive.ogg",
+    "hit": "Assets/GameAssets/AI/QinglanDemo/AUDIO-PLAYER-001/final/player-hit.ogg",
+    "weapon": "Assets/GameAssets/AI/QinglanDemo/AUDIO-WEAPON-001/final/yufeng-sword-cast.ogg"
+  }
+}

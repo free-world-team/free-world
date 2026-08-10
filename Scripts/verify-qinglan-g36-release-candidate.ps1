@@ -5,6 +5,7 @@ param(
     [ValidateSet('PASS', 'FAIL', 'NOT_RUN')]
     [string]$CiStatus = 'NOT_RUN',
     [string]$CiRunUrl = '',
+    [string]$CandidateCommit = '',
     [string]$OutputPath = 'TestResults/QinglanDemo/G3.6/Candidate/release-candidate-summary.json'
 )
 
@@ -57,8 +58,12 @@ $cpu = Read-Json 'cpu-target.json'
 $gpu = Read-Json 'target-player.json'
 $cleanClone = Read-Json 'clean-clone-summary.json'
 $manual = Read-Json 'manual-review.json'
+$minimumSpec = Read-Json 'minimum-spec-review.json'
 $profilePath = Join-Path $root 'release-player-save/profile.json'
-$head = (& git -C $projectRoot rev-parse HEAD).Trim()
+$candidateRef = if ([string]::IsNullOrWhiteSpace($CandidateCommit)) { 'HEAD' } else { $CandidateCommit }
+$candidateCommitExpression = "$candidateRef`^{commit`}"
+$head = (& git -C $projectRoot rev-parse $candidateCommitExpression).Trim()
+if ([string]::IsNullOrWhiteSpace($head)) { throw "Unable to resolve candidate commit: $candidateRef" }
 
 $manifestPassed = $null -ne $manifest -and [int]$manifest.schemaVersion -eq 2 -and
     $manifest.result -eq 'Succeeded' -and $manifest.buildConfiguration -eq 'WindowsReleaseCandidate' -and
@@ -108,9 +113,13 @@ $compliancePassed = $null -ne $compliance -and $compliance.status -eq 'PASS' -an
     [int]$compliance.issueCount -eq 0 -and [int]$compliance.placeholderCount -eq 0
 $cleanClonePassed = $null -ne $cleanClone -and $cleanClone.status -eq 'PASS' -and
     $cleanClone.commit -eq $head
-$manualPassed = $null -ne $manual -and $manual.status -eq 'PASS' -and
+$manualRun = $null -ne $manual -and $manual.status -ne 'NOT_RUN' -and $manual.reviewerKind -eq 'human'
+$manualPassed = $manualRun -and $manual.status -eq 'PASS' -and
     $manual.visualReadability -eq 'PASS' -and $manual.buildDecisionDifference -eq 'PASS' -and
     $manual.audioMasking -eq 'PASS' -and $manual.rightsAndLicenses -eq 'PASS'
+$minimumSpecRun = $null -ne $minimumSpec -and $minimumSpec.status -ne 'NOT_RUN'
+$minimumSpecPassed = $minimumSpecRun -and $minimumSpec.status -eq 'PASS' -and
+    [bool]$minimumSpec.physicalHardware -and $minimumSpec.commit -eq $head
 
 $dod = [ordered]@{
     'DOD-01' = Status ($playPassed -and $playerPassed)
@@ -121,18 +130,21 @@ $dod = [ordered]@{
     'DOD-06' = Status ($playPassed -and $verticalPassed)
     'DOD-07' = Status ($editPassed -and $playPassed -and $playerPassed)
     'DOD-08' = Status ($editPassed -and $playPassed -and $verticalPassed -and $playerPassed)
-    'DOD-09' = Status ($gpuPassed -and $manualPassed)
-    'DOD-10' = if ($CiStatus -eq 'NOT_RUN') { 'NOT_RUN' } else {
+    'DOD-09' = if (-not $manualRun -or -not $minimumSpecRun) { 'NOT_RUN' } else {
+        Status ($gpuPassed -and $manualPassed -and $minimumSpecPassed)
+    }
+    'DOD-10' = if ($CiStatus -eq 'NOT_RUN' -or -not $manualRun -or -not $minimumSpecRun) { 'NOT_RUN' } else {
         Status ($editPassed -and $playPassed -and $validationPassed -and $cpuPassed -and
             $gpuPassed -and $manifestPassed -and $playerPassed -and $compliancePassed -and
-            $cleanClonePassed -and $manualPassed -and $CiStatus -eq 'PASS')
+            $cleanClonePassed -and $manualPassed -and $minimumSpecPassed -and $CiStatus -eq 'PASS')
     }
 }
 $allPassed = @($dod.Values | Where-Object { $_ -ne 'PASS' }).Count -eq 0
+$anyFailed = @($dod.Values | Where-Object { $_ -eq 'FAIL' }).Count -gt 0
 $result = [ordered]@{
     schemaVersion = 1
     generatedAtUtc = [DateTime]::UtcNow.ToString('O')
-    status = if ($allPassed) { 'PASS' } else { 'FAIL' }
+    status = if ($allPassed) { 'PASS' } elseif ($anyFailed) { 'FAIL' } else { 'NOT_RUN' }
     decision = if ($allPassed) { 'GO' } else { 'NO-GO' }
     commit = $head
     branch = (& git -C $projectRoot rev-parse --abbrev-ref HEAD).Trim()
@@ -149,7 +161,8 @@ $result = [ordered]@{
         releasePlayer = Status $playerPassed
         compliance = Status $compliancePassed
         cleanClone = Status $cleanClonePassed
-        manualReview = Status $manualPassed
+        manualReview = Status $manualPassed $manualRun
+        minimumSpec = Status $minimumSpecPassed $minimumSpecRun
         ci = $CiStatus
     }
     dod = $dod
@@ -166,16 +179,18 @@ $result = [ordered]@{
         releasePlayer = Hash 'release-player.json'
         cleanClone = Hash 'clean-clone-summary.json'
         manualReview = Hash 'manual-review.json'
+        minimumSpec = Hash 'minimum-spec-review.json'
     }
     knownIssues = @(
         [ordered]@{ id = 'G3.5-EXT-2000'; status = 'FAIL'; releaseBlocking = $false;
             summary = 'The advisory 2000-enemy extension is CPU-bound below the frame target.' },
-        [ordered]@{ id = 'G3.5-MIN-SPEC'; status = 'NOT_RUN'; releaseBlocking = $false;
+        [ordered]@{ id = 'G3.5-MIN-SPEC'; status = if ($minimumSpecRun) { $minimumSpec.status } else { 'NOT_RUN' }; releaseBlocking = $true;
             summary = 'Minimum-spec certification is not available; target evidence is RTX 3060 Ti / i7-12700F.' }
     )
 }
 New-Item -ItemType Directory -Path (Split-Path -Parent $output) -Force | Out-Null
-$result | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $output -Encoding utf8
+$json = ($result | ConvertTo-Json -Depth 8).Replace("`r`n", "`n") + "`n"
+[IO.File]::WriteAllText($output, $json, [Text.UTF8Encoding]::new($false))
 Write-Host "Qinglan G3.6 Release Candidate: $($result.decision) ($output)"
 if (-not $allPassed) { exit 1 }
 exit 0

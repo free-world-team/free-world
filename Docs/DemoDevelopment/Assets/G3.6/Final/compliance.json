@@ -1,0 +1,22 @@
+{
+    "schemaVersion": 1,
+    "generatedAtUtc": "2026-08-10T08:53:25.3763247Z",
+    "status": "PASS",
+    "issueCount": 0,
+    "issues": [],
+    "packId": "qinglan.pack.demo",
+    "packVersion": "0.10.0",
+    "packOfficial": true,
+    "contentHash": "4b6786249a9dc1c69ce353b96351a64d194ba8ed460ec6db1e42c967147e2e17",
+    "catalogSha256": "62e69c00b6d908faea6efe23d3581561624640f76e6c2f5755235010bedece15",
+    "definitionCount": 193,
+    "includedAddressablesGroupCount": 8,
+    "excludedAddressablesGroupCount": 1,
+    "releaseAddressableEntryCount": 297,
+    "placeholderCount": 0,
+    "thirdPartyFileCount": 7,
+    "formalAssetFileCount": 690,
+    "thirdPartyNoticesSha256": "7064793174fcf607a9b40de590bf8a1c4352cd7873d162932c43677ef7daaad1",
+    "assetProvenanceSha256": "628919b6de7b471095570ad03910f2e65ae538c793c861f41139ce7518c07dbb",
+    "publicApiFreezeSha256": "32c7a2d1133c2fbbd8e896596b6204915faed06285ebacee1a5f94608eeaf5e8"
+}
