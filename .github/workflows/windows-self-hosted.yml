@@ -1,6 +1,8 @@
 name: Qinglan Demo Release Candidate
 
 on:
+  push:
+    branches: [codex/qinglan-demo-implementation]
   pull_request:
     branches: [main]
   workflow_dispatch:
