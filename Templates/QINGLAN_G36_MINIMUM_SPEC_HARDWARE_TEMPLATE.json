@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "candidateCommit": "9984bcc5582bd827372768993953645d754cc463",
+  "candidateTag": "qinglan-demo-g3.6-rc2",
+  "physicalHardware": false,
+  "captureMethod": "CIM_WMI_LOCAL",
+  "capturedAtUtc": "",
+  "operator": {
+    "kind": "human",
+    "name": "",
+    "role": "",
+    "attested": false,
+    "statement": "I witnessed this certification on the physical hardware recorded in this file."
+  },
+  "computerSystem": {
+    "manufacturer": "",
+    "model": "",
+    "totalPhysicalMemoryBytes": 0
+  },
+  "operatingSystem": {
+    "caption": "",
+    "version": "",
+    "architecture": ""
+  },
+  "processor": {
+    "name": "",
+    "physicalCores": 0,
+    "logicalProcessors": 0
+  },
+  "graphicsAdapter": {
+    "name": "",
+    "adapterRamBytes": 0,
+    "driverVersion": ""
+  },
+  "executables": {
+    "performance": {
+      "path": "",
+      "sha256": ""
+    },
+    "release": {
+      "path": "",
+      "sha256": ""
+    }
+  },
+  "notes": ""
+}

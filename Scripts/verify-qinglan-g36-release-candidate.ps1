@@ -60,6 +60,7 @@ $cleanClone = Read-Json 'clean-clone-summary.json'
 $manual = Read-Json 'manual-review.json'
 $manualValidation = Read-Json 'manual-review-validation.json'
 $minimumSpec = Read-Json 'minimum-spec-review.json'
+$minimumSpecValidation = Read-Json 'minimum-spec-validation.json'
 $profilePath = Join-Path $root 'release-player-save/profile.json'
 $candidateRef = if ([string]::IsNullOrWhiteSpace($CandidateCommit)) { 'HEAD' } else { $CandidateCommit }
 $candidateCommitExpression = "$candidateRef`^{commit`}"
@@ -119,9 +120,14 @@ $manualRun = $null -ne $manual -and [int]$manual.schemaVersion -eq 2 -and
     $null -ne $manualValidation -and $manualValidation.status -ne 'NOT_RUN' -and
     $manualValidation.candidateCommit -eq $head -and $manualValidation.sourceSha256 -eq $manualHash
 $manualPassed = $manualRun -and $manual.status -eq 'PASS' -and $manualValidation.status -eq 'PASS'
-$minimumSpecRun = $null -ne $minimumSpec -and $minimumSpec.status -ne 'NOT_RUN'
+$minimumSpecHash = Hash 'minimum-spec-review.json'
+$minimumSpecRun = $null -ne $minimumSpec -and [int]$minimumSpec.schemaVersion -eq 2 -and
+    $null -ne $minimumSpecValidation -and $minimumSpecValidation.status -ne 'NOT_RUN' -and
+    $minimumSpecValidation.candidateCommit -eq $head -and
+    $minimumSpecValidation.sourceSha256 -eq $minimumSpecHash
 $minimumSpecPassed = $minimumSpecRun -and $minimumSpec.status -eq 'PASS' -and
-    [bool]$minimumSpec.physicalHardware -and $minimumSpec.commit -eq $head
+    $minimumSpecValidation.status -eq 'PASS' -and [bool]$minimumSpec.physicalHardware -and
+    $minimumSpec.commit -eq $head -and [int]$minimumSpec.issueCount -eq 0
 
 $dod = [ordered]@{
     'DOD-01' = Status ($playPassed -and $playerPassed)
@@ -182,13 +188,14 @@ $result = [ordered]@{
         cleanClone = Hash 'clean-clone-summary.json'
         manualReview = $manualHash
         manualReviewValidation = Hash 'manual-review-validation.json'
-        minimumSpec = Hash 'minimum-spec-review.json'
+        minimumSpec = $minimumSpecHash
+        minimumSpecValidation = Hash 'minimum-spec-validation.json'
     }
     knownIssues = @(
         [ordered]@{ id = 'G3.5-EXT-2000'; status = 'FAIL'; releaseBlocking = $false;
             summary = 'The advisory 2000-enemy extension is CPU-bound below the frame target.' },
         [ordered]@{ id = 'G3.5-MIN-SPEC'; status = if ($minimumSpecRun) { $minimumSpec.status } else { 'NOT_RUN' }; releaseBlocking = $true;
-            summary = 'Minimum-spec certification is not available; target evidence is RTX 3060 Ti / i7-12700F.' }
+            summary = if ($minimumSpecPassed) { 'Physical minimum-spec certification passed.' } else { 'Physical minimum-spec certification is not available or did not pass.' } }
     )
 }
 New-Item -ItemType Directory -Path (Split-Path -Parent $output) -Force | Out-Null

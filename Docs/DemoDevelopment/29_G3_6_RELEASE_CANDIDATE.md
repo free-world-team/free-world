@@ -111,6 +111,10 @@ Placeholder、空本地化 Key、Package/Project 版本与 API Freeze。以下�
 人工/法律评审必须使用 `G3_6_MANUAL_REVIEW_GUIDE.md` 的 Schema 2 表、证据 Hash 和校验器；候选汇总只接受
 与候选 Commit 匹配的 `manual-review-validation.json=PASS`，不再直接信任手填顶层状态。
 
+最低规格认证必须使用 `G3_6_MINIMUM_SPEC_CERTIFICATION_GUIDE.md` 的本机 CIM/WMI 采集与 30 分钟一键流程。
+候选汇总只接受 Schema 2 `minimum-spec-review.json` 与 Hash 匹配的
+`minimum-spec-validation.json=PASS`；高配参考目标机、虚拟机、远程适配器或单独手填 `PASS` 均无效。
+
 ## 8. 测试与退出门禁
 
 最低实际执行：聚焦 EditMode、全量 EditMode、全量 PlayMode、项目验证、G2.8 Vertical Slice、G3.4

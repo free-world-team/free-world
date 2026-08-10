@@ -11,7 +11,10 @@ param(
     [int]$QuickProjectiles = 90,
     [int]$QuickPickups = 50,
     [int]$QuickVfx = 20,
-    [int]$QuickWarmupTicks = 30
+    [int]$QuickWarmupTicks = 30,
+    [string]$CandidateCommit = '',
+    [string]$PackVersion = '0.10.0',
+    [string]$PackHash = '8900fedffde84c2d014c260d50bff1833a1a98f378a4b22ac08ea4a3ec40d21f'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -100,9 +103,15 @@ $logPath = Join-Path $absoluteOutput "$profile-player.log"
 foreach ($path in @($resultPath, $logPath)) {
     if (Test-Path -LiteralPath $path -PathType Leaf) { Remove-Item -LiteralPath $path -Force }
 }
-$gitSha = (& git -c "safe.directory=$($projectRoot.Replace('\', '/'))" -C $projectRoot rev-parse HEAD).Trim()
+$candidateRef = if ([string]::IsNullOrWhiteSpace($CandidateCommit)) { 'HEAD' } else { $CandidateCommit }
+$candidateCommitExpression = "$candidateRef`^{commit`}"
+$gitSha = (& git -c "safe.directory=$($projectRoot.Replace('\', '/'))" -C $projectRoot rev-parse $candidateCommitExpression).Trim()
 if ($LASTEXITCODE -ne 0 -or $gitSha -notmatch '^[0-9a-f]{40}$') {
-    [Console]::Error.WriteLine('Unable to resolve the Git SHA for G3.5 provenance.')
+    [Console]::Error.WriteLine("Unable to resolve the Git SHA for G3.5 provenance: $candidateRef")
+    exit 3
+}
+if ($PackHash -notmatch '^[0-9a-f]{64}$') {
+    [Console]::Error.WriteLine('PackHash must be a lowercase SHA-256 value.')
     exit 3
 }
 
@@ -118,8 +127,8 @@ try {
     $env:QINGLAN_G35_OUTPUT = $resultPath
     $env:QINGLAN_G35_PROFILE = $profile
     $env:QINGLAN_G35_GIT_SHA = $gitSha
-    $env:QINGLAN_G35_PACK_VERSION = '0.10.0'
-    $env:QINGLAN_G35_PACK_HASH = '8900fedffde84c2d014c260d50bff1833a1a98f378a4b22ac08ea4a3ec40d21f'
+    $env:QINGLAN_G35_PACK_VERSION = $PackVersion
+    $env:QINGLAN_G35_PACK_HASH = $PackHash
     if ($Mode -eq 'Quick') {
         $env:QINGLAN_G35_TICKS = $QuickTicks.ToString([Globalization.CultureInfo]::InvariantCulture)
         $env:QINGLAN_G35_ENEMIES = $QuickEnemies.ToString([Globalization.CultureInfo]::InvariantCulture)
@@ -136,7 +145,14 @@ try {
     $startInfo.FileName = $absoluteExecutable
     $startInfo.UseShellExecute = $false
     $startInfo.CreateNoWindow = $false
-    foreach ($argument in $playerArguments) { [void]$startInfo.ArgumentList.Add($argument) }
+    if ($null -ne $startInfo.ArgumentList) {
+        foreach ($argument in $playerArguments) { [void]$startInfo.ArgumentList.Add($argument) }
+    } else {
+        $quotedArguments = @($playerArguments | ForEach-Object {
+                '"' + ([string]$_).Replace('"', '\"') + '"'
+            })
+        $startInfo.Arguments = $quotedArguments -join ' '
+    }
     $playerProcess = [Diagnostics.Process]::new()
     $playerProcess.StartInfo = $startInfo
     [void]$playerProcess.Start()
@@ -157,6 +173,8 @@ try {
     exit 5
 }
 if ($result.status -ne 'PASS' -or $result.configuration.profile -ne $profile -or
+    $result.environment.gitSha -ne $gitSha -or $result.environment.packVersion -ne $PackVersion -or
+    $result.environment.packHash -ne $PackHash -or
     -not $result.budgets.configurationMatchesProfile -or -not $result.budgets.exactEntityCounts -or
     -not $result.budgets.formalAssetsResolved -or -not $result.budgets.averageFpsWithinBudget -or
     -not $result.budgets.onePercentLowWithinBudget -or -not $result.budgets.gpuP99WithinBudget -or
