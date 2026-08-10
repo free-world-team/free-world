@@ -1,0 +1,389 @@
+{
+    "schemaVersion": 1,
+    "status": "PASS",
+    "failureReason": "",
+    "generatedAtUtc": "2026-08-10T04:47:27.7668721Z",
+    "configuration": {
+        "seed": "5562280093365388634",
+        "tickCount": 54000,
+        "simulatedSeconds": 1800,
+        "enemyId": "qinglan.enemy.grass_spirit",
+        "enemies": 1500,
+        "projectiles": 3000,
+        "pickups": 5000,
+        "vfxRequests": 200,
+        "warmupTicks": 300,
+        "simulationHz": 30,
+        "presentationProbeHz": 60
+    },
+    "environment": {
+        "unityVersion": "6000.3.20f1",
+        "operatingSystem": "Windows 11  (10.0.26200)",
+        "processor": "12th Gen Intel(R) Core(TM) i7-12700F",
+        "processorCount": 20,
+        "systemMemoryMegabytes": 32577,
+        "graphicsDevice": "NVIDIA GeForce RTX 3060 Ti",
+        "batchMode": true,
+        "renderMetric": "headless RenderSnapshot interpolation plus pooled VFX CPU probe"
+    },
+    "simulationTick": {
+        "samples": 54000,
+        "averageMilliseconds": 16.685773888888929,
+        "p95Milliseconds": 17.5106,
+        "p99Milliseconds": 18.0361,
+        "maximumMilliseconds": 22.6425
+    },
+    "renderFrame": {
+        "samples": 108000,
+        "averageMilliseconds": 0.7233295629629603,
+        "p95Milliseconds": 1.166,
+        "p99Milliseconds": 1.2496,
+        "maximumMilliseconds": 2.3992
+    },
+    "entities": {
+        "peakEnemies": 1500,
+        "peakProjectiles": 3000,
+        "peakPickups": 5000,
+        "peakTotalEntities": 9501,
+        "finalSnapshotEntities": 9501,
+        "worldTicks": 54000,
+        "checksum": "ca00e95592695395",
+        "renderChecksum": "af8f906230f6ef17"
+    },
+    "memory": {
+        "samples": [
+            {
+                "simulatedMinute": 0.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232152140,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232152140,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 1.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232142572,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232142572,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 2.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232141484,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232141484,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 3.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232141484,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232141484,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 4.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140940,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140940,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 5.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140940,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140940,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 6.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140940,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140940,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 7.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140940,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140940,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 8.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 9.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 10.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140924,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140924,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 11.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 12.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 13.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 14.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 15.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 16.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 17.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 18.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 19.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 20.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 21.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 22.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 23.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 24.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 25.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 26.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 27.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 28.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 29.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            },
+            {
+                "simulatedMinute": 30.0,
+                "managedBytes": 767811584,
+                "nativeBytes": 232140396,
+                "gcReportedHeapBytes": 767811584,
+                "totalAllocatedBytes": 232140396,
+                "totalReservedBytes": 626126848
+            }
+        ],
+        "managedStartBytes": 767811584,
+        "managedEndBytes": 767811584,
+        "managedPeakBytes": 767811584,
+        "managedSegmentGrowthBytes": 0,
+        "managedSustainedGrowth": false,
+        "nativeStartBytes": 232152140,
+        "nativeEndBytes": 232140396,
+        "nativePeakBytes": 232152140,
+        "nativeSegmentGrowthBytes": -1827,
+        "nativeSustainedGrowth": false
+    },
+    "gc": {
+        "generation0Collections": 0,
+        "generation1Collections": 0,
+        "generation2Collections": 0,
+        "hotPathManagedAllocationBytes": 0,
+        "hotPathManagedBytesPerFrame": 0.0
+    },
+    "pools": {
+        "name": "VfxRequestPool",
+        "capacity": 200,
+        "created": 200,
+        "peakActive": 200,
+        "hits": 2700000,
+        "expansions": 200,
+        "failedAcquires": 0,
+        "droppedRequests": 0
+    },
+    "diagnostics": {
+        "truncatedProcChains": 0,
+        "invalidHandleAccesses": 0,
+        "rejectedDamagePackets": 0,
+        "rejectedStatusApplications": 0
+    },
+    "systemHotspots": [
+        {
+            "systemId": "EnemyDecision",
+            "calls": 54000,
+            "averageMilliseconds": 13.714903583333378,
+            "maximumMilliseconds": 18.5036
+        },
+        {
+            "systemId": "Movement",
+            "calls": 54000,
+            "averageMilliseconds": 1.2957396074073873,
+            "maximumMilliseconds": 3.0972
+        },
+        {
+            "systemId": "SnapshotBuild",
+            "calls": 54000,
+            "averageMilliseconds": 1.0548398222222227,
+            "maximumMilliseconds": 2.3992
+        },
+        {
+            "systemId": "Lifetime",
+            "calls": 54000,
+            "averageMilliseconds": 0.16350169629629258,
+            "maximumMilliseconds": 0.8418
+        },
+        {
+            "systemId": "Cleanup",
+            "calls": 54000,
+            "averageMilliseconds": 0.0023457370370369306,
+            "maximumMilliseconds": 0.1635
+        }
+    ],
+    "budgets": {
+        "tickP99BudgetMilliseconds": 33.333333333333339,
+        "renderP99BudgetMilliseconds": 16.666666666666669,
+        "tickP99WithinBudget": true,
+        "renderP99WithinBudget": true,
+        "exactEntityCounts": true,
+        "deterministic": true,
+        "zeroHotPathManagedAllocation": true,
+        "noGcCollections": true,
+        "noSustainedMemoryGrowth": true,
+        "noInvalidHandles": true,
+        "noProcTruncation": true,
+        "noVfxDrops": true,
+        "vfxTargetReached": true
+    },
+    "optimization": {
+        "jobsOrBurstApplied": false,
+        "decision": "Measured hottest system is EnemyDecision at 13.7149 ms average; target-scale p99 remains within budget, so no Jobs/Burst migration is justified."
+    }
+}
