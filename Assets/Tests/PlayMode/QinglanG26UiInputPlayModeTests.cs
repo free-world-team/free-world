@@ -199,7 +199,10 @@ namespace Game.Tests.PlayMode
 
         private static IEnumerator WaitForCommit(QinglanDemoRuntimeHost host)
         {
-            for (var index = 0; index < 60 && !host.Flow.LastCommit.IsSuccess; index++)
+            // Cold-clone CI may still be flushing the first profile file after sixty frames.
+            // Match the release-player smoke budget so the test observes the durable result
+            // instead of coupling correctness to editor/import I/O latency.
+            for (var index = 0; index < 240 && !host.Flow.LastCommit.IsSuccess; index++)
             {
                 host.TickRuntime(0.1d);
                 yield return null;
