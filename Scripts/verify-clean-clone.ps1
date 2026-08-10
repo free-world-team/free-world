@@ -34,8 +34,8 @@ try {
     $safeSource = if (Test-Path -LiteralPath $SourceRepository -PathType Container) {
         (Resolve-Path -LiteralPath $SourceRepository).Path.Replace('\', '/')
     } else { $sourceRoot.Replace('\', '/') }
-    & git -c "safe.directory=$safeSource" clone --no-local --single-branch `
-        --branch $Branch $SourceRepository $cloneRoot
+    & git -c "safe.directory=$safeSource" -c "safe.directory=$safeSource/.git" `
+        clone --no-local --single-branch --branch $Branch $SourceRepository $cloneRoot
     if ($LASTEXITCODE -ne 0) { throw "git clone failed with exit code $LASTEXITCODE" }
     $lockedLine = Get-Content -LiteralPath (Join-Path $cloneRoot 'ProjectSettings/ProjectVersion.txt') `
         | Select-String -Pattern '^m_EditorVersion:' | Select-Object -First 1
