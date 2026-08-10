@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Game.Application;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -217,7 +218,7 @@ namespace Game.Presentation
 
     internal sealed class DamageNumberEntry
     {
-        public Text Text;
+        public TMP_Text Text;
         public float Remaining;
     }
 
@@ -228,7 +229,7 @@ namespace Game.Presentation
         private readonly Stack<DamageNumberEntry> available = new Stack<DamageNumberEntry>(16);
         private readonly List<DamageNumberEntry> active = new List<DamageNumberEntry>(16);
         private readonly RectTransform root;
-        private readonly Font font;
+        private readonly TMP_FontAsset font;
         private readonly int maximumCapacity;
 
         public DamageNumberPool(Canvas sharedCanvas)
@@ -249,7 +250,8 @@ namespace Game.Presentation
             root.anchorMax = Vector2.one;
             root.offsetMin = Vector2.zero;
             root.offsetMax = Vector2.zero;
-            font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            font = TMP_Settings.defaultFontAsset;
+            if (font == null) throw new InvalidOperationException("The governed TMP default font is unavailable.");
             for (var index = 0; index < prewarm; index++) available.Push(Create());
         }
 
@@ -305,12 +307,12 @@ namespace Game.Presentation
 
         private DamageNumberEntry Create()
         {
-            var objectValue = new GameObject("M7_DamageNumber", typeof(RectTransform), typeof(Text));
+            var objectValue = new GameObject("M7_DamageNumber", typeof(RectTransform), typeof(TextMeshProUGUI));
             objectValue.transform.SetParent(root, false);
-            var text = objectValue.GetComponent<Text>();
+            var text = objectValue.GetComponent<TMP_Text>();
             text.font = font;
             text.fontSize = 18;
-            text.alignment = TextAnchor.MiddleCenter;
+            text.alignment = TextAlignmentOptions.Center;
             text.raycastTarget = false;
             text.rectTransform.sizeDelta = new Vector2(120f, 32f);
             objectValue.SetActive(false);

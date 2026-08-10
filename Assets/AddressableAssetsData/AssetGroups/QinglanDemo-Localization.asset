@@ -20,6 +20,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Locale-en
+    - Preload
     - localization.release
     - pack.qinglan_demo
     - release
@@ -48,6 +49,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Locale-zh-Hans
+    - Preload
     - localization.release
     - pack.qinglan_demo
     - release
@@ -67,6 +69,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Locale-en
+    - Preload
     - localization.release
     - pack.qinglan_demo
     - release
@@ -85,6 +88,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Locale-zh-Hans
+    - Preload
     - localization.release
     - pack.qinglan_demo
     - release

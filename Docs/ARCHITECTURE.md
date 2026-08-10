@@ -39,12 +39,12 @@
 | Game.Platform.Abstractions | 平台、云、成就接口                   | Game.Core                                                                 |
 | Game.Application           | 状态机、Run 协调、内容加载、保存协调 | Game.Core、Game.Content.Runtime、Game.Simulation、Game.Platform.Abstractions |
 | Game.Content.Authoring     | ScriptableObject 作者数据与 Baker    | Unity、Game.Core、Game.Content.Runtime                                    |
-| Game.Infrastructure        | Composition Root、存档与基础设施入口 | Unity、Game.Core、Game.Content.Runtime、Game.Application、Game.Platform.Abstractions、Game.Platform.Null、Unity Localization |
-| Game.Presentation          | View、动画、特效、音频、摄像机       | Unity、Game.Application、Game.Simulation                                  |
-| Game.UI                    | 菜单、HUD、升级选择、结算、本地化适配 | Unity、Game.Application、Unity Localization                               |
+| Game.Infrastructure        | Composition Root、存档与基础设施入口 | Unity、Game.Core、Game.Content.Runtime、Game.Application、Game.Platform.Abstractions、Game.Platform.Null、Unity Localization、TextMeshPro |
+| Game.Presentation          | View、动画、特效、音频、摄像机       | Unity、Game.Application、Game.Simulation、TextMeshPro                     |
+| Game.UI                    | 菜单、HUD、升级选择、结算、本地化适配 | Unity、Game.Application、Unity Localization、TextMeshPro                  |
 | Game.Platform.Null         | 无平台环境实现                       | Game.Platform.Abstractions、Game.Core                                     |
 | Game.Platform.Steam        | 后续 Steam 适配（M0 未创建）         | Game.Platform.Abstractions                                                |
-| Game.Editor                | 验证、Bake、Placeholder、预览与构建工具 | Unity Editor、Addressables Editor、2D Sprite Editor、Game.Core、Game.Content.Authoring、Game.Content.Runtime、Game.Simulation、Game.Infrastructure |
+| Game.Editor                | 验证、Bake、Placeholder、预览与构建工具 | Unity Editor、Addressables Editor、2D Sprite Editor、TextMeshPro、Game.Core、Game.Content.Authoring、Game.Content.Runtime、Game.Simulation、Game.Infrastructure |
 | Game.Tests.EditMode        | 治理、内容与纯模拟内核测试           | 产品程序集、Game.Editor、Unity Test Framework                             |
 | Game.Tests.PlayMode        | Bootstrap 内容加载和生命周期测试     | Game.Core、Game.Content.Runtime、Game.Application、Game.Infrastructure、Game.Platform.Abstractions、Game.Platform.Null、Unity Test Framework |
 
@@ -79,6 +79,10 @@ Game.Infrastructure ─────┘
 `Game.Infrastructure` 是 Unity 最外层组合入口，因此可以同时依赖 Core、纯内容运行时、
 应用抽象和 Null 平台实现；
 该依赖不反向进入应用或模拟程序集。
+
+G3.3 按 ADR 0030 为 `Game.UI`、`Game.Presentation` 与最外层 `Game.Infrastructure`
+增加 `Unity.TextMeshPro` 直接依赖；Editor 与两套测试程序集只用于生成、验证和覆盖同一字体边界。
+依赖仍然只指向 Unity Package，不增加产品程序集之间的新反向边，也不改变上述无环图。
 
 硬性边界：
 

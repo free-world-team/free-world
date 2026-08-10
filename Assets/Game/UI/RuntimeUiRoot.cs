@@ -1,4 +1,5 @@
 using System.Text;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,14 +11,10 @@ namespace Game.UI
     /// </summary>
     public sealed class RuntimeUiRoot : MonoBehaviour, IGameFlowView
     {
-        private static readonly string[] RuntimeFontCandidates =
-        {
-            "Microsoft YaHei UI", "Microsoft YaHei", "SimHei", "Arial Unicode MS", "Arial"
-        };
         private readonly StringBuilder builder = new StringBuilder(256);
         private Canvas canvas;
-        private Text pageText;
-        private Font runtimeFont;
+        private TMP_Text pageText;
+        private TMP_FontAsset runtimeFont;
         private ILocalizationService localization;
 
         public Canvas SharedCanvas => canvas;
@@ -45,30 +42,30 @@ namespace Game.UI
             rect.offsetMax = Vector2.zero;
             panelObject.GetComponent<Image>().color = new Color(0.04f, 0.06f, 0.1f, 0.88f);
 
-            var textObject = new GameObject("LocalizedKeyPreview", typeof(RectTransform), typeof(Text));
+            var textObject = new GameObject("LocalizedKeyPreview", typeof(RectTransform), typeof(TextMeshProUGUI));
             textObject.transform.SetParent(panelObject.transform, false);
             var textRect = (RectTransform)textObject.transform;
             textRect.anchorMin = Vector2.zero;
             textRect.anchorMax = Vector2.one;
             textRect.offsetMin = new Vector2(24f, 24f);
             textRect.offsetMax = new Vector2(-24f, -24f);
-            pageText = textObject.GetComponent<Text>();
-            runtimeFont = Font.CreateDynamicFontFromOSFont(RuntimeFontCandidates, 20);
-            if (runtimeFont == null) runtimeFont = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            pageText = textObject.GetComponent<TMP_Text>();
+            runtimeFont = TMP_Settings.defaultFontAsset;
+            if (runtimeFont == null)
+                throw new System.InvalidOperationException("The governed TMP default font asset is unavailable.");
             pageText.font = runtimeFont;
             pageText.fontSize = 20;
-            pageText.alignment = TextAnchor.UpperLeft;
+            pageText.alignment = TextAlignmentOptions.TopLeft;
             pageText.color = Color.white;
-            pageText.horizontalOverflow = HorizontalWrapMode.Wrap;
-            pageText.verticalOverflow = VerticalWrapMode.Overflow;
+            pageText.enableWordWrapping = true;
+            pageText.overflowMode = TextOverflowModes.Overflow;
         }
 
         /// <summary>Reports whether the runtime fallback font can render a localized character.</summary>
         public bool SupportsCharacter(char character)
         {
             if (runtimeFont == null) return false;
-            runtimeFont.RequestCharactersInTexture(character.ToString(), pageText == null ? 20 : pageText.fontSize);
-            return runtimeFont.HasCharacter(character);
+            return runtimeFont.HasCharacter(character, true, true);
         }
 
         public void Show(UiPageViewModel model)

@@ -37,7 +37,7 @@ try {
     $env:QINGLAN_G28_PLAYER_RESULT = $absoluteResult
     $env:AZURESWORD_SAVE_ROOT = $absoluteSave
     $process = Start-Process -FilePath $absoluteExecutable `
-        -ArgumentList @('-batchmode', '-nographics', '-qinglanG28Smoke', '-logFile', $absoluteLog) `
+        -ArgumentList @('-batchmode', '-nographics', '-screen-width', '1920', '-screen-height', '1080', '-qinglanG28Smoke', '-logFile', $absoluteLog) `
         -PassThru -WindowStyle Hidden
     [void]$process.WaitForExit()
     $process.Refresh()
@@ -60,6 +60,9 @@ try {
 if ($result.status -ne 'PASS' -or -not $result.titleVisited -or
     -not $result.formalVisualsLoaded -or -not $result.formalAudioLoaded -or
     -not $result.formalAudioCueRouted -or
+    -not $result.formalFontsLoaded -or -not $result.formalLocalizationResolved -or
+    -not $result.localeCyclePassed -or -not $result.formalGlyphsReady -or
+    -not $result.layoutScalePassed -or
     -not $result.activeRunVisited -or -not $result.resultVisited -or
     -not $result.saveCommitted -or -not $result.hubVisited -or
     -not $result.restartVisited -or [int]$result.activeViewsAfterHub -ne 0 -or

@@ -6,6 +6,7 @@ using Game.Application;
 using Game.Presentation;
 using Game.Simulation;
 using Game.UI;
+using TMPro;
 using UnityEngine;
 
 namespace Game.Infrastructure
@@ -32,7 +33,7 @@ namespace Game.Infrastructure
             var host = GetComponent<QinglanDemoRuntimeHost>();
             var result = new QinglanG28PlayerSmokeResult
             {
-                schemaVersion = 1,
+                schemaVersion = 2,
                 generatedAtUtc = DateTime.UtcNow.ToString("O", CultureInfo.InvariantCulture),
                 status = "FAIL"
             };
@@ -45,6 +46,16 @@ namespace Game.Infrastructure
             result.titleVisited = host.Flow.Stage == DemoFlowStage.Title;
             result.formalVisualsLoaded = host.FormalVisualsLoaded;
             result.formalAudioLoaded = host.FormalAudioLoaded;
+            result.formalFontsLoaded = host.FormalFontsLoaded;
+            result.formalGlyphsReady = host.Ui.SupportsCharacter('剑') &&
+                                       host.Ui.SupportsCharacter('Ｒ') &&
+                                       host.Ui.SupportsCharacter('【');
+            result.formalLocalizationResolved = VerifyFormalLocalization(
+                host,
+                out var localeCyclePassed,
+                out var localizationDiagnostic);
+            result.localeCyclePassed = localeCyclePassed;
+            result.localizationDiagnostic = localizationDiagnostic;
             result.formalUiBackgroundApplied = host.Ui.FormalBackgroundApplied;
             result.formalAudioCueRouted = host.Presentation.RouteUiCue(PresentationAudioCue.Confirm);
             if (!result.titleVisited || !host.Flow.Execute(QinglanUiCommand.Start, "start", 0))
@@ -130,11 +141,19 @@ namespace Game.Infrastructure
                 yield break;
             }
             result.restartVisited = host.Flow.Stage == DemoFlowStage.CharacterSelect;
+            host.Flow.Settings.SetFontScale(1.5f);
+            host.Ui.ApplyAccessibility(host.Flow.Settings);
+            Canvas.ForceUpdateCanvases();
+            result.layoutScalePassed = !host.Ui.HasAnyTextOverflow;
+            result.layoutDiagnostic = BuildLayoutDiagnostic(host.Ui);
             result.inputOwnerCount = FindObjectsByType<M7InputRouter>(
                 FindObjectsInactive.Include, FindObjectsSortMode.None).Length;
             var passed = result.titleVisited && result.characterSelectVisited &&
                          result.formalVisualsLoaded && result.formalUiBackgroundApplied &&
                          result.formalAudioLoaded && result.formalAudioCueRouted &&
+                         result.formalFontsLoaded && result.formalGlyphsReady &&
+                         result.formalLocalizationResolved && result.localeCyclePassed &&
+                         result.layoutScalePassed &&
                          result.mapAndLoadoutVisited && result.activeRunVisited &&
                          result.pauseResumeVisited && result.accessibilityApplied &&
                          result.upgradeVisited && result.resultVisited && result.saveCommitted &&
@@ -146,6 +165,56 @@ namespace Game.Infrastructure
             result.status = passed ? "PASS" : "FAIL";
             result.error = passed ? string.Empty : "One or more Player smoke assertions failed.";
             WriteAndQuit(result, passed ? 0 : 2);
+        }
+
+        private static bool VerifyFormalLocalization(
+            QinglanDemoRuntimeHost host,
+            out bool localeCyclePassed,
+            out string diagnostic)
+        {
+            localeCyclePassed = false;
+            diagnostic = string.Empty;
+            var localization = host.Localization;
+            if (!localization.SelectLocale("en")) return false;
+            var englishUi = localization.Resolve("ui.qinglan.title.subtitle");
+            var englishContent = localization.Resolve("content.qinglan.skill.weapon.yufeng_sword.name");
+            var englishNarrative = localization.Resolve("story.qinglan.story.lu_qingye.hearing_sword.01");
+            var englishOk = englishUi ==
+                            "The old court waits for the wind to return." &&
+                            englishContent == "Yufeng Sword" &&
+                            englishNarrative.StartsWith("When the wind crossed", StringComparison.Ordinal);
+            if (!localization.SelectLocale("zh-Hans")) return false;
+            var chineseContent = localization.Resolve("content.qinglan.skill.weapon.yufeng_sword.name");
+            var chineseNarrative = localization.Resolve("story.qinglan.story.lu_qingye.hearing_sword.01");
+            var chineseOk = chineseContent == "御风剑" &&
+                            chineseNarrative.StartsWith("风过残碑时", StringComparison.Ordinal);
+            if (!localization.SelectLocale("pseudo")) return false;
+            var pseudo = localization.Resolve("ui.qinglan.title.subtitle");
+            var pseudoOk = pseudo.StartsWith("【", StringComparison.Ordinal) &&
+                           pseudo.IndexOf("Ｔ", StringComparison.Ordinal) >= 0;
+            localeCyclePassed = localization.SelectNextLocale() && localization.SelectedLocaleCode == "en";
+            diagnostic = "enUi=" + englishUi + " | enContent=" + englishContent +
+                         " | enNarrative=" + englishNarrative + " | zhContent=" + chineseContent +
+                         " | zhNarrative=" + chineseNarrative + " | pseudo=" + pseudo;
+            return englishOk && chineseOk && pseudoOk;
+        }
+
+        private static string BuildLayoutDiagnostic(QinglanRuntimeUiRoot ui)
+        {
+            var texts = ui.GetComponentsInChildren<TMP_Text>(true);
+            var output = new System.Text.StringBuilder(256);
+            for (var index = 0; index < texts.Length; index++)
+            {
+                var text = texts[index];
+                if (!text.name.StartsWith("Qinglan_", StringComparison.Ordinal)) continue;
+                text.ForceMeshUpdate();
+                if (output.Length > 0) output.Append(" | ");
+                output.Append(text.name)
+                    .Append(":rect=").Append(text.rectTransform.rect.height.ToString("0.0", CultureInfo.InvariantCulture))
+                    .Append(",preferred=").Append(text.preferredHeight.ToString("0.0", CultureInfo.InvariantCulture))
+                    .Append(",overflow=").Append(text.isTextOverflowing);
+            }
+            return output.ToString();
         }
 
         private static void Finish(QinglanG28PlayerSmokeResult result, string error)
@@ -188,6 +257,13 @@ namespace Game.Infrastructure
             public bool titleVisited;
             public bool formalVisualsLoaded;
             public bool formalAudioLoaded;
+            public bool formalFontsLoaded;
+            public bool formalLocalizationResolved;
+            public bool localeCyclePassed;
+            public bool formalGlyphsReady;
+            public bool layoutScalePassed;
+            public string localizationDiagnostic;
+            public string layoutDiagnostic;
             public bool formalAudioCueRouted;
             public bool formalUiBackgroundApplied;
             public bool characterSelectVisited;

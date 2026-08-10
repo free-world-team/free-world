@@ -10,8 +10,8 @@ using Game.Presentation;
 using Game.Simulation;
 using Game.UI;
 using NUnit.Framework;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
 namespace Game.Tests.EditMode
@@ -138,8 +138,8 @@ namespace Game.Tests.EditMode
             Assert.That(view.RenderedPageText, Does.Contain("loc:ui.qinglan.settings.title"));
             Assert.That(view.RenderedHudText, Does.Contain("loc:content.qinglan.skill.test.name"));
             Assert.That(view.RenderedHudText, Does.Contain("50%"));
-            var texts = root.GetComponentsInChildren<Text>();
-            Assert.That(texts.Max(x => x.fontSize), Is.GreaterThanOrEqualTo(36));
+            var texts = root.GetComponentsInChildren<TMP_Text>(true);
+            Assert.That(texts.Max(x => x.fontSize), Is.GreaterThanOrEqualTo(30));
             Assert.That(texts.Any(x => x.text.Contains("▲")), Is.True,
                 "danger communication must retain a non-color shape channel");
             Assert.That(view.SupportsCharacter('剑'), Is.True, "the runtime font fallback must cover Simplified Chinese");

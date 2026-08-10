@@ -1,4 +1,7 @@
 using System;
+using System.IO;
+using TMPro;
+using UnityEditor;
 using UnityEditor.Localization;
 using UnityEngine.Localization.Pseudo;
 using UnityEngine.Localization.Tables;
@@ -116,6 +119,82 @@ namespace Game.Editor
                 if (sample == null || pseudo.Methods.Count == 0 ||
                     string.Equals(pseudo.GetPseudoString(sample.Value), sample.Value, StringComparison.Ordinal))
                     report.Add("G33-LOC-PSEUDO", "Pseudo locale must transform the formal English UI table.");
+            }
+
+            ValidatePreload(collection, englishLocale, chineseLocale, report);
+            if (contentCollection != null) ValidatePreload(contentCollection, englishLocale, chineseLocale, report);
+            if (narrativeCollection != null) ValidatePreload(narrativeCollection, englishLocale, chineseLocale, report);
+            ValidateFormalRuntimeAndGlyphs(report);
+        }
+
+        private static void ValidatePreload(
+            StringTableCollection collection,
+            UnityEngine.Localization.Locale english,
+            UnityEngine.Localization.Locale chinese,
+            ValidationReport report)
+        {
+            var en = collection.GetTable(english.Identifier) as StringTable;
+            var zh = collection.GetTable(chinese.Identifier) as StringTable;
+            if (en != null && !LocalizationEditorSettings.GetPreloadTableFlag(en))
+                report.Add("G33-LOC-PRELOAD", collection.TableCollectionName + " English table is not preloaded.");
+            if (zh != null && !LocalizationEditorSettings.GetPreloadTableFlag(zh))
+                report.Add("G33-LOC-PRELOAD", collection.TableCollectionName + " zh-Hans table is not preloaded.");
+        }
+
+        private static void ValidateFormalRuntimeAndGlyphs(ValidationReport report)
+        {
+            var runtimeSources = File.ReadAllText("Assets/Game/UI/QinglanRuntimeUiRoot.cs") +
+                                 File.ReadAllText("Assets/Game/UI/RuntimeUiRoot.cs") +
+                                 File.ReadAllText("Assets/Game/Presentation/PresentationEffects.cs");
+            if (runtimeSources.IndexOf("CreateDynamicFontFromOSFont", StringComparison.Ordinal) >= 0 ||
+                runtimeSources.IndexOf("LegacyRuntime.ttf", StringComparison.Ordinal) >= 0)
+                report.Add("G33-FONT-SYSTEM-FALLBACK", "Runtime UI still depends on an OS or legacy fallback font.");
+            if (runtimeSources.IndexOf("TextMeshProUGUI", StringComparison.Ordinal) < 0)
+                report.Add("G33-FONT-TMP-RUNTIME", "Runtime UI does not create TextMeshProUGUI components.");
+
+            G33GlyphSets sets;
+            try
+            {
+                sets = QinglanG33FinalIntegration.CollectCurrentGlyphSets();
+            }
+            catch (Exception exception)
+            {
+                report.Add("G33-FONT-GLYPH-SOURCE", exception.Message);
+                return;
+            }
+            ValidateFont(
+                QinglanG33FontIntegration.SansRegularPath,
+                sets.Regular,
+                "G33-FONT-REGULAR-GLYPH",
+                report);
+            ValidateFont(
+                QinglanG33FontIntegration.SansBoldPath,
+                sets.Bold,
+                "G33-FONT-BOLD-GLYPH",
+                report);
+            ValidateFont(
+                QinglanG33FontIntegration.SerifSemiBoldPath,
+                sets.Narrative,
+                "G33-FONT-SERIF-GLYPH",
+                report);
+        }
+
+        private static void ValidateFont(string path, string characters, string code, ValidationReport report)
+        {
+            var font = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(path);
+            if (font == null)
+            {
+                report.Add(code, "Formal TMP font is missing: " + path + ".");
+                return;
+            }
+            for (var index = 0; index < characters.Length; index++)
+            {
+                if (font.HasCharacter(characters[index], false, false)) continue;
+                report.Add(
+                    code,
+                    Path.GetFileName(path) + " has no prewarmed glyph U+" +
+                    ((int)characters[index]).ToString("X4") + ".");
+                return;
             }
         }
 

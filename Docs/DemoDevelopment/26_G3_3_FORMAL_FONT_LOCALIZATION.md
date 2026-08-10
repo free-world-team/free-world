@@ -15,7 +15,7 @@ Localization 正式内容链路，覆盖简体中文、英文和伪本地化，�
 | 3 | LOC-UI-001 | `UI` 集合不少于 180 个 Key | PASS（191 Key，5/5 聚焦 + 22/22 回归） |
 | 4 | LOC-CONTENT-001 | `QinglanContent` 集合不少于 296 个 Key | PASS（492 Key，4/4 聚焦 + 5/5 UI 回归 + Project Validation） |
 | 5 | LOC-NARRATIVE-001 | `QinglanNarrative` 集合不少于 120 个 Key | PASS（123 Key，5/5 EditMode + Project Validation） |
-| 6 | G3.3 集成 | TMP 运行时、三 Locale、伪本地化、字形与布局门禁 | 待实现 |
+| 6 | G3.3 集成 | TMP 运行时、三 Locale、伪本地化、字形与布局门禁 | PASS（445/445 EditMode、20/20 PlayMode、Validation、Build、Player Smoke） |
 
 ## 3. FONT-001 设计
 
@@ -76,3 +76,36 @@ Localization 正式内容链路，覆盖简体中文、英文和伪本地化，�
   硬编码进 UI 或首领专用类。
 - Shared Data、en、zh-Hans 三个正式资产进入 `QinglanDemo-Localization`，稳定地址为
   `QinglanNarrative_en`、`QinglanNarrative_zh-Hans` 及 Shared Data 地址，并由 Pseudo Locale 动态生成伪本地化。
+
+## 8. G3.3 最终运行时集成
+
+- `UnityLocalizationService` 按稳定命名空间路由三张正式表：`ui.*` → `UI`，`content.*` →
+  `QinglanContent`，`story.*` / `collectible.*` / `narrative.*` → `QinglanNarrative`；en 与 zh-Hans
+  六张实际表全部设为 Preload。
+- Pseudo 保留 PreserveTags、Expander、Accenter、Encapsulator 四阶段；Accenter 将可见 ASCII 转换为
+  Noto CJK 可覆盖的全角字符，以 `【】` 包围，并从正式英文表实时生成，不维护第三份人工正文。
+- 运行时页面、HUD、危险提示和池化伤害数字全部使用 TMP；删除 `CreateDynamicFontFromOSFont` 与
+  `LegacyRuntime.ttf` 路径。Infrastructure 启动时通过三个稳定 Addressables 地址加载 Sans Regular、
+  Sans Bold 与 Serif SemiBold，并作为唯一 Handle Owner 在 Host 销毁时释放。
+- 集成器从 191 个 UI Key、492 个内容 Key、123 个叙事 Key 的中英文本、Pseudo 结果和运行时符号收集
+  字形，预热 Regular 1093、Bold 563、Serif 842 个字符，共持久化 40 张 Atlas Texture；逐字缺失即
+  阻断 Project Validation。
+- 非运行页面使用完整横向安全区；HUD 与危险层只在 `RunHud` 激活。Windows Player 在
+  1920×1080、150% 字号下实测角色页正文高度 894.2 px、可用高度 904.4 px，无裁切或溢出。
+- 长期依赖边界与回滚规则由 `Docs/ADR/0030-g3-3-formal-tmp-localization-runtime.md` 固化；
+  `Game.Core` / `Game.Simulation`、Content Schema 6、存档 Schema 3 与 30 Hz Tick 均未改变。
+
+## 9. 最终门禁证据
+
+| 门禁 | 结果 | 证据 |
+|---|---|---|
+| G3.3 聚焦 EditMode | PASS（4/4） | `TestResults/G33FinalEditMode.xml` |
+| G3.3 聚焦 PlayMode | PASS（2/2） | `TestResults/QinglanDemo/G3.3/MarginFixPlayMode.xml` |
+| 全量 EditMode | PASS（445/445） | `TestResults/QinglanDemo/G3.3/FullRegressionFinal2/editmode.xml` |
+| 全量 PlayMode | PASS（20/20） | `TestResults/QinglanDemo/G3.3/FullRegressionFinal2/playmode.xml` |
+| Project Validation | PASS | `TestResults/QinglanDemo/G3.3/validation-post-margin.log` |
+| Windows Development Build | PASS | `TestResults/QinglanDemo/G3.3/build-windows-post-margin.log` |
+| 构建后 Player Smoke | PASS | `TestResults/QinglanDemo/G3.3/player-smoke-delivery.json` |
+
+完整结果与已发生的失败/修正记录见
+`Docs/Reports/2026-08-10-g3-3-formal-font-localization-final-integration.md`。

@@ -23,6 +23,7 @@ namespace Game.Infrastructure
         private bool initialized;
         private QinglanFormalVisualLoader formalVisualLoader;
         private QinglanFormalAudioLoader formalAudioLoader;
+        private QinglanFormalFontLoader formalFontLoader;
 
         public QinglanDemoFlowController Flow { get; private set; }
         public M7InputRouter Input { get; private set; }
@@ -32,6 +33,7 @@ namespace Game.Infrastructure
         public QinglanPageViewModel CurrentPage => presenter?.CurrentPage;
         public bool FormalVisualsLoaded => formalVisualLoader?.IsLoaded == true;
         public bool FormalAudioLoaded => formalAudioLoader?.IsLoaded == true;
+        public bool FormalFontsLoaded => formalFontLoader?.IsLoaded == true;
 
         public void Initialize(
             GameApplication application,
@@ -56,11 +58,14 @@ namespace Game.Infrastructure
             formalAudioLoader = new QinglanFormalAudioLoader();
             if (!formalAudioLoader.LoadForStartup())
                 Debug.LogWarning("[Qinglan Formal Audio] Development fallback: " + formalAudioLoader.LastError);
+            formalFontLoader = new QinglanFormalFontLoader();
+            if (!formalFontLoader.LoadForStartup())
+                Debug.LogWarning("[Qinglan Formal Fonts] Default TMP fallback: " + formalFontLoader.LastError);
 
             var uiObject = new GameObject("Qinglan_Demo_UI");
             uiObject.transform.SetParent(transform, false);
             Ui = uiObject.AddComponent<QinglanRuntimeUiRoot>();
-            Ui.Initialize(Localization, ResolveContentNameKey, formalVisualLoader);
+            Ui.Initialize(Localization, ResolveContentNameKey, formalVisualLoader, formalFontLoader);
 
             var presentationObject = new GameObject("Qinglan_Demo_Presentation");
             presentationObject.transform.SetParent(transform, false);
@@ -276,6 +281,8 @@ namespace Game.Infrastructure
             Flow.Dispose();
             formalAudioLoader?.Dispose();
             formalAudioLoader = null;
+            formalFontLoader?.Dispose();
+            formalFontLoader = null;
             formalVisualLoader?.Dispose();
             formalVisualLoader = null;
             initialized = false;

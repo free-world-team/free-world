@@ -13,7 +13,8 @@
     "Game.Platform.Null",
     "Unity.InputSystem",
     "Unity.InputSystem.TestFramework",
-    "Unity.Localization"
+    "Unity.Localization",
+    "Unity.TextMeshPro"
   ],
   "includePlatforms": [],
   "excludePlatforms": [],

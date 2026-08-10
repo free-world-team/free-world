@@ -45,6 +45,7 @@ namespace Game.Tests.EditMode
                         "Unity.ResourceManager",
                         "Unity.InputSystem",
                         "Unity.Localization",
+                        "Unity.TextMeshPro",
                         "Game.Platform.Abstractions",
                         "Game.Platform.Null"
                     }
@@ -57,10 +58,18 @@ namespace Game.Tests.EditMode
                         "Game.Simulation",
                         "Game.Core",
                         "Unity.InputSystem",
-                        "Unity.ugui"
+                        "Unity.ugui",
+                        "Unity.TextMeshPro"
                     }
                 },
-                { "Game.UI", new[] { "Game.Application", "Unity.ugui", "Unity.Localization", "Unity.ResourceManager" } },
+                {
+                    "Game.UI",
+                    new[]
+                    {
+                        "Game.Application", "Unity.ugui", "Unity.TextMeshPro", "Unity.Localization",
+                        "Unity.ResourceManager"
+                    }
+                },
                 { "Game.Platform.Null", new[] { "Game.Platform.Abstractions", "Game.Core" } },
                 {
                     "Game.Editor",
@@ -78,7 +87,8 @@ namespace Game.Tests.EditMode
                         "Unity.Localization.Editor",
                         "Unity.Addressables",
                         "Unity.Addressables.Editor",
-                        "Unity.2D.Sprite.Editor"
+                        "Unity.2D.Sprite.Editor",
+                        "Unity.TextMeshPro"
                     }
                 },
                 {
@@ -99,7 +109,8 @@ namespace Game.Tests.EditMode
                         "Unity.InputSystem",
                         "Unity.Localization",
                         "Unity.Localization.Editor",
-                        "Unity.Addressables.Editor"
+                        "Unity.Addressables.Editor",
+                        "Unity.TextMeshPro"
                     }
                 },
                 {
@@ -117,7 +128,8 @@ namespace Game.Tests.EditMode
                         "Game.Platform.Null",
                         "Unity.InputSystem",
                         "Unity.InputSystem.TestFramework",
-                        "Unity.Localization"
+                        "Unity.Localization",
+                        "Unity.TextMeshPro"
                     }
                 }
             };

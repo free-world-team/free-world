@@ -67,6 +67,12 @@ G3.2 已在统一实现分支完成 9/9 Manifest AUDIO 批次、104 Clip Catalog
 `Docs/Reports/2026-08-10-g3-2-formal-audio-final-integration.md`。下一工作包只进入 G3.3 正式字体、
 简中/英文/Pseudo 与正文可读性，不得提前执行 G3.4 数值冻结。
 
+G3.3 已在统一实现分支完成三套正式 TMP 字体、806 个双语 Key、三表运行时路由、Pseudo 全角映射、
+字形预热与 150% Windows Player 布局门禁，实际证据见
+`26_G3_3_FORMAL_FONT_LOCALIZATION.md` 与
+`Docs/Reports/2026-08-10-g3-3-formal-font-localization-final-integration.md`。下一工作包只进入 G3.4
+数值冻结与 Seed 矩阵，不提前执行 G3.5 性能优化或 G3.6 Release Candidate。
+
 ## 5. G3 发布候选
 
 | 顺序 | 分支建议 | 交付物 | 退出门禁 |

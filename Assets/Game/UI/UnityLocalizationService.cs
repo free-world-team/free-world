@@ -10,7 +10,7 @@ namespace Game.UI
     {
         /// <summary>Gets the selected locale code, using pseudo for a PseudoLocale.</summary>
         string SelectedLocaleCode { get; }
-        /// <summary>Resolves one stable key through the UI table.</summary>
+        /// <summary>Resolves one stable key through its governed table.</summary>
         string Resolve(string localizationKey);
         /// <summary>Selects a locale by code.</summary>
         bool SelectLocale(string localeCode);
@@ -18,11 +18,14 @@ namespace Game.UI
         bool SelectNextLocale();
     }
 
-    /// <summary>Unity Localization adapter for the checked-in M8 UI string table.</summary>
+    /// <summary>Unity Localization adapter for the three governed Qinglan runtime collections.</summary>
     public sealed class UnityLocalizationService : ILocalizationService
     {
-        /// <summary>Name of the checked-in runtime string table collection.</summary>
-        public const string TableName = "UI";
+        public const string UiTableName = "UI";
+        public const string ContentTableName = "QinglanContent";
+        public const string NarrativeTableName = "QinglanNarrative";
+        /// <summary>Compatibility alias for the UI collection.</summary>
+        public const string TableName = UiTableName;
         private static readonly string[] LocaleOrder = { "en", "zh-Hans", "pseudo" };
 
         public UnityLocalizationService()
@@ -51,7 +54,10 @@ namespace Game.UI
             var pseudo = locale as PseudoLocale;
             var lookupLocale = pseudo == null ? locale : FindSourceLocale();
             if (lookupLocale == null) return localizationKey;
-            var result = LocalizationSettings.StringDatabase.GetTableEntry(TableName, localizationKey, lookupLocale);
+            var result = LocalizationSettings.StringDatabase.GetTableEntry(
+                TableForKey(localizationKey),
+                localizationKey,
+                lookupLocale);
             if (result.Entry == null) return localizationKey;
             var value = result.Entry.GetLocalizedString(null, null, pseudo);
             return string.IsNullOrEmpty(value) ? localizationKey : value;
@@ -83,6 +89,18 @@ namespace Game.UI
             for (; index < LocaleOrder.Length; index++)
                 if (string.Equals(LocaleOrder[index], current, StringComparison.OrdinalIgnoreCase)) break;
             return SelectLocale(LocaleOrder[(index + 1) % LocaleOrder.Length]);
+        }
+
+        /// <summary>Maps stable key namespaces to formal runtime collections.</summary>
+        public static string TableForKey(string localizationKey)
+        {
+            if (string.IsNullOrEmpty(localizationKey)) return UiTableName;
+            if (localizationKey.StartsWith("content.", StringComparison.Ordinal)) return ContentTableName;
+            if (localizationKey.StartsWith("story.", StringComparison.Ordinal) ||
+                localizationKey.StartsWith("collectible.", StringComparison.Ordinal) ||
+                localizationKey.StartsWith("narrative.", StringComparison.Ordinal))
+                return NarrativeTableName;
+            return UiTableName;
         }
 
         private static Locale FindSourceLocale()

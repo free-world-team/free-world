@@ -21,8 +21,8 @@
   ],
   "sourceSha256": {},
   "outputSha256": {
-    "NotoSansCJKsc-Regular.asset": "86862c048454482a9ea3d2376a64c02d4aaceb1cbc44d2a22024ca3283192cbe",
-    "NotoSansCJKsc-Bold.asset": "df142dbe5121654d4506f363a82bbc8c26e856ba211bb690cce79ec1f40a9bb1"
+    "NotoSansCJKsc-Regular.asset": "f967d4002eab2b99878d63e46861aaadd3471a6e96fc1af8d8cff6d0fb7da9ac",
+    "NotoSansCJKsc-Bold.asset": "03f0406218d81fb7eb3ef92a836e7128d00d85de29e160265ddfe4a71c296b6b"
   },
   "licenseOrTermsUrl": "https://raw.githubusercontent.com/notofonts/noto-cjk/Sans2.004/LICENSE",
   "licenseOrTermsSnapshot": "Assets/ThirdParty/Fonts/NotoCJKSC/FONT-001/LICENSE.txt",
