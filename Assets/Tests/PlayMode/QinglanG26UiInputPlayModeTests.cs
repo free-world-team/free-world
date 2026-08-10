@@ -203,6 +203,10 @@ namespace Game.Tests.PlayMode
             Assert.That(background.gameObject.activeSelf, Is.False);
             Assert.That(pageLayer.gameObject.activeSelf, Is.False);
             Assert.That(hudLayer.gameObject.activeSelf, Is.True);
+            Assert.That(host.Presentation.MapGroundTileCount, Is.GreaterThan(0));
+            Assert.That(host.Presentation.FormalMapGroundTileCount, Is.GreaterThan(0),
+                "the Release map must use the governed formal tile kits rather than an empty camera clear");
+            Assert.That(host.Presentation.FormalMapPropCount, Is.GreaterThan(0));
 
             Tap(keyboard.mKey);
             Assert.That(background.gameObject.activeSelf, Is.False,

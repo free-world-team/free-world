@@ -125,7 +125,11 @@ namespace Game.Infrastructure
             {
                 Presentation.Clear();
                 Presentation.SetMap(session == null ? null :
-                    QinglanProceduralMapFactory.Build(bootstrapApplication.ContentRegistry, session.Descriptor.MapId));
+                    QinglanProceduralMapFactory.Build(
+                        bootstrapApplication.ContentRegistry,
+                        session.Descriptor.MapId,
+                        formalVisualLoader.MapTiles,
+                        formalVisualLoader.MapProps));
                 cameraRig.SetTarget(null);
                 lastSession = session;
             }

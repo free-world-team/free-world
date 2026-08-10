@@ -41,7 +41,9 @@ namespace Game.Presentation
             float chunkSize,
             ProceduralMapObstacle[] obstacles,
             Vector2[] zones,
-            ProceduralMapMarker[] markers)
+            ProceduralMapMarker[] markers,
+            Sprite[] groundSprites = null,
+            Sprite[] propSprites = null)
         {
             Minimum = minimum;
             Maximum = maximum;
@@ -51,6 +53,8 @@ namespace Game.Presentation
             Zones = zones == null ? Array.Empty<Vector2>() : (Vector2[])zones.Clone();
             Markers = markers == null ? Array.Empty<ProceduralMapMarker>() :
                 (ProceduralMapMarker[])markers.Clone();
+            GroundSprites = groundSprites == null ? Array.Empty<Sprite>() : (Sprite[])groundSprites.Clone();
+            PropSprites = propSprites == null ? Array.Empty<Sprite>() : (Sprite[])propSprites.Clone();
         }
 
         public Vector2 Minimum { get; }
@@ -59,6 +63,8 @@ namespace Game.Presentation
         public IReadOnlyList<ProceduralMapObstacle> Obstacles { get; }
         public IReadOnlyList<Vector2> Zones { get; }
         public IReadOnlyList<ProceduralMapMarker> Markers { get; }
+        public IReadOnlyList<Sprite> GroundSprites { get; }
+        public IReadOnlyList<Sprite> PropSprites { get; }
     }
 
     internal sealed class ProceduralMapMarkerView
@@ -94,13 +100,18 @@ namespace Game.Presentation
             root = new GameObject("G2_7_ProceduralMap");
             root.transform.SetParent(owner, false);
             markers = new List<ProceduralMapMarkerView>(configuration.Markers.Count);
+            BuildGround(configuration);
             BuildBounds(configuration);
             BuildZones(configuration);
             BuildObstacles(configuration);
+            BuildProps(configuration);
             BuildMarkers(configuration);
         }
 
         public int MarkerCount => markers.Count;
+        public int GroundTileCount { get; private set; }
+        public int FormalGroundTileCount { get; private set; }
+        public int FormalPropCount { get; private set; }
 
         public void Sync(RunUiSnapshot snapshot, ColorVisionMode mode)
         {
@@ -138,6 +149,76 @@ namespace Game.Presentation
 
         public void Dispose() => UnityObjectLifetime.Destroy(root);
 
+        private void BuildGround(ProceduralMapConfiguration configuration)
+        {
+            const float tileSize = 4f;
+            var minimum = configuration.Minimum;
+            var maximum = configuration.Maximum;
+            var columns = Mathf.Max(1, Mathf.CeilToInt((maximum.x - minimum.x) / tileSize));
+            var rows = Mathf.Max(1, Mathf.CeilToInt((maximum.y - minimum.y) / tileSize));
+            var formal = configuration.GroundSprites.Count > 0;
+            for (var row = 0; row < rows; row++)
+            {
+                for (var column = 0; column < columns; column++)
+                {
+                    var position = new Vector2(
+                        minimum.x + ((column + 0.5f) * tileSize),
+                        minimum.y + ((row + 0.5f) * tileSize));
+                    var renderer = CreateRenderer("Ground_" + row + "_" + column, -30);
+                    if (formal)
+                    {
+                        var sprite = configuration.GroundSprites[
+                            (row * 17 + column * 7) % configuration.GroundSprites.Count];
+                        renderer.sprite = sprite;
+                        renderer.color = new Color(0.72f, 0.78f, 0.72f, 1f);
+                        var bounds = sprite.bounds.size;
+                        renderer.transform.localScale = new Vector3(
+                            bounds.x <= 0f ? 1f : tileSize / bounds.x,
+                            bounds.y <= 0f ? 1f : tileSize / bounds.y,
+                            1f);
+                        FormalGroundTileCount++;
+                    }
+                    else
+                    {
+                        renderer.sprite = library.GetSprite(ProceduralShape.Square);
+                        renderer.color = ((row + column) & 1) == 0
+                            ? new Color(0.14f, 0.19f, 0.17f, 1f)
+                            : new Color(0.12f, 0.17f, 0.15f, 1f);
+                        renderer.transform.localScale = new Vector3(tileSize, tileSize, 1f);
+                    }
+                    renderer.transform.position = new Vector3(position.x, position.y, 1f);
+                    GroundTileCount++;
+                }
+            }
+        }
+
+        private void BuildProps(ProceduralMapConfiguration configuration)
+        {
+            if (configuration.PropSprites.Count == 0) return;
+            for (var zoneIndex = 0; zoneIndex < configuration.Zones.Count; zoneIndex++)
+            {
+                var center = configuration.Zones[zoneIndex];
+                for (var offsetIndex = 0; offsetIndex < 3; offsetIndex++)
+                {
+                    var sprite = configuration.PropSprites[
+                        (zoneIndex * 5 + offsetIndex * 11) % configuration.PropSprites.Count];
+                    if (sprite == null) continue;
+                    var renderer = CreateRenderer("FormalProp_" + zoneIndex + "_" + offsetIndex, -9);
+                    renderer.sprite = sprite;
+                    renderer.color = new Color(0.82f, 0.88f, 0.82f, 1f);
+                    renderer.transform.position = new Vector3(
+                        center.x + ((offsetIndex - 1) * 4.5f),
+                        center.y + ((offsetIndex & 1) == 0 ? 3.5f : -3.5f),
+                        0.6f);
+                    var bounds = sprite.bounds.size;
+                    var targetHeight = 3.2f + (offsetIndex * 0.45f);
+                    var scale = bounds.y <= 0f ? 1f : targetHeight / bounds.y;
+                    renderer.transform.localScale = Vector3.one * scale;
+                    FormalPropCount++;
+                }
+            }
+        }
+
         private void BuildBounds(ProceduralMapConfiguration configuration)
         {
             var minimum = configuration.Minimum;
@@ -160,7 +241,7 @@ namespace Game.Presentation
                     "Zone_" + index,
                     configuration.Zones[index],
                     Vector2.one * size,
-                    new Color(0.18f, 0.36f, 0.32f, 0.055f),
+                    new Color(0.18f, 0.36f, 0.32f, 0.14f),
                     -20);
         }
 

@@ -10,7 +10,11 @@ namespace Game.Infrastructure
     /// <summary>Maps content-owned pure map metadata into a presentation-only DTO.</summary>
     public static class QinglanProceduralMapFactory
     {
-        public static ProceduralMapConfiguration Build(ContentRegistry registry, ContentId mapId)
+        public static ProceduralMapConfiguration Build(
+            ContentRegistry registry,
+            ContentId mapId,
+            IReadOnlyList<Sprite> formalMapTiles = null,
+            IReadOnlyList<Sprite> formalMapProps = null)
         {
             if (registry == null) throw new ArgumentNullException(nameof(registry));
             if (!mapId.IsValid || !registry.TryGet(mapId, out RuntimeMapDefinition map) || !map.HasM5Data)
@@ -38,7 +42,17 @@ namespace Game.Infrastructure
                 map.ChunkSize,
                 obstacles,
                 zones,
-                markers.ToArray());
+                markers.ToArray(),
+                CopySprites(formalMapTiles),
+                CopySprites(formalMapProps));
+        }
+
+        private static Sprite[] CopySprites(IReadOnlyList<Sprite> source)
+        {
+            if (source == null || source.Count == 0) return Array.Empty<Sprite>();
+            var result = new Sprite[source.Count];
+            for (var index = 0; index < result.Length; index++) result[index] = source[index];
+            return result;
         }
 
         private static void AddMarkers(

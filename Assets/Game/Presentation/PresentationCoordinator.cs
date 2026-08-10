@@ -58,6 +58,9 @@ namespace Game.Presentation
         public long DroppedVfxRequestCount => vfx?.DroppedRequestCount ?? 0;
         public long DroppedAudioRequestCount => audioRouter?.DroppedRequestCount ?? 0;
         public int MapMarkerCount => mapPresentation?.MarkerCount ?? 0;
+        public int MapGroundTileCount => mapPresentation?.GroundTileCount ?? 0;
+        public int FormalMapGroundTileCount => mapPresentation?.FormalGroundTileCount ?? 0;
+        public int FormalMapPropCount => mapPresentation?.FormalPropCount ?? 0;
 
         public void Initialize(
             Canvas sharedCanvas,

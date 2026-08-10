@@ -71,9 +71,15 @@ try {
     $env:QINGLAN_G36_RELEASE_PLAYER_RESULT = $absoluteResult
     $env:AZURESWORD_SAVE_ROOT = $absoluteSave
     $env:QINGLAN_G36_RELEASE_SCREENSHOT_DIR = $absoluteScreenshots
-    $process = Start-Process -FilePath $absoluteExecutable `
-        -ArgumentList @('-screen-fullscreen', '0', '-screen-width', '1920', '-screen-height', '1080', '-qinglanG36ReleaseSmoke', '-logFile', $absoluteLog) `
-        -PassThru -WindowStyle Hidden
+    $startParameters = @{
+        FilePath = $absoluteExecutable
+        ArgumentList = @('-screen-fullscreen', '0', '-screen-width', '1920', '-screen-height', '1080', '-qinglanG36ReleaseSmoke', '-logFile', $absoluteLog)
+        PassThru = $true
+    }
+    if ([string]::IsNullOrWhiteSpace($absoluteScreenshots)) {
+        $startParameters.WindowStyle = 'Hidden'
+    }
+    $process = Start-Process @startParameters
     if (-not $process.WaitForExit($TimeoutSeconds * 1000)) {
         $process.Kill($true)
         [Console]::Error.WriteLine("Release Player timed out after $TimeoutSeconds seconds.")
@@ -105,6 +111,9 @@ if ($result.status -ne 'PASS' -or -not $result.releaseCandidateRequested -or
     -not $result.formalFontsLoaded -or -not $result.formalLocalizationResolved -or
     -not $result.localeCyclePassed -or -not $result.layoutScalePassed -or
     -not $result.activeRunVisited -or -not $result.gameplayWorldVisible -or
+    [int]$result.mapGroundTileCount -le 0 -or
+    [int]$result.formalMapGroundTileCount -le 0 -or
+    [int]$result.formalMapPropCount -le 0 -or
     -not $result.screenshotsPassed -or -not $result.pauseResumeVisited -or
     -not $result.upgradeVisited -or -not $result.resultVisited -or
     -not $result.saveCommitted -or -not $result.profileSavePresent -or

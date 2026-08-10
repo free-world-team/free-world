@@ -47,7 +47,7 @@ namespace Game.Infrastructure
             var releaseRequested = IsReleaseRequested();
             var result = new QinglanG28PlayerSmokeResult
             {
-                schemaVersion = 3,
+                schemaVersion = 4,
                 generatedAtUtc = DateTime.UtcNow.ToString("O", CultureInfo.InvariantCulture),
                 releaseCandidateRequested = releaseRequested,
                 debugBuild = Debug.isDebugBuild,
@@ -100,6 +100,9 @@ namespace Game.Infrastructure
             result.activeRunVisited = host.Flow.Stage == DemoFlowStage.Active;
             result.activeViews = host.Presentation.ActiveViewCount;
             result.gameplayWorldVisible = host.Ui.GameplayWorldVisible;
+            result.mapGroundTileCount = host.Presentation.MapGroundTileCount;
+            result.formalMapGroundTileCount = host.Presentation.FormalMapGroundTileCount;
+            result.formalMapPropCount = host.Presentation.FormalMapPropCount;
             yield return CaptureScreenshotIfRequested(result, "active-gameplay");
             if (!result.activeRunVisited || result.activeViews <= 0 || !host.Flow.TogglePause() ||
                 host.Flow.Stage != DemoFlowStage.UserPaused || !host.Flow.TogglePause())
@@ -176,6 +179,8 @@ namespace Game.Infrastructure
                                            (!result.debugBuild && result.nullPlatform &&
                                             result.contentPackCount == 1 &&
                                             result.contentDefinitionCount == 193 &&
+                                            result.formalMapGroundTileCount > 0 &&
+                                            result.formalMapPropCount > 0 &&
                                             result.profileSavePresent && result.runRecoveryCleared);
             var passed = result.titleVisited && result.characterSelectVisited &&
                          result.formalVisualsLoaded && result.formalUiBackgroundApplied &&
@@ -184,7 +189,8 @@ namespace Game.Infrastructure
                          result.formalLocalizationResolved && result.localeCyclePassed &&
                          result.layoutScalePassed &&
                          result.mapAndLoadoutVisited && result.activeRunVisited &&
-                         result.gameplayWorldVisible && result.screenshotsPassed &&
+                         result.gameplayWorldVisible && result.mapGroundTileCount > 0 &&
+                         result.screenshotsPassed &&
                          result.pauseResumeVisited && result.accessibilityApplied &&
                          result.upgradeVisited && result.resultVisited && result.saveCommitted &&
                          result.hubVisited && result.restartVisited &&
@@ -349,6 +355,9 @@ namespace Game.Infrastructure
             public bool gameplayWorldVisible;
             public bool screenshotsPassed;
             public string activeGameplayScreenshot;
+            public int mapGroundTileCount;
+            public int formalMapGroundTileCount;
+            public int formalMapPropCount;
             public bool pauseResumeVisited;
             public bool accessibilityApplied;
             public bool upgradeVisited;
