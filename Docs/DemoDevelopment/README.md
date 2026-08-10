@@ -65,6 +65,10 @@ G3 发布候选
 | [21_G2_6_UI_INPUT_ACCESSIBILITY.md](21_G2_6_UI_INPUT_ACCESSIBILITY.md) | G2.6 完整页面、HUD、键鼠/手柄与可访问性设置 |
 | [22_G2_7_PLACEHOLDER_PRESENTATION_POLISH.md](22_G2_7_PLACEHOLDER_PRESENTATION_POLISH.md) | G2.7 程序化表现、地图标记、优先级池与测试音混音 |
 | [23_G2_8_VERTICAL_SLICE_GATE.md](23_G2_8_VERTICAL_SLICE_GATE.md) | G2.8 真实 12 分钟、生命周期、可读性、性能、Build 与 Player 统一门禁 |
+| [24_G3_1_FORMAL_VISUAL_ASSETS.md](24_G3_1_FORMAL_VISUAL_ASSETS.md) | G3.1 正式视觉生产、权利证明、Addressables 与运行时集成 |
+| [25_G3_2_FORMAL_AUDIO.md](25_G3_2_FORMAL_AUDIO.md) | G3.2 正式音频生产、Mixer/Router 与运行时集成 |
+| [26_G3_3_FORMAL_FONT_LOCALIZATION.md](26_G3_3_FORMAL_FONT_LOCALIZATION.md) | G3.3 正式 TMP 字体、双语正文、Pseudo 与布局门禁 |
+| [27_G3_4_BALANCE_FREEZE.md](27_G3_4_BALANCE_FREEZE.md) | G3.4 无作弊三构筑 Seed 矩阵、失败率、Golden 与数值冻结 |
 
 ## 4. 模块分支
 

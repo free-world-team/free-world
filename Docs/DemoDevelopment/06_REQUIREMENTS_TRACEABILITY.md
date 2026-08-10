@@ -19,7 +19,7 @@
 | R-013 | 12 行脉、3 嵌片、4 设施 | M11 | EditMode/UI/Save | G2.5 真值、G2.6 四设施/确认 UI PASS |
 | R-014 | 6 藏品、3 故事 | M11、M14 | Save/Localization | G2.5 真值、G2.6 页面/Localization PASS |
 | R-015 | 键鼠/手柄完整流程 | M12 | PlayMode | G2.6 键盘与手柄独立闭环 PASS |
-| R-016 | 可访问性与双语 | M12、M14 | Locale/Layout/PlayMode | G2.6 Placeholder 自动化 PASS；正式字体/正文待 G3.3 |
+| R-016 | 可访问性与双语 | M12、M14 | Locale/Layout/PlayMode | G3.3 正式字体、806 双语 Key、Pseudo、布局与 Player Smoke PASS |
 | R-017 | 东方清朗视听与危险可读 | M13 | 资产评审/GPU 捕获 | G2.8 Placeholder 600 敌人 P0 自动/人工 PASS；正式视听/GPU 待 G3 |
 | R-018 | 1080p 60 与 1% Low 警报 | M16 | 目标硬件 JSON | G3 |
 | R-019 | 正式资产合规/Release | M13、M15、M16 | provenance/Manifest | G3 |
