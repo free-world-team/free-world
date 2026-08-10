@@ -1,0 +1,2184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: QinglanContent_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 9e41a48ca544e4a44890bdb8b9c173eb, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 740171776
+    m_Localized: Barrier alters an eligible enemy with a readable combat modifier
+      and additional reward pressure.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 828252160
+    m_Localized: Barrier
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446464
+    m_Localized: Quaking alters an eligible enemy with a readable combat modifier
+      and additional reward pressure.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446465
+    m_Localized: Quaking
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446466
+    m_Localized: Rampaging alters an eligible enemy with a readable combat modifier
+      and additional reward pressure.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446467
+    m_Localized: Rampaging
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446468
+    m_Localized: Splitting alters an eligible enemy with a readable combat modifier
+      and additional reward pressure.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446469
+    m_Localized: Splitting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446470
+    m_Localized: Tingfeng is an oath keeper encounter whose phases, transitions,
+      and rewards form a complete boss sequence.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446471
+    m_Localized: Tingfeng
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446472
+    m_Localized: Zhezhi is an oath keeper encounter whose phases, transitions, and
+      rewards form a complete boss sequence.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446473
+    m_Localized: Zhezhi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446474
+    m_Localized: A wandering sword cultivator who gathers Riding Wind while moving
+      and turns momentum into sharper techniques.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446475
+    m_Localized: Lu Qingye
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446476
+    m_Localized: Old Court 01 is an Old Court field record that preserves one fragment
+      of the region's history.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446477
+    m_Localized: Old Court 01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446478
+    m_Localized: Old Court 02 is an Old Court field record that preserves one fragment
+      of the region's history.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446479
+    m_Localized: Old Court 02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446480
+    m_Localized: Old Court 03 is an Old Court field record that preserves one fragment
+      of the region's history.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446481
+    m_Localized: Old Court 03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446482
+    m_Localized: Old Court 04 is an Old Court field record that preserves one fragment
+      of the region's history.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446483
+    m_Localized: Old Court 04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446484
+    m_Localized: Old Court 05 is an Old Court field record that preserves one fragment
+      of the region's history.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446485
+    m_Localized: Old Court 05
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446486
+    m_Localized: Old Court 06 is an Old Court field record that preserves one fragment
+      of the region's history.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446487
+    m_Localized: Old Court 06
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446488
+    m_Localized: Old Court Demo 12M schedules the Old Court's timed enemy waves,
+      caps, elite beats, and boss arrival.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446489
+    m_Localized: Old Court Demo 12M
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446490
+    m_Localized: Tingfeng is an Old Court combatant with a dedicated movement pattern,
+      attack set, and reward value.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446491
+    m_Localized: Tingfeng
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446492
+    m_Localized: Zhezhi is an Old Court combatant with a dedicated movement pattern,
+      attack set, and reward value.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446493
+    m_Localized: Zhezhi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446494
+    m_Localized: Explosive Seed Pod is an Old Court combatant with a dedicated movement
+      pattern, attack set, and reward value.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446495
+    m_Localized: Explosive Seed Pod
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446496
+    m_Localized: Grass Spirit is an Old Court combatant with a dedicated movement
+      pattern, attack set, and reward value.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446497
+    m_Localized: Grass Spirit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446498
+    m_Localized: Paper Crane Spirit is an Old Court combatant with a dedicated movement
+      pattern, attack set, and reward value.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446499
+    m_Localized: Paper Crane Spirit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446500
+    m_Localized: Stone Lantern Guard is an Old Court combatant with a dedicated movement
+      pattern, attack set, and reward value.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446501
+    m_Localized: Stone Lantern Guard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446502
+    m_Localized: Wind Bell Spirit is an Old Court combatant with a dedicated movement
+      pattern, attack set, and reward value.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446503
+    m_Localized: Wind Bell Spirit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446504
+    m_Localized: Wooden Sword Puppet is an Old Court combatant with a dedicated movement
+      pattern, attack set, and reward value.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446505
+    m_Localized: Wooden Sword Puppet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446506
+    m_Localized: Herb Garden Revival is an optional Old Court event that changes
+      local combat and grants a resolved outcome.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446507
+    m_Localized: Herb Garden Revival
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446508
+    m_Localized: Old Sword Resonance is an optional Old Court event that changes
+      local combat and grants a resolved outcome.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446509
+    m_Localized: Old Sword Resonance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446510
+    m_Localized: Wind Vein Riot is an optional Old Court event that changes local
+      combat and grants a resolved outcome.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446511
+    m_Localized: Wind Vein Riot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446512
+    m_Localized: Chilu Hundred-Craft Wheel Evolution records the required weapon,
+      passive, level, and resulting completed technique.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446513
+    m_Localized: Chilu Hundred-Craft Wheel Evolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446514
+    m_Localized: Earth-Vein Spring Branch Evolution records the required weapon,
+      passive, level, and resulting completed technique.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446515
+    m_Localized: Earth-Vein Spring Branch Evolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446516
+    m_Localized: Mirror-Sea Tide Wheel Evolution records the required weapon, passive,
+      level, and resulting completed technique.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446517
+    m_Localized: Mirror-Sea Tide Wheel Evolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446518
+    m_Localized: Mountain-Boundary Seal Evolution records the required weapon, passive,
+      level, and resulting completed technique.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446519
+    m_Localized: Mountain-Boundary Seal Evolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446520
+    m_Localized: Qinglan Flowing-Shadow Sword Evolution records the required weapon,
+      passive, level, and resulting completed technique.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446521
+    m_Localized: Qinglan Flowing-Shadow Sword Evolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446522
+    m_Localized: Taiyi Spirit-Sealing Array Evolution records the required weapon,
+      passive, level, and resulting completed technique.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446523
+    m_Localized: Taiyi Spirit-Sealing Array Evolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446524
+    m_Localized: Hundred Artifact Pavilion is a hub facility that exposes one governed
+      branch of permanent progression or records.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446525
+    m_Localized: Hundred Artifact Pavilion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446526
+    m_Localized: Myriad Phenomena Pavilion is a hub facility that exposes one governed
+      branch of permanent progression or records.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446527
+    m_Localized: Myriad Phenomena Pavilion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446528
+    m_Localized: Scroll Pavilion is a hub facility that exposes one governed branch
+      of permanent progression or records.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446529
+    m_Localized: Scroll Pavilion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446530
+    m_Localized: Vein Inquiry Platform is a hub facility that exposes one governed
+      branch of permanent progression or records.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446531
+    m_Localized: Vein Inquiry Platform
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446532
+    m_Localized: Herb Garden Spring Clasp is a socketable progression insert that
+      augments a compatible permanent node.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446533
+    m_Localized: Herb Garden Spring Clasp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446534
+    m_Localized: Old Court Vein Needle is a socketable progression insert that augments
+      a compatible permanent node.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446535
+    m_Localized: Old Court Vein Needle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446536
+    m_Localized: Qinglan Wind Pattern is a socketable progression insert that augments
+      a compatible permanent node.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446537
+    m_Localized: Qinglan Wind Pattern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446538
+    m_Localized: Broken Wall Sword Mark marks a readable place in the Old Court and
+      anchors exploration, lore, or rewards.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446539
+    m_Localized: Broken Wall Sword Mark
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446540
+    m_Localized: Guest Pavilion Letter marks a readable place in the Old Court and
+      anchors exploration, lore, or rewards.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446541
+    m_Localized: Guest Pavilion Letter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446542
+    m_Localized: Herb Garden Variant marks a readable place in the Old Court and
+      anchors exploration, lore, or rewards.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446543
+    m_Localized: Herb Garden Variant
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446544
+    m_Localized: Sealed Sword Cache marks a readable place in the Old Court and anchors
+      exploration, lore, or rewards.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446545
+    m_Localized: Sealed Sword Cache
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446546
+    m_Localized: Wind Vein Stele marks a readable place in the Old Court and anchors
+      exploration, lore, or rewards.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446547
+    m_Localized: Wind Vein Stele
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446548
+    m_Localized: A ruined Qinglan training court where broken wards, herb gardens,
+      and old sword marks still answer the wind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446549
+    m_Localized: Old Court
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640768
+    m_Localized: The character mechanic that gathers momentum through movement and
+      unlocks stronger Riding Wind tiers.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640769
+    m_Localized: Lu Qingye Riding Wind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640770
+    m_Localized: Lu Qingye Innate 01 Node is a permanent Lu Qingye progression node
+      with explicit cost, prerequisites, and effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640771
+    m_Localized: Lu Qingye Innate 01 Node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640772
+    m_Localized: Lu Qingye Innate 02 Node is a permanent Lu Qingye progression node
+      with explicit cost, prerequisites, and effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640773
+    m_Localized: Lu Qingye Innate 02 Node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640774
+    m_Localized: Lu Qingye Innate 03 Node is a permanent Lu Qingye progression node
+      with explicit cost, prerequisites, and effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640775
+    m_Localized: Lu Qingye Innate 03 Node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640776
+    m_Localized: Lu Qingye Innate 04 Node is a permanent Lu Qingye progression node
+      with explicit cost, prerequisites, and effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640777
+    m_Localized: Lu Qingye Innate 04 Node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640778
+    m_Localized: Lu Qingye Mind 01 Node is a permanent Lu Qingye progression node
+      with explicit cost, prerequisites, and effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640779
+    m_Localized: Lu Qingye Mind 01 Node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640780
+    m_Localized: Lu Qingye Mind 02 Node is a permanent Lu Qingye progression node
+      with explicit cost, prerequisites, and effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640781
+    m_Localized: Lu Qingye Mind 02 Node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640782
+    m_Localized: Lu Qingye Mind 03 Node is a permanent Lu Qingye progression node
+      with explicit cost, prerequisites, and effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640783
+    m_Localized: Lu Qingye Mind 03 Node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640784
+    m_Localized: Lu Qingye Mind 04 Node is a permanent Lu Qingye progression node
+      with explicit cost, prerequisites, and effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640785
+    m_Localized: Lu Qingye Mind 04 Node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640786
+    m_Localized: Lu Qingye Movement 01 Node is a permanent Lu Qingye progression
+      node with explicit cost, prerequisites, and effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640787
+    m_Localized: Lu Qingye Movement 01 Node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640788
+    m_Localized: Lu Qingye Movement 02 Node is a permanent Lu Qingye progression
+      node with explicit cost, prerequisites, and effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640789
+    m_Localized: Lu Qingye Movement 02 Node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640790
+    m_Localized: Lu Qingye Movement 03 Node is a permanent Lu Qingye progression
+      node with explicit cost, prerequisites, and effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640791
+    m_Localized: Lu Qingye Movement 03 Node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640792
+    m_Localized: Lu Qingye Movement 04 Node is a permanent Lu Qingye progression
+      node with explicit cost, prerequisites, and effect.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640793
+    m_Localized: Lu Qingye Movement 04 Node
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640794
+    m_Localized: Wind Altar Guide is a discoverable map objective with tracked progress,
+      success, and failure states.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640795
+    m_Localized: Wind Altar Guide
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640796
+    m_Localized: Wind Altar Listen is a discoverable map objective with tracked progress,
+      success, and failure states.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640797
+    m_Localized: Wind Altar Listen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640798
+    m_Localized: Wind Altar Stop Balance is a discoverable map objective with tracked
+      progress, success, and failure states.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640799
+    m_Localized: Wind Altar Stop Balance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640800
+    m_Localized: Chilu Hundred-Craft Wheel Selection enters the level-up selection
+      pool when its unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640801
+    m_Localized: Chilu Hundred-Craft Wheel Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640802
+    m_Localized: Earth-Vein Spring Branch Selection enters the level-up selection
+      pool when its unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640803
+    m_Localized: Earth-Vein Spring Branch Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640804
+    m_Localized: Mirror-Sea Tide Wheel Selection enters the level-up selection pool
+      when its unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640805
+    m_Localized: Mirror-Sea Tide Wheel Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640806
+    m_Localized: Mountain-Boundary Seal Selection enters the level-up selection pool
+      when its unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640807
+    m_Localized: Mountain-Boundary Seal Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640808
+    m_Localized: Qinglan Flowing-Shadow Sword Selection enters the level-up selection
+      pool when its unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640809
+    m_Localized: Qinglan Flowing-Shadow Sword Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640810
+    m_Localized: Taiyi Spirit-Sealing Array Selection enters the level-up selection
+      pool when its unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640811
+    m_Localized: Taiyi Spirit-Sealing Array Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640812
+    m_Localized: Artifact Control Selection enters the level-up selection pool when
+      its unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640813
+    m_Localized: Artifact Control Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640814
+    m_Localized: Clear Mind Selection enters the level-up selection pool when its
+      unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640815
+    m_Localized: Clear Mind Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640816
+    m_Localized: Domain Expansion Selection enters the level-up selection pool when
+      its unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640817
+    m_Localized: Domain Expansion Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640818
+    m_Localized: Long Breath Selection enters the level-up selection pool when its
+      unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640819
+    m_Localized: Long Breath Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640820
+    m_Localized: Spirit Gathering Selection enters the level-up selection pool when
+      its unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640821
+    m_Localized: Spirit Gathering Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640822
+    m_Localized: Treading Wind Selection enters the level-up selection pool when
+      its unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640823
+    m_Localized: Treading Wind Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640824
+    m_Localized: Lihuo Wheel Selection enters the level-up selection pool when its
+      unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640825
+    m_Localized: Lihuo Wheel Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640826
+    m_Localized: Spirit Vine Seed Selection enters the level-up selection pool when
+      its unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640827
+    m_Localized: Spirit Vine Seed Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640828
+    m_Localized: Tide Orb Selection enters the level-up selection pool when its unlock
+      and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640829
+    m_Localized: Tide Orb Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640830
+    m_Localized: Yellow Talisman Selection enters the level-up selection pool when
+      its unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640831
+    m_Localized: Yellow Talisman Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640832
+    m_Localized: Yufeng Sword Selection enters the level-up selection pool when its
+      unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640833
+    m_Localized: Yufeng Sword Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640834
+    m_Localized: Zhenyue Seal Selection enters the level-up selection pool when its
+      unlock and ownership conditions are satisfied.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640835
+    m_Localized: Zhenyue Seal Selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640836
+    m_Localized: Artifact Control is a passive cultivation method that strengthens
+      the build without occupying an active attack slot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640837
+    m_Localized: Artifact Control
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640838
+    m_Localized: Clear Mind is a passive cultivation method that strengthens the
+      build without occupying an active attack slot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640839
+    m_Localized: Clear Mind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640840
+    m_Localized: Domain Expansion is a passive cultivation method that strengthens
+      the build without occupying an active attack slot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640841
+    m_Localized: Domain Expansion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640842
+    m_Localized: Long Breath is a passive cultivation method that strengthens the
+      build without occupying an active attack slot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640843
+    m_Localized: Long Breath
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640844
+    m_Localized: Spirit Gathering is a passive cultivation method that strengthens
+      the build without occupying an active attack slot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640845
+    m_Localized: Spirit Gathering
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640846
+    m_Localized: Treading Wind is a passive cultivation method that strengthens the
+      build without occupying an active attack slot.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640847
+    m_Localized: Treading Wind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640848
+    m_Localized: Boundary Talisman is a run pickup that applies its configured reward
+      as soon as it is collected.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640849
+    m_Localized: Boundary Talisman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640850
+    m_Localized: Greenwood Dew is a run pickup that applies its configured reward
+      as soon as it is collected.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640851
+    m_Localized: Greenwood Dew
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640852
+    m_Localized: Heart Guard Jade is a run pickup that applies its configured reward
+      as soon as it is collected.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640853
+    m_Localized: Heart Guard Jade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640854
+    m_Localized: Riding Wind Feather is a run pickup that applies its configured
+      reward as soon as it is collected.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640855
+    m_Localized: Riding Wind Feather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640856
+    m_Localized: Spirit Gourd is a run pickup that applies its configured reward
+      as soon as it is collected.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640857
+    m_Localized: Spirit Gourd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640858
+    m_Localized: Thunder Jade is a run pickup that applies its configured reward
+      as soon as it is collected.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640859
+    m_Localized: Thunder Jade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640860
+    m_Localized: Progress Region Mark grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640861
+    m_Localized: Progress Region Mark
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640862
+    m_Localized: Blank Sword Trial Token is a run relic that adds a persistent technique
+      or modifier to the current build.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640863
+    m_Localized: Blank Sword Trial Token
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640864
+    m_Localized: Broken Sword Tassel is a run relic that adds a persistent technique
+      or modifier to the current build.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640865
+    m_Localized: Broken Sword Tassel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640866
+    m_Localized: Herb Garden Seed Pod is a run relic that adds a persistent technique
+      or modifier to the current build.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640867
+    m_Localized: Herb Garden Seed Pod
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640868
+    m_Localized: Listening Wind Core is a run relic that adds a persistent technique
+      or modifier to the current build.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640869
+    m_Localized: Listening Wind Core
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640870
+    m_Localized: Old Court Bell is a run relic that adds a persistent technique or
+      modifier to the current build.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640871
+    m_Localized: Old Court Bell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640872
+    m_Localized: Wind Vein Copper is a run relic that adds a persistent technique
+      or modifier to the current build.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640873
+    m_Localized: Wind Vein Copper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640874
+    m_Localized: Afflicted Core Reward is a governed reward operation used by encounters,
+      pickups, clears, or fallback resolution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640875
+    m_Localized: Afflicted Core Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640876
+    m_Localized: Splitting Reward is a governed reward operation used by encounters,
+      pickups, clears, or fallback resolution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640877
+    m_Localized: Splitting Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640878
+    m_Localized: Spirit Sand Reward is a governed reward operation used by encounters,
+      pickups, clears, or fallback resolution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640879
+    m_Localized: Spirit Sand Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640880
+    m_Localized: First Clear Tingfeng Reward is a governed reward operation used
+      by encounters, pickups, clears, or fallback resolution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640881
+    m_Localized: First Clear Tingfeng Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640882
+    m_Localized: Manifestation Chest Reward is a governed reward operation used by
+      encounters, pickups, clears, or fallback resolution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640883
+    m_Localized: Manifestation Chest Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640884
+    m_Localized: Exploration Token Reward is a governed reward operation used by
+      encounters, pickups, clears, or fallback resolution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640885
+    m_Localized: Exploration Token Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640886
+    m_Localized: Boundary Talisman Reward is a governed reward operation used by
+      encounters, pickups, clears, or fallback resolution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640887
+    m_Localized: Boundary Talisman Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640888
+    m_Localized: Greenwood Dew Reward is a governed reward operation used by encounters,
+      pickups, clears, or fallback resolution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640889
+    m_Localized: Greenwood Dew Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640890
+    m_Localized: Heart Guard Jade Reward is a governed reward operation used by encounters,
+      pickups, clears, or fallback resolution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640891
+    m_Localized: Heart Guard Jade Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640892
+    m_Localized: Riding Wind Feather Reward is a governed reward operation used by
+      encounters, pickups, clears, or fallback resolution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640893
+    m_Localized: Riding Wind Feather Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640894
+    m_Localized: Spirit Gourd Reward is a governed reward operation used by encounters,
+      pickups, clears, or fallback resolution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640895
+    m_Localized: Spirit Gourd Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640896
+    m_Localized: Thunder Jade Reward is a governed reward operation used by encounters,
+      pickups, clears, or fallback resolution.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640897
+    m_Localized: Thunder Jade Reward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640898
+    m_Localized: Tingfeng Charge is an oath keeper's signature attack with a distinct
+      warning and response window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640899
+    m_Localized: Tingfeng Charge
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640900
+    m_Localized: Tingfeng Crossing Wind Scar is an oath keeper's signature attack
+      with a distinct warning and response window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640901
+    m_Localized: Tingfeng Crossing Wind Scar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640902
+    m_Localized: Tingfeng False Sword Chime is an oath keeper's signature attack
+      with a distinct warning and response window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640903
+    m_Localized: Tingfeng False Sword Chime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640904
+    m_Localized: Tingfeng Obscuring Windfield is an oath keeper's signature attack
+      with a distinct warning and response window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640905
+    m_Localized: Tingfeng Obscuring Windfield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640906
+    m_Localized: Tingfeng Remnant Sword is an oath keeper's signature attack with
+      a distinct warning and response window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640907
+    m_Localized: Tingfeng Remnant Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640908
+    m_Localized: Tingfeng Sword Qi is an oath keeper's signature attack with a distinct
+      warning and response window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640909
+    m_Localized: Tingfeng Sword Qi
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640910
+    m_Localized: Tingfeng Undying Oath is an oath keeper's signature attack with
+      a distinct warning and response window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640911
+    m_Localized: Tingfeng Undying Oath
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640912
+    m_Localized: Zhezhi Falling Wood Shadow is an oath keeper's signature attack
+      with a distinct warning and response window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640913
+    m_Localized: Zhezhi Falling Wood Shadow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640914
+    m_Localized: Zhezhi Horizontal Trial is an oath keeper's signature attack with
+      a distinct warning and response window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640915
+    m_Localized: Zhezhi Horizontal Trial
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640916
+    m_Localized: Zhezhi Training Dummy is an oath keeper's signature attack with
+      a distinct warning and response window.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640917
+    m_Localized: Zhezhi Training Dummy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640918
+    m_Localized: Barrier Pulse defines an enemy combat action and its configured
+      timing, reach, and effects.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640919
+    m_Localized: Barrier Pulse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640920
+    m_Localized: Quaking Pulse defines an enemy combat action and its configured
+      timing, reach, and effects.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640921
+    m_Localized: Quaking Pulse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640922
+    m_Localized: Explosive Seed Burst defines an enemy combat action and its configured
+      timing, reach, and effects.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640923
+    m_Localized: Explosive Seed Burst
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640924
+    m_Localized: Grass Spirit Aura defines an enemy combat action and its configured
+      timing, reach, and effects.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640925
+    m_Localized: Grass Spirit Aura
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640926
+    m_Localized: Paper Crane Dive defines an enemy combat action and its configured
+      timing, reach, and effects.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640927
+    m_Localized: Paper Crane Dive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640928
+    m_Localized: Stone Lantern Bolt defines an enemy combat action and its configured
+      timing, reach, and effects.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640929
+    m_Localized: Stone Lantern Bolt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640930
+    m_Localized: Wind Bell Support defines an enemy combat action and its configured
+      timing, reach, and effects.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640931
+    m_Localized: Wind Bell Support
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640932
+    m_Localized: Wooden Puppet Attack defines an enemy combat action and its configured
+      timing, reach, and effects.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640933
+    m_Localized: Wooden Puppet Attack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640934
+    m_Localized: Wooden Puppet Heavy Slash defines an enemy combat action and its
+      configured timing, reach, and effects.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640935
+    m_Localized: Wooden Puppet Heavy Slash
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640936
+    m_Localized: Chilu Hundred-Craft Wheel is a completed technique formed when its
+      weapon and cultivation requirements converge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640937
+    m_Localized: Chilu Hundred-Craft Wheel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640938
+    m_Localized: Earth-Vein Spring Branch is a completed technique formed when its
+      weapon and cultivation requirements converge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640939
+    m_Localized: Earth-Vein Spring Branch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640940
+    m_Localized: Mirror-Sea Tide Wheel is a completed technique formed when its weapon
+      and cultivation requirements converge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640941
+    m_Localized: Mirror-Sea Tide Wheel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640942
+    m_Localized: Mountain-Boundary Seal is a completed technique formed when its
+      weapon and cultivation requirements converge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640943
+    m_Localized: Mountain-Boundary Seal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640944
+    m_Localized: Qinglan Flowing-Shadow Sword is a completed technique formed when
+      its weapon and cultivation requirements converge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640945
+    m_Localized: Qinglan Flowing-Shadow Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640946
+    m_Localized: Taiyi Spirit-Sealing Array is a completed technique formed when
+      its weapon and cultivation requirements converge.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640947
+    m_Localized: Taiyi Spirit-Sealing Array
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640948
+    m_Localized: Flowing Shadow Wind Trail is a linked technique invoked by its parent
+      weapon, relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640949
+    m_Localized: Flowing Shadow Wind Trail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640950
+    m_Localized: Lihuo Return Explosion is a linked technique invoked by its parent
+      weapon, relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640951
+    m_Localized: 'Level 2: Effect strength +1.25.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640952
+    m_Localized: 'Level 3: Effect strength +1.25.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640953
+    m_Localized: 'Level 4: Effect strength +1.25.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640954
+    m_Localized: 'Level 5: Effect strength +1.25.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640955
+    m_Localized: 'Level 6: Effect strength +1.25.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640956
+    m_Localized: 'Level 7: Effect strength +1.25.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640957
+    m_Localized: 'Level 8: Effect strength +1.25.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640958
+    m_Localized: Lihuo Return Explosion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640959
+    m_Localized: Riding Wind Blade is a linked technique invoked by its parent weapon,
+      relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640960
+    m_Localized: 'Level 2: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640961
+    m_Localized: 'Level 3: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640962
+    m_Localized: 'Level 4: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640963
+    m_Localized: 'Level 5: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640964
+    m_Localized: 'Level 6: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640965
+    m_Localized: 'Level 7: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640966
+    m_Localized: 'Level 8: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640967
+    m_Localized: Riding Wind Blade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640968
+    m_Localized: Talisman Detonation is a linked technique invoked by its parent
+      weapon, relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640969
+    m_Localized: 'Level 2: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640970
+    m_Localized: 'Level 3: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640971
+    m_Localized: 'Level 4: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640972
+    m_Localized: 'Level 5: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640973
+    m_Localized: 'Level 6: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640974
+    m_Localized: 'Level 7: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640975
+    m_Localized: 'Level 8: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640976
+    m_Localized: Talisman Detonation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640977
+    m_Localized: Tide Falling is a linked technique invoked by its parent weapon,
+      relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640978
+    m_Localized: 'Level 2: Effect strength +1.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640979
+    m_Localized: 'Level 3: Effect strength +1.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640980
+    m_Localized: 'Level 4: Effect strength +1.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640981
+    m_Localized: 'Level 5: Effect strength +1.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640982
+    m_Localized: 'Level 6: Effect strength +1.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640983
+    m_Localized: 'Level 7: Effect strength +1.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640984
+    m_Localized: 'Level 8: Effect strength +1.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640985
+    m_Localized: Tide Falling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640986
+    m_Localized: Tide Rising is a linked technique invoked by its parent weapon,
+      relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640987
+    m_Localized: 'Level 2: Effect strength +0.15.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640988
+    m_Localized: 'Level 3: Effect strength +0.15.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640989
+    m_Localized: 'Level 4: Effect strength +0.15.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640990
+    m_Localized: 'Level 5: Effect strength +0.15.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640991
+    m_Localized: 'Level 6: Effect strength +0.15.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640992
+    m_Localized: 'Level 7: Effect strength +0.15.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640993
+    m_Localized: 'Level 8: Effect strength +0.15.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640994
+    m_Localized: Tide Rising
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640995
+    m_Localized: Vine Growth is a linked technique invoked by its parent weapon,
+      relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640996
+    m_Localized: 'Level 2: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640997
+    m_Localized: 'Level 3: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640998
+    m_Localized: 'Level 4: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640999
+    m_Localized: 'Level 5: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641000
+    m_Localized: 'Level 6: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641001
+    m_Localized: 'Level 7: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641002
+    m_Localized: 'Level 8: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641003
+    m_Localized: Vine Growth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641004
+    m_Localized: Vine Propagation is a linked technique invoked by its parent weapon,
+      relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641005
+    m_Localized: 'Level 2: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641006
+    m_Localized: 'Level 3: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641007
+    m_Localized: 'Level 4: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641008
+    m_Localized: 'Level 5: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641009
+    m_Localized: 'Level 6: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641010
+    m_Localized: 'Level 7: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641011
+    m_Localized: 'Level 8: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641012
+    m_Localized: Vine Propagation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641013
+    m_Localized: Yufeng Return is a linked technique invoked by its parent weapon,
+      relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641014
+    m_Localized: Yufeng Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641015
+    m_Localized: Zhenyue Countershock is a linked technique invoked by its parent
+      weapon, relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641016
+    m_Localized: 'Level 2: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641017
+    m_Localized: 'Level 3: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641018
+    m_Localized: 'Level 4: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641019
+    m_Localized: 'Level 5: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641020
+    m_Localized: 'Level 6: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641021
+    m_Localized: 'Level 7: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641022
+    m_Localized: 'Level 8: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641023
+    m_Localized: Zhenyue Countershock
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641024
+    m_Localized: Zhenyue Guard Domain is a linked technique invoked by its parent
+      weapon, relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641025
+    m_Localized: 'Level 2: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641026
+    m_Localized: 'Level 3: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641027
+    m_Localized: 'Level 4: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641028
+    m_Localized: 'Level 5: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641029
+    m_Localized: 'Level 6: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641030
+    m_Localized: 'Level 7: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641031
+    m_Localized: 'Level 8: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641032
+    m_Localized: Zhenyue Guard Domain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641033
+    m_Localized: Broken Sword Echo is a linked technique invoked by its parent weapon,
+      relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641034
+    m_Localized: Broken Sword Echo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641035
+    m_Localized: Listening Wind Echo is a linked technique invoked by its parent
+      weapon, relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641036
+    m_Localized: Listening Wind Echo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641037
+    m_Localized: Old Court Bell Pulse is a linked technique invoked by its parent
+      weapon, relic, or character mechanic.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641038
+    m_Localized: Old Court Bell Pulse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641039
+    m_Localized: Lihuo Wheel joins the automatic attack cycle and gains a defined
+      improvement at each technique level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641040
+    m_Localized: 'Level 2: Effect strength +3.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641041
+    m_Localized: 'Level 3: Technique reach +2.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641042
+    m_Localized: 'Level 4: Additional target count +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641043
+    m_Localized: 'Level 5: Additional delivery count +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641044
+    m_Localized: 'Level 6: Cooldown -12%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641045
+    m_Localized: 'Level 7: Technique reach +2.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641046
+    m_Localized: 'Level 8: Effect strength +7.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641047
+    m_Localized: Lihuo Wheel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641048
+    m_Localized: Spirit Vine Seed joins the automatic attack cycle and gains a defined
+      improvement at each technique level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641049
+    m_Localized: 'Level 2: Effect strength +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641050
+    m_Localized: 'Level 3: Technique reach +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641051
+    m_Localized: 'Level 4: Technique reach +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641052
+    m_Localized: 'Level 5: Cooldown -10%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641053
+    m_Localized: 'Level 6: Effect strength +2.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641054
+    m_Localized: 'Level 7: Delivery interval -15%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641055
+    m_Localized: 'Level 8: Technique reach +0.75.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641056
+    m_Localized: Spirit Vine Seed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641057
+    m_Localized: Tide Orb joins the automatic attack cycle and gains a defined improvement
+      at each technique level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641058
+    m_Localized: 'Level 2: Cooldown -5%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641059
+    m_Localized: 'Level 3: Cooldown -5%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641060
+    m_Localized: 'Level 4: Cooldown -5%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641061
+    m_Localized: 'Level 5: Cooldown -5%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641062
+    m_Localized: 'Level 6: Cooldown -5%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641063
+    m_Localized: 'Level 7: Cooldown -5%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641064
+    m_Localized: 'Level 8: Cooldown -10%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641065
+    m_Localized: Tide Orb
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641066
+    m_Localized: Yellow Talisman joins the automatic attack cycle and gains a defined
+      improvement at each technique level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641067
+    m_Localized: 'Level 2: Effect strength +2.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641068
+    m_Localized: 'Level 3: Cooldown -10%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641069
+    m_Localized: 'Level 4: Additional delivery count +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641070
+    m_Localized: 'Level 5: Technique reach +2.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641071
+    m_Localized: 'Level 6: Additional target count +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641072
+    m_Localized: 'Level 7: Effect strength +3.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641073
+    m_Localized: 'Level 8: Cooldown -15%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641074
+    m_Localized: Yellow Talisman
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641075
+    m_Localized: Yufeng Sword joins the automatic attack cycle and gains a defined
+      improvement at each technique level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641076
+    m_Localized: 'Level 2: Effect strength +4.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641077
+    m_Localized: 'Level 3: Cooldown -10%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641078
+    m_Localized: 'Level 4: Additional delivery count +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641079
+    m_Localized: 'Level 5: Technique reach +2.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641080
+    m_Localized: 'Level 6: Effect strength +6.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641081
+    m_Localized: 'Level 7: Technique reach +2.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641082
+    m_Localized: 'Level 8: Cooldown -15%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641083
+    m_Localized: 'Level 8: Effect strength +8.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641084
+    m_Localized: Yufeng Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641085
+    m_Localized: Zhenyue Seal joins the automatic attack cycle and gains a defined
+      improvement at each technique level.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641086
+    m_Localized: 'Level 2: Effect strength +4.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641087
+    m_Localized: 'Level 3: Technique reach +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641088
+    m_Localized: 'Level 4: Cooldown -10%.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641089
+    m_Localized: 'Level 5: Effect strength +0.5.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641090
+    m_Localized: 'Level 6: Effect strength +6.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641091
+    m_Localized: 'Level 7: Targeting reach +2.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641092
+    m_Localized: 'Level 8: Technique reach +1.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641093
+    m_Localized: Zhenyue Seal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641094
+    m_Localized: Armor Broken is a combat state whose duration, stacking, dispel,
+      and immunity rules are data-driven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641095
+    m_Localized: Armor Broken
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641096
+    m_Localized: Burning is a combat state whose duration, stacking, dispel, and
+      immunity rules are data-driven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641097
+    m_Localized: Burning
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641098
+    m_Localized: Damage Immunity is a combat state whose duration, stacking, dispel,
+      and immunity rules are data-driven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641099
+    m_Localized: Damage Immunity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641100
+    m_Localized: Barrier Ward is a combat state whose duration, stacking, dispel,
+      and immunity rules are data-driven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641101
+    m_Localized: Barrier Ward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641102
+    m_Localized: Puppet Brace is a combat state whose duration, stacking, dispel,
+      and immunity rules are data-driven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641103
+    m_Localized: Puppet Brace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641104
+    m_Localized: Wind Bell Ward is a combat state whose duration, stacking, dispel,
+      and immunity rules are data-driven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641105
+    m_Localized: Wind Bell Ward
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641106
+    m_Localized: Marked is a combat state whose duration, stacking, dispel, and immunity
+      rules are data-driven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641107
+    m_Localized: Marked
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641108
+    m_Localized: Riding Wind Feather is a combat state whose duration, stacking,
+      dispel, and immunity rules are data-driven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641109
+    m_Localized: Riding Wind Feather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641110
+    m_Localized: Poisoned is a combat state whose duration, stacking, dispel, and
+      immunity rules are data-driven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641111
+    m_Localized: Poisoned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641112
+    m_Localized: Rooted is a combat state whose duration, stacking, dispel, and immunity
+      rules are data-driven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641113
+    m_Localized: Rooted
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641114
+    m_Localized: Slowed is a combat state whose duration, stacking, dispel, and immunity
+      rules are data-driven.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641115
+    m_Localized: Slowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641116
+    m_Localized: Lu Qingye Hearing Sword is a Lu Qingye story record unlocked through
+      governed progression and viewed in the Scroll Pavilion.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641117
+    m_Localized: Lu Qingye Hearing Sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641118
+    m_Localized: Lu Qingye Old Sword And Gourd is a Lu Qingye story record unlocked
+      through governed progression and viewed in the Scroll Pavilion.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641119
+    m_Localized: Lu Qingye Old Sword And Gourd
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641120
+    m_Localized: Lu Qingye Refusing Inheritance is a Lu Qingye story record unlocked
+      through governed progression and viewed in the Scroll Pavilion.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641121
+    m_Localized: Lu Qingye Refusing Inheritance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641122
+    m_Localized: Living Garden records a build interaction that becomes available
+      when its component techniques meet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641123
+    m_Localized: Living Garden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641124
+    m_Localized: Moving Sword Path records a build interaction that becomes available
+      when its component techniques meet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641125
+    m_Localized: Moving Sword Path
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641126
+    m_Localized: Talisman Detonation records a build interaction that becomes available
+      when its component techniques meet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641127
+    m_Localized: Talisman Detonation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641128
+    m_Localized: Rampaging grants a configured modifier when its source condition
+      or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641129
+    m_Localized: Rampaging
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641130
+    m_Localized: Lu Qingye Riding Wind Breeze grants a configured modifier when its
+      source condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641131
+    m_Localized: Lu Qingye Riding Wind Breeze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641132
+    m_Localized: Lu Qingye Riding Wind grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641133
+    m_Localized: Lu Qingye Riding Wind
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641134
+    m_Localized: Lu Qingye Riding Wind Swift grants a configured modifier when its
+      source condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641135
+    m_Localized: Lu Qingye Riding Wind Swift
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641136
+    m_Localized: Herb Garden Spring Clasp grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641137
+    m_Localized: Herb Garden Spring Clasp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641138
+    m_Localized: Old Court Vein Needle grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641139
+    m_Localized: Old Court Vein Needle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641140
+    m_Localized: Qinglan Wind Pattern grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641141
+    m_Localized: Qinglan Wind Pattern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641142
+    m_Localized: Lu Qingye Innate 01 grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641143
+    m_Localized: Lu Qingye Innate 01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641144
+    m_Localized: Lu Qingye Innate 02 grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641145
+    m_Localized: Lu Qingye Innate 02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641146
+    m_Localized: Lu Qingye Innate 03 grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641147
+    m_Localized: Lu Qingye Innate 03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641148
+    m_Localized: Lu Qingye Innate 04 grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641149
+    m_Localized: Lu Qingye Innate 04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641150
+    m_Localized: Lu Qingye Mind 01 grants a configured modifier when its source condition
+      or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641151
+    m_Localized: Lu Qingye Mind 01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641152
+    m_Localized: Lu Qingye Mind 02 grants a configured modifier when its source condition
+      or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641153
+    m_Localized: Lu Qingye Mind 02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641154
+    m_Localized: Lu Qingye Mind 03 grants a configured modifier when its source condition
+      or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641155
+    m_Localized: Lu Qingye Mind 03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641156
+    m_Localized: Lu Qingye Mind 04 grants a configured modifier when its source condition
+      or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641157
+    m_Localized: Lu Qingye Mind 04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641158
+    m_Localized: Lu Qingye Movement 01 grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641159
+    m_Localized: Lu Qingye Movement 01
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641160
+    m_Localized: Lu Qingye Movement 02 grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641161
+    m_Localized: Lu Qingye Movement 02
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641162
+    m_Localized: Lu Qingye Movement 03 grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641163
+    m_Localized: Lu Qingye Movement 03
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641164
+    m_Localized: Lu Qingye Movement 04 grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641165
+    m_Localized: Lu Qingye Movement 04
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641166
+    m_Localized: Blank Sword Trial Token grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641167
+    m_Localized: Blank Sword Trial Token
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641168
+    m_Localized: Herb Garden Seed Pod grants a configured modifier when its source
+      condition or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641169
+    m_Localized: Herb Garden Seed Pod
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641170
+    m_Localized: Wind Vein Copper grants a configured modifier when its source condition
+      or progression tier is active.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641171
+    m_Localized: Wind Vein Copper
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

@@ -1,0 +1,1996 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: QinglanContent Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: QinglanContent
+  m_TableCollectionNameGuidString: 9e41a48ca544e4a44890bdb8b9c173eb
+  m_Entries:
+  - m_Id: 740171776
+    m_Key: content.qinglan.affix.barrier.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 828252160
+    m_Key: content.qinglan.affix.barrier.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446464
+    m_Key: content.qinglan.affix.quaking.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446465
+    m_Key: content.qinglan.affix.quaking.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446466
+    m_Key: content.qinglan.affix.rampaging.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446467
+    m_Key: content.qinglan.affix.rampaging.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446468
+    m_Key: content.qinglan.affix.splitting.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446469
+    m_Key: content.qinglan.affix.splitting.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446470
+    m_Key: content.qinglan.boss.tingfeng.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446471
+    m_Key: content.qinglan.boss.tingfeng.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446472
+    m_Key: content.qinglan.boss.zhezhi.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446473
+    m_Key: content.qinglan.boss.zhezhi.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446474
+    m_Key: content.qinglan.character.lu_qingye.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446475
+    m_Key: content.qinglan.character.lu_qingye.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446476
+    m_Key: content.qinglan.collectible.old_court.01.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446477
+    m_Key: content.qinglan.collectible.old_court.01.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446478
+    m_Key: content.qinglan.collectible.old_court.02.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446479
+    m_Key: content.qinglan.collectible.old_court.02.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446480
+    m_Key: content.qinglan.collectible.old_court.03.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446481
+    m_Key: content.qinglan.collectible.old_court.03.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446482
+    m_Key: content.qinglan.collectible.old_court.04.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446483
+    m_Key: content.qinglan.collectible.old_court.04.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446484
+    m_Key: content.qinglan.collectible.old_court.05.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446485
+    m_Key: content.qinglan.collectible.old_court.05.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446486
+    m_Key: content.qinglan.collectible.old_court.06.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446487
+    m_Key: content.qinglan.collectible.old_court.06.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446488
+    m_Key: content.qinglan.encounter.old_court.demo_12m.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446489
+    m_Key: content.qinglan.encounter.old_court.demo_12m.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446490
+    m_Key: content.qinglan.enemy.boss.tingfeng.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446491
+    m_Key: content.qinglan.enemy.boss.tingfeng.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446492
+    m_Key: content.qinglan.enemy.boss.zhezhi.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446493
+    m_Key: content.qinglan.enemy.boss.zhezhi.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446494
+    m_Key: content.qinglan.enemy.explosive_seed_pod.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446495
+    m_Key: content.qinglan.enemy.explosive_seed_pod.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446496
+    m_Key: content.qinglan.enemy.grass_spirit.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446497
+    m_Key: content.qinglan.enemy.grass_spirit.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446498
+    m_Key: content.qinglan.enemy.paper_crane_spirit.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446499
+    m_Key: content.qinglan.enemy.paper_crane_spirit.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446500
+    m_Key: content.qinglan.enemy.stone_lantern_guard.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446501
+    m_Key: content.qinglan.enemy.stone_lantern_guard.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446502
+    m_Key: content.qinglan.enemy.wind_bell_spirit.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446503
+    m_Key: content.qinglan.enemy.wind_bell_spirit.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446504
+    m_Key: content.qinglan.enemy.wooden_sword_puppet.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446505
+    m_Key: content.qinglan.enemy.wooden_sword_puppet.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446506
+    m_Key: content.qinglan.event.herb_garden_revival.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446507
+    m_Key: content.qinglan.event.herb_garden_revival.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446508
+    m_Key: content.qinglan.event.old_sword_resonance.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446509
+    m_Key: content.qinglan.event.old_sword_resonance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446510
+    m_Key: content.qinglan.event.wind_vein_riot.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446511
+    m_Key: content.qinglan.event.wind_vein_riot.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446512
+    m_Key: content.qinglan.evolution.chilu_hundred_craft_wheel.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446513
+    m_Key: content.qinglan.evolution.chilu_hundred_craft_wheel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446514
+    m_Key: content.qinglan.evolution.earth_vein_spring_branch.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446515
+    m_Key: content.qinglan.evolution.earth_vein_spring_branch.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446516
+    m_Key: content.qinglan.evolution.mirror_sea_tide_wheel.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446517
+    m_Key: content.qinglan.evolution.mirror_sea_tide_wheel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446518
+    m_Key: content.qinglan.evolution.mountain_boundary_seal.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446519
+    m_Key: content.qinglan.evolution.mountain_boundary_seal.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446520
+    m_Key: content.qinglan.evolution.qinglan_flowing_shadow_sword.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446521
+    m_Key: content.qinglan.evolution.qinglan_flowing_shadow_sword.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446522
+    m_Key: content.qinglan.evolution.taiyi_spirit_sealing_array.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446523
+    m_Key: content.qinglan.evolution.taiyi_spirit_sealing_array.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446524
+    m_Key: content.qinglan.facility.hundred_artifact_pavilion.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446525
+    m_Key: content.qinglan.facility.hundred_artifact_pavilion.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446526
+    m_Key: content.qinglan.facility.myriad_phenomena_pavilion.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446527
+    m_Key: content.qinglan.facility.myriad_phenomena_pavilion.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446528
+    m_Key: content.qinglan.facility.scroll_pavilion.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446529
+    m_Key: content.qinglan.facility.scroll_pavilion.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446530
+    m_Key: content.qinglan.facility.vein_inquiry_platform.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446531
+    m_Key: content.qinglan.facility.vein_inquiry_platform.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446532
+    m_Key: content.qinglan.insert.herb_garden_spring_clasp.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446533
+    m_Key: content.qinglan.insert.herb_garden_spring_clasp.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446534
+    m_Key: content.qinglan.insert.old_court_vein_needle.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446535
+    m_Key: content.qinglan.insert.old_court_vein_needle.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446536
+    m_Key: content.qinglan.insert.qinglan_wind_pattern.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446537
+    m_Key: content.qinglan.insert.qinglan_wind_pattern.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446538
+    m_Key: content.qinglan.landmark.broken_wall_sword_mark.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446539
+    m_Key: content.qinglan.landmark.broken_wall_sword_mark.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446540
+    m_Key: content.qinglan.landmark.guest_pavilion_letter.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446541
+    m_Key: content.qinglan.landmark.guest_pavilion_letter.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446542
+    m_Key: content.qinglan.landmark.herb_garden_variant.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446543
+    m_Key: content.qinglan.landmark.herb_garden_variant.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446544
+    m_Key: content.qinglan.landmark.sealed_sword_cache.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446545
+    m_Key: content.qinglan.landmark.sealed_sword_cache.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446546
+    m_Key: content.qinglan.landmark.wind_vein_stele.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446547
+    m_Key: content.qinglan.landmark.wind_vein_stele.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446548
+    m_Key: content.qinglan.map.old_court.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 832446549
+    m_Key: content.qinglan.map.old_court.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640768
+    m_Key: content.qinglan.mechanic.lu_qingye.riding_wind.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640769
+    m_Key: content.qinglan.mechanic.lu_qingye.riding_wind.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640770
+    m_Key: content.qinglan.meta.lu_qingye.innate.01.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640771
+    m_Key: content.qinglan.meta.lu_qingye.innate.01.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640772
+    m_Key: content.qinglan.meta.lu_qingye.innate.02.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640773
+    m_Key: content.qinglan.meta.lu_qingye.innate.02.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640774
+    m_Key: content.qinglan.meta.lu_qingye.innate.03.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640775
+    m_Key: content.qinglan.meta.lu_qingye.innate.03.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640776
+    m_Key: content.qinglan.meta.lu_qingye.innate.04.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640777
+    m_Key: content.qinglan.meta.lu_qingye.innate.04.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640778
+    m_Key: content.qinglan.meta.lu_qingye.mind.01.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640779
+    m_Key: content.qinglan.meta.lu_qingye.mind.01.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640780
+    m_Key: content.qinglan.meta.lu_qingye.mind.02.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640781
+    m_Key: content.qinglan.meta.lu_qingye.mind.02.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640782
+    m_Key: content.qinglan.meta.lu_qingye.mind.03.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640783
+    m_Key: content.qinglan.meta.lu_qingye.mind.03.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640784
+    m_Key: content.qinglan.meta.lu_qingye.mind.04.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640785
+    m_Key: content.qinglan.meta.lu_qingye.mind.04.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640786
+    m_Key: content.qinglan.meta.lu_qingye.movement.01.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640787
+    m_Key: content.qinglan.meta.lu_qingye.movement.01.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640788
+    m_Key: content.qinglan.meta.lu_qingye.movement.02.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640789
+    m_Key: content.qinglan.meta.lu_qingye.movement.02.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640790
+    m_Key: content.qinglan.meta.lu_qingye.movement.03.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640791
+    m_Key: content.qinglan.meta.lu_qingye.movement.03.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640792
+    m_Key: content.qinglan.meta.lu_qingye.movement.04.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640793
+    m_Key: content.qinglan.meta.lu_qingye.movement.04.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640794
+    m_Key: content.qinglan.objective.wind_altar.guide.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640795
+    m_Key: content.qinglan.objective.wind_altar.guide.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640796
+    m_Key: content.qinglan.objective.wind_altar.listen.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640797
+    m_Key: content.qinglan.objective.wind_altar.listen.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640798
+    m_Key: content.qinglan.objective.wind_altar.stop_balance.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640799
+    m_Key: content.qinglan.objective.wind_altar.stop_balance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640800
+    m_Key: content.qinglan.offer.evolution.chilu_hundred_craft_wheel.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640801
+    m_Key: content.qinglan.offer.evolution.chilu_hundred_craft_wheel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640802
+    m_Key: content.qinglan.offer.evolution.earth_vein_spring_branch.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640803
+    m_Key: content.qinglan.offer.evolution.earth_vein_spring_branch.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640804
+    m_Key: content.qinglan.offer.evolution.mirror_sea_tide_wheel.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640805
+    m_Key: content.qinglan.offer.evolution.mirror_sea_tide_wheel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640806
+    m_Key: content.qinglan.offer.evolution.mountain_boundary_seal.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640807
+    m_Key: content.qinglan.offer.evolution.mountain_boundary_seal.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640808
+    m_Key: content.qinglan.offer.evolution.qinglan_flowing_shadow_sword.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640809
+    m_Key: content.qinglan.offer.evolution.qinglan_flowing_shadow_sword.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640810
+    m_Key: content.qinglan.offer.evolution.taiyi_spirit_sealing_array.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640811
+    m_Key: content.qinglan.offer.evolution.taiyi_spirit_sealing_array.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640812
+    m_Key: content.qinglan.offer.passive.artifact_control.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640813
+    m_Key: content.qinglan.offer.passive.artifact_control.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640814
+    m_Key: content.qinglan.offer.passive.clear_mind.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640815
+    m_Key: content.qinglan.offer.passive.clear_mind.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640816
+    m_Key: content.qinglan.offer.passive.domain_expansion.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640817
+    m_Key: content.qinglan.offer.passive.domain_expansion.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640818
+    m_Key: content.qinglan.offer.passive.long_breath.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640819
+    m_Key: content.qinglan.offer.passive.long_breath.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640820
+    m_Key: content.qinglan.offer.passive.spirit_gathering.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640821
+    m_Key: content.qinglan.offer.passive.spirit_gathering.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640822
+    m_Key: content.qinglan.offer.passive.treading_wind.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640823
+    m_Key: content.qinglan.offer.passive.treading_wind.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640824
+    m_Key: content.qinglan.offer.skill.lihuo_wheel.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640825
+    m_Key: content.qinglan.offer.skill.lihuo_wheel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640826
+    m_Key: content.qinglan.offer.skill.spirit_vine_seed.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640827
+    m_Key: content.qinglan.offer.skill.spirit_vine_seed.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640828
+    m_Key: content.qinglan.offer.skill.tide_orb.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640829
+    m_Key: content.qinglan.offer.skill.tide_orb.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640830
+    m_Key: content.qinglan.offer.skill.yellow_talisman.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640831
+    m_Key: content.qinglan.offer.skill.yellow_talisman.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640832
+    m_Key: content.qinglan.offer.skill.yufeng_sword.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640833
+    m_Key: content.qinglan.offer.skill.yufeng_sword.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640834
+    m_Key: content.qinglan.offer.skill.zhenyue_seal.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640835
+    m_Key: content.qinglan.offer.skill.zhenyue_seal.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640836
+    m_Key: content.qinglan.passive.artifact_control.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640837
+    m_Key: content.qinglan.passive.artifact_control.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640838
+    m_Key: content.qinglan.passive.clear_mind.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640839
+    m_Key: content.qinglan.passive.clear_mind.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640840
+    m_Key: content.qinglan.passive.domain_expansion.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640841
+    m_Key: content.qinglan.passive.domain_expansion.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640842
+    m_Key: content.qinglan.passive.long_breath.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640843
+    m_Key: content.qinglan.passive.long_breath.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640844
+    m_Key: content.qinglan.passive.spirit_gathering.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640845
+    m_Key: content.qinglan.passive.spirit_gathering.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640846
+    m_Key: content.qinglan.passive.treading_wind.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640847
+    m_Key: content.qinglan.passive.treading_wind.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640848
+    m_Key: content.qinglan.pickup.boundary_talisman.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640849
+    m_Key: content.qinglan.pickup.boundary_talisman.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640850
+    m_Key: content.qinglan.pickup.greenwood_dew.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640851
+    m_Key: content.qinglan.pickup.greenwood_dew.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640852
+    m_Key: content.qinglan.pickup.heart_guard_jade.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640853
+    m_Key: content.qinglan.pickup.heart_guard_jade.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640854
+    m_Key: content.qinglan.pickup.riding_wind_feather.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640855
+    m_Key: content.qinglan.pickup.riding_wind_feather.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640856
+    m_Key: content.qinglan.pickup.spirit_gourd.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640857
+    m_Key: content.qinglan.pickup.spirit_gourd.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640858
+    m_Key: content.qinglan.pickup.thunder_jade.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640859
+    m_Key: content.qinglan.pickup.thunder_jade.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640860
+    m_Key: content.qinglan.progress.region_mark.qinglan.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640861
+    m_Key: content.qinglan.progress.region_mark.qinglan.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640862
+    m_Key: content.qinglan.relic.blank_sword_trial_token.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640863
+    m_Key: content.qinglan.relic.blank_sword_trial_token.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640864
+    m_Key: content.qinglan.relic.broken_sword_tassel.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640865
+    m_Key: content.qinglan.relic.broken_sword_tassel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640866
+    m_Key: content.qinglan.relic.herb_garden_seed_pod.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640867
+    m_Key: content.qinglan.relic.herb_garden_seed_pod.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640868
+    m_Key: content.qinglan.relic.listening_wind_core.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640869
+    m_Key: content.qinglan.relic.listening_wind_core.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640870
+    m_Key: content.qinglan.relic.old_court_bell.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640871
+    m_Key: content.qinglan.relic.old_court_bell.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640872
+    m_Key: content.qinglan.relic.wind_vein_copper.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640873
+    m_Key: content.qinglan.relic.wind_vein_copper.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640874
+    m_Key: content.qinglan.reward.elite.afflicted_core.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640875
+    m_Key: content.qinglan.reward.elite.afflicted_core.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640876
+    m_Key: content.qinglan.reward.elite.splitting.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640877
+    m_Key: content.qinglan.reward.elite.splitting.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640878
+    m_Key: content.qinglan.reward.fallback.spirit_sand.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640879
+    m_Key: content.qinglan.reward.fallback.spirit_sand.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640880
+    m_Key: content.qinglan.reward.first_clear.tingfeng.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640881
+    m_Key: content.qinglan.reward.first_clear.tingfeng.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640882
+    m_Key: content.qinglan.reward.manifestation_chest.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640883
+    m_Key: content.qinglan.reward.manifestation_chest.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640884
+    m_Key: content.qinglan.reward.map.exploration_token.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640885
+    m_Key: content.qinglan.reward.map.exploration_token.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640886
+    m_Key: content.qinglan.reward.pickup.boundary_talisman.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640887
+    m_Key: content.qinglan.reward.pickup.boundary_talisman.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640888
+    m_Key: content.qinglan.reward.pickup.greenwood_dew.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640889
+    m_Key: content.qinglan.reward.pickup.greenwood_dew.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640890
+    m_Key: content.qinglan.reward.pickup.heart_guard_jade.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640891
+    m_Key: content.qinglan.reward.pickup.heart_guard_jade.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640892
+    m_Key: content.qinglan.reward.pickup.riding_wind_feather.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640893
+    m_Key: content.qinglan.reward.pickup.riding_wind_feather.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640894
+    m_Key: content.qinglan.reward.pickup.spirit_gourd.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640895
+    m_Key: content.qinglan.reward.pickup.spirit_gourd.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640896
+    m_Key: content.qinglan.reward.pickup.thunder_jade.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640897
+    m_Key: content.qinglan.reward.pickup.thunder_jade.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640898
+    m_Key: content.qinglan.skill.boss.tingfeng.charge.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640899
+    m_Key: content.qinglan.skill.boss.tingfeng.charge.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640900
+    m_Key: content.qinglan.skill.boss.tingfeng.crossing_wind_scar.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640901
+    m_Key: content.qinglan.skill.boss.tingfeng.crossing_wind_scar.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640902
+    m_Key: content.qinglan.skill.boss.tingfeng.false_sword_chime.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640903
+    m_Key: content.qinglan.skill.boss.tingfeng.false_sword_chime.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640904
+    m_Key: content.qinglan.skill.boss.tingfeng.obscuring_windfield.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640905
+    m_Key: content.qinglan.skill.boss.tingfeng.obscuring_windfield.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640906
+    m_Key: content.qinglan.skill.boss.tingfeng.remnant_sword.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640907
+    m_Key: content.qinglan.skill.boss.tingfeng.remnant_sword.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640908
+    m_Key: content.qinglan.skill.boss.tingfeng.sword_qi.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640909
+    m_Key: content.qinglan.skill.boss.tingfeng.sword_qi.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640910
+    m_Key: content.qinglan.skill.boss.tingfeng.undying_oath.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640911
+    m_Key: content.qinglan.skill.boss.tingfeng.undying_oath.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640912
+    m_Key: content.qinglan.skill.boss.zhezhi.falling_wood_shadow.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640913
+    m_Key: content.qinglan.skill.boss.zhezhi.falling_wood_shadow.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640914
+    m_Key: content.qinglan.skill.boss.zhezhi.horizontal_trial.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640915
+    m_Key: content.qinglan.skill.boss.zhezhi.horizontal_trial.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640916
+    m_Key: content.qinglan.skill.boss.zhezhi.training_dummy.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640917
+    m_Key: content.qinglan.skill.boss.zhezhi.training_dummy.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640918
+    m_Key: content.qinglan.skill.elite.barrier_pulse.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640919
+    m_Key: content.qinglan.skill.elite.barrier_pulse.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640920
+    m_Key: content.qinglan.skill.elite.quaking_pulse.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640921
+    m_Key: content.qinglan.skill.elite.quaking_pulse.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640922
+    m_Key: content.qinglan.skill.enemy.explosive_seed_burst.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640923
+    m_Key: content.qinglan.skill.enemy.explosive_seed_burst.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640924
+    m_Key: content.qinglan.skill.enemy.grass_spirit_aura.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640925
+    m_Key: content.qinglan.skill.enemy.grass_spirit_aura.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640926
+    m_Key: content.qinglan.skill.enemy.paper_crane_dive.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640927
+    m_Key: content.qinglan.skill.enemy.paper_crane_dive.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640928
+    m_Key: content.qinglan.skill.enemy.stone_lantern_bolt.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640929
+    m_Key: content.qinglan.skill.enemy.stone_lantern_bolt.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640930
+    m_Key: content.qinglan.skill.enemy.wind_bell_support.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640931
+    m_Key: content.qinglan.skill.enemy.wind_bell_support.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640932
+    m_Key: content.qinglan.skill.enemy.wooden_puppet_attack.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640933
+    m_Key: content.qinglan.skill.enemy.wooden_puppet_attack.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640934
+    m_Key: content.qinglan.skill.enemy.wooden_puppet_heavy_slash.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640935
+    m_Key: content.qinglan.skill.enemy.wooden_puppet_heavy_slash.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640936
+    m_Key: content.qinglan.skill.evolved.chilu_hundred_craft_wheel.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640937
+    m_Key: content.qinglan.skill.evolved.chilu_hundred_craft_wheel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640938
+    m_Key: content.qinglan.skill.evolved.earth_vein_spring_branch.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640939
+    m_Key: content.qinglan.skill.evolved.earth_vein_spring_branch.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640940
+    m_Key: content.qinglan.skill.evolved.mirror_sea_tide_wheel.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640941
+    m_Key: content.qinglan.skill.evolved.mirror_sea_tide_wheel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640942
+    m_Key: content.qinglan.skill.evolved.mountain_boundary_seal.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640943
+    m_Key: content.qinglan.skill.evolved.mountain_boundary_seal.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640944
+    m_Key: content.qinglan.skill.evolved.qinglan_flowing_shadow_sword.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640945
+    m_Key: content.qinglan.skill.evolved.qinglan_flowing_shadow_sword.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640946
+    m_Key: content.qinglan.skill.evolved.taiyi_spirit_sealing_array.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640947
+    m_Key: content.qinglan.skill.evolved.taiyi_spirit_sealing_array.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640948
+    m_Key: content.qinglan.skill.hidden.flowing_shadow_wind_trail.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640949
+    m_Key: content.qinglan.skill.hidden.flowing_shadow_wind_trail.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640950
+    m_Key: content.qinglan.skill.hidden.lihuo_return_explosion.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640951
+    m_Key: content.qinglan.skill.hidden.lihuo_return_explosion.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640952
+    m_Key: content.qinglan.skill.hidden.lihuo_return_explosion.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640953
+    m_Key: content.qinglan.skill.hidden.lihuo_return_explosion.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640954
+    m_Key: content.qinglan.skill.hidden.lihuo_return_explosion.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640955
+    m_Key: content.qinglan.skill.hidden.lihuo_return_explosion.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640956
+    m_Key: content.qinglan.skill.hidden.lihuo_return_explosion.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640957
+    m_Key: content.qinglan.skill.hidden.lihuo_return_explosion.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640958
+    m_Key: content.qinglan.skill.hidden.lihuo_return_explosion.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640959
+    m_Key: content.qinglan.skill.hidden.riding_wind_blade.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640960
+    m_Key: content.qinglan.skill.hidden.riding_wind_blade.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640961
+    m_Key: content.qinglan.skill.hidden.riding_wind_blade.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640962
+    m_Key: content.qinglan.skill.hidden.riding_wind_blade.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640963
+    m_Key: content.qinglan.skill.hidden.riding_wind_blade.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640964
+    m_Key: content.qinglan.skill.hidden.riding_wind_blade.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640965
+    m_Key: content.qinglan.skill.hidden.riding_wind_blade.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640966
+    m_Key: content.qinglan.skill.hidden.riding_wind_blade.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640967
+    m_Key: content.qinglan.skill.hidden.riding_wind_blade.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640968
+    m_Key: content.qinglan.skill.hidden.talisman_detonation.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640969
+    m_Key: content.qinglan.skill.hidden.talisman_detonation.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640970
+    m_Key: content.qinglan.skill.hidden.talisman_detonation.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640971
+    m_Key: content.qinglan.skill.hidden.talisman_detonation.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640972
+    m_Key: content.qinglan.skill.hidden.talisman_detonation.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640973
+    m_Key: content.qinglan.skill.hidden.talisman_detonation.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640974
+    m_Key: content.qinglan.skill.hidden.talisman_detonation.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640975
+    m_Key: content.qinglan.skill.hidden.talisman_detonation.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640976
+    m_Key: content.qinglan.skill.hidden.talisman_detonation.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640977
+    m_Key: content.qinglan.skill.hidden.tide_falling.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640978
+    m_Key: content.qinglan.skill.hidden.tide_falling.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640979
+    m_Key: content.qinglan.skill.hidden.tide_falling.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640980
+    m_Key: content.qinglan.skill.hidden.tide_falling.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640981
+    m_Key: content.qinglan.skill.hidden.tide_falling.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640982
+    m_Key: content.qinglan.skill.hidden.tide_falling.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640983
+    m_Key: content.qinglan.skill.hidden.tide_falling.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640984
+    m_Key: content.qinglan.skill.hidden.tide_falling.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640985
+    m_Key: content.qinglan.skill.hidden.tide_falling.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640986
+    m_Key: content.qinglan.skill.hidden.tide_rising.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640987
+    m_Key: content.qinglan.skill.hidden.tide_rising.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640988
+    m_Key: content.qinglan.skill.hidden.tide_rising.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640989
+    m_Key: content.qinglan.skill.hidden.tide_rising.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640990
+    m_Key: content.qinglan.skill.hidden.tide_rising.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640991
+    m_Key: content.qinglan.skill.hidden.tide_rising.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640992
+    m_Key: content.qinglan.skill.hidden.tide_rising.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640993
+    m_Key: content.qinglan.skill.hidden.tide_rising.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640994
+    m_Key: content.qinglan.skill.hidden.tide_rising.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640995
+    m_Key: content.qinglan.skill.hidden.vine_growth.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640996
+    m_Key: content.qinglan.skill.hidden.vine_growth.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640997
+    m_Key: content.qinglan.skill.hidden.vine_growth.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640998
+    m_Key: content.qinglan.skill.hidden.vine_growth.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836640999
+    m_Key: content.qinglan.skill.hidden.vine_growth.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641000
+    m_Key: content.qinglan.skill.hidden.vine_growth.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641001
+    m_Key: content.qinglan.skill.hidden.vine_growth.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641002
+    m_Key: content.qinglan.skill.hidden.vine_growth.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641003
+    m_Key: content.qinglan.skill.hidden.vine_growth.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641004
+    m_Key: content.qinglan.skill.hidden.vine_propagation.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641005
+    m_Key: content.qinglan.skill.hidden.vine_propagation.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641006
+    m_Key: content.qinglan.skill.hidden.vine_propagation.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641007
+    m_Key: content.qinglan.skill.hidden.vine_propagation.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641008
+    m_Key: content.qinglan.skill.hidden.vine_propagation.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641009
+    m_Key: content.qinglan.skill.hidden.vine_propagation.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641010
+    m_Key: content.qinglan.skill.hidden.vine_propagation.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641011
+    m_Key: content.qinglan.skill.hidden.vine_propagation.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641012
+    m_Key: content.qinglan.skill.hidden.vine_propagation.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641013
+    m_Key: content.qinglan.skill.hidden.yufeng_return.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641014
+    m_Key: content.qinglan.skill.hidden.yufeng_return.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641015
+    m_Key: content.qinglan.skill.hidden.zhenyue_countershock.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641016
+    m_Key: content.qinglan.skill.hidden.zhenyue_countershock.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641017
+    m_Key: content.qinglan.skill.hidden.zhenyue_countershock.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641018
+    m_Key: content.qinglan.skill.hidden.zhenyue_countershock.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641019
+    m_Key: content.qinglan.skill.hidden.zhenyue_countershock.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641020
+    m_Key: content.qinglan.skill.hidden.zhenyue_countershock.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641021
+    m_Key: content.qinglan.skill.hidden.zhenyue_countershock.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641022
+    m_Key: content.qinglan.skill.hidden.zhenyue_countershock.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641023
+    m_Key: content.qinglan.skill.hidden.zhenyue_countershock.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641024
+    m_Key: content.qinglan.skill.hidden.zhenyue_guard_domain.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641025
+    m_Key: content.qinglan.skill.hidden.zhenyue_guard_domain.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641026
+    m_Key: content.qinglan.skill.hidden.zhenyue_guard_domain.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641027
+    m_Key: content.qinglan.skill.hidden.zhenyue_guard_domain.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641028
+    m_Key: content.qinglan.skill.hidden.zhenyue_guard_domain.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641029
+    m_Key: content.qinglan.skill.hidden.zhenyue_guard_domain.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641030
+    m_Key: content.qinglan.skill.hidden.zhenyue_guard_domain.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641031
+    m_Key: content.qinglan.skill.hidden.zhenyue_guard_domain.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641032
+    m_Key: content.qinglan.skill.hidden.zhenyue_guard_domain.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641033
+    m_Key: content.qinglan.skill.relic.broken_sword_echo.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641034
+    m_Key: content.qinglan.skill.relic.broken_sword_echo.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641035
+    m_Key: content.qinglan.skill.relic.listening_wind_echo.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641036
+    m_Key: content.qinglan.skill.relic.listening_wind_echo.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641037
+    m_Key: content.qinglan.skill.relic.old_court_bell_pulse.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641038
+    m_Key: content.qinglan.skill.relic.old_court_bell_pulse.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641039
+    m_Key: content.qinglan.skill.weapon.lihuo_wheel.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641040
+    m_Key: content.qinglan.skill.weapon.lihuo_wheel.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641041
+    m_Key: content.qinglan.skill.weapon.lihuo_wheel.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641042
+    m_Key: content.qinglan.skill.weapon.lihuo_wheel.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641043
+    m_Key: content.qinglan.skill.weapon.lihuo_wheel.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641044
+    m_Key: content.qinglan.skill.weapon.lihuo_wheel.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641045
+    m_Key: content.qinglan.skill.weapon.lihuo_wheel.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641046
+    m_Key: content.qinglan.skill.weapon.lihuo_wheel.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641047
+    m_Key: content.qinglan.skill.weapon.lihuo_wheel.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641048
+    m_Key: content.qinglan.skill.weapon.spirit_vine_seed.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641049
+    m_Key: content.qinglan.skill.weapon.spirit_vine_seed.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641050
+    m_Key: content.qinglan.skill.weapon.spirit_vine_seed.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641051
+    m_Key: content.qinglan.skill.weapon.spirit_vine_seed.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641052
+    m_Key: content.qinglan.skill.weapon.spirit_vine_seed.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641053
+    m_Key: content.qinglan.skill.weapon.spirit_vine_seed.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641054
+    m_Key: content.qinglan.skill.weapon.spirit_vine_seed.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641055
+    m_Key: content.qinglan.skill.weapon.spirit_vine_seed.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641056
+    m_Key: content.qinglan.skill.weapon.spirit_vine_seed.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641057
+    m_Key: content.qinglan.skill.weapon.tide_orb.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641058
+    m_Key: content.qinglan.skill.weapon.tide_orb.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641059
+    m_Key: content.qinglan.skill.weapon.tide_orb.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641060
+    m_Key: content.qinglan.skill.weapon.tide_orb.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641061
+    m_Key: content.qinglan.skill.weapon.tide_orb.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641062
+    m_Key: content.qinglan.skill.weapon.tide_orb.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641063
+    m_Key: content.qinglan.skill.weapon.tide_orb.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641064
+    m_Key: content.qinglan.skill.weapon.tide_orb.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641065
+    m_Key: content.qinglan.skill.weapon.tide_orb.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641066
+    m_Key: content.qinglan.skill.weapon.yellow_talisman.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641067
+    m_Key: content.qinglan.skill.weapon.yellow_talisman.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641068
+    m_Key: content.qinglan.skill.weapon.yellow_talisman.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641069
+    m_Key: content.qinglan.skill.weapon.yellow_talisman.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641070
+    m_Key: content.qinglan.skill.weapon.yellow_talisman.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641071
+    m_Key: content.qinglan.skill.weapon.yellow_talisman.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641072
+    m_Key: content.qinglan.skill.weapon.yellow_talisman.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641073
+    m_Key: content.qinglan.skill.weapon.yellow_talisman.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641074
+    m_Key: content.qinglan.skill.weapon.yellow_talisman.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641075
+    m_Key: content.qinglan.skill.weapon.yufeng_sword.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641076
+    m_Key: content.qinglan.skill.weapon.yufeng_sword.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641077
+    m_Key: content.qinglan.skill.weapon.yufeng_sword.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641078
+    m_Key: content.qinglan.skill.weapon.yufeng_sword.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641079
+    m_Key: content.qinglan.skill.weapon.yufeng_sword.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641080
+    m_Key: content.qinglan.skill.weapon.yufeng_sword.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641081
+    m_Key: content.qinglan.skill.weapon.yufeng_sword.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641082
+    m_Key: content.qinglan.skill.weapon.yufeng_sword.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641083
+    m_Key: content.qinglan.skill.weapon.yufeng_sword.level.8.change.8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641084
+    m_Key: content.qinglan.skill.weapon.yufeng_sword.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641085
+    m_Key: content.qinglan.skill.weapon.zhenyue_seal.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641086
+    m_Key: content.qinglan.skill.weapon.zhenyue_seal.level.2.change.1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641087
+    m_Key: content.qinglan.skill.weapon.zhenyue_seal.level.3.change.2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641088
+    m_Key: content.qinglan.skill.weapon.zhenyue_seal.level.4.change.3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641089
+    m_Key: content.qinglan.skill.weapon.zhenyue_seal.level.5.change.4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641090
+    m_Key: content.qinglan.skill.weapon.zhenyue_seal.level.6.change.5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641091
+    m_Key: content.qinglan.skill.weapon.zhenyue_seal.level.7.change.6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641092
+    m_Key: content.qinglan.skill.weapon.zhenyue_seal.level.8.change.7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641093
+    m_Key: content.qinglan.skill.weapon.zhenyue_seal.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641094
+    m_Key: content.qinglan.status.armor_broken.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641095
+    m_Key: content.qinglan.status.armor_broken.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641096
+    m_Key: content.qinglan.status.burning.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641097
+    m_Key: content.qinglan.status.burning.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641098
+    m_Key: content.qinglan.status.damage_immunity.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641099
+    m_Key: content.qinglan.status.damage_immunity.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641100
+    m_Key: content.qinglan.status.elite.barrier_ward.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641101
+    m_Key: content.qinglan.status.elite.barrier_ward.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641102
+    m_Key: content.qinglan.status.enemy.puppet_brace.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641103
+    m_Key: content.qinglan.status.enemy.puppet_brace.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641104
+    m_Key: content.qinglan.status.enemy.wind_bell_ward.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641105
+    m_Key: content.qinglan.status.enemy.wind_bell_ward.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641106
+    m_Key: content.qinglan.status.marked.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641107
+    m_Key: content.qinglan.status.marked.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641108
+    m_Key: content.qinglan.status.pickup.riding_wind_feather.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641109
+    m_Key: content.qinglan.status.pickup.riding_wind_feather.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641110
+    m_Key: content.qinglan.status.poisoned.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641111
+    m_Key: content.qinglan.status.poisoned.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641112
+    m_Key: content.qinglan.status.rooted.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641113
+    m_Key: content.qinglan.status.rooted.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641114
+    m_Key: content.qinglan.status.slowed.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641115
+    m_Key: content.qinglan.status.slowed.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641116
+    m_Key: content.qinglan.story.lu_qingye.hearing_sword.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641117
+    m_Key: content.qinglan.story.lu_qingye.hearing_sword.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641118
+    m_Key: content.qinglan.story.lu_qingye.old_sword_and_gourd.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641119
+    m_Key: content.qinglan.story.lu_qingye.old_sword_and_gourd.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641120
+    m_Key: content.qinglan.story.lu_qingye.refusing_inheritance.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641121
+    m_Key: content.qinglan.story.lu_qingye.refusing_inheritance.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641122
+    m_Key: content.qinglan.synergy.living_garden.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641123
+    m_Key: content.qinglan.synergy.living_garden.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641124
+    m_Key: content.qinglan.synergy.moving_sword_path.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641125
+    m_Key: content.qinglan.synergy.moving_sword_path.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641126
+    m_Key: content.qinglan.synergy.talisman_detonation.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641127
+    m_Key: content.qinglan.synergy.talisman_detonation.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641128
+    m_Key: content.qinglan.trait.elite.rampaging.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641129
+    m_Key: content.qinglan.trait.elite.rampaging.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641130
+    m_Key: content.qinglan.trait.lu_qingye.riding_wind.breeze.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641131
+    m_Key: content.qinglan.trait.lu_qingye.riding_wind.breeze.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641132
+    m_Key: content.qinglan.trait.lu_qingye.riding_wind.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641133
+    m_Key: content.qinglan.trait.lu_qingye.riding_wind.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641134
+    m_Key: content.qinglan.trait.lu_qingye.riding_wind.swift.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641135
+    m_Key: content.qinglan.trait.lu_qingye.riding_wind.swift.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641136
+    m_Key: content.qinglan.trait.meta.insert.herb_garden_spring_clasp.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641137
+    m_Key: content.qinglan.trait.meta.insert.herb_garden_spring_clasp.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641138
+    m_Key: content.qinglan.trait.meta.insert.old_court_vein_needle.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641139
+    m_Key: content.qinglan.trait.meta.insert.old_court_vein_needle.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641140
+    m_Key: content.qinglan.trait.meta.insert.qinglan_wind_pattern.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641141
+    m_Key: content.qinglan.trait.meta.insert.qinglan_wind_pattern.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641142
+    m_Key: content.qinglan.trait.meta.lu_qingye.innate.01.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641143
+    m_Key: content.qinglan.trait.meta.lu_qingye.innate.01.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641144
+    m_Key: content.qinglan.trait.meta.lu_qingye.innate.02.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641145
+    m_Key: content.qinglan.trait.meta.lu_qingye.innate.02.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641146
+    m_Key: content.qinglan.trait.meta.lu_qingye.innate.03.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641147
+    m_Key: content.qinglan.trait.meta.lu_qingye.innate.03.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641148
+    m_Key: content.qinglan.trait.meta.lu_qingye.innate.04.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641149
+    m_Key: content.qinglan.trait.meta.lu_qingye.innate.04.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641150
+    m_Key: content.qinglan.trait.meta.lu_qingye.mind.01.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641151
+    m_Key: content.qinglan.trait.meta.lu_qingye.mind.01.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641152
+    m_Key: content.qinglan.trait.meta.lu_qingye.mind.02.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641153
+    m_Key: content.qinglan.trait.meta.lu_qingye.mind.02.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641154
+    m_Key: content.qinglan.trait.meta.lu_qingye.mind.03.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641155
+    m_Key: content.qinglan.trait.meta.lu_qingye.mind.03.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641156
+    m_Key: content.qinglan.trait.meta.lu_qingye.mind.04.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641157
+    m_Key: content.qinglan.trait.meta.lu_qingye.mind.04.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641158
+    m_Key: content.qinglan.trait.meta.lu_qingye.movement.01.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641159
+    m_Key: content.qinglan.trait.meta.lu_qingye.movement.01.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641160
+    m_Key: content.qinglan.trait.meta.lu_qingye.movement.02.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641161
+    m_Key: content.qinglan.trait.meta.lu_qingye.movement.02.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641162
+    m_Key: content.qinglan.trait.meta.lu_qingye.movement.03.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641163
+    m_Key: content.qinglan.trait.meta.lu_qingye.movement.03.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641164
+    m_Key: content.qinglan.trait.meta.lu_qingye.movement.04.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641165
+    m_Key: content.qinglan.trait.meta.lu_qingye.movement.04.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641166
+    m_Key: content.qinglan.trait.relic.blank_sword_trial_token.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641167
+    m_Key: content.qinglan.trait.relic.blank_sword_trial_token.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641168
+    m_Key: content.qinglan.trait.relic.herb_garden_seed_pod.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641169
+    m_Key: content.qinglan.trait.relic.herb_garden_seed_pod.name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641170
+    m_Key: content.qinglan.trait.relic.wind_vein_copper.description
+    m_Metadata:
+      m_Items: []
+  - m_Id: 836641171
+    m_Key: content.qinglan.trait.relic.wind_vein_copper.name
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8426469325364264960
+  references:
+    version: 2
+    RefIds:
+    - rid: 8426469325364264960
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1786320324569

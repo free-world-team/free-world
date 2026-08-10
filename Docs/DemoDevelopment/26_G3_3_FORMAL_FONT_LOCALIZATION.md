@@ -13,7 +13,7 @@ Localization 正式内容链路，覆盖简体中文、英文和伪本地化，�
 | 1 | FONT-001 | Noto Sans CJK SC Regular / Bold 两个 TMP Font Asset | PASS（5/5 EditMode + Project Validation） |
 | 2 | FONT-002 | Noto Serif CJK SC SemiBold TMP Font Asset | PASS（3/3 EditMode + Project Validation） |
 | 3 | LOC-UI-001 | `UI` 集合不少于 180 个 Key | PASS（191 Key，5/5 聚焦 + 22/22 回归） |
-| 4 | LOC-CONTENT-001 | `QinglanContent` 集合不少于 296 个 Key | 待实现 |
+| 4 | LOC-CONTENT-001 | `QinglanContent` 集合不少于 296 个 Key | PASS（492 Key，4/4 聚焦 + 5/5 UI 回归 + Project Validation） |
 | 5 | LOC-NARRATIVE-001 | `QinglanNarrative` 集合不少于 120 个 Key | 待实现 |
 | 6 | G3.3 集成 | TMP 运行时、三 Locale、伪本地化、字形与布局门禁 | 待实现 |
 
@@ -48,3 +48,18 @@ Localization 正式内容链路，覆盖简体中文、英文和伪本地化，�
   Encapsulator 从正式英文自动生成。
 - 正式 Shared Data、en、zh-Hans 三个运行时资产进入 `QinglanDemo-Localization`，保留 Locale/Preload
   标签，并增加 `pack.qinglan_demo`、`release`、`localization.release`。
+
+## 6. LOC-CONTENT-001 设计
+
+- `QinglanContent` 的清单边界直接取自当前 `QinglanDemoContentPack.baked.json`：193 个内容定义的
+  193 个名称 Key、193 个说明 Key，以及 106 条技能 LevelPatch 的玩家可见变更 Key，共 492 Key。
+- 名称遵守青岚统一术语表；说明按角色、术式、状态、敌人、地图、局内奖励、局外成长与藏录等
+  25 种内容 Kind 编写，禁止原始 Key 回显、`Unavailable` 和任何占位前缀。
+- 等级变更 Key 使用稳定格式
+  `content.<id>.level.<level>.change.<catalog-patch-index>`，把伤害/效果、冷却、作用范围、目标数和
+  生效数量转换为可读的双语升级说明。
+- 生成器锁定目录定义数 193、名称/说明数 386、LevelPatch 数 106；目录变化会先使构建与测试失败，
+  要求显式补齐术语和文案后再更新基线，防止新内容静默漏译。
+- Shared Data、en、zh-Hans 三个正式资产进入 `QinglanDemo-Localization`，地址为
+  `QinglanContent_en`、`QinglanContent_zh-Hans` 及稳定 Shared Data 地址，并带
+  `pack.qinglan_demo`、`release`、`localization.release` 标签；Pseudo 继续从英文动态生成。

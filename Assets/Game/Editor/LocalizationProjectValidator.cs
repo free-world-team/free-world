@@ -49,6 +49,36 @@ namespace Game.Editor
                 ValidateEntry(chinese, sharedEntries[index].Key, "zh-Hans", report);
             }
 
+            var contentCollection = LocalizationEditorSettings.GetStringTableCollection("QinglanContent");
+            if (contentCollection == null)
+            {
+                report.Add("G33-LOC-CONTENT-TABLE", "The formal QinglanContent string table collection is missing.");
+            }
+            else
+            {
+                var contentEnglish = contentCollection.GetTable(englishLocale.Identifier) as StringTable;
+                var contentChinese = contentCollection.GetTable(chineseLocale.Identifier) as StringTable;
+                if (contentEnglish == null)
+                    report.Add("G33-LOC-CONTENT-EN", "The English QinglanContent table is missing.");
+                if (contentChinese == null)
+                    report.Add("G33-LOC-CONTENT-ZH-HANS", "The Simplified Chinese QinglanContent table is missing.");
+                if (contentCollection.SharedData.Entries.Count < QinglanG33ContentLocalizationSource.MinimumCount)
+                    report.Add(
+                        "G33-LOC-CONTENT-COUNT",
+                        "The formal content collection requires at least " +
+                        QinglanG33ContentLocalizationSource.MinimumCount + " keys but found " +
+                        contentCollection.SharedData.Entries.Count + ".");
+                if (contentEnglish != null && contentChinese != null)
+                {
+                    var contentEntries = contentCollection.SharedData.Entries;
+                    for (var index = 0; index < contentEntries.Count; index++)
+                    {
+                        ValidateEntry(contentEnglish, contentEntries[index].Key, "en", report);
+                        ValidateEntry(contentChinese, contentEntries[index].Key, "zh-Hans", report);
+                    }
+                }
+            }
+
             if (pseudoFound)
             {
                 var pseudo = LocalizationEditorSettings.GetPseudoLocales()[0];
@@ -75,10 +105,13 @@ namespace Game.Editor
         {
             var entry = table.GetEntry(key);
             if (entry == null || string.IsNullOrWhiteSpace(entry.Value))
-                report.Add("M8-LOCALIZATION-KEY", locale + " is missing non-empty UI entry '" + key + "'.");
+                report.Add("M8-LOCALIZATION-KEY", locale + " is missing non-empty localized entry '" + key + "'.");
             else if (entry.Value.IndexOf("[Placeholder]", StringComparison.OrdinalIgnoreCase) >= 0 ||
-                     entry.Value.IndexOf("[占位]", StringComparison.Ordinal) >= 0)
-                report.Add("G33-LOC-PLACEHOLDER", locale + " contains placeholder UI entry '" + key + "'.");
+                     entry.Value.IndexOf("[占位]", StringComparison.Ordinal) >= 0 ||
+                     (key.StartsWith("content.", StringComparison.Ordinal) &&
+                      entry.Value.IndexOf("Unavailable", StringComparison.OrdinalIgnoreCase) >= 0) ||
+                     string.Equals(entry.Value, key, StringComparison.Ordinal))
+                report.Add("G33-LOC-PLACEHOLDER", locale + " contains unfinished localized entry '" + key + "'.");
         }
     }
 }

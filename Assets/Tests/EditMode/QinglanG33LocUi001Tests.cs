@@ -70,21 +70,23 @@ namespace Game.Tests.EditMode
             Assert.That(settings, Is.Not.Null);
             var group = settings.FindGroup(AssetProvenanceValidator.QinglanLocalizationGroup);
             Assert.That(group, Is.Not.Null);
-            var releaseCount = 0;
+            var uiReleaseCount = 0;
             var enFound = false;
             var zhFound = false;
             foreach (var entry in group.entries)
             {
                 if (!entry.labels.Contains(AssetProvenanceValidator.LocalizationReleaseLabel)) continue;
-                releaseCount++;
                 Assert.That(entry.labels, Does.Contain(AssetProvenanceValidator.ReleaseLabel));
                 Assert.That(entry.labels, Does.Contain(AssetProvenanceValidator.QinglanPackLabel));
+                var path = AssetDatabase.GUIDToAssetPath(entry.guid);
+                if (!path.StartsWith(QinglanG33LocalizationIntegration.UiTablesRoot, StringComparison.Ordinal))
+                    continue;
+                uiReleaseCount++;
                 if (entry.address == "UI_en") enFound = true;
                 if (entry.address == "UI_zh-Hans") zhFound = true;
-                var path = AssetDatabase.GUIDToAssetPath(entry.guid);
                 StringAssert.StartsWith(QinglanG33LocalizationIntegration.UiTablesRoot, path);
             }
-            Assert.That(releaseCount, Is.EqualTo(3));
+            Assert.That(uiReleaseCount, Is.EqualTo(3));
             Assert.That(enFound, Is.True);
             Assert.That(zhFound, Is.True);
         }

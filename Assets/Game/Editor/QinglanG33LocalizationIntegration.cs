@@ -22,6 +22,8 @@ namespace Game.Editor
         public const string LocalizationRoot = "Assets/GameContent/QinglanDemo/Localization";
         public const string UiBatchRoot = LocalizationRoot + "/LOC-UI-001";
         public const string UiTablesRoot = UiBatchRoot + "/Tables";
+        public const string ContentBatchRoot = LocalizationRoot + "/LOC-CONTENT-001";
+        public const string ContentTablesRoot = ContentBatchRoot + "/Tables";
         public const string LegacyUiCollection = "M8LegacyUI";
 
         public static void RunUi()
@@ -31,6 +33,22 @@ namespace Game.Editor
             {
                 var collection = BuildUi();
                 Debug.Log("[Qinglan G3.3 LOC-UI-001] PASS: keys=" + collection.SharedData.Entries.Count + ".");
+            }
+            catch (Exception exception)
+            {
+                Debug.LogException(exception);
+                exitCode = 1;
+            }
+            EditorApplication.Exit(exitCode);
+        }
+
+        public static void RunContent()
+        {
+            var exitCode = 0;
+            try
+            {
+                var collection = BuildContent();
+                Debug.Log("[Qinglan G3.3 LOC-CONTENT-001] PASS: keys=" + collection.SharedData.Entries.Count + ".");
             }
             catch (Exception exception)
             {
@@ -93,15 +111,57 @@ namespace Game.Editor
 
             WriteProvenance(formal, english, chinese);
             AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
-            RegisterReleaseAssets(formal, english, chinese);
+            RegisterReleaseAssets(formal, english, chinese, "UI");
             AssetDatabase.SaveAssets();
             return formal;
+        }
+
+        public static StringTableCollection BuildContent()
+        {
+            var englishLocale = FindLocale("en");
+            var chineseLocale = FindLocale("zh-Hans");
+            if (englishLocale == null || chineseLocale == null)
+                throw new InvalidOperationException("The en and zh-Hans locales must exist before LOC-CONTENT-001.");
+
+            var source = QinglanG33ContentLocalizationSource.Build();
+            Directory.CreateDirectory(ContentTablesRoot);
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+            var collection = LocalizationEditorSettings.GetStringTableCollection("QinglanContent") ??
+                             LocalizationEditorSettings.CreateStringTableCollection(
+                                 "QinglanContent",
+                                 ContentTablesRoot,
+                                 new List<Locale> { englishLocale, chineseLocale });
+            var english = collection.GetTable(englishLocale.Identifier) as StringTable ??
+                          collection.AddNewTable(englishLocale.Identifier) as StringTable;
+            var chinese = collection.GetTable(chineseLocale.Identifier) as StringTable ??
+                          collection.AddNewTable(chineseLocale.Identifier) as StringTable;
+            if (english == null || chinese == null)
+                throw new InvalidOperationException("Formal content tables could not be created.");
+            if (collection.SharedData.Entries.Count > source.Count)
+                throw new InvalidOperationException("Formal content collection contains unreviewed extra keys.");
+
+            for (var index = 0; index < source.Count; index++)
+            {
+                SetEntry(english, source[index].Key, source[index].English);
+                SetEntry(chinese, source[index].Key, source[index].Chinese);
+            }
+            EditorUtility.SetDirty(english);
+            EditorUtility.SetDirty(chinese);
+            EditorUtility.SetDirty(collection.SharedData);
+            AssetDatabase.SaveAssets();
+
+            WriteContentProvenance(collection, english, chinese);
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+            RegisterReleaseAssets(collection, english, chinese, "QinglanContent");
+            AssetDatabase.SaveAssets();
+            return collection;
         }
 
         private static void RegisterReleaseAssets(
             StringTableCollection collection,
             StringTable english,
-            StringTable chinese)
+            StringTable chinese,
+            string tableName)
         {
             var settings = AddressableAssetSettingsDefaultObject.GetSettings(true);
             if (settings == null) throw new InvalidOperationException("Addressables settings are unavailable.");
@@ -126,8 +186,8 @@ namespace Game.Editor
             }
 
             Register(settings, group, AssetDatabase.GetAssetPath(collection.SharedData), null);
-            Register(settings, group, AssetDatabase.GetAssetPath(english), "UI_en");
-            Register(settings, group, AssetDatabase.GetAssetPath(chinese), "UI_zh-Hans");
+            Register(settings, group, AssetDatabase.GetAssetPath(english), tableName + "_en");
+            Register(settings, group, AssetDatabase.GetAssetPath(chinese), tableName + "_zh-Hans");
         }
 
         private static void Register(
@@ -224,6 +284,65 @@ namespace Game.Editor
                 .Replace("__CHINESE_FILE__", Path.GetFileName(chinesePath))
                 .Replace("__CHINESE_HASH__", ComputeHash(chinesePath));
             File.WriteAllText(UiBatchRoot + "/provenance.json", json, new UTF8Encoding(false));
+        }
+
+        private static void WriteContentProvenance(
+            StringTableCollection collection,
+            StringTable english,
+            StringTable chinese)
+        {
+            var collectionPath = AssetDatabase.GetAssetPath(collection);
+            var sharedPath = AssetDatabase.GetAssetPath(collection.SharedData);
+            var englishPath = AssetDatabase.GetAssetPath(english);
+            var chinesePath = AssetDatabase.GetAssetPath(chinese);
+            var sourcePath = "Assets/Game/Editor/QinglanG33ContentLocalizationSource.cs";
+            var template = @"{
+  ""schemaVersion"": 2,
+  ""assetId"": ""LOC-CONTENT-001"",
+  ""owner"": ""Qinglan Demo Localization Owner"",
+  ""relativePaths"": [""__COLLECTION_PATH__"", ""__SHARED_PATH__"", ""__ENGLISH_PATH__"", ""__CHINESE_PATH__""],
+  ""sourceCategory"": ""first-party-writing-and-translation"",
+  ""tool"": ""Unity Localization 1.5.8 and QinglanG33LocalizationIntegration"",
+  ""modelVersion"": ""human-reviewed LOC-CONTENT-001 bilingual source"",
+  ""generatedOrAcquiredAt"": ""2026-08-10"",
+  ""operatorName"": ""Codex"",
+  ""promptFile"": ""Docs/DemoDevelopment/26_G3_3_FORMAL_FONT_LOCALIZATION.md"",
+  ""seed"": ""not-applicable"",
+  ""referenceInputs"": [""Assets/GameAssets/Placeholder/QinglanDemo/QinglanDemoContentPack.baked.json""],
+  ""referenceRightsConfirmed"": true,
+  ""humanEdits"": [""Authored bilingual names and descriptions for every baked Qinglan Demo content definition"", ""Added player-facing level-change text for every baked skill patch"", ""Applied one governed Qinglan terminology lexicon across both locales""],
+  ""sourceSha256"": {""QinglanG33ContentLocalizationSource.cs"": ""__SOURCE_HASH__""},
+  ""outputSha256"": {""__COLLECTION_FILE__"": ""__COLLECTION_HASH__"", ""__SHARED_FILE__"": ""__SHARED_HASH__"", ""__ENGLISH_FILE__"": ""__ENGLISH_HASH__"", ""__CHINESE_FILE__"": ""__CHINESE_HASH__""},
+  ""licenseOrTermsUrl"": ""repository://AGENTS.md"",
+  ""licenseOrTermsSnapshot"": ""Docs/AssetTerms/2026-08-09-first-party-procedural-rights-review.md"",
+  ""termsReviewedAt"": ""2026-08-10"",
+  ""allowedPlatforms"": [""Windows x64"", ""Steam""],
+  ""allowedUses"": [""commercial game runtime"", ""store and marketing screenshots"", ""internal development and testing""],
+  ""commercialUseReviewed"": true,
+  ""steamDisclosureCategory"": ""first-party writing and translation; no generative AI"",
+  ""technicalReviewer"": ""Codex"",
+  ""creativeReviewer"": ""Codex"",
+  ""rightsReviewer"": ""Codex"",
+  ""reviewedAt"": ""2026-08-10"",
+  ""status"": ""approved-for-release"",
+  ""notes"": ""Pseudo locale is generated from the formal English table and is not a separately authored table.""
+}
+";
+            var json = template
+                .Replace("__COLLECTION_PATH__", collectionPath)
+                .Replace("__SHARED_PATH__", sharedPath)
+                .Replace("__ENGLISH_PATH__", englishPath)
+                .Replace("__CHINESE_PATH__", chinesePath)
+                .Replace("__SOURCE_HASH__", ComputeHash(sourcePath))
+                .Replace("__COLLECTION_FILE__", Path.GetFileName(collectionPath))
+                .Replace("__COLLECTION_HASH__", ComputeHash(collectionPath))
+                .Replace("__SHARED_FILE__", Path.GetFileName(sharedPath))
+                .Replace("__SHARED_HASH__", ComputeHash(sharedPath))
+                .Replace("__ENGLISH_FILE__", Path.GetFileName(englishPath))
+                .Replace("__ENGLISH_HASH__", ComputeHash(englishPath))
+                .Replace("__CHINESE_FILE__", Path.GetFileName(chinesePath))
+                .Replace("__CHINESE_HASH__", ComputeHash(chinesePath));
+            File.WriteAllText(ContentBatchRoot + "/provenance.json", json, new UTF8Encoding(false));
         }
 
         private static Locale FindLocale(string code)
