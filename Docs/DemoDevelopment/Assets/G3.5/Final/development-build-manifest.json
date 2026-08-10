@@ -1,0 +1,100 @@
+{
+    "schemaVersion": 1,
+    "productName": "AzureSword",
+    "gameVersion": "1.0",
+    "buildNumber": 1,
+    "buildConfiguration": "WindowsDevelopment",
+    "targetPlatform": "Windows x64",
+    "unityVersion": "6000.3.20f1",
+    "buildTarget": "StandaloneWindows64",
+    "development": true,
+    "executable": "E:/ai/free-world/Builds/WindowsDevelopment/AzureSword.exe",
+    "result": "Succeeded",
+    "git": {
+        "commit": "bec1c4378af89004eb716d16a5f84990c9817287",
+        "branch": "codex/qinglan-demo-implementation",
+        "tag": "",
+        "workingTreeClean": true
+    },
+    "builtAtUtc": "2026-08-10T05:33:12.2748585Z",
+    "generatedAtUtc": "2026-08-10T05:33:12.2758570Z",
+    "contentSchemaVersion": 6,
+    "saveSchemaVersion": 3,
+    "settingsSaveSchemaVersion": 3,
+    "profileSaveSchemaVersion": 3,
+    "runRecoverySaveSchemaVersion": 2,
+    "contentPacks": [
+        {
+            "packId": "test.pack.m9_tools",
+            "version": "0.1.0",
+            "contentHash": "2ad333de041bcb6cca2e47c3a6899dd11157dd8400122c7335ca81fcead8c527",
+            "catalogHash": "69a30bbd20ad06a080173bcd092e0b234df342917d6017a8a06a80c0b5015f4f",
+            "includedInPlayer": true,
+            "placeholder": true
+        },
+        {
+            "packId": "qinglan.pack.demo",
+            "version": "0.10.0",
+            "contentHash": "8900fedffde84c2d014c260d50bff1833a1a98f378a4b22ac08ea4a3ec40d21f",
+            "catalogHash": "d8d5defa8b449a4addc01be0a393f874c2be7b768e695ada578bf7bb92165554",
+            "includedInPlayer": true,
+            "placeholder": true
+        },
+        {
+            "packId": "test.pack.m6_build",
+            "version": "0.1.0",
+            "contentHash": "2498f729967afbfb3bc60faeb75f6544e4199941ca54595917a3c103178a88bd",
+            "catalogHash": "a345d59461edae772129a3f6610feffc0b59dc0739876d281a4c88584f89af98",
+            "includedInPlayer": true,
+            "placeholder": true
+        },
+        {
+            "packId": "test.pack.m1",
+            "version": "0.1.0",
+            "contentHash": "533691a7aa7017568acd1f965c7d320cda755ee90d129d93c6c59a7ea67e3509",
+            "catalogHash": "4907add75d3e1551083b345015ea7c6e71b1a4292111c54919349c3822375997",
+            "includedInPlayer": true,
+            "placeholder": true
+        },
+        {
+            "packId": "test.pack.m5_enemy_map",
+            "version": "0.1.0",
+            "contentHash": "0ef85a6b7ea57ad0e208d6b2a3c95661e4129d9423f300d4f87030c92b69ec65",
+            "catalogHash": "b20cdcf15dfc37cbbbd890545414634ad21991fc8842ce045eab28ccb881627a",
+            "includedInPlayer": true,
+            "placeholder": true
+        },
+        {
+            "packId": "test.pack.m4_skills",
+            "version": "0.1.0",
+            "contentHash": "546484b9f3da78212cfd842b6ed26a76d18cf3b70724a75ab275820b525a1385",
+            "catalogHash": "4713290559e1b645ddfb8f97faac69a38bcb3db61ab0b95afb69c2b868dd5321",
+            "includedInPlayer": true,
+            "placeholder": true
+        },
+        {
+            "packId": "test.pack.m3_status",
+            "version": "0.1.0",
+            "contentHash": "42073ed8bf84f09fdbf91a7d140ceca06b4420e1660926b2dcf1d9c06b657b5b",
+            "catalogHash": "334b95ae927f6a770a0cb99a1611eba94722b281ede618ecce9c83ebbc7e3995",
+            "includedInPlayer": true,
+            "placeholder": true
+        }
+    ],
+    "packagesLockSha256": "c2e4022b01159e4bcc603dfcb9a1c649b629da093155ff40f8ab44be190ca9de",
+    "addressablesBuildHash": "ae5d50e9633671d3f83a9760f37827d7d6d09f9fe72845b6460e213813c6f3b8",
+    "placeholderCount": 210,
+    "unapprovedAssetCount": 0,
+    "tests": {
+        "editMode": "not_run",
+        "playMode": "not_run",
+        "contentValidation": "not_run",
+        "soak": "not_run"
+    },
+    "artifacts": [
+        {
+            "path": "E:/ai/free-world/Builds/WindowsDevelopment/AzureSword.exe",
+            "sha256": "5d7eeb5359c2e35e4eb1f6a5844b25c3d7556795bd2f15ec234a2011406bc9c6"
+        }
+    ]
+}

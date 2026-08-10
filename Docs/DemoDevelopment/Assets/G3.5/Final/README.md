@@ -15,3 +15,15 @@
 - 决策：该项是非发布门禁的容量观察，正式 1,200 Enemy Target 已 PASS；不修改冻结玩法，不引入 Jobs/Burst。
 
 机器可读原始报告：`extension-player.json`。
+
+## 最终回归
+
+- G3.5 聚焦 EditMode：`PASS` 5/5
+- 全量 EditMode：`PASS` 456/456
+- 全量 PlayMode：`PASS` 20/20
+- Project Validation：`PASS`
+- Windows x64 Development Build：`PASS`
+- Development Player 生命周期 Smoke：`PASS`
+
+构建 Manifest 见 `development-build-manifest.json`，Player 结果见 `player-smoke.json`，所有结果 Hash 与汇总见
+`verification-summary.json`。

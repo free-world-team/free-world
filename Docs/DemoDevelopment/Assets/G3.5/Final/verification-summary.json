@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "milestone": "G3.5",
+  "generatedAtUtc": "2026-08-10T05:34:00Z",
+  "branch": "codex/qinglan-demo-implementation",
+  "candidateCommit": "bec1c4378af89004eb716d16a5f84990c9817287",
+  "status": "PASS",
+  "checks": {
+    "focusedEditMode": { "status": "PASS", "passed": 5, "failed": 0 },
+    "fullEditMode": {
+      "status": "PASS",
+      "passed": 456,
+      "failed": 0,
+      "skipped": 0,
+      "sha256": "6B21D41BE1AD7F3B584112FFDC89CC07E2A3092D60DBD1AE93BE89FCFC61FB8E"
+    },
+    "fullPlayMode": {
+      "status": "PASS",
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0,
+      "sha256": "F2C9BC1486FCBFA0E80FA9962A910B87427FBA8163D6102029F5CF4E067A02DB"
+    },
+    "projectValidation": {
+      "status": "PASS",
+      "marker": "[Project Validation] PASS",
+      "sha256": "857CC6AD0607D421CCD7A42015C664C810C5EB77C65B35F68C457CAFD1362302"
+    },
+    "developmentBuild": {
+      "status": "PASS",
+      "marker": "[M0 Build] PASS",
+      "executableSha256": "5D7EEB5359C2E35E4EB1F6A5844B25C3D7556795BD2F15EC234A2011406BC9C6",
+      "manifestSha256": "B6852E6E23017524B79D868C2B11C1CABB7034BA5056C9B836BA9F3ED208A661"
+    },
+    "playerSmoke": {
+      "status": "PASS",
+      "sha256": "4902FC616BD053717DD0437AFCCD10BC492BD43693A5415FDCB27D228347D8E5"
+    },
+    "cpuTarget": {
+      "status": "PASS",
+      "ticks": 54000,
+      "tickP99Milliseconds": 18.036,
+      "hotPathAllocationBytes": 0,
+      "gcCollections": 0,
+      "checksum": "ca00e95592695395"
+    },
+    "gpuTarget": {
+      "status": "PASS",
+      "ticks": 54000,
+      "frames": 107986,
+      "averageFps": 59.992,
+      "onePercentLowFps": 59.891,
+      "gpuP99Milliseconds": 2.163,
+      "tickP99Milliseconds": 12.760,
+      "hotPathAllocationBytes": 0,
+      "profilerAllocationBytes": 0,
+      "gcCollections": 0,
+      "checksum": "dbd76d45a0eeb892"
+    },
+    "extension2000Enemy": {
+      "status": "FAIL",
+      "releaseBlocking": false,
+      "failureReason": "average-fps, one-percent-low",
+      "averageFps": 43.694,
+      "onePercentLowFps": 36.768,
+      "gpuP99Milliseconds": 2.822,
+      "tickP99Milliseconds": 23.685,
+      "checksum": "14988f4e65e013e2"
+    }
+  },
+  "decision": "The mandatory 1200-enemy target passed with margin. The advisory 2000-enemy extension exposed a CPU capacity knee and is retained as FAIL without changing frozen gameplay."
+}

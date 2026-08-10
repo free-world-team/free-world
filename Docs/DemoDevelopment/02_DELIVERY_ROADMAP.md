@@ -79,6 +79,13 @@ G3.4 已在统一实现分支完成 Pack `0.10.0` 数值冻结：15 局矩阵取
 `Docs/Reports/2026-08-10-g3-4-balance-freeze-final-integration.md`。当前工作包只进入 G3.5 目标
 硬件 CPU/GPU/GC/池容量取证，不提前执行 G3.6 Release Candidate。
 
+G3.5 已在参考目标机完成 54,000 Tick CPU 与 1080p 30 分钟 GPU Target：平均 59.992 FPS、1% Low
+59.891、GPU p99 2.163 ms、Tick p99 12.760 ms、稳态 0 B/GC 0，完整回归和 Development Player
+均通过；2,000 Enemy 非阻断扩展实际记录为 `FAIL` 并明确 CPU 容量拐点。实际证据见
+`28_G3_5_TARGET_HARDWARE_PERFORMANCE.md` 与
+`Docs/Reports/2026-08-10-g3-5-target-hardware-performance-final-integration.md`。下一工作包只进入 G3.6
+Release Candidate。
+
 ## 5. G3 发布候选
 
 | 顺序 | 分支建议 | 交付物 | 退出门禁 |

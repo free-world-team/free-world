@@ -105,3 +105,15 @@ Content Schema，应停止 G3.5 并先提交 ADR/Change Request。
 | Windows Development Build / Player Smoke | `PASS` |
 
 任一强制项为 `FAIL` 或 `NOT RUN` 时，G3.5 只能是 `INCOMPLETE`，不得进入 G3.6。
+
+## 8. 最终关闭结果（2026-08-10）
+
+- 正式内容 CPU Target：`PASS`，54,000 Tick，Tick p99 18.036 ms，0 B，GC 0；
+- 1080p GPU Target：`PASS`，107,986 Frame，平均 59.992 FPS，1% Low 59.891，GPU p99 2.163 ms；
+- 2,000 Enemy 扩展观察：`FAIL`，平均 43.694 FPS、1% Low 36.768，GPU p99 2.822 ms、Tick p99
+  23.685 ms；按第 3.3 节保留为非发布阻断的 CPU 容量拐点；
+- EditMode 456/456、PlayMode 20/20、Project Validation、Development Build 与 Player Smoke 全部 `PASS`；
+- 正式 Target 预算直接通过，没有执行无证据优化，没有引入 Jobs/Burst 或修改冻结内容。
+
+机器可读证据位于 `Assets/G3.5/Baseline` 与 `Assets/G3.5/Final`。G3.5 状态为 `COMPLETE`，下一工作包只进入
+G3.6 Release Candidate。

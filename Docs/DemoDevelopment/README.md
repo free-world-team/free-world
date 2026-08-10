@@ -72,7 +72,11 @@ G3 发布候选
 | [28_G3_5_TARGET_HARDWARE_PERFORMANCE.md](28_G3_5_TARGET_HARDWARE_PERFORMANCE.md) | G3.5 目标硬件 CPU/GPU、1% Low、GC、内存与池容量门禁 |
 
 G3.4 已于 2026-08-10 关闭：Pack `0.10.0`，15 局 12 胜 3 负，三路线胜场 `3/4/5`，三 Golden、三失败
-探针和 18 奇物兼容全部通过。机器可读证据位于 [Assets/G3.4](Assets/G3.4)。当前里程碑为 G3.5。
+探针和 18 奇物兼容全部通过。机器可读证据位于 [Assets/G3.4](Assets/G3.4)。
+
+G3.5 已于 2026-08-10 关闭：CPU 54,000 Tick 与 1080p GPU 30 分钟 Target 均通过，平均 59.992 FPS、
+1% Low 59.891、GPU p99 2.163 ms、稳态 0 B/GC 0。2,000 Enemy 非阻断扩展实际记录为 `FAIL`，明确了
+CPU 容量拐点。机器可读证据位于 [Assets/G3.5](Assets/G3.5)。当前里程碑为 G3.6。
 
 ## 4. 模块分支
 
