@@ -24,7 +24,7 @@ namespace Game.Editor
         public bool workingTreeClean;
     }
 
-    /// <summary>Writes the auditable M10 manifest shared by Development and Release builds.</summary>
+    /// <summary>Writes the auditable manifest shared by Development and formal Release builds.</summary>
     internal static class BuildManifestWriter
     {
         public static BuildSourceState CaptureSourceState()
@@ -56,7 +56,7 @@ namespace Game.Editor
             var contentPacks = CollectContentPacks(development);
             var manifest = new M10BuildManifest
             {
-                schemaVersion = 1,
+                schemaVersion = 2,
                 productName = PlayerSettings.productName,
                 gameVersion = PlayerSettings.bundleVersion,
                 buildNumber = ParseBuildNumber(),
@@ -77,9 +77,20 @@ namespace Game.Editor
                 runRecoverySaveSchemaVersion = SaveSchema.RunRecoveryCurrentVersion,
                 contentPacks = contentPacks,
                 packagesLockSha256 = HashFile(Path.GetFullPath("Packages/packages-lock.json")),
+                packagesManifestSha256 = HashFile(Path.GetFullPath("Packages/manifest.json")),
+                projectVersionSha256 = HashFile(Path.GetFullPath("ProjectSettings/ProjectVersion.txt")),
+                addressablesSettingsSha256 = HashFile(Path.GetFullPath(
+                    "Assets/AddressableAssetsData/AddressableAssetSettings.asset")),
+                publicApiFreezeSha256 = HashFile(Path.GetFullPath("Docs/PUBLIC_API_FREEZE.md")),
+                thirdPartyNoticesSha256 = HashFile(Path.GetFullPath("THIRD_PARTY_NOTICES.md")),
+                assetProvenanceSha256 = HashFile(Path.GetFullPath("ASSET_PROVENANCE.csv")),
                 addressablesBuildHash = HashAddressablesOutput(outputDirectory),
                 placeholderCount = ReleaseBuildGateValidator.CountIncludedPlaceholderEntries(),
                 unapprovedAssetCount = 0,
+                formalContentPackCount = CountIncludedPacks(contentPacks),
+                releaseValidator = development ? "NOT_RUN" : "PASS",
+                platformBackend = "NullPlatformFacade",
+                offlineRequired = true,
                 tests = ReadEvidence(evidenceRoot),
                 artifacts = new[]
                 {
@@ -97,6 +108,27 @@ namespace Game.Editor
 
         private static ContentPackManifestDto[] CollectContentPacks(bool development)
         {
+            if (!development)
+            {
+                var catalog = QinglanG36ReleaseCatalog.ValidateOrThrow();
+                return new[]
+                {
+                    new ContentPackManifestDto
+                    {
+                        packId = catalog.Manifest.PackId.Value,
+                        version = catalog.Manifest.Version.ToString(),
+                        contentHash = catalog.ContentHash,
+                        catalogHash = HashText(JsonUtility.ToJson(catalog.ToDto(), false)),
+                        catalogSha256 = HashFile(Path.GetFullPath(
+                            QinglanG36ReleaseCatalog.ReleaseCatalogPath)),
+                        includedInPlayer = true,
+                        placeholder = false,
+                        official = catalog.Manifest.Official,
+                        sourceAssetPath = catalog.Manifest.SourceAssetPath
+                    }
+                };
+            }
+
             var guids = AssetDatabase.FindAssets("t:ContentPackAuthoring");
             var paths = new string[guids.Length];
             for (var index = 0; index < guids.Length; index++)
@@ -120,8 +152,11 @@ namespace Game.Editor
                     version = baked.Value.Manifest.Version.ToString(),
                     contentHash = baked.Value.ContentHash,
                     catalogHash = HashText(catalogJson),
+                    catalogSha256 = string.Empty,
                     includedInPlayer = development || !placeholder,
-                    placeholder = placeholder
+                    placeholder = placeholder,
+                    official = baked.Value.Manifest.Official,
+                    sourceAssetPath = baked.Value.Manifest.SourceAssetPath
                 });
             }
 
@@ -130,20 +165,26 @@ namespace Game.Editor
 
         private static BuildEvidenceDto ReadEvidence(string root)
         {
+            var editMode = Path.Combine(root, "editmode.xml");
+            var playMode = Path.Combine(root, "playmode.xml");
+            var validation = Path.Combine(root, "validation.log");
+            var performance = FindPerformanceEvidence(root);
             return new BuildEvidenceDto
             {
-                editMode = ReadTestXml(Path.Combine(root, "editmode.xml")),
-                playMode = ReadTestXml(Path.Combine(root, "playmode.xml")),
-                contentValidation = Contains(
-                    Path.Combine(root, "validation.log"),
-                    "[Project Validation] PASS") ? "pass" : "not_run",
-                soak = ReadPerformanceStatus(Path.Combine(root, "performance.json"))
+                editMode = ReadTestXml(editMode),
+                playMode = ReadTestXml(playMode),
+                contentValidation = Contains(validation, "[Project Validation] PASS") ? "PASS" : "NOT_RUN",
+                soak = ReadPerformanceStatus(performance),
+                editModeSha256 = HashFileIfPresent(editMode),
+                playModeSha256 = HashFileIfPresent(playMode),
+                contentValidationSha256 = HashFileIfPresent(validation),
+                performanceSha256 = HashFileIfPresent(performance)
             };
         }
 
         private static string ReadTestXml(string path)
         {
-            if (!File.Exists(path)) return "not_run";
+            if (!File.Exists(path)) return "NOT_RUN";
             try
             {
                 var document = new XmlDocument();
@@ -152,29 +193,57 @@ namespace Game.Editor
                 return root != null &&
                        string.Equals(root.GetAttribute("result"), "Passed", StringComparison.Ordinal) &&
                        string.Equals(root.GetAttribute("failed"), "0", StringComparison.Ordinal)
-                    ? "pass"
-                    : "fail";
+                    ? "PASS"
+                    : "FAIL";
             }
             catch
             {
-                return "fail";
+                return "FAIL";
             }
         }
 
         private static string ReadPerformanceStatus(string path)
         {
-            if (!File.Exists(path)) return "not_run";
+            if (string.IsNullOrWhiteSpace(path) || !File.Exists(path)) return "NOT_RUN";
             try
             {
                 var value = JsonUtility.FromJson<PerformanceStatusDto>(File.ReadAllText(path));
                 return string.Equals(value?.status, "PASS", StringComparison.Ordinal)
-                    ? "pass"
-                    : "fail";
+                    ? "PASS"
+                    : "FAIL";
             }
             catch
             {
-                return "fail";
+                return "FAIL";
             }
+        }
+
+        private static string FindPerformanceEvidence(string root)
+        {
+            var candidates = new[]
+            {
+                "target-player.json",
+                "gpu-target.json",
+                "performance.json",
+                "cpu-target.json"
+            };
+            for (var index = 0; index < candidates.Length; index++)
+            {
+                var path = Path.Combine(root, candidates[index]);
+                if (File.Exists(path)) return path;
+            }
+            return string.Empty;
+        }
+
+        private static string HashFileIfPresent(string path) =>
+            !string.IsNullOrWhiteSpace(path) && File.Exists(path) ? HashFile(path) : string.Empty;
+
+        private static int CountIncludedPacks(ContentPackManifestDto[] packs)
+        {
+            var count = 0;
+            for (var index = 0; index < packs.Length; index++)
+                if (packs[index].includedInPlayer) count++;
+            return count;
         }
 
         private static bool Contains(string path, string marker) =>
@@ -324,9 +393,19 @@ namespace Game.Editor
             public int runRecoverySaveSchemaVersion;
             public ContentPackManifestDto[] contentPacks;
             public string packagesLockSha256;
+            public string packagesManifestSha256;
+            public string projectVersionSha256;
+            public string addressablesSettingsSha256;
+            public string publicApiFreezeSha256;
+            public string thirdPartyNoticesSha256;
+            public string assetProvenanceSha256;
             public string addressablesBuildHash;
             public int placeholderCount;
             public int unapprovedAssetCount;
+            public int formalContentPackCount;
+            public string releaseValidator;
+            public string platformBackend;
+            public bool offlineRequired;
             public BuildEvidenceDto tests;
             public BuildArtifactDto[] artifacts;
         }
@@ -338,8 +417,11 @@ namespace Game.Editor
             public string version;
             public string contentHash;
             public string catalogHash;
+            public string catalogSha256;
             public bool includedInPlayer;
             public bool placeholder;
+            public bool official;
+            public string sourceAssetPath;
         }
 
         [Serializable]
@@ -349,6 +431,10 @@ namespace Game.Editor
             public string playMode;
             public string contentValidation;
             public string soak;
+            public string editModeSha256;
+            public string playModeSha256;
+            public string contentValidationSha256;
+            public string performanceSha256;
         }
 
         [Serializable]

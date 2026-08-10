@@ -81,10 +81,20 @@ try {
     [Console]::Error.WriteLine("Release Build Manifest is invalid: $($_.Exception.Message)")
     exit 6
 }
-if ($manifest.result -ne 'Succeeded' -or
+if ([int]$manifest.schemaVersion -ne 2 -or $manifest.result -ne 'Succeeded' -or
     $manifest.buildTarget -ne 'StandaloneWindows64' -or
     [bool]$manifest.development -or
     [int]$manifest.placeholderCount -ne 0 -or
+    [int]$manifest.unapprovedAssetCount -ne 0 -or
+    [int]$manifest.formalContentPackCount -ne 1 -or
+    $manifest.releaseValidator -ne 'PASS' -or
+    $manifest.platformBackend -ne 'NullPlatformFacade' -or
+    $manifest.contentPacks.Count -ne 1 -or
+    $manifest.contentPacks[0].packId -ne 'qinglan.pack.demo' -or
+    $manifest.contentPacks[0].version -ne '0.10.0' -or
+    -not [bool]$manifest.contentPacks[0].includedInPlayer -or
+    [bool]$manifest.contentPacks[0].placeholder -or
+    -not [bool]$manifest.contentPacks[0].official -or
     $manifest.buildConfiguration -ne 'WindowsReleaseCandidate') {
     [Console]::Error.WriteLine('Build Manifest does not describe a placeholder-free Qinglan Release candidate.')
     exit 6
