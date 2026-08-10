@@ -3,7 +3,7 @@ param(
     [string]$ProjectPath = '',
     [string]$OutputPath = 'Builds/WindowsRelease/AzureSword.exe',
     [string]$LogPath = 'TestResults/build-windows-release.log',
-    [string]$EvidenceRoot = 'TestResults/M10Final'
+    [string]$EvidenceRoot = 'TestResults/QinglanDemo/G3.6'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -47,7 +47,6 @@ try {
     $env:M10_EVIDENCE_ROOT = $absoluteEvidence
     $arguments = @(
         '-batchmode',
-        '-nographics',
         '-projectPath', $projectRoot,
         '-executeMethod', 'Game.Editor.WindowsReleaseBuild.BuildFromCommandLine',
         '-logFile', $absoluteLog
@@ -68,7 +67,7 @@ if (-not (Test-Path -LiteralPath $absoluteOutput -PathType Leaf)) {
     exit 5
 }
 if (-not (Test-Path -LiteralPath $absoluteLog -PathType Leaf) -or
-    -not (Select-String -LiteralPath $absoluteLog -SimpleMatch '[M10 Release Build] PASS' -Quiet)) {
+    -not (Select-String -LiteralPath $absoluteLog -SimpleMatch '[Qinglan G3.6 Release Build] PASS' -Quiet)) {
     [Console]::Error.WriteLine("Release build log has no PASS marker: $absoluteLog")
     exit 6
 }
@@ -86,8 +85,8 @@ if ($manifest.result -ne 'Succeeded' -or
     $manifest.buildTarget -ne 'StandaloneWindows64' -or
     [bool]$manifest.development -or
     [int]$manifest.placeholderCount -ne 0 -or
-    $manifest.buildConfiguration -ne 'WindowsReleaseVerification') {
-    [Console]::Error.WriteLine('Build Manifest does not describe a placeholder-free Release build.')
+    $manifest.buildConfiguration -ne 'WindowsReleaseCandidate') {
+    [Console]::Error.WriteLine('Build Manifest does not describe a placeholder-free Qinglan Release candidate.')
     exit 6
 }
 Write-Host "Release build output: $absoluteOutput"

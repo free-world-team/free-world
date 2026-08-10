@@ -4,30 +4,32 @@ using System.IO;
 using Game.Infrastructure;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
+using UnityEditor.AddressableAssets.Build;
 using UnityEditor.AddressableAssets.Settings;
 using UnityEditor.AddressableAssets.Settings.GroupSchemas;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 namespace Game.Editor
 {
-    /// <summary>Builds the content-free M10 framework Release verification player.</summary>
+    /// <summary>Builds the formal Qinglan Demo Windows Release candidate.</summary>
     public static class WindowsReleaseBuild
     {
         public const string DefaultOutputPath = "Builds/WindowsRelease/AzureSword.exe";
-        private const string TemporaryScenePath = "Assets/__M10ReleaseSmoke.generated.unity";
+        internal const string TemporaryScenePath = "Assets/__QinglanG36Release.generated.unity";
 
-        /// <summary>Builds the framework Release verification player from the Editor menu.</summary>
-        [MenuItem("Tools/Free World/M10/Build Windows Release Verification")]
+        /// <summary>Builds the formal Demo Release candidate from the Editor menu.</summary>
+        [MenuItem("Tools/Free World/Qinglan/G3.6 Build Windows Release Candidate")]
         public static void BuildFromMenu()
         {
             Build(DefaultOutputPath);
         }
 
-        /// <summary>Builds the framework Release verification player and exits the Editor.</summary>
+        /// <summary>Builds the formal Demo Release candidate and exits the Editor.</summary>
         public static void BuildFromCommandLine()
         {
             var exitCode = 0;
@@ -58,11 +60,12 @@ namespace Game.Editor
             EditorApplication.Exit(exitCode);
         }
 
-        /// <summary>Builds a placeholder-free framework verification player at the requested path.</summary>
+        /// <summary>Builds a placeholder-free formal Demo player at the requested path.</summary>
         public static BuildReport Build(string outputPath)
         {
             if (string.IsNullOrWhiteSpace(outputPath))
                 throw new ArgumentException("Build output path is required.", nameof(outputPath));
+            QinglanG36ReleaseCatalog.ValidateOrThrow();
             var validation = ProjectGovernanceValidator.ValidateCurrentProject();
             if (!validation.IsValid) throw new BuildFailedException(validation.Issues[0].ToString());
             var sourceState = BuildManifestWriter.CaptureSourceState();
@@ -72,52 +75,99 @@ namespace Game.Editor
                 throw new BuildFailedException("Unable to resolve Release output directory.");
             Directory.CreateDirectory(outputDirectory);
 
-            BuildReport report;
-            using (var addressables = ReleaseAddressablesScope.ExcludeDevelopmentOnlyGroups())
+            try
             {
-                var releaseValidation = ProjectGovernanceValidator.ValidateCurrentProject();
-                ReleaseBuildGateValidator.AppendCurrentProject(releaseValidation);
-                CreateTemporaryScene();
-                ReleaseBuildGateValidator.AppendSceneDependencies(
-                    releaseValidation,
-                    TemporaryScenePath);
-                if (!releaseValidation.IsValid)
-                    throw new BuildFailedException(releaseValidation.Issues[0].ToString());
-                report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
+                BuildReport report;
+                using (var addressables = ReleaseAddressablesScope.IncludeOnlyFormalDemoGroups())
                 {
-                    scenes = new[] { TemporaryScenePath },
-                    locationPathName = absoluteOutput,
-                    target = BuildTarget.StandaloneWindows64,
-                    options = BuildOptions.None
-                });
-                if (report.summary.result != BuildResult.Succeeded)
-                    throw new BuildFailedException(
-                        "Windows Release Build failed with result " + report.summary.result + ".");
-                if (ReleaseBuildGateValidator.CountIncludedPlaceholderEntries() != 0)
-                    throw new BuildFailedException("Release output still includes Placeholder Addressables.");
-                BuildManifestWriter.Write(
-                    outputDirectory,
-                    absoluteOutput,
-                    report,
-                    "WindowsReleaseVerification",
-                    false,
-                    sourceState);
-                Debug.Log("[M10 Release Build] PASS: " + absoluteOutput +
-                          "; excludedGroups=" + addressables.ExcludedGroupCount + ".");
-            }
+                    var releaseValidation = ProjectGovernanceValidator.ValidateCurrentProject();
+                    ReleaseBuildGateValidator.AppendCurrentProject(releaseValidation);
+                    CreateTemporaryScene();
+                    ReleaseBuildGateValidator.AppendSceneDependencies(
+                        releaseValidation,
+                        TemporaryScenePath);
+                    if (!releaseValidation.IsValid)
+                        throw new BuildFailedException(releaseValidation.Issues[0].ToString());
+                    if (ReleaseBuildGateValidator.CountIncludedPlaceholderEntries() != 0)
+                        throw new BuildFailedException("Release input still includes Placeholder Addressables.");
 
-            DeleteTemporaryScene();
-            return report;
+                    var settings = AddressableAssetSettingsDefaultObject.GetSettings(false);
+                    if (settings == null) throw new BuildFailedException("Addressables settings are unavailable.");
+                    AddressableAssetSettings.BuildPlayerContent(out AddressablesPlayerBuildResult contentResult);
+                    if (!string.IsNullOrEmpty(contentResult.Error))
+                        throw new BuildFailedException("Formal Addressables build failed: " + contentResult.Error);
+                    var previousBuildOption = settings.BuildAddressablesWithPlayerBuild;
+                    try
+                    {
+                        settings.BuildAddressablesWithPlayerBuild =
+                            AddressableAssetSettings.PlayerBuildOption.DoNotBuildWithPlayer;
+                        report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
+                        {
+                            scenes = new[] { TemporaryScenePath },
+                            locationPathName = absoluteOutput,
+                            target = BuildTarget.StandaloneWindows64,
+                            options = BuildOptions.None
+                        });
+                    }
+                    finally
+                    {
+                        settings.BuildAddressablesWithPlayerBuild = previousBuildOption;
+                    }
+
+                    if (report.summary.result != BuildResult.Succeeded)
+                        throw new BuildFailedException(
+                            "Windows Release Build failed with result " + report.summary.result + ".");
+                    if (ReleaseBuildGateValidator.CountIncludedPlaceholderEntries() != 0)
+                        throw new BuildFailedException("Release output still includes Placeholder Addressables.");
+                    BuildManifestWriter.Write(
+                        outputDirectory,
+                        absoluteOutput,
+                        report,
+                        "WindowsReleaseCandidate",
+                        false,
+                        sourceState);
+                    Debug.Log("[Qinglan G3.6 Release Build] PASS: " + absoluteOutput +
+                              "; includedGroups=" + addressables.IncludedGroupCount +
+                              "; excludedGroups=" + addressables.ExcludedGroupCount + ".");
+                }
+
+                return report;
+            }
+            finally
+            {
+                DeleteTemporaryScene();
+            }
         }
 
         private static void CreateTemporaryScene()
         {
             DeleteTemporaryScene();
             var scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
-            var owner = new GameObject("M10_ReleaseSmokeRoot");
-            owner.AddComponent<M10ReleaseSmokeRunner>();
+            var catalog = AssetDatabase.LoadAssetAtPath<TextAsset>(
+                QinglanG36ReleaseCatalog.ReleaseCatalogPath);
+            var input = AssetDatabase.LoadAssetAtPath<InputActionAsset>(
+                QinglanG36ReleaseCatalog.ReleaseInputActionsPath);
+            if (catalog == null || input == null)
+                throw new BuildFailedException("Formal Qinglan catalog or input asset is missing.");
+
+            var cameraObject = new GameObject("Main Camera");
+            cameraObject.tag = "MainCamera";
+            var camera = cameraObject.AddComponent<Camera>();
+            camera.clearFlags = CameraClearFlags.SolidColor;
+            camera.backgroundColor = new Color(0.025f, 0.045f, 0.055f, 1f);
+            camera.orthographic = true;
+            cameraObject.transform.position = new Vector3(0f, 0f, -10f);
+
+            var owner = new GameObject("QinglanReleaseBootstrapper");
+            var bootstrapper = owner.AddComponent<GameBootstrapper>();
+            var serialized = new SerializedObject(bootstrapper);
+            serialized.FindProperty("bakedTestCatalog").objectReferenceValue = catalog;
+            serialized.FindProperty("additionalBakedCatalogs").arraySize = 0;
+            serialized.FindProperty("presentationCamera").objectReferenceValue = camera;
+            serialized.FindProperty("inputActions").objectReferenceValue = input;
+            serialized.ApplyModifiedPropertiesWithoutUndo();
             if (!EditorSceneManager.SaveScene(scene, TemporaryScenePath))
-                throw new BuildFailedException("Unable to save the generated M10 Release scene.");
+                throw new BuildFailedException("Unable to save the generated Qinglan Release scene.");
             AssetDatabase.ImportAsset(TemporaryScenePath, ImportAssetOptions.ForceSynchronousImport);
         }
 
@@ -145,22 +195,30 @@ namespace Game.Editor
         }
 
         public int ExcludedGroupCount { get; private set; }
+        public int IncludedGroupCount { get; private set; }
 
-        public static ReleaseAddressablesScope ExcludeDevelopmentOnlyGroups()
+        public static ReleaseAddressablesScope IncludeOnlyFormalDemoGroups()
         {
             var scope = new ReleaseAddressablesScope();
             var settings = AddressableAssetSettingsDefaultObject.GetSettings(false);
-            if (settings == null) return scope;
+            if (settings == null) throw new BuildFailedException("Addressables settings are unavailable.");
             for (var groupIndex = 0; groupIndex < settings.groups.Count; groupIndex++)
             {
                 var group = settings.groups[groupIndex];
                 var schema = group?.GetSchema<BundledAssetGroupSchema>();
-                if (group == null || schema == null || !ContainsOnlyPlaceholder(group)) continue;
+                if (group == null) continue;
+                if (schema == null && group.entries.Count > 0)
+                    throw new BuildFailedException("Addressables group has no bundled schema: " + group.Name);
+                if (schema == null) continue;
                 scope.states.Add(new GroupState { Schema = schema, Included = schema.IncludeInBuild });
-                if (!schema.IncludeInBuild) continue;
-                schema.IncludeInBuild = false;
-                scope.ExcludedGroupCount++;
+                var include = IsFormalDemoGroup(group.Name);
+                schema.IncludeInBuild = include;
+                if (include) scope.IncludedGroupCount++;
+                else scope.ExcludedGroupCount++;
             }
+
+            if (scope.IncludedGroupCount < 4)
+                throw new BuildFailedException("Formal Qinglan Addressables groups are incomplete.");
 
             return scope;
         }
@@ -172,17 +230,13 @@ namespace Game.Editor
             states.Clear();
         }
 
-        private static bool ContainsOnlyPlaceholder(AddressableAssetGroup group)
+        internal static bool IsFormalDemoGroup(string groupName)
         {
-            var found = false;
-            foreach (var entry in group.entries)
-            {
-                var path = AssetDatabase.GUIDToAssetPath(entry.guid);
-                if (ReleaseBuildPolicy.ValidateEntry(path, entry.labels) == null) return false;
-                found = true;
-            }
-
-            return found;
+            return string.Equals(groupName, AssetProvenanceValidator.QinglanVisualGroup, StringComparison.Ordinal) ||
+                   string.Equals(groupName, AssetProvenanceValidator.QinglanAudioGroup, StringComparison.Ordinal) ||
+                   string.Equals(groupName, AssetProvenanceValidator.QinglanLocalizationGroup, StringComparison.Ordinal) ||
+                   string.Equals(groupName, AssetProvenanceValidator.ThirdPartyFontGroup, StringComparison.Ordinal) ||
+                   (groupName ?? string.Empty).StartsWith("Localization-", StringComparison.Ordinal);
         }
     }
 }

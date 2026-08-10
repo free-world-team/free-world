@@ -8,10 +8,11 @@ using UnityEngine.InputSystem;
 
 namespace Game.Editor
 {
-    /// <summary>Wires checked-in Placeholder catalogs, camera, and M7 input maps.</summary>
+    /// <summary>Wires checked-in development catalogs, camera, and the reviewed input maps.</summary>
     public static class M7ProjectSetup
     {
-        public const string InputAssetPath = "Assets/GameAssets/Placeholder/M7InputActions.asset";
+        public const string LegacyInputAssetPath = "Assets/GameAssets/Placeholder/M7InputActions.asset";
+        public const string InputAssetPath = QinglanG36ReleaseCatalog.ReleaseInputActionsPath;
 
         private static readonly string[] AdditionalCatalogPaths =
         {
@@ -23,14 +24,22 @@ namespace Game.Editor
         [MenuItem("Tools/Free World/M7/Configure Presentation UI Input")]
         public static void Configure()
         {
+            if (!AssetDatabase.IsValidFolder(QinglanG36ReleaseCatalog.ReleaseFolder))
+                AssetDatabase.CreateFolder("Assets/GameContent/QinglanDemo", "Runtime");
             var input = AssetDatabase.LoadAssetAtPath<InputActionAsset>(InputAssetPath);
             if (input == null)
             {
-                if (AssetDatabase.LoadMainAssetAtPath(InputAssetPath) != null)
-                    AssetDatabase.DeleteAsset(InputAssetPath);
-                input = M7InputRouter.CreateDefaultActions();
-                input.name = "M7InputActions";
-                AssetDatabase.CreateAsset(input, InputAssetPath);
+                if (AssetDatabase.LoadAssetAtPath<InputActionAsset>(LegacyInputAssetPath) != null)
+                {
+                    if (!AssetDatabase.CopyAsset(LegacyInputAssetPath, InputAssetPath))
+                        throw new UnityException("Unable to copy the reviewed Qinglan input asset.");
+                }
+                else
+                {
+                    input = M7InputRouter.CreateDefaultActions();
+                    input.name = "QinglanInputActions";
+                    AssetDatabase.CreateAsset(input, InputAssetPath);
+                }
                 AssetDatabase.SaveAssets();
                 AssetDatabase.ImportAsset(InputAssetPath, ImportAssetOptions.ForceSynchronousImport);
                 input = AssetDatabase.LoadAssetAtPath<InputActionAsset>(InputAssetPath);
