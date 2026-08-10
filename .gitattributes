@@ -2,6 +2,20 @@
 # bytes on Windows developer machines, CI runners, and release builders.
 * text=auto eol=lf
 
+# Approved audio metadata was generated on Windows and its recorded SHA-256
+# values intentionally cover CRLF bytes. Keep those governed inputs stable.
+Assets/GameAssets/AI/QinglanDemo/AUDIO-*/provenance.json text eol=crlf
+Assets/GameAssets/AI/QinglanDemo/AUDIO-*/qa-report.json text eol=crlf
+Assets/GameAssets/AI/QinglanDemo/AUDIO-*/source/generator-spec.json text eol=crlf
+Assets/ThirdParty/Fonts/NotoCJKSC/FONT-002/LICENSE.txt text eol=crlf
+
+# Approved audio metadata was generated on Windows and its recorded SHA-256
+# values intentionally cover CRLF bytes. Keep those governed inputs stable.
+Assets/GameAssets/AI/QinglanDemo/AUDIO-*/provenance.json text eol=crlf
+Assets/GameAssets/AI/QinglanDemo/AUDIO-*/qa-report.json text eol=crlf
+Assets/GameAssets/AI/QinglanDemo/AUDIO-*/source/generator-spec.json text eol=crlf
+Assets/ThirdParty/Fonts/NotoCJKSC/FONT-002/LICENSE.txt text eol=crlf
+
 # Preserve binary payloads byte-for-byte.
 *.aiff binary
 *.dll binary
