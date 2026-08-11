@@ -162,3 +162,8 @@ G3.6 后的人工检查证明自动资产/构建门禁不足以代表成品画�
 一次性完成倾斜正交 2.5D 战场、正式方向动画、武器可视化、正式战斗 VFX、可点击卡片 UI 和连续 60 秒
 Player 战斗验收。完整范围与 DOD 见 `Docs/DemoDevelopment/30_G4_0_2_5D_PRESENTATION_COMPLETION.md`，
 后端决定见 ADR 0031。G4.0 任一 DOD 为 `FAIL/NOT RUN` 时，项目状态保持 `INCOMPLETE`。
+
+G4.0 已于 2026-08-11 在实现与证据提交 `762719a` 上关闭：DOD-01—DOD-10 全部 `PASS`，包括连续
+60 秒 Player、五张实机截图、全量 462 EditMode / 22 PlayMode、Validation、Windows Release Build
+与独立 Release Player Smoke。完整证据见 `Docs/Reports/2026-08-11-g4-0-2-5d-presentation-completion.md`。
+该完成状态不改变 G3.6 的独立人工/法律签字和最低规格物理机器 `NOT_RUN`；商业 Release 仍为 `NO-GO`。

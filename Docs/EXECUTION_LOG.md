@@ -1176,3 +1176,42 @@ Build/Smoke 与完成定义门禁；不扩 Schema，不提前导入 G3 正式资
 
 只进入 G3.1：先把 provenance/Hash 自动校验扩展到全部 Release 输入，再按 G0.4 Manifest 小批导入正式
 视觉资产和 Profile。来源、许可、Hash、审核或 Addressables 任一缺失均不得取得 `release` 标签。
+
+## Qinglan Demo G4.0：2.5D 表现成品化完整里程碑
+
+- 状态：`COMPLETE`
+- 日期：2026-08-11
+- 分支：`codex/qinglan-demo-implementation`
+- 实现与证据提交：`762719a4c9606b6a86599b4166f4f721f0b4b66c`
+- ADR：0031
+- 结果报告：`Docs/Reports/2026-08-11-g4-0-2-5d-presentation-completion.md`
+
+### 实施结果
+
+| 范围 | 结果 |
+|---|---|
+| 2.5D 战场 | 倾斜正交相机 47.3859°、XZ 映射、432 正式地块、65 竖直物件/阴影、13 高度几何 |
+| 角色/敌人 | 玩家、六普通敌人、两 Boss 正式方向动画；集中推进，60 秒帧变更 35,021 |
+| 武器/VFX | 游风剑持续可见；Projectile/Area/拖尾；命中 931、死亡 519、状态 167、正式 VFX 980 |
+| UI/HUD | 页面卡片/按钮、鼠标/键盘/手柄同命令、正式图标与生命/护盾/经验/Boss/目标 HUD |
+| 实际验收 | 1920×1080 连续 60.1505 秒、真实按钮点击、五张截图、三类普通敌人、缺失世界 Profile 降级 0 |
+| 运动修复 | 修复渲染根节点清零实体 XZ 的问题，新增实际模拟位移与 View 同步 PlayMode 回归 |
+
+### 检查
+
+| 检查 | 结果 | 证据 |
+|---|---|---|
+| Managed 编译 | PASS | 四程序集 0 error；仅既有 TMP/DTO warning |
+| Focused EditMode / PlayMode | PASS | 8/8；1/1 |
+| 全量 EditMode / PlayMode | PASS | 462/462；22/22；0 skipped |
+| Project Validation | PASS | 收尾复验 `validation.log` SHA-256 `97369343...7B3D5` |
+| 60 秒 Player 门禁 / 视觉审查 | PASS | `player-60s.json` SHA-256 `1B4EC753...E2F4C`；日志 `A56A76B9...B506`；五图 PASS |
+| Windows Release Build | PASS | EXE SHA-256 `34C4E304...6A8F`；Manifest Succeeded、干净 `762719a`、Placeholder/未批准资产均 0 |
+| 独立 Release Player Smoke | PASS | 正式视听/字体/本地化、页面、战斗、存档、Hub/Restart，退出码 0 |
+| G4 专用目标硬件性能/Soak | NOT RUN | 3.25× 模拟与截图数据仅为观测；发布前单独重跑，不属于 G4 DOD |
+
+### 下一步
+
+G4.0 强制项已全部关闭。未经新授权不合并 `main`、不打 Release 标签、不进入商店提交。
+商业 Release 仍须关闭 QD-KI-003/014/017、取得最低规格物理机器 PASS，并在 G4 正式表现代码上完成
+目标硬件 GPU/1% Low 复测。

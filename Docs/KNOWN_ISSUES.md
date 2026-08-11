@@ -160,6 +160,9 @@
 | QD-KI-013 | RESOLVED | High | G2.4 的不可变 RunResult 曾未进入 Profile v3 原子事务、保存重试、Recovery 清理或平台事件。 | G2.5 已以稳定事务 ID 完成原子合并、失败重试、清理补偿与提交后事件；成功前保持 `HasUncommittedResult`。 |
 | QD-KI-014 | IN PROGRESS | High | 正式视听、1080p 30 分钟 GPU、1% Low 和客观音频遮蔽压力均 PASS；独立人类目标声卡试听与最终视听签字尚未执行。 | 保留 `manual-review.json=NOT_RUN`；不得用客观波形分析、Codex 审阅或用户概括授权冒充人类签字。 |
 | QD-KI-015 | RESOLVED | High | 初版 G3.6 汇总脚本把最低规格 `NOT_RUN` 错列为非阻断，且未验证人工 Reviewer 类型，和 G3.6 第 7/8 节冲突。 | 汇总器现要求 `reviewerKind=human` 与物理最低规格 PASS；未提供时 DOD-09—10 为 `NOT_RUN`、决定为 `NO-GO`。 |
+| QD-KI-016 | RESOLVED | High | G3.6 的正式资产存在性与 Release 自动门禁没有证明运行时实际具备 2.5D 层次、方向动画、武器、怪物、战斗 VFX 和卡片交互，人工打开后仍表现为平面拼图与菜单。 | G4.0 已完成倾斜 XZ 战场、五区场景层、玩家/六敌/两 Boss 动画、游风剑、正式 VFX、卡片 UI/HUD，并以连续 60 秒 Player、五张截图、完整计数和逐张视觉审查关闭 DOD-01—10。 |
+| QD-KI-017 | ACCEPTED | Medium | G4.0 60 秒验收使用 3.25× 模拟并同步截图；其墙钟帧、GPU p99 和 GC 数据不能作为正式目标硬件性能回归。 | 保留原始观测值但将 G4.0 专用性能/Soak 标为 `NOT RUN`；发布前在当前正式表现代码上重跑目标 GPU、1% Low 和长时基准。该项不属于 G4.0 DOD，但继续作为 Release 风险。 |
 
-G3.1—G3.6 自动化实现与 RC2 CI 已完成；QD-KI-003/014 以及最低规格 `NOT_RUN` 继续阻止 Release。
+G3.1—G3.6 自动化实现与 RC2 CI、G4.0 表现成品化均已完成；QD-KI-003/014/017 以及最低规格
+`NOT_RUN` 继续阻止 Release。
 只有外部人工/法律签字与最低规格物理机器证据到位后，才可重新生成 G3.6 `GO` 汇总。

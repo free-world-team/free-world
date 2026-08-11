@@ -206,5 +206,9 @@ G3.5 已完成参考目标机 54,000 Tick CPU、1080p 30 分钟 GPU、完整回�
 
 G4.0 由用户在人工检查后追加，完整范围见
 `Docs/DemoDevelopment/30_G4_0_2_5D_PRESENTATION_COMPLETION.md`。执行顺序固定为架构门禁 → 2.5D
-战场 → 动画 → 武器/VFX → 成品 UI → 60 秒 Player 证据 → 全量门禁。G4.0 未关闭前不得再次声明 Demo
-完成，也不得进入发布/商店工作。
+战场 → 动画 → 武器/VFX → 成品 UI → 60 秒 Player 证据 → 全量门禁。该顺序已由提交 `067dbcf`—
+`762719a` 逐步执行并逐次 Push；DOD-01—DOD-10 于 2026-08-11 全部 `PASS`，G4.0 状态为
+`COMPLETE`。完整证据见 `Docs/Reports/2026-08-11-g4-0-2-5d-presentation-completion.md`。
+
+后续不得把 G4.0 `COMPLETE` 外推为商业 Release `GO`。发布/商店工作仍须先完成独立人工/法律签字、
+最低规格物理机器认证，以及当前正式表现代码的目标硬件 GPU/1% Low 复测。
