@@ -66,7 +66,7 @@ namespace Game.Tests.EditMode
                     "Game.UI",
                     new[]
                     {
-                        "Game.Application", "Unity.ugui", "Unity.TextMeshPro", "Unity.Localization",
+                        "Game.Application", "Unity.ugui", "Unity.InputSystem", "Unity.TextMeshPro", "Unity.Localization",
                         "Unity.ResourceManager"
                     }
                 },

@@ -113,6 +113,8 @@ namespace Game.Tests.EditMode
             page.Reset(QinglanUiPageId.Settings, "ui.qinglan.settings.title", "ui.qinglan.settings.description");
             page.Add(new QinglanUiOption("font", "ui.qinglan.settings.font_scale", "", QinglanUiCommand.CycleSetting, true, "150%"));
             page.RestoreSelection(0);
+            var clickedIndex = -1;
+            view.OptionInvoked += index => clickedIndex = index;
             view.ShowPage(page);
             var settings = new AccessibilitySettings();
             settings.SetFontScale(1.5f);
@@ -138,9 +140,19 @@ namespace Game.Tests.EditMode
             Assert.That(view.RenderedPageText, Does.Contain("loc:ui.qinglan.settings.title"));
             Assert.That(view.RenderedHudText, Does.Contain("loc:content.qinglan.skill.test.name"));
             Assert.That(view.RenderedHudText, Does.Contain("50%"));
+            Assert.That(view.ActiveButtonCount, Is.EqualTo(1));
+            Assert.That(view.ClickableButtonCount, Is.EqualTo(1));
+            Assert.That(view.VisibleHudIconCount, Is.EqualTo(1));
+            Assert.That(view.HealthBarFillAmount, Is.EqualTo(0.75f).Within(0.001f));
+            var button = root.transform.Find(
+                "Qinglan_PageLayer/Qinglan_OptionViewport/Qinglan_OptionCards/Qinglan_OptionCard_0")
+                ?.GetComponent<UnityEngine.UI.Button>();
+            Assert.That(button, Is.Not.Null);
+            button.onClick.Invoke();
+            Assert.That(clickedIndex, Is.EqualTo(0));
             var texts = root.GetComponentsInChildren<TMP_Text>(true);
             Assert.That(texts.Max(x => x.fontSize), Is.GreaterThanOrEqualTo(30));
-            Assert.That(texts.Any(x => x.text.Contains("▲")), Is.True,
+            Assert.That(texts.Any(x => x != null && x.text != null && x.text.Contains("▲")), Is.True,
                 "danger communication must retain a non-color shape channel");
             Assert.That(view.SupportsCharacter('剑'), Is.True, "the runtime font fallback must cover Simplified Chinese");
         }

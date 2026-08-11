@@ -4,6 +4,7 @@
   "references": [
     "Game.Application",
     "Unity.ugui",
+    "Unity.InputSystem",
     "Unity.TextMeshPro",
     "Unity.Localization",
     "Unity.ResourceManager"

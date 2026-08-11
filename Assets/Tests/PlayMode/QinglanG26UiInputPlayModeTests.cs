@@ -218,6 +218,24 @@ namespace Game.Tests.PlayMode
             Assert.That(host.Ui.GameplayWorldVisible, Is.True);
         }
 
+        [UnityTest]
+        public IEnumerator OptionCardsAreRealButtonsThatRouteIntoTheGameFlow()
+        {
+            yield return LoadBootstrapScene();
+            var host = RequireHost();
+            var firstCard = host.Ui.transform.Find(
+                "Qinglan_PageLayer/Qinglan_OptionViewport/Qinglan_OptionCards/Qinglan_OptionCard_0");
+            Assert.That(firstCard, Is.Not.Null);
+            var button = firstCard.GetComponent<UnityEngine.UI.Button>();
+            Assert.That(button, Is.Not.Null);
+            Assert.That(button.interactable, Is.True);
+            button.onClick.Invoke();
+            yield return null;
+            Assert.That(host.Flow.Stage, Is.EqualTo(DemoFlowStage.CharacterSelect));
+            Assert.That(host.Ui.ActiveButtonCount, Is.GreaterThan(0));
+            Assert.That(host.Ui.FormalOptionIconCount, Is.GreaterThan(0));
+        }
+
         private void Tap(ButtonControl control)
         {
             fixture.Press(control);

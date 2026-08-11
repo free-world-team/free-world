@@ -68,6 +68,7 @@ namespace Game.Infrastructure
             uiObject.transform.SetParent(transform, false);
             Ui = uiObject.AddComponent<QinglanRuntimeUiRoot>();
             Ui.Initialize(Localization, ResolveContentNameKey, formalVisualLoader, formalFontLoader);
+            Ui.OptionInvoked += OnOptionInvoked;
 
             var presentationObject = new GameObject("Qinglan_Demo_Presentation");
             presentationObject.transform.SetParent(transform, false);
@@ -233,6 +234,13 @@ namespace Game.Infrastructure
             ApplyInputMode();
         }
 
+        private void OnOptionInvoked(int optionIndex)
+        {
+            Presentation.RouteUiCue(PresentationAudioCue.Confirm);
+            presenter.SelectAndSubmit(optionIndex);
+            ApplyInputMode();
+        }
+
         private void OnCancel()
         {
             Presentation.RouteUiCue(PresentationAudioCue.UiCancel);
@@ -304,6 +312,7 @@ namespace Game.Infrastructure
             Input.GamepadDisconnected -= OnGamepadDisconnected;
             Input.DebugLevelUp -= OnDebugLevelUp;
             Input.DebugCompleteRun -= OnDebugCompleteRun;
+            Ui.OptionInvoked -= OnOptionInvoked;
             Presentation?.Shutdown();
             Flow.Dispose();
             formalAudioLoader?.Dispose();

@@ -53,6 +53,14 @@ namespace Game.UI
                 Refresh(true);
         }
 
+        public void SelectAndSubmit(int optionIndex)
+        {
+            if (optionIndex < 0 || optionIndex >= page.OptionCount) return;
+            page.RestoreSelection(optionIndex);
+            view.ShowPage(page);
+            Submit();
+        }
+
         public void Cancel()
         {
             if (controller.Cancel()) Refresh(true);
