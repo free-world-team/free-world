@@ -7,6 +7,7 @@ using Game.Application;
 using Game.Simulation;
 using Game.UI;
 using UnityEngine;
+using UnityEngine.Profiling;
 using UnityEngine.UI;
 
 namespace Game.Infrastructure
@@ -94,6 +95,22 @@ namespace Game.Infrastructure
 
             host.enabled = false;
             var enemyProfiles = new HashSet<string>(StringComparer.Ordinal);
+            var observedViews = new HashSet<SpatialEntity>();
+            var wallFrameSamples = new double[8192];
+            var gpuFrameSamples = new double[8192];
+            var frameTiming = new FrameTiming[1];
+            var wallFrameSampleCount = 0;
+            var gpuFrameSampleCount = 0;
+            var wallFrameTotalMilliseconds = 0d;
+            var gpuFrameTotalMilliseconds = 0d;
+            result.initialMonoUsedBytes = Profiler.GetMonoUsedSizeLong();
+            result.peakMonoUsedBytes = result.initialMonoUsedBytes;
+            result.initialTotalAllocatedMemoryBytes = Profiler.GetTotalAllocatedMemoryLong();
+            result.peakTotalAllocatedMemoryBytes = result.initialTotalAllocatedMemoryBytes;
+            var generation0Start = GC.CollectionCount(0);
+            var generation1Start = GC.CollectionCount(1);
+            var generation2Start = GC.CollectionCount(2);
+            FrameTimingManager.CaptureFrameTimings();
             var startedAt = Time.realtimeSinceStartupAsDouble;
             var drivenSimulationSeconds = 0d;
             var waypointIndex = 0;
@@ -103,7 +120,16 @@ namespace Game.Infrastructure
                 var now = Time.realtimeSinceStartupAsDouble;
                 var elapsed = now - startedAt;
                 DriveActiveRun(host, elapsed, ref drivenSimulationSeconds, ref waypointIndex);
-                CollectMetrics(host, result, enemyProfiles);
+                CollectMetrics(host, result, enemyProfiles, observedViews);
+                RecordPerformanceSample(
+                    result,
+                    wallFrameSamples,
+                    ref wallFrameSampleCount,
+                    ref wallFrameTotalMilliseconds,
+                    gpuFrameSamples,
+                    ref gpuFrameSampleCount,
+                    ref gpuFrameTotalMilliseconds,
+                    frameTiming);
 
                 while (nextScreenshot < ScreenshotTimes.Length &&
                        elapsed >= ScreenshotTimes[nextScreenshot])
@@ -125,6 +151,22 @@ namespace Game.Infrastructure
             enemyProfiles.CopyTo(result.distinctEnemyProfileIds);
             Array.Sort(result.distinctEnemyProfileIds, StringComparer.Ordinal);
             result.distinctEnemyProfileCount = result.distinctEnemyProfileIds.Length;
+            result.totalObservedViews = observedViews.Count;
+            result.wallFrameAverageMilliseconds = wallFrameSampleCount == 0
+                ? 0d
+                : wallFrameTotalMilliseconds / wallFrameSampleCount;
+            result.wallFrameP99Milliseconds = Percentile99(wallFrameSamples, wallFrameSampleCount);
+            result.gpuFrameAverageMilliseconds = gpuFrameSampleCount == 0
+                ? 0d
+                : gpuFrameTotalMilliseconds / gpuFrameSampleCount;
+            result.gpuFrameP99Milliseconds = Percentile99(gpuFrameSamples, gpuFrameSampleCount);
+            result.wallFrameSampleCount = wallFrameSampleCount;
+            result.gpuFrameSampleCount = gpuFrameSampleCount;
+            result.finalMonoUsedBytes = Profiler.GetMonoUsedSizeLong();
+            result.finalTotalAllocatedMemoryBytes = Profiler.GetTotalAllocatedMemoryLong();
+            result.generation0Collections = GC.CollectionCount(0) - generation0Start;
+            result.generation1Collections = GC.CollectionCount(1) - generation1Start;
+            result.generation2Collections = GC.CollectionCount(2) - generation2Start;
             result.usesTiltedOrthographicCamera = CaptureCameraMetrics(result);
             result.usesXzGroundPlane = host.Presentation.UsesXzGroundPlane;
             result.raisedMapGeometryCount = host.Presentation.RaisedMapGeometryCount;
@@ -145,6 +187,7 @@ namespace Game.Infrastructure
                                          result.wallClockSeconds >= RequiredWallClockSeconds &&
                                          result.screenshotCount == ScreenshotTimes.Length &&
                                          result.distinctEnemyProfileCount >= 3 &&
+                                         result.totalObservedViews >= result.maxActiveViews &&
                                          result.maxActorViews >= 4 && result.maxProjectileViews > 0 &&
                                          result.maxHeldWeaponViews > 0 &&
                                          result.projectileTrailSpawnCount > 0 &&
@@ -230,7 +273,8 @@ namespace Game.Infrastructure
         private static void CollectMetrics(
             QinglanDemoRuntimeHost host,
             QinglanG40VisualAcceptanceResult result,
-            ISet<string> enemyProfiles)
+            ISet<string> enemyProfiles,
+            ISet<SpatialEntity> observedViews)
         {
             result.maxActiveViews = Math.Max(result.maxActiveViews, host.Presentation.ActiveViewCount);
             result.maxActorViews = Math.Max(result.maxActorViews, host.Presentation.ActiveActorViewCount);
@@ -245,10 +289,48 @@ namespace Game.Infrastructure
             for (var index = 0; index < snapshot.Count; index++)
             {
                 var entity = snapshot.GetAt(index).Entity;
+                observedViews.Add(entity);
                 if (entity.Kind != EntityKind.Actor || entity == session.Player) continue;
                 if (session.TryGetVisualProfileId(entity, out var profileId) && profileId.IsValid)
                     enemyProfiles.Add(profileId.Value);
             }
+        }
+
+        private static void RecordPerformanceSample(
+            QinglanG40VisualAcceptanceResult result,
+            double[] wallFrameSamples,
+            ref int wallFrameSampleCount,
+            ref double wallFrameTotalMilliseconds,
+            double[] gpuFrameSamples,
+            ref int gpuFrameSampleCount,
+            ref double gpuFrameTotalMilliseconds,
+            FrameTiming[] frameTiming)
+        {
+            var wallMilliseconds = Time.unscaledDeltaTime * 1000d;
+            if (wallMilliseconds > 0d && wallFrameSampleCount < wallFrameSamples.Length)
+            {
+                wallFrameSamples[wallFrameSampleCount++] = wallMilliseconds;
+                wallFrameTotalMilliseconds += wallMilliseconds;
+            }
+            if (FrameTimingManager.GetLatestTimings(1, frameTiming) > 0 &&
+                frameTiming[0].gpuFrameTime > 0d && gpuFrameSampleCount < gpuFrameSamples.Length)
+            {
+                gpuFrameSamples[gpuFrameSampleCount++] = frameTiming[0].gpuFrameTime;
+                gpuFrameTotalMilliseconds += frameTiming[0].gpuFrameTime;
+            }
+            FrameTimingManager.CaptureFrameTimings();
+            result.peakMonoUsedBytes = Math.Max(result.peakMonoUsedBytes, Profiler.GetMonoUsedSizeLong());
+            result.peakTotalAllocatedMemoryBytes = Math.Max(
+                result.peakTotalAllocatedMemoryBytes,
+                Profiler.GetTotalAllocatedMemoryLong());
+        }
+
+        private static double Percentile99(double[] values, int count)
+        {
+            if (values == null || count <= 0) return 0d;
+            Array.Sort(values, 0, count);
+            var index = Math.Min(count - 1, Math.Max(0, (int)Math.Ceiling(count * 0.99d) - 1));
+            return values[index];
         }
 
         private static IEnumerator CaptureScreenshot(QinglanG40VisualAcceptanceResult result, string name)
@@ -334,6 +416,7 @@ namespace Game.Infrastructure
             public int screenshotCount;
             public string[] distinctEnemyProfileIds;
             public int distinctEnemyProfileCount;
+            public int totalObservedViews;
             public int maxActiveViews;
             public int maxActorViews;
             public int maxProjectileViews;
@@ -357,6 +440,21 @@ namespace Game.Infrastructure
             public int mapGroundShadowCount;
             public int formalMapGroundTileCount;
             public int formalMapPropCount;
+            public int wallFrameSampleCount;
+            public int gpuFrameSampleCount;
+            public double wallFrameAverageMilliseconds;
+            public double wallFrameP99Milliseconds;
+            public double gpuFrameAverageMilliseconds;
+            public double gpuFrameP99Milliseconds;
+            public long initialMonoUsedBytes;
+            public long peakMonoUsedBytes;
+            public long finalMonoUsedBytes;
+            public long initialTotalAllocatedMemoryBytes;
+            public long peakTotalAllocatedMemoryBytes;
+            public long finalTotalAllocatedMemoryBytes;
+            public int generation0Collections;
+            public int generation1Collections;
+            public int generation2Collections;
         }
     }
 }
