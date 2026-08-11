@@ -91,6 +91,7 @@ namespace Game.Tests.EditMode
                 Assert.That(loader.LoadForStartup(), Is.True, loader.LastError);
                 Assert.That(loader.IsLoaded, Is.True);
                 Assert.That(loader.Catalog.EntityProfileCount, Is.EqualTo(34));
+                Assert.That(loader.DirectionalSprites.Count, Is.EqualTo(9));
                 Assert.That(loader.TryResolveSprite("ui.page.title", out var sprite), Is.True);
                 Assert.That(sprite, Is.Not.Null);
             }

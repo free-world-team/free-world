@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Game.Core;
 using Game.Presentation;
 using Game.UI;
 using UnityEngine;
@@ -52,6 +53,7 @@ namespace Game.Infrastructure
         public bool IsLoaded => Catalog != null;
         public IReadOnlyList<Sprite> MapTiles => mapTiles;
         public IReadOnlyList<Sprite> MapProps => mapProps;
+        public DirectionalSpriteCatalog DirectionalSprites { get; private set; } = new DirectionalSpriteCatalog();
 
         public bool LoadForStartup()
         {
@@ -65,6 +67,7 @@ namespace Game.Infrastructure
                     Catalog.SchemaVersion == FormalVisualCatalog.CurrentSchemaVersion)
                 {
                     LoadMapSpriteSets();
+                    LoadDirectionalSpriteSets();
                     return true;
                 }
                 LastError = "Formal visual catalog failed or has an unsupported schema.";
@@ -94,6 +97,7 @@ namespace Game.Infrastructure
             spriteHandles.Clear();
             mapTiles.Clear();
             mapProps.Clear();
+            DirectionalSprites = new DirectionalSpriteCatalog();
             ReleaseHandle();
         }
 
@@ -122,6 +126,73 @@ namespace Game.Infrastructure
                         target.Add(sprite);
                 }
             }
+        }
+
+        private void LoadDirectionalSpriteSets()
+        {
+            var sets = new List<DirectionalSpriteSet>(9);
+            LoadDirectionalSet(
+                sets,
+                "qinglan.character.lu_qingye",
+                "qinglan/character/lu-qingye/directional-animation-atlas",
+                "lu-qingye",
+                "idle", "move", "imperial-sword", "hit", "down", "victory");
+            LoadDirectionalSet(sets, "qinglan.enemy.grass_spirit", "qinglan/enemy/grass-spirit/directional-animation-atlas", "qinglan.enemy.grass-spirit", "move", "move", "attack-windup", "hit", "death", "move");
+            LoadDirectionalSet(sets, "qinglan.enemy.paper_crane_spirit", "qinglan/enemy/paper-crane-spirit/directional-animation-atlas", "qinglan.enemy.paper-crane-spirit", "move", "move", "attack-windup", "hit", "death", "move");
+            LoadDirectionalSet(sets, "qinglan.enemy.wooden_sword_puppet", "qinglan/enemy/wooden-sword-puppet/directional-animation-atlas", "qinglan.enemy.wooden-sword-puppet", "move", "move", "attack-windup", "hit", "death", "move");
+            LoadDirectionalSet(sets, "qinglan.enemy.stone_lantern_guard", "qinglan/enemy/stone-lantern-guard/directional-animation-atlas", "qinglan.enemy.stone-lantern-guard", "move", "move", "attack-windup", "hit", "death", "move");
+            LoadDirectionalSet(sets, "qinglan.enemy.wind_bell_spirit", "qinglan/enemy/wind-bell-spirit/directional-animation-atlas", "qinglan.enemy.wind-bell-spirit", "move", "move", "attack-windup", "hit", "death", "move");
+            LoadDirectionalSet(sets, "qinglan.enemy.explosive_seed_pod", "qinglan/enemy/explosive-seed-pod/directional-animation-atlas", "qinglan.enemy.explosive-seed-pod", "move", "move", "attack-windup", "hit", "death", "move");
+            LoadDirectionalSet(sets, "qinglan.enemy.boss.tingfeng", "qinglan/boss/tingfeng/animation-atlas", "qinglan.boss.tingfeng", "move", "move", "phase-1-windup", "hit", "defeated", "transition-3");
+            LoadDirectionalSet(sets, "qinglan.enemy.boss.zhezhi", "qinglan/boss/zhezhi/animation-atlas", "qinglan.boss.zhezhi", "move", "move", "phase-1-windup", "hit", "defeated", "transition-3");
+            DirectionalSprites = new DirectionalSpriteCatalog(sets.ToArray());
+            Debug.Log("[Qinglan Formal Visuals] Directional sprite sets=" + DirectionalSprites.Count + ".");
+        }
+
+        private void LoadDirectionalSet(
+            List<DirectionalSpriteSet> target,
+            string profileId,
+            string address,
+            string spritePrefix,
+            string idle,
+            string move,
+            string attack,
+            string hit,
+            string death,
+            string victory)
+        {
+            var id = ContentId.Create(profileId);
+            if (!id.IsSuccess) return;
+            var states = new[] { idle, move, attack, hit, death, victory };
+            var directions = new[] { "down", "left", "right", "up" };
+            var sprites = new Sprite[DirectionalSpriteSet.FacingCount * DirectionalSpriteSet.PoseCount];
+            for (var directionIndex = 0; directionIndex < directions.Length; directionIndex++)
+            {
+                for (var poseIndex = 0; poseIndex < states.Length; poseIndex++)
+                {
+                    var duplicate = -1;
+                    for (var earlier = 0; earlier < poseIndex; earlier++)
+                        if (string.Equals(states[earlier], states[poseIndex], StringComparison.Ordinal))
+                        {
+                            duplicate = earlier;
+                            break;
+                        }
+                    if (duplicate >= 0)
+                    {
+                        sprites[(directionIndex * DirectionalSpriteSet.PoseCount) + poseIndex] =
+                            sprites[(directionIndex * DirectionalSpriteSet.PoseCount) + duplicate];
+                        continue;
+                    }
+
+                    var spriteName = spritePrefix + "." + directions[directionIndex] + "." + states[poseIndex];
+                    var operation = Addressables.LoadAssetAsync<Sprite>(address + "[" + spriteName + "]");
+                    spriteHandles.Add(operation);
+                    var sprite = operation.WaitForCompletion();
+                    if (operation.Status == AsyncOperationStatus.Succeeded)
+                        sprites[(directionIndex * DirectionalSpriteSet.PoseCount) + poseIndex] = sprite;
+                }
+            }
+            target.Add(new DirectionalSpriteSet(id.Value, sprites));
         }
 
         private void ReleaseHandle()

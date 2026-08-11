@@ -97,6 +97,15 @@ namespace Game.Tests.EditMode
         }
 
         [Test]
+        public void DirectionalFacingUsesAllFourFormalAtlasRows()
+        {
+            Assert.That(DirectionalSpriteCatalog.FacingFromRadians(0f), Is.EqualTo(PresentationFacing.Right));
+            Assert.That(DirectionalSpriteCatalog.FacingFromRadians(Mathf.PI), Is.EqualTo(PresentationFacing.Left));
+            Assert.That(DirectionalSpriteCatalog.FacingFromRadians(Mathf.PI * 0.5f), Is.EqualTo(PresentationFacing.Up));
+            Assert.That(DirectionalSpriteCatalog.FacingFromRadians(-Mathf.PI * 0.5f), Is.EqualTo(PresentationFacing.Down));
+        }
+
+        [Test]
         public void InputMapsSwitchAndKeyboardGamepadBindingsExist()
         {
             root = new GameObject("M7InputTest");

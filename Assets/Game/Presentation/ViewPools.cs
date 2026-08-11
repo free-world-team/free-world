@@ -19,6 +19,7 @@ namespace Game.Presentation
         private readonly ProceduralPresentationCatalog proceduralProfiles;
         private readonly AccessibilitySettings settings;
         private readonly ProceduralVisualLibrary fallback;
+        private readonly DirectionalSpriteCatalog directionalSprites;
 
         internal EntityViewPool(
             Transform poolRoot,
@@ -27,6 +28,7 @@ namespace Game.Presentation
             ProceduralPresentationCatalog proceduralCatalog,
             AccessibilitySettings accessibilitySettings,
             ProceduralVisualLibrary proceduralFallback,
+            DirectionalSpriteCatalog directionalSpriteCatalog,
             int prewarm)
         {
             root = poolRoot ?? throw new ArgumentNullException(nameof(poolRoot));
@@ -35,6 +37,7 @@ namespace Game.Presentation
             proceduralProfiles = proceduralCatalog ?? throw new ArgumentNullException(nameof(proceduralCatalog));
             settings = accessibilitySettings ?? throw new ArgumentNullException(nameof(accessibilitySettings));
             fallback = proceduralFallback ?? throw new ArgumentNullException(nameof(proceduralFallback));
+            directionalSprites = directionalSpriteCatalog ?? throw new ArgumentNullException(nameof(directionalSpriteCatalog));
             available = new Stack<T>(Math.Max(1, prewarm));
             all = new List<T>(Math.Max(1, prewarm));
             owned = new HashSet<T>();
@@ -69,6 +72,8 @@ namespace Game.Presentation
                 view.Configure(style, fallback);
             }
             view.SetStyleIdentity(visualProfileId, playerStyle);
+            view.ConfigureAnimation(
+                directionalSprites.TryResolve(visualProfileId, out var spriteSet) ? spriteSet : null);
             view.Bind(entity);
             return view;
         }

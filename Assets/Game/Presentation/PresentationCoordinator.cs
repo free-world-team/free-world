@@ -32,6 +32,7 @@ namespace Game.Presentation
         private ProceduralPresentationCatalog proceduralProfiles;
         private FormalVisualCatalog formalVisuals;
         private FormalAudioCatalog formalAudio;
+        private DirectionalSpriteCatalog directionalSprites;
         private ColorVisionMode lastColorVision;
         private PresentationMixState mixState;
         private long consumedTick = -1;
@@ -71,7 +72,8 @@ namespace Game.Presentation
             VisualProfileCatalog profileCatalog = null,
             ProceduralPresentationCatalog proceduralCatalog = null,
             FormalVisualCatalog formalCatalog = null,
-            FormalAudioCatalog formalAudioCatalog = null)
+            FormalAudioCatalog formalAudioCatalog = null,
+            DirectionalSpriteCatalog directionalSpriteCatalog = null)
         {
             if (initialized) throw new InvalidOperationException("PresentationCoordinator is already initialized.");
             settings = accessibilitySettings ?? throw new ArgumentNullException(nameof(accessibilitySettings));
@@ -80,10 +82,11 @@ namespace Game.Presentation
             proceduralProfiles = proceduralCatalog ?? new ProceduralPresentationCatalog();
             formalVisuals = formalCatalog;
             formalAudio = formalAudioCatalog;
-            actors = new EntityViewPool<ActorView>(transform, EntityKind.Actor, catalog, proceduralProfiles, settings, fallback, 8);
-            projectiles = new EntityViewPool<ProjectileView>(transform, EntityKind.Projectile, catalog, proceduralProfiles, settings, fallback, 16);
-            areas = new EntityViewPool<AreaView>(transform, EntityKind.Area, catalog, proceduralProfiles, settings, fallback, 8);
-            pickups = new EntityViewPool<PickupView>(transform, EntityKind.Pickup, catalog, proceduralProfiles, settings, fallback, 16);
+            directionalSprites = directionalSpriteCatalog ?? new DirectionalSpriteCatalog();
+            actors = new EntityViewPool<ActorView>(transform, EntityKind.Actor, catalog, proceduralProfiles, settings, fallback, directionalSprites, 8);
+            projectiles = new EntityViewPool<ProjectileView>(transform, EntityKind.Projectile, catalog, proceduralProfiles, settings, fallback, directionalSprites, 16);
+            areas = new EntityViewPool<AreaView>(transform, EntityKind.Area, catalog, proceduralProfiles, settings, fallback, directionalSprites, 8);
+            pickups = new EntityViewPool<PickupView>(transform, EntityKind.Pickup, catalog, proceduralProfiles, settings, fallback, directionalSprites, 16);
             vfx = new VfxRequestPool(transform, fallback, 200, 32);
             damageNumbers = new DamageNumberPool(sharedCanvas);
             audioRouter = new AudioRequestRouter(transform, formalAudio);
@@ -169,6 +172,7 @@ namespace Game.Presentation
             LastDeathRequestCount = 0;
             LastStatusRequestCount = 0;
 
+            releaseBuffer.Clear();
             if (simulationEvents != null)
             {
                 for (var index = 0; index < simulationEvents.Count; index++)
@@ -176,7 +180,7 @@ namespace Game.Presentation
                     var item = simulationEvents.GetAt(index);
                     var removed = new SpatialEntity(item.EntityKind, item.Handle);
                     if (item.Type == SimulationEventType.Removed && views.ContainsKey(removed))
-                        Release(removed);
+                        releaseBuffer.Add(removed);
                 }
             }
 
@@ -223,6 +227,7 @@ namespace Game.Presentation
             }
 
             RouteRequests();
+            for (var index = 0; index < releaseBuffer.Count; index++) Release(releaseBuffer[index]);
         }
 
         public void TickEffects(float unscaledDeltaTime)
@@ -234,6 +239,7 @@ namespace Game.Presentation
                 settings.AmbienceVolume,
                 settings.EffectsVolume,
                 mixState);
+            foreach (var pair in views) pair.Value.TickVisual(unscaledDeltaTime);
             vfx.Tick(unscaledDeltaTime);
             damageNumbers.Tick(unscaledDeltaTime);
             audioRouter.Tick(unscaledDeltaTime);
@@ -365,6 +371,7 @@ namespace Game.Presentation
                 {
                     case PresentationRequestType.Hit:
                         LastHitRequestCount++;
+                        if (views.TryGetValue(request.Target, out var hitView)) hitView.PlayHitReaction();
                         if (settings.FlashIntensity > 0f || style.Priority == PresentationPriority.CriticalDanger)
                         {
                             var color = style.Color;
@@ -385,7 +392,12 @@ namespace Game.Presentation
                         var deathColor = style.Color;
                         deathColor.a = Mathf.Max(0.55f, settings.FlashIntensity);
                         style = style.WithColor(deathColor, style.OutlineColor);
-                        vfx.TrySpawn(new ProceduralVfxRequest(position, style, 1.4f, 0.3f));
+                        Sprite deathSprite = null;
+                        if (views.TryGetValue(request.Target, out var deathView))
+                            deathSprite = deathView.ResolvePoseSprite(PresentationPose.Death);
+                        vfx.TrySpawn(
+                            new ProceduralVfxRequest(position, style, 1.4f, 0.34f, 0f, deathSprite == null),
+                            deathSprite);
                         audioRouter.Route(PresentationAudioCue.Death, style.Priority, 0.5f);
                         break;
                     case PresentationRequestType.Status:

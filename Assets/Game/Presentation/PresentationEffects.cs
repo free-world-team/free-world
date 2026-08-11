@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Game.Application;
+using Game.Simulation;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -145,15 +146,23 @@ namespace Game.Presentation
             }
 
             effect.Object.transform.SetPositionAndRotation(
-                PresentationSpace.ToGround(
-                    request.Position.x,
-                    request.Position.y,
-                    PresentationSpace.GroundDecalHeight * 4f),
-                PresentationSpace.GroundRotation * Quaternion.Euler(0f, 0f, request.RotationDegrees));
+                request.GroundAligned
+                    ? PresentationSpace.ToGround(
+                        request.Position.x,
+                        request.Position.y,
+                        PresentationSpace.GroundDecalHeight * 4f)
+                    : PresentationSpace.ToEntity(EntityKind.Actor, request.Position.x, request.Position.y),
+                request.GroundAligned
+                    ? PresentationSpace.GroundRotation * Quaternion.Euler(0f, 0f, request.RotationDegrees)
+                    : Quaternion.Euler(0f, 0f, request.RotationDegrees));
             effect.Object.transform.localScale = Vector3.one * request.Size;
             effect.Renderer.sprite = formalSprite != null ? formalSprite :
                 library == null ? sprite : library.GetSprite(request.Style.Shape);
             effect.Renderer.color = request.Style.Color;
+            effect.Renderer.sortingOrder = request.GroundAligned
+                ? 100 + PresentationSpace.DepthOffset(request.Position.y)
+                : PresentationSpace.PriorityBand(request.Style.Priority) +
+                  PresentationSpace.DepthOffset(request.Position.y);
             effect.Remaining = request.Duration;
             effect.Priority = request.Style.Priority;
             effect.Shape = request.Style.Shape;

@@ -61,6 +61,10 @@ namespace Game.Presentation
         private SpriteRenderer shadowRenderer;
         private SpriteRenderer[] overlayRenderers;
         private int baseSortingOrder;
+        private DirectionalSpriteSet animationSet;
+        private Vector2 baseScale = Vector2.one;
+        private Color baseColor = Color.white;
+        private float hitReactionRemaining;
 
         public SpatialEntity Binding { get; private set; }
         public bool IsBound => Binding.IsValid;
@@ -71,6 +75,10 @@ namespace Game.Presentation
         public int ActiveOverlayCount { get; private set; }
         internal ContentId ProfileId { get; private set; }
         internal bool UsesPlayerStyle { get; private set; }
+        public bool DirectionalAnimationActive => animationSet != null;
+        public PresentationFacing CurrentFacing { get; private set; } = PresentationFacing.Down;
+        public PresentationPose CurrentPose { get; private set; } = PresentationPose.Idle;
+        public bool HitReactionActive => hitReactionRemaining > 0f;
 
         internal void Configure(Sprite sprite, Color color, Vector2 size)
         {
@@ -96,6 +104,8 @@ namespace Game.Presentation
             if (spriteRenderer == null) spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = sprite;
             spriteRenderer.color = color;
+            baseColor = color;
+            baseScale = size;
             baseSortingOrder = PresentationSpace.PriorityBand(priority);
             spriteRenderer.sortingOrder = baseSortingOrder;
             transform.localScale = new Vector3(size.x, size.y, 1f);
@@ -122,6 +132,8 @@ namespace Game.Presentation
             if (spriteRenderer == null) spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = library.GetSprite(style.Shape);
             spriteRenderer.color = style.Color;
+            baseColor = style.Color;
+            baseScale = style.Size;
             baseSortingOrder = PresentationSpace.PriorityBand(style.Priority);
             spriteRenderer.sortingOrder = baseSortingOrder;
             transform.localScale = new Vector3(style.Size.x, style.Size.y, 1f);
@@ -188,6 +200,13 @@ namespace Game.Presentation
             UsesPlayerStyle = playerStyle;
         }
 
+        internal void ConfigureAnimation(DirectionalSpriteSet value)
+        {
+            animationSet = value;
+            CurrentFacing = PresentationFacing.Down;
+            CurrentPose = PresentationPose.Idle;
+        }
+
         public void Bind(SpatialEntity entity)
         {
             if (!entity.IsValid) throw new ArgumentException("A view requires a valid entity.", nameof(entity));
@@ -209,8 +228,8 @@ namespace Game.Presentation
                     : Binding.Kind == EntityKind.Projectile
                         ? Quaternion.Euler(0f, 0f, facing * Mathf.Rad2Deg)
                         : Quaternion.identity);
-            if (spriteRenderer != null && Binding.Kind != EntityKind.Projectile && Binding.Kind != EntityKind.Area)
-                spriteRenderer.flipX = Mathf.Cos(facing) < 0f;
+            ApplyPose(snapshot.CurrentStateFlags, facing);
+            ApplyMotion(snapshot.CurrentStateFlags);
             UpdateDepthSort(position.Y);
             if (shadowRenderer != null)
                 shadowRenderer.transform.localPosition = new Vector3(
@@ -228,6 +247,15 @@ namespace Game.Presentation
             LastSnapshotTick = -1;
             ProfileId = default;
             UsesPlayerStyle = false;
+            animationSet = null;
+            hitReactionRemaining = 0f;
+            CurrentPose = PresentationPose.Idle;
+            if (spriteRenderer != null)
+            {
+                spriteRenderer.color = baseColor;
+                spriteRenderer.transform.localPosition = Vector3.zero;
+            }
+            transform.localScale = new Vector3(baseScale.x, baseScale.y, 1f);
             ClearOverlays();
             if (shadowRenderer != null) shadowRenderer.gameObject.SetActive(false);
             gameObject.SetActive(false);
@@ -264,6 +292,65 @@ namespace Game.Presentation
                 : new Vector3(0.78f, 0.22f, 1f);
             shadowRenderer.sortingOrder = -100;
             shadowRenderer.gameObject.SetActive(true);
+        }
+
+        internal void PlayHitReaction(float duration = 0.14f)
+        {
+            hitReactionRemaining = Mathf.Max(hitReactionRemaining, Mathf.Max(0.01f, duration));
+        }
+
+        internal Sprite ResolvePoseSprite(PresentationPose pose)
+        {
+            return animationSet == null || spriteRenderer == null
+                ? null
+                : animationSet.Resolve(CurrentFacing, pose, spriteRenderer.sprite);
+        }
+
+        internal void TickVisual(float unscaledDeltaTime)
+        {
+            if (hitReactionRemaining > 0f)
+                hitReactionRemaining = Mathf.Max(0f, hitReactionRemaining - Mathf.Max(0f, unscaledDeltaTime));
+            if (spriteRenderer == null) return;
+            if (hitReactionRemaining > 0f)
+            {
+                var pulse = 0.55f + (Mathf.Sin(Time.unscaledTime * 90f) * 0.45f);
+                spriteRenderer.color = Color.Lerp(baseColor, Color.white, pulse);
+            }
+            else spriteRenderer.color = baseColor;
+        }
+
+        private void ApplyPose(SimulationStateFlags flags, float facingRadians)
+        {
+            if (spriteRenderer == null || Binding.Kind == EntityKind.Area) return;
+            CurrentFacing = DirectionalSpriteCatalog.FacingFromRadians(facingRadians);
+            CurrentPose = hitReactionRemaining > 0f
+                ? PresentationPose.Hit
+                : (flags & SimulationStateFlags.Moving) != 0
+                    ? PresentationPose.Move
+                    : PresentationPose.Idle;
+            if (animationSet != null)
+            {
+                spriteRenderer.sprite = animationSet.Resolve(CurrentFacing, CurrentPose, spriteRenderer.sprite);
+                spriteRenderer.flipX = false;
+            }
+            else if (Binding.Kind != EntityKind.Projectile)
+                spriteRenderer.flipX = Mathf.Cos(facingRadians) < 0f;
+        }
+
+        private void ApplyMotion(SimulationStateFlags flags)
+        {
+            if (spriteRenderer == null || Binding.Kind == EntityKind.Area) return;
+            var moving = (flags & SimulationStateFlags.Moving) != 0;
+            var boss = ProfileId.IsValid && ProfileId.Value.IndexOf(".boss.", StringComparison.Ordinal) >= 0;
+            var phase = (Time.unscaledTime * (moving ? 8.5f : 3.1f)) + (Binding.Handle.Index * 0.37f);
+            var wave = Mathf.Sin(phase);
+            var bob = wave * (moving ? 0.055f : boss ? 0.036f : 0.022f);
+            spriteRenderer.transform.localPosition = new Vector3(0f, bob, 0f);
+            var squash = wave * (moving ? 0.035f : boss ? 0.022f : 0.012f);
+            transform.localScale = new Vector3(
+                baseScale.x * (1f + squash),
+                baseScale.y * (1f - squash),
+                1f);
         }
 
         private void UpdateDepthSort(float simulationY)

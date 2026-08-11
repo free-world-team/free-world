@@ -78,7 +78,8 @@ namespace Game.Infrastructure
                 formalVisualLoader.Catalog == null ? null : formalVisualLoader.Catalog.CreateEntityCatalog(),
                 QinglanProceduralPresentationFactory.Build(application.ContentRegistry),
                 formalVisualLoader.Catalog,
-                formalAudioLoader.Catalog);
+                formalAudioLoader.Catalog,
+                formalVisualLoader.DirectionalSprites);
             presenter = new QinglanDemoPresenter(Flow, Ui);
 
             if (presentationCamera == null)

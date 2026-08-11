@@ -47,8 +47,16 @@ namespace Game.Tests.PlayMode
             Assert.That(host.Flow.Stage, Is.EqualTo(DemoFlowStage.Active));
             Assert.That(host.Presentation.MapMarkerCount, Is.EqualTo(11));
             Assert.That(GameObject.Find("G2_7_ProceduralMap"), Is.Not.Null);
+            Assert.That(host.Presentation.UsesXzGroundPlane, Is.True);
+            Assert.That(host.Presentation.RaisedMapGeometryCount, Is.GreaterThan(4));
+            Assert.That(host.Presentation.MapGroundShadowCount, Is.GreaterThan(0));
             Assert.That(host.Presentation.TryGetView(host.Flow.Session.Player, out var player), Is.True);
             Assert.That(player.Shape, Is.EqualTo(ProceduralShape.Triangle));
+            Assert.That(player.DirectionalAnimationActive, Is.True);
+            Assert.That(player.transform.Find("GroundShadow"), Is.Not.Null);
+            var cameraRig = Object.FindFirstObjectByType<PresentationCameraRig>();
+            Assert.That(cameraRig, Is.Not.Null);
+            Assert.That(cameraRig.UsesTiltedOrthographicProjection, Is.True);
             var standardColor = player.DisplayColor;
 
             host.Flow.Settings.SetColorVision(ColorVisionMode.HighContrast);

@@ -235,13 +235,15 @@ namespace Game.Presentation
             in ProceduralPresentationStyle style,
             float size,
             float duration,
-            float rotationDegrees = 0f)
+            float rotationDegrees = 0f,
+            bool groundAligned = true)
         {
             Position = position;
             Style = style;
             Size = Mathf.Max(0.05f, size);
             Duration = Mathf.Max(0.01f, duration);
             RotationDegrees = rotationDegrees;
+            GroundAligned = groundAligned;
         }
 
         public Vector2 Position { get; }
@@ -249,5 +251,6 @@ namespace Game.Presentation
         public float Size { get; }
         public float Duration { get; }
         public float RotationDegrees { get; }
+        public bool GroundAligned { get; }
     }
 }
