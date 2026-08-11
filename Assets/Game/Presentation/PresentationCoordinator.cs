@@ -33,6 +33,7 @@ namespace Game.Presentation
         private FormalVisualCatalog formalVisuals;
         private FormalAudioCatalog formalAudio;
         private DirectionalSpriteCatalog directionalSprites;
+        private Game.Core.ContentId defaultFormalPickupProfileId;
         private ColorVisionMode lastColorVision;
         private PresentationMixState mixState;
         private long consumedTick = -1;
@@ -66,6 +67,15 @@ namespace Game.Presentation
         public int MapGroundShadowCount => mapPresentation?.GroundShadowCount ?? 0;
         public bool UsesXzGroundPlane => mapPresentation?.UsesXzGroundPlane == true;
         public long ProjectileTrailSpawnCount { get; private set; }
+        public long TotalHitRequestCount { get; private set; }
+        public long TotalDeathRequestCount { get; private set; }
+        public long TotalStatusRequestCount { get; private set; }
+        public long FormalVfxSpawnCount { get; private set; }
+        public long DirectionalAnimationFrameChangeCount => actors?.AnimationFrameChangeCount ?? 0;
+        public int ActiveActorViewCount => CountViews(EntityKind.Actor);
+        public int ActiveProjectileViewCount => CountViews(EntityKind.Projectile);
+        public int ActiveAreaViewCount => CountViews(EntityKind.Area);
+        public int ActivePickupViewCount => CountViews(EntityKind.Pickup);
         public int HeldWeaponViewCount
         {
             get
@@ -98,6 +108,10 @@ namespace Game.Presentation
             if (formalVisuals != null && weaponProfileId.IsSuccess &&
                 formalVisuals.TryResolveProfile(weaponProfileId.Value, EntityKind.Projectile, out var weaponProfile))
                 defaultHeldWeapon = weaponProfile.Sprite;
+            var pickupProfileId = Game.Core.ContentId.Create("qinglan.pickup.riding_wind_feather");
+            if (formalVisuals != null && pickupProfileId.IsSuccess &&
+                formalVisuals.TryResolveProfile(pickupProfileId.Value, EntityKind.Pickup, out _))
+                defaultFormalPickupProfileId = pickupProfileId.Value;
             actors = new EntityViewPool<ActorView>(transform, EntityKind.Actor, catalog, proceduralProfiles, settings, fallback, directionalSprites, 8, defaultHeldWeapon);
             projectiles = new EntityViewPool<ProjectileView>(transform, EntityKind.Projectile, catalog, proceduralProfiles, settings, fallback, directionalSprites, 16);
             areas = new EntityViewPool<AreaView>(transform, EntityKind.Area, catalog, proceduralProfiles, settings, fallback, directionalSprites, 8);
@@ -133,6 +147,7 @@ namespace Game.Presentation
                 {
                     var visualProfileId = default(Game.Core.ContentId);
                     session?.TryGetVisualProfileId(entry.Entity, out visualProfileId);
+                    visualProfileId = ResolveRenderableProfileId(visualProfileId, entry.Entity.Kind);
                     var playerStyle = session != null && entry.Entity == session.Player;
                     view = Acquire(entry.Entity, visualProfileId, playerStyle, out var usedFallback);
                     if (usedFallback) MissingProfileFallbackCount++;
@@ -146,11 +161,16 @@ namespace Game.Presentation
                         var castColor = castStyle.Color;
                         castColor.a = Mathf.Max(0.32f, settings.FlashIntensity * 0.65f);
                         castStyle = castStyle.WithColor(castColor, castStyle.OutlineColor);
-                        vfx.TrySpawn(new ProceduralVfxRequest(
+                        var castRequest = new ProceduralVfxRequest(
                             new Vector2(entry.CurrentPosition.X, entry.CurrentPosition.Y),
                             castStyle,
                             0.42f,
-                            0.16f));
+                            0.16f);
+                        if (TryResolveFormalEffectSprite(visualProfileId, entry.Entity.Kind, out var castSprite))
+                        {
+                            if (vfx.TrySpawn(castRequest, castSprite)) FormalVfxSpawnCount++;
+                        }
+                        else vfx.TrySpawn(castRequest);
                     }
                     else if (entry.Entity.Kind == EntityKind.Area)
                         TriggerNearestActorAttack(entry.CurrentPosition.X, entry.CurrentPosition.Y);
@@ -387,7 +407,10 @@ namespace Game.Presentation
             for (var index = 0; index < 2; index++)
             {
                 if (!session.TryGetVisualOverlayId(entity, index, out var overlayId)) break;
-                actors.ApplyOverlay((ActorView)view, index, overlayId);
+                actors.ApplyOverlay(
+                    (ActorView)view,
+                    index,
+                    ResolveRenderableProfileId(overlayId, EntityKind.Actor));
             }
         }
 
@@ -420,6 +443,7 @@ namespace Game.Presentation
                 {
                     case PresentationRequestType.Hit:
                         LastHitRequestCount++;
+                        TotalHitRequestCount++;
                         if (views.TryGetValue(request.Target, out var hitView)) hitView.PlayHitReaction();
                         if (settings.FlashIntensity > 0f || style.Priority == PresentationPriority.CriticalDanger)
                         {
@@ -427,7 +451,12 @@ namespace Game.Presentation
                             color.a = style.Priority == PresentationPriority.CriticalDanger ?
                                 Mathf.Max(0.35f, settings.FlashIntensity) : settings.FlashIntensity;
                             style = style.WithColor(color, style.OutlineColor);
-                            vfx.TrySpawn(new ProceduralVfxRequest(position, style, 0.45f, 0.12f));
+                            var hitRequest = new ProceduralVfxRequest(position, style, 0.45f, 0.12f);
+                            if (TryResolveFormalEffectSprite(request.ContentId, EntityKind.Projectile, out var hitSprite))
+                            {
+                                if (vfx.TrySpawn(hitRequest, hitSprite)) FormalVfxSpawnCount++;
+                            }
+                            else vfx.TrySpawn(hitRequest);
                         }
                         if (settings.DamageNumbersEnabled)
                             damageNumbers.Spawn(position, request.Magnitude, request.Emphasized);
@@ -438,27 +467,32 @@ namespace Game.Presentation
                         break;
                     case PresentationRequestType.Death:
                         LastDeathRequestCount++;
+                        TotalDeathRequestCount++;
                         var deathColor = style.Color;
                         deathColor.a = Mathf.Max(0.55f, settings.FlashIntensity);
                         style = style.WithColor(deathColor, style.OutlineColor);
                         Sprite deathSprite = null;
                         if (views.TryGetValue(request.Target, out var deathView))
                             deathSprite = deathView.ResolvePoseSprite(PresentationPose.Death);
-                        vfx.TrySpawn(
+                        var deathSpawned = vfx.TrySpawn(
                             new ProceduralVfxRequest(position, style, 1.4f, 0.34f, 0f, deathSprite == null),
                             deathSprite);
+                        if (deathSpawned && deathSprite != null) FormalVfxSpawnCount++;
                         audioRouter.Route(PresentationAudioCue.Death, style.Priority, 0.5f);
                         break;
                     case PresentationRequestType.Status:
                         LastStatusRequestCount++;
+                        TotalStatusRequestCount++;
                         if (settings.FlashIntensity > 0f)
                         {
                             var statusColor = style.Color;
                             statusColor.a = settings.FlashIntensity * 0.7f;
                             style = style.WithColor(statusColor, style.OutlineColor);
                             var effect = new ProceduralVfxRequest(position, style, 0.7f, 0.2f);
-                            if (formalVisuals != null && formalVisuals.TryResolveSprite(request.ContentId, out var sprite))
-                                vfx.TrySpawn(effect, sprite);
+                            if (TryResolveFormalEffectSprite(request.ContentId, EntityKind.Area, out var sprite))
+                            {
+                                if (vfx.TrySpawn(effect, sprite)) FormalVfxSpawnCount++;
+                            }
                             else
                                 vfx.TrySpawn(effect);
                         }
@@ -467,12 +501,54 @@ namespace Game.Presentation
             }
         }
 
+        private Game.Core.ContentId ResolveRenderableProfileId(
+            Game.Core.ContentId authoredId,
+            EntityKind kind)
+        {
+            if (formalVisuals == null) return authoredId;
+            if (!authoredId.IsValid)
+                return kind == EntityKind.Pickup && defaultFormalPickupProfileId.IsValid
+                    ? defaultFormalPickupProfileId
+                    : authoredId;
+            var normalized = FormalPresentationIdResolver.NormalizeProfileId(authoredId);
+            return formalVisuals.TryResolveProfile(normalized, kind, out _) ? normalized : authoredId;
+        }
+
+        private bool TryResolveFormalEffectSprite(
+            Game.Core.ContentId sourceId,
+            EntityKind kind,
+            out Sprite sprite)
+        {
+            if (formalVisuals != null)
+            {
+                var normalized = FormalPresentationIdResolver.NormalizeProfileId(sourceId);
+                if (formalVisuals.TryResolveProfile(normalized, kind, out var profile) && profile.Sprite != null)
+                {
+                    sprite = profile.Sprite;
+                    return true;
+                }
+                if (formalVisuals.TryResolveSprite(normalized, out sprite)) return true;
+                if (FormalPresentationIdResolver.TryGetSkillVfxKey(sourceId, out var skillVfxKey) &&
+                    formalVisuals.TryResolveSprite(skillVfxKey, out sprite)) return true;
+            }
+
+            sprite = null;
+            return false;
+        }
+
         private Vector2 FindPlayerPosition()
         {
             foreach (var pair in views)
                 if (pair.Value.UsesPlayerStyle)
                     return PresentationSpace.ToSimulation(pair.Value.transform.position);
             return Vector2.zero;
+        }
+
+        private int CountViews(EntityKind kind)
+        {
+            var count = 0;
+            foreach (var pair in views) if (pair.Key.Kind == kind) count++;
+            return count;
         }
 
         private Vector2 FindCriticalDangerPosition()

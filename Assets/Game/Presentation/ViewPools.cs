@@ -50,6 +50,15 @@ namespace Game.Presentation
         public int CreatedCount => all.Count;
         public int AvailableCount => available.Count;
         public int ActiveCount => all.Count - available.Count;
+        public long AnimationFrameChangeCount
+        {
+            get
+            {
+                long count = 0;
+                for (var index = 0; index < all.Count; index++) count += all[index].AnimationFrameChangeCount;
+                return count;
+            }
+        }
 
         public T Acquire(
             SpatialEntity entity,
@@ -127,10 +136,26 @@ namespace Game.Presentation
         {
             var outline = settings.ColorVision == ColorVisionMode.HighContrast ?
                 (playerStyle ? Color.white : Color.black) : new Color(0.04f, 0.05f, 0.05f, 0.78f);
+            var size = profile.Size;
+            var defaultExperiencePickup = kind == EntityKind.Pickup &&
+                string.Equals(
+                    profile.StableId,
+                    "qinglan.pickup.riding_wind_feather",
+                    StringComparison.Ordinal);
+            if (kind == EntityKind.Actor)
+            {
+                var scale = playerStyle ? 1.65f :
+                    profile.StableId.IndexOf(".boss.", StringComparison.Ordinal) >= 0 ? 2.2f : 1.4f;
+                size *= scale;
+            }
+            else if (defaultExperiencePickup)
+                size *= 0.52f;
+            var tint = FormalTint(profile.Color, playerStyle);
+            if (defaultExperiencePickup) tint.a = Mathf.Min(tint.a, 0.84f);
             view.Configure(
                 profile.Sprite != null ? profile.Sprite : fallback.Sprite,
-                FormalTint(profile.Color, playerStyle),
-                profile.Size,
+                tint,
+                size,
                 FormalPriority(profile, playerStyle),
                 FormalShape(profile, playerStyle),
                 outline,
@@ -152,7 +177,8 @@ namespace Game.Presentation
 
         private PresentationPriority FormalPriority(VisualProfile profile, bool playerStyle)
         {
-            if (playerStyle || kind == EntityKind.Pickup) return PresentationPriority.Mechanic;
+            if (playerStyle) return PresentationPriority.Mechanic;
+            if (kind == EntityKind.Pickup) return PresentationPriority.Decoration;
             if (kind == EntityKind.Area ||
                 (kind == EntityKind.Actor && profile.StableId.IndexOf(".boss.", StringComparison.Ordinal) >= 0))
                 return PresentationPriority.CriticalDanger;

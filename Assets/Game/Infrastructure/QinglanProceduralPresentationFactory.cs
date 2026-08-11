@@ -92,7 +92,7 @@ namespace Game.Infrastructure
                 var critical = boss || (enemy && (area || Has(definition, EnemyExplosiveTag)));
                 return Style(
                     shape,
-                    hostile ? Danger(variant, area ? 0.58f : 1f) : Friendly(variant),
+                    hostile ? Danger(variant, area ? 0.38f : 1f) : Friendly(variant),
                     hostile ? new Color(0.3f, 0.06f, 0.03f, 1f) : new Color(0.96f, 0.94f, 0.84f, 1f),
                     area ? 2.2f : 0.48f,
                     area ? 2.2f : outbound ? 0.65f : 0.48f,

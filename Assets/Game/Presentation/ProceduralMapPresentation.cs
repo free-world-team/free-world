@@ -161,6 +161,7 @@ namespace Game.Presentation
 
         private void BuildGround(ProceduralMapConfiguration configuration)
         {
+            const int formalRegionCount = 5;
             const float tileSize = 4f;
             var minimum = configuration.Minimum;
             var maximum = configuration.Maximum;
@@ -177,10 +178,21 @@ namespace Game.Presentation
                     var renderer = CreateRenderer("Ground_" + row + "_" + column, -30);
                     if (formal)
                     {
-                        var sprite = configuration.GroundSprites[
-                            (row * 17 + column * 7) % configuration.GroundSprites.Count];
+                        var region = ResolveRegion(position, minimum, maximum);
+                        var spritesPerRegion = Mathf.Max(1, configuration.GroundSprites.Count / formalRegionCount);
+                        var regionStart = Mathf.Min(region * spritesPerRegion,
+                            configuration.GroundSprites.Count - 1);
+                        var regionLength = region == formalRegionCount - 1
+                            ? configuration.GroundSprites.Count - regionStart
+                            : Mathf.Min(spritesPerRegion, configuration.GroundSprites.Count - regionStart);
+                        // Each formal kit is authored as an 8x2 contiguous atlas. Preserve that
+                        // topology so seams reconstruct the source environment instead of looking
+                        // like shuffled rectangular puzzle pieces.
+                        var variation = ((row % 2) * 8) + (column % 8);
+                        variation %= Mathf.Max(1, regionLength);
+                        var sprite = configuration.GroundSprites[regionStart + variation];
                         renderer.sprite = sprite;
-                        renderer.color = new Color(0.72f, 0.78f, 0.72f, 1f);
+                        renderer.color = RegionTint(region);
                         var bounds = sprite.bounds.size;
                         renderer.transform.localScale = new Vector3(
                             bounds.x <= 0f ? 1f : tileSize / bounds.x,
@@ -207,13 +219,20 @@ namespace Game.Presentation
         private void BuildProps(ProceduralMapConfiguration configuration)
         {
             if (configuration.PropSprites.Count == 0) return;
+            const int formalRegionCount = 5;
+            var propsPerRegion = Mathf.Max(1, configuration.PropSprites.Count / formalRegionCount);
             for (var zoneIndex = 0; zoneIndex < configuration.Zones.Count; zoneIndex++)
             {
                 var center = configuration.Zones[zoneIndex];
+                var region = ResolveRegion(center, configuration.Minimum, configuration.Maximum);
+                var regionStart = Mathf.Min(region * propsPerRegion, configuration.PropSprites.Count - 1);
+                var regionLength = region == formalRegionCount - 1
+                    ? configuration.PropSprites.Count - regionStart
+                    : Mathf.Min(propsPerRegion, configuration.PropSprites.Count - regionStart);
                 for (var offsetIndex = 0; offsetIndex < 3; offsetIndex++)
                 {
                     var sprite = configuration.PropSprites[
-                        (zoneIndex * 5 + offsetIndex * 11) % configuration.PropSprites.Count];
+                        regionStart + ((zoneIndex * 5 + offsetIndex * 7) % Mathf.Max(1, regionLength))];
                     if (sprite == null) continue;
                     var renderer = CreateRenderer("FormalProp_" + zoneIndex + "_" + offsetIndex, -9);
                     renderer.sprite = sprite;
@@ -239,11 +258,11 @@ namespace Game.Presentation
             var width = maximum.x - minimum.x;
             var height = maximum.y - minimum.y;
             var center = (minimum + maximum) * 0.5f;
-            var color = new Color(0.34f, 0.29f, 0.21f, 1f);
-            CreateRaisedBlock("Boundary_North", new Vector2(center.x, maximum.y), new Vector2(width, 0.42f), 0.62f, color);
-            CreateRaisedBlock("Boundary_South", new Vector2(center.x, minimum.y), new Vector2(width, 0.42f), 0.62f, color);
-            CreateRaisedBlock("Boundary_West", new Vector2(minimum.x, center.y), new Vector2(0.42f, height), 0.62f, color);
-            CreateRaisedBlock("Boundary_East", new Vector2(maximum.x, center.y), new Vector2(0.42f, height), 0.62f, color);
+            var color = new Color(0.28f, 0.36f, 0.34f, 1f);
+            CreateRaisedBlock("Boundary_North", new Vector2(center.x, maximum.y), new Vector2(width, 0.22f), 0.26f, color);
+            CreateRaisedBlock("Boundary_South", new Vector2(center.x, minimum.y), new Vector2(width, 0.22f), 0.26f, color);
+            CreateRaisedBlock("Boundary_West", new Vector2(minimum.x, center.y), new Vector2(0.22f, height), 0.26f, color);
+            CreateRaisedBlock("Boundary_East", new Vector2(maximum.x, center.y), new Vector2(0.22f, height), 0.26f, color);
         }
 
         private void BuildZones(ProceduralMapConfiguration configuration)
@@ -263,12 +282,72 @@ namespace Game.Presentation
             for (var index = 0; index < configuration.Obstacles.Count; index++)
             {
                 var item = configuration.Obstacles[index];
+                var authoredFootprint = item.Maximum - item.Minimum;
+                var footprint = authoredFootprint;
+                // Collision walls are authored two metres thick. A literal cube at that
+                // footprint occupies an excessive part of a tilted orthographic frame. The
+                // mesh is therefore only a curb; formal region props below communicate the
+                // full height and authored blocking line.
+                if (footprint.x <= 2.1f && footprint.y > 4f) footprint.x = 0.22f;
+                if (footprint.y <= 2.1f && footprint.x > 4f) footprint.y = 0.22f;
                 CreateRaisedBlock(
                     "Obstacle_" + index,
                     (item.Minimum + item.Maximum) * 0.5f,
-                    item.Maximum - item.Minimum,
-                    0.72f + ((index % 3) * 0.22f),
-                    new Color(0.25f, 0.22f, 0.17f, 1f));
+                    footprint,
+                    0.12f,
+                    new Color(0.24f, 0.31f, 0.3f, 1f));
+                BuildObstacleProps(
+                    configuration,
+                    index,
+                    (item.Minimum + item.Maximum) * 0.5f,
+                    authoredFootprint);
+            }
+        }
+
+        private void BuildObstacleProps(
+            ProceduralMapConfiguration configuration,
+            int obstacleIndex,
+            Vector2 center,
+            Vector2 footprint)
+        {
+            if (configuration.PropSprites.Count == 0) return;
+            const int formalRegionCount = 5;
+            var propsPerRegion = Mathf.Max(1, configuration.PropSprites.Count / formalRegionCount);
+            var region = ResolveRegion(center, configuration.Minimum, configuration.Maximum);
+            var regionStart = Mathf.Min(region * propsPerRegion, configuration.PropSprites.Count - 1);
+            var regionLength = region == formalRegionCount - 1
+                ? configuration.PropSprites.Count - regionStart
+                : Mathf.Min(propsPerRegion, configuration.PropSprites.Count - regionStart);
+            var horizontal = footprint.x >= footprint.y;
+            var length = Mathf.Max(footprint.x, footprint.y);
+            var count = Mathf.Max(1, Mathf.CeilToInt(length / 3.8f));
+            for (var itemIndex = 0; itemIndex < count; itemIndex++)
+            {
+                // Atlas slots 6 and 2 are region-authored fence/stone silhouettes. Alternate
+                // occasional posts so long simulation walls read as courtyard architecture.
+                var localSpriteIndex = itemIndex % 4 == 0 ? 2 : 6;
+                localSpriteIndex %= Mathf.Max(1, regionLength);
+                var sprite = configuration.PropSprites[regionStart + localSpriteIndex];
+                if (sprite == null) continue;
+                var distance = (-length * 0.5f) + ((itemIndex + 0.5f) * (length / count));
+                var x = center.x + (horizontal ? distance : 0f);
+                var y = center.y + (horizontal ? 0f : distance);
+                var targetHeight = itemIndex % 4 == 0 ? 2.45f : 2.05f;
+                var bounds = sprite.bounds.size;
+                var scale = bounds.y <= 0f ? 1f : targetHeight / bounds.y;
+                var renderer = CreateRenderer(
+                    "ObstacleProp_" + obstacleIndex + "_" + itemIndex,
+                    200 + PresentationSpace.DepthOffset(y));
+                renderer.sprite = sprite;
+                renderer.color = Color.white;
+                renderer.transform.position = PresentationSpace.ToGround(x, y, targetHeight * 0.48f);
+                renderer.transform.localScale = Vector3.one * scale;
+                CreateGroundShadow(
+                    "ObstaclePropShadow_" + obstacleIndex + "_" + itemIndex,
+                    x,
+                    y,
+                    targetHeight * 0.62f);
+                FormalPropCount++;
             }
         }
 
@@ -367,7 +446,10 @@ namespace Game.Presentation
 
         private static Material CreateRaisedSurfaceMaterial()
         {
-            var shader = Shader.Find("Universal Render Pipeline/Lit");
+            // Unlit sides keep the low courtyard rails legible under every runtime light
+            // configuration; depth and contact shadows still come from the raised mesh and
+            // the formal vertical props around each region.
+            var shader = Shader.Find("Universal Render Pipeline/Unlit");
             if (shader == null) shader = Shader.Find("Universal Render Pipeline/Simple Lit");
             if (shader == null) shader = Shader.Find("Sprites/Default");
             return shader == null ? null : new Material(shader)
@@ -392,6 +474,33 @@ namespace Game.Presentation
             if (kind == 2) return ProceduralShape.Chevron;
             if (kind == 3) return ProceduralShape.Diamond;
             return fallback;
+        }
+
+        private static int ResolveRegion(Vector2 position, Vector2 minimum, Vector2 maximum)
+        {
+            var center = (minimum + maximum) * 0.5f;
+            var localX = position.x - center.x;
+            var localY = position.y - center.y;
+
+            // Old Court is five authored courtyards separated by the real simulation walls
+            // at x=+/-20 and y=+/-16. Aligning material changes to those rails makes the
+            // zones read as intentional spaces rather than arbitrary rectangular patches.
+            if (Mathf.Abs(localX) < 20f && Mathf.Abs(localY) < 16f) return 0;
+            if (localY >= 16f) return 3;
+            if (localY <= -16f) return 4;
+            return localX < 0f ? 1 : 2;
+        }
+
+        private static Color RegionTint(int region)
+        {
+            switch (region)
+            {
+                case 1: return new Color(0.9f, 0.96f, 0.88f, 1f);
+                case 2: return new Color(0.88f, 0.93f, 0.98f, 1f);
+                case 3: return new Color(0.84f, 0.9f, 0.94f, 1f);
+                case 4: return new Color(0.98f, 0.93f, 0.84f, 1f);
+                default: return new Color(0.94f, 0.96f, 0.93f, 1f);
+            }
         }
     }
 }

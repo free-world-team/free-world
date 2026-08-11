@@ -84,6 +84,7 @@ namespace Game.Presentation
         public bool HitReactionActive => hitReactionRemaining > 0f;
         public bool HeldWeaponVisible => heldWeaponRenderer != null && heldWeaponRenderer.gameObject.activeSelf;
         public bool ProjectileTrailActive => projectileTrail != null && projectileTrail.emitting;
+        public long AnimationFrameChangeCount { get; private set; }
 
         internal void Configure(Sprite sprite, Color color, Vector2 size)
         {
@@ -144,7 +145,10 @@ namespace Game.Presentation
             transform.localScale = new Vector3(style.Size.x, style.Size.y, 1f);
             var outline = EnsureOutline();
             outline.sprite = library.GetSprite(style.Shape);
-            outline.color = style.OutlineColor;
+            var outlineColor = style.OutlineColor;
+            if (style.Shape == ProceduralShape.Ring && style.Size.x >= 1.5f)
+                outlineColor.a = Mathf.Min(outlineColor.a, 0.48f);
+            outline.color = outlineColor;
             outline.sortingOrder = spriteRenderer.sortingOrder - 1;
             outline.transform.localScale = Vector3.one * 1.18f;
             outline.gameObject.SetActive(true);
@@ -402,7 +406,9 @@ namespace Game.Presentation
                     : PresentationPose.Idle;
             if (animationSet != null)
             {
-                spriteRenderer.sprite = animationSet.Resolve(CurrentFacing, CurrentPose, spriteRenderer.sprite);
+                var nextSprite = animationSet.Resolve(CurrentFacing, CurrentPose, spriteRenderer.sprite);
+                if (nextSprite != null && nextSprite != spriteRenderer.sprite) AnimationFrameChangeCount++;
+                spriteRenderer.sprite = nextSprite;
                 spriteRenderer.flipX = false;
             }
             else if (Binding.Kind != EntityKind.Projectile)
@@ -424,7 +430,15 @@ namespace Game.Presentation
             var phase = (Time.unscaledTime * (moving ? 8.5f : 3.1f)) + (Binding.Handle.Index * 0.37f);
             var wave = Mathf.Sin(phase);
             var bob = wave * (moving ? 0.055f : boss ? 0.036f : 0.022f);
-            spriteRenderer.transform.localPosition = new Vector3(0f, bob, 0f);
+            if (spriteRenderer.transform == transform)
+            {
+                // The renderer currently lives on the pooled entity root. Preserve the XZ
+                // position written from simulation truth and apply bob only on world height.
+                var rootPosition = transform.position;
+                transform.position = new Vector3(rootPosition.x, rootPosition.y + bob, rootPosition.z);
+            }
+            else
+                spriteRenderer.transform.localPosition = new Vector3(0f, bob, 0f);
             var squash = wave * (moving ? 0.035f : boss ? 0.022f : 0.012f);
             transform.localScale = new Vector3(
                 baseScale.x * (1f + squash),
@@ -465,7 +479,9 @@ namespace Game.Presentation
 
         private void UpdateDepthSort(float simulationY)
         {
-            var order = baseSortingOrder + PresentationSpace.DepthOffset(simulationY);
+            var order = Binding.Kind == EntityKind.Area
+                ? -20 + PresentationSpace.DepthOffset(simulationY)
+                : baseSortingOrder + PresentationSpace.DepthOffset(simulationY);
             if (spriteRenderer != null) spriteRenderer.sortingOrder = order;
             if (outlineRenderer != null) outlineRenderer.sortingOrder = order - 1;
             if (shadowRenderer != null)

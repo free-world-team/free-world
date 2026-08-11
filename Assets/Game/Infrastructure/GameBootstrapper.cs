@@ -146,6 +146,8 @@ namespace Game.Infrastructure
             demoHost.Initialize(application, presentationCamera, inputActions, persistence);
             if (QinglanG28DevelopmentSmokeRunner.IsRequested())
                 gameObject.AddComponent<QinglanG28DevelopmentSmokeRunner>();
+            if (QinglanG40VisualAcceptanceRunner.IsRequested())
+                gameObject.AddComponent<QinglanG40VisualAcceptanceRunner>();
             if (QinglanG35PerformanceRunner.IsRequested())
                 gameObject.AddComponent<QinglanG35PerformanceRunner>();
 

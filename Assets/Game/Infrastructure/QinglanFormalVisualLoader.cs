@@ -47,6 +47,10 @@ namespace Game.Infrastructure
             new List<AsyncOperationHandle<Sprite>>(160);
         private readonly List<Sprite> mapTiles = new List<Sprite>(80);
         private readonly List<Sprite> mapProps = new List<Sprite>(80);
+        private readonly Dictionary<string, Sprite> resolvedSprites =
+            new Dictionary<string, Sprite>(StringComparer.Ordinal);
+        private readonly HashSet<string> failedSpriteKeys =
+            new HashSet<string>(StringComparer.Ordinal);
 
         public FormalVisualCatalog Catalog { get; private set; }
         public string LastError { get; private set; } = string.Empty;
@@ -84,7 +88,40 @@ namespace Game.Infrastructure
 
         public bool TryResolveSprite(string stableKey, out Sprite sprite)
         {
-            if (Catalog != null) return Catalog.TryResolveSprite(stableKey, out sprite);
+            if (Catalog == null || string.IsNullOrEmpty(stableKey))
+            {
+                sprite = null;
+                return false;
+            }
+            if (Catalog.TryResolveSprite(stableKey, out sprite)) return true;
+            if (resolvedSprites.TryGetValue(stableKey, out sprite)) return sprite != null;
+            if (failedSpriteKeys.Contains(stableKey) ||
+                !Catalog.TryResolveAddress(stableKey, out var address) || string.IsNullOrEmpty(address))
+            {
+                sprite = null;
+                return false;
+            }
+
+            // CatalogOnly entries intentionally keep the catalog asset light. UI icons and
+            // short-lived formal VFX resolve their local Addressable once on first use, then
+            // stay cached under this startup owner instead of falling back to ui.focus.
+            try
+            {
+                var operation = Addressables.LoadAssetAsync<Sprite>(address);
+                spriteHandles.Add(operation);
+                sprite = operation.WaitForCompletion();
+                if (operation.Status == AsyncOperationStatus.Succeeded && sprite != null)
+                {
+                    resolvedSprites.Add(stableKey, sprite);
+                    return true;
+                }
+            }
+            catch (Exception)
+            {
+                // The stable miss is cached below so a malformed catalog entry cannot turn
+                // into repeated Addressables work on a presentation hot path.
+            }
+            failedSpriteKeys.Add(stableKey);
             sprite = null;
             return false;
         }
@@ -97,6 +134,8 @@ namespace Game.Infrastructure
             spriteHandles.Clear();
             mapTiles.Clear();
             mapProps.Clear();
+            resolvedSprites.Clear();
+            failedSpriteKeys.Clear();
             DirectionalSprites = new DirectionalSpriteCatalog();
             ReleaseHandle();
         }

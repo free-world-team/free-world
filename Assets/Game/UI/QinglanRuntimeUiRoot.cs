@@ -44,6 +44,7 @@ namespace Game.UI
         private TMP_Text dangerText;
         private RectTransform optionContent;
         private ScrollRect optionScroll;
+        private RectTransform buildPanelRect;
         private Image healthFill;
         private Image shieldFill;
         private Image experienceFill;
@@ -144,9 +145,9 @@ namespace Game.UI
                 new Vector2(24f, 20f), new Vector2(-24f, -20f));
             hudText.gameObject.SetActive(false);
             CreateHudWidgets();
-            dangerPanel = CreatePanel("Qinglan_DangerLayer", new Vector2(0.70f, 0.025f), new Vector2(0.985f, 0.085f));
-            dangerText = CreateText(dangerPanel.transform, "Qinglan_DangerText", 18, TextAlignmentOptions.TopLeft,
-                new Vector2(24f, 20f), new Vector2(-24f, -20f));
+            dangerPanel = CreatePanel("Qinglan_DangerLayer", new Vector2(0.62f, 0.018f), new Vector2(0.985f, 0.105f));
+            dangerText = CreateText(dangerPanel.transform, "Qinglan_DangerText", 16, TextAlignmentOptions.MidlineLeft,
+                new Vector2(18f, 8f), new Vector2(-18f, -8f));
             dangerText.font = boldFont;
             focusMarker = CreatePanel("Qinglan_FormalFocus", new Vector2(0.025f, 0.45f), new Vector2(0.055f, 0.55f));
             focusMarker.preserveAspect = true;
@@ -308,6 +309,11 @@ namespace Game.UI
             }
 
             EnsureHudIconCount(snapshot.BuildCount);
+            if (buildPanelRect != null)
+            {
+                var width = Mathf.Clamp(0.035f + (snapshot.BuildCount * 0.047f), 0.10f, 0.37f);
+                buildPanelRect.anchorMax = new Vector2(0.018f + width, 0.145f);
+            }
             VisibleHudIconCount = snapshot.BuildCount;
             for (var index = 0; index < hudIcons.Count; index++)
             {
@@ -342,7 +348,7 @@ namespace Game.UI
                 lastFontScale = settings.FontScale;
                 pageText.fontSize = Mathf.RoundToInt(28f * settings.FontScale);
                 hudText.fontSize = Mathf.RoundToInt(17f * settings.FontScale);
-                dangerText.fontSize = Mathf.RoundToInt(18f * settings.FontScale);
+                dangerText.fontSize = Mathf.RoundToInt(16f * settings.FontScale);
                 vitalsText.fontSize = Mathf.RoundToInt(18f * settings.FontScale);
                 runStatusText.fontSize = Mathf.RoundToInt(18f * settings.FontScale);
                 bossText.fontSize = Mathf.RoundToInt(17f * settings.FontScale);
@@ -452,6 +458,16 @@ namespace Game.UI
                 key = "qinglan/skill/base/" + Hyphenate(contentId.Substring("qinglan.skill.weapon.".Length)) + "/vfx";
             else if (contentId.StartsWith("qinglan.skill.evolved.", StringComparison.Ordinal))
                 key = "qinglan/skill/evolved/" + Hyphenate(contentId.Substring("qinglan.skill.evolved.".Length)) + "/vfx";
+            else if (contentId.StartsWith("qinglan.skill.", StringComparison.Ordinal) &&
+                     !contentId.StartsWith("qinglan.skill.enemy.", StringComparison.Ordinal) &&
+                     !contentId.StartsWith("qinglan.skill.boss.", StringComparison.Ordinal))
+            {
+                var skillName = contentId.Substring("qinglan.skill.".Length);
+                const string weaponPrefix = "weapon.";
+                if (skillName.StartsWith(weaponPrefix, StringComparison.Ordinal))
+                    skillName = skillName.Substring(weaponPrefix.Length);
+                key = "qinglan/skill/base/" + Hyphenate(skillName) + "/vfx";
+            }
             else if (contentId.StartsWith("qinglan.relic.", StringComparison.Ordinal))
                 key = "qinglan/relic/" + Hyphenate(contentId.Substring("qinglan.relic.".Length)) + "/icon";
             else if (contentId.StartsWith("qinglan.pickup.", StringComparison.Ordinal))
@@ -485,7 +501,8 @@ namespace Game.UI
                 else if (movement >= 0)
                     key = "qinglan/hub/meta-node/movement/" + contentId.Substring(movement + ".movement.".Length) + "/icon";
             }
-            return !string.IsNullOrEmpty(key) && visualCatalog.TryResolveSprite(key, out sprite);
+            if (!string.IsNullOrEmpty(key) && visualCatalog.TryResolveSprite(key, out sprite)) return true;
+            return visualCatalog.TryResolveSprite("ui.focus", out sprite);
         }
 
         private static string Hyphenate(string value) => value.Replace('_', '-').Replace('.', '-');
@@ -716,6 +733,7 @@ namespace Game.UI
 
             var buildPanel = CreatePanelUnder(hudPanel.transform, "Qinglan_HudBuild",
                 new Vector2(0.018f, 0.018f), new Vector2(0.62f, 0.145f));
+            buildPanelRect = buildPanel.rectTransform;
             buildPanel.color = new Color(0.02f, 0.055f, 0.065f, 0.88f);
             var buildObject = new GameObject("Qinglan_HudBuildIcons", typeof(RectTransform), typeof(HorizontalLayoutGroup));
             buildObject.transform.SetParent(buildPanel.transform, false);
@@ -733,7 +751,7 @@ namespace Game.UI
             buildLayout.childForceExpandWidth = false;
 
             var objectivePanel = CreatePanelUnder(hudPanel.transform, "Qinglan_HudObjectives",
-                new Vector2(0.73f, 0.66f), new Vector2(0.982f, 0.982f));
+                new Vector2(0.73f, 0.80f), new Vector2(0.982f, 0.982f));
             objectivePanel.color = new Color(0.02f, 0.055f, 0.065f, 0.82f);
             objectiveText = CreateText(objectivePanel.transform, "ObjectiveLabel", 15, TextAlignmentOptions.TopLeft,
                 new Vector2(18f, 14f), new Vector2(-18f, -14f));

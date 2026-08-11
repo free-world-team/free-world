@@ -25,6 +25,21 @@ namespace Game.Tests.EditMode
         }
 
         [Test]
+        public void LegacyPlaceholderPresentationIdsResolveToFormalProfilesAndSkillVfx()
+        {
+            var enemy = FormalPresentationIdResolver.NormalizeProfileId(
+                Id("placeholder.presentation.qinglan.enemy.grass_spirit"));
+            var skill = FormalPresentationIdResolver.NormalizeProfileId(
+                Id("placeholder.presentation.qinglan.skill.yufeng_sword"));
+
+            Assert.That(enemy.Value, Is.EqualTo("qinglan.enemy.grass_spirit"));
+            Assert.That(skill.Value, Is.EqualTo("qinglan.presentation.skill.yufeng_sword"));
+            Assert.That(FormalPresentationIdResolver.TryGetSkillVfxKey(
+                Id("qinglan.skill.yufeng_sword"), out var vfxKey), Is.True);
+            Assert.That(vfxKey, Is.EqualTo("qinglan/skill/base/yufeng-sword/vfx"));
+        }
+
+        [Test]
         public void RegistryDrivenProfilesGivePlayerBossAndBossSkillDistinctNonColorChannels()
         {
             var registry = LoadRegistry();

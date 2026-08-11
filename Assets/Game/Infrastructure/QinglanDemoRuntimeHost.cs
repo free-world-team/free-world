@@ -25,6 +25,8 @@ namespace Game.Infrastructure
         private QinglanFormalAudioLoader formalAudioLoader;
         private QinglanFormalFontLoader formalFontLoader;
         private Light presentationLight;
+        private bool visualAcceptanceMovementEnabled;
+        private Vector2 visualAcceptanceMovement;
 
         public QinglanDemoFlowController Flow { get; private set; }
         public M7InputRouter Input { get; private set; }
@@ -119,7 +121,7 @@ namespace Game.Infrastructure
             if (double.IsNaN(elapsedSeconds) || double.IsInfinity(elapsedSeconds) || elapsedSeconds < 0d)
                 throw new ArgumentOutOfRangeException(nameof(elapsedSeconds));
             Input.SetStickDeadzone(Flow.Settings.StickDeadzone);
-            var move = Input.Move;
+            var move = visualAcceptanceMovementEnabled ? visualAcceptanceMovement : Input.Move;
             Flow.SetMovement(new System.Numerics.Vector2(move.x, move.y));
             Flow.SetInteractHeld(Input.InteractHeld);
             var executedTicks = Flow.Tick(elapsedSeconds);
@@ -179,6 +181,18 @@ namespace Game.Infrastructure
                 presenter.Refresh(false);
                 ApplyInputMode();
             }
+        }
+
+        internal void SetVisualAcceptanceMovement(Vector2 movement)
+        {
+            visualAcceptanceMovement = Vector2.ClampMagnitude(movement, 1f);
+            visualAcceptanceMovementEnabled = true;
+        }
+
+        internal void ClearVisualAcceptanceMovement()
+        {
+            visualAcceptanceMovement = Vector2.zero;
+            visualAcceptanceMovementEnabled = false;
         }
 
         private string ResolveContentNameKey(string value)

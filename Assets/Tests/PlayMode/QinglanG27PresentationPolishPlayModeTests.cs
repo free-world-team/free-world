@@ -56,6 +56,18 @@ namespace Game.Tests.PlayMode
             Assert.That(player.transform.Find("GroundShadow"), Is.Not.Null);
             Assert.That(player.HeldWeaponVisible, Is.True);
             Assert.That(player.transform.Find("HeldWeapon_YufengSword"), Is.Not.Null);
+            var movementStart = player.transform.position;
+            host.SetVisualAcceptanceMovement(Vector2.right);
+            for (var index = 0; index < 30; index++)
+                host.TickRuntime(SimulationClock.TickDurationSeconds);
+            host.ClearVisualAcceptanceMovement();
+            var playerSnapshot = FindSnapshot(host.Flow.Session.RenderSnapshot, host.Flow.Session.Player);
+            Assert.That(playerSnapshot.CurrentPosition.X, Is.GreaterThan(3f),
+                "the production movement command must move simulation truth; view delta=" +
+                (player.transform.position.x - movementStart.x) + ", stage=" + host.Flow.Stage);
+            Assert.That(host.Presentation.TryGetView(host.Flow.Session.Player, out var movedPlayer), Is.True);
+            Assert.That(movedPlayer.transform.position.x, Is.EqualTo(playerSnapshot.CurrentPosition.X).Within(0.25f),
+                "the pooled player view must follow the real render snapshot");
             var cameraRig = Object.FindFirstObjectByType<PresentationCameraRig>();
             Assert.That(cameraRig, Is.Not.Null);
             Assert.That(cameraRig.UsesTiltedOrthographicProjection, Is.True);
@@ -75,6 +87,7 @@ namespace Game.Tests.PlayMode
             Assert.That(host.Presentation.ActiveVfxCount, Is.LessThanOrEqualTo(200));
             Assert.That(host.Presentation.ActiveAudioCount, Is.LessThanOrEqualTo(32));
             Assert.That(host.Presentation.ProjectileTrailSpawnCount, Is.GreaterThan(0));
+            Assert.That(host.Presentation.DirectionalAnimationFrameChangeCount, Is.GreaterThan(0));
             Assert.That(host.Presentation.HeldWeaponViewCount, Is.EqualTo(1));
         }
 
@@ -84,6 +97,17 @@ namespace Game.Tests.PlayMode
                 FindObjectsInactive.Include,
                 FindObjectsSortMode.None);
             for (var index = 0; index < all.Length; index++) Object.Destroy(all[index].gameObject);
+        }
+
+        private static RenderEntitySnapshot FindSnapshot(RenderSnapshot snapshot, SpatialEntity entity)
+        {
+            for (var index = 0; index < snapshot.Count; index++)
+            {
+                var candidate = snapshot.GetAt(index);
+                if (candidate.Entity == entity) return candidate;
+            }
+            Assert.Fail("player render snapshot is missing");
+            return default;
         }
     }
 }
