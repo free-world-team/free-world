@@ -708,3 +708,13 @@ Demo 不提供 Continue。Profile 已写但 Recovery 清理失败时，持久化
 
 完整字段、API 最大面、迁移和测试矩阵见
 `Docs/DemoDevelopment/08_G0_3_CONTRACT_FREEZE.md`。
+
+## 18. G4.0 倾斜正交 2.5D 表现边界
+
+G4.0 按 ADR 0031 将 Simulation 二维位置仅在 Presentation 映射为 Unity XZ 世界；地块贴地、Actor/Prop
+竖直、障碍具有表现高度，倾斜正交 Camera Rig 统一跟随与震屏。方向动画、装备、VFX 和 UI 只消费稳定
+ContentId、Snapshot 与 Event，不写回 Simulation，不改变 Content/Save Schema 或 30 Hz Tick。
+
+高频实体仍由 `PresentationCoordinator` 和池集中更新；禁止逐敌人 Animator/Update。UI 保留单 Canvas、
+Presenter 和命令入口，鼠标 Button 只是键盘/手柄同一 Command 的适配层。正式动画帧和 VFX Sprite 由
+Infrastructure Addressables Owner 持有，Presentation 不持有 Handle。

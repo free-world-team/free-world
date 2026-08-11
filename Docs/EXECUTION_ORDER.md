@@ -203,3 +203,8 @@ G3.5 已完成参考目标机 54,000 Tick CPU、1080p 30 分钟 GPU、完整回�
 敌人扩展压力 `FAIL` 作为非阻断容量限制保留。G3.6 RC2 已完成正式输入、Release Player、Manifest、
 合规、干净 Checkout 和自托管 CI，全部自动化为 `PASS`；但独立人工/法律签字与最低规格物理机器认证
 仍为 `NOT_RUN`，DOD-09—10 未关闭。当前保持 `NO-GO / INCOMPLETE`，不得进入后续发布或商店工作。
+
+G4.0 由用户在人工检查后追加，完整范围见
+`Docs/DemoDevelopment/30_G4_0_2_5D_PRESENTATION_COMPLETION.md`。执行顺序固定为架构门禁 → 2.5D
+战场 → 动画 → 武器/VFX → 成品 UI → 60 秒 Player 证据 → 全量门禁。G4.0 未关闭前不得再次声明 Demo
+完成，也不得进入发布/商店工作。

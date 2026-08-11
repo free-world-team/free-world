@@ -92,6 +92,10 @@ Manifest、合规、干净克隆与 DOD-01—10 当前提交证据。RC2 `9984bc
 合规、干净 Checkout 与 CI 已全部 `PASS`；独立人工/法律签字和最低规格实机认证仍为 `NOT_RUN`，故
 当前发布决定是 `NO-GO / INCOMPLETE`，不进入后续发布或商店工作。
 
+用户人工检查确认 G3.6 的“正式资产存在/加载”没有形成武器、怪物、动画、特效、可点击 UI 与 2.5D
+空间的成品闭环。新增 G4.0 单里程碑按 `30_G4_0_2_5D_PRESENTATION_COMPLETION.md` 修复该缺口；在
+DOD-01—10 全部 `PASS` 前，G3.6 历史自动证据不能用于宣称 Demo 表现完成。
+
 ## 5. G3 发布候选
 
 | 顺序 | 分支建议 | 交付物 | 退出门禁 |
@@ -102,6 +106,12 @@ Manifest、合规、干净克隆与 DOD-01—10 当前提交证据。RC2 `9984bc
 | G3.4 | `codex/g3-demo-balance` | 数值冻结与 Seed 矩阵 | 三构筑与失败率目标 PASS |
 | G3.5 | `codex/g3-demo-performance` | 目标硬件 CPU/GPU/GC/池证据 | 1080p 60、1% Low 警报审查 |
 | G3.6 | `codex/g3-demo-release-candidate` | Release Build、Smoke、Manifest、合规包 | DOD-01—10 全部 PASS |
+
+## 5.1 G4 人工验收修复
+
+| 顺序 | 分支建议 | 交付物 | 退出门禁 |
+|---:|---|---|---|
+| G4.0 | `codex/qinglan-demo-implementation` | 2.5D 战场、动画、武器、正式 VFX、成品 UI、60 秒证据 | G4.0 DOD-01—10 全部 PASS |
 
 ## 6. 每个工作包固定交付
 
