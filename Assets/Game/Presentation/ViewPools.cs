@@ -20,6 +20,7 @@ namespace Game.Presentation
         private readonly AccessibilitySettings settings;
         private readonly ProceduralVisualLibrary fallback;
         private readonly DirectionalSpriteCatalog directionalSprites;
+        private readonly Sprite heldWeaponSprite;
 
         internal EntityViewPool(
             Transform poolRoot,
@@ -29,7 +30,8 @@ namespace Game.Presentation
             AccessibilitySettings accessibilitySettings,
             ProceduralVisualLibrary proceduralFallback,
             DirectionalSpriteCatalog directionalSpriteCatalog,
-            int prewarm)
+            int prewarm,
+            Sprite defaultHeldWeaponSprite = null)
         {
             root = poolRoot ?? throw new ArgumentNullException(nameof(poolRoot));
             kind = entityKind;
@@ -38,6 +40,7 @@ namespace Game.Presentation
             settings = accessibilitySettings ?? throw new ArgumentNullException(nameof(accessibilitySettings));
             fallback = proceduralFallback ?? throw new ArgumentNullException(nameof(proceduralFallback));
             directionalSprites = directionalSpriteCatalog ?? throw new ArgumentNullException(nameof(directionalSpriteCatalog));
+            heldWeaponSprite = defaultHeldWeaponSprite;
             available = new Stack<T>(Math.Max(1, prewarm));
             all = new List<T>(Math.Max(1, prewarm));
             owned = new HashSet<T>();
@@ -74,6 +77,8 @@ namespace Game.Presentation
             view.SetStyleIdentity(visualProfileId, playerStyle);
             view.ConfigureAnimation(
                 directionalSprites.TryResolve(visualProfileId, out var spriteSet) ? spriteSet : null);
+            view.ConfigureHeldWeapon(playerStyle ? heldWeaponSprite : null);
+            if (kind == EntityKind.Projectile) view.ConfigureProjectileTrail(fallback.TrailMaterial);
             view.Bind(entity);
             return view;
         }

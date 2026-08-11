@@ -54,6 +54,8 @@ namespace Game.Tests.PlayMode
             Assert.That(player.Shape, Is.EqualTo(ProceduralShape.Triangle));
             Assert.That(player.DirectionalAnimationActive, Is.True);
             Assert.That(player.transform.Find("GroundShadow"), Is.Not.Null);
+            Assert.That(player.HeldWeaponVisible, Is.True);
+            Assert.That(player.transform.Find("HeldWeapon_YufengSword"), Is.Not.Null);
             var cameraRig = Object.FindFirstObjectByType<PresentationCameraRig>();
             Assert.That(cameraRig, Is.Not.Null);
             Assert.That(cameraRig.UsesTiltedOrthographicProjection, Is.True);
@@ -72,6 +74,8 @@ namespace Game.Tests.PlayMode
             Assert.That(host.Presentation.CreatedAudioSourceCount, Is.LessThanOrEqualTo(32));
             Assert.That(host.Presentation.ActiveVfxCount, Is.LessThanOrEqualTo(200));
             Assert.That(host.Presentation.ActiveAudioCount, Is.LessThanOrEqualTo(32));
+            Assert.That(host.Presentation.ProjectileTrailSpawnCount, Is.GreaterThan(0));
+            Assert.That(host.Presentation.HeldWeaponViewCount, Is.EqualTo(1));
         }
 
         private static void DestroyBootstrapInstances()

@@ -59,12 +59,15 @@ namespace Game.Presentation
         private SpriteRenderer spriteRenderer;
         private SpriteRenderer outlineRenderer;
         private SpriteRenderer shadowRenderer;
+        private SpriteRenderer heldWeaponRenderer;
+        private TrailRenderer projectileTrail;
         private SpriteRenderer[] overlayRenderers;
         private int baseSortingOrder;
         private DirectionalSpriteSet animationSet;
         private Vector2 baseScale = Vector2.one;
         private Color baseColor = Color.white;
         private float hitReactionRemaining;
+        private float attackReactionRemaining;
 
         public SpatialEntity Binding { get; private set; }
         public bool IsBound => Binding.IsValid;
@@ -79,6 +82,8 @@ namespace Game.Presentation
         public PresentationFacing CurrentFacing { get; private set; } = PresentationFacing.Down;
         public PresentationPose CurrentPose { get; private set; } = PresentationPose.Idle;
         public bool HitReactionActive => hitReactionRemaining > 0f;
+        public bool HeldWeaponVisible => heldWeaponRenderer != null && heldWeaponRenderer.gameObject.activeSelf;
+        public bool ProjectileTrailActive => projectileTrail != null && projectileTrail.emitting;
 
         internal void Configure(Sprite sprite, Color color, Vector2 size)
         {
@@ -207,12 +212,62 @@ namespace Game.Presentation
             CurrentPose = PresentationPose.Idle;
         }
 
+        internal void ConfigureHeldWeapon(Sprite sprite)
+        {
+            if (sprite == null)
+            {
+                if (heldWeaponRenderer != null) heldWeaponRenderer.gameObject.SetActive(false);
+                return;
+            }
+            if (heldWeaponRenderer == null)
+            {
+                var child = new GameObject("HeldWeapon_YufengSword");
+                child.transform.SetParent(transform, false);
+                heldWeaponRenderer = child.AddComponent<SpriteRenderer>();
+            }
+            heldWeaponRenderer.sprite = sprite;
+            heldWeaponRenderer.color = Color.white;
+            heldWeaponRenderer.transform.localScale = Vector3.one * 0.32f;
+            heldWeaponRenderer.gameObject.SetActive(true);
+        }
+
+        internal void ConfigureProjectileTrail(Material material)
+        {
+            if (material == null || Binding.Kind == EntityKind.Area)
+            {
+                if (projectileTrail != null) projectileTrail.emitting = false;
+                return;
+            }
+            if (projectileTrail == null)
+            {
+                projectileTrail = gameObject.AddComponent<TrailRenderer>();
+                projectileTrail.time = 0.18f;
+                projectileTrail.minVertexDistance = 0.06f;
+                projectileTrail.startWidth = 0.18f;
+                projectileTrail.endWidth = 0f;
+                projectileTrail.alignment = LineAlignment.View;
+                projectileTrail.textureMode = LineTextureMode.Stretch;
+                projectileTrail.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+                projectileTrail.receiveShadows = false;
+                projectileTrail.sortingOrder = 1900;
+            }
+            projectileTrail.sharedMaterial = material;
+            projectileTrail.startColor = new Color(0.42f, 1f, 0.96f, 0.86f);
+            projectileTrail.endColor = new Color(0.08f, 0.42f, 0.58f, 0f);
+            projectileTrail.Clear();
+        }
+
         public void Bind(SpatialEntity entity)
         {
             if (!entity.IsValid) throw new ArgumentException("A view requires a valid entity.", nameof(entity));
             Binding = entity;
             LastSnapshotTick = -1;
             ConfigureShadow(entity.Kind);
+            if (projectileTrail != null)
+            {
+                projectileTrail.Clear();
+                projectileTrail.emitting = entity.Kind == EntityKind.Projectile;
+            }
             gameObject.SetActive(true);
         }
 
@@ -231,6 +286,7 @@ namespace Game.Presentation
             ApplyPose(snapshot.CurrentStateFlags, facing);
             ApplyMotion(snapshot.CurrentStateFlags);
             UpdateDepthSort(position.Y);
+            UpdateHeldWeapon(facing);
             if (shadowRenderer != null)
                 shadowRenderer.transform.localPosition = new Vector3(
                     0f,
@@ -249,6 +305,7 @@ namespace Game.Presentation
             UsesPlayerStyle = false;
             animationSet = null;
             hitReactionRemaining = 0f;
+            attackReactionRemaining = 0f;
             CurrentPose = PresentationPose.Idle;
             if (spriteRenderer != null)
             {
@@ -256,6 +313,12 @@ namespace Game.Presentation
                 spriteRenderer.transform.localPosition = Vector3.zero;
             }
             transform.localScale = new Vector3(baseScale.x, baseScale.y, 1f);
+            if (heldWeaponRenderer != null) heldWeaponRenderer.gameObject.SetActive(false);
+            if (projectileTrail != null)
+            {
+                projectileTrail.emitting = false;
+                projectileTrail.Clear();
+            }
             ClearOverlays();
             if (shadowRenderer != null) shadowRenderer.gameObject.SetActive(false);
             gameObject.SetActive(false);
@@ -299,6 +362,11 @@ namespace Game.Presentation
             hitReactionRemaining = Mathf.Max(hitReactionRemaining, Mathf.Max(0.01f, duration));
         }
 
+        internal void PlayAttackReaction(float duration = 0.16f)
+        {
+            attackReactionRemaining = Mathf.Max(attackReactionRemaining, Mathf.Max(0.01f, duration));
+        }
+
         internal Sprite ResolvePoseSprite(PresentationPose pose)
         {
             return animationSet == null || spriteRenderer == null
@@ -310,6 +378,8 @@ namespace Game.Presentation
         {
             if (hitReactionRemaining > 0f)
                 hitReactionRemaining = Mathf.Max(0f, hitReactionRemaining - Mathf.Max(0f, unscaledDeltaTime));
+            if (attackReactionRemaining > 0f)
+                attackReactionRemaining = Mathf.Max(0f, attackReactionRemaining - Mathf.Max(0f, unscaledDeltaTime));
             if (spriteRenderer == null) return;
             if (hitReactionRemaining > 0f)
             {
@@ -325,6 +395,8 @@ namespace Game.Presentation
             CurrentFacing = DirectionalSpriteCatalog.FacingFromRadians(facingRadians);
             CurrentPose = hitReactionRemaining > 0f
                 ? PresentationPose.Hit
+                : attackReactionRemaining > 0f
+                    ? PresentationPose.Attack
                 : (flags & SimulationStateFlags.Moving) != 0
                     ? PresentationPose.Move
                     : PresentationPose.Idle;
@@ -339,7 +411,14 @@ namespace Game.Presentation
 
         private void ApplyMotion(SimulationStateFlags flags)
         {
-            if (spriteRenderer == null || Binding.Kind == EntityKind.Area) return;
+            if (spriteRenderer == null) return;
+            if (Binding.Kind == EntityKind.Area)
+            {
+                var areaWave = 0.94f + (Mathf.Sin((Time.unscaledTime * 4.2f) +
+                    (Binding.Handle.Index * 0.31f)) * 0.06f);
+                transform.localScale = new Vector3(baseScale.x * areaWave, baseScale.y * areaWave, 1f);
+                return;
+            }
             var moving = (flags & SimulationStateFlags.Moving) != 0;
             var boss = ProfileId.IsValid && ProfileId.Value.IndexOf(".boss.", StringComparison.Ordinal) >= 0;
             var phase = (Time.unscaledTime * (moving ? 8.5f : 3.1f)) + (Binding.Handle.Index * 0.37f);
@@ -351,6 +430,37 @@ namespace Game.Presentation
                 baseScale.x * (1f + squash),
                 baseScale.y * (1f - squash),
                 1f);
+        }
+
+        private void UpdateHeldWeapon(float facingRadians)
+        {
+            if (heldWeaponRenderer == null || !heldWeaponRenderer.gameObject.activeSelf || spriteRenderer == null) return;
+            var swing = attackReactionRemaining > 0f
+                ? Mathf.Sin((1f - (attackReactionRemaining / 0.16f)) * Mathf.PI) * 54f
+                : Mathf.Sin(Time.unscaledTime * 3.5f) * 4f;
+            switch (CurrentFacing)
+            {
+                case PresentationFacing.Left:
+                    heldWeaponRenderer.transform.localPosition = new Vector3(-0.5f, 0.02f, 0f);
+                    heldWeaponRenderer.transform.localRotation = Quaternion.Euler(0f, 0f, 195f - swing);
+                    heldWeaponRenderer.sortingOrder = spriteRenderer.sortingOrder + 2;
+                    break;
+                case PresentationFacing.Up:
+                    heldWeaponRenderer.transform.localPosition = new Vector3(0.34f, 0.22f, 0f);
+                    heldWeaponRenderer.transform.localRotation = Quaternion.Euler(0f, 0f, 78f + swing);
+                    heldWeaponRenderer.sortingOrder = spriteRenderer.sortingOrder - 2;
+                    break;
+                case PresentationFacing.Down:
+                    heldWeaponRenderer.transform.localPosition = new Vector3(-0.34f, -0.06f, 0f);
+                    heldWeaponRenderer.transform.localRotation = Quaternion.Euler(0f, 0f, -72f - swing);
+                    heldWeaponRenderer.sortingOrder = spriteRenderer.sortingOrder + 2;
+                    break;
+                default:
+                    heldWeaponRenderer.transform.localPosition = new Vector3(0.5f, 0.02f, 0f);
+                    heldWeaponRenderer.transform.localRotation = Quaternion.Euler(0f, 0f, -15f + swing);
+                    heldWeaponRenderer.sortingOrder = spriteRenderer.sortingOrder + 2;
+                    break;
+            }
         }
 
         private void UpdateDepthSort(float simulationY)
@@ -388,6 +498,7 @@ namespace Game.Presentation
     {
         private readonly Texture2D[] textures;
         private readonly Sprite[] sprites;
+        private readonly Material trailMaterial;
 
         public ProceduralVisualLibrary()
         {
@@ -395,9 +506,20 @@ namespace Game.Presentation
             textures = new Texture2D[count];
             sprites = new Sprite[count];
             for (var index = 0; index < count; index++) Create((ProceduralShape)index);
+            var shader = Shader.Find("Universal Render Pipeline/Particles/Unlit");
+            if (shader == null) shader = Shader.Find("Sprites/Default");
+            if (shader != null)
+            {
+                trailMaterial = new Material(shader)
+                {
+                    name = "G4_0_QinglanSwordTrail",
+                    hideFlags = HideFlags.DontSave
+                };
+            }
         }
 
         public Sprite Sprite => GetSprite(ProceduralShape.Square);
+        public Material TrailMaterial => trailMaterial;
 
         public Sprite GetSprite(ProceduralShape shape)
         {
@@ -412,6 +534,7 @@ namespace Game.Presentation
                 UnityObjectLifetime.Destroy(sprites[index]);
                 UnityObjectLifetime.Destroy(textures[index]);
             }
+            UnityObjectLifetime.Destroy(trailMaterial);
         }
 
         public static Color ColorFor(EntityKind kind)

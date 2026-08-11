@@ -65,6 +65,16 @@ namespace Game.Presentation
         public int RaisedMapGeometryCount => mapPresentation?.RaisedGeometryCount ?? 0;
         public int MapGroundShadowCount => mapPresentation?.GroundShadowCount ?? 0;
         public bool UsesXzGroundPlane => mapPresentation?.UsesXzGroundPlane == true;
+        public long ProjectileTrailSpawnCount { get; private set; }
+        public int HeldWeaponViewCount
+        {
+            get
+            {
+                var count = 0;
+                foreach (var pair in views) if (pair.Value.HeldWeaponVisible) count++;
+                return count;
+            }
+        }
 
         public void Initialize(
             Canvas sharedCanvas,
@@ -83,7 +93,12 @@ namespace Game.Presentation
             formalVisuals = formalCatalog;
             formalAudio = formalAudioCatalog;
             directionalSprites = directionalSpriteCatalog ?? new DirectionalSpriteCatalog();
-            actors = new EntityViewPool<ActorView>(transform, EntityKind.Actor, catalog, proceduralProfiles, settings, fallback, directionalSprites, 8);
+            Sprite defaultHeldWeapon = null;
+            var weaponProfileId = Game.Core.ContentId.Create("qinglan.presentation.skill.yufeng_sword");
+            if (formalVisuals != null && weaponProfileId.IsSuccess &&
+                formalVisuals.TryResolveProfile(weaponProfileId.Value, EntityKind.Projectile, out var weaponProfile))
+                defaultHeldWeapon = weaponProfile.Sprite;
+            actors = new EntityViewPool<ActorView>(transform, EntityKind.Actor, catalog, proceduralProfiles, settings, fallback, directionalSprites, 8, defaultHeldWeapon);
             projectiles = new EntityViewPool<ProjectileView>(transform, EntityKind.Projectile, catalog, proceduralProfiles, settings, fallback, directionalSprites, 16);
             areas = new EntityViewPool<AreaView>(transform, EntityKind.Area, catalog, proceduralProfiles, settings, fallback, directionalSprites, 8);
             pickups = new EntityViewPool<PickupView>(transform, EntityKind.Pickup, catalog, proceduralProfiles, settings, fallback, directionalSprites, 16);
@@ -123,6 +138,22 @@ namespace Game.Presentation
                     if (usedFallback) MissingProfileFallbackCount++;
                     ApplyOverlays(view, entry.Entity, session);
                     views.Add(entry.Entity, view);
+                    if (entry.Entity.Kind == EntityKind.Projectile)
+                    {
+                        ProjectileTrailSpawnCount++;
+                        TriggerNearestActorAttack(entry.CurrentPosition.X, entry.CurrentPosition.Y);
+                        proceduralProfiles.TryResolveEffect(visualProfileId, settings.ColorVision, out var castStyle);
+                        var castColor = castStyle.Color;
+                        castColor.a = Mathf.Max(0.32f, settings.FlashIntensity * 0.65f);
+                        castStyle = castStyle.WithColor(castColor, castStyle.OutlineColor);
+                        vfx.TrySpawn(new ProceduralVfxRequest(
+                            new Vector2(entry.CurrentPosition.X, entry.CurrentPosition.Y),
+                            castStyle,
+                            0.42f,
+                            0.16f));
+                    }
+                    else if (entry.Entity.Kind == EntityKind.Area)
+                        TriggerNearestActorAttack(entry.CurrentPosition.X, entry.CurrentPosition.Y);
                 }
 
                 if (!view.Apply(entry, interpolationAlpha, snapshot.Tick)) InvalidHandleRejections++;
@@ -358,6 +389,24 @@ namespace Game.Presentation
                 if (!session.TryGetVisualOverlayId(entity, index, out var overlayId)) break;
                 actors.ApplyOverlay((ActorView)view, index, overlayId);
             }
+        }
+
+        private void TriggerNearestActorAttack(float simulationX, float simulationY)
+        {
+            EntityView nearest = null;
+            var nearestDistance = 16f;
+            foreach (var pair in views)
+            {
+                if (pair.Key.Kind != EntityKind.Actor) continue;
+                var position = pair.Value.transform.position;
+                var deltaX = position.x - simulationX;
+                var deltaY = position.z - simulationY;
+                var distance = (deltaX * deltaX) + (deltaY * deltaY);
+                if (distance >= nearestDistance) continue;
+                nearestDistance = distance;
+                nearest = pair.Value;
+            }
+            nearest?.PlayAttackReaction();
         }
 
         private void RouteRequests()

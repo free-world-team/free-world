@@ -16,6 +16,10 @@ namespace Game.Presentation
         public float Remaining;
         public PresentationPriority Priority;
         public ProceduralShape Shape;
+        public float InitialDuration;
+        public float InitialSize;
+        public Color InitialColor;
+        public bool GroundAligned;
     }
 
     /// <summary>Single-owner VFX request pool with no per-effect Update methods.</summary>
@@ -164,6 +168,10 @@ namespace Game.Presentation
                 : PresentationSpace.PriorityBand(request.Style.Priority) +
                   PresentationSpace.DepthOffset(request.Position.y);
             effect.Remaining = request.Duration;
+            effect.InitialDuration = request.Duration;
+            effect.InitialSize = request.Size;
+            effect.InitialColor = request.Style.Color;
+            effect.GroundAligned = request.GroundAligned;
             effect.Priority = request.Style.Priority;
             effect.Shape = request.Style.Shape;
             effect.Object.SetActive(true);
@@ -178,6 +186,22 @@ namespace Game.Presentation
             {
                 var effect = active[index];
                 effect.Remaining -= unscaledDeltaTime;
+                var progress = effect.InitialDuration <= 0f
+                    ? 1f
+                    : 1f - Mathf.Clamp01(effect.Remaining / effect.InitialDuration);
+                var eased = 1f - ((1f - progress) * (1f - progress));
+                if (effect.GroundAligned)
+                    effect.Object.transform.localScale = Vector3.one *
+                        (effect.InitialSize * Mathf.Lerp(0.55f, 1.4f, eased));
+                else
+                {
+                    effect.Object.transform.localScale = Vector3.one *
+                        (effect.InitialSize * Mathf.Lerp(1f, 0.84f, progress));
+                    effect.Object.transform.position += Vector3.up * (0.34f * unscaledDeltaTime);
+                }
+                var color = effect.InitialColor;
+                color.a *= 1f - (progress * progress);
+                effect.Renderer.color = color;
                 if (effect.Remaining > 0f) continue;
                 effect.Object.SetActive(false);
                 active.RemoveAt(index);
