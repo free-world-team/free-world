@@ -56,11 +56,10 @@ namespace Game.Infrastructure
                 var cameraObject = new GameObject("M7_ProgrammaticCamera");
                 cameraObject.transform.SetParent(transform, false);
                 presentationCamera = cameraObject.AddComponent<Camera>();
-                presentationCamera.orthographic = true;
-                presentationCamera.transform.position = new Vector3(0f, 0f, -10f);
             }
             cameraRig = presentationCamera.GetComponent<PresentationCameraRig>();
             if (cameraRig == null) cameraRig = presentationCamera.gameObject.AddComponent<PresentationCameraRig>();
+            cameraRig.ConfigureTiltedOrthographic(presentationCamera);
 
             Input.Navigate += presenter.Navigate;
             Input.Submit += presenter.Submit;

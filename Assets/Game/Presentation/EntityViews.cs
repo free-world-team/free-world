@@ -58,7 +58,9 @@ namespace Game.Presentation
     {
         private SpriteRenderer spriteRenderer;
         private SpriteRenderer outlineRenderer;
+        private SpriteRenderer shadowRenderer;
         private SpriteRenderer[] overlayRenderers;
+        private int baseSortingOrder;
 
         public SpatialEntity Binding { get; private set; }
         public bool IsBound => Binding.IsValid;
@@ -94,7 +96,8 @@ namespace Game.Presentation
             if (spriteRenderer == null) spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = sprite;
             spriteRenderer.color = color;
-            spriteRenderer.sortingOrder = SortingOrderFor(priority);
+            baseSortingOrder = PresentationSpace.PriorityBand(priority);
+            spriteRenderer.sortingOrder = baseSortingOrder;
             transform.localScale = new Vector3(size.x, size.y, 1f);
             if (showOutline)
             {
@@ -119,7 +122,8 @@ namespace Game.Presentation
             if (spriteRenderer == null) spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
             spriteRenderer.sprite = library.GetSprite(style.Shape);
             spriteRenderer.color = style.Color;
-            spriteRenderer.sortingOrder = SortingOrderFor(style.Priority);
+            baseSortingOrder = PresentationSpace.PriorityBand(style.Priority);
+            spriteRenderer.sortingOrder = baseSortingOrder;
             transform.localScale = new Vector3(style.Size.x, style.Size.y, 1f);
             var outline = EnsureOutline();
             outline.sprite = library.GetSprite(style.Shape);
@@ -144,7 +148,7 @@ namespace Game.Presentation
             renderer.color = style.Color;
             renderer.sortingOrder = Math.Max(
                 spriteRenderer.sortingOrder + 1 + index,
-                SortingOrderFor(style.Priority) + index);
+                PresentationSpace.PriorityBand(style.Priority) + index);
             renderer.transform.localScale = Vector3.one * (1.28f + (index * 0.18f));
             renderer.gameObject.SetActive(true);
             if (index + 1 > ActiveOverlayCount) ActiveOverlayCount = index + 1;
@@ -164,7 +168,7 @@ namespace Game.Presentation
             renderer.color = color;
             renderer.sortingOrder = Math.Max(
                 spriteRenderer.sortingOrder + 1 + index,
-                SortingOrderFor(priority) + index);
+                PresentationSpace.PriorityBand(priority) + index);
             renderer.transform.localScale = Vector3.one * (1.28f + (index * 0.18f));
             renderer.gameObject.SetActive(true);
             if (index + 1 > ActiveOverlayCount) ActiveOverlayCount = index + 1;
@@ -189,6 +193,7 @@ namespace Game.Presentation
             if (!entity.IsValid) throw new ArgumentException("A view requires a valid entity.", nameof(entity));
             Binding = entity;
             LastSnapshotTick = -1;
+            ConfigureShadow(entity.Kind);
             gameObject.SetActive(true);
         }
 
@@ -196,9 +201,22 @@ namespace Game.Presentation
         {
             if (!IsBound || snapshot.Entity != Binding) return false;
             var position = snapshot.InterpolatePosition(alpha);
+            var facing = snapshot.InterpolateFacing(alpha);
             transform.SetPositionAndRotation(
-                new Vector3(position.X, position.Y, 0f),
-                Quaternion.Euler(0f, 0f, snapshot.InterpolateFacing(alpha) * Mathf.Rad2Deg));
+                PresentationSpace.ToEntity(Binding.Kind, position.X, position.Y),
+                Binding.Kind == EntityKind.Area
+                    ? PresentationSpace.GroundRotation
+                    : Binding.Kind == EntityKind.Projectile
+                        ? Quaternion.Euler(0f, 0f, facing * Mathf.Rad2Deg)
+                        : Quaternion.identity);
+            if (spriteRenderer != null && Binding.Kind != EntityKind.Projectile && Binding.Kind != EntityKind.Area)
+                spriteRenderer.flipX = Mathf.Cos(facing) < 0f;
+            UpdateDepthSort(position.Y);
+            if (shadowRenderer != null)
+                shadowRenderer.transform.localPosition = new Vector3(
+                    0f,
+                    -transform.position.y + PresentationSpace.GroundDecalHeight,
+                    0f);
             gameObject.SetActive((snapshot.CurrentStateFlags & SimulationStateFlags.Hidden) == 0);
             LastSnapshotTick = snapshotTick;
             return true;
@@ -211,6 +229,7 @@ namespace Game.Presentation
             ProfileId = default;
             UsesPlayerStyle = false;
             ClearOverlays();
+            if (shadowRenderer != null) shadowRenderer.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
 
@@ -223,15 +242,40 @@ namespace Game.Presentation
             return outlineRenderer;
         }
 
-        private static int SortingOrderFor(PresentationPriority priority)
+        private void ConfigureShadow(EntityKind kind)
         {
-            switch (priority)
+            if (kind == EntityKind.Area)
             {
-                case PresentationPriority.CriticalDanger: return 40;
-                case PresentationPriority.Mechanic: return 30;
-                case PresentationPriority.Combat: return 20;
-                default: return 10;
+                if (shadowRenderer != null) shadowRenderer.gameObject.SetActive(false);
+                return;
             }
+
+            if (shadowRenderer == null)
+            {
+                var child = new GameObject("GroundShadow");
+                child.transform.SetParent(transform, false);
+                shadowRenderer = child.AddComponent<SpriteRenderer>();
+            }
+            shadowRenderer.sprite = spriteRenderer == null ? null : spriteRenderer.sprite;
+            shadowRenderer.color = new Color(0.015f, 0.02f, 0.025f, kind == EntityKind.Projectile ? 0.12f : 0.28f);
+            shadowRenderer.transform.localRotation = PresentationSpace.GroundRotation;
+            shadowRenderer.transform.localScale = kind == EntityKind.Projectile
+                ? new Vector3(0.62f, 0.12f, 1f)
+                : new Vector3(0.78f, 0.22f, 1f);
+            shadowRenderer.sortingOrder = -100;
+            shadowRenderer.gameObject.SetActive(true);
+        }
+
+        private void UpdateDepthSort(float simulationY)
+        {
+            var order = baseSortingOrder + PresentationSpace.DepthOffset(simulationY);
+            if (spriteRenderer != null) spriteRenderer.sortingOrder = order;
+            if (outlineRenderer != null) outlineRenderer.sortingOrder = order - 1;
+            if (shadowRenderer != null)
+                shadowRenderer.sortingOrder = -100 + PresentationSpace.DepthOffset(simulationY);
+            if (overlayRenderers == null) return;
+            for (var index = 0; index < overlayRenderers.Length; index++)
+                if (overlayRenderers[index] != null) overlayRenderers[index].sortingOrder = order + 1 + index;
         }
 
         private void EnsureOverlays()

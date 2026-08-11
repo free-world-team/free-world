@@ -61,6 +61,9 @@ namespace Game.Presentation
         public int MapGroundTileCount => mapPresentation?.GroundTileCount ?? 0;
         public int FormalMapGroundTileCount => mapPresentation?.FormalGroundTileCount ?? 0;
         public int FormalMapPropCount => mapPresentation?.FormalPropCount ?? 0;
+        public int RaisedMapGeometryCount => mapPresentation?.RaisedGeometryCount ?? 0;
+        public int MapGroundShadowCount => mapPresentation?.GroundShadowCount ?? 0;
+        public bool UsesXzGroundPlane => mapPresentation?.UsesXzGroundPlane == true;
 
         public void Initialize(
             Canvas sharedCanvas,
@@ -208,7 +211,7 @@ namespace Game.Presentation
                     var item = combatEvents.GetStatusAppliedAt(index);
                     var position = System.Numerics.Vector2.Zero;
                     if (views.TryGetValue(item.Target, out var targetView))
-                        position = new System.Numerics.Vector2(targetView.transform.position.x, targetView.transform.position.y);
+                        position = new System.Numerics.Vector2(targetView.transform.position.x, targetView.transform.position.z);
                     requests.Add(new PresentationRequest(
                         PresentationRequestType.Status,
                         item.Target,
@@ -407,7 +410,7 @@ namespace Game.Presentation
         {
             foreach (var pair in views)
                 if (pair.Value.UsesPlayerStyle)
-                    return pair.Value.transform.position;
+                    return PresentationSpace.ToSimulation(pair.Value.transform.position);
             return Vector2.zero;
         }
 
@@ -424,7 +427,7 @@ namespace Game.Presentation
                 largest = size;
                 selected = view;
             }
-            return selected == null ? Vector2.zero : (Vector2)selected.transform.position;
+            return selected == null ? Vector2.zero : PresentationSpace.ToSimulation(selected.transform.position);
         }
 
         public void Shutdown()

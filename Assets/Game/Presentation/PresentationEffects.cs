@@ -145,8 +145,11 @@ namespace Game.Presentation
             }
 
             effect.Object.transform.SetPositionAndRotation(
-                new Vector3(request.Position.x, request.Position.y, -0.1f),
-                Quaternion.Euler(0f, 0f, request.RotationDegrees));
+                PresentationSpace.ToGround(
+                    request.Position.x,
+                    request.Position.y,
+                    PresentationSpace.GroundDecalHeight * 4f),
+                PresentationSpace.GroundRotation * Quaternion.Euler(0f, 0f, request.RotationDegrees));
             effect.Object.transform.localScale = Vector3.one * request.Size;
             effect.Renderer.sprite = formalSprite != null ? formalSprite :
                 library == null ? sprite : library.GetSprite(request.Style.Shape);

@@ -24,6 +24,7 @@ namespace Game.Infrastructure
         private QinglanFormalVisualLoader formalVisualLoader;
         private QinglanFormalAudioLoader formalAudioLoader;
         private QinglanFormalFontLoader formalFontLoader;
+        private Light presentationLight;
 
         public QinglanDemoFlowController Flow { get; private set; }
         public M7InputRouter Input { get; private set; }
@@ -85,11 +86,11 @@ namespace Game.Infrastructure
                 var cameraObject = new GameObject("Qinglan_ProgrammaticCamera");
                 cameraObject.transform.SetParent(transform, false);
                 presentationCamera = cameraObject.AddComponent<Camera>();
-                presentationCamera.orthographic = true;
-                presentationCamera.transform.position = new Vector3(0f, 0f, -10f);
             }
             cameraRig = presentationCamera.GetComponent<PresentationCameraRig>();
             if (cameraRig == null) cameraRig = presentationCamera.gameObject.AddComponent<PresentationCameraRig>();
+            cameraRig.ConfigureTiltedOrthographic(presentationCamera);
+            CreatePresentationLight();
 
             Input.Navigate += OnNavigate;
             Input.Submit += OnSubmit;
@@ -124,12 +125,19 @@ namespace Game.Infrastructure
             if (lastSession != session)
             {
                 Presentation.Clear();
-                Presentation.SetMap(session == null ? null :
+                var mapConfiguration = session == null ? null :
                     QinglanProceduralMapFactory.Build(
                         bootstrapApplication.ContentRegistry,
                         session.Descriptor.MapId,
                         formalVisualLoader.MapTiles,
-                        formalVisualLoader.MapProps));
+                        formalVisualLoader.MapProps);
+                Presentation.SetMap(mapConfiguration);
+                if (mapConfiguration != null)
+                    cameraRig.SetBounds(new Rect(
+                        mapConfiguration.Minimum.x,
+                        mapConfiguration.Minimum.y,
+                        mapConfiguration.Maximum.x - mapConfiguration.Minimum.x,
+                        mapConfiguration.Maximum.y - mapConfiguration.Minimum.y));
                 cameraRig.SetTarget(null);
                 lastSession = session;
             }
@@ -193,6 +201,19 @@ namespace Game.Infrastructure
         }
 
         private void ApplyInputMode() => Input.SetGameplayMode(Flow.IsGameplayInputEnabled);
+
+        private void CreatePresentationLight()
+        {
+            var lightObject = new GameObject("Qinglan_2_5D_KeyLight");
+            lightObject.transform.SetParent(transform, false);
+            lightObject.transform.rotation = Quaternion.Euler(48f, -32f, 0f);
+            presentationLight = lightObject.AddComponent<Light>();
+            presentationLight.type = LightType.Directional;
+            presentationLight.color = new Color(0.92f, 0.96f, 1f, 1f);
+            presentationLight.intensity = 1.15f;
+            presentationLight.shadows = LightShadows.Soft;
+            presentationLight.shadowStrength = 0.58f;
+        }
 
         private void OnPause()
         {

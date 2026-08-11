@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Game.Application;
 using Game.Core;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace Game.Presentation
 {
@@ -82,6 +83,7 @@ namespace Game.Presentation
         private readonly List<ProceduralMapMarkerView> markers;
         private readonly ProceduralPresentationCatalog profiles;
         private readonly ProceduralVisualLibrary library;
+        private readonly Material raisedSurfaceMaterial;
         private ColorVisionMode colorVision;
         private long lastSnapshotTick = long.MinValue;
 
@@ -100,6 +102,7 @@ namespace Game.Presentation
             root = new GameObject("G2_7_ProceduralMap");
             root.transform.SetParent(owner, false);
             markers = new List<ProceduralMapMarkerView>(configuration.Markers.Count);
+            raisedSurfaceMaterial = CreateRaisedSurfaceMaterial();
             BuildGround(configuration);
             BuildBounds(configuration);
             BuildZones(configuration);
@@ -112,6 +115,9 @@ namespace Game.Presentation
         public int GroundTileCount { get; private set; }
         public int FormalGroundTileCount { get; private set; }
         public int FormalPropCount { get; private set; }
+        public int RaisedGeometryCount { get; private set; }
+        public int GroundShadowCount { get; private set; }
+        public bool UsesXzGroundPlane => true;
 
         public void Sync(RunUiSnapshot snapshot, ColorVisionMode mode)
         {
@@ -147,7 +153,11 @@ namespace Game.Presentation
             }
         }
 
-        public void Dispose() => UnityObjectLifetime.Destroy(root);
+        public void Dispose()
+        {
+            UnityObjectLifetime.Destroy(root);
+            UnityObjectLifetime.Destroy(raisedSurfaceMaterial);
+        }
 
         private void BuildGround(ProceduralMapConfiguration configuration)
         {
@@ -186,7 +196,9 @@ namespace Game.Presentation
                             : new Color(0.12f, 0.17f, 0.15f, 1f);
                         renderer.transform.localScale = new Vector3(tileSize, tileSize, 1f);
                     }
-                    renderer.transform.position = new Vector3(position.x, position.y, 1f);
+                    renderer.transform.SetPositionAndRotation(
+                        PresentationSpace.ToGround(position.x, position.y),
+                        PresentationSpace.GroundRotation);
                     GroundTileCount++;
                 }
             }
@@ -206,14 +218,15 @@ namespace Game.Presentation
                     var renderer = CreateRenderer("FormalProp_" + zoneIndex + "_" + offsetIndex, -9);
                     renderer.sprite = sprite;
                     renderer.color = new Color(0.82f, 0.88f, 0.82f, 1f);
-                    renderer.transform.position = new Vector3(
-                        center.x + ((offsetIndex - 1) * 4.5f),
-                        center.y + ((offsetIndex & 1) == 0 ? 3.5f : -3.5f),
-                        0.6f);
+                    var propX = center.x + ((offsetIndex - 1) * 4.5f);
+                    var propY = center.y + ((offsetIndex & 1) == 0 ? 3.5f : -3.5f);
                     var bounds = sprite.bounds.size;
                     var targetHeight = 3.2f + (offsetIndex * 0.45f);
                     var scale = bounds.y <= 0f ? 1f : targetHeight / bounds.y;
+                    renderer.transform.position = PresentationSpace.ToGround(propX, propY, targetHeight * 0.48f);
                     renderer.transform.localScale = Vector3.one * scale;
+                    renderer.sortingOrder = 200 + PresentationSpace.DepthOffset(propY);
+                    CreateGroundShadow("PropShadow_" + zoneIndex + "_" + offsetIndex, propX, propY, targetHeight * 0.72f);
                     FormalPropCount++;
                 }
             }
@@ -226,11 +239,11 @@ namespace Game.Presentation
             var width = maximum.x - minimum.x;
             var height = maximum.y - minimum.y;
             var center = (minimum + maximum) * 0.5f;
-            var color = new Color(0.68f, 0.58f, 0.42f, 0.75f);
-            CreateRect("Boundary_North", new Vector2(center.x, maximum.y), new Vector2(width, 0.32f), color, -8);
-            CreateRect("Boundary_South", new Vector2(center.x, minimum.y), new Vector2(width, 0.32f), color, -8);
-            CreateRect("Boundary_West", new Vector2(minimum.x, center.y), new Vector2(0.32f, height), color, -8);
-            CreateRect("Boundary_East", new Vector2(maximum.x, center.y), new Vector2(0.32f, height), color, -8);
+            var color = new Color(0.34f, 0.29f, 0.21f, 1f);
+            CreateRaisedBlock("Boundary_North", new Vector2(center.x, maximum.y), new Vector2(width, 0.42f), 0.62f, color);
+            CreateRaisedBlock("Boundary_South", new Vector2(center.x, minimum.y), new Vector2(width, 0.42f), 0.62f, color);
+            CreateRaisedBlock("Boundary_West", new Vector2(minimum.x, center.y), new Vector2(0.42f, height), 0.62f, color);
+            CreateRaisedBlock("Boundary_East", new Vector2(maximum.x, center.y), new Vector2(0.42f, height), 0.62f, color);
         }
 
         private void BuildZones(ProceduralMapConfiguration configuration)
@@ -250,12 +263,12 @@ namespace Game.Presentation
             for (var index = 0; index < configuration.Obstacles.Count; index++)
             {
                 var item = configuration.Obstacles[index];
-                CreateRect(
+                CreateRaisedBlock(
                     "Obstacle_" + index,
                     (item.Minimum + item.Maximum) * 0.5f,
                     item.Maximum - item.Minimum,
-                    new Color(0.25f, 0.22f, 0.17f, 0.88f),
-                    -6);
+                    0.72f + ((index % 3) * 0.22f),
+                    new Color(0.25f, 0.22f, 0.17f, 1f));
             }
         }
 
@@ -266,7 +279,12 @@ namespace Game.Presentation
                 var definition = configuration.Markers[index];
                 profiles.TryResolveEffect(definition.StateId, colorVision, out var style);
                 var renderer = CreateRenderer("MapMarker_" + definition.Kind + "_" + index, -3);
-                renderer.transform.position = new Vector3(definition.Position.x, definition.Position.y, 0.2f);
+                renderer.transform.SetPositionAndRotation(
+                    PresentationSpace.ToGround(
+                        definition.Position.x,
+                        definition.Position.y,
+                        PresentationSpace.GroundDecalHeight * 3f),
+                    PresentationSpace.GroundRotation);
                 renderer.sprite = library.GetSprite(ShapeFor(definition.Kind, style.Shape));
                 renderer.color = style.Color;
                 renderer.transform.localScale = Vector3.one * (definition.Kind == 1 ? 1.45f : 1.05f);
@@ -297,9 +315,66 @@ namespace Game.Presentation
             var renderer = CreateRenderer(name, order);
             renderer.sprite = library.GetSprite(ProceduralShape.Square);
             renderer.color = color;
-            renderer.transform.position = new Vector3(position.x, position.y, 0.5f);
+            renderer.transform.SetPositionAndRotation(
+                PresentationSpace.ToGround(position.x, position.y, PresentationSpace.GroundDecalHeight),
+                PresentationSpace.GroundRotation);
             renderer.transform.localScale = new Vector3(Mathf.Max(0.05f, size.x), Mathf.Max(0.05f, size.y), 1f);
             return renderer;
+        }
+
+        private void CreateRaisedBlock(
+            string name,
+            Vector2 position,
+            Vector2 footprint,
+            float height,
+            Color color)
+        {
+            var value = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            value.name = name;
+            value.transform.SetParent(root.transform, false);
+            value.transform.position = PresentationSpace.ToGround(position.x, position.y, height * 0.5f);
+            value.transform.localScale = new Vector3(
+                Mathf.Max(0.08f, footprint.x),
+                Mathf.Max(0.08f, height),
+                Mathf.Max(0.08f, footprint.y));
+            var collider = value.GetComponent<Collider>();
+            if (collider != null) UnityObjectLifetime.Destroy(collider);
+            var renderer = value.GetComponent<MeshRenderer>();
+            if (renderer != null)
+            {
+                renderer.sharedMaterial = raisedSurfaceMaterial;
+                renderer.shadowCastingMode = ShadowCastingMode.On;
+                renderer.receiveShadows = true;
+                var block = new MaterialPropertyBlock();
+                block.SetColor("_BaseColor", color);
+                block.SetColor("_Color", color);
+                renderer.SetPropertyBlock(block);
+            }
+            RaisedGeometryCount++;
+        }
+
+        private void CreateGroundShadow(string name, float x, float y, float diameter)
+        {
+            var shadow = CreateRenderer(name, -100 + PresentationSpace.DepthOffset(y));
+            shadow.sprite = library.GetSprite(ProceduralShape.Circle);
+            shadow.color = new Color(0.01f, 0.015f, 0.02f, 0.25f);
+            shadow.transform.SetPositionAndRotation(
+                PresentationSpace.ToGround(x, y, PresentationSpace.GroundDecalHeight * 2f),
+                PresentationSpace.GroundRotation);
+            shadow.transform.localScale = new Vector3(diameter, diameter * 0.34f, 1f);
+            GroundShadowCount++;
+        }
+
+        private static Material CreateRaisedSurfaceMaterial()
+        {
+            var shader = Shader.Find("Universal Render Pipeline/Lit");
+            if (shader == null) shader = Shader.Find("Universal Render Pipeline/Simple Lit");
+            if (shader == null) shader = Shader.Find("Sprites/Default");
+            return shader == null ? null : new Material(shader)
+            {
+                name = "G4_0_RaisedMapSurface",
+                hideFlags = HideFlags.DontSave
+            };
         }
 
         private SpriteRenderer CreateRenderer(string name, int order)

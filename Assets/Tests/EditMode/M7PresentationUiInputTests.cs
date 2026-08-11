@@ -42,7 +42,8 @@ namespace Game.Tests.EditMode
 
             Assert.That(view.Apply(entry, 0.5f, 7), Is.True);
             Assert.That(view.transform.position.x, Is.EqualTo(5f).Within(0.001f));
-            Assert.That(view.transform.position.y, Is.EqualTo(2f).Within(0.001f));
+            Assert.That(view.transform.position.y, Is.EqualTo(PresentationSpace.ActorPivotHeight).Within(0.001f));
+            Assert.That(view.transform.position.z, Is.EqualTo(2f).Within(0.001f));
             Assert.That(view.LastSnapshotTick, Is.EqualTo(7));
             var wrong = new RenderEntitySnapshot(other, NumericsVector2.Zero, NumericsVector2.One, 0f, 0f,
                 SimulationStateFlags.Active, SimulationStateFlags.Active);
@@ -155,11 +156,12 @@ namespace Game.Tests.EditMode
             root = new GameObject("M7CameraTest");
             var target = new GameObject("Target");
             target.transform.SetParent(root.transform);
-            target.transform.position = new Vector3(20f, -20f, 0f);
+            target.transform.position = new Vector3(20f, PresentationSpace.ActorPivotHeight, -20f);
             var cameraObject = new GameObject("Camera");
             cameraObject.transform.SetParent(root.transform);
-            cameraObject.transform.position = new Vector3(0f, 0f, -10f);
+            var camera = cameraObject.AddComponent<Camera>();
             var rig = cameraObject.AddComponent<PresentationCameraRig>();
+            rig.ConfigureTiltedOrthographic(camera);
             rig.SetTarget(target.transform);
             rig.SetBounds(new Rect(-5f, -4f, 10f, 8f));
             rig.EffectsEnabled = false;
@@ -167,7 +169,10 @@ namespace Game.Tests.EditMode
             rig.TickCamera(0.2f);
 
             Assert.That(rig.transform.position.x, Is.EqualTo(5f));
-            Assert.That(rig.transform.position.y, Is.EqualTo(-4f));
+            Assert.That(rig.LastStablePosition.z, Is.EqualTo(-13.4f).Within(0.001f));
+            Assert.That(rig.transform.position.y, Is.GreaterThan(12f));
+            Assert.That(rig.UsesTiltedOrthographicProjection, Is.True);
+            Assert.That(camera.orthographic, Is.True);
         }
 
         [Test]
