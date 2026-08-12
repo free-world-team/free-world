@@ -121,6 +121,11 @@ namespace Game.Infrastructure
         public bool DebugCompleteRun() =>
             flow.Stage == DemoFlowStage.Active && flow.EndRun(RunEndReason.Completed);
 
+        internal bool BeginVisualAcceptanceRun(ulong seed, ulong rewardSeed)
+        {
+            return BeginRun(seed, rewardSeed);
+        }
+
         public bool PopulatePage(QinglanPageViewModel target)
         {
             if (target == null) throw new ArgumentNullException(nameof(target));
@@ -584,11 +589,16 @@ namespace Game.Infrastructure
 
         private bool BeginRun()
         {
+            var now = unchecked((ulong)DateTime.UtcNow.Ticks + ++runSequence);
+            return BeginRun(now, now ^ 0x514C414E44454D4FUL);
+        }
+
+        private bool BeginRun(ulong seed, ulong rewardSeed)
+        {
             if (flow.Stage != DemoFlowStage.MapSelect) return false;
             var loadout = profile.Meta.ProjectLoadout(profile.Profile).Loadout;
             var unique = Copy(profile.Profile.ClaimedUniqueRewardIds);
-            var now = unchecked((ulong)DateTime.UtcNow.Ticks + ++runSequence);
-            var descriptor = factory.CreateDescriptor(now, now ^ 0x514C414E44454D4FUL, loadout, unique);
+            var descriptor = factory.CreateDescriptor(seed, rewardSeed, loadout, unique);
             if (!descriptor.IsSuccess) return false;
             selectedFacilityId = string.Empty;
             var started = flow.BeginRun(descriptor.Value);
