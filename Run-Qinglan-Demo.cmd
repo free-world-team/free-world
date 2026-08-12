@@ -2,12 +2,11 @@
 setlocal EnableExtensions
 cd /d "%~dp0"
 
-set "PLAYER=%~dp0Builds\WindowsVisualFixProbe-c780b39\AzureSword.exe"
-if not exist "%PLAYER%" set "PLAYER=%~dp0Builds\WindowsRelease\AzureSword.exe"
+set "PLAYER=%~dp0Builds\WindowsRelease\AzureSword.exe"
 
 if not exist "%PLAYER%" (
-    echo [Qinglan Demo] No local Windows Player was found.
-    echo Build the project first, then run this launcher again.
+    echo [Qinglan Demo] The current Windows Release Player was not found.
+    echo Build Builds\WindowsRelease\AzureSword.exe, then run this launcher again.
     pause
     exit /b 1
 )

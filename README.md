@@ -94,10 +94,10 @@ $env:UNITY_PATH = 'C:\Program Files\Unity\Hub\Editor\6000.3.20f1\Editor\Unity.ex
 .\Scripts\test.ps1 -Platform PlayMode
 ```
 
-本机人工体验优先双击仓库根目录的 `Run-Qinglan-Demo.cmd`。启动器会选择当前可用的
-Demo Player，以 1600×900 可调整窗口启动并把日志写到
-`TestResults/QinglanDemo/ManualLaunch/player.log`。不要直接双击历史 `Builds` 目录中的旧 Player；
-旧构建可能仍保留过期代码或不兼容的默认全屏设置。
+本机人工体验优先双击仓库根目录的 `Run-Qinglan-Demo.cmd`。启动器只选择当前
+`Builds/WindowsRelease/AzureSword.exe`，以 1600×900 可调整窗口启动并把日志写到
+`TestResults/QinglanDemo/ManualLaunch/player.log`。启动器不会回退到临时视觉探针或历史 Player，
+避免旧构建覆盖当前 Release 的修复。
 
 运行第三方记录、AI provenance、Addressables Release/Placeholder、作者内容、
 baked Hash、Pack 依赖和引用验证：
