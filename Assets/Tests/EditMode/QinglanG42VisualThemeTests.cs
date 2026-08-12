@@ -1,4 +1,5 @@
 using Game.Application;
+using Game.Infrastructure;
 using Game.Presentation;
 using Game.Simulation;
 using Game.UI;
@@ -161,6 +162,29 @@ namespace Game.Tests.EditMode
             {
                 Object.DestroyImmediate(root);
             }
+        }
+
+        [Test]
+        public void AcceptanceRouteAdvancesFromSimulationPositionAndSettlesAtFinalWaypoint()
+        {
+            var waypointIndex = 0;
+            var movement = QinglanG40VisualAcceptanceRunner.ResolveWaypointMovement(
+                new Vector2(10f, -10f),
+                true,
+                ref waypointIndex);
+
+            Assert.That(waypointIndex, Is.EqualTo(1));
+            Assert.That(movement.x, Is.GreaterThan(0.9f));
+            Assert.That(movement.y, Is.LessThan(0f));
+
+            waypointIndex = 4;
+            movement = QinglanG40VisualAcceptanceRunner.ResolveWaypointMovement(
+                new Vector2(34f, 10f),
+                true,
+                ref waypointIndex);
+
+            Assert.That(waypointIndex, Is.EqualTo(4));
+            Assert.That(movement, Is.EqualTo(Vector2.zero));
         }
 
         private static void AssertToken(

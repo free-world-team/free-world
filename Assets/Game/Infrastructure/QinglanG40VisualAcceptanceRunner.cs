@@ -323,9 +323,19 @@ namespace Game.Infrastructure
             ref int waypointIndex)
         {
             var session = host.Flow.Session;
-            if (session == null || !host.Presentation.TryGetView(session.Player, out var playerView))
+            if (session == null || !session.RenderSnapshot.TryGet(session.Player, out var playerSnapshot))
                 return Vector2.right;
-            var position = Game.Presentation.PresentationSpace.ToSimulation(playerView.transform.position);
+            var position = new Vector2(
+                playerSnapshot.CurrentPosition.X,
+                playerSnapshot.CurrentPosition.Y);
+            return ResolveWaypointMovement(position, g42, ref waypointIndex);
+        }
+
+        internal static Vector2 ResolveWaypointMovement(
+            Vector2 position,
+            bool g42,
+            ref int waypointIndex)
+        {
             var waypoints = g42 ? G42AcceptanceWaypoints : AcceptanceWaypoints;
             for (var attempts = 0; attempts < waypoints.Length; attempts++)
             {
