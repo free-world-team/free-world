@@ -1215,3 +1215,40 @@ Build/Smoke 与完成定义门禁；不扩 Schema，不提前导入 G3 正式资
 G4.0 强制项已全部关闭。未经新授权不合并 `main`、不打 Release 标签、不进入商店提交。
 商业 Release 仍须关闭 QD-KI-003/014/017、取得最低规格物理机器 PASS，并在 G4 正式表现代码上完成
 目标硬件 GPU/1% Low 复测。
+
+## Qinglan Demo G4.1：现有存档与双击启动稳定性修复
+
+- 状态：`COMPLETE`
+- 日期：2026-08-12
+- 分支：`codex/qinglan-demo-implementation`
+- 实现提交：`6f7a084`、`9df1536`、`1999d08`、`5dcad76f17193327952f34858c51e6632adb6bac`
+- ADR：无新增；未改变 Schema、Tick、程序集依赖、资源或平台后端
+- 结果报告：`Docs/Reports/2026-08-12-g4-1-runtime-startup-stability.md`
+
+### 实施结果
+
+| 范围 | 结果 |
+|---|---|
+| 现有存档门禁 | 正常 Player 参数启动、Bootstrap 观察、连续窗口响应和设置/Profile Hash 不变 |
+| 本地存档 | 低频小型 JSON I/O 在 `ValueTask` 接口内同步完成，避免 Unity 同步边界死锁 |
+| 本地化 | 持久化 `zh-Hans` 延迟至第一帧应用；二次 Bootstrap PlayMode 回归通过 |
+| 启动器 | 只选择当前 `Builds/WindowsRelease/AzureSword.exe`，不再优先历史探针 |
+| 运行审计 | 完整 Player 生命周期、正式视听/字体/本地化、432 地面块、65 道具、VFX、音频和存档均走到 |
+
+### 检查
+
+| 检查 | 结果 | 证据 |
+|---|---|---|
+| Managed 编译 / Focused | PASS | 0 error；存档 EditMode 10/10；语言二次启动 PlayMode 2/2 |
+| 全量 EditMode / PlayMode | PASS | 463/463；23/23；0 skipped |
+| Project Validation | PASS | `validation-final.log` SHA-256 `DFB8896F...1090F9` |
+| Windows Release Build | PASS | EXE SHA-256 `34C4E304...6A8F`；Manifest Succeeded、干净 `5dcad76` |
+| 独立 Release Player | PASS | 完整 Title→战斗→结算保存→Hub→Restart，退出码 0 |
+| 本机现有中文存档 | PASS | Bootstrap 完成、10/10 响应窗口采样、设置/Profile Hash 不变 |
+| 根启动器实际启动 | PASS | 当前 Release 路径、窗口与 Bootstrap 有效、10/10 响应 |
+| G4.1 性能/Soak | NOT RUN | 不修改固定 Tick/渲染热点；QD-KI-017 继续作为发布风险 |
+
+### 下一步
+
+人工运行使用仓库根目录 `Run-Qinglan-Demo.cmd`。G4.1 强制修复项已关闭；未经新授权不合并 `main`、
+不打 Release 标签。商业 Release 仍须关闭 QD-KI-003/014/017、最低规格物理机器和外部人工/法律门禁。

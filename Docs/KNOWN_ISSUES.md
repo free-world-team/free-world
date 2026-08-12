@@ -162,7 +162,10 @@
 | QD-KI-015 | RESOLVED | High | 初版 G3.6 汇总脚本把最低规格 `NOT_RUN` 错列为非阻断，且未验证人工 Reviewer 类型，和 G3.6 第 7/8 节冲突。 | 汇总器现要求 `reviewerKind=human` 与物理最低规格 PASS；未提供时 DOD-09—10 为 `NOT_RUN`、决定为 `NO-GO`。 |
 | QD-KI-016 | RESOLVED | High | G3.6 的正式资产存在性与 Release 自动门禁没有证明运行时实际具备 2.5D 层次、方向动画、武器、怪物、战斗 VFX 和卡片交互，人工打开后仍表现为平面拼图与菜单。 | G4.0 已完成倾斜 XZ 战场、五区场景层、玩家/六敌/两 Boss 动画、游风剑、正式 VFX、卡片 UI/HUD，并以连续 60 秒 Player、五张截图、完整计数和逐张视觉审查关闭 DOD-01—10。 |
 | QD-KI-017 | ACCEPTED | Medium | G4.0 60 秒验收使用 3.25× 模拟并同步截图；其墙钟帧、GPU p99 和 GC 数据不能作为正式目标硬件性能回归。 | 保留原始观测值但将 G4.0 专用性能/Soak 标为 `NOT RUN`；发布前在当前正式表现代码上重跑目标 GPU、1% Low 和长时基准。该项不属于 G4.0 DOD，但继续作为 Release 风险。 |
+| QD-KI-018 | RESOLVED | High | 本地小型 JSON 存档通过异步 FileStream 启动后，在 Unity 同步 Composition Boundary 使用 `GetResult` 等待会阻塞主线程；已有存档二次启动表现为窗口消失或无响应。 | `LocalFileSaveStorage` 对低频小型本地文档改为接口内同步完成，保留 `ValueTask`、校验和、备份、取消与落盘契约；增加现有文档同步完成回归和不改写用户存档的 Player 启动门禁。 |
+| QD-KI-019 | RESOLVED | High | 保存为 `zh-Hans` 后，Host 在 Bootstrap/Awake 内立即设置 `LocalizationSettings.SelectedLocale` 会触发同步表重初始化并阻塞首帧；英文默认设置和同一 Profile 不复现。 | 两个 Runtime Host 均延迟到第一帧 Update 应用持久化语言；新增“保存中文后二次 Bootstrap”PlayMode 回归，最终本机中文存档 10/10 响应采样并完成 Bootstrap。 |
+| QD-KI-020 | RESOLVED | Medium | 根目录启动器曾优先选择被忽略的历史 `WindowsVisualFixProbe`，即使已有更新的 Release 也可能启动旧代码。 | 启动器只选择当前 `Builds/WindowsRelease/AzureSword.exe`；缺失时明确失败。实际根启动器验证路径正确、Bootstrap 完成且窗口持续响应。 |
 
-G3.1—G3.6 自动化实现与 RC2 CI、G4.0 表现成品化均已完成；QD-KI-003/014/017 以及最低规格
+G3.1—G3.6 自动化实现与 RC2 CI、G4.0 表现成品化、G4.1 启动稳定性均已完成；QD-KI-003/014/017 以及最低规格
 `NOT_RUN` 继续阻止 Release。
 只有外部人工/法律签字与最低规格物理机器证据到位后，才可重新生成 G3.6 `GO` 汇总。

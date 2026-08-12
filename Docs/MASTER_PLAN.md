@@ -167,3 +167,18 @@ G4.0 已于 2026-08-11 在实现与证据提交 `762719a` 上关闭：DOD-01—D
 60 秒 Player、五张实机截图、全量 462 EditMode / 22 PlayMode、Validation、Windows Release Build
 与独立 Release Player Smoke。完整证据见 `Docs/Reports/2026-08-11-g4-0-2-5d-presentation-completion.md`。
 该完成状态不改变 G3.6 的独立人工/法律签字和最低规格物理机器 `NOT_RUN`；商业 Release 仍为 `NO-GO`。
+
+## 10. G4.1 启动稳定性修复
+
+G4.0 后的本机现有中文存档二次启动暴露两条 Unity 主线程时序问题：低频本地存档异步 I/O 在同步
+Composition Boundary 被等待，以及持久化 Locale 在 Bootstrap/Awake 内立即触发本地化重初始化。
+根目录启动器还会优先选择被忽略的历史视觉探针。
+
+G4.1 已于 2026-08-12 在实现提交 `5dcad76` 上关闭：本地小型 JSON I/O 在接口内同步完成，保存语言
+延迟至第一帧应用，启动器只选择当前 Release。最终全量 463 EditMode / 23 PlayMode、Validation、干净
+Windows Release Build、隔离存档完整 Player 流程、本机现有 `zh-Hans` 存档 10/10 响应采样和根启动器
+实际启动均 `PASS`；用户设置/Profile Hash 未被启动验证改写。完整证据见
+`Docs/Reports/2026-08-12-g4-1-runtime-startup-stability.md`。
+
+G4.1 只关闭启动稳定性问题，不改变 QD-KI-003/014/017、最低规格物理机器和外部人工/法律门禁；
+商业 Release 仍为 `NO-GO`。
