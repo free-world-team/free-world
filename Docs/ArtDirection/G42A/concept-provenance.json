@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "artifactId": "g42a-qingci-target-frame",
+  "artifactClass": "non-runtime-art-direction-evidence",
+  "tool": "OpenAI image generation tool",
+  "modelVersion": "built-in imagegen / service version not exposed",
+  "generatedAtUtc": "2026-08-12T14:55:00Z",
+  "operator": "Codex",
+  "promptPath": "concept-prompt.txt",
+  "promptSha256": "A9F3543AAB0512AA120A098213B615F06B9C542293563AC836C737F30339982A",
+  "inputReferences": [
+    {
+      "path": "baseline-60s.png",
+      "rightsBasis": "first-party screenshot rendered from this repository's Development Player",
+      "sha256": "EA22E93E017474BFAD8ADF6DB24FA4F9A74AD517CF578C7C272F8348890BEF0E"
+    }
+  ],
+  "output": {
+    "path": "qingci-target-frame.png",
+    "sha256": "AB22A30F633C4B7C14C5ADA0CC9BAD46F547FA44480E35EFF87773B02D138DBA"
+  },
+  "runtimeEligible": false,
+  "releaseEligible": false,
+  "commercialUseReviewed": false,
+  "status": "direction-candidate-only",
+  "notes": [
+    "The frame may contain synthetic or illegible text and speculative decoration.",
+    "It must not be copied into Runtime, Addressables or a Release build.",
+    "Independent human direction and commercial-rights review remain NOT RUN."
+  ]
+}
