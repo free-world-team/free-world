@@ -165,7 +165,8 @@
 | QD-KI-018 | RESOLVED | High | 本地小型 JSON 存档通过异步 FileStream 启动后，在 Unity 同步 Composition Boundary 使用 `GetResult` 等待会阻塞主线程；已有存档二次启动表现为窗口消失或无响应。 | `LocalFileSaveStorage` 对低频小型本地文档改为接口内同步完成，保留 `ValueTask`、校验和、备份、取消与落盘契约；增加现有文档同步完成回归和不改写用户存档的 Player 启动门禁。 |
 | QD-KI-019 | RESOLVED | High | 保存为 `zh-Hans` 后，Host 在 Bootstrap/Awake 内立即设置 `LocalizationSettings.SelectedLocale` 会触发同步表重初始化并阻塞首帧；英文默认设置和同一 Profile 不复现。 | 两个 Runtime Host 均延迟到第一帧 Update 应用持久化语言；新增“保存中文后二次 Bootstrap”PlayMode 回归，最终本机中文存档 10/10 响应采样并完成 Bootstrap。 |
 | QD-KI-020 | RESOLVED | Medium | 根目录启动器曾优先选择被忽略的历史 `WindowsVisualFixProbe`，即使已有更新的 Release 也可能启动旧代码。 | 启动器只选择当前 `Builds/WindowsRelease/AzureSword.exe`；缺失时明确失败。实际根启动器验证路径正确、Bootstrap 完成且窗口持续响应。 |
+| QD-KI-021 | IN PROGRESS | High | G4.0 自动门禁证明正式角色、地图、VFX 和 UI 存在并能连续运行，但 2026-08-12 五帧实机复审显示风格混杂、HUD 占屏、地块硬切、拾取/敌群/VFX 堆叠和默认小字仍未达到目标审美与高密度可读性。 | 已完成 G4.2 优化计划；下一步只做“青瓷剑境”90 秒垂直样板，以相同 Seed Before/After、人类 Rubric、可访问性和性能门禁验证，样板通过前不批量重画。 |
 
-G3.1—G3.6 自动化实现与 RC2 CI、G4.0 表现成品化、G4.1 启动稳定性均已完成；QD-KI-003/014/017 以及最低规格
-`NOT_RUN` 继续阻止 Release。
+G3.1—G3.6 自动化实现与 RC2 CI、G4.0 表现存在性、G4.1 启动稳定性均已完成；G4.2 视觉品质重制尚未
+实现。QD-KI-003/014/017/021 以及最低规格 `NOT RUN` 继续阻止 Release。
 只有外部人工/法律签字与最低规格物理机器证据到位后，才可重新生成 G3.6 `GO` 汇总。

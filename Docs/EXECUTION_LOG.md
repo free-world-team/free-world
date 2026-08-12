@@ -1252,3 +1252,27 @@ G4.0 强制项已全部关闭。未经新授权不合并 `main`、不打 Release
 
 人工运行使用仓库根目录 `Run-Qinglan-Demo.cmd`。G4.1 强制修复项已关闭；未经新授权不合并 `main`、
 不打 Release 标签。商业 Release 仍须关闭 QD-KI-003/014/017、最低规格物理机器和外部人工/法律门禁。
+
+## Qinglan Demo G4.2：视觉品质重制规划
+
+- 状态：`PLANNING COMPLETE / IMPLEMENTATION NOT RUN`
+- 日期：2026-08-12
+- 分支：`codex/qinglan-demo-implementation`
+- ADR：无新增；本任务没有改变 Schema、Tick、程序集依赖、资源或渲染后端
+- 计划：`Docs/DemoDevelopment/31_G4_2_VISUAL_QUALITY_OPTIMIZATION_PLAN.md`
+- 结果报告：`Docs/Reports/2026-08-12-g4-2-visual-quality-optimization-plan.md`
+
+### 规划结果
+
+| 范围 | 结果 |
+|---|---|
+| 实机审计 | 当前提交重新生成 Development Player；60.1100 秒、五图、正式视听/字体加载 `PASS` |
+| 品质结论 | 自动存在性门禁不等于成品审美；登记 UI、地图、角色、VFX、高密度可读性五类核心问题 |
+| 视觉方向 | 推荐“青瓷剑境”：低饱和手绘战场、青玉/米白 UI、墨青轮廓、克制剑气与朱砂危险 |
+| 开放素材 | 核对候选库官方许可；只作候选源，实际导入仍须 CR、许可快照、Hash、Notice 和 Release 门禁 |
+| 实施路线 | G4.2-A—F 顺序交付；先做 90 秒样板，取得人类方向签字后再批量重制 |
+
+### 下一步
+
+只进入 G4.2-A。G4.2-A—F 当前均为 `NOT RUN`；规划完成不构成商业 Release GO。未经新授权不合并
+`main`、不打 Release 标签、不创建商店提交。
