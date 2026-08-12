@@ -113,6 +113,44 @@ namespace Game.Tests.EditMode
         }
 
         [Test]
+        public void ExistingLocalDocumentsAndWritesCompleteInlineForUnityCompositionBoundary()
+        {
+            var codec = new UnityJsonSaveCodec();
+            var storage = new LocalFileSaveStorage(directory);
+            var coordinator = new SaveCoordinator(storage, codec, new ContentRegistry());
+            var settings = new SettingsSaveData(
+                "zh-Hans", 0.15f, 1f, true, 1f, true, AutoAimStrategy.Nearest);
+            var profile = new ProfileSaveData(
+                "existing-profile",
+                Array.Empty<SavePackVersion>(),
+                Array.Empty<ContentId>(),
+                Array.Empty<SavedContentLevel>(),
+                Array.Empty<SavedCounter>(),
+                Array.Empty<SavedCounter>(),
+                "2026-08-12T00:00:00Z");
+            File.WriteAllBytes(
+                Path.Combine(directory, SaveSlots.Settings),
+                codec.Encode(settings).Data);
+            File.WriteAllBytes(
+                Path.Combine(directory, SaveSlots.Profile),
+                codec.Encode(profile).Data);
+
+            var settingsLoad = coordinator.LoadSettingsAsync();
+            var profileLoad = coordinator.LoadProfileAsync();
+            var settingsWrite = coordinator.SaveSettingsAsync(settings);
+
+            Assert.That(settingsLoad.IsCompleted, Is.True,
+                "Existing settings must not yield while Unity synchronously composes the local runtime.");
+            Assert.That(profileLoad.IsCompleted, Is.True,
+                "Existing profiles must not yield while Unity synchronously composes the local runtime.");
+            Assert.That(settingsWrite.IsCompleted, Is.True,
+                "Application events synchronously persist the local settings document.");
+            Assert.That(settingsLoad.GetAwaiter().GetResult().IsSuccess, Is.True);
+            Assert.That(profileLoad.GetAwaiter().GetResult().IsSuccess, Is.True);
+            Assert.That(settingsWrite.GetAwaiter().GetResult().IsSuccess, Is.True);
+        }
+
+        [Test]
         public void VersionOneSettingsSampleMigratesToVersionThree()
         {
             const string legacy = "{\"schemaVersion\":1,\"localeCode\":\"zh-Hans\",\"stickDeadzone\":0.3}";

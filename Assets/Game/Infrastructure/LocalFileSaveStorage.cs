@@ -41,7 +41,7 @@ namespace Game.Infrastructure
         public string RootDirectory => rootDirectory;
 
         /// <summary>Reads primary and backup bytes for a validated slot name.</summary>
-        public async ValueTask<SaveStorageReadResult> ReadAsync(string slot, CancellationToken cancellationToken)
+        public ValueTask<SaveStorageReadResult> ReadAsync(string slot, CancellationToken cancellationToken)
         {
             try
             {
@@ -49,27 +49,30 @@ namespace Game.Infrastructure
                 var primaryPath = ResolveSlot(slot);
                 var backupPath = primaryPath + ".bak";
                 var primary = File.Exists(primaryPath)
-                    ? await ReadAllBytesAsync(primaryPath, cancellationToken).ConfigureAwait(false)
+                    ? ReadAllBytes(primaryPath, cancellationToken)
                     : Array.Empty<byte>();
                 var backup = File.Exists(backupPath)
-                    ? await ReadAllBytesAsync(backupPath, cancellationToken).ConfigureAwait(false)
+                    ? ReadAllBytes(backupPath, cancellationToken)
                     : Array.Empty<byte>();
                 if (primary.Length == 0 && backup.Length == 0)
-                    return SaveStorageReadResult.Failure(new SaveDiagnostic(SaveFailureCode.NotFound, "save.error.not_found", slot));
-                return SaveStorageReadResult.Success(primary, backup);
+                    return CompletedRead(SaveStorageReadResult.Failure(
+                        new SaveDiagnostic(SaveFailureCode.NotFound, "save.error.not_found", slot)));
+                return CompletedRead(SaveStorageReadResult.Success(primary, backup));
             }
             catch (OperationCanceledException)
             {
-                return SaveStorageReadResult.Failure(new SaveDiagnostic(SaveFailureCode.Cancelled, "save.error.cancelled", slot));
+                return CompletedRead(SaveStorageReadResult.Failure(
+                    new SaveDiagnostic(SaveFailureCode.Cancelled, "save.error.cancelled", slot)));
             }
             catch (Exception exception) when (IsIoFailure(exception))
             {
-                return SaveStorageReadResult.Failure(new SaveDiagnostic(SaveFailureCode.IoFailure, "save.error.io", exception.GetType().Name));
+                return CompletedRead(SaveStorageReadResult.Failure(
+                    new SaveDiagnostic(SaveFailureCode.IoFailure, "save.error.io", exception.GetType().Name)));
             }
         }
 
         /// <summary>Writes through a flushed temporary file and atomic replacement.</summary>
-        public async ValueTask<SaveStorageWriteResult> WriteAtomicAsync(string slot, ReadOnlyMemory<byte> data, CancellationToken cancellationToken)
+        public ValueTask<SaveStorageWriteResult> WriteAtomicAsync(string slot, ReadOnlyMemory<byte> data, CancellationToken cancellationToken)
         {
             string temporaryPath = null;
             try
@@ -79,7 +82,7 @@ namespace Game.Infrastructure
                 var primaryPath = ResolveSlot(slot);
                 temporaryPath = primaryPath + ".tmp";
                 var backupPath = primaryPath + ".bak";
-                await WriteAllBytesAsync(temporaryPath, data, cancellationToken).ConfigureAwait(false);
+                WriteAllBytes(temporaryPath, data, cancellationToken);
                 observer?.OnStage(AtomicSaveWriteStage.TemporaryFileFlushed);
                 cancellationToken.ThrowIfCancellationRequested();
 
@@ -96,15 +99,17 @@ namespace Game.Infrastructure
                 }
                 temporaryPath = null;
                 observer?.OnStage(AtomicSaveWriteStage.PrimaryReplaced);
-                return SaveStorageWriteResult.Success();
+                return CompletedWrite(SaveStorageWriteResult.Success());
             }
             catch (OperationCanceledException)
             {
-                return SaveStorageWriteResult.Failure(new SaveDiagnostic(SaveFailureCode.Cancelled, "save.error.cancelled", slot));
+                return CompletedWrite(SaveStorageWriteResult.Failure(
+                    new SaveDiagnostic(SaveFailureCode.Cancelled, "save.error.cancelled", slot)));
             }
             catch (Exception exception) when (IsIoFailure(exception))
             {
-                return SaveStorageWriteResult.Failure(new SaveDiagnostic(SaveFailureCode.IoFailure, "save.error.io", exception.GetType().Name));
+                return CompletedWrite(SaveStorageWriteResult.Failure(
+                    new SaveDiagnostic(SaveFailureCode.IoFailure, "save.error.io", exception.GetType().Name)));
             }
             finally
             {
@@ -154,16 +159,21 @@ namespace Game.Infrastructure
             return resolved;
         }
 
-        private static async Task<byte[]> ReadAllBytesAsync(string path, CancellationToken token)
+        // Local save documents are deliberately small and are consumed from synchronous
+        // Unity composition/event boundaries. Completing local I/O inline prevents those
+        // callers from blocking the main thread on a task whose continuation still needs
+        // the Player runtime. Remote/cloud implementations retain the asynchronous contract.
+        private static byte[] ReadAllBytes(string path, CancellationToken token)
         {
-            using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, true))
+            using (var stream = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read, 4096, false))
             {
                 if (stream.Length > int.MaxValue) throw new IOException("Save file is too large.");
                 var data = new byte[(int)stream.Length];
                 var offset = 0;
                 while (offset < data.Length)
                 {
-                    var read = await stream.ReadAsync(data, offset, data.Length - offset, token).ConfigureAwait(false);
+                    token.ThrowIfCancellationRequested();
+                    var read = stream.Read(data, offset, data.Length - offset);
                     if (read == 0) break;
                     offset += read;
                 }
@@ -172,15 +182,23 @@ namespace Game.Infrastructure
             }
         }
 
-        private static async Task WriteAllBytesAsync(string path, ReadOnlyMemory<byte> data, CancellationToken token)
+        private static void WriteAllBytes(string path, ReadOnlyMemory<byte> data, CancellationToken token)
         {
-            using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None, 4096, true))
+            using (var stream = new FileStream(path, FileMode.Create, FileAccess.Write, FileShare.None, 4096, false))
             {
+                token.ThrowIfCancellationRequested();
                 var array = data.ToArray();
-                await stream.WriteAsync(array, 0, array.Length, token).ConfigureAwait(false);
-                await stream.FlushAsync(token).ConfigureAwait(false);
+                stream.Write(array, 0, array.Length);
+                stream.Flush(true);
+                token.ThrowIfCancellationRequested();
             }
         }
+
+        private static ValueTask<SaveStorageReadResult> CompletedRead(SaveStorageReadResult result) =>
+            new ValueTask<SaveStorageReadResult>(result);
+
+        private static ValueTask<SaveStorageWriteResult> CompletedWrite(SaveStorageWriteResult result) =>
+            new ValueTask<SaveStorageWriteResult>(result);
 
         private static bool IsIoFailure(Exception exception) =>
             exception is IOException || exception is UnauthorizedAccessException || exception is ArgumentException || exception is NotSupportedException;
