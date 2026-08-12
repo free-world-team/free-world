@@ -62,6 +62,15 @@ namespace Game.Infrastructure
             new Vector2(34f, -4f),
             new Vector2(34f, 10f)
         };
+        private static readonly string[] G42UpgradePriority =
+        {
+            "qinglan.skill.weapon.spirit_vine_seed",
+            "qinglan.skill.weapon.yufeng_sword",
+            "qinglan.skill.weapon.zhenyue_seal",
+            "qinglan.skill.weapon.tide_orb",
+            "qinglan.skill.weapon.lihuo_wheel",
+            "qinglan.skill.weapon.yellow_talisman"
+        };
 
         internal static bool IsRequested()
         {
@@ -345,14 +354,26 @@ namespace Game.Infrastructure
             if (offers == null || offers.Count == 0) return 0;
             var selectedIndex = 0;
             var selectedId = offers.GetAt(0).Source.TargetContentId.Value;
+            var selectedRank = UpgradePriorityRank(selectedId);
             for (var index = 1; index < offers.Count; index++)
             {
                 var candidateId = offers.GetAt(index).Source.TargetContentId.Value;
-                if (string.CompareOrdinal(candidateId, selectedId) >= 0) continue;
+                var candidateRank = UpgradePriorityRank(candidateId);
+                if (candidateRank > selectedRank ||
+                    (candidateRank == selectedRank && string.CompareOrdinal(candidateId, selectedId) >= 0))
+                    continue;
                 selectedId = candidateId;
+                selectedRank = candidateRank;
                 selectedIndex = index;
             }
             return selectedIndex;
+        }
+
+        private static int UpgradePriorityRank(string contentId)
+        {
+            for (var index = 0; index < G42UpgradePriority.Length; index++)
+                if (string.Equals(contentId, G42UpgradePriority[index], StringComparison.Ordinal)) return index;
+            return G42UpgradePriority.Length;
         }
 
         internal static int ChooseStableRewardIndex(RunSession session)
