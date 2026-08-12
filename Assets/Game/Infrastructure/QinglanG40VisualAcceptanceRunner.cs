@@ -311,11 +311,17 @@ namespace Game.Infrastructure
                         CollectMetrics(host, result, enemyProfiles, observedViews);
                         break;
                     case DemoFlowStage.UpgradePaused:
-                        host.Flow.Execute(QinglanUiCommand.SelectUpgrade, "upgrade", 0);
+                        host.Flow.Execute(
+                            QinglanUiCommand.SelectUpgrade,
+                            "upgrade",
+                            ChooseStableUpgradeIndex(host.Flow.Session));
                         host.TickRuntime(0d);
                         break;
                     case DemoFlowStage.RewardPaused:
-                        host.Flow.Execute(QinglanUiCommand.SelectReward, "reward", 0);
+                        host.Flow.Execute(
+                            QinglanUiCommand.SelectReward,
+                            "reward",
+                            ChooseStableRewardIndex(host.Flow.Session));
                         host.TickRuntime(0d);
                         break;
                     default:
@@ -331,6 +337,38 @@ namespace Game.Infrastructure
             if (elapsed <= 0d) return 0L;
             return (long)Math.Floor(
                 (elapsed * AcceptanceSimulationScale / SimulationClock.TickDurationSeconds) + 0.000000001d);
+        }
+
+        internal static int ChooseStableUpgradeIndex(RunSession session)
+        {
+            var offers = session?.CurrentOffers;
+            if (offers == null || offers.Count == 0) return 0;
+            var selectedIndex = 0;
+            var selectedId = offers.GetAt(0).Source.TargetContentId.Value;
+            for (var index = 1; index < offers.Count; index++)
+            {
+                var candidateId = offers.GetAt(index).Source.TargetContentId.Value;
+                if (string.CompareOrdinal(candidateId, selectedId) >= 0) continue;
+                selectedId = candidateId;
+                selectedIndex = index;
+            }
+            return selectedIndex;
+        }
+
+        internal static int ChooseStableRewardIndex(RunSession session)
+        {
+            var choice = session?.CurrentRewardChoice;
+            if (choice == null || choice.CandidateIds.Count == 0) return 0;
+            var selectedIndex = 0;
+            var selectedId = choice.CandidateIds[0].Value;
+            for (var index = 1; index < choice.CandidateIds.Count; index++)
+            {
+                var candidateId = choice.CandidateIds[index].Value;
+                if (string.CompareOrdinal(candidateId, selectedId) >= 0) continue;
+                selectedId = candidateId;
+                selectedIndex = index;
+            }
+            return selectedIndex;
         }
 
         private static Vector2 ResolveWaypointMovement(
