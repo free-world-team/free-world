@@ -143,14 +143,22 @@ namespace Game.Infrastructure
             var generation2Start = GC.CollectionCount(2);
             FrameTimingManager.CaptureFrameTimings();
             var startedAt = Time.realtimeSinceStartupAsDouble;
-            var drivenSimulationSeconds = 0d;
+            var drivenSimulationTicks = 0L;
             var waypointIndex = 0;
             var nextScreenshot = 0;
             while (true)
             {
                 var now = Time.realtimeSinceStartupAsDouble;
                 var elapsed = now - startedAt;
-                DriveActiveRun(host, elapsed, g42, ref drivenSimulationSeconds, ref waypointIndex);
+                DriveActiveRun(
+                    host,
+                    elapsed,
+                    g42,
+                    ref drivenSimulationTicks,
+                    ref waypointIndex,
+                    result,
+                    enemyProfiles,
+                    observedViews);
                 CollectMetrics(host, result, enemyProfiles, observedViews);
                 RecordPerformanceSample(
                     result,
@@ -283,23 +291,24 @@ namespace Game.Infrastructure
             QinglanDemoRuntimeHost host,
             double elapsed,
             bool g42,
-            ref double drivenSimulationSeconds,
-            ref int waypointIndex)
+            ref long drivenSimulationTicks,
+            ref int waypointIndex,
+            QinglanG40VisualAcceptanceResult result,
+            ISet<string> enemyProfiles,
+            ISet<SpatialEntity> observedViews)
         {
-            var targetSimulationSeconds = elapsed * AcceptanceSimulationScale;
+            var targetSimulationTicks = CalculateTargetSimulationTickCount(elapsed);
             var safety = 0;
-            while (drivenSimulationSeconds + 0.000001d < targetSimulationSeconds && safety++ < 64)
+            while (drivenSimulationTicks < targetSimulationTicks && safety++ < 64)
             {
                 switch (host.Flow.Stage)
                 {
                     case DemoFlowStage.Active:
                         host.SetVisualAcceptanceMovement(
                             ResolveWaypointMovement(host, g42, ref waypointIndex));
-                        var delta = Math.Min(
-                            SimulationClock.TickDurationSeconds * 4d,
-                            targetSimulationSeconds - drivenSimulationSeconds);
-                        host.TickRuntime(delta);
-                        drivenSimulationSeconds += delta;
+                        host.TickRuntime(SimulationClock.TickDurationSeconds);
+                        drivenSimulationTicks++;
+                        CollectMetrics(host, result, enemyProfiles, observedViews);
                         break;
                     case DemoFlowStage.UpgradePaused:
                         host.Flow.Execute(QinglanUiCommand.SelectUpgrade, "upgrade", 0);
@@ -315,6 +324,13 @@ namespace Game.Infrastructure
                         return;
                 }
             }
+        }
+
+        internal static long CalculateTargetSimulationTickCount(double elapsed)
+        {
+            if (elapsed <= 0d) return 0L;
+            return (long)Math.Floor(
+                (elapsed * AcceptanceSimulationScale / SimulationClock.TickDurationSeconds) + 0.000000001d);
         }
 
         private static Vector2 ResolveWaypointMovement(

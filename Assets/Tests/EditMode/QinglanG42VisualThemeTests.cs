@@ -187,6 +187,15 @@ namespace Game.Tests.EditMode
             Assert.That(movement, Is.EqualTo(Vector2.zero));
         }
 
+        [Test]
+        public void AcceptanceClockMapsWallTimeToWholeFixedTicks()
+        {
+            Assert.That(QinglanG40VisualAcceptanceRunner.CalculateTargetSimulationTickCount(0d), Is.Zero);
+            Assert.That(
+                QinglanG40VisualAcceptanceRunner.CalculateTargetSimulationTickCount(90d),
+                Is.EqualTo(8775L));
+        }
+
         private static void AssertToken(
             Color32 ui,
             Color32 presentation,
