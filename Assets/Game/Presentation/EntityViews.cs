@@ -58,14 +58,20 @@ namespace Game.Presentation
     {
         private SpriteRenderer spriteRenderer;
         private SpriteRenderer outlineRenderer;
+        private SpriteRenderer rimRenderer;
         private SpriteRenderer shadowRenderer;
         private SpriteRenderer heldWeaponRenderer;
+        private SpriteRenderer telegraphFillRenderer;
+        private SpriteRenderer telegraphDirectionRenderer;
         private TrailRenderer projectileTrail;
         private SpriteRenderer[] overlayRenderers;
         private int baseSortingOrder;
         private DirectionalSpriteSet animationSet;
         private Vector2 baseScale = Vector2.one;
         private Color baseColor = Color.white;
+        private Color baseOutlineColor = Color.clear;
+        private float densityScale = 1f;
+        private float densityAlpha = 1f;
         private float hitReactionRemaining;
         private float attackReactionRemaining;
 
@@ -84,6 +90,13 @@ namespace Game.Presentation
         public bool HitReactionActive => hitReactionRemaining > 0f;
         public bool HeldWeaponVisible => heldWeaponRenderer != null && heldWeaponRenderer.gameObject.activeSelf;
         public bool ProjectileTrailActive => projectileTrail != null && projectileTrail.emitting;
+        public bool QingciOutlineActive => outlineRenderer != null && outlineRenderer.gameObject.activeSelf;
+        public bool PlayerRimActive => rimRenderer != null && rimRenderer.gameObject.activeSelf;
+        public bool DangerFillVisible => telegraphFillRenderer != null && telegraphFillRenderer.gameObject.activeSelf;
+        public bool DangerDirectionVisible => telegraphDirectionRenderer != null && telegraphDirectionRenderer.gameObject.activeSelf;
+        public bool PickupDensityGrouped { get; private set; }
+        public bool PickupClusterEmphasis { get; private set; }
+        public float OutlineScale => outlineRenderer == null ? 0f : outlineRenderer.transform.localScale.x;
         public long AnimationFrameChangeCount { get; private set; }
 
         internal void Configure(Sprite sprite, Color color, Vector2 size)
@@ -111,6 +124,8 @@ namespace Game.Presentation
             spriteRenderer.sprite = sprite;
             spriteRenderer.color = color;
             baseColor = color;
+            densityScale = 1f;
+            densityAlpha = 1f;
             baseScale = size;
             baseSortingOrder = PresentationSpace.PriorityBand(priority);
             spriteRenderer.sortingOrder = baseSortingOrder;
@@ -120,11 +135,16 @@ namespace Game.Presentation
                 var outline = EnsureOutline();
                 outline.sprite = sprite;
                 outline.color = outlineColor;
+                baseOutlineColor = outlineColor;
                 outline.sortingOrder = spriteRenderer.sortingOrder - 1;
                 outline.transform.localScale = Vector3.one * 1.12f;
                 outline.gameObject.SetActive(true);
             }
-            else if (outlineRenderer != null) outlineRenderer.gameObject.SetActive(false);
+            else if (outlineRenderer != null)
+            {
+                baseOutlineColor = Color.clear;
+                outlineRenderer.gameObject.SetActive(false);
+            }
             Priority = priority;
             Shape = shape;
             ClearOverlays();
@@ -139,6 +159,8 @@ namespace Game.Presentation
             spriteRenderer.sprite = library.GetSprite(style.Shape);
             spriteRenderer.color = style.Color;
             baseColor = style.Color;
+            densityScale = 1f;
+            densityAlpha = 1f;
             baseScale = style.Size;
             baseSortingOrder = PresentationSpace.PriorityBand(style.Priority);
             spriteRenderer.sortingOrder = baseSortingOrder;
@@ -149,11 +171,79 @@ namespace Game.Presentation
             if (style.Shape == ProceduralShape.Ring && style.Size.x >= 1.5f)
                 outlineColor.a = Mathf.Min(outlineColor.a, 0.48f);
             outline.color = outlineColor;
+            baseOutlineColor = outlineColor;
             outline.sortingOrder = spriteRenderer.sortingOrder - 1;
             outline.transform.localScale = Vector3.one * 1.18f;
             outline.gameObject.SetActive(true);
             Priority = style.Priority;
             Shape = style.Shape;
+        }
+
+        internal void ConfigureQingciReadability(
+            EntityKind kind,
+            bool playerStyle,
+            bool highContrast,
+            ProceduralVisualLibrary library)
+        {
+            if (library == null) throw new ArgumentNullException(nameof(library));
+            if (kind == EntityKind.Actor && spriteRenderer != null)
+            {
+                var outline = EnsureOutline();
+                outline.sprite = spriteRenderer.sprite;
+                baseOutlineColor = highContrast
+                    ? (playerStyle ? Color.white : Color.black)
+                    : QinglanPresentationTheme.WithAlpha(QinglanPresentationTheme.Ink950, playerStyle ? 0.96f : 0.86f);
+                outline.color = baseOutlineColor;
+                outline.sortingOrder = spriteRenderer.sortingOrder - (playerStyle ? 2 : 1);
+                outline.transform.localScale = Vector3.one * (playerStyle
+                    ? QinglanPresentationTheme.PlayerOutlineScale
+                    : QinglanPresentationTheme.EnemyOutlineScale);
+                outline.gameObject.SetActive(true);
+
+                if (playerStyle)
+                {
+                    var rim = EnsureRim();
+                    rim.sprite = spriteRenderer.sprite;
+                    rim.color = highContrast
+                        ? new Color(1f, 1f, 1f, 0.72f)
+                        : QinglanPresentationTheme.WithAlpha(QinglanPresentationTheme.Jade200, 0.68f);
+                    rim.sortingOrder = spriteRenderer.sortingOrder - 1;
+                    rim.transform.localScale = Vector3.one * 1.08f;
+                    rim.gameObject.SetActive(true);
+                }
+                else if (rimRenderer != null) rimRenderer.gameObject.SetActive(false);
+            }
+            else if (rimRenderer != null) rimRenderer.gameObject.SetActive(false);
+
+            ConfigureDangerLanguage(kind, highContrast, library);
+        }
+
+        internal void ApplyPickupDensity(
+            int activePickupCount,
+            float playerDistanceSquared,
+            bool moving)
+        {
+            if (Binding.Kind != EntityKind.Pickup)
+            {
+                PickupDensityGrouped = false;
+                PickupClusterEmphasis = false;
+                densityScale = 1f;
+                densityAlpha = 1f;
+                return;
+            }
+
+            var nearRadius = QinglanPresentationTheme.PickupGroupingNearRadius;
+            var shouldGroup = activePickupCount > QinglanPresentationTheme.PickupGroupingThreshold &&
+                playerDistanceSquared > nearRadius * nearRadius && !moving;
+            PickupDensityGrouped = shouldGroup;
+            PickupClusterEmphasis = shouldGroup && (Binding.Handle.Index & 3) == 0;
+            densityScale = shouldGroup ? (PickupClusterEmphasis ? 0.82f : 0.46f) : 1f;
+            densityAlpha = shouldGroup ? (PickupClusterEmphasis ? 0.72f : 0.2f) : 1f;
+            transform.localScale = new Vector3(
+                baseScale.x * densityScale,
+                baseScale.y * densityScale,
+                1f);
+            ApplyDensityColor();
         }
 
         internal void SetOverlay(
@@ -308,6 +398,10 @@ namespace Game.Presentation
             ProfileId = default;
             UsesPlayerStyle = false;
             animationSet = null;
+            densityScale = 1f;
+            densityAlpha = 1f;
+            PickupDensityGrouped = false;
+            PickupClusterEmphasis = false;
             hitReactionRemaining = 0f;
             attackReactionRemaining = 0f;
             CurrentPose = PresentationPose.Idle;
@@ -325,6 +419,9 @@ namespace Game.Presentation
             }
             ClearOverlays();
             if (shadowRenderer != null) shadowRenderer.gameObject.SetActive(false);
+            if (rimRenderer != null) rimRenderer.gameObject.SetActive(false);
+            if (telegraphFillRenderer != null) telegraphFillRenderer.gameObject.SetActive(false);
+            if (telegraphDirectionRenderer != null) telegraphDirectionRenderer.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
 
@@ -335,6 +432,69 @@ namespace Game.Presentation
             child.transform.SetParent(transform, false);
             outlineRenderer = child.AddComponent<SpriteRenderer>();
             return outlineRenderer;
+        }
+
+        private SpriteRenderer EnsureRim()
+        {
+            if (rimRenderer != null) return rimRenderer;
+            var child = new GameObject("QingciPlayerRim");
+            child.transform.SetParent(transform, false);
+            rimRenderer = child.AddComponent<SpriteRenderer>();
+            return rimRenderer;
+        }
+
+        private SpriteRenderer EnsureTelegraphRenderer(ref SpriteRenderer renderer, string name)
+        {
+            if (renderer != null) return renderer;
+            var child = new GameObject(name);
+            child.transform.SetParent(transform, false);
+            renderer = child.AddComponent<SpriteRenderer>();
+            return renderer;
+        }
+
+        private void ConfigureDangerLanguage(
+            EntityKind kind,
+            bool highContrast,
+            ProceduralVisualLibrary library)
+        {
+            var rangeDanger = kind == EntityKind.Area && Priority == PresentationPriority.CriticalDanger;
+            var linearDanger = Priority == PresentationPriority.CriticalDanger && Shape == ProceduralShape.Line;
+            if (!rangeDanger && !linearDanger)
+            {
+                if (telegraphFillRenderer != null) telegraphFillRenderer.gameObject.SetActive(false);
+                if (telegraphDirectionRenderer != null) telegraphDirectionRenderer.gameObject.SetActive(false);
+                return;
+            }
+
+            var fill = EnsureTelegraphRenderer(ref telegraphFillRenderer, "QingciDangerFill");
+            fill.sprite = library.GetSprite(rangeDanger ? ProceduralShape.Circle : ProceduralShape.Square);
+            fill.color = highContrast
+                ? new Color(1f, 0.82f, 0.12f, QinglanPresentationTheme.DangerFillAlpha)
+                : QinglanPresentationTheme.WithAlpha(
+                    QinglanPresentationTheme.Cinnabar500,
+                    QinglanPresentationTheme.DangerFillAlpha);
+            fill.sortingOrder = (spriteRenderer == null ? baseSortingOrder : spriteRenderer.sortingOrder) - 2;
+            fill.transform.localScale = rangeDanger
+                ? Vector3.one * 0.82f
+                : new Vector3(0.92f, 0.28f, 1f);
+            fill.gameObject.SetActive(true);
+
+            if (linearDanger)
+            {
+                var direction = EnsureTelegraphRenderer(
+                    ref telegraphDirectionRenderer,
+                    "QingciDangerDirection");
+                direction.sprite = library.GetSprite(ProceduralShape.Chevron);
+                direction.color = highContrast
+                    ? new Color(1f, 1f, 1f, 0.94f)
+                    : QinglanPresentationTheme.WithAlpha(QinglanPresentationTheme.Cinnabar300, 0.94f);
+                direction.sortingOrder = (spriteRenderer == null ? baseSortingOrder : spriteRenderer.sortingOrder) + 1;
+                direction.transform.localPosition = new Vector3(0.36f, 0f, 0f);
+                direction.transform.localScale = Vector3.one * 0.24f;
+                direction.gameObject.SetActive(true);
+            }
+            else if (telegraphDirectionRenderer != null)
+                telegraphDirectionRenderer.gameObject.SetActive(false);
         }
 
         private void ConfigureShadow(EntityKind kind)
@@ -385,12 +545,13 @@ namespace Game.Presentation
             if (attackReactionRemaining > 0f)
                 attackReactionRemaining = Mathf.Max(0f, attackReactionRemaining - Mathf.Max(0f, unscaledDeltaTime));
             if (spriteRenderer == null) return;
+            var displayColor = DensityColor();
             if (hitReactionRemaining > 0f)
             {
                 var pulse = 0.55f + (Mathf.Sin(Time.unscaledTime * 90f) * 0.45f);
-                spriteRenderer.color = Color.Lerp(baseColor, Color.white, pulse);
+                spriteRenderer.color = Color.Lerp(displayColor, Color.white, pulse);
             }
-            else spriteRenderer.color = baseColor;
+            else spriteRenderer.color = displayColor;
         }
 
         private void ApplyPose(SimulationStateFlags flags, float facingRadians)
@@ -409,6 +570,10 @@ namespace Game.Presentation
                 var nextSprite = animationSet.Resolve(CurrentFacing, CurrentPose, spriteRenderer.sprite);
                 if (nextSprite != null && nextSprite != spriteRenderer.sprite) AnimationFrameChangeCount++;
                 spriteRenderer.sprite = nextSprite;
+                if (outlineRenderer != null && outlineRenderer.gameObject.activeSelf)
+                    outlineRenderer.sprite = nextSprite;
+                if (rimRenderer != null && rimRenderer.gameObject.activeSelf)
+                    rimRenderer.sprite = nextSprite;
                 spriteRenderer.flipX = false;
             }
             else if (Binding.Kind != EntityKind.Projectile)
@@ -441,9 +606,27 @@ namespace Game.Presentation
                 spriteRenderer.transform.localPosition = new Vector3(0f, bob, 0f);
             var squash = wave * (moving ? 0.035f : boss ? 0.022f : 0.012f);
             transform.localScale = new Vector3(
-                baseScale.x * (1f + squash),
-                baseScale.y * (1f - squash),
+                baseScale.x * densityScale * (1f + squash),
+                baseScale.y * densityScale * (1f - squash),
                 1f);
+        }
+
+        private Color DensityColor()
+        {
+            var color = baseColor;
+            color.a *= densityAlpha;
+            return color;
+        }
+
+        private void ApplyDensityColor()
+        {
+            if (spriteRenderer != null) spriteRenderer.color = DensityColor();
+            if (outlineRenderer != null)
+            {
+                var outline = baseOutlineColor;
+                outline.a *= densityAlpha;
+                outlineRenderer.color = outline;
+            }
         }
 
         private void UpdateHeldWeapon(float facingRadians)
@@ -484,6 +667,10 @@ namespace Game.Presentation
                 : baseSortingOrder + PresentationSpace.DepthOffset(simulationY);
             if (spriteRenderer != null) spriteRenderer.sortingOrder = order;
             if (outlineRenderer != null) outlineRenderer.sortingOrder = order - 1;
+            if (rimRenderer != null) rimRenderer.sortingOrder = order - 1;
+            if (UsesPlayerStyle && outlineRenderer != null) outlineRenderer.sortingOrder = order - 2;
+            if (telegraphFillRenderer != null) telegraphFillRenderer.sortingOrder = order - 2;
+            if (telegraphDirectionRenderer != null) telegraphDirectionRenderer.sortingOrder = order + 1;
             if (shadowRenderer != null)
                 shadowRenderer.sortingOrder = -100 + PresentationSpace.DepthOffset(simulationY);
             if (overlayRenderers == null) return;

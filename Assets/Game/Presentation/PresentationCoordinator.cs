@@ -65,6 +65,7 @@ namespace Game.Presentation
         public int FormalMapPropCount => mapPresentation?.FormalPropCount ?? 0;
         public int RaisedMapGeometryCount => mapPresentation?.RaisedGeometryCount ?? 0;
         public int MapGroundShadowCount => mapPresentation?.GroundShadowCount ?? 0;
+        public int MapCentralArenaTransitionCount => mapPresentation?.CentralArenaTransitionCount ?? 0;
         public bool UsesXzGroundPlane => mapPresentation?.UsesXzGroundPlane == true;
         public long ProjectileTrailSpawnCount { get; private set; }
         public long TotalHitRequestCount { get; private set; }
@@ -76,6 +77,9 @@ namespace Game.Presentation
         public int ActiveProjectileViewCount => CountViews(EntityKind.Projectile);
         public int ActiveAreaViewCount => CountViews(EntityKind.Area);
         public int ActivePickupViewCount => CountViews(EntityKind.Pickup);
+        public bool DensePickupPresentationActive { get; private set; }
+        public int DensityGroupedPickupViewCount { get; private set; }
+        public int DensityEmphasisPickupViewCount { get; private set; }
         public int HeldWeaponViewCount
         {
             get
@@ -132,6 +136,23 @@ namespace Game.Presentation
                 lastColorVision = settings.ColorVision;
                 RefreshAllStyles(session);
             }
+            var activePickupCount = 0;
+            var playerX = 0f;
+            var playerY = 0f;
+            var hasPlayerPosition = false;
+            for (var index = 0; index < snapshot.Count; index++)
+            {
+                var candidate = snapshot.GetAt(index);
+                if (candidate.Entity.Kind == EntityKind.Pickup) activePickupCount++;
+                if (session == null || candidate.Entity != session.Player) continue;
+                playerX = candidate.CurrentPosition.X;
+                playerY = candidate.CurrentPosition.Y;
+                hasPlayerPosition = true;
+            }
+            DensePickupPresentationActive =
+                activePickupCount > QinglanPresentationTheme.PickupGroupingThreshold;
+            DensityGroupedPickupViewCount = 0;
+            DensityEmphasisPickupViewCount = 0;
             visible.Clear();
             for (var index = 0; index < snapshot.Count; index++)
             {
@@ -177,6 +198,17 @@ namespace Game.Presentation
                 }
 
                 if (!view.Apply(entry, interpolationAlpha, snapshot.Tick)) InvalidHandleRejections++;
+                if (entry.Entity.Kind == EntityKind.Pickup)
+                {
+                    var deltaX = entry.CurrentPosition.X - (hasPlayerPosition ? playerX : 0f);
+                    var deltaY = entry.CurrentPosition.Y - (hasPlayerPosition ? playerY : 0f);
+                    view.ApplyPickupDensity(
+                        activePickupCount,
+                        (deltaX * deltaX) + (deltaY * deltaY),
+                        (entry.CurrentStateFlags & SimulationStateFlags.Moving) != 0);
+                    if (view.PickupDensityGrouped) DensityGroupedPickupViewCount++;
+                    if (view.PickupClusterEmphasis) DensityEmphasisPickupViewCount++;
+                }
             }
 
             releaseBuffer.Clear();
@@ -366,6 +398,9 @@ namespace Game.Presentation
             lastMechanicTier = -1;
             lastBossPhase = -1;
             lastHadBoss = false;
+            DensePickupPresentationActive = false;
+            DensityGroupedPickupViewCount = 0;
+            DensityEmphasisPickupViewCount = 0;
         }
 
         private EntityView Acquire(

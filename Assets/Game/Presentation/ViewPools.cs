@@ -89,6 +89,11 @@ namespace Game.Presentation
             view.ConfigureHeldWeapon(playerStyle ? heldWeaponSprite : null);
             if (kind == EntityKind.Projectile) view.ConfigureProjectileTrail(fallback.TrailMaterial);
             view.Bind(entity);
+            view.ConfigureQingciReadability(
+                kind,
+                playerStyle,
+                settings.ColorVision == ColorVisionMode.HighContrast,
+                fallback);
             return view;
         }
 
@@ -98,15 +103,22 @@ namespace Game.Presentation
             if (profiles.TryResolve(view.ProfileId, kind, out var profile))
             {
                 ConfigureFormal(view, profile, view.UsesPlayerStyle);
-                return;
             }
-            proceduralProfiles.TryResolve(
-                view.ProfileId,
+            else
+            {
+                proceduralProfiles.TryResolve(
+                    view.ProfileId,
+                    kind,
+                    view.UsesPlayerStyle,
+                    settings.ColorVision,
+                    out var style);
+                view.Configure(style, fallback);
+            }
+            view.ConfigureQingciReadability(
                 kind,
                 view.UsesPlayerStyle,
-                settings.ColorVision,
-                out var style);
-            view.Configure(style, fallback);
+                settings.ColorVision == ColorVisionMode.HighContrast,
+                fallback);
         }
 
         internal bool ApplyOverlay(T view, int index, ContentId overlayId)

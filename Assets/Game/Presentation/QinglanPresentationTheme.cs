@@ -5,6 +5,13 @@ namespace Game.Presentation
     /// <summary>G4.2 Qingci Sword Realm world/VFX tokens mirrored from the governed Style Bible.</summary>
     public static class QinglanPresentationTheme
     {
+        public const float CentralArenaSampleDiameter = 24f;
+        public const int PickupGroupingThreshold = 32;
+        public const float PickupGroupingNearRadius = 4f;
+        public const float PlayerOutlineScale = 1.18f;
+        public const float EnemyOutlineScale = 1.11f;
+        public const float DangerFillAlpha = 0.24f;
+
         public static readonly Color32 Ink950 = new Color32(16, 42, 45, 255);
         public static readonly Color32 Ink800 = new Color32(28, 66, 67, 255);
         public static readonly Color32 Jade500 = new Color32(66, 184, 173, 255);

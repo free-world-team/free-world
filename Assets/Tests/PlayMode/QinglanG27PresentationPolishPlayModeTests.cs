@@ -50,11 +50,16 @@ namespace Game.Tests.PlayMode
             Assert.That(host.Presentation.UsesXzGroundPlane, Is.True);
             Assert.That(host.Presentation.RaisedMapGeometryCount, Is.GreaterThan(4));
             Assert.That(host.Presentation.MapGroundShadowCount, Is.GreaterThan(0));
+            Assert.That(host.Presentation.MapCentralArenaTransitionCount, Is.EqualTo(14));
             Assert.That(host.Presentation.TryGetView(host.Flow.Session.Player, out var player), Is.True);
             Assert.That(player.Shape, Is.EqualTo(ProceduralShape.Triangle));
             Assert.That(player.DirectionalAnimationActive, Is.True);
             Assert.That(player.transform.Find("GroundShadow"), Is.Not.Null);
             Assert.That(player.HeldWeaponVisible, Is.True);
+            Assert.That(player.QingciOutlineActive, Is.True);
+            Assert.That(player.PlayerRimActive, Is.True);
+            Assert.That(player.OutlineScale,
+                Is.EqualTo(QinglanPresentationTheme.PlayerOutlineScale).Within(0.001f));
             Assert.That(player.transform.Find("HeldWeapon_YufengSword"), Is.Not.Null);
             var movementStart = player.transform.position;
             host.SetVisualAcceptanceMovement(Vector2.right);

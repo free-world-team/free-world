@@ -1,9 +1,11 @@
 using Game.Application;
 using Game.Presentation;
+using Game.Simulation;
 using Game.UI;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
+using NumericsVector2 = System.Numerics.Vector2;
 
 namespace Game.Tests.EditMode
 {
@@ -73,6 +75,56 @@ namespace Game.Tests.EditMode
                 Assert.That(ui.UsesChoiceCardLayout, Is.False);
                 Assert.That(ui.SettingsPreviewVisible, Is.True);
                 Assert.That(ui.PermanentDangerLegendVisible, Is.False);
+            }
+            finally
+            {
+                Object.DestroyImmediate(root);
+            }
+        }
+
+        [Test]
+        public void WorldSliceAddsNaturalArenaFalloffAndKeepsDensePickupSimulationViews()
+        {
+            var root = new GameObject("G42WorldReadability");
+            try
+            {
+                var canvas = new GameObject("Canvas").AddComponent<Canvas>();
+                canvas.transform.SetParent(root.transform, false);
+                var coordinator = root.AddComponent<PresentationCoordinator>();
+                coordinator.Initialize(canvas, new AccessibilitySettings());
+                coordinator.SetMap(new ProceduralMapConfiguration(
+                    new Vector2(-48f, -36f),
+                    new Vector2(48f, 36f),
+                    16f,
+                    null,
+                    null,
+                    null));
+
+                var world = new SimulationWorld();
+                world.CreateArea(SimulationEntityState.Create(
+                    new NumericsVector2(8f, 0f),
+                    NumericsVector2.Zero));
+                for (var index = 0; index < 40; index++)
+                    world.CreatePickup(SimulationEntityState.Create(
+                        new NumericsVector2(8f + (index % 8), 8f + (index / 8)),
+                        NumericsVector2.Zero));
+                new FixedTickRunner(world).Advance(SimulationClock.TickDurationSeconds);
+                coordinator.Sync(world.RenderSnapshot, 1f);
+
+                Assert.That(coordinator.MapCentralArenaTransitionCount, Is.EqualTo(14));
+                Assert.That(coordinator.ActivePickupViewCount, Is.EqualTo(40),
+                    "density grouping must not remove simulation-backed presentation views");
+                Assert.That(coordinator.DensePickupPresentationActive, Is.True);
+                Assert.That(coordinator.DensityGroupedPickupViewCount, Is.EqualTo(40));
+                Assert.That(coordinator.DensityEmphasisPickupViewCount, Is.EqualTo(10));
+                Assert.That(coordinator.ActiveAreaViewCount, Is.EqualTo(1));
+                for (var index = 0; index < world.RenderSnapshot.Count; index++)
+                {
+                    var entity = world.RenderSnapshot.GetAt(index).Entity;
+                    if (entity.Kind != EntityKind.Area) continue;
+                    Assert.That(coordinator.TryGetView(entity, out var area), Is.True);
+                    Assert.That(area.DangerFillVisible, Is.True);
+                }
             }
             finally
             {

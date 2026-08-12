@@ -104,6 +104,7 @@ namespace Game.Presentation
             markers = new List<ProceduralMapMarkerView>(configuration.Markers.Count);
             raisedSurfaceMaterial = CreateRaisedSurfaceMaterial();
             BuildGround(configuration);
+            BuildCentralArenaTransition(configuration);
             BuildBounds(configuration);
             BuildZones(configuration);
             BuildObstacles(configuration);
@@ -117,6 +118,7 @@ namespace Game.Presentation
         public int FormalPropCount { get; private set; }
         public int RaisedGeometryCount { get; private set; }
         public int GroundShadowCount { get; private set; }
+        public int CentralArenaTransitionCount { get; private set; }
         public bool UsesXzGroundPlane => true;
 
         public void Sync(RunUiSnapshot snapshot, ColorVisionMode mode)
@@ -213,6 +215,60 @@ namespace Game.Presentation
                         PresentationSpace.GroundRotation);
                     GroundTileCount++;
                 }
+            }
+        }
+
+        private void BuildCentralArenaTransition(ProceduralMapConfiguration configuration)
+        {
+            var center = (configuration.Minimum + configuration.Maximum) * 0.5f;
+            var maximumDiameter = Mathf.Min(
+                QinglanPresentationTheme.CentralArenaSampleDiameter,
+                Mathf.Min(
+                    configuration.Maximum.x - configuration.Minimum.x,
+                    configuration.Maximum.y - configuration.Minimum.y));
+            if (maximumDiameter < 4f) return;
+
+            // Five translucent, differently sized washes replace a single opaque decal edge
+            // with a 2.5 m celadon falloff. The source tiles remain untouched and authoritative.
+            for (var layer = 0; layer < 5; layer++)
+            {
+                var renderer = CreateRenderer("G42_CentralArenaWash_" + layer, -29 + layer);
+                renderer.sprite = library.GetSprite(ProceduralShape.Circle);
+                renderer.color = QinglanPresentationTheme.WithAlpha(
+                    layer < 2 ? QinglanPresentationTheme.Ink800 : QinglanPresentationTheme.Jade200,
+                    0.018f + (layer * 0.006f));
+                var diameter = maximumDiameter - (layer * 1.25f);
+                renderer.transform.SetPositionAndRotation(
+                    PresentationSpace.ToGround(
+                        center.x,
+                        center.y,
+                        PresentationSpace.GroundDecalHeight * (0.2f + (layer * 0.04f))),
+                    PresentationSpace.GroundRotation);
+                renderer.transform.localScale = new Vector3(diameter, diameter, 1f);
+                CentralArenaTransitionCount++;
+            }
+
+            // Small deterministic moss/ink blooms break the last circular contour so the
+            // sample boundary reads as weathered ground, not another perfect gameplay ring.
+            for (var bloom = 0; bloom < 9; bloom++)
+            {
+                var angle = (bloom * 40f + ((bloom & 1) * 13f)) * Mathf.Deg2Rad;
+                var radius = (maximumDiameter * 0.5f) - 0.7f + ((bloom % 3) * 0.32f);
+                var position = center + new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
+                var renderer = CreateRenderer("G42_CentralArenaEdgeBloom_" + bloom, -24);
+                renderer.sprite = library.GetSprite(ProceduralShape.Circle);
+                renderer.color = QinglanPresentationTheme.WithAlpha(
+                    (bloom & 1) == 0 ? QinglanPresentationTheme.Jade500 : QinglanPresentationTheme.Ink800,
+                    0.035f + ((bloom % 3) * 0.008f));
+                renderer.transform.SetPositionAndRotation(
+                    PresentationSpace.ToGround(
+                        position.x,
+                        position.y,
+                        PresentationSpace.GroundDecalHeight * 0.45f),
+                    PresentationSpace.GroundRotation);
+                var diameter = 2.2f + ((bloom % 4) * 0.52f);
+                renderer.transform.localScale = new Vector3(diameter, diameter * 0.72f, 1f);
+                CentralArenaTransitionCount++;
             }
         }
 
