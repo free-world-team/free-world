@@ -3,6 +3,7 @@ using Game.Presentation;
 using Game.Simulation;
 using Game.UI;
 using NUnit.Framework;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using NumericsVector2 = System.Numerics.Vector2;
@@ -125,6 +126,36 @@ namespace Game.Tests.EditMode
                     Assert.That(coordinator.TryGetView(entity, out var area), Is.True);
                     Assert.That(area.DangerFillVisible, Is.True);
                 }
+            }
+            finally
+            {
+                Object.DestroyImmediate(root);
+            }
+        }
+
+        [Test]
+        public void CombatHudShowsOnlySixCoreBuildSlotsAndSummarizesTheRest()
+        {
+            var root = new GameObject("G42HudBuildDensity");
+            try
+            {
+                var ui = root.AddComponent<QinglanRuntimeUiRoot>();
+                ui.Initialize(new EchoLocalization(), id => "content." + id + ".name");
+                var snapshot = new RunUiSnapshot();
+                for (var index = 0; index < 11; index++)
+                    snapshot.AddBuild("qinglan.test.build." + index, 1, 8, 1);
+
+                ui.ShowHud(snapshot);
+
+                Assert.That(ui.VisibleHudIconCount, Is.EqualTo(6));
+                Assert.That(ui.HiddenHudBuildCount, Is.EqualTo(5));
+                Assert.That(root.transform.Find(
+                    "Qinglan_HudLayer/Qinglan_HudBuild/Qinglan_HudBuildIcon_6"), Is.Null);
+                var overflow = root.transform.Find(
+                    "Qinglan_HudLayer/Qinglan_HudBuild/M7_HudBuildOverflow");
+                Assert.That(overflow, Is.Not.Null);
+                Assert.That(overflow.gameObject.activeSelf, Is.True);
+                Assert.That(overflow.GetComponent<TMP_Text>().text, Is.EqualTo("+5"));
             }
             finally
             {

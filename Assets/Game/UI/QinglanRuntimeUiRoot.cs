@@ -26,6 +26,7 @@ namespace Game.UI
     /// <summary>Single governed Canvas with separated page, HUD and accessibility preview layers.</summary>
     public sealed class QinglanRuntimeUiRoot : MonoBehaviour, IQinglanDemoView
     {
+        private const int MaximumCoreHudBuildSlots = 6;
         private readonly StringBuilder pageBuilder = new StringBuilder(8192);
         private readonly StringBuilder hudBuilder = new StringBuilder(4096);
         private readonly StringBuilder headerBuilder = new StringBuilder(512);
@@ -57,6 +58,7 @@ namespace Game.UI
         private Image bossFill;
         private GameObject bossBarRoot;
         private RectTransform buildIconRoot;
+        private TMP_Text buildOverflowText;
         private TMP_Text vitalsText;
         private TMP_Text runStatusText;
         private TMP_Text bossText;
@@ -88,6 +90,7 @@ namespace Game.UI
         public int ActiveButtonCount { get; private set; }
         public int ClickableButtonCount { get; private set; }
         public int VisibleHudIconCount { get; private set; }
+        public int HiddenHudBuildCount { get; private set; }
         public int FormalOptionIconCount { get; private set; }
         public float HealthBarFillAmount => healthFill == null ? 0f : healthFill.fillAmount;
         public bool BossBarVisible => bossBarRoot != null && bossBarRoot.activeSelf;
@@ -343,16 +346,18 @@ namespace Game.UI
                                 (snapshot.BossPhase + 1) + "/" + snapshot.BossPhaseCount;
             }
 
-            EnsureHudIconCount(snapshot.BuildCount);
+            var visibleBuildCount = Math.Min(snapshot.BuildCount, MaximumCoreHudBuildSlots);
+            EnsureHudIconCount(visibleBuildCount);
             if (buildPanelRect != null)
             {
-                var width = Mathf.Clamp(0.022f + (snapshot.BuildCount * 0.039f), 0.10f, 0.31f);
+                var width = Mathf.Clamp(0.028f + (visibleBuildCount * 0.039f), 0.10f, 0.27f);
                 buildPanelRect.anchorMax = new Vector2(0.018f + width, 0.142f);
             }
-            VisibleHudIconCount = snapshot.BuildCount;
+            VisibleHudIconCount = visibleBuildCount;
+            HiddenHudBuildCount = Math.Max(0, snapshot.BuildCount - visibleBuildCount);
             for (var index = 0; index < hudIcons.Count; index++)
             {
-                var active = index < snapshot.BuildCount;
+                var active = index < visibleBuildCount;
                 hudIcons[index].Root.SetActive(active);
                 if (!active) continue;
                 var item = snapshot.GetBuildAt(index);
@@ -360,6 +365,11 @@ namespace Game.UI
                     ResolveContentIcon(item.ContentId),
                     "Lv." + item.Level + "/" + item.MaximumLevel,
                     BuildGlyph(item.Kind));
+            }
+            if (buildOverflowText != null)
+            {
+                buildOverflowText.gameObject.SetActive(HiddenHudBuildCount > 0);
+                buildOverflowText.text = "+" + HiddenHudBuildCount.ToString(CultureInfo.InvariantCulture);
             }
 
             objectiveBuilder.Clear();
@@ -913,6 +923,16 @@ namespace Game.UI
             buildLayout.childControlWidth = false;
             buildLayout.childForceExpandHeight = true;
             buildLayout.childForceExpandWidth = false;
+            buildOverflowText = CreateText(buildPanel.transform, "M7_HudBuildOverflow", 18,
+                TextAlignmentOptions.Center,
+                Vector2.zero, Vector2.zero);
+            buildOverflowText.font = boldFont;
+            buildOverflowText.rectTransform.anchorMin = new Vector2(0.88f, 0.08f);
+            buildOverflowText.rectTransform.anchorMax = new Vector2(0.99f, 0.92f);
+            buildOverflowText.rectTransform.offsetMin = Vector2.zero;
+            buildOverflowText.rectTransform.offsetMax = Vector2.zero;
+            buildOverflowText.color = QinglanUiTheme.Rice100;
+            buildOverflowText.gameObject.SetActive(false);
 
             var objectivePanel = CreatePanelUnder(hudPanel.transform, "Qinglan_HudObjectives",
                 new Vector2(0.785f, 0.84f), new Vector2(0.982f, 0.982f));
