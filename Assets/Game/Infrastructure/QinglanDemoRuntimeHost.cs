@@ -20,6 +20,7 @@ namespace Game.Infrastructure
         private DemoFlowStage lastStage;
         private double uiRefreshAccumulator;
         private string lastLocaleCode = string.Empty;
+        private string pendingStartupLocaleCode = string.Empty;
         private bool initialized;
         private QinglanFormalVisualLoader formalVisualLoader;
         private QinglanFormalAudioLoader formalAudioLoader;
@@ -50,7 +51,7 @@ namespace Game.Infrastructure
             if (runtimeServices == null) throw new ArgumentNullException(nameof(runtimeServices));
             bootstrapApplication = application;
             Localization = new UnityLocalizationService();
-            Localization.SelectLocale(runtimeServices.Settings.LocaleCode);
+            pendingStartupLocaleCode = runtimeServices.Settings.LocaleCode;
 
             Input = gameObject.AddComponent<M7InputRouter>();
             Input.Initialize(inputActions);
@@ -120,6 +121,7 @@ namespace Game.Infrastructure
             if (!initialized) return;
             if (double.IsNaN(elapsedSeconds) || double.IsInfinity(elapsedSeconds) || elapsedSeconds < 0d)
                 throw new ArgumentOutOfRangeException(nameof(elapsedSeconds));
+            ApplyPendingStartupLocale();
             Input.SetStickDeadzone(Flow.Settings.StickDeadzone);
             var move = visualAcceptanceMovementEnabled ? visualAcceptanceMovement : Input.Move;
             Flow.SetMovement(new System.Numerics.Vector2(move.x, move.y));
@@ -181,6 +183,15 @@ namespace Game.Infrastructure
                 presenter.Refresh(false);
                 ApplyInputMode();
             }
+        }
+
+        private void ApplyPendingStartupLocale()
+        {
+            if (string.IsNullOrEmpty(pendingStartupLocaleCode)) return;
+            var requestedLocale = pendingStartupLocaleCode;
+            pendingStartupLocaleCode = string.Empty;
+            if (!Localization.SelectLocale(requestedLocale))
+                Debug.LogWarning("[Qinglan Localization] Saved locale is unavailable: " + requestedLocale);
         }
 
         internal void SetVisualAcceptanceMovement(Vector2 movement)

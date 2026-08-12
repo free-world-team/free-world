@@ -84,6 +84,28 @@ namespace Game.Tests.PlayMode
             Assert.That(bootstrap.Persistence.LastPlatformOperation.Status, Is.EqualTo(Game.Platform.Abstractions.PlatformOperationStatus.Unavailable));
         }
 
+        [UnityTest]
+        public IEnumerator PersistedChineseLocaleLoadsOnSecondBootstrapWithoutBlockingStartup()
+        {
+            Directory.CreateDirectory(saveRoot);
+            var codec = new UnityJsonSaveCodec();
+            var settings = new SettingsSaveData(
+                "zh-Hans", 0.15f, 1f, true, 1f, true, AutoAimStrategy.Nearest);
+            var encoded = codec.Encode(settings);
+            Assert.That(encoded.IsSuccess, Is.True);
+            File.WriteAllBytes(Path.Combine(saveRoot, SaveSlots.Settings), encoded.Data);
+
+            var operation = SceneManager.LoadSceneAsync("Bootstrap", LoadSceneMode.Single);
+            while (!operation.isDone) yield return null;
+            yield return null;
+
+            var host = Object.FindFirstObjectByType<QinglanDemoRuntimeHost>();
+            Assert.That(host, Is.Not.Null);
+            Assert.That(host.Localization.SelectedLocaleCode, Is.EqualTo("zh-Hans"));
+            Assert.That(host.Ui.RenderedPageText, Does.Contain("剑起青岚"));
+            Assert.That(host.Ui.RenderedPageText, Does.Not.Contain("ui.qinglan.title.name"));
+        }
+
         private static void DestroyBootstrapInstances()
         {
             var all = Object.FindObjectsByType<GameBootstrapper>(FindObjectsInactive.Include, FindObjectsSortMode.None);

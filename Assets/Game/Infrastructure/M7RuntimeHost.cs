@@ -17,6 +17,7 @@ namespace Game.Infrastructure
         private GameState lastState;
         private bool initialized;
         private GameApplication application;
+        private string pendingStartupLocaleCode = string.Empty;
 
         public M7GameFlowController Flow { get; private set; }
         public M7InputRouter Input { get; private set; }
@@ -33,7 +34,8 @@ namespace Game.Infrastructure
             if (initialized) throw new InvalidOperationException("M7RuntimeHost is already initialized.");
             this.application = application ?? throw new ArgumentNullException(nameof(application));
             Localization = new UnityLocalizationService();
-            if (runtimeServices?.Settings != null) Localization.SelectLocale(runtimeServices.Settings.LocaleCode);
+            if (runtimeServices?.Settings != null)
+                pendingStartupLocaleCode = runtimeServices.Settings.LocaleCode;
             var uiObject = new GameObject("M7_UI");
             uiObject.transform.SetParent(transform, false);
             Ui = uiObject.AddComponent<RuntimeUiRoot>();
@@ -83,6 +85,7 @@ namespace Game.Infrastructure
             if (!initialized) return;
             if (double.IsNaN(elapsedSeconds) || double.IsInfinity(elapsedSeconds) || elapsedSeconds < 0d)
                 throw new ArgumentOutOfRangeException(nameof(elapsedSeconds));
+            ApplyPendingStartupLocale();
             Input.SetStickDeadzone(Flow.Settings.StickDeadzone);
             var move = Input.Move;
             Flow.SetMovement(new System.Numerics.Vector2(move.x, move.y));
@@ -122,6 +125,15 @@ namespace Game.Infrastructure
                 presenter.Refresh();
                 ApplyStateMode();
             }
+        }
+
+        private void ApplyPendingStartupLocale()
+        {
+            if (string.IsNullOrEmpty(pendingStartupLocaleCode)) return;
+            var requestedLocale = pendingStartupLocaleCode;
+            pendingStartupLocaleCode = string.Empty;
+            if (Localization.SelectLocale(requestedLocale)) presenter.Refresh();
+            else Debug.LogWarning("[Localization] Saved locale is unavailable: " + requestedLocale);
         }
 
         private void ApplyStateMode()
