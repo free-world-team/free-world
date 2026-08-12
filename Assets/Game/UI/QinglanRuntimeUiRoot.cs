@@ -23,7 +23,7 @@ namespace Game.UI
         TMP_FontAsset Narrative { get; }
     }
 
-    /// <summary>Single procedural placeholder Canvas with separated page and HUD layers.</summary>
+    /// <summary>Single governed Canvas with separated page, HUD and accessibility preview layers.</summary>
     public sealed class QinglanRuntimeUiRoot : MonoBehaviour, IQinglanDemoView
     {
         private readonly StringBuilder pageBuilder = new StringBuilder(8192);
@@ -42,9 +42,15 @@ namespace Game.UI
         private TMP_Text pageText;
         private TMP_Text hudText;
         private TMP_Text dangerText;
+        private RectTransform optionViewport;
         private RectTransform optionContent;
         private ScrollRect optionScroll;
+        private VerticalLayoutGroup optionListLayout;
+        private ContentSizeFitter optionContentFitter;
         private RectTransform buildPanelRect;
+        private Image settingsPreviewPanel;
+        private Image settingsPreviewAccent;
+        private TMP_Text settingsPreviewText;
         private Image healthFill;
         private Image shieldFill;
         private Image experienceFill;
@@ -61,6 +67,7 @@ namespace Game.UI
         private ILocalizationService localization;
         private Func<string, string> contentNameResolver;
         private IQinglanUiVisualCatalog visualCatalog;
+        private AccessibilitySettings accessibilitySettings;
         private ColorVisionMode lastColorVision = (ColorVisionMode)255;
         private float lastFontScale = -1f;
         private string renderedPageText = string.Empty;
@@ -84,6 +91,9 @@ namespace Game.UI
         public int FormalOptionIconCount { get; private set; }
         public float HealthBarFillAmount => healthFill == null ? 0f : healthFill.fillAmount;
         public bool BossBarVisible => bossBarRoot != null && bossBarRoot.activeSelf;
+        public bool UsesChoiceCardLayout { get; private set; }
+        public bool SettingsPreviewVisible => settingsPreviewPanel != null && settingsPreviewPanel.gameObject.activeSelf;
+        public bool PermanentDangerLegendVisible => dangerPanel != null && dangerPanel.gameObject.activeSelf;
         /// <summary>True when the active Run HUD leaves the camera-rendered battlefield unobstructed.</summary>
         public bool GameplayWorldVisible => CurrentPage == QinglanUiPageId.RunHud &&
                                             pageBackground != null && !pageBackground.gameObject.activeSelf &&
@@ -130,7 +140,7 @@ namespace Game.UI
             gameObject.AddComponent<GraphicRaycaster>();
             EnsureEventSystem();
             pageBackground = CreatePanel("Qinglan_FormalBackground", Vector2.zero, Vector2.one);
-            pageBackground.color = new Color(0.035f, 0.055f, 0.06f, 1f);
+            pageBackground.color = QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink950, 1f);
             pagePanel = CreatePanel("Qinglan_PageLayer", new Vector2(0.045f, 0.07f), new Vector2(0.68f, 0.94f));
             pageText = CreateText(pagePanel.transform, "Qinglan_PageText", 28, TextAlignmentOptions.TopLeft,
                 new Vector2(38f, 16f), new Vector2(-38f, -16f));
@@ -141,14 +151,17 @@ namespace Game.UI
             hudPanel = CreatePanel("Qinglan_HudLayer", Vector2.zero, Vector2.one);
             hudPanel.color = Color.clear;
             hudPanel.raycastTarget = false;
-            hudText = CreateText(hudPanel.transform, "Qinglan_HudText", 17, TextAlignmentOptions.TopLeft,
+            hudText = CreateText(hudPanel.transform, "Qinglan_HudText", QinglanUiTheme.MinimumBodyFontSize1080p,
+                TextAlignmentOptions.TopLeft,
                 new Vector2(24f, 20f), new Vector2(-24f, -20f));
             hudText.gameObject.SetActive(false);
             CreateHudWidgets();
-            dangerPanel = CreatePanel("Qinglan_DangerLayer", new Vector2(0.62f, 0.018f), new Vector2(0.985f, 0.105f));
-            dangerText = CreateText(dangerPanel.transform, "Qinglan_DangerText", 16, TextAlignmentOptions.MidlineLeft,
+            dangerPanel = CreatePanel("Qinglan_DangerLayer", new Vector2(0.67f, 0.025f), new Vector2(0.985f, 0.095f));
+            dangerText = CreateText(dangerPanel.transform, "Qinglan_DangerText", QinglanUiTheme.MinimumBodyFontSize1080p,
+                TextAlignmentOptions.MidlineLeft,
                 new Vector2(18f, 8f), new Vector2(-18f, -8f));
             dangerText.font = boldFont;
+            dangerPanel.gameObject.SetActive(false);
             focusMarker = CreatePanel("Qinglan_FormalFocus", new Vector2(0.025f, 0.45f), new Vector2(0.055f, 0.55f));
             focusMarker.preserveAspect = true;
             focusMarker.gameObject.SetActive(false);
@@ -164,13 +177,17 @@ namespace Game.UI
             var runHudVisible = page.Page == QinglanUiPageId.RunHud;
             var runMapOverlayVisible = runHudVisible &&
                                        (!string.IsNullOrEmpty(page.SubtitleKey) || page.OptionCount > 0);
-            pageBackground.gameObject.SetActive(!runHudVisible);
+            var liveBattleOverlay = page.Page == QinglanUiPageId.LevelUpChoice ||
+                                    page.Page == QinglanUiPageId.RewardChoice ||
+                                    page.Page == QinglanUiPageId.Pause ||
+                                    page.Page == QinglanUiPageId.Settings;
+            pageBackground.gameObject.SetActive(!runHudVisible && !liveBattleOverlay);
             pagePanel.gameObject.SetActive(!runHudVisible || runMapOverlayVisible);
             focusMarker.gameObject.SetActive(false);
-            hudPanel.gameObject.SetActive(runHudVisible);
-            dangerPanel.gameObject.SetActive(runHudVisible);
-            pagePanel.rectTransform.anchorMin = new Vector2(runHudVisible ? 0.035f : 0.045f, runHudVisible ? 0.12f : 0.07f);
-            pagePanel.rectTransform.anchorMax = new Vector2(runHudVisible ? 0.48f : 0.68f, runHudVisible ? 0.90f : 0.94f);
+            hudPanel.gameObject.SetActive(runHudVisible || liveBattleOverlay);
+            // The tutorial legend remains available in SettingsPreview, but never obscures live combat.
+            dangerPanel.gameObject.SetActive(false);
+            ConfigurePageLayout(page.Page, runMapOverlayVisible);
             RenderedOptionCount = page.OptionCount;
             RenderedSelectedIndex = page.SelectedIndex;
             ActiveButtonCount = page.OptionCount;
@@ -181,7 +198,7 @@ namespace Game.UI
                             page.Page == QinglanUiPageId.RunResult
                 ? narrativeFont
                 : boldFont;
-            if (!runHudVisible) ApplyPageBackground(page.Page);
+            if (!runHudVisible && !liveBattleOverlay) ApplyPageBackground(page.Page);
             pageBuilder.Clear();
             AppendKey(pageBuilder, page.TitleKey);
             if (!string.IsNullOrEmpty(page.SubtitleKey))
@@ -232,12 +249,22 @@ namespace Game.UI
             pageText.text = headerBuilder.ToString();
 
             EnsureOptionCardCount(page.OptionCount);
+            var primaryChoiceCount = 0;
+            if (UsesChoiceCardLayout)
+            {
+                for (var index = 0; index < page.OptionCount; index++)
+                    if (IsPrimaryChoiceCommand(page.GetOptionAt(index).Command)) primaryChoiceCount++;
+            }
+            var primaryChoiceOrdinal = 0;
+            var utilityChoiceOrdinal = 0;
+            var utilityChoiceCount = page.OptionCount - primaryChoiceCount;
             for (var index = 0; index < optionCards.Count; index++)
             {
                 var active = index < page.OptionCount;
                 optionCards[index].Root.SetActive(active);
                 if (!active) continue;
                 var option = page.GetOptionAt(index);
+                var primaryChoice = UsesChoiceCardLayout && IsPrimaryChoiceCommand(option.Command);
                 optionCards[index].ApplyFontScale(lastFontScale > 0f ? lastFontScale : 1f);
                 if (option.Enabled && option.Command != QinglanUiCommand.None) ClickableButtonCount++;
                 optionCards[index].Apply(
@@ -248,9 +275,17 @@ namespace Game.UI
                     ResolveOptionIcon(option),
                     option.Enabled && option.Command != QinglanUiCommand.None,
                     index == page.SelectedIndex);
+                optionCards[index].ConfigureLayout(
+                    UsesChoiceCardLayout,
+                    primaryChoice,
+                    primaryChoice ? primaryChoiceOrdinal++ : utilityChoiceOrdinal++,
+                    primaryChoice ? primaryChoiceCount : utilityChoiceCount,
+                    lastFontScale > 0f ? lastFontScale : 1f);
+                optionCards[index].ConfigureNarrativeLayout(page.Page == QinglanUiPageId.StoryOverlay);
             }
             if (optionContent != null) LayoutRebuilder.ForceRebuildLayoutImmediate(optionContent);
             if (pageChanged && optionScroll != null) optionScroll.verticalNormalizedPosition = 1f;
+            RefreshSettingsPreview();
         }
 
         public void ShowHud(RunUiSnapshot snapshot)
@@ -311,8 +346,8 @@ namespace Game.UI
             EnsureHudIconCount(snapshot.BuildCount);
             if (buildPanelRect != null)
             {
-                var width = Mathf.Clamp(0.035f + (snapshot.BuildCount * 0.047f), 0.10f, 0.37f);
-                buildPanelRect.anchorMax = new Vector2(0.018f + width, 0.145f);
+                var width = Mathf.Clamp(0.022f + (snapshot.BuildCount * 0.039f), 0.10f, 0.31f);
+                buildPanelRect.anchorMax = new Vector2(0.018f + width, 0.142f);
             }
             VisibleHudIconCount = snapshot.BuildCount;
             for (var index = 0; index < hudIcons.Count; index++)
@@ -329,7 +364,7 @@ namespace Game.UI
 
             objectiveBuilder.Clear();
             AppendKey(objectiveBuilder, "ui.qinglan.hud.map");
-            var visibleObjectives = Math.Min(snapshot.MapCount, 5);
+            var visibleObjectives = Math.Min(snapshot.MapCount, 3);
             for (var index = 0; index < visibleObjectives; index++)
             {
                 var item = snapshot.GetMapAt(index);
@@ -343,24 +378,31 @@ namespace Game.UI
         public void ApplyAccessibility(AccessibilitySettings settings)
         {
             if (settings == null || canvas == null) return;
+            accessibilitySettings = settings;
             if (Math.Abs(lastFontScale - settings.FontScale) > 0.001f)
             {
                 lastFontScale = settings.FontScale;
                 pageText.fontSize = Mathf.RoundToInt(28f * settings.FontScale);
-                hudText.fontSize = Mathf.RoundToInt(17f * settings.FontScale);
-                dangerText.fontSize = Mathf.RoundToInt(16f * settings.FontScale);
-                vitalsText.fontSize = Mathf.RoundToInt(18f * settings.FontScale);
-                runStatusText.fontSize = Mathf.RoundToInt(18f * settings.FontScale);
-                bossText.fontSize = Mathf.RoundToInt(17f * settings.FontScale);
-                objectiveText.fontSize = Mathf.RoundToInt(15f * settings.FontScale);
+                hudText.fontSize = Mathf.RoundToInt(QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
+                dangerText.fontSize = Mathf.RoundToInt(QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
+                vitalsText.fontSize = Mathf.RoundToInt(QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
+                runStatusText.fontSize = Mathf.RoundToInt(QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
+                bossText.fontSize = Mathf.RoundToInt(QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
+                objectiveText.fontSize = Mathf.RoundToInt(QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
                 for (var index = 0; index < optionCards.Count; index++)
                     optionCards[index].ApplyFontScale(settings.FontScale);
+                if (settingsPreviewText != null)
+                    settingsPreviewText.fontSize = Mathf.RoundToInt(
+                        QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
             }
-            if (lastColorVision == settings.ColorVision) return;
-            lastColorVision = settings.ColorVision;
-            pagePanel.color = PanelColor(settings.ColorVision);
-            dangerText.color = DangerColor(settings.ColorVision);
-            RefreshDangerLegend();
+            if (lastColorVision != settings.ColorVision)
+            {
+                lastColorVision = settings.ColorVision;
+                pagePanel.color = PanelColor(settings.ColorVision);
+                dangerText.color = DangerColor(settings.ColorVision);
+                RefreshDangerLegend();
+            }
+            RefreshSettingsPreview();
         }
 
         public bool SupportsCharacter(char character)
@@ -516,6 +558,95 @@ namespace Game.UI
             dangerText.text = "▲  ▶  ◆  " + Resolve("ui.qinglan.accessibility.danger_legend");
         }
 
+        private static bool IsPrimaryChoiceCommand(QinglanUiCommand command) =>
+            command == QinglanUiCommand.SelectUpgrade || command == QinglanUiCommand.SelectReward;
+
+        private void ConfigurePageLayout(QinglanUiPageId page, bool runMapOverlayVisible)
+        {
+            UsesChoiceCardLayout = page == QinglanUiPageId.LevelUpChoice || page == QinglanUiPageId.RewardChoice;
+            var previewVisible = page == QinglanUiPageId.Pause || page == QinglanUiPageId.Settings;
+
+            if (runMapOverlayVisible)
+            {
+                pagePanel.rectTransform.anchorMin = new Vector2(0.035f, 0.12f);
+                pagePanel.rectTransform.anchorMax = new Vector2(0.48f, 0.90f);
+            }
+            else if (UsesChoiceCardLayout)
+            {
+                pagePanel.rectTransform.anchorMin = new Vector2(0.07f, 0.13f);
+                pagePanel.rectTransform.anchorMax = new Vector2(0.93f, 0.91f);
+            }
+            else if (previewVisible)
+            {
+                pagePanel.rectTransform.anchorMin = new Vector2(0.08f, 0.08f);
+                pagePanel.rectTransform.anchorMax = new Vector2(0.92f, 0.94f);
+            }
+            else if (page == QinglanUiPageId.StoryOverlay || page == QinglanUiPageId.RunResult)
+            {
+                pagePanel.rectTransform.anchorMin = new Vector2(0.01f, 0.04f);
+                pagePanel.rectTransform.anchorMax = new Vector2(0.99f, 0.97f);
+            }
+            else
+            {
+                pagePanel.rectTransform.anchorMin = new Vector2(0.045f, 0.07f);
+                pagePanel.rectTransform.anchorMax = new Vector2(0.68f, 0.94f);
+            }
+
+            if (optionViewport != null)
+            {
+                optionViewport.anchorMin = previewVisible ? new Vector2(0f, 0.035f) : new Vector2(0f, 0.035f);
+                optionViewport.anchorMax = previewVisible ? new Vector2(0.62f, 0.64f) : new Vector2(1f, 0.64f);
+                optionViewport.offsetMin = new Vector2(28f, 8f);
+                optionViewport.offsetMax = new Vector2(-28f, -8f);
+            }
+
+            if (optionListLayout != null) optionListLayout.enabled = !UsesChoiceCardLayout;
+            if (optionContentFitter != null) optionContentFitter.enabled = !UsesChoiceCardLayout;
+            if (optionScroll != null)
+            {
+                optionScroll.vertical = !UsesChoiceCardLayout;
+                optionScroll.scrollSensitivity = UsesChoiceCardLayout ? 0f : 36f;
+            }
+            if (optionContent != null)
+            {
+                optionContent.anchorMin = UsesChoiceCardLayout ? Vector2.zero : new Vector2(0f, 1f);
+                optionContent.anchorMax = Vector2.one;
+                optionContent.pivot = UsesChoiceCardLayout ? new Vector2(0.5f, 0.5f) : new Vector2(0.5f, 1f);
+                optionContent.offsetMin = Vector2.zero;
+                optionContent.offsetMax = Vector2.zero;
+            }
+
+            if (pageText != null)
+            {
+                pageText.rectTransform.anchorMin = new Vector2(
+                    0f,
+                    UsesChoiceCardLayout ? 0.76f : page == QinglanUiPageId.StoryOverlay ? 0.54f : 0.66f);
+                pageText.rectTransform.anchorMax = Vector2.one;
+            }
+            if (settingsPreviewPanel != null) settingsPreviewPanel.gameObject.SetActive(previewVisible);
+        }
+
+        private void RefreshSettingsPreview()
+        {
+            if (settingsPreviewPanel == null) return;
+            var visible = CurrentPage == QinglanUiPageId.Pause || CurrentPage == QinglanUiPageId.Settings;
+            settingsPreviewPanel.gameObject.SetActive(visible);
+            if (!visible || settingsPreviewText == null) return;
+
+            var mode = accessibilitySettings == null ? ColorVisionMode.Standard : accessibilitySettings.ColorVision;
+            var fontScale = accessibilitySettings == null ? 1f : accessibilitySettings.FontScale;
+            settingsPreviewText.text =
+                Resolve("ui.qinglan.settings.color_vision") + "\n" + mode +
+                "\n\n" + Resolve("ui.qinglan.settings.font_scale") + "  " +
+                Math.Round(fontScale * 100f).ToString(CultureInfo.InvariantCulture) + "%" +
+                "\n\n▲  ▶  ◆\n" + Resolve("ui.qinglan.accessibility.danger_legend");
+            settingsPreviewPanel.color = PanelColor(mode);
+            if (settingsPreviewAccent != null)
+                settingsPreviewAccent.color = mode == ColorVisionMode.HighContrast
+                    ? Color.white
+                    : QinglanUiTheme.WithAlpha(QinglanUiTheme.Jade200, 1f);
+        }
+
         private void ApplyChrome()
         {
             if (visualCatalog == null) return;
@@ -591,6 +722,7 @@ namespace Game.UI
                 typeof(ScrollRect));
             viewportObject.transform.SetParent(pagePanel.transform, false);
             var viewport = (RectTransform)viewportObject.transform;
+            optionViewport = viewport;
             viewport.anchorMin = new Vector2(0f, 0.035f);
             viewport.anchorMax = new Vector2(1f, 0.64f);
             viewport.offsetMin = new Vector2(28f, 8f);
@@ -612,15 +744,16 @@ namespace Game.UI
             optionContent.pivot = new Vector2(0.5f, 1f);
             optionContent.offsetMin = Vector2.zero;
             optionContent.offsetMax = Vector2.zero;
-            var layout = contentObject.GetComponent<VerticalLayoutGroup>();
-            layout.padding = new RectOffset(8, 8, 8, 8);
-            layout.spacing = 10f;
-            layout.childAlignment = TextAnchor.UpperCenter;
-            layout.childControlWidth = true;
-            layout.childControlHeight = true;
-            layout.childForceExpandWidth = true;
-            layout.childForceExpandHeight = false;
-            contentObject.GetComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+            optionListLayout = contentObject.GetComponent<VerticalLayoutGroup>();
+            optionListLayout.padding = new RectOffset(8, 8, 8, 8);
+            optionListLayout.spacing = 10f;
+            optionListLayout.childAlignment = TextAnchor.UpperCenter;
+            optionListLayout.childControlWidth = true;
+            optionListLayout.childControlHeight = true;
+            optionListLayout.childForceExpandWidth = true;
+            optionListLayout.childForceExpandHeight = false;
+            optionContentFitter = contentObject.GetComponent<ContentSizeFitter>();
+            optionContentFitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 
             optionScroll = viewportObject.GetComponent<ScrollRect>();
             optionScroll.viewport = viewport;
@@ -629,6 +762,29 @@ namespace Game.UI
             optionScroll.vertical = true;
             optionScroll.movementType = ScrollRect.MovementType.Clamped;
             optionScroll.scrollSensitivity = 36f;
+
+            settingsPreviewPanel = CreatePanelUnder(pagePanel.transform, "Qinglan_SettingsPreview",
+                new Vector2(0.64f, 0.08f), new Vector2(0.97f, 0.62f));
+            settingsPreviewPanel.color = QinglanUiTheme.WithAlpha(
+                QinglanUiTheme.Ink950,
+                QinglanUiTheme.DefaultPanelAlpha);
+            settingsPreviewAccent = CreateChildImage(
+                settingsPreviewPanel.transform,
+                "PreviewAccent",
+                new Vector2(0f, 0f),
+                new Vector2(0.025f, 1f),
+                Vector2.zero,
+                Vector2.zero);
+            settingsPreviewAccent.color = QinglanUiTheme.Jade200;
+            settingsPreviewText = CreateText(
+                settingsPreviewPanel.transform,
+                "PreviewText",
+                QinglanUiTheme.MinimumBodyFontSize1080p,
+                TextAlignmentOptions.TopLeft,
+                new Vector2(28f, 20f),
+                new Vector2(-20f, -20f));
+            settingsPreviewText.font = boldFont;
+            settingsPreviewPanel.gameObject.SetActive(false);
         }
 
         private void EnsureOptionCardCount(int count)
@@ -653,6 +809,7 @@ namespace Game.UI
                 var layout = rootObject.GetComponent<LayoutElement>();
                 layout.preferredHeight = 112f;
                 layout.minHeight = 86f;
+                layout.ignoreLayout = false;
                 var button = rootObject.GetComponent<Button>();
                 button.targetGraphic = background;
                 button.transition = Selectable.Transition.ColorTint;
@@ -672,14 +829,14 @@ namespace Game.UI
                     new Vector2(14f, 14f), new Vector2(102f, -14f));
                 icon.preserveAspect = true;
                 icon.raycastTarget = false;
-                var label = CreateCardText(rootObject.transform, "Label", 20, boldFont,
+                var label = CreateCardText(rootObject.transform, "Label", QinglanUiTheme.ChoiceTitleFontSize1080p, boldFont,
                     new Vector2(0f, 0.42f), new Vector2(0.72f, 1f), new Vector2(112f, 2f), new Vector2(-8f, -8f));
-                var description = CreateCardText(rootObject.transform, "Description", 14, regularFont,
+                var description = CreateCardText(rootObject.transform, "Description", QinglanUiTheme.MinimumBodyFontSize1080p, regularFont,
                     new Vector2(0f, 0f), new Vector2(0.76f, 0.45f), new Vector2(112f, 8f), new Vector2(-8f, -2f));
-                var value = CreateCardText(rootObject.transform, "Value", 15, boldFont,
+                var value = CreateCardText(rootObject.transform, "Value", QinglanUiTheme.MinimumBodyFontSize1080p, boldFont,
                     new Vector2(0.73f, 0.48f), new Vector2(0.98f, 0.92f), Vector2.zero, Vector2.zero);
                 value.alignment = TextAlignmentOptions.Center;
-                var metadata = CreateCardText(rootObject.transform, "Metadata", 12, regularFont,
+                var metadata = CreateCardText(rootObject.transform, "Metadata", QinglanUiTheme.MinimumBodyFontSize1080p, regularFont,
                     new Vector2(0.73f, 0.08f), new Vector2(0.98f, 0.46f), Vector2.zero, Vector2.zero);
                 metadata.alignment = TextAlignmentOptions.Center;
                 var focus = CreateChildImage(rootObject.transform, "Focus", Vector2.zero, Vector2.one,
@@ -702,39 +859,46 @@ namespace Game.UI
         private void CreateHudWidgets()
         {
             var vitalsPanel = CreatePanelUnder(hudPanel.transform, "Qinglan_HudVitals",
-                new Vector2(0.018f, 0.84f), new Vector2(0.35f, 0.982f));
-            vitalsPanel.color = new Color(0.02f, 0.055f, 0.065f, 0.9f);
-            healthFill = CreateBar(vitalsPanel.transform, "Health", new Vector2(0.035f, 0.54f), new Vector2(0.965f, 0.81f),
-                new Color(0.82f, 0.19f, 0.19f, 1f));
-            shieldFill = CreateBar(vitalsPanel.transform, "Shield", new Vector2(0.035f, 0.30f), new Vector2(0.965f, 0.49f),
-                new Color(0.16f, 0.66f, 0.9f, 1f));
-            experienceFill = CreateBar(vitalsPanel.transform, "Experience", new Vector2(0.035f, 0.10f), new Vector2(0.965f, 0.24f),
-                new Color(0.30f, 0.88f, 0.58f, 1f));
-            vitalsText = CreateText(vitalsPanel.transform, "VitalsLabel", 18, TextAlignmentOptions.TopLeft,
+                new Vector2(0.018f, 0.895f), new Vector2(0.208f, 0.982f));
+            vitalsPanel.color = QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink950, QinglanUiTheme.DefaultPanelAlpha);
+            healthFill = CreateBar(vitalsPanel.transform, "Health", new Vector2(0.04f, 0.22f), new Vector2(0.96f, 0.48f),
+                QinglanUiTheme.Cinnabar500);
+            shieldFill = CreateBar(vitalsPanel.transform, "Shield", new Vector2(0.04f, 0.08f), new Vector2(0.96f, 0.19f),
+                QinglanUiTheme.Jade500);
+            vitalsText = CreateText(vitalsPanel.transform, "VitalsLabel", QinglanUiTheme.MinimumBodyFontSize1080p,
+                TextAlignmentOptions.TopLeft,
                 new Vector2(18f, -2f), new Vector2(-18f, -4f));
             vitalsText.font = boldFont;
             vitalsText.raycastTarget = false;
 
+            var experiencePanel = CreatePanelUnder(hudPanel.transform, "Qinglan_HudExperience",
+                new Vector2(0.018f, 0.012f), new Vector2(0.982f, 0.030f));
+            experiencePanel.color = QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink950, 0.92f);
+            experienceFill = CreateBar(experiencePanel.transform, "Experience", Vector2.zero, Vector2.one,
+                QinglanUiTheme.Jade500);
+
             var runPanel = CreatePanelUnder(hudPanel.transform, "Qinglan_HudRunStatus",
-                new Vector2(0.37f, 0.91f), new Vector2(0.69f, 0.982f));
-            runPanel.color = new Color(0.02f, 0.055f, 0.065f, 0.86f);
-            runStatusText = CreateText(runPanel.transform, "RunStatusLabel", 18, TextAlignmentOptions.Center,
+                new Vector2(0.39f, 0.928f), new Vector2(0.61f, 0.978f));
+            runPanel.color = QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink950, 0.86f);
+            runStatusText = CreateText(runPanel.transform, "RunStatusLabel", QinglanUiTheme.MinimumBodyFontSize1080p,
+                TextAlignmentOptions.Center,
                 new Vector2(12f, 4f), new Vector2(-12f, -4f));
             runStatusText.font = boldFont;
 
             bossBarRoot = CreatePanelUnder(hudPanel.transform, "Qinglan_HudBoss",
-                new Vector2(0.28f, 0.815f), new Vector2(0.72f, 0.895f)).gameObject;
+                new Vector2(0.30f, 0.845f), new Vector2(0.70f, 0.912f)).gameObject;
             bossFill = CreateBar(bossBarRoot.transform, "BossHealth", new Vector2(0.025f, 0.13f), new Vector2(0.975f, 0.46f),
                 new Color(0.82f, 0.22f, 0.56f, 1f));
-            bossText = CreateText(bossBarRoot.transform, "BossLabel", 17, TextAlignmentOptions.Center,
+            bossText = CreateText(bossBarRoot.transform, "BossLabel", QinglanUiTheme.MinimumBodyFontSize1080p,
+                TextAlignmentOptions.Center,
                 new Vector2(12f, 2f), new Vector2(-12f, -2f));
             bossText.font = boldFont;
             bossBarRoot.SetActive(false);
 
             var buildPanel = CreatePanelUnder(hudPanel.transform, "Qinglan_HudBuild",
-                new Vector2(0.018f, 0.018f), new Vector2(0.62f, 0.145f));
+                new Vector2(0.018f, 0.038f), new Vector2(0.32f, 0.142f));
             buildPanelRect = buildPanel.rectTransform;
-            buildPanel.color = new Color(0.02f, 0.055f, 0.065f, 0.88f);
+            buildPanel.color = QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink950, QinglanUiTheme.DefaultPanelAlpha);
             var buildObject = new GameObject("Qinglan_HudBuildIcons", typeof(RectTransform), typeof(HorizontalLayoutGroup));
             buildObject.transform.SetParent(buildPanel.transform, false);
             buildIconRoot = (RectTransform)buildObject.transform;
@@ -751,9 +915,10 @@ namespace Game.UI
             buildLayout.childForceExpandWidth = false;
 
             var objectivePanel = CreatePanelUnder(hudPanel.transform, "Qinglan_HudObjectives",
-                new Vector2(0.73f, 0.80f), new Vector2(0.982f, 0.982f));
-            objectivePanel.color = new Color(0.02f, 0.055f, 0.065f, 0.82f);
-            objectiveText = CreateText(objectivePanel.transform, "ObjectiveLabel", 15, TextAlignmentOptions.TopLeft,
+                new Vector2(0.785f, 0.84f), new Vector2(0.982f, 0.982f));
+            objectivePanel.color = QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink950, 0.82f);
+            objectiveText = CreateText(objectivePanel.transform, "ObjectiveLabel", QinglanUiTheme.MinimumBodyFontSize1080p,
+                TextAlignmentOptions.TopLeft,
                 new Vector2(18f, 14f), new Vector2(-18f, -14f));
         }
 
@@ -768,14 +933,14 @@ namespace Game.UI
                     typeof(Image),
                     typeof(LayoutElement));
                 rootObject.transform.SetParent(buildIconRoot, false);
-                rootObject.GetComponent<LayoutElement>().preferredWidth = 78f;
+                rootObject.GetComponent<LayoutElement>().preferredWidth = 68f;
                 var background = rootObject.GetComponent<Image>();
-                background.color = new Color(0.08f, 0.16f, 0.18f, 0.94f);
+                background.color = QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink800, 0.94f);
                 var icon = CreateChildImage(rootObject.transform, "Icon", new Vector2(0.08f, 0.24f), new Vector2(0.92f, 0.94f),
                     Vector2.zero, Vector2.zero);
                 icon.preserveAspect = true;
                 icon.raycastTarget = false;
-                var level = CreateCardText(rootObject.transform, "Level", 11, boldFont,
+                var level = CreateCardText(rootObject.transform, "Level", 14, boldFont,
                     new Vector2(0f, 0f), new Vector2(1f, 0.27f), Vector2.zero, Vector2.zero);
                 level.alignment = TextAlignmentOptions.Center;
                 hudIcons.Add(new HudIconView(rootObject, icon, level));
@@ -937,16 +1102,21 @@ namespace Game.UI
         {
             switch (mode)
             {
-                case ColorVisionMode.Protanopia: return new Color(0.035f, 0.07f, 0.12f, 0.94f);
-                case ColorVisionMode.Deuteranopia: return new Color(0.06f, 0.055f, 0.12f, 0.94f);
-                case ColorVisionMode.Tritanopia: return new Color(0.09f, 0.05f, 0.07f, 0.94f);
-                case ColorVisionMode.HighContrast: return new Color(0f, 0f, 0f, 0.98f);
-                default: return new Color(0.035f, 0.075f, 0.085f, 0.92f);
+                case ColorVisionMode.Protanopia:
+                    return new Color(0.035f, 0.07f, 0.12f, QinglanUiTheme.DefaultPanelAlpha);
+                case ColorVisionMode.Deuteranopia:
+                    return new Color(0.06f, 0.055f, 0.12f, QinglanUiTheme.DefaultPanelAlpha);
+                case ColorVisionMode.Tritanopia:
+                    return new Color(0.09f, 0.05f, 0.07f, QinglanUiTheme.DefaultPanelAlpha);
+                case ColorVisionMode.HighContrast:
+                    return new Color(0f, 0f, 0f, QinglanUiTheme.HighContrastPanelAlpha);
+                default:
+                    return QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink950, QinglanUiTheme.DefaultPanelAlpha);
             }
         }
 
         private static Color DangerColor(ColorVisionMode mode) =>
-            mode == ColorVisionMode.HighContrast ? Color.white : new Color(1f, 0.72f, 0.32f, 1f);
+            mode == ColorVisionMode.HighContrast ? Color.white : QinglanUiTheme.Cinnabar300;
 
         private static bool IsOverflowing(TMP_Text text)
         {
@@ -1026,14 +1196,109 @@ namespace Game.UI
 
             public void ApplyFontScale(float scale)
             {
-                var cardHeight = 112f * Mathf.Max(1f, scale);
+                // The governed 18 px body minimum needs enough real height for Pseudo at 150%.
+                var cardHeight = 220f * Mathf.Max(1f, scale);
                 layout.minHeight = cardHeight;
                 layout.preferredHeight = cardHeight;
                 ((RectTransform)Root.transform).SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, cardHeight);
-                label.fontSizeMax = 20f * scale;
-                description.fontSizeMax = 14f * scale;
-                value.fontSizeMax = 15f * scale;
-                metadata.fontSizeMax = 12f * scale;
+                label.fontSizeMax = QinglanUiTheme.ChoiceTitleFontSize1080p * scale;
+                description.fontSizeMax = QinglanUiTheme.MinimumBodyFontSize1080p * scale;
+                value.fontSizeMax = QinglanUiTheme.MinimumBodyFontSize1080p * scale;
+                metadata.fontSizeMax = QinglanUiTheme.MinimumBodyFontSize1080p * scale;
+                label.fontSizeMin = QinglanUiTheme.MinimumBodyFontSize1080p * scale;
+                description.fontSizeMin = QinglanUiTheme.MinimumBodyFontSize1080p * scale;
+                value.fontSizeMin = QinglanUiTheme.MinimumBodyFontSize1080p * scale;
+                metadata.fontSizeMin = QinglanUiTheme.MinimumBodyFontSize1080p * scale;
+            }
+
+            public void ConfigureLayout(
+                bool choiceLayout,
+                bool primaryChoice,
+                int ordinal,
+                int count,
+                float scale)
+            {
+                var rect = (RectTransform)Root.transform;
+                if (!choiceLayout)
+                {
+                    layout.ignoreLayout = false;
+                    rect.anchorMin = new Vector2(0f, 1f);
+                    rect.anchorMax = new Vector2(1f, 1f);
+                    icon.rectTransform.anchorMin = new Vector2(0f, 0f);
+                    icon.rectTransform.anchorMax = new Vector2(0f, 1f);
+                    icon.rectTransform.offsetMin = new Vector2(14f, 14f);
+                    icon.rectTransform.offsetMax = new Vector2(102f, -14f);
+                    label.rectTransform.anchorMin = new Vector2(0f, 0.42f);
+                    label.rectTransform.anchorMax = new Vector2(0.72f, 1f);
+                    label.rectTransform.offsetMin = new Vector2(112f, 2f);
+                    label.rectTransform.offsetMax = new Vector2(-8f, -8f);
+                    description.rectTransform.anchorMin = new Vector2(0f, 0f);
+                    description.rectTransform.anchorMax = new Vector2(0.76f, 0.45f);
+                    description.rectTransform.offsetMin = new Vector2(112f, 8f);
+                    description.rectTransform.offsetMax = new Vector2(-8f, -2f);
+                    value.rectTransform.anchorMin = new Vector2(0.73f, 0.48f);
+                    value.rectTransform.anchorMax = new Vector2(0.98f, 0.92f);
+                    value.rectTransform.offsetMin = Vector2.zero;
+                    value.rectTransform.offsetMax = Vector2.zero;
+                    metadata.rectTransform.anchorMin = new Vector2(0.73f, 0.08f);
+                    metadata.rectTransform.anchorMax = new Vector2(0.98f, 0.46f);
+                    metadata.rectTransform.offsetMin = Vector2.zero;
+                    metadata.rectTransform.offsetMax = Vector2.zero;
+                    return;
+                }
+
+                layout.ignoreLayout = true;
+                count = Mathf.Max(1, count);
+                var horizontalPadding = primaryChoice ? 0.025f : 0.20f;
+                var gap = primaryChoice ? 0.018f : 0.012f;
+                var available = 1f - (horizontalPadding * 2f) - (gap * (count - 1));
+                var width = available / count;
+                var minimumX = horizontalPadding + ordinal * (width + gap);
+                var maximumX = minimumX + width;
+                rect.anchorMin = new Vector2(minimumX, primaryChoice ? 0.24f : 0.025f);
+                rect.anchorMax = new Vector2(maximumX, primaryChoice ? 0.97f : 0.19f);
+                rect.offsetMin = Vector2.zero;
+                rect.offsetMax = Vector2.zero;
+
+                var height = primaryChoice ? 300f * Mathf.Max(1f, scale) : 72f * Mathf.Max(1f, scale);
+                layout.minHeight = height;
+                layout.preferredHeight = height;
+                background.color = !button.interactable
+                    ? QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink950, 0.76f)
+                    : focus.gameObject.activeSelf
+                        ? QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink800, 0.98f)
+                        : QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink950, 0.94f);
+                focus.color = QinglanUiTheme.WithAlpha(QinglanUiTheme.Jade200, 0.92f);
+                icon.rectTransform.anchorMin = primaryChoice ? new Vector2(0.18f, 0.49f) : new Vector2(0.02f, 0.08f);
+                icon.rectTransform.anchorMax = primaryChoice ? new Vector2(0.82f, 0.90f) : new Vector2(0.18f, 0.92f);
+                icon.rectTransform.offsetMin = Vector2.zero;
+                icon.rectTransform.offsetMax = Vector2.zero;
+                label.rectTransform.anchorMin = primaryChoice ? new Vector2(0.07f, 0.35f) : new Vector2(0.20f, 0.16f);
+                label.rectTransform.anchorMax = primaryChoice ? new Vector2(0.93f, 0.49f) : new Vector2(0.70f, 0.84f);
+                label.rectTransform.offsetMin = Vector2.zero;
+                label.rectTransform.offsetMax = Vector2.zero;
+                description.rectTransform.anchorMin = primaryChoice ? new Vector2(0.07f, 0.13f) : Vector2.zero;
+                description.rectTransform.anchorMax = primaryChoice ? new Vector2(0.93f, 0.35f) : Vector2.zero;
+                description.rectTransform.offsetMin = Vector2.zero;
+                description.rectTransform.offsetMax = Vector2.zero;
+                value.rectTransform.anchorMin = primaryChoice ? new Vector2(0.60f, 0.01f) : new Vector2(0.72f, 0.16f);
+                value.rectTransform.anchorMax = primaryChoice ? new Vector2(0.95f, 0.12f) : new Vector2(0.98f, 0.84f);
+                metadata.rectTransform.anchorMin = primaryChoice ? new Vector2(0.05f, 0.01f) : Vector2.zero;
+                metadata.rectTransform.anchorMax = primaryChoice ? new Vector2(0.59f, 0.12f) : Vector2.zero;
+                if (!primaryChoice)
+                {
+                    description.gameObject.SetActive(false);
+                    metadata.gameObject.SetActive(false);
+                }
+            }
+
+            public void ConfigureNarrativeLayout(bool enabled)
+            {
+                if (!enabled) return;
+                label.rectTransform.anchorMax = new Vector2(0.98f, 1f);
+                description.rectTransform.anchorMax = new Vector2(0.98f, 0.45f);
+                value.gameObject.SetActive(false);
+                metadata.gameObject.SetActive(false);
             }
         }
 

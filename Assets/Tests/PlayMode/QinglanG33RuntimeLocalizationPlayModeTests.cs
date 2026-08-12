@@ -88,7 +88,13 @@ namespace Game.Tests.PlayMode
                 host.Ui.ShowPage(page);
                 Canvas.ForceUpdateCanvases();
                 yield return null;
-                Assert.That(host.Ui.HasAnyTextOverflow, Is.False, locale + " overflowed at 150% font scale.");
+                var overflowDiagnostic = string.Join(" | ", host.Ui.GetComponentsInChildren<TMP_Text>(true)
+                    .Where(text => text.gameObject.activeInHierarchy)
+                    .Select(text => text.name + ":rect=" + text.rectTransform.rect.height.ToString("0.0") +
+                                    ",preferred=" + text.preferredHeight.ToString("0.0") +
+                                    ",overflow=" + text.isTextOverflowing));
+                Assert.That(host.Ui.HasAnyTextOverflow, Is.False,
+                    locale + " overflowed at 150% font scale. " + overflowDiagnostic);
                 Assert.That(host.Ui.SupportsCharacter('剑'), Is.True, locale);
             }
 
