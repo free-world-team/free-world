@@ -169,7 +169,7 @@ namespace Game.Application
             if (autoAim < AutoAimStrategy.Nearest || autoAim > AutoAimStrategy.Disabled)
                 throw new ArgumentOutOfRangeException(nameof(autoAim));
             AutoAim = autoAim;
-            FontScale = RequireRange(fontScale, 1f, 1.5f, nameof(fontScale));
+            FontScale = RequireRange(fontScale, 1f, 2f, nameof(fontScale));
             if (colorVision < ColorVisionMode.Standard || colorVision > ColorVisionMode.HighContrast)
                 throw new ArgumentOutOfRangeException(nameof(colorVision));
             ColorVision = colorVision;

@@ -26,8 +26,85 @@ namespace Game.Tests.EditMode
             AssertToken(QinglanUiTheme.Cinnabar300, QinglanPresentationTheme.Cinnabar300, 255, 139, 98);
             AssertToken(QinglanUiTheme.Void700, QinglanPresentationTheme.Void700, 86, 60, 118);
             Assert.That(QinglanUiTheme.MinimumBodyFontSize1080p, Is.GreaterThanOrEqualTo(18));
+            Assert.That(QinglanUiTheme.MaximumFontScale, Is.EqualTo(2f));
+            Assert.That(QinglanUiTheme.MinimumControlHeight, Is.GreaterThanOrEqualTo(52f));
+            Assert.That(QinglanUiTheme.MotionInstantSeconds, Is.LessThan(QinglanUiTheme.MotionFastSeconds));
+            Assert.That(QinglanUiTheme.MotionFastSeconds, Is.LessThan(QinglanUiTheme.MotionBaseSeconds));
+            Assert.That(QinglanUiTheme.MotionBaseSeconds, Is.LessThan(QinglanUiTheme.MotionSlowSeconds));
         }
 
+        [Test]
+        public void RuntimeUiUsesDistinctPageCompositionsAndSupportsTwoHundredPercentText()
+        {
+            var root = new GameObject("G42PageCompositions");
+            try
+            {
+                var ui = root.AddComponent<QinglanRuntimeUiRoot>();
+                ui.Initialize(new EchoLocalization(), id => "content." + id + ".name");
+                var page = new QinglanPageViewModel(4);
+
+                page.Reset(QinglanUiPageId.TitleProfile, "ui.qinglan.title.name");
+                page.Add(new QinglanUiOption("start", "ui.qinglan.title.start", "", QinglanUiCommand.Start));
+                ui.ShowPage(page);
+                var pageLayer = (RectTransform)root.transform.Find("Qinglan_PageLayer");
+                var viewport = (RectTransform)pageLayer.Find("Qinglan_OptionViewport");
+                var hero = (RectTransform)pageLayer.Find("Qinglan_PageHero");
+                Assert.That(pageLayer.anchorMax.x, Is.EqualTo(0.43f).Within(0.001f));
+                Assert.That(hero.gameObject.activeSelf, Is.False);
+
+                page.Reset(QinglanUiPageId.CharacterSelect, "ui.qinglan.character.title");
+                page.Add(new QinglanUiOption(
+                    "qinglan.character.yunli",
+                    "content.qinglan.character.yunli.name",
+                    "content.qinglan.character.yunli.description",
+                    QinglanUiCommand.Continue));
+                ui.ShowPage(page);
+                Assert.That(pageLayer.anchorMax.x, Is.EqualTo(0.965f).Within(0.001f));
+                Assert.That(hero.gameObject.activeSelf, Is.True);
+                Assert.That(hero.anchorMin.x, Is.GreaterThan(0.5f));
+                Assert.That(viewport.anchorMax.x, Is.LessThanOrEqualTo(0.51f));
+
+                page.Reset(QinglanUiPageId.MapSelect, "ui.qinglan.map.title");
+                page.Add(new QinglanUiOption(
+                    "qinglan.map.qingyun",
+                    "content.qinglan.map.qingyun.name",
+                    "content.qinglan.map.qingyun.description",
+                    QinglanUiCommand.Continue));
+                ui.ShowPage(page);
+                Assert.That(hero.gameObject.activeSelf, Is.True);
+                Assert.That(hero.anchorMax.x, Is.LessThanOrEqualTo(0.47f));
+                Assert.That(viewport.anchorMin.x, Is.GreaterThanOrEqualTo(0.50f));
+
+                page.Reset(QinglanUiPageId.Settings, "ui.qinglan.settings.title");
+                page.Add(new QinglanUiOption(
+                    "font_scale",
+                    "ui.qinglan.settings.font_scale",
+                    "",
+                    QinglanUiCommand.CycleSetting,
+                    true,
+                    "200%"));
+                ui.ShowPage(page);
+                var settings = new AccessibilitySettings();
+                settings.SetFontScale(2f);
+                ui.ApplyAccessibility(settings);
+                Assert.That(settings.FontScale, Is.EqualTo(2f));
+                Assert.That(hero.gameObject.activeSelf, Is.False);
+                Assert.That(ui.SettingsPreviewVisible, Is.True);
+                Assert.That(viewport.anchorMax.x, Is.EqualTo(0.62f).Within(0.001f));
+                var firstCard = pageLayer.Find("Qinglan_OptionViewport/Qinglan_OptionCards/Qinglan_OptionCard_0");
+                Assert.That(firstCard.GetComponent<LayoutElement>().preferredHeight, Is.GreaterThanOrEqualTo(440f));
+
+                page.Reset(QinglanUiPageId.RunResult, "ui.qinglan.result.title");
+                page.Add(new QinglanUiOption("hub", "ui.qinglan.result.hub", "", QinglanUiCommand.ContinueToHub));
+                ui.ShowPage(page);
+                Assert.That(pageLayer.anchorMin.x, Is.EqualTo(0.12f).Within(0.001f));
+                Assert.That(pageLayer.anchorMax.x, Is.EqualTo(0.88f).Within(0.001f));
+            }
+            finally
+            {
+                Object.DestroyImmediate(root);
+            }
+        }
         [Test]
         public void RuntimeUiUsesThreePrimaryChoiceCardsAndKeepsDangerLegendOutOfCombat()
         {

@@ -266,7 +266,8 @@ namespace Game.Infrastructure
                                          result.maxDensityEmphasisPickupViews > 0 &&
                                          result.maxActorViews >= 103 && result.maxPickupViews >= 268 &&
                                          result.maxActiveVfx >= 42 &&
-                                         result.accessibilityScreenshotCount == 7 &&
+                                         result.accessibilityScreenshotCount == 8 &&
+                                         !result.accessibilityTextOverflowObserved &&
                                          result.grayscaleReviewScreenshotCount == 1);
             result.status = result.passedAutomaticGate ? "PASS" : "FAIL";
             result.error = result.passedAutomaticGate
@@ -512,7 +513,14 @@ namespace Game.Infrastructure
             settings.SetFontScale(1.5f);
             host.Ui.ApplyAccessibility(settings);
             host.TickRuntime(0d);
+            SampleAccessibilityOverflow(host, result);
             yield return CaptureScreenshot(result, "accessibility-150-font", screenshotVariable, true, false);
+
+            settings.SetFontScale(QinglanUiTheme.MaximumFontScale);
+            host.Ui.ApplyAccessibility(settings);
+            host.TickRuntime(0d);
+            SampleAccessibilityOverflow(host, result);
+            yield return CaptureScreenshot(result, "accessibility-200-font", screenshotVariable, true, false);
 
             if (host.Flow.Stage == DemoFlowStage.UserPaused)
             {
@@ -541,6 +549,7 @@ namespace Game.Infrastructure
                 settings.SetColorVision(modes[index]);
                 host.Ui.ApplyAccessibility(settings);
                 host.TickRuntime(0d);
+                SampleAccessibilityOverflow(host, result);
                 yield return CaptureScreenshot(result, names[index], screenshotVariable, true, false);
             }
 
@@ -549,14 +558,23 @@ namespace Game.Infrastructure
             settings.SetFlashIntensity(0f);
             host.Ui.ApplyAccessibility(settings);
             host.TickRuntime(0d);
+            SampleAccessibilityOverflow(host, result);
             yield return CaptureScreenshot(result, "accessibility-reduce-motion", screenshotVariable, true, false);
 
             settings.SetDamageNumbersEnabled(false);
             host.Ui.ApplyAccessibility(settings);
             host.TickRuntime(0d);
+            SampleAccessibilityOverflow(host, result);
             yield return CaptureScreenshot(result, "accessibility-no-damage-numbers", screenshotVariable, true, false);
         }
 
+        private static void SampleAccessibilityOverflow(
+            QinglanDemoRuntimeHost host,
+            QinglanG40VisualAcceptanceResult result)
+        {
+            Canvas.ForceUpdateCanvases();
+            result.accessibilityTextOverflowObserved |= host.Ui.HasAnyTextOverflow;
+        }
         private static IEnumerator CaptureGrayscaleReview(
             QinglanG40VisualAcceptanceResult result,
             string screenshotVariable)
@@ -701,6 +719,7 @@ namespace Game.Infrastructure
             public int realCardClicks;
             public int screenshotCount;
             public int accessibilityScreenshotCount;
+            public bool accessibilityTextOverflowObserved;
             public int grayscaleReviewScreenshotCount;
             public string[] distinctEnemyProfileIds;
             public int distinctEnemyProfileCount;

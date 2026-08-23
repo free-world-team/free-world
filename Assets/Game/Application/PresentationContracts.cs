@@ -46,7 +46,7 @@ namespace Game.Application
         public void SetScreenShakeEnabled(bool value) => ScreenShakeEnabled = value;
         public void SetFlashIntensity(float value) => FlashIntensity = Clamp01(value);
         public void SetDamageNumbersEnabled(bool value) => DamageNumbersEnabled = value;
-        public void SetFontScale(float value) => FontScale = Clamp(value, 1f, 1.5f);
+        public void SetFontScale(float value) => FontScale = Clamp(value, 1f, 2f);
         public void SetMasterVolume(float value) => MasterVolume = Clamp01(value);
         public void SetMusicVolume(float value) => MusicVolume = Clamp01(value);
         public void SetAmbienceVolume(float value) => AmbienceVolume = Clamp01(value);

@@ -6,6 +6,8 @@ param(
     [string]$ResultPath = 'TestResults/QinglanDemo/G4.2-A/player-90s.json',
     [string]$ScreenshotPath = 'TestResults/QinglanDemo/G4.2-A/Screenshots',
     [string]$SavePath = 'TestResults/QinglanDemo/G4.2-A/player-save',
+    [int]$ScreenWidth = 1920,
+    [int]$ScreenHeight = 1080,
     [int]$TimeoutSeconds = 210
 )
 
@@ -44,6 +46,7 @@ $expectedScreenshots = @(
     '60-seconds.png',
     '90-seconds.png',
     'accessibility-150-font.png',
+    'accessibility-200-font.png',
     'accessibility-protanopia.png',
     'accessibility-deuteranopia.png',
     'accessibility-tritanopia.png',
@@ -69,8 +72,8 @@ try {
     $env:AZURESWORD_SAVE_ROOT = $absoluteSave
     $process = Start-Process -FilePath $absoluteExecutable -ArgumentList @(
         '-screen-fullscreen', '0',
-        '-screen-width', '1920',
-        '-screen-height', '1080',
+        '-screen-width', $ScreenWidth,
+        '-screen-height', $ScreenHeight,
         '-qinglanG42VisualAcceptance',
         '-logFile', $absoluteLog
     ) -PassThru
@@ -116,7 +119,8 @@ try {
 
 if ($result.status -ne 'PASS' -or -not [bool]$result.passedAutomaticGate -or
     [double]$result.wallClockSeconds -lt 90 -or [int]$result.screenshotCount -ne 6 -or
-    [int]$result.accessibilityScreenshotCount -ne 7 -or
+    [int]$result.screenWidth -ne $ScreenWidth -or [int]$result.screenHeight -ne $ScreenHeight -or
+    [int]$result.accessibilityScreenshotCount -ne 8 -or [bool]$result.accessibilityTextOverflowObserved -or
     [int]$result.grayscaleReviewScreenshotCount -ne 1 -or
     [int]$result.maxActorViews -lt 103 -or [int]$result.maxPickupViews -lt 268 -or
     [int]$result.maxActiveVfx -lt 42 -or -not [bool]$result.playerOutlineObserved -or

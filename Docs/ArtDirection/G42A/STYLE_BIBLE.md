@@ -67,7 +67,7 @@ UI、地面、角色与 VFX 使用同一套墨线、青瓷、米白和朱砂语�
 - 默认焦点位于中卡或 Presenter 指定项；鼠标、键盘、手柄进入同一 Command。
 - 选中态只允许 1.02—1.04 倍缩放和 120—180 ms 呼吸，不使用大幅漂浮。
 - Pause/Settings 在同一画面实时预览字体缩放、色觉、高对比、Reduce Motion 和危险形状。
-- 150% 字体时优先增加卡高与面板安全区，不把正文字号自动压回 18 px 以下。
+- 150%/200% 字体时优先增加卡高与面板安全区，不把正文字号自动压回 18 px 以下。
 
 ## 7. 世界、角色与道具
 
@@ -110,7 +110,7 @@ UI、地面、角色与 VFX 使用同一套墨线、青瓷、米白和朱砂语�
 
 - 同 Seed：0 / 15 / 30 / 45 / 60 / 90 秒 Before/After。
 - 页面：Run HUD、升级三卡、Pause、Settings 实时预览。
-- 模式：默认、去色、Protanopia、Deuteranopia、Tritanopia、High Contrast、Reduce Motion、150% 字体。
+- 模式：默认、去色、Protanopia、Deuteranopia、Tritanopia、High Contrast、Reduce Motion、150%/200% 字体。
 - 分辨率：G4.2-A 首轮 1920×1080；G4.2-B 再扩至 720p / 1440p / 4K / 21:9 / 200%。
 - 人工 Rubric：玩家/危险/目标 25、风格 20、信息 15、命中 15、世界 10、可访问性 10、品牌 5。
 - 退出门禁：总分至少 80/100 且任一维度不低于其满分的 60%；必须有独立人类签字。

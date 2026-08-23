@@ -120,7 +120,7 @@ CR-2026-015 完整局内恢复延期。检测到 `run_recovery.json` 时只显�
 ADR 0024 批准 Settings 3 在 v2 字段后追加：
 
 ```text
-fontScale: 1.0 / 1.25 / 1.5
+fontScale: 1.0 / 1.25 / 1.5 / 1.75 / 2.0
 colorVision: standard / protanopia / deuteranopia / tritanopia / highContrast
 masterVolume / musicVolume / ambienceVolume / effectsVolume: [0,1]
 subtitlesEnabled: bool

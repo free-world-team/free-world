@@ -42,14 +42,14 @@ namespace Game.Tests.EditMode
 
             var full = new SettingsSaveData(
                 "en", 0.3f, 0.25f, false, 0.2f, false, AutoAimStrategy.MovementDirection,
-                1.5f, ColorVisionMode.HighContrast, 0.75f, 0.5f, 0.25f, 0f, false,
+                2f, ColorVisionMode.HighContrast, 0.75f, 0.5f, 0.25f, 0f, false,
                 new[] { new SavedBindingOverride("UI/Submit", 0, "<Keyboard>/numpadEnter") });
             var encoded = codec.Encode(full);
             var decoded = codec.DecodeSettings(encoded.Data);
 
             Assert.That(encoded.IsSuccess, Is.True, encoded.Diagnostic.MessageKey);
             Assert.That(decoded.IsSuccess, Is.True, decoded.Diagnostic.MessageKey);
-            Assert.That(decoded.Value.FontScale, Is.EqualTo(1.5f));
+            Assert.That(decoded.Value.FontScale, Is.EqualTo(2f));
             Assert.That(decoded.Value.ColorVision, Is.EqualTo(ColorVisionMode.HighContrast));
             Assert.That(decoded.Value.MasterVolume, Is.EqualTo(0.75f));
             Assert.That(decoded.Value.MusicVolume, Is.EqualTo(0.5f));
@@ -111,13 +111,13 @@ namespace Game.Tests.EditMode
             view.Initialize(new EchoLocalization(), id => "content." + id + ".name");
             var page = new QinglanPageViewModel();
             page.Reset(QinglanUiPageId.Settings, "ui.qinglan.settings.title", "ui.qinglan.settings.description");
-            page.Add(new QinglanUiOption("font", "ui.qinglan.settings.font_scale", "", QinglanUiCommand.CycleSetting, true, "150%"));
+            page.Add(new QinglanUiOption("font", "ui.qinglan.settings.font_scale", "", QinglanUiCommand.CycleSetting, true, "200%"));
             page.RestoreSelection(0);
             var clickedIndex = -1;
             view.OptionInvoked += index => clickedIndex = index;
             view.ShowPage(page);
             var settings = new AccessibilitySettings();
-            settings.SetFontScale(1.5f);
+            settings.SetFontScale(2f);
             settings.SetColorVision(ColorVisionMode.HighContrast);
             settings.SetFlashIntensity(0f);
             settings.SetVibrationIntensity(0f);

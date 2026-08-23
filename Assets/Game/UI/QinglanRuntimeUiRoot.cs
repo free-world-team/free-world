@@ -52,6 +52,12 @@ namespace Game.UI
         private Image settingsPreviewPanel;
         private Image settingsPreviewAccent;
         private TMP_Text settingsPreviewText;
+        private Image pageHeroPanel;
+        private Image pageHeroAccent;
+        private Image pageHeroImage;
+        private TMP_Text pageHeroTitle;
+        private TMP_Text pageHeroDescription;
+        private TMP_Text pageHeroValue;
         private Image healthFill;
         private Image shieldFill;
         private Image experienceFill;
@@ -74,6 +80,19 @@ namespace Game.UI
         private float lastFontScale = -1f;
         private string renderedPageText = string.Empty;
         private string renderedHudText = string.Empty;
+
+        private enum PageLayoutKind
+        {
+            StandardList,
+            TitleHero,
+            ShowcaseRight,
+            ShowcaseLeft,
+            ChoiceCards,
+            SettingsSplit,
+            Narrative,
+            Hub,
+            RunOverlay
+        }
 
         public event Action<int> OptionInvoked;
 
@@ -276,6 +295,7 @@ namespace Game.UI
                     ResolveOptionValue(option.ValueText),
                     ResolveCardMetadata(option),
                     ResolveOptionIcon(option),
+                    option.Command,
                     option.Enabled && option.Command != QinglanUiCommand.None,
                     index == page.SelectedIndex);
                 optionCards[index].ConfigureLayout(
@@ -286,6 +306,7 @@ namespace Game.UI
                     lastFontScale > 0f ? lastFontScale : 1f);
                 optionCards[index].ConfigureNarrativeLayout(page.Page == QinglanUiPageId.StoryOverlay);
             }
+            RefreshPageHero(page);
             if (optionContent != null) LayoutRebuilder.ForceRebuildLayoutImmediate(optionContent);
             if (pageChanged && optionScroll != null) optionScroll.verticalNormalizedPosition = 1f;
             RefreshSettingsPreview();
@@ -403,6 +424,15 @@ namespace Game.UI
                     optionCards[index].ApplyFontScale(settings.FontScale);
                 if (settingsPreviewText != null)
                     settingsPreviewText.fontSize = Mathf.RoundToInt(
+                        QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
+                if (pageHeroTitle != null)
+                    pageHeroTitle.fontSize = Mathf.RoundToInt(
+                        QinglanUiTheme.ChoiceTitleFontSize1080p * settings.FontScale);
+                if (pageHeroDescription != null)
+                    pageHeroDescription.fontSize = Mathf.RoundToInt(
+                        QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
+                if (pageHeroValue != null)
+                    pageHeroValue.fontSize = Mathf.RoundToInt(
                         QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
             }
             if (lastColorVision != settings.ColorVision)
@@ -573,41 +603,70 @@ namespace Game.UI
 
         private void ConfigurePageLayout(QinglanUiPageId page, bool runMapOverlayVisible)
         {
-            UsesChoiceCardLayout = page == QinglanUiPageId.LevelUpChoice || page == QinglanUiPageId.RewardChoice;
-            var previewVisible = page == QinglanUiPageId.Pause || page == QinglanUiPageId.Settings;
+            var layout = ResolvePageLayout(page, runMapOverlayVisible);
+            UsesChoiceCardLayout = layout == PageLayoutKind.ChoiceCards;
+            var previewVisible = layout == PageLayoutKind.SettingsSplit;
+            var heroVisible = UsesPageHero(layout);
 
-            if (runMapOverlayVisible)
+            switch (layout)
             {
-                pagePanel.rectTransform.anchorMin = new Vector2(0.035f, 0.12f);
-                pagePanel.rectTransform.anchorMax = new Vector2(0.48f, 0.90f);
-            }
-            else if (UsesChoiceCardLayout)
-            {
-                pagePanel.rectTransform.anchorMin = new Vector2(0.07f, 0.13f);
-                pagePanel.rectTransform.anchorMax = new Vector2(0.93f, 0.91f);
-            }
-            else if (previewVisible)
-            {
-                pagePanel.rectTransform.anchorMin = new Vector2(0.08f, 0.08f);
-                pagePanel.rectTransform.anchorMax = new Vector2(0.92f, 0.94f);
-            }
-            else if (page == QinglanUiPageId.StoryOverlay || page == QinglanUiPageId.RunResult)
-            {
-                pagePanel.rectTransform.anchorMin = new Vector2(0.01f, 0.04f);
-                pagePanel.rectTransform.anchorMax = new Vector2(0.99f, 0.97f);
-            }
-            else
-            {
-                pagePanel.rectTransform.anchorMin = new Vector2(0.045f, 0.07f);
-                pagePanel.rectTransform.anchorMax = new Vector2(0.68f, 0.94f);
+                case PageLayoutKind.TitleHero:
+                    SetAnchors(pagePanel.rectTransform, new Vector2(0.05f, 0.10f), new Vector2(0.43f, 0.92f));
+                    break;
+                case PageLayoutKind.ShowcaseRight:
+                case PageLayoutKind.ShowcaseLeft:
+                case PageLayoutKind.Hub:
+                    SetAnchors(pagePanel.rectTransform, new Vector2(0.035f, 0.065f), new Vector2(0.965f, 0.945f));
+                    break;
+                case PageLayoutKind.ChoiceCards:
+                    SetAnchors(pagePanel.rectTransform, new Vector2(0.07f, 0.13f), new Vector2(0.93f, 0.91f));
+                    break;
+                case PageLayoutKind.SettingsSplit:
+                    SetAnchors(pagePanel.rectTransform, new Vector2(0.08f, 0.08f), new Vector2(0.92f, 0.94f));
+                    break;
+                case PageLayoutKind.Narrative:
+                    SetAnchors(pagePanel.rectTransform, new Vector2(0.12f, 0.08f), new Vector2(0.88f, 0.94f));
+                    break;
+                case PageLayoutKind.RunOverlay:
+                    SetAnchors(pagePanel.rectTransform, new Vector2(0.035f, 0.12f), new Vector2(0.48f, 0.90f));
+                    break;
+                default:
+                    SetAnchors(pagePanel.rectTransform, new Vector2(0.045f, 0.07f), new Vector2(0.68f, 0.94f));
+                    break;
             }
 
             if (optionViewport != null)
             {
-                optionViewport.anchorMin = previewVisible ? new Vector2(0f, 0.035f) : new Vector2(0f, 0.035f);
-                optionViewport.anchorMax = previewVisible ? new Vector2(0.62f, 0.64f) : new Vector2(1f, 0.64f);
+                switch (layout)
+                {
+                    case PageLayoutKind.ShowcaseRight:
+                    case PageLayoutKind.Hub:
+                        SetAnchors(optionViewport, new Vector2(0.02f, 0.035f), new Vector2(0.51f, 0.64f));
+                        break;
+                    case PageLayoutKind.ShowcaseLeft:
+                        SetAnchors(optionViewport, new Vector2(0.50f, 0.035f), new Vector2(0.98f, 0.64f));
+                        break;
+                    case PageLayoutKind.SettingsSplit:
+                        SetAnchors(optionViewport, new Vector2(0f, 0.035f), new Vector2(0.62f, 0.64f));
+                        break;
+                    case PageLayoutKind.TitleHero:
+                        SetAnchors(optionViewport, new Vector2(0f, 0.035f), new Vector2(1f, 0.46f));
+                        break;
+                    default:
+                        SetAnchors(optionViewport, new Vector2(0f, 0.035f), new Vector2(1f, 0.64f));
+                        break;
+                }
                 optionViewport.offsetMin = new Vector2(28f, 8f);
                 optionViewport.offsetMax = new Vector2(-28f, -8f);
+            }
+
+            if (pageHeroPanel != null)
+            {
+                pageHeroPanel.gameObject.SetActive(heroVisible);
+                if (layout == PageLayoutKind.ShowcaseLeft)
+                    SetAnchors(pageHeroPanel.rectTransform, new Vector2(0.035f, 0.08f), new Vector2(0.47f, 0.82f));
+                else
+                    SetAnchors(pageHeroPanel.rectTransform, new Vector2(0.54f, 0.08f), new Vector2(0.965f, 0.82f));
             }
 
             if (optionListLayout != null) optionListLayout.enabled = !UsesChoiceCardLayout;
@@ -630,12 +689,110 @@ namespace Game.UI
             {
                 pageText.rectTransform.anchorMin = new Vector2(
                     0f,
-                    UsesChoiceCardLayout ? 0.76f : page == QinglanUiPageId.StoryOverlay ? 0.54f : 0.66f);
+                    UsesChoiceCardLayout ? 0.76f : layout == PageLayoutKind.TitleHero ? 0.48f : layout == PageLayoutKind.Narrative ? 0.54f : 0.66f);
                 pageText.rectTransform.anchorMax = Vector2.one;
             }
             if (settingsPreviewPanel != null) settingsPreviewPanel.gameObject.SetActive(previewVisible);
         }
 
+        private static PageLayoutKind ResolvePageLayout(QinglanUiPageId page, bool runMapOverlayVisible)
+        {
+            if (runMapOverlayVisible) return PageLayoutKind.RunOverlay;
+            switch (page)
+            {
+                case QinglanUiPageId.TitleProfile:
+                    return PageLayoutKind.TitleHero;
+                case QinglanUiPageId.CharacterSelect:
+                case QinglanUiPageId.Loadout:
+                case QinglanUiPageId.LoadoutConfirmation:
+                case QinglanUiPageId.HubFacility:
+                case QinglanUiPageId.Collection:
+                    return PageLayoutKind.ShowcaseRight;
+                case QinglanUiPageId.MapSelect:
+                    return PageLayoutKind.ShowcaseLeft;
+                case QinglanUiPageId.LevelUpChoice:
+                case QinglanUiPageId.RewardChoice:
+                    return PageLayoutKind.ChoiceCards;
+                case QinglanUiPageId.Pause:
+                case QinglanUiPageId.Settings:
+                    return PageLayoutKind.SettingsSplit;
+                case QinglanUiPageId.StoryOverlay:
+                case QinglanUiPageId.RunResult:
+                    return PageLayoutKind.Narrative;
+                case QinglanUiPageId.Hub:
+                    return PageLayoutKind.Hub;
+                default:
+                    return PageLayoutKind.StandardList;
+            }
+        }
+
+        private static bool UsesPageHero(PageLayoutKind layout) =>
+            layout == PageLayoutKind.ShowcaseRight ||
+            layout == PageLayoutKind.ShowcaseLeft ||
+            layout == PageLayoutKind.Hub;
+
+        private static void SetAnchors(RectTransform rect, Vector2 minimum, Vector2 maximum)
+        {
+            rect.anchorMin = minimum;
+            rect.anchorMax = maximum;
+        }
+
+        private void RefreshPageHero(QinglanPageViewModel page)
+        {
+            if (pageHeroPanel == null || !pageHeroPanel.gameObject.activeSelf || page.OptionCount == 0) return;
+            var selectedIndex = page.SelectedIndex >= 0 && page.SelectedIndex < page.OptionCount ? page.SelectedIndex : 0;
+            var option = page.GetOptionAt(selectedIndex);
+            pageHeroImage.sprite = ResolveOptionIcon(option);
+            pageHeroImage.gameObject.SetActive(pageHeroImage.sprite != null);
+            pageHeroTitle.text = Resolve(option.LabelKey);
+            pageHeroDescription.text = string.IsNullOrEmpty(option.DescriptionKey)
+                ? Resolve("ui.qinglan.menu.select")
+                : Resolve(option.DescriptionKey);
+            pageHeroValue.text = ResolveOptionValue(option.ValueText);
+            pageHeroValue.gameObject.SetActive(!string.IsNullOrEmpty(pageHeroValue.text));
+            pageHeroAccent.color = PageAccent(page.Page);
+        }
+
+        private static Color PageAccent(QinglanUiPageId page)
+        {
+            switch (page)
+            {
+                case QinglanUiPageId.MapSelect:
+                    return QinglanUiTheme.Gold400;
+                case QinglanUiPageId.Collection:
+                    return QinglanUiTheme.Void700;
+                case QinglanUiPageId.Hub:
+                case QinglanUiPageId.HubFacility:
+                    return QinglanUiTheme.Jade500;
+                default:
+                    return QinglanUiTheme.Jade200;
+            }
+        }
+
+        private static Color CommandAccent(QinglanUiCommand command, bool interactable)
+        {
+            if (!interactable) return QinglanUiTheme.Ink800;
+            switch (command)
+            {
+                case QinglanUiCommand.Start:
+                case QinglanUiCommand.Continue:
+                case QinglanUiCommand.BeginRun:
+                case QinglanUiCommand.CommitResult:
+                case QinglanUiCommand.ContinueToHub:
+                case QinglanUiCommand.StartAgain:
+                    return QinglanUiTheme.Gold400;
+                case QinglanUiCommand.AbandonRun:
+                case QinglanUiCommand.ConfirmResetLoadout:
+                    return QinglanUiTheme.Cinnabar300;
+                case QinglanUiCommand.SelectUpgrade:
+                case QinglanUiCommand.SelectReward:
+                case QinglanUiCommand.Purchase:
+                case QinglanUiCommand.ToggleLoadout:
+                    return QinglanUiTheme.Jade200;
+                default:
+                    return QinglanUiTheme.Jade500;
+            }
+        }
         private void RefreshSettingsPreview()
         {
             if (settingsPreviewPanel == null) return;
@@ -795,6 +952,60 @@ namespace Game.UI
                 new Vector2(-20f, -20f));
             settingsPreviewText.font = boldFont;
             settingsPreviewPanel.gameObject.SetActive(false);
+
+            pageHeroPanel = CreatePanelUnder(pagePanel.transform, "Qinglan_PageHero",
+                new Vector2(0.54f, 0.08f), new Vector2(0.965f, 0.82f));
+            pageHeroPanel.color = QinglanUiTheme.WithAlpha(
+                QinglanUiTheme.Ink950,
+                QinglanUiTheme.DefaultPanelAlpha);
+            pageHeroAccent = CreateChildImage(
+                pageHeroPanel.transform,
+                "HeroAccent",
+                Vector2.zero,
+                new Vector2(1f, 0.018f),
+                Vector2.zero,
+                Vector2.zero);
+            pageHeroAccent.color = QinglanUiTheme.Jade200;
+            pageHeroImage = CreateChildImage(
+                pageHeroPanel.transform,
+                "HeroImage",
+                new Vector2(0.12f, 0.36f),
+                new Vector2(0.88f, 0.94f),
+                Vector2.zero,
+                Vector2.zero);
+            pageHeroImage.preserveAspect = true;
+            pageHeroImage.raycastTarget = false;
+            pageHeroTitle = CreateCardText(
+                pageHeroPanel.transform,
+                "HeroTitle",
+                QinglanUiTheme.ChoiceTitleFontSize1080p,
+                boldFont,
+                new Vector2(0.08f, 0.22f),
+                new Vector2(0.92f, 0.36f),
+                Vector2.zero,
+                Vector2.zero);
+            pageHeroTitle.alignment = TextAlignmentOptions.Center;
+            pageHeroDescription = CreateCardText(
+                pageHeroPanel.transform,
+                "HeroDescription",
+                QinglanUiTheme.MinimumBodyFontSize1080p,
+                regularFont,
+                new Vector2(0.08f, 0.07f),
+                new Vector2(0.92f, 0.22f),
+                Vector2.zero,
+                Vector2.zero);
+            pageHeroDescription.alignment = TextAlignmentOptions.Center;
+            pageHeroValue = CreateCardText(
+                pageHeroPanel.transform,
+                "HeroValue",
+                QinglanUiTheme.MinimumBodyFontSize1080p,
+                boldFont,
+                new Vector2(0.60f, 0.01f),
+                new Vector2(0.94f, 0.08f),
+                Vector2.zero,
+                Vector2.zero);
+            pageHeroValue.alignment = TextAlignmentOptions.Center;
+            pageHeroPanel.gameObject.SetActive(false);
         }
 
         private void EnsureOptionCardCount(int count)
@@ -835,6 +1046,10 @@ namespace Game.UI
                 };
                 button.onClick.AddListener(() => OptionInvoked?.Invoke(index));
 
+                var accent = CreateChildImage(rootObject.transform, "Accent", Vector2.zero, new Vector2(0.014f, 1f),
+                    Vector2.zero, Vector2.zero);
+                accent.color = QinglanUiTheme.Jade500;
+                accent.raycastTarget = false;
                 var icon = CreateChildImage(rootObject.transform, "Icon", new Vector2(0f, 0f), new Vector2(0f, 1f),
                     new Vector2(14f, 14f), new Vector2(102f, -14f));
                 icon.preserveAspect = true;
@@ -860,7 +1075,7 @@ namespace Game.UI
                 }
                 focus.gameObject.SetActive(false);
                 var card = new OptionCardView(
-                    rootObject, background, button, layout, icon, focus, label, description, value, metadata);
+                    rootObject, background, button, layout, icon, accent, focus, label, description, value, metadata);
                 card.ApplyFontScale(lastFontScale > 0f ? lastFontScale : 1f);
                 optionCards.Add(card);
             }
@@ -1152,6 +1367,7 @@ namespace Game.UI
             private readonly Button button;
             private readonly LayoutElement layout;
             private readonly Image icon;
+            private readonly Image accent;
             private readonly Image focus;
             private readonly TMP_Text label;
             private readonly TMP_Text description;
@@ -1164,6 +1380,7 @@ namespace Game.UI
                 Button cardButton,
                 LayoutElement cardLayout,
                 Image cardIcon,
+                Image accentImage,
                 Image focusImage,
                 TMP_Text labelText,
                 TMP_Text descriptionText,
@@ -1175,6 +1392,7 @@ namespace Game.UI
                 button = cardButton;
                 layout = cardLayout;
                 icon = cardIcon;
+                accent = accentImage;
                 focus = focusImage;
                 label = labelText;
                 description = descriptionText;
@@ -1193,6 +1411,7 @@ namespace Game.UI
                 string valueValue,
                 string metadataValue,
                 Sprite iconSprite,
+                QinglanUiCommand command,
                 bool interactable,
                 bool selected)
             {
@@ -1205,6 +1424,7 @@ namespace Game.UI
                 metadata.gameObject.SetActive(!string.IsNullOrEmpty(metadataValue));
                 icon.sprite = iconSprite;
                 icon.gameObject.SetActive(iconSprite != null);
+                accent.color = CommandAccent(command, interactable);
                 button.interactable = interactable;
                 focus.gameObject.SetActive(selected);
                 background.color = !interactable

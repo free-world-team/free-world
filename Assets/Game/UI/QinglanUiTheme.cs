@@ -10,6 +10,13 @@ namespace Game.UI
         public const int ChoiceTitleFontSize1080p = 24;
         public const float DefaultPanelAlpha = 0.88f;
         public const float HighContrastPanelAlpha = 0.98f;
+        public const float MaximumFontScale = 2f;
+        public const float MotionInstantSeconds = 0.09f;
+        public const float MotionFastSeconds = 0.16f;
+        public const float MotionBaseSeconds = 0.24f;
+        public const float MotionSlowSeconds = 0.36f;
+        public const float ReferenceSafeMargin = 48f;
+        public const float MinimumControlHeight = 52f;
 
         public static readonly Color32 Ink950 = new Color32(16, 42, 45, 255);
         public static readonly Color32 Ink800 = new Color32(28, 66, 67, 255);

@@ -294,7 +294,7 @@ RunHUD <-> MapOverlay / Pause -> Settings                              LevelUp /
 G2.6 由 `QinglanDemoPresenter` 把 Application Owner 投影为只含本地化 Key/纯值的
 `QinglanPageViewModel`，并复用固定容量 `RunUiSnapshot`。`QinglanRuntimeUiRoot` 使用一个共享 Canvas，
 分离页面、HUD 与危险层；伤害数字在共享层中池化。Settings 运行时模型包含重映射、摇杆死区、震动、
-屏幕震动、闪光、伤害数字、自动瞄准、100/125/150% 字体、色觉、四路音量和字幕。
+屏幕震动、闪光、伤害数字、自动瞄准、100/125/150/175/200% 字体、色觉、四路音量和字幕。
 `PresentationCameraRig` 只跟随 View Transform，提供边界夹紧、Shake Request 和总效果开关，不读取
 模拟 Store。
 

@@ -65,7 +65,7 @@ Schema 评审项。
 |---|---|
 | EditMode | ViewModel 不引用 Simulation Store/Unity Object；Key 非空 |
 | PlayMode | 键鼠/手柄完整闭环；弹窗禁 Gameplay；焦点恢复 |
-| Localization | zh-Hans/en/Pseudo、长文本、字体、100%/125%/150% UI Scale |
+| Localization | zh-Hans/en/Pseudo、长文本、字体、100%/125%/150%/175%/200% UI Scale |
 | Accessibility | 色觉、低闪、无震动、伤害数字关闭仍可通关 |
 | Performance | HUD/小地图/伤害数字池无稳态 GC |
 | Release | Debug Map 不可用，开发诊断不可触发胜利 |

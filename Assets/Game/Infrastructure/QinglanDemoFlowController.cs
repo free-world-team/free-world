@@ -696,7 +696,9 @@ namespace Game.Infrastructure
                 case "flash": Settings.SetFlashIntensity(Step(Settings.FlashIntensity, 0.25f, 0f, 1f)); break;
                 case "damage_numbers": Settings.SetDamageNumbersEnabled(!Settings.DamageNumbersEnabled); break;
                 case "auto_aim": Settings.SetAutoAim((AutoAimStrategy)(((int)Settings.AutoAim + 1) % 4)); break;
-                case "font_scale": Settings.SetFontScale(Settings.FontScale >= 1.5f ? 1f : Settings.FontScale + 0.25f); break;
+                case "font_scale": Settings.SetFontScale(Settings.FontScale >= QinglanUiTheme.MaximumFontScale
+                    ? 1f
+                    : Settings.FontScale + 0.25f); break;
                 case "color_vision": Settings.SetColorVision((ColorVisionMode)(((int)Settings.ColorVision + 1) % 5)); break;
                 case "master_volume": Settings.SetMasterVolume(Step(Settings.MasterVolume, 0.25f, 0f, 1f)); break;
                 case "music_volume": Settings.SetMusicVolume(Step(Settings.MusicVolume, 0.25f, 0f, 1f)); break;
