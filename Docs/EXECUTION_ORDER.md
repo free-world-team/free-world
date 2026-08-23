@@ -223,3 +223,15 @@ G4.2-B 由提交 `dcd0bce`、`0d4e5a0`、`63d6e9f` 实现页面专属构图、�
 720p/1080p/1440p/21:9 各 90 秒 Player 零溢出门禁为 `PASS`。物理 4K 请求被当前 2560×1440 显示器
 降级，故实机 4K 为 `NOT RUN`；独立人类视觉签字仍为 `NOT RUN`。工程下一包按用户当前指令进入 G4.2-C，
 上述未执行项继续保留，不影响事实记录，也不得外推为商业 Release `GO`。
+G4.2-C 由提交 `1974952`、`fc95510` 完成五区地貌、32 个软过渡、区域身份簇、正式地图标记与镜头运动前视；
+全量 EditMode 471/471、PlayMode 24/24、项目验证、Release Build 和 90 秒 Player 为 `PASS`。
+
+G4.2-D 由提交 `99ef819`、`d56a585` 完成玩家/六敌/两 Boss 比例强化、两 Boss 四方向三阶段共 24 张帧、
+游风剑稳定挂点/四态/72° 剑弧和 Actor Pool 指标；全量 EditMode 472/472、PlayMode 24/24、项目验证、
+Release Build 和 90 秒 Player 为 `PASS`。
+
+G4.2-E 由提交 `c01116c` 实现固定容量五阶段技能表现、稳定非颜色签名、真实拾取反馈、35 ms 表现停顿、
+0.12 幅度镜头预算、低动态替代和 VFX/Audio 分优先级压力指标。全量 EditMode 475/475、PlayMode 24/24、
+项目验证、Release Build 和 90 秒 Player 为 `PASS`；515 组五阶段全部完成，Critical VFX/序列/Audio 丢失均为 0。
+目标硬件 Draw Call/过绘、最低规格、物理 4K 和独立人类签字仍为 `NOT RUN`。工程下一包按用户指令进入
+G4.2-F 的 1× 真实 12 分钟最终集成验收，不把自动证据外推为商业 Release `GO`。

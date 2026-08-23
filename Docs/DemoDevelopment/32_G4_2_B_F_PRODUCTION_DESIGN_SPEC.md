@@ -1,6 +1,6 @@
 # G4.2-B—F：《剑起青岚》Demo 视觉体验生产设计规范
 
-- 状态：`IMPLEMENTATION / HUMAN SIGNOFF NOT RUN / G4.2-B—D ENGINEERING CLOSED / G4.2-E—F NOT STARTED`
+- 状态：`IMPLEMENTATION / HUMAN SIGNOFF NOT RUN / G4.2-B—E ENGINEERING CLOSED / G4.2-F IN PROGRESS`
 - 制定日期：2026-08-23
 - 基线分支：`codex/qinglan-demo-implementation`
 - 基线提交：`5369f6a`
@@ -675,4 +675,4 @@ G4.2-A 的实现、自动测试、Release Player 与样板截图已有证据，�
 
 ## 18. 本规划任务完成定义
 
-本文档定义 G4.2-B—F 的生产明细、技术边界、视觉规范、素材准入和验收门禁。G4.2-B—D 已完成 UI、五区、角色/六敌/两 Boss/游风剑工程实现、全量测试、Release Build 和 90 秒 Player；两 Boss 24 张阶段帧与游风剑攻击 Trail 已进入硬门禁。实机 4K、真实 12 分钟 Boss 流程和独立人类签字仍为 `NOT RUN`。后续按用户持续执行指令从 G4.2-E 开始，严格逐包提交、测试和 Push。
+本文档定义 G4.2-B—F 的生产明细、技术边界、视觉规范、素材准入和验收门禁。G4.2-B—E 已完成 UI、五区、角色/六敌/两 Boss/游风剑、五段 VFX、拾取/命中/Boss 反馈、低动态替代和音频压力工程实现；全量测试、Release Build 和 90 秒 Player 自动门禁均有实际证据。两 Boss 24 张阶段帧、游风剑攻击 Trail、每技能五阶段以及 P0 VFX/序列/音频零丢失已进入硬门禁。物理 4K、真实 12 分钟 Boss 流程、目标硬件 Draw Call/过绘和独立人类签字仍为 `NOT RUN`。后续按用户持续执行指令进入 G4.2-F，严格逐包提交、测试和 Push。
