@@ -1,6 +1,6 @@
 # 《剑起青岚》G4.2 视觉品质重制与体验优化计划
 
-- 文档状态：`PROPOSED / IMPLEMENTATION NOT STARTED`
+- 文档状态：`IMPLEMENTATION IN PROGRESS / G4.2-B ENGINEERING CLOSED / EXTERNAL SIGNOFF NOT RUN`
 - 规划日期：2026-08-12
 - 适用基线：`codex/qinglan-demo-implementation@c551a5dba5a0ea8eeba03879aa54d9eeb7b60174`
 - 目标平台：Windows x64 / Steam，基准画布 1920×1080

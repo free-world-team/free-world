@@ -1,6 +1,6 @@
 # G4.2-B—F：《剑起青岚》Demo 视觉体验生产设计规范
 
-- 状态：`SUPPLEMENT / G4.2-A AUTO PASS / HUMAN SIGNOFF NOT RUN / G4.2-B—F NOT STARTED`
+- 状态：`IMPLEMENTATION / G4.2-A AUTO PASS / HUMAN SIGNOFF NOT RUN / G4.2-B ENGINEERING CLOSED / G4.2-C—F NOT STARTED`
 - 制定日期：2026-08-23
 - 基线分支：`codex/qinglan-demo-implementation`
 - 基线提交：`5369f6a`
@@ -13,7 +13,7 @@
 
 远端基线已经完成 G4.2-A 的自动实现与验证：Canonical Token、紧凑 HUD、横向三卡、六槽构筑、中央战斗区、
 玩家/敌人轮廓、危险填充、拾取密度处理、90 秒固定 Tick Player 门禁和 Release Build 均有实际证据。
-独立人类视觉 Rubric 仍为 `NOT RUN`，因此 G4.2-A 不能宣称 `COMPLETE`，也不能越过门禁开始批量 G4.2-B。
+独立人类视觉 Rubric 仍为 `NOT RUN`，因此 G4.2-A 仍不宣称 `COMPLETE`。用户随后明确要求全程不审核并持续开发，故 G4.2-B 按用户当前指令实施；该指令只改变执行节奏，不把独立人类签字伪报为通过。
 
 本文不建立新的 G5 里程碑，也不替代 31 号 G4.2 主计划；它把已经确定的“青瓷剑境”方向展开为 G4.2-B—F
 可直接实施的 UI、场景、角色、VFX、音频、素材准入和验收规格。若本文与上位计划或 Canonical Style Bible
@@ -510,8 +510,7 @@ Simulation Snapshot / Event / ContentId
 ## 14. G4.2-B—F 实施顺序
 
 每个工作包必须独立提交并 Push；前一包 DOD 未通过不得开始下一包。单次只允许一个活跃里程碑 Owner。
-G4.2-A 的实现、自动测试、Release Player 与样板截图已有证据，但独立人类 Rubric 仍为 `NOT RUN`；在
-Rubric ≥80/100 且每维 ≥60% 并形成签字前，G4.2-B 保持阻断。
+G4.2-A 的实现、自动测试、Release Player 与样板截图已有证据，独立人类 Rubric 仍为 `NOT RUN`。用户明确要求不等待阶段审核并持续到最终实机测试，因此工程执行继续；所有报告仍必须把独立人类签字记为 `NOT RUN`。
 
 ### 跨包资产治理门禁
 
@@ -629,7 +628,7 @@ Rubric ≥80/100 且每维 ≥60% 并形成签字前，G4.2-B 保持阻断。
 | VFX 好看但误导 | 视觉范围与判定不一致 | 从 Snapshot/事件边界投影；视觉范围自动/人工对齐测试 |
 | 动画引入逐实体开销 | Animator/Update 数量增长 | 保持集中帧驱动与池；架构测试阻断回归 |
 | 图标仍靠文字 | 缩小后多个技能相同 | 一技能一剪影，执行无文字识别测试 |
-| 规划被误认为已完成 | 只有文档或引用报告，没有当前机器原始证据 | 本文状态固定为 `G4.2-A HUMAN SIGNOFF NOT RUN / B—F NOT STARTED`，逐包关闭 DOD |
+| 规划被误认为已完成 | 只有文档或引用报告，没有当前机器原始证据 | 顶部状态与逐包报告同步；自动 PASS、硬件 NOT RUN 和独立人类 NOT RUN 分开记录 |
 
 每个工作包必须可单独回退。第三方资产切片、主题系统、场景材质和 VFX Profile 不得与 Simulation 修改混在
 同一提交。任何 Architecture/Schema/Renderer 后端变化按 `AGENTS.md` 新增 ADR。
@@ -676,7 +675,4 @@ Rubric ≥80/100 且每维 ≥60% 并形成签字前，G4.2-B 保持阻断。
 
 ## 18. 本规划任务完成定义
 
-本文档只补充 G4.2-B—F 的生产明细、技术边界、视觉规范、素材候选和验收门禁。G4.2-A 的自动实现已有
-远端证据，但独立人类 Rubric 仍为 `NOT RUN`；本文完成不表示 G4.2-B—F 的运行时代码、美术替换、第三方
-素材导入、测试、构建、目标硬件性能或人工签字已经完成。取得 G4.2-A 人工签字后，实施从 G4.2-B 开始，
-并严格按第 14 节逐包提交、测试、Push 和关闭门禁。
+本文档定义 G4.2-B—F 的生产明细、技术边界、视觉规范、素材准入和验收门禁。G4.2-B 已按报告完成工程实现、全量测试、Release Build 与当前硬件 720p/1080p/1440p/21:9 Player 矩阵；实机 4K 和独立人类签字仍为 `NOT RUN`。后续按用户持续执行指令从 G4.2-C 开始，严格逐包提交、测试和 Push。
