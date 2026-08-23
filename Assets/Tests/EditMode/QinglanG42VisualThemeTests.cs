@@ -371,6 +371,9 @@ namespace Game.Tests.EditMode
             Assert.That(
                 QinglanG40VisualAcceptanceRunner.CalculateTargetSimulationTickCount(90d),
                 Is.EqualTo(8775L));
+            Assert.That(
+                QinglanG40VisualAcceptanceRunner.CalculateTargetSimulationTickCount(720d, 1d),
+                Is.EqualTo(21600L));
         }
 
         private static void AssertToken(

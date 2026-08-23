@@ -10,6 +10,7 @@ using Game.Presentation;
 using Game.Simulation;
 using Game.UI;
 using TMPro;
+using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.Profiling;
 using UnityEngine.UI;
@@ -26,13 +27,18 @@ namespace Game.Infrastructure
     {
         private const string G40Argument = "-qinglanG40VisualAcceptance";
         private const string G42Argument = "-qinglanG42VisualAcceptance";
+        private const string G42FinalArgument = "-qinglanG42FinalAcceptance";
         private const string G40ResultVariable = "QINGLAN_G40_VISUAL_RESULT";
         private const string G42ResultVariable = "QINGLAN_G42_VISUAL_RESULT";
+        private const string G42FinalResultVariable = "QINGLAN_G42_FINAL_RESULT";
         private const string G40ScreenshotVariable = "QINGLAN_G40_SCREENSHOT_DIR";
         private const string G42ScreenshotVariable = "QINGLAN_G42_SCREENSHOT_DIR";
+        private const string G42FinalScreenshotVariable = "QINGLAN_G42_FINAL_SCREENSHOT_DIR";
         private const double G40RequiredWallClockSeconds = 60d;
         private const double G42RequiredWallClockSeconds = 90d;
+        private const double G42FinalRequiredWallClockSeconds = 720d;
         private const double AcceptanceSimulationScale = 3.25d;
+        private const double FinalAcceptanceSimulationScale = 1d;
         private const ulong G42RunSeed = 0x4734324156495355UL;
         private const ulong G42RewardSeed = 0x514C414E47523432UL;
         private static readonly double[] G40ScreenshotTimes = { 0.5d, 15d, 30d, 45d, 60d };
@@ -44,6 +50,15 @@ namespace Game.Infrastructure
         private static readonly string[] G42ScreenshotNames =
         {
             "00-enter-combat", "15-seconds", "30-seconds", "45-seconds", "60-seconds", "90-seconds"
+        };
+        private static readonly double[] G42FinalScreenshotTimes =
+        {
+            0.5d, 15d, 30d, 60d, 180d, 360d, 540d, 720d
+        };
+        private static readonly string[] G42FinalScreenshotNames =
+        {
+            "00-enter-combat", "15-seconds", "30-seconds", "60-seconds",
+            "03-minutes", "06-minutes", "09-minutes", "12-minutes"
         };
         private static readonly Vector2[] AcceptanceWaypoints =
         {
@@ -99,31 +114,52 @@ namespace Game.Infrastructure
 
         internal static bool IsRequested()
         {
-            return HasArgument(G40Argument) || HasArgument(G42Argument);
+            return HasArgument(G40Argument) || HasArgument(G42Argument) || HasArgument(G42FinalArgument);
         }
 
         private IEnumerator Start()
         {
             yield return null;
-            var g42 = HasArgument(G42Argument);
-            var requiredWallClockSeconds = g42
-                ? G42RequiredWallClockSeconds
-                : G40RequiredWallClockSeconds;
-            var screenshotTimes = g42 ? G42ScreenshotTimes : G40ScreenshotTimes;
-            var screenshotNames = g42 ? G42ScreenshotNames : G40ScreenshotNames;
-            var resultVariable = g42 ? G42ResultVariable : G40ResultVariable;
-            var screenshotVariable = g42 ? G42ScreenshotVariable : G40ScreenshotVariable;
+            var finalAcceptance = HasArgument(G42FinalArgument);
+            var g42 = finalAcceptance || HasArgument(G42Argument);
+            var requiredWallClockSeconds = finalAcceptance
+                ? G42FinalRequiredWallClockSeconds
+                : g42 ? G42RequiredWallClockSeconds : G40RequiredWallClockSeconds;
+            var acceptanceSimulationScale = finalAcceptance
+                ? FinalAcceptanceSimulationScale
+                : AcceptanceSimulationScale;
+            var screenshotTimes = finalAcceptance
+                ? G42FinalScreenshotTimes
+                : g42 ? G42ScreenshotTimes : G40ScreenshotTimes;
+            var screenshotNames = finalAcceptance
+                ? G42FinalScreenshotNames
+                : g42 ? G42ScreenshotNames : G40ScreenshotNames;
+            var resultVariable = finalAcceptance
+                ? G42FinalResultVariable
+                : g42 ? G42ResultVariable : G40ResultVariable;
+            var screenshotVariable = finalAcceptance
+                ? G42FinalScreenshotVariable
+                : g42 ? G42ScreenshotVariable : G40ScreenshotVariable;
             var host = GetComponent<QinglanDemoRuntimeHost>();
             var result = new QinglanG40VisualAcceptanceResult
             {
-                schemaVersion = g42 ? 3 : 1,
-                milestone = g42 ? "G4.2-E" : "G4.0",
+                schemaVersion = finalAcceptance ? 4 : g42 ? 3 : 1,
+                milestone = finalAcceptance ? "G4.2-F" : g42 ? "G4.2-E" : "G4.0",
                 generatedAtUtc = DateTime.UtcNow.ToString("O", CultureInfo.InvariantCulture),
                 status = "FAIL",
                 requiredWallClockSeconds = requiredWallClockSeconds,
-                acceptanceSimulationScale = AcceptanceSimulationScale,
+                acceptanceSimulationScale = acceptanceSimulationScale,
                 screenWidth = Screen.width,
                 screenHeight = Screen.height,
+                graphicsDeviceName = SystemInfo.graphicsDeviceName,
+                graphicsDeviceType = SystemInfo.graphicsDeviceType.ToString(),
+                graphicsMemorySizeMegabytes = SystemInfo.graphicsMemorySize,
+                processorType = SystemInfo.processorType,
+                processorCount = SystemInfo.processorCount,
+                systemMemorySizeMegabytes = SystemInfo.systemMemorySize,
+                operatingSystem = SystemInfo.operatingSystem,
+                qualityLevel = QualitySettings.names[QualitySettings.GetQualityLevel()],
+                vSyncCount = QualitySettings.vSyncCount,
                 humanVisualSignoff = false,
                 runSeed = g42 ? G42RunSeed.ToString("X16", CultureInfo.InvariantCulture) : string.Empty,
                 rewardSeed = g42 ? G42RewardSeed.ToString("X16", CultureInfo.InvariantCulture) : string.Empty,
@@ -162,9 +198,18 @@ namespace Game.Infrastructure
             host.enabled = false;
             var enemyProfiles = new HashSet<string>(StringComparer.Ordinal);
             var observedViews = new HashSet<SpatialEntity>();
-            var wallFrameSamples = new double[8192];
-            var gpuFrameSamples = new double[8192];
+            var frameSampleCapacity = finalAcceptance ? 65536 : 8192;
+            var wallFrameSamples = new double[frameSampleCapacity];
+            var gpuFrameSamples = new double[frameSampleCapacity];
             var frameTiming = new FrameTiming[1];
+            var gcAllocatedRecorder = ProfilerRecorder.StartNew(
+                ProfilerCategory.Memory, "GC Allocated In Frame", 1);
+            var drawCallsRecorder = ProfilerRecorder.StartNew(
+                ProfilerCategory.Render, "Draw Calls Count", 1);
+            var setPassRecorder = ProfilerRecorder.StartNew(
+                ProfilerCategory.Render, "SetPass Calls Count", 1);
+            var trianglesRecorder = ProfilerRecorder.StartNew(
+                ProfilerCategory.Render, "Triangles Count", 1);
             var wallFrameSampleCount = 0;
             var gpuFrameSampleCount = 0;
             var wallFrameTotalMilliseconds = 0d;
@@ -188,6 +233,7 @@ namespace Game.Infrastructure
                 DriveActiveRun(
                     host,
                     elapsed,
+                    acceptanceSimulationScale,
                     g42,
                     ref drivenSimulationTicks,
                     ref waypointIndex,
@@ -204,6 +250,12 @@ namespace Game.Infrastructure
                     ref gpuFrameSampleCount,
                     ref gpuFrameTotalMilliseconds,
                     frameTiming);
+                RecordRenderPerformanceSample(
+                    result,
+                    drawCallsRecorder,
+                    setPassRecorder,
+                    trianglesRecorder,
+                    gcAllocatedRecorder);
 
                 while (nextScreenshot < screenshotTimes.Length &&
                        elapsed >= screenshotTimes[nextScreenshot])
@@ -240,6 +292,12 @@ namespace Game.Infrastructure
                 ? 0d
                 : wallFrameTotalMilliseconds / wallFrameSampleCount;
             result.wallFrameP99Milliseconds = Percentile99(wallFrameSamples, wallFrameSampleCount);
+            result.averageFps = result.wallFrameAverageMilliseconds <= 0d
+                ? 0d
+                : 1000d / result.wallFrameAverageMilliseconds;
+            result.onePercentLowFps = result.wallFrameP99Milliseconds <= 0d
+                ? 0d
+                : 1000d / result.wallFrameP99Milliseconds;
             result.gpuFrameAverageMilliseconds = gpuFrameSampleCount == 0
                 ? 0d
                 : gpuFrameTotalMilliseconds / gpuFrameSampleCount;
@@ -248,6 +306,21 @@ namespace Game.Infrastructure
             result.gpuFrameSampleCount = gpuFrameSampleCount;
             result.finalMonoUsedBytes = Profiler.GetMonoUsedSizeLong();
             result.finalTotalAllocatedMemoryBytes = Profiler.GetTotalAllocatedMemoryLong();
+            result.managedMemoryGrowthBytes = result.finalMonoUsedBytes - result.initialMonoUsedBytes;
+            result.totalAllocatedMemoryGrowthBytes =
+                result.finalTotalAllocatedMemoryBytes - result.initialTotalAllocatedMemoryBytes;
+            result.averageDrawCalls = result.renderRecorderSamples == 0
+                ? 0d
+                : result.drawCallsTotal / (double)result.renderRecorderSamples;
+            result.averageSetPassCalls = result.renderRecorderSamples == 0
+                ? 0d
+                : result.setPassCallsTotal / (double)result.renderRecorderSamples;
+            result.renderRecordersAvailable = result.renderRecorderSamples > 0 &&
+                                              result.maximumDrawCalls > 0 &&
+                                              result.maximumTriangles > 0 &&
+                                              result.drawCallsRecorderValid &&
+                                              result.setPassRecorderValid &&
+                                              result.trianglesRecorderValid;
             result.generation0Collections = GC.CollectionCount(0) - generation0Start;
             result.generation1Collections = GC.CollectionCount(1) - generation1Start;
             result.generation2Collections = GC.CollectionCount(2) - generation2Start;
@@ -304,6 +377,10 @@ namespace Game.Infrastructure
             result.evictedLowerPriorityAudioCount = host.Presentation.EvictedLowerPriorityAudioCount;
             result.mergedCriticalAudioCount = host.Presentation.MergedCriticalAudioCount;
             result.missingProfileFallbackCount = host.Presentation.MissingProfileFallbackCount;
+            gcAllocatedRecorder.Dispose();
+            drawCallsRecorder.Dispose();
+            setPassRecorder.Dispose();
+            trianglesRecorder.Dispose();
             var sharedAutomaticGate = result.formalVisualsLoaded && result.formalAudioLoaded &&
                                          result.formalFontsLoaded && result.realCardClicks > 0 &&
                                          result.wallClockSeconds >= requiredWallClockSeconds &&
@@ -356,10 +433,25 @@ namespace Game.Infrastructure
                                          result.cameraImpulseRequestCount > 0 &&
                                          result.peakActiveAudio > 0 &&
                                          result.reducedMotionAlternativeObserved &&
-                                         result.reducedMotionStageSpawnCount > 0 &&
+                                         (finalAcceptance || result.reducedMotionStageSpawnCount > 0) &&
                                          result.accessibilityScreenshotCount == 8 &&
                                          !result.accessibilityTextOverflowObserved &&
-                                         result.grayscaleReviewScreenshotCount == 1);
+                                         result.grayscaleReviewScreenshotCount == 1) &&
+                                         (!finalAcceptance ||
+                                          Math.Abs(result.acceptanceSimulationScale - 1d) < 0.0001d &&
+                                          result.simulationSeconds >= 720d &&
+                                          result.maxBossPhaseViews > 0 &&
+                                          result.maximumObservedBossPhase >= 2 &&
+                                          result.bossPhaseObservationSamples > 0 &&
+                                          result.renderRecordersAvailable &&
+                                          result.wallFrameSampleCount >= 10000 &&
+                                          result.averageFps >= 30d &&
+                                          result.onePercentLowFps >= 20d &&
+                                          result.gpuFrameSampleCount > 0 &&
+                                          result.gpuFrameP99Milliseconds <= 33.34d &&
+                                          result.managedMemoryGrowthBytes <= 268435456L &&
+                                          result.finalTotalAllocatedMemoryBytes <= 1610612736L &&
+                                          result.generation2Collections < 120);
             result.status = result.passedAutomaticGate ? "PASS" : "FAIL";
             result.error = result.passedAutomaticGate
                 ? string.Empty
@@ -391,6 +483,7 @@ namespace Game.Infrastructure
         private static void DriveActiveRun(
             QinglanDemoRuntimeHost host,
             double elapsed,
+            double simulationScale,
             bool g42,
             ref long drivenSimulationTicks,
             ref int waypointIndex,
@@ -398,7 +491,7 @@ namespace Game.Infrastructure
             ISet<string> enemyProfiles,
             ISet<SpatialEntity> observedViews)
         {
-            var targetSimulationTicks = CalculateTargetSimulationTickCount(elapsed);
+            var targetSimulationTicks = CalculateTargetSimulationTickCount(elapsed, simulationScale);
             var safety = 0;
             while (drivenSimulationTicks < targetSimulationTicks && safety++ < 64)
             {
@@ -433,11 +526,14 @@ namespace Game.Infrastructure
             }
         }
 
-        internal static long CalculateTargetSimulationTickCount(double elapsed)
+        internal static long CalculateTargetSimulationTickCount(double elapsed) =>
+            CalculateTargetSimulationTickCount(elapsed, AcceptanceSimulationScale);
+
+        internal static long CalculateTargetSimulationTickCount(double elapsed, double simulationScale)
         {
-            if (elapsed <= 0d) return 0L;
+            if (elapsed <= 0d || simulationScale <= 0d) return 0L;
             return (long)Math.Floor(
-                (elapsed * AcceptanceSimulationScale / SimulationClock.TickDurationSeconds) + 0.000000001d);
+                (elapsed * simulationScale / SimulationClock.TickDurationSeconds) + 0.000000001d);
         }
 
         internal static int ChooseStableUpgradeIndex(RunSession session)
@@ -527,6 +623,12 @@ namespace Game.Infrastructure
             result.maxPickupViews = Math.Max(result.maxPickupViews, host.Presentation.ActivePickupViewCount);
             result.maxActiveVfx = Math.Max(result.maxActiveVfx, host.Presentation.ActiveVfxCount);
             result.maxHeldWeaponViews = Math.Max(result.maxHeldWeaponViews, host.Presentation.HeldWeaponViewCount);
+            var bossPhaseViews = host.Presentation.BossPhaseViewCount;
+            result.maxBossPhaseViews = Math.Max(result.maxBossPhaseViews, bossPhaseViews);
+            result.maximumObservedBossPhase = Math.Max(
+                result.maximumObservedBossPhase,
+                host.Presentation.MaximumAppliedBossPhase);
+            if (bossPhaseViews > 0) result.bossPhaseObservationSamples++;
             result.maxHeldWeaponAttackTrailViews = Math.Max(
                 result.maxHeldWeaponAttackTrailViews,
                 host.Presentation.HeldWeaponAttackTrailViewCount);
@@ -588,6 +690,38 @@ namespace Game.Infrastructure
             result.peakTotalAllocatedMemoryBytes = Math.Max(
                 result.peakTotalAllocatedMemoryBytes,
                 Profiler.GetTotalAllocatedMemoryLong());
+        }
+
+        private static void RecordRenderPerformanceSample(
+            QinglanG40VisualAcceptanceResult result,
+            ProfilerRecorder drawCallsRecorder,
+            ProfilerRecorder setPassRecorder,
+            ProfilerRecorder trianglesRecorder,
+            ProfilerRecorder gcAllocatedRecorder)
+        {
+            result.drawCallsRecorderValid |= drawCallsRecorder.Valid;
+            result.setPassRecorderValid |= setPassRecorder.Valid;
+            result.trianglesRecorderValid |= trianglesRecorder.Valid;
+            result.gcAllocatedRecorderValid |= gcAllocatedRecorder.Valid;
+            if (drawCallsRecorder.Valid && setPassRecorder.Valid && trianglesRecorder.Valid)
+            {
+                var drawCalls = Math.Max(0L, drawCallsRecorder.CurrentValue);
+                var setPass = Math.Max(0L, setPassRecorder.CurrentValue);
+                var triangles = Math.Max(0L, trianglesRecorder.CurrentValue);
+                result.renderRecorderSamples++;
+                result.drawCallsTotal += drawCalls;
+                result.setPassCallsTotal += setPass;
+                result.maximumDrawCalls = Math.Max(result.maximumDrawCalls, drawCalls);
+                result.maximumSetPassCalls = Math.Max(result.maximumSetPassCalls, setPass);
+                result.maximumTriangles = Math.Max(result.maximumTriangles, triangles);
+            }
+            if (!gcAllocatedRecorder.Valid) return;
+            var allocated = Math.Max(0L, gcAllocatedRecorder.CurrentValue);
+            result.gcAllocatedRecorderSamples++;
+            result.gcAllocatedInFrameBytes += allocated;
+            result.maximumGcAllocatedInFrameBytes = Math.Max(
+                result.maximumGcAllocatedInFrameBytes,
+                allocated);
         }
 
         private static double Percentile99(double[] values, int count)
@@ -805,14 +939,18 @@ namespace Game.Infrastructure
                 if (string.IsNullOrWhiteSpace(path))
                     path = Path.Combine(
                         UnityEngine.Application.persistentDataPath,
-                        g42 ? "QinglanG42VisualAcceptance.json" : "QinglanG40VisualAcceptance.json");
+                        result.milestone == "G4.2-F"
+                            ? "QinglanG42FinalAcceptance.json"
+                            : g42 ? "QinglanG42VisualAcceptance.json" : "QinglanG40VisualAcceptance.json");
                 path = Path.GetFullPath(path);
                 var directory = Path.GetDirectoryName(path);
                 if (string.IsNullOrEmpty(directory))
                     throw new InvalidOperationException("Invalid " + result.milestone + " result path.");
                 Directory.CreateDirectory(directory);
                 File.WriteAllText(path, JsonUtility.ToJson(result, true) + "\n");
-                var marker = g42 ? "[Qinglan G4.2-A Visual Acceptance]" : "[Qinglan G4.0 Visual Acceptance]";
+                var marker = result.milestone == "G4.2-F"
+                    ? "[Qinglan G4.2-F Final Acceptance]"
+                    : g42 ? "[Qinglan G4.2-A Visual Acceptance]" : "[Qinglan G4.0 Visual Acceptance]";
                 if (exitCode == 0) Debug.Log(marker + " PASS: " + path);
                 else Debug.LogError(marker + " FAIL: " + result.error);
             }
@@ -842,6 +980,15 @@ namespace Game.Infrastructure
             public double simulationSeconds;
             public int screenWidth;
             public int screenHeight;
+            public string graphicsDeviceName;
+            public string graphicsDeviceType;
+            public int graphicsMemorySizeMegabytes;
+            public string processorType;
+            public int processorCount;
+            public int systemMemorySizeMegabytes;
+            public string operatingSystem;
+            public string qualityLevel;
+            public int vSyncCount;
             public bool formalVisualsLoaded;
             public bool formalAudioLoaded;
             public bool formalFontsLoaded;
@@ -865,6 +1012,9 @@ namespace Game.Infrastructure
             public int directionalSpriteSetCount;
             public int bossPhaseSpriteSetCount;
             public int bossPhaseStateSpriteCount;
+            public int maxBossPhaseViews;
+            public int maximumObservedBossPhase = -1;
+            public int bossPhaseObservationSamples;
             public int createdActorViewCount;
             public long actorViewAcquireCount;
             public long actorViewPoolHitCount;
@@ -929,14 +1079,34 @@ namespace Game.Infrastructure
             public int gpuFrameSampleCount;
             public double wallFrameAverageMilliseconds;
             public double wallFrameP99Milliseconds;
+            public double averageFps;
+            public double onePercentLowFps;
             public double gpuFrameAverageMilliseconds;
             public double gpuFrameP99Milliseconds;
+            public bool drawCallsRecorderValid;
+            public bool setPassRecorderValid;
+            public bool trianglesRecorderValid;
+            public bool gcAllocatedRecorderValid;
+            public bool renderRecordersAvailable;
+            public long renderRecorderSamples;
+            public long drawCallsTotal;
+            public long setPassCallsTotal;
+            public double averageDrawCalls;
+            public long maximumDrawCalls;
+            public double averageSetPassCalls;
+            public long maximumSetPassCalls;
+            public long maximumTriangles;
+            public long gcAllocatedRecorderSamples;
+            public long gcAllocatedInFrameBytes;
+            public long maximumGcAllocatedInFrameBytes;
             public long initialMonoUsedBytes;
             public long peakMonoUsedBytes;
             public long finalMonoUsedBytes;
+            public long managedMemoryGrowthBytes;
             public long initialTotalAllocatedMemoryBytes;
             public long peakTotalAllocatedMemoryBytes;
             public long finalTotalAllocatedMemoryBytes;
+            public long totalAllocatedMemoryGrowthBytes;
             public int generation0Collections;
             public int generation1Collections;
             public int generation2Collections;
