@@ -87,11 +87,11 @@ Compliance、干净 Checkout 与 GitHub Actions 均 `PASS`。当前决定仍为 
 法律签字与最低规格物理机器认证为 `NOT_RUN`，因此 DOD-09—10 未关闭。机器可读证据位于
 [Assets/G3.6/Final](Assets/G3.6/Final)。
 
-G4.0 与 G4.1 已关闭 2.5D 表现存在性和现有存档启动稳定性。G4.2-A 已建立“青瓷剑境”样板；G4.2-B 已完成
-全流程 UI 工程重制；G4.2-C 已完成五区软边界、区域身份簇、正式目标/地标三态图和动态镜头前瞻。G4.2-C
-全量 EditMode `471/471`、PlayMode `24/24`、Validation、Release Build、90 秒 Player 与当前 RTX 3060 Ti
-GPU 初测均 `PASS`。独立人类视觉/五区盲测和物理 4K 仍为 `NOT RUN`，因此 G4.2 总体保持 `INCOMPLETE`；
-依据用户免阶段审核的持续执行指令，下一步为 G4.2-D 角色、六敌、两 Boss 与游风剑重制。
+G4.0 与 G4.1 已关闭 2.5D 表现存在性和现有存档启动稳定性。G4.2-A 已建立“青瓷剑境”样板；G4.2-B—D
+已完成全流程 UI、五区、角色/六敌/两 Boss/游风剑工程重制。G4.2-D 全量 EditMode `472/472`、PlayMode
+`24/24`、Validation、Release Build 与 90 秒 Player 均 `PASS`；Player 实测 9 组方向图、24 张 Boss 阶段帧、
+游风剑攻击 Trail 和 Actor 池复用。独立人类视觉/识别、真实 12 分钟 Boss 流程和物理 4K 仍为 `NOT RUN`，
+因此 G4.2 总体保持 `INCOMPLETE`；依据用户持续执行指令，下一步为 G4.2-E VFX、反馈与音频混音。
 
 ## 4. 模块分支
 
