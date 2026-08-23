@@ -129,6 +129,12 @@ namespace Game.Infrastructure
         {
             yield return null;
             var finalAcceptance = HasArgument(G42FinalArgument);
+            if (finalAcceptance)
+            {
+                UnityEngine.Application.runInBackground = true;
+                UnityEngine.Application.targetFrameRate = 60;
+                QualitySettings.vSyncCount = 0;
+            }
             var g42 = finalAcceptance || HasArgument(G42Argument);
             var requiredWallClockSeconds = finalAcceptance
                 ? G42FinalRequiredWallClockSeconds
@@ -168,6 +174,8 @@ namespace Game.Infrastructure
                 operatingSystem = SystemInfo.operatingSystem,
                 qualityLevel = QualitySettings.names[QualitySettings.GetQualityLevel()],
                 vSyncCount = QualitySettings.vSyncCount,
+                runInBackground = UnityEngine.Application.runInBackground,
+                targetFrameRate = UnityEngine.Application.targetFrameRate,
                 humanVisualSignoff = false,
                 runSeed = g42 ? G42RunSeed.ToString("X16", CultureInfo.InvariantCulture) : string.Empty,
                 rewardSeed = g42 ? G42RewardSeed.ToString("X16", CultureInfo.InvariantCulture) : string.Empty,
@@ -490,6 +498,8 @@ namespace Game.Infrastructure
                                          result.grayscaleReviewScreenshotCount == 1) &&
                                          (!finalAcceptance ||
                                           Math.Abs(result.acceptanceSimulationScale - 1d) < 0.0001d &&
+                                          result.runInBackground &&
+                                          result.targetFrameRate == 60 && result.vSyncCount == 0 &&
                                           result.simulationSeconds >= 720d &&
                                           result.maxBossPhaseViews > 0 &&
                                           result.maximumObservedBossPhase >= 2 &&
@@ -1098,6 +1108,8 @@ namespace Game.Infrastructure
             public string operatingSystem;
             public string qualityLevel;
             public int vSyncCount;
+            public bool runInBackground;
+            public int targetFrameRate;
             public bool formalVisualsLoaded;
             public bool formalAudioLoaded;
             public bool formalFontsLoaded;

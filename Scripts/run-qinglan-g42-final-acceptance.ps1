@@ -123,6 +123,8 @@ if ([int]$result.schemaVersion -ne 4 -or $result.milestone -ne 'G4.2-F' -or
     $result.status -ne 'PASS' -or -not [bool]$result.passedAutomaticGate -or
     [double]$result.wallClockSeconds -lt 720 -or [double]$result.simulationSeconds -lt 720 -or
     [math]::Abs([double]$result.acceptanceSimulationScale - 1.0) -gt 0.0001 -or
+    -not [bool]$result.runInBackground -or [int]$result.targetFrameRate -ne 60 -or
+    [int]$result.vSyncCount -ne 0 -or
     [int]$result.screenWidth -ne $ScreenWidth -or [int]$result.screenHeight -ne $ScreenHeight -or
     [int]$result.screenshotCount -ne 8 -or [int]$result.accessibilityScreenshotCount -ne 8 -or
     [int]$result.grayscaleReviewScreenshotCount -ne 1 -or
