@@ -1,0 +1,58 @@
+Mono path[0] = 'E:/ai/free-world/Builds/WindowsRelease/AzureSword_Data/Managed'
+Mono config path = 'E:/ai/free-world/Builds/WindowsRelease/MonoBleedingEdge/etc'
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Initialize engine version: 6000.3.20f1 (c9ba695d4f07)
+[Subsystems] Discovering subsystems at path E:/ai/free-world/Builds/WindowsRelease/AzureSword_Data/UnitySubsystems
+[D3D12 Device Filter] Vendor Name: NVIDIA
+[D3D12 Device Filter] Device Name: NVIDIA GeForce RTX 3060 Ti
+[D3D12 Device Filter] Driver Version: 32.0.15.9186
+[D3D12 Device Filter] Feature Level: 12.2
+[D3D12 Device Filter] Graphics Memory: 8024 MB
+[D3D12 Device Filter] Processor Count: 20
+[D3D12 Device Filter] Device Type: Discrete
+GfxDevice: creating device client; kGfxThreadingModeSplitJobs
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 3060 Ti (ID=0x24c9)
+    Vendor:          NVIDIA
+    VRAM:            8024 MB
+    App VRAM Budget: 7256 MB
+    Driver:          32.0.15.9186
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.113 seconds
+- Finished resetting the current domain, in  0.002 seconds
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+<RI> Initializing input.
+Using Windows.Gaming.Input
+UnloadTime: 0.806700 ms
+[Qinglan Formal Visuals] Map tiles=80, props=80.
+[Qinglan Formal Visuals] Map state sets=8.
+[Qinglan Formal Visuals] Directional sprite sets=9, boss phase sets=2, boss phase sprites=24.
+[Bootstrap] Loaded content: packs=1, entries=193; G2.6 Qinglan Demo UI/input, local save/localization, and NullPlatformFacade initialized.
+[Qinglan G4.2-F Heartbeat] wall=60.0s simulation=59.7s ticks=1790 stage=Active views=146
+[Qinglan G4.2-F Heartbeat] wall=120.0s simulation=119.6s ticks=3587 stage=Active views=293
+[Qinglan G4.2-F Heartbeat] wall=180.0s simulation=179.5s ticks=5386 stage=Active views=418
+[Qinglan G4.2-F Heartbeat] wall=240.0s simulation=239.5s ticks=7185 stage=Active views=400
+[Qinglan G4.2-F Heartbeat] wall=300.0s simulation=299.5s ticks=8984 stage=Active views=469
+[Qinglan G4.2-F Heartbeat] wall=360.0s simulation=359.4s ticks=10783 stage=Active views=463
+[Qinglan G4.2-F Heartbeat] wall=420.0s simulation=419.4s ticks=12582 stage=Active views=353
+[Qinglan G4.2-F Heartbeat] wall=480.0s simulation=479.4s ticks=14382 stage=Active views=437
+[Qinglan G4.2-F Heartbeat] wall=540.0s simulation=539.4s ticks=16181 stage=Active views=461
+[Qinglan G4.2-F Heartbeat] wall=600.0s simulation=599.3s ticks=17980 stage=Active views=516
+[Qinglan G4.2-F Heartbeat] wall=660.0s simulation=659.3s ticks=19779 stage=Active views=541
+[Qinglan G4.2-F Heartbeat] wall=720.0s simulation=719.3s ticks=21579 stage=Active views=496
+[Qinglan G4.2-F Final Acceptance] PASS: E:\ai\free-world\TestResults\QinglanDemo\G4.2-F-final-9cfc2ae\player-12m.json
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+GarbageCollector disposing of ComputeBuffer. Please use ComputeBuffer.Release() or .Dispose() to manually release the buffer.
