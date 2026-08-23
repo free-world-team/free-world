@@ -1,6 +1,6 @@
 # G4.2-B—F：《剑起青岚》Demo 视觉体验生产设计规范
 
-- 状态：`IMPLEMENTATION / G4.2-A AUTO PASS / HUMAN SIGNOFF NOT RUN / G4.2-B ENGINEERING CLOSED / G4.2-C—F NOT STARTED`
+- 状态：`IMPLEMENTATION / HUMAN SIGNOFF NOT RUN / G4.2-B ENGINEERING CLOSED / G4.2-C ENGINEERING CLOSED / G4.2-D—F NOT STARTED`
 - 制定日期：2026-08-23
 - 基线分支：`codex/qinglan-demo-implementation`
 - 基线提交：`5369f6a`
@@ -675,4 +675,4 @@ G4.2-A 的实现、自动测试、Release Player 与样板截图已有证据，�
 
 ## 18. 本规划任务完成定义
 
-本文档定义 G4.2-B—F 的生产明细、技术边界、视觉规范、素材准入和验收门禁。G4.2-B 已按报告完成工程实现、全量测试、Release Build 与当前硬件 720p/1080p/1440p/21:9 Player 矩阵；实机 4K 和独立人类签字仍为 `NOT RUN`。后续按用户持续执行指令从 G4.2-C 开始，严格逐包提交、测试和 Push。
+本文档定义 G4.2-B—F 的生产明细、技术边界、视觉规范、素材准入和验收门禁。G4.2-B 已完成 UI 工程实现与分辨率矩阵；G4.2-C 已完成五区工程实现、全量测试、Release Build、90 秒 Player 和当前 RTX 3060 Ti GPU 初测。实机 4K、独立人类 UI/五区签字仍为 `NOT RUN`。后续按用户持续执行指令从 G4.2-D 开始，严格逐包提交、测试和 Push。
