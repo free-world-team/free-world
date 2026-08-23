@@ -14,7 +14,15 @@ namespace Game.Infrastructure
             ContentRegistry registry,
             ContentId mapId,
             IReadOnlyList<Sprite> formalMapTiles = null,
-            IReadOnlyList<Sprite> formalMapProps = null)
+            IReadOnlyList<Sprite> formalMapProps = null) =>
+            Build(registry, mapId, formalMapTiles, formalMapProps, null);
+
+        public static ProceduralMapConfiguration Build(
+            ContentRegistry registry,
+            ContentId mapId,
+            IReadOnlyList<Sprite> formalMapTiles,
+            IReadOnlyList<Sprite> formalMapProps,
+            IReadOnlyDictionary<string, Sprite[]> formalMapStateSprites)
         {
             if (registry == null) throw new ArgumentNullException(nameof(registry));
             if (!mapId.IsValid || !registry.TryGet(mapId, out RuntimeMapDefinition map) || !map.HasM5Data)
@@ -33,9 +41,9 @@ namespace Game.Infrastructure
 
             var markers = new List<ProceduralMapMarker>(
                 map.ObjectiveIds.Count + map.EventIds.Count + map.LandmarkIds.Count);
-            AddMarkers(markers, map.ObjectiveIds, map.Anchors, 1, 0);
-            AddMarkers(markers, map.EventIds, map.Anchors, 2, zoneCount);
-            AddMarkers(markers, map.LandmarkIds, map.Anchors, 3, zoneCount + map.ObjectiveIds.Count);
+            AddMarkers(markers, map.ObjectiveIds, map.Anchors, 1, 0, formalMapStateSprites);
+            AddMarkers(markers, map.EventIds, map.Anchors, 2, zoneCount, formalMapStateSprites);
+            AddMarkers(markers, map.LandmarkIds, map.Anchors, 3, zoneCount + map.ObjectiveIds.Count, formalMapStateSprites);
             return new ProceduralMapConfiguration(
                 ToUnity(map.Minimum),
                 ToUnity(map.Maximum),
@@ -60,12 +68,17 @@ namespace Game.Infrastructure
             IReadOnlyList<ContentId> ids,
             IReadOnlyList<RuntimeMapAnchor> anchors,
             byte kind,
-            int fallbackOffset)
+            int fallbackOffset,
+            IReadOnlyDictionary<string, Sprite[]> formalMapStateSprites)
         {
             for (var index = 0; index < ids.Count; index++)
             {
                 var position = ResolvePosition(ids[index], anchors, fallbackOffset + index);
-                target.Add(new ProceduralMapMarker(ids[index], kind, position));
+                ProceduralMapMarkerSpriteSet states = null;
+                if (formalMapStateSprites != null &&
+                    formalMapStateSprites.TryGetValue(ids[index].Value, out var stateSprites))
+                    states = new ProceduralMapMarkerSpriteSet(stateSprites);
+                target.Add(new ProceduralMapMarker(ids[index], kind, position, states));
             }
         }
 

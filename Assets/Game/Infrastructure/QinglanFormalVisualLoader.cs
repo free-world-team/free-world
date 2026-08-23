@@ -41,12 +41,50 @@ namespace Game.Infrastructure
             "south_guest_court"
         };
 
+        private static readonly string[] MapStateContentIds =
+        {
+            "qinglan.objective.wind_altar.listen",
+            "qinglan.objective.wind_altar.guide",
+            "qinglan.objective.wind_altar.stop_balance",
+            "qinglan.landmark.wind_vein_stele",
+            "qinglan.landmark.sealed_sword_cache",
+            "qinglan.landmark.herb_garden_variant",
+            "qinglan.landmark.broken_wall_sword_mark",
+            "qinglan.landmark.guest_pavilion_letter"
+        };
+
+        private static readonly string[] MapStateAddresses =
+        {
+            "qinglan/objective/wind-altar/listen/state-atlas",
+            "qinglan/objective/wind-altar/guide/state-atlas",
+            "qinglan/objective/wind-altar/stop-balance/state-atlas",
+            "qinglan/landmark/wind-vein-stele/state-atlas",
+            "qinglan/landmark/sealed-sword-cache/state-atlas",
+            "qinglan/landmark/herb-garden-variant/state-atlas",
+            "qinglan/landmark/broken-wall-sword-mark/state-atlas",
+            "qinglan/landmark/guest-pavilion-letter/state-atlas"
+        };
+
+        private static readonly string[] MapStateSpritePrefixes =
+        {
+            "qinglan.presentation.objective.old_court.listen",
+            "qinglan.presentation.objective.old_court.guide",
+            "qinglan.presentation.objective.old_court.stop_balance",
+            "qinglan.presentation.landmark.old_court.wind_vein_stele",
+            "qinglan.presentation.landmark.old_court.sealed_sword_cache",
+            "qinglan.presentation.landmark.old_court.herb_garden_variant",
+            "qinglan.presentation.landmark.old_court.broken_wall_sword_mark",
+            "qinglan.presentation.landmark.old_court.guest_pavilion_letter"
+        };
+
         private AsyncOperationHandle<FormalVisualCatalog> handle;
         private bool ownsHandle;
         private readonly List<AsyncOperationHandle<Sprite>> spriteHandles =
             new List<AsyncOperationHandle<Sprite>>(160);
         private readonly List<Sprite> mapTiles = new List<Sprite>(80);
         private readonly List<Sprite> mapProps = new List<Sprite>(80);
+        private readonly Dictionary<string, Sprite[]> mapStateSprites =
+            new Dictionary<string, Sprite[]>(StringComparer.Ordinal);
         private readonly Dictionary<string, Sprite> resolvedSprites =
             new Dictionary<string, Sprite>(StringComparer.Ordinal);
         private readonly HashSet<string> failedSpriteKeys =
@@ -57,6 +95,7 @@ namespace Game.Infrastructure
         public bool IsLoaded => Catalog != null;
         public IReadOnlyList<Sprite> MapTiles => mapTiles;
         public IReadOnlyList<Sprite> MapProps => mapProps;
+        public IReadOnlyDictionary<string, Sprite[]> MapStateSprites => mapStateSprites;
         public DirectionalSpriteCatalog DirectionalSprites { get; private set; } = new DirectionalSpriteCatalog();
 
         public bool LoadForStartup()
@@ -71,6 +110,7 @@ namespace Game.Infrastructure
                     Catalog.SchemaVersion == FormalVisualCatalog.CurrentSchemaVersion)
                 {
                     LoadMapSpriteSets();
+                    LoadMapStateSpriteSets();
                     LoadDirectionalSpriteSets();
                     return true;
                 }
@@ -134,6 +174,7 @@ namespace Game.Infrastructure
             spriteHandles.Clear();
             mapTiles.Clear();
             mapProps.Clear();
+            mapStateSprites.Clear();
             resolvedSprites.Clear();
             failedSpriteKeys.Clear();
             DirectionalSprites = new DirectionalSpriteCatalog();
@@ -167,6 +208,29 @@ namespace Game.Infrastructure
             }
         }
 
+        private void LoadMapStateSpriteSets()
+        {
+            var objectiveStates = new[] { "idle", "active", "complete" };
+            var landmarkStates = new[] { "undiscovered", "discovered", "claimed" };
+            for (var setIndex = 0; setIndex < MapStateContentIds.Length; setIndex++)
+            {
+                var states = setIndex < 3 ? objectiveStates : landmarkStates;
+                var sprites = new Sprite[states.Length];
+                var complete = true;
+                for (var stateIndex = 0; stateIndex < states.Length; stateIndex++)
+                {
+                    var spriteName = MapStateSpritePrefixes[setIndex] + "." + states[stateIndex];
+                    var operation = Addressables.LoadAssetAsync<Sprite>(
+                        MapStateAddresses[setIndex] + "[" + spriteName + "]");
+                    spriteHandles.Add(operation);
+                    var sprite = operation.WaitForCompletion();
+                    sprites[stateIndex] = sprite;
+                    complete &= operation.Status == AsyncOperationStatus.Succeeded && sprite != null;
+                }
+                if (complete) mapStateSprites.Add(MapStateContentIds[setIndex], sprites);
+            }
+            Debug.Log("[Qinglan Formal Visuals] Map state sets=" + mapStateSprites.Count + ".");
+        }
         private void LoadDirectionalSpriteSets()
         {
             var sets = new List<DirectionalSpriteSet>(9);

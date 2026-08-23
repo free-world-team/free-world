@@ -22,15 +22,26 @@ namespace Game.Presentation
     public readonly struct ProceduralMapMarker
     {
         public ProceduralMapMarker(ContentId stateId, byte kind, Vector2 position)
+            : this(stateId, kind, position, null)
+        {
+        }
+
+        public ProceduralMapMarker(
+            ContentId stateId,
+            byte kind,
+            Vector2 position,
+            ProceduralMapMarkerSpriteSet formalStates)
         {
             StateId = stateId;
             Kind = kind;
             Position = position;
+            FormalStates = formalStates;
         }
 
         public ContentId StateId { get; }
         public byte Kind { get; }
         public Vector2 Position { get; }
+        public ProceduralMapMarkerSpriteSet FormalStates { get; }
     }
 
     /// <summary>Pure DTO built outside Presentation from a runtime map definition.</summary>
@@ -72,8 +83,10 @@ namespace Game.Presentation
     {
         public ProceduralMapMarker Definition;
         public SpriteRenderer Renderer;
+        public SpriteRenderer Aura;
         public Color BaseColor;
         public Vector3 BaseScale;
+        public bool Formal;
     }
 
     /// <summary>Fixed, programmatic map layer; it owns no gameplay or map state.</summary>
@@ -104,6 +117,7 @@ namespace Game.Presentation
             markers = new List<ProceduralMapMarkerView>(configuration.Markers.Count);
             raisedSurfaceMaterial = CreateRaisedSurfaceMaterial();
             BuildGround(configuration);
+            BuildRegionTransitions(configuration);
             BuildCentralArenaTransition(configuration);
             BuildBounds(configuration);
             BuildZones(configuration);
@@ -119,6 +133,12 @@ namespace Game.Presentation
         public int RaisedGeometryCount { get; private set; }
         public int GroundShadowCount { get; private set; }
         public int CentralArenaTransitionCount { get; private set; }
+        public int RegionTransitionDecalCount { get; private set; }
+        public int RegionIdentityClusterCount { get; private set; }
+        public int FormalMarkerCount { get; private set; }
+        public int FormalMarkerStateSpriteCount { get; private set; }
+        public int VisibleFormalMarkerCount { get; private set; }
+        public int CompletedFormalMarkerCount { get; private set; }
         public bool UsesXzGroundPlane => true;
 
         public void Sync(RunUiSnapshot snapshot, ColorVisionMode mode)
@@ -133,6 +153,8 @@ namespace Game.Presentation
             if (snapshot == null) return;
             if (!styleChanged && snapshot.Tick == lastSnapshotTick) return;
             lastSnapshotTick = snapshot.Tick;
+            VisibleFormalMarkerCount = 0;
+            CompletedFormalMarkerCount = 0;
             for (var markerIndex = 0; markerIndex < markers.Count; markerIndex++)
             {
                 var marker = markers[markerIndex];
@@ -143,15 +165,41 @@ namespace Game.Presentation
                     if (!string.Equals(state.ContentId, marker.Definition.StateId.Value, StringComparison.Ordinal))
                         continue;
                     found = true;
-                    marker.Renderer.enabled = state.State != 1;
+                    var visible = state.State != 1;
+                    marker.Renderer.enabled = visible;
+                    if (marker.Aura != null) marker.Aura.enabled = visible;
+                    if (!visible) break;
+
                     var completed = state.Progress >= 0.999f || state.State == 6;
-                    var color = completed ? new Color(0.52f, 0.58f, 0.54f, 0.55f) : marker.BaseColor;
-                    marker.Renderer.color = color;
-                    marker.Renderer.transform.localScale = marker.BaseScale *
-                        (completed ? 0.8f : 1f + (Mathf.Clamp01(state.Progress) * 0.25f));
+                    if (marker.Formal)
+                    {
+                        if (marker.Definition.FormalStates.TryGet(
+                            ResolveFormalMarkerFrame(marker.Definition.Kind, state.State, completed),
+                            out var formalSprite))
+                            marker.Renderer.sprite = formalSprite;
+                        marker.Renderer.color = colorVision == ColorVisionMode.HighContrast
+                            ? Color.white
+                            : new Color(0.94f, 0.98f, 0.94f, 1f);
+                        marker.Renderer.transform.localScale = marker.BaseScale *
+                            (completed ? 0.94f : 1f + (Mathf.Clamp01(state.Progress) * 0.08f));
+                        VisibleFormalMarkerCount++;
+                        if (completed) CompletedFormalMarkerCount++;
+                    }
+                    else
+                    {
+                        var color = completed ? new Color(0.52f, 0.58f, 0.54f, 0.55f) : marker.BaseColor;
+                        marker.Renderer.color = color;
+                        marker.Renderer.transform.localScale = marker.BaseScale *
+                            (completed ? 0.8f : 1f + (Mathf.Clamp01(state.Progress) * 0.25f));
+                    }
+
+                    if (marker.Aura != null)
+                        marker.Aura.color = MarkerAuraColor(marker.Definition.Kind, completed, colorVision);
                     break;
                 }
-                if (!found) marker.Renderer.enabled = false;
+                if (found) continue;
+                marker.Renderer.enabled = false;
+                if (marker.Aura != null) marker.Aura.enabled = false;
             }
         }
 
@@ -218,6 +266,76 @@ namespace Game.Presentation
             }
         }
 
+        private void BuildRegionTransitions(ProceduralMapConfiguration configuration)
+        {
+            var center = (configuration.Minimum + configuration.Maximum) * 0.5f;
+            BuildRegionTransitionBand(
+                "West",
+                center + new Vector2(-20f, 0f),
+                new Vector2(2.6f, 32f),
+                false,
+                RegionTint(1));
+            BuildRegionTransitionBand(
+                "East",
+                center + new Vector2(20f, 0f),
+                new Vector2(2.6f, 32f),
+                false,
+                RegionTint(2));
+            BuildRegionTransitionBand(
+                "North",
+                center + new Vector2(0f, 16f),
+                new Vector2(40f, 2.6f),
+                true,
+                RegionTint(3));
+            BuildRegionTransitionBand(
+                "South",
+                center + new Vector2(0f, -16f),
+                new Vector2(40f, 2.6f),
+                true,
+                RegionTint(4));
+        }
+
+        private void BuildRegionTransitionBand(
+            string name,
+            Vector2 center,
+            Vector2 size,
+            bool horizontal,
+            Color tint)
+        {
+            CreateRect(
+                "G42C_RegionTransition_" + name,
+                center,
+                size,
+                new Color(tint.r, tint.g, tint.b, 0.075f),
+                -28);
+            RegionTransitionDecalCount++;
+            var length = horizontal ? size.x : size.y;
+            for (var index = 0; index < 7; index++)
+            {
+                var along = (-length * 0.5f) + ((index + 0.5f) * (length / 7f));
+                var across = ((index % 3) - 1) * 0.64f;
+                var position = center + (horizontal
+                    ? new Vector2(along, across)
+                    : new Vector2(across, along));
+                var renderer = CreateRenderer("G42C_TransitionBloom_" + name + "_" + index, -27);
+                renderer.sprite = library.GetSprite(index % 3 == 0
+                    ? ProceduralShape.Diamond
+                    : ProceduralShape.Circle);
+                renderer.color = new Color(tint.r, tint.g, tint.b, 0.045f + ((index % 3) * 0.012f));
+                renderer.transform.SetPositionAndRotation(
+                    PresentationSpace.ToGround(
+                        position.x,
+                        position.y,
+                        PresentationSpace.GroundDecalHeight * 0.55f),
+                    PresentationSpace.GroundRotation);
+                var diameter = 1.7f + ((index % 4) * 0.43f);
+                renderer.transform.localScale = new Vector3(
+                    horizontal ? diameter : diameter * 0.68f,
+                    horizontal ? diameter * 0.68f : diameter,
+                    1f);
+                RegionTransitionDecalCount++;
+            }
+        }
         private void BuildCentralArenaTransition(ProceduralMapConfiguration configuration)
         {
             var center = (configuration.Minimum + configuration.Maximum) * 0.5f;
@@ -285,6 +403,7 @@ namespace Game.Presentation
                 var regionLength = region == formalRegionCount - 1
                     ? configuration.PropSprites.Count - regionStart
                     : Mathf.Min(propsPerRegion, configuration.PropSprites.Count - regionStart);
+                var tint = RegionPropTint(region);
                 for (var offsetIndex = 0; offsetIndex < 3; offsetIndex++)
                 {
                     var sprite = configuration.PropSprites[
@@ -292,16 +411,23 @@ namespace Game.Presentation
                     if (sprite == null) continue;
                     var renderer = CreateRenderer("FormalProp_" + zoneIndex + "_" + offsetIndex, -9);
                     renderer.sprite = sprite;
-                    renderer.color = new Color(0.82f, 0.88f, 0.82f, 1f);
-                    var propX = center.x + ((offsetIndex - 1) * 4.5f);
-                    var propY = center.y + ((offsetIndex & 1) == 0 ? 3.5f : -3.5f);
+                    renderer.color = tint;
+                    var angle = (zoneIndex * 71f + offsetIndex * 119f + region * 23f) * Mathf.Deg2Rad;
+                    var radius = 6.2f + (offsetIndex * 1.65f);
+                    var propX = center.x + Mathf.Cos(angle) * radius;
+                    var propY = center.y + Mathf.Sin(angle) * radius * 0.78f;
                     var bounds = sprite.bounds.size;
-                    var targetHeight = 3.2f + (offsetIndex * 0.45f);
+                    var targetHeight = offsetIndex == 0 ? 5.0f : offsetIndex == 1 ? 3.45f : 2.35f;
+                    targetHeight += (region % 3) * 0.18f;
                     var scale = bounds.y <= 0f ? 1f : targetHeight / bounds.y;
                     renderer.transform.position = PresentationSpace.ToGround(propX, propY, targetHeight * 0.48f);
                     renderer.transform.localScale = Vector3.one * scale;
                     renderer.sortingOrder = 200 + PresentationSpace.DepthOffset(propY);
-                    CreateGroundShadow("PropShadow_" + zoneIndex + "_" + offsetIndex, propX, propY, targetHeight * 0.72f);
+                    CreateGroundShadow(
+                        "PropShadow_" + zoneIndex + "_" + offsetIndex,
+                        propX,
+                        propY,
+                        targetHeight * (offsetIndex == 0 ? 0.82f : 0.66f));
                     FormalPropCount++;
                 }
             }
@@ -325,12 +451,35 @@ namespace Game.Presentation
         {
             var size = Mathf.Max(6f, configuration.ChunkSize * 0.72f);
             for (var index = 0; index < configuration.Zones.Count; index++)
-                CreateRect(
-                    "Zone_" + index,
-                    configuration.Zones[index],
-                    Vector2.one * size,
-                    new Color(0.18f, 0.36f, 0.32f, 0.14f),
-                    -20);
+            {
+                var center = configuration.Zones[index];
+                var region = ResolveRegion(center, configuration.Minimum, configuration.Maximum);
+                var tint = RegionTint(region);
+                for (var layer = 0; layer < 3; layer++)
+                {
+                    var renderer = CreateRenderer("G42C_RegionIdentity_" + index + "_" + layer, -21 + layer);
+                    renderer.sprite = library.GetSprite(layer == 1
+                        ? ProceduralShape.Diamond
+                        : ProceduralShape.Circle);
+                    renderer.color = new Color(
+                        tint.r,
+                        tint.g,
+                        tint.b,
+                        0.025f + (layer * 0.018f));
+                    renderer.transform.SetPositionAndRotation(
+                        PresentationSpace.ToGround(
+                            center.x + ((layer - 1) * 0.55f),
+                            center.y + (((index + layer) % 2 == 0 ? 1f : -1f) * 0.4f),
+                            PresentationSpace.GroundDecalHeight * (0.7f + layer * 0.08f)),
+                        PresentationSpace.GroundRotation);
+                    var diameter = size - (layer * 1.8f);
+                    renderer.transform.localScale = new Vector3(
+                        diameter,
+                        diameter * (0.72f + ((region & 1) * 0.08f)),
+                        1f);
+                }
+                RegionIdentityClusterCount++;
+            }
         }
 
         private void BuildObstacles(ProceduralMapConfiguration configuration)
@@ -413,23 +562,66 @@ namespace Game.Presentation
             {
                 var definition = configuration.Markers[index];
                 profiles.TryResolveEffect(definition.StateId, colorVision, out var style);
-                var renderer = CreateRenderer("MapMarker_" + definition.Kind + "_" + index, -3);
-                renderer.transform.SetPositionAndRotation(
+                var aura = CreateRenderer("MapMarkerAura_" + definition.Kind + "_" + index, -3);
+                aura.transform.SetPositionAndRotation(
                     PresentationSpace.ToGround(
                         definition.Position.x,
                         definition.Position.y,
                         PresentationSpace.GroundDecalHeight * 3f),
                     PresentationSpace.GroundRotation);
-                renderer.sprite = library.GetSprite(ShapeFor(definition.Kind, style.Shape));
-                renderer.color = style.Color;
-                renderer.transform.localScale = Vector3.one * (definition.Kind == 1 ? 1.45f : 1.05f);
+                aura.sprite = library.GetSprite(ShapeFor(definition.Kind, style.Shape));
+                aura.color = MarkerAuraColor(definition.Kind, false, colorVision);
+                aura.transform.localScale = Vector3.one * (definition.Kind == 1 ? 2.8f : 2.15f);
+                aura.enabled = false;
+
+                Sprite initialSprite = null;
+                var formal = definition.FormalStates != null &&
+                             definition.FormalStates.Count >= 3 &&
+                             definition.FormalStates.TryGet(0, out initialSprite);
+                var renderer = CreateRenderer(
+                    (formal ? "FormalMapMarker_" : "MapMarker_") + definition.Kind + "_" + index,
+                    formal ? 260 + PresentationSpace.DepthOffset(definition.Position.y) : -2);
+                if (formal)
+                {
+                    renderer.sprite = initialSprite;
+                    renderer.color = Color.white;
+                    var targetHeight = definition.Kind == 1 ? 4.8f : 3.9f;
+                    var spriteHeight = initialSprite.bounds.size.y;
+                    var scale = spriteHeight <= 0f ? 1f : targetHeight / spriteHeight;
+                    renderer.transform.position = PresentationSpace.ToGround(
+                        definition.Position.x,
+                        definition.Position.y,
+                        targetHeight * 0.48f);
+                    renderer.transform.localScale = Vector3.one * scale;
+                    CreateGroundShadow(
+                        "FormalMapMarkerShadow_" + definition.Kind + "_" + index,
+                        definition.Position.x,
+                        definition.Position.y,
+                        targetHeight * 0.82f);
+                    FormalMarkerCount++;
+                    FormalMarkerStateSpriteCount += definition.FormalStates.Count;
+                }
+                else
+                {
+                    renderer.transform.SetPositionAndRotation(
+                        PresentationSpace.ToGround(
+                            definition.Position.x,
+                            definition.Position.y,
+                            PresentationSpace.GroundDecalHeight * 3.2f),
+                        PresentationSpace.GroundRotation);
+                    renderer.sprite = library.GetSprite(ShapeFor(definition.Kind, style.Shape));
+                    renderer.color = style.Color;
+                    renderer.transform.localScale = Vector3.one * (definition.Kind == 1 ? 1.45f : 1.05f);
+                }
                 renderer.enabled = false;
                 markers.Add(new ProceduralMapMarkerView
                 {
                     Definition = definition,
                     Renderer = renderer,
+                    Aura = aura,
                     BaseColor = style.Color,
-                    BaseScale = renderer.transform.localScale
+                    BaseScale = renderer.transform.localScale,
+                    Formal = formal
                 });
             }
         }
@@ -524,6 +716,27 @@ namespace Game.Presentation
             return renderer;
         }
 
+        private static int ResolveFormalMarkerFrame(byte kind, byte state, bool completed)
+        {
+            if (completed) return 2;
+            if (kind == 3) return state >= 2 ? 1 : 0;
+            return state >= 4 ? 1 : 0;
+        }
+
+        private static Color MarkerAuraColor(byte kind, bool completed, ColorVisionMode mode)
+        {
+            if (mode == ColorVisionMode.HighContrast) return new Color(1f, 1f, 1f, completed ? 0.42f : 0.30f);
+            if (completed) return QinglanPresentationTheme.WithAlpha(QinglanPresentationTheme.Gold400, 0.34f);
+            return kind == 3
+                ? QinglanPresentationTheme.WithAlpha(QinglanPresentationTheme.Void700, 0.30f)
+                : QinglanPresentationTheme.WithAlpha(QinglanPresentationTheme.Jade200, 0.32f);
+        }
+
+        private static Color RegionPropTint(int region)
+        {
+            var tint = RegionTint(region);
+            return Color.Lerp(Color.white, tint, 0.24f);
+        }
         private static ProceduralShape ShapeFor(byte kind, ProceduralShape fallback)
         {
             if (kind == 1) return ProceduralShape.Ring;

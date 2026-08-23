@@ -12,10 +12,14 @@ namespace Game.Presentation
         private float shakeAmplitude;
         private float shakeRemaining;
         private float shakeDuration;
+        private Vector2 motionLead;
+        private Vector3 lastTargetPosition;
+        private bool hasTargetSample;
 
         public bool EffectsEnabled { get; set; } = true;
         public bool UsesTiltedOrthographicProjection { get; private set; }
         public Vector3 LastStablePosition { get; private set; }
+        public Vector2 MotionLead => motionLead;
 
         public void ConfigureTiltedOrthographic(Camera presentationCamera)
         {
@@ -32,7 +36,14 @@ namespace Game.Presentation
             SetStablePose(Vector3.zero);
         }
 
-        public void SetTarget(Transform value) => target = value;
+        public void SetTarget(Transform value)
+        {
+            if (target == value) return;
+            target = value;
+            motionLead = Vector2.zero;
+            hasTargetSample = value != null;
+            lastTargetPosition = value == null ? Vector3.zero : value.position;
+        }
 
         public void SetBounds(Rect value)
         {
@@ -53,8 +64,23 @@ namespace Game.Presentation
             var focus = Vector3.zero;
             if (target != null)
             {
-                focus.x = Mathf.Clamp(target.position.x, bounds.xMin, bounds.xMax);
-                focus.z = Mathf.Clamp(target.position.z, bounds.yMin, bounds.yMax);
+                var targetPosition = target.position;
+                var desiredLead = Vector2.zero;
+                if (hasTargetSample)
+                {
+                    var delta = new Vector2(
+                        targetPosition.x - lastTargetPosition.x,
+                        targetPosition.z - lastTargetPosition.z);
+                    if (delta.sqrMagnitude > 0.0001f) desiredLead = delta.normalized * 1.2f;
+                }
+                motionLead = Vector2.MoveTowards(
+                    motionLead,
+                    desiredLead,
+                    Mathf.Max(0f, unscaledDeltaTime) * 4.8f);
+                focus.x = Mathf.Clamp(targetPosition.x + motionLead.x, bounds.xMin, bounds.xMax);
+                focus.z = Mathf.Clamp(targetPosition.z + motionLead.y, bounds.yMin, bounds.yMax);
+                lastTargetPosition = targetPosition;
+                hasTargetSample = true;
             }
             else
             {

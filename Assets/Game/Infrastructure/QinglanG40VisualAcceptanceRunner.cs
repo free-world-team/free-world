@@ -234,6 +234,10 @@ namespace Game.Infrastructure
             result.formalMapGroundTileCount = host.Presentation.FormalMapGroundTileCount;
             result.formalMapPropCount = host.Presentation.FormalMapPropCount;
             result.centralArenaTransitionCount = host.Presentation.MapCentralArenaTransitionCount;
+            result.regionTransitionDecalCount = host.Presentation.MapRegionTransitionDecalCount;
+            result.regionIdentityClusterCount = host.Presentation.MapRegionIdentityClusterCount;
+            result.formalMapMarkerCount = host.Presentation.FormalMapMarkerCount;
+            result.formalMapMarkerStateSpriteCount = host.Presentation.FormalMapMarkerStateSpriteCount;
             result.projectileTrailSpawnCount = host.Presentation.ProjectileTrailSpawnCount;
             result.directionalAnimationFrameChangeCount =
                 host.Presentation.DirectionalAnimationFrameChangeCount;
@@ -262,6 +266,11 @@ namespace Game.Infrastructure
                                          result.formalMapGroundTileCount > 0 && result.formalMapPropCount > 0;
             result.passedAutomaticGate = sharedAutomaticGate && (!g42 ||
                                          result.centralArenaTransitionCount == 14 &&
+                                         result.regionTransitionDecalCount == 32 &&
+                                         result.regionIdentityClusterCount == 5 &&
+                                         result.formalMapMarkerCount == 8 &&
+                                         result.formalMapMarkerStateSpriteCount == 24 &&
+                                         result.maxVisibleFormalMapMarkers > 0 &&
                                          result.playerOutlineObserved && result.playerRimObserved &&
                                          result.densePickupPresentationObserved &&
                                          result.maxDensityGroupedPickupViews > 0 &&
@@ -438,6 +447,12 @@ namespace Game.Infrastructure
             result.maxPickupViews = Math.Max(result.maxPickupViews, host.Presentation.ActivePickupViewCount);
             result.maxActiveVfx = Math.Max(result.maxActiveVfx, host.Presentation.ActiveVfxCount);
             result.maxHeldWeaponViews = Math.Max(result.maxHeldWeaponViews, host.Presentation.HeldWeaponViewCount);
+            result.maxVisibleFormalMapMarkers = Math.Max(
+                result.maxVisibleFormalMapMarkers,
+                host.Presentation.VisibleFormalMapMarkerCount);
+            result.maxCompletedFormalMapMarkers = Math.Max(
+                result.maxCompletedFormalMapMarkers,
+                host.Presentation.CompletedFormalMapMarkerCount);
             result.densePickupPresentationObserved |= host.Presentation.DensePickupPresentationActive;
             result.maxDensityGroupedPickupViews = Math.Max(
                 result.maxDensityGroupedPickupViews,
@@ -773,6 +788,12 @@ namespace Game.Infrastructure
             public int formalMapGroundTileCount;
             public int formalMapPropCount;
             public int centralArenaTransitionCount;
+            public int regionTransitionDecalCount;
+            public int regionIdentityClusterCount;
+            public int formalMapMarkerCount;
+            public int formalMapMarkerStateSpriteCount;
+            public int maxVisibleFormalMapMarkers;
+            public int maxCompletedFormalMapMarkers;
             public int wallFrameSampleCount;
             public int gpuFrameSampleCount;
             public double wallFrameAverageMilliseconds;

@@ -207,6 +207,11 @@ namespace Game.Tests.PlayMode
             Assert.That(host.Presentation.FormalMapGroundTileCount, Is.GreaterThan(0),
                 "the Release map must use the governed formal tile kits rather than an empty camera clear");
             Assert.That(host.Presentation.FormalMapPropCount, Is.GreaterThan(0));
+            Assert.That(host.Presentation.MapRegionTransitionDecalCount, Is.EqualTo(32));
+            Assert.That(host.Presentation.MapRegionIdentityClusterCount, Is.EqualTo(5));
+            Assert.That(host.Presentation.FormalMapMarkerCount, Is.EqualTo(8));
+            Assert.That(host.Presentation.FormalMapMarkerStateSpriteCount, Is.EqualTo(24),
+                "all objective and landmark state atlases must load through governed Addressables");
 
             Tap(keyboard.mKey);
             Assert.That(background.gameObject.activeSelf, Is.False,

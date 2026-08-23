@@ -66,6 +66,12 @@ namespace Game.Presentation
         public int RaisedMapGeometryCount => mapPresentation?.RaisedGeometryCount ?? 0;
         public int MapGroundShadowCount => mapPresentation?.GroundShadowCount ?? 0;
         public int MapCentralArenaTransitionCount => mapPresentation?.CentralArenaTransitionCount ?? 0;
+        public int MapRegionTransitionDecalCount => mapPresentation?.RegionTransitionDecalCount ?? 0;
+        public int MapRegionIdentityClusterCount => mapPresentation?.RegionIdentityClusterCount ?? 0;
+        public int FormalMapMarkerCount => mapPresentation?.FormalMarkerCount ?? 0;
+        public int FormalMapMarkerStateSpriteCount => mapPresentation?.FormalMarkerStateSpriteCount ?? 0;
+        public int VisibleFormalMapMarkerCount => mapPresentation?.VisibleFormalMarkerCount ?? 0;
+        public int CompletedFormalMapMarkerCount => mapPresentation?.CompletedFormalMarkerCount ?? 0;
         public bool UsesXzGroundPlane => mapPresentation?.UsesXzGroundPlane == true;
         public long ProjectileTrailSpawnCount { get; private set; }
         public long TotalHitRequestCount { get; private set; }

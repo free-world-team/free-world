@@ -1,5 +1,6 @@
 using System.Linq;
 using Game.Application;
+using Game.Core;
 using Game.Infrastructure;
 using Game.Presentation;
 using Game.Simulation;
@@ -162,6 +163,77 @@ namespace Game.Tests.EditMode
             }
         }
 
+        [Test]
+        public void WorldRegionsUseSoftBoundariesAndFormalStatefulLandmarks()
+        {
+            var root = new GameObject("G42CWorldRegions");
+            var texture = new Texture2D(4, 4);
+            var states = new Sprite[3];
+            try
+            {
+                for (var index = 0; index < states.Length; index++)
+                    states[index] = Sprite.Create(
+                        texture,
+                        new Rect(0f, 0f, 4f, 4f),
+                        Vector2.one * 0.5f,
+                        4f);
+                var markerId = ContentId.Create("test.map.objective.altar").Value;
+                var canvas = new GameObject("Canvas").AddComponent<Canvas>();
+                canvas.transform.SetParent(root.transform, false);
+                var coordinator = root.AddComponent<PresentationCoordinator>();
+                coordinator.Initialize(canvas, new AccessibilitySettings());
+                coordinator.SetMap(new ProceduralMapConfiguration(
+                    new Vector2(-48f, -36f),
+                    new Vector2(48f, 36f),
+                    16f,
+                    null,
+                    new[]
+                    {
+                        Vector2.zero,
+                        new Vector2(-30f, 0f),
+                        new Vector2(30f, 0f),
+                        new Vector2(0f, 24f),
+                        new Vector2(0f, -24f)
+                    },
+                    new[]
+                    {
+                        new ProceduralMapMarker(
+                            markerId,
+                            1,
+                            new Vector2(8f, 6f),
+                            new ProceduralMapMarkerSpriteSet(states))
+                    }));
+
+                Assert.That(coordinator.MapRegionTransitionDecalCount, Is.EqualTo(32));
+                Assert.That(coordinator.MapRegionIdentityClusterCount, Is.EqualTo(5));
+                Assert.That(coordinator.FormalMapMarkerCount, Is.EqualTo(1));
+                Assert.That(coordinator.FormalMapMarkerStateSpriteCount, Is.EqualTo(3));
+
+                var snapshot = new RunUiSnapshot();
+                snapshot.Tick = 1;
+                snapshot.AddMap(markerId.Value, 1, 4, 0.5f);
+                coordinator.SyncRunState(snapshot);
+                Assert.That(coordinator.VisibleFormalMapMarkerCount, Is.EqualTo(1));
+                Assert.That(coordinator.CompletedFormalMapMarkerCount, Is.Zero);
+
+                snapshot.Reset();
+                snapshot.Tick = 2;
+                snapshot.AddMap(markerId.Value, 1, 6, 1f);
+                coordinator.SyncRunState(snapshot);
+                Assert.That(coordinator.VisibleFormalMapMarkerCount, Is.EqualTo(1));
+                Assert.That(coordinator.CompletedFormalMapMarkerCount, Is.EqualTo(1));
+                var formalMarker = root.transform.Find("G2_7_ProceduralMap/FormalMapMarker_1_0");
+                Assert.That(formalMarker, Is.Not.Null);
+                Assert.That(formalMarker.position.y, Is.GreaterThan(1f));
+            }
+            finally
+            {
+                Object.DestroyImmediate(root);
+                for (var index = 0; index < states.Length; index++)
+                    if (states[index] != null) Object.DestroyImmediate(states[index]);
+                Object.DestroyImmediate(texture);
+            }
+        }
         [Test]
         public void WorldSliceAddsNaturalArenaFalloffAndKeepsDensePickupSimulationViews()
         {

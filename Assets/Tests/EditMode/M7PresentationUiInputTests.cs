@@ -182,6 +182,12 @@ namespace Game.Tests.EditMode
             Assert.That(rig.transform.position.y, Is.GreaterThan(12f));
             Assert.That(rig.UsesTiltedOrthographicProjection, Is.True);
             Assert.That(camera.orthographic, Is.True);
+
+            target.transform.position = new Vector3(4f, PresentationSpace.ActorPivotHeight, -3f);
+            rig.TickCamera(0.25f);
+            Assert.That(rig.MotionLead.magnitude, Is.EqualTo(1.2f).Within(0.001f));
+            Assert.That(rig.MotionLead.x, Is.LessThan(0f));
+            Assert.That(rig.MotionLead.y, Is.GreaterThan(0f));
         }
 
         [Test]

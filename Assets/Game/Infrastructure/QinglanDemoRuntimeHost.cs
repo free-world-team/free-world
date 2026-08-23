@@ -136,7 +136,8 @@ namespace Game.Infrastructure
                         bootstrapApplication.ContentRegistry,
                         session.Descriptor.MapId,
                         formalVisualLoader.MapTiles,
-                        formalVisualLoader.MapProps);
+                        formalVisualLoader.MapProps,
+                        formalVisualLoader.MapStateSprites);
                 Presentation.SetMap(mapConfiguration);
                 if (mapConfiguration != null)
                     cameraRig.SetBounds(new Rect(

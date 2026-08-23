@@ -128,6 +128,11 @@ if ($result.status -ne 'PASS' -or -not [bool]$result.passedAutomaticGate -or
     [int]$result.maxDensityGroupedPickupViews -le 0 -or
     [int]$result.maxDensityEmphasisPickupViews -le 0 -or
     [int]$result.centralArenaTransitionCount -ne 14 -or
+    [int]$result.regionTransitionDecalCount -ne 32 -or
+    [int]$result.regionIdentityClusterCount -ne 5 -or
+    [int]$result.formalMapMarkerCount -ne 8 -or
+    [int]$result.formalMapMarkerStateSpriteCount -ne 24 -or
+    [int]$result.maxVisibleFormalMapMarkers -le 0 -or
     -not [bool]$result.usesTiltedOrthographicCamera -or -not [bool]$result.usesXzGroundPlane -or
     [int]$result.formalMapGroundTileCount -le 0 -or [int]$result.formalMapPropCount -le 0 -or
     [bool]$result.humanVisualSignoff) {
