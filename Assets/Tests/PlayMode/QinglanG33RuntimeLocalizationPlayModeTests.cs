@@ -103,6 +103,44 @@ namespace Game.Tests.PlayMode
             Assert.That(pageText.font.name, Does.Contain("NotoSerifCJKsc-SemiBold"));
         }
 
+        [UnityTest]
+        public IEnumerator SettingsPageRemainsReadableAtTwoHundredPercentScale()
+        {
+            var host = Object.FindFirstObjectByType<QinglanDemoRuntimeHost>();
+            Assert.That(host, Is.Not.Null);
+            var page = new QinglanPageViewModel(20);
+            page.Reset(QinglanUiPageId.Settings, "ui.qinglan.settings.title", "ui.qinglan.settings.description");
+            var keys = new[]
+            {
+                "ui.settings.rebind", "ui.settings.language", "ui.settings.deadzone", "ui.settings.vibration",
+                "ui.settings.screen_shake", "ui.settings.flash_intensity", "ui.settings.damage_numbers",
+                "ui.settings.auto_aim", "ui.qinglan.settings.font_scale", "ui.qinglan.settings.color_vision",
+                "ui.qinglan.settings.master_volume", "ui.qinglan.settings.music_volume",
+                "ui.qinglan.settings.ambience_volume", "ui.qinglan.settings.effects_volume",
+                "ui.qinglan.settings.subtitles", "ui.common.back"
+            };
+            for (var index = 0; index < keys.Length; index++)
+                page.Add(new QinglanUiOption("setting." + index, keys[index], "", QinglanUiCommand.CycleSetting, true, "200%"));
+            page.RestoreSelection(0);
+            var settings = new AccessibilitySettings();
+            settings.SetFontScale(2f);
+
+            foreach (var locale in new[] { "en", "zh-Hans", "pseudo" })
+            {
+                Assert.That(host.Localization.SelectLocale(locale), Is.True, locale);
+                host.Ui.ShowPage(page);
+                host.Ui.ApplyAccessibility(settings);
+                Canvas.ForceUpdateCanvases();
+                yield return null;
+                var overflowDiagnostic = string.Join(" | ", host.Ui.GetComponentsInChildren<TMP_Text>(true)
+                    .Where(text => text.gameObject.activeInHierarchy)
+                    .Select(text => text.name + ":rect=" + text.rectTransform.rect.height.ToString("0.0") +
+                                    ",preferred=" + text.preferredHeight.ToString("0.0") +
+                                    ",overflow=" + text.isTextOverflowing));
+                Assert.That(host.Ui.HasAnyTextOverflow, Is.False,
+                    locale + " overflowed at 200% font scale. " + overflowDiagnostic);
+            }
+        }
         private static void DestroyBootstrapInstances()
         {
             var instances = Object.FindObjectsByType<GameBootstrapper>(

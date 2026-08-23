@@ -1,3 +1,4 @@
+using System.Linq;
 using Game.Application;
 using Game.Infrastructure;
 using Game.Presentation;
@@ -222,8 +223,14 @@ namespace Game.Tests.EditMode
                 var snapshot = new RunUiSnapshot();
                 for (var index = 0; index < 11; index++)
                     snapshot.AddBuild("qinglan.test.build." + index, 1, 8, 1);
+                for (var index = 0; index < 6; index++)
+                    snapshot.AddMap("qinglan.test.objective." + index, (byte)((index % 3) + 1), 1, 0.5f);
 
                 ui.ShowHud(snapshot);
+                var accessibility = new AccessibilitySettings();
+                accessibility.SetFontScale(2f);
+                ui.ApplyAccessibility(accessibility);
+                Canvas.ForceUpdateCanvases();
 
                 Assert.That(ui.VisibleHudIconCount, Is.EqualTo(6));
                 Assert.That(ui.HiddenHudBuildCount, Is.EqualTo(5));
@@ -234,6 +241,15 @@ namespace Game.Tests.EditMode
                 Assert.That(overflow, Is.Not.Null);
                 Assert.That(overflow.gameObject.activeSelf, Is.True);
                 Assert.That(overflow.GetComponent<TMP_Text>().text, Is.EqualTo("+5"));
+                var objectives = (RectTransform)root.transform.Find("Qinglan_HudLayer/Qinglan_HudObjectives");
+                Assert.That(objectives.anchorMin.y, Is.LessThanOrEqualTo(0.53f));
+                Assert.That(objectives.anchorMin.x, Is.LessThanOrEqualTo(0.59f));
+                var overflowDiagnostic = string.Join(" | ", ui.GetComponentsInChildren<TMP_Text>(true)
+                    .Where(text => text.gameObject.activeInHierarchy)
+                    .Select(text => text.name + ":rect=" + text.rectTransform.rect.height.ToString("0.0") +
+                                    ",preferred=" + text.preferredHeight.ToString("0.0") +
+                                    ",overflow=" + text.isTextOverflowing));
+                Assert.That(ui.HasAnyTextOverflow, Is.False, overflowDiagnostic);
             }
             finally
             {

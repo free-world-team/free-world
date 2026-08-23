@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Text;
 using Game.Application;
 using Game.Simulation;
 using Game.UI;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Profiling;
 using UnityEngine.UI;
@@ -513,13 +515,13 @@ namespace Game.Infrastructure
             settings.SetFontScale(1.5f);
             host.Ui.ApplyAccessibility(settings);
             host.TickRuntime(0d);
-            SampleAccessibilityOverflow(host, result);
+            SampleAccessibilityOverflow(host, result, "150-font");
             yield return CaptureScreenshot(result, "accessibility-150-font", screenshotVariable, true, false);
 
             settings.SetFontScale(QinglanUiTheme.MaximumFontScale);
             host.Ui.ApplyAccessibility(settings);
             host.TickRuntime(0d);
-            SampleAccessibilityOverflow(host, result);
+            SampleAccessibilityOverflow(host, result, "200-font");
             yield return CaptureScreenshot(result, "accessibility-200-font", screenshotVariable, true, false);
 
             if (host.Flow.Stage == DemoFlowStage.UserPaused)
@@ -549,7 +551,7 @@ namespace Game.Infrastructure
                 settings.SetColorVision(modes[index]);
                 host.Ui.ApplyAccessibility(settings);
                 host.TickRuntime(0d);
-                SampleAccessibilityOverflow(host, result);
+                SampleAccessibilityOverflow(host, result, names[index]);
                 yield return CaptureScreenshot(result, names[index], screenshotVariable, true, false);
             }
 
@@ -558,22 +560,39 @@ namespace Game.Infrastructure
             settings.SetFlashIntensity(0f);
             host.Ui.ApplyAccessibility(settings);
             host.TickRuntime(0d);
-            SampleAccessibilityOverflow(host, result);
+            SampleAccessibilityOverflow(host, result, "reduce-motion");
             yield return CaptureScreenshot(result, "accessibility-reduce-motion", screenshotVariable, true, false);
 
             settings.SetDamageNumbersEnabled(false);
             host.Ui.ApplyAccessibility(settings);
             host.TickRuntime(0d);
-            SampleAccessibilityOverflow(host, result);
+            SampleAccessibilityOverflow(host, result, "no-damage-numbers");
             yield return CaptureScreenshot(result, "accessibility-no-damage-numbers", screenshotVariable, true, false);
         }
 
         private static void SampleAccessibilityOverflow(
             QinglanDemoRuntimeHost host,
-            QinglanG40VisualAcceptanceResult result)
+            QinglanG40VisualAcceptanceResult result,
+            string stateName)
         {
             Canvas.ForceUpdateCanvases();
-            result.accessibilityTextOverflowObserved |= host.Ui.HasAnyTextOverflow;
+            if (!host.Ui.HasAnyTextOverflow) return;
+            result.accessibilityTextOverflowObserved = true;
+            if (!string.IsNullOrEmpty(result.accessibilityOverflowDiagnostic)) return;
+            var builder = new StringBuilder(2048);
+            builder.Append(stateName);
+            var texts = host.Ui.GetComponentsInChildren<TMP_Text>(true);
+            for (var index = 0; index < texts.Length; index++)
+            {
+                var text = texts[index];
+                if (!text.gameObject.activeInHierarchy) continue;
+                text.ForceMeshUpdate();
+                builder.Append(" | ").Append(text.name)
+                    .Append(":rect=").Append(text.rectTransform.rect.height.ToString("0.0", CultureInfo.InvariantCulture))
+                    .Append(",preferred=").Append(text.preferredHeight.ToString("0.0", CultureInfo.InvariantCulture))
+                    .Append(",overflow=").Append(text.isTextOverflowing);
+            }
+            result.accessibilityOverflowDiagnostic = builder.ToString();
         }
         private static IEnumerator CaptureGrayscaleReview(
             QinglanG40VisualAcceptanceResult result,
@@ -720,6 +739,7 @@ namespace Game.Infrastructure
             public int screenshotCount;
             public int accessibilityScreenshotCount;
             public bool accessibilityTextOverflowObserved;
+            public string accessibilityOverflowDiagnostic;
             public int grayscaleReviewScreenshotCount;
             public string[] distinctEnemyProfileIds;
             public int distinctEnemyProfileCount;

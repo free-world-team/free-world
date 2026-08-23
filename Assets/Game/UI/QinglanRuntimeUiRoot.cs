@@ -69,6 +69,7 @@ namespace Game.UI
         private TMP_Text runStatusText;
         private TMP_Text bossText;
         private TMP_Text objectiveText;
+        private RectTransform objectivePanelRect;
         private TMP_FontAsset regularFont;
         private TMP_FontAsset boldFont;
         private TMP_FontAsset narrativeFont;
@@ -420,6 +421,13 @@ namespace Game.UI
                 runStatusText.fontSize = Mathf.RoundToInt(QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
                 bossText.fontSize = Mathf.RoundToInt(QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
                 objectiveText.fontSize = Mathf.RoundToInt(QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
+                if (objectivePanelRect != null)
+                {
+                    var objectiveScale = Mathf.Max(1f, settings.FontScale);
+                    var objectiveHeight = 0.142f * objectiveScale * (1f + (objectiveScale - 1f) * 0.6f);
+                    var objectiveMinimumX = 0.785f - (objectiveScale - 1f) * 0.2f;
+                    objectivePanelRect.anchorMin = new Vector2(objectiveMinimumX, 0.982f - objectiveHeight);
+                }
                 for (var index = 0; index < optionCards.Count; index++)
                     optionCards[index].ApplyFontScale(settings.FontScale);
                 if (settingsPreviewText != null)
@@ -1151,6 +1159,7 @@ namespace Game.UI
 
             var objectivePanel = CreatePanelUnder(hudPanel.transform, "Qinglan_HudObjectives",
                 new Vector2(0.785f, 0.84f), new Vector2(0.982f, 0.982f));
+            objectivePanelRect = objectivePanel.rectTransform;
             objectivePanel.color = QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink950, 0.82f);
             objectiveText = CreateText(objectivePanel.transform, "ObjectiveLabel", QinglanUiTheme.MinimumBodyFontSize1080p,
                 TextAlignmentOptions.TopLeft,
