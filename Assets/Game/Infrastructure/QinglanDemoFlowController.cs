@@ -72,6 +72,8 @@ namespace Game.Infrastructure
         public bool IsGameplayInputEnabled =>
             flow.Stage == DemoFlowStage.Active && !settingsOpen && !runMapOpen;
         public RunSession Session => flow.Session;
+        public bool HasResult => flow.HasResult;
+        public RunResult LatestResult => flow.LatestResult;
         public QinglanProfileCoordinator ProfileOwner => profile;
         public CommitResult LastCommit => lastCommit;
         public MetaOperationResult LastMeta => lastMeta;

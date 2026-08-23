@@ -83,12 +83,18 @@ namespace Game.Infrastructure
         };
         private static readonly string[] G42UpgradePriority =
         {
-            "qinglan.skill.weapon.spirit_vine_seed",
-            "qinglan.skill.weapon.yufeng_sword",
+            "qinglan.passive.long_breath",
+            "qinglan.passive.treading_wind",
             "qinglan.skill.weapon.zhenyue_seal",
+            "qinglan.skill.weapon.yufeng_sword",
+            "qinglan.skill.weapon.spirit_vine_seed",
             "qinglan.skill.weapon.tide_orb",
             "qinglan.skill.weapon.lihuo_wheel",
-            "qinglan.skill.weapon.yellow_talisman"
+            "qinglan.skill.weapon.yellow_talisman",
+            "qinglan.passive.clear_mind",
+            "qinglan.passive.artifact_control",
+            "qinglan.passive.domain_expansion",
+            "qinglan.passive.spirit_gathering"
         };
         private static readonly string[] G42MajorPresentationProfiles =
         {
@@ -226,15 +232,20 @@ namespace Game.Infrastructure
             var drivenSimulationTicks = 0L;
             var waypointIndex = 0;
             var nextScreenshot = 0;
+            var previousElapsed = 0d;
             while (true)
             {
                 var now = Time.realtimeSinceStartupAsDouble;
                 var elapsed = now - startedAt;
+                var frameElapsed = Math.Max(0d, elapsed - previousElapsed);
+                previousElapsed = elapsed;
                 DriveActiveRun(
                     host,
                     elapsed,
+                    frameElapsed,
                     acceptanceSimulationScale,
                     g42,
+                    finalAcceptance,
                     ref drivenSimulationTicks,
                     ref waypointIndex,
                     result,
@@ -269,7 +280,16 @@ namespace Game.Infrastructure
                     nextScreenshot++;
                 }
 
-                if (elapsed >= requiredWallClockSeconds) break;
+                var requiredSimulationTicks = CalculateTargetSimulationTickCount(
+                    requiredWallClockSeconds,
+                    acceptanceSimulationScale);
+                var finalRunEndedEarly = finalAcceptance &&
+                                         (host.Flow.Stage == DemoFlowStage.Ending ||
+                                          host.Flow.Stage == DemoFlowStage.Result) &&
+                                         drivenSimulationTicks < requiredSimulationTicks;
+                if ((elapsed >= requiredWallClockSeconds &&
+                     (!finalAcceptance || drivenSimulationTicks >= requiredSimulationTicks)) ||
+                    finalRunEndedEarly) break;
                 yield return null;
             }
 
@@ -283,6 +303,8 @@ namespace Game.Infrastructure
             var uiSnapshot = new RunUiSnapshot();
             if (host.Flow.Session != null && host.Flow.Session.CaptureUiSnapshot(uiSnapshot))
                 result.simulationSeconds = uiSnapshot.DurationSeconds;
+            else if (host.Flow.HasResult)
+                result.simulationSeconds = host.Flow.LatestResult.DurationSeconds;
             result.distinctEnemyProfileIds = new string[enemyProfiles.Count];
             enemyProfiles.CopyTo(result.distinctEnemyProfileIds);
             Array.Sort(result.distinctEnemyProfileIds, StringComparer.Ordinal);
@@ -483,14 +505,53 @@ namespace Game.Infrastructure
         private static void DriveActiveRun(
             QinglanDemoRuntimeHost host,
             double elapsed,
+            double frameElapsed,
             double simulationScale,
             bool g42,
+            bool finalAcceptance,
             ref long drivenSimulationTicks,
             ref int waypointIndex,
             QinglanG40VisualAcceptanceResult result,
             ISet<string> enemyProfiles,
             ISet<SpatialEntity> observedViews)
         {
+            if (finalAcceptance)
+            {
+                switch (host.Flow.Stage)
+                {
+                    case DemoFlowStage.Active:
+                        host.SetVisualAcceptanceMovement(
+                            ResolveWaypointMovement(host, g42, false, ref waypointIndex));
+                        host.TickRuntime(frameElapsed * simulationScale);
+                        if (host.Flow.Session != null)
+                            drivenSimulationTicks = Math.Max(
+                                drivenSimulationTicks,
+                                host.Flow.Session.Runner.Clock.TickCount);
+                        if (host.Flow.Stage == DemoFlowStage.Ending) host.TickRuntime(0d);
+                        CollectMetrics(host, result, enemyProfiles, observedViews);
+                        break;
+                    case DemoFlowStage.UpgradePaused:
+                        host.Flow.Execute(
+                            QinglanUiCommand.SelectUpgrade,
+                            "upgrade",
+                            ChooseStableUpgradeIndex(host.Flow.Session));
+                        host.TickRuntime(0d);
+                        break;
+                    case DemoFlowStage.RewardPaused:
+                        host.Flow.Execute(
+                            QinglanUiCommand.SelectReward,
+                            "reward",
+                            ChooseStableRewardIndex(host.Flow.Session));
+                        host.TickRuntime(0d);
+                        break;
+                    default:
+                        host.ClearVisualAcceptanceMovement();
+                        host.TickRuntime(0d);
+                        break;
+                }
+                return;
+            }
+
             var targetSimulationTicks = CalculateTargetSimulationTickCount(elapsed, simulationScale);
             var safety = 0;
             while (drivenSimulationTicks < targetSimulationTicks && safety++ < 64)
@@ -583,6 +644,13 @@ namespace Game.Infrastructure
         private static Vector2 ResolveWaypointMovement(
             QinglanDemoRuntimeHost host,
             bool g42,
+            ref int waypointIndex) =>
+            ResolveWaypointMovement(host, g42, true, ref waypointIndex);
+
+        private static Vector2 ResolveWaypointMovement(
+            QinglanDemoRuntimeHost host,
+            bool g42,
+            bool settleAtFinalWaypoint,
             ref int waypointIndex)
         {
             var session = host.Flow.Session;
@@ -591,12 +659,19 @@ namespace Game.Infrastructure
             var position = new Vector2(
                 playerSnapshot.CurrentPosition.X,
                 playerSnapshot.CurrentPosition.Y);
-            return ResolveWaypointMovement(position, g42, ref waypointIndex);
+            return ResolveWaypointMovement(position, g42, settleAtFinalWaypoint, ref waypointIndex);
         }
 
         internal static Vector2 ResolveWaypointMovement(
             Vector2 position,
             bool g42,
+            ref int waypointIndex) =>
+            ResolveWaypointMovement(position, g42, true, ref waypointIndex);
+
+        internal static Vector2 ResolveWaypointMovement(
+            Vector2 position,
+            bool g42,
+            bool settleAtFinalWaypoint,
             ref int waypointIndex)
         {
             var waypoints = g42 ? G42AcceptanceWaypoints : AcceptanceWaypoints;
@@ -604,10 +679,11 @@ namespace Game.Infrastructure
             {
                 var delta = waypoints[waypointIndex] - position;
                 if (delta.sqrMagnitude > 2.25f) return delta.normalized;
-                if (g42 && waypointIndex == waypoints.Length - 1) return Vector2.zero;
+                if (g42 && settleAtFinalWaypoint && waypointIndex == waypoints.Length - 1)
+                    return Vector2.zero;
                 waypointIndex = (waypointIndex + 1) % waypoints.Length;
             }
-            return g42 ? Vector2.zero : Vector2.right;
+            return g42 && settleAtFinalWaypoint ? Vector2.zero : Vector2.right;
         }
 
         private static void CollectMetrics(

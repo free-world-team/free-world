@@ -362,6 +362,15 @@ namespace Game.Tests.EditMode
 
             Assert.That(waypointIndex, Is.EqualTo(4));
             Assert.That(movement, Is.EqualTo(Vector2.zero));
+
+            movement = QinglanG40VisualAcceptanceRunner.ResolveWaypointMovement(
+                new Vector2(34f, 10f),
+                true,
+                false,
+                ref waypointIndex);
+            Assert.That(waypointIndex, Is.EqualTo(0));
+            Assert.That(movement.x, Is.LessThan(0f));
+            Assert.That(movement.y, Is.LessThan(0f));
         }
 
         [Test]
