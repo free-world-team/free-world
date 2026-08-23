@@ -49,6 +49,8 @@ namespace Game.UI
         private VerticalLayoutGroup optionListLayout;
         private ContentSizeFitter optionContentFitter;
         private RectTransform buildPanelRect;
+        private RectTransform vitalsPanelRect;
+        private RectTransform runStatusPanelRect;
         private Image settingsPreviewPanel;
         private Image settingsPreviewAccent;
         private TMP_Text settingsPreviewText;
@@ -131,7 +133,9 @@ namespace Game.UI
                 dangerText.ForceMeshUpdate();
                 if (IsOverflowing(pageText) || IsOverflowing(hudText) || IsOverflowing(dangerText) ||
                     IsOverflowing(vitalsText) || IsOverflowing(runStatusText) || IsOverflowing(bossText) ||
-                    IsOverflowing(objectiveText)) return true;
+                    IsOverflowing(objectiveText) || IsOverflowing(settingsPreviewText) ||
+                    IsOverflowing(pageHeroTitle) || IsOverflowing(pageHeroDescription) || IsOverflowing(pageHeroValue))
+                    return true;
                 for (var index = 0; index < optionCards.Count; index++)
                     if (optionCards[index].HasOverflow) return true;
                 return false;
@@ -421,12 +425,25 @@ namespace Game.UI
                 runStatusText.fontSize = Mathf.RoundToInt(QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
                 bossText.fontSize = Mathf.RoundToInt(QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
                 objectiveText.fontSize = Mathf.RoundToInt(QinglanUiTheme.MinimumBodyFontSize1080p * settings.FontScale);
+                var responsiveScale = Mathf.Max(1f, settings.FontScale);
                 if (objectivePanelRect != null)
                 {
-                    var objectiveScale = Mathf.Max(1f, settings.FontScale);
-                    var objectiveHeight = 0.142f * objectiveScale * (1f + (objectiveScale - 1f) * 0.6f);
-                    var objectiveMinimumX = 0.785f - (objectiveScale - 1f) * 0.2f;
+                    var objectiveHeight = 0.142f * responsiveScale * (1f + (responsiveScale - 1f) * 0.6f);
+                    var objectiveMinimumX = 0.785f - (responsiveScale - 1f) * 0.2f;
                     objectivePanelRect.anchorMin = new Vector2(objectiveMinimumX, 0.982f - objectiveHeight);
+                }
+                if (vitalsPanelRect != null)
+                    vitalsPanelRect.anchorMin = new Vector2(0.018f, 0.982f - 0.087f * (1f + (responsiveScale - 1f) * 0.4f));
+                if (runStatusPanelRect != null)
+                    runStatusPanelRect.anchorMin = new Vector2(0.39f, 0.978f - 0.05f * (1f + (responsiveScale - 1f) * 0.4f));
+                if (settingsPreviewPanel != null)
+                {
+                    settingsPreviewPanel.rectTransform.anchorMin = new Vector2(
+                        0.64f - (responsiveScale - 1f) * 0.08f,
+                        0.06f);
+                    settingsPreviewPanel.rectTransform.anchorMax = new Vector2(
+                        0.97f,
+                        0.62f + (responsiveScale - 1f) * 0.28f);
                 }
                 for (var index = 0; index < optionCards.Count; index++)
                     optionCards[index].ApplyFontScale(settings.FontScale);
@@ -698,7 +715,9 @@ namespace Game.UI
                 pageText.rectTransform.anchorMin = new Vector2(
                     0f,
                     UsesChoiceCardLayout ? 0.76f : layout == PageLayoutKind.TitleHero ? 0.48f : layout == PageLayoutKind.Narrative ? 0.54f : 0.66f);
-                pageText.rectTransform.anchorMax = Vector2.one;
+                pageText.rectTransform.anchorMax = layout == PageLayoutKind.SettingsSplit
+                    ? new Vector2(0.62f, 1f)
+                    : Vector2.one;
             }
             if (settingsPreviewPanel != null) settingsPreviewPanel.gameObject.SetActive(previewVisible);
         }
@@ -1093,6 +1112,7 @@ namespace Game.UI
         {
             var vitalsPanel = CreatePanelUnder(hudPanel.transform, "Qinglan_HudVitals",
                 new Vector2(0.018f, 0.895f), new Vector2(0.208f, 0.982f));
+            vitalsPanelRect = vitalsPanel.rectTransform;
             vitalsPanel.color = QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink950, QinglanUiTheme.DefaultPanelAlpha);
             healthFill = CreateBar(vitalsPanel.transform, "Health", new Vector2(0.04f, 0.22f), new Vector2(0.96f, 0.48f),
                 QinglanUiTheme.Cinnabar500);
@@ -1112,6 +1132,7 @@ namespace Game.UI
 
             var runPanel = CreatePanelUnder(hudPanel.transform, "Qinglan_HudRunStatus",
                 new Vector2(0.39f, 0.928f), new Vector2(0.61f, 0.978f));
+            runStatusPanelRect = runPanel.rectTransform;
             runPanel.color = QinglanUiTheme.WithAlpha(QinglanUiTheme.Ink950, 0.86f);
             runStatusText = CreateText(runPanel.transform, "RunStatusLabel", QinglanUiTheme.MinimumBodyFontSize1080p,
                 TextAlignmentOptions.Center,
