@@ -73,6 +73,7 @@ G3 发布候选
 | [29_G3_6_RELEASE_CANDIDATE.md](29_G3_6_RELEASE_CANDIDATE.md) | G3.6 正式 Demo Release Build、Player、Manifest、合规与 DOD-01—10 门禁 |
 | [30_G4_0_2_5D_PRESENTATION_COMPLETION.md](30_G4_0_2_5D_PRESENTATION_COMPLETION.md) | G4.0 倾斜正交 2.5D、正式战场/角色/VFX/UI 与 60 秒 Player 表现门禁 |
 | [31_G4_2_VISUAL_QUALITY_OPTIMIZATION_PLAN.md](31_G4_2_VISUAL_QUALITY_OPTIMIZATION_PLAN.md) | G4.2 视觉品质审计、“青瓷剑境”方向、开放许可素材策略和分阶段重制门禁 |
+| [32_G4_2_B_F_PRODUCTION_DESIGN_SPEC.md](32_G4_2_B_F_PRODUCTION_DESIGN_SPEC.md) | G4.2-B—F UI、五区、角色/Boss/武器、VFX/音频、素材准入和最终 DOD 的生产明细 |
 
 G3.4 已于 2026-08-10 关闭：Pack `0.10.0`，15 局 12 胜 3 负，三路线胜场 `3/4/5`，三 Golden、三失败
 探针和 18 奇物兼容全部通过。机器可读证据位于 [Assets/G3.4](Assets/G3.4)。
@@ -86,10 +87,11 @@ Compliance、干净 Checkout 与 GitHub Actions 均 `PASS`。当前决定仍为 
 法律签字与最低规格物理机器认证为 `NOT_RUN`，因此 DOD-09—10 未关闭。机器可读证据位于
 [Assets/G3.6/Final](Assets/G3.6/Final)。
 
-G4.0 与 G4.1 已关闭 2.5D 表现存在性和现有存档启动稳定性，但 2026-08-12 五帧实机复审确认 UI、地图、
-角色、VFX 和高密度可读性仍未达到目标审美。G4.2 优化计划已经形成，实现尚未开始。下一步只进入
-G4.2-A：先冻结“青瓷剑境”Style Bible、Theme Token、相同 Seed 的 Before 证据和 90 秒可玩样板；样板
-取得独立人类方向签字且视觉 Rubric ≥80/100 后，才能批量进入 G4.2-B。
+G4.0 与 G4.1 已关闭 2.5D 表现存在性和现有存档启动稳定性。G4.2-A 已实现“青瓷剑境”Style Bible、
+Canonical Theme Token、紧凑 HUD、升级三卡、中央战斗区和 90 秒固定 Tick Player 自动门禁；Unity 测试、
+Validation、Development/Release Build、Release Player 和根启动器均有实际 `PASS` 证据。独立人类视觉
+Rubric 仍为 `NOT RUN`，所以 G4.2-A 保持 `INCOMPLETE`，G4.2-B—F 尚未开始。下一步必须先取得总分
+≥80/100 且每维 ≥60% 的独立人类签字，再按 32 号生产设计规范单独启动 G4.2-B。
 
 ## 4. 模块分支
 
