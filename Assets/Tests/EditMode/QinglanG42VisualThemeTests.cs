@@ -304,7 +304,12 @@ namespace Game.Tests.EditMode
             {
                 var ui = root.AddComponent<QinglanRuntimeUiRoot>();
                 ui.Initialize(new EchoLocalization(), id => "content." + id + ".name");
-                var snapshot = new RunUiSnapshot();
+                var snapshot = new RunUiSnapshot
+                {
+                    DurationSeconds = 720d,
+                    MechanicTier = 3,
+                    MechanicValue = 999.9f
+                };
                 for (var index = 0; index < 11; index++)
                     snapshot.AddBuild("qinglan.test.build." + index, 1, 8, 1);
                 for (var index = 0; index < 6; index++)
@@ -328,6 +333,14 @@ namespace Game.Tests.EditMode
                 var objectives = (RectTransform)root.transform.Find("Qinglan_HudLayer/Qinglan_HudObjectives");
                 Assert.That(objectives.anchorMin.y, Is.LessThanOrEqualTo(0.53f));
                 Assert.That(objectives.anchorMin.x, Is.LessThanOrEqualTo(0.59f));
+                var runStatus = (RectTransform)root.transform.Find(
+                    "Qinglan_HudLayer/Qinglan_HudRunStatus");
+                var runStatusLabel = runStatus.Find("RunStatusLabel").GetComponent<TMP_Text>();
+                runStatusLabel.ForceMeshUpdate();
+                Assert.That(runStatus.anchorMin.x, Is.LessThanOrEqualTo(0.261f));
+                Assert.That(runStatusLabel.isTextOverflowing, Is.False);
+                Assert.That(runStatusLabel.preferredHeight,
+                    Is.LessThanOrEqualTo(runStatusLabel.rectTransform.rect.height));
                 var overflowDiagnostic = string.Join(" | ", ui.GetComponentsInChildren<TMP_Text>(true)
                     .Where(text => text.gameObject.activeInHierarchy)
                     .Select(text => text.name + ":rect=" + text.rectTransform.rect.height.ToString("0.0") +

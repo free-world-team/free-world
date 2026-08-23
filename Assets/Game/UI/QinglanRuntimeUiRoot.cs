@@ -435,7 +435,9 @@ namespace Game.UI
                 if (vitalsPanelRect != null)
                     vitalsPanelRect.anchorMin = new Vector2(0.018f, 0.982f - 0.087f * (1f + (responsiveScale - 1f) * 0.4f));
                 if (runStatusPanelRect != null)
-                    runStatusPanelRect.anchorMin = new Vector2(0.39f, 0.978f - 0.05f * (1f + (responsiveScale - 1f) * 0.4f));
+                    runStatusPanelRect.anchorMin = new Vector2(
+                        0.39f - (responsiveScale - 1f) * 0.13f,
+                        0.978f - 0.05f * (1f + (responsiveScale - 1f) * 0.4f));
                 if (settingsPreviewPanel != null)
                 {
                     settingsPreviewPanel.rectTransform.anchorMin = new Vector2(
