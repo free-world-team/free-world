@@ -100,6 +100,7 @@ namespace Game.Presentation
                 kind,
                 playerStyle,
                 settings.ColorVision == ColorVisionMode.HighContrast,
+                !settings.ScreenShakeEnabled,
                 fallback);
             return view;
         }
@@ -125,6 +126,7 @@ namespace Game.Presentation
                 kind,
                 view.UsesPlayerStyle,
                 settings.ColorVision == ColorVisionMode.HighContrast,
+                !settings.ScreenShakeEnabled,
                 fallback);
         }
 

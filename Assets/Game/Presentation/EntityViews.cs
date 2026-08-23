@@ -85,6 +85,8 @@ namespace Game.Presentation
         private float hitReactionRemaining;
         private float attackReactionRemaining;
         private float weaponRecoveryRemaining;
+        private float visualHoldRemaining;
+        private bool reducedMotion;
         private int bossPhase = -1;
 
         public SpatialEntity Binding { get; private set; }
@@ -100,6 +102,8 @@ namespace Game.Presentation
         public PresentationFacing CurrentFacing { get; private set; } = PresentationFacing.Down;
         public PresentationPose CurrentPose { get; private set; } = PresentationPose.Idle;
         public bool HitReactionActive => hitReactionRemaining > 0f;
+        public bool PresentationVisualHoldActive => visualHoldRemaining > 0f;
+        public bool ReducedMotionActive => reducedMotion;
         public bool HeldWeaponVisible => heldWeaponRenderer != null && heldWeaponRenderer.gameObject.activeSelf;
         public HeldWeaponPresentationState HeldWeaponState { get; private set; }
         public bool HeldWeaponAttackTrailActive => heldWeaponTrail != null && heldWeaponTrail.emitting;
@@ -202,9 +206,18 @@ namespace Game.Presentation
             EntityKind kind,
             bool playerStyle,
             bool highContrast,
+            bool useReducedMotion,
             ProceduralVisualLibrary library)
         {
             if (library == null) throw new ArgumentNullException(nameof(library));
+            reducedMotion = useReducedMotion;
+            if (reducedMotion)
+            {
+                if (heldWeaponTrail != null) heldWeaponTrail.emitting = false;
+                if (projectileTrail != null) projectileTrail.emitting = false;
+            }
+            else if (projectileTrail != null && IsBound && Binding.Kind == EntityKind.Projectile)
+                projectileTrail.emitting = true;
             if (kind == EntityKind.Actor && spriteRenderer != null)
             {
                 var outline = EnsureOutline();
@@ -423,7 +436,7 @@ namespace Game.Presentation
             if (projectileTrail != null)
             {
                 projectileTrail.Clear();
-                projectileTrail.emitting = entity.Kind == EntityKind.Projectile;
+                projectileTrail.emitting = entity.Kind == EntityKind.Projectile && !reducedMotion;
             }
             gameObject.SetActive(true);
         }
@@ -433,15 +446,16 @@ namespace Game.Presentation
             if (!IsBound || snapshot.Entity != Binding) return false;
             var position = snapshot.InterpolatePosition(alpha);
             var facing = snapshot.InterpolateFacing(alpha);
-            transform.SetPositionAndRotation(
-                PresentationSpace.ToEntity(Binding.Kind, position.X, position.Y),
-                Binding.Kind == EntityKind.Area
-                    ? PresentationSpace.GroundRotation
-                    : Binding.Kind == EntityKind.Projectile
-                        ? Quaternion.Euler(0f, 0f, facing * Mathf.Rad2Deg)
-                        : Quaternion.identity);
+            if (visualHoldRemaining <= 0f)
+                transform.SetPositionAndRotation(
+                    PresentationSpace.ToEntity(Binding.Kind, position.X, position.Y),
+                    Binding.Kind == EntityKind.Area
+                        ? PresentationSpace.GroundRotation
+                        : Binding.Kind == EntityKind.Projectile
+                            ? Quaternion.Euler(0f, 0f, facing * Mathf.Rad2Deg)
+                            : Quaternion.identity);
             ApplyPose(snapshot.CurrentStateFlags, facing);
-            ApplyMotion(snapshot.CurrentStateFlags);
+            if (visualHoldRemaining <= 0f) ApplyMotion(snapshot.CurrentStateFlags);
             UpdateDepthSort(position.Y);
             UpdateHeldWeapon(facing);
             if (shadowRenderer != null)
@@ -468,6 +482,8 @@ namespace Game.Presentation
             hitReactionRemaining = 0f;
             attackReactionRemaining = 0f;
             weaponRecoveryRemaining = 0f;
+            visualHoldRemaining = 0f;
+            reducedMotion = false;
             bossPhase = -1;
             CurrentPose = PresentationPose.Idle;
             HeldWeaponState = HeldWeaponPresentationState.None;
@@ -596,6 +612,7 @@ namespace Game.Presentation
         internal void PlayHitReaction(float duration = 0.14f)
         {
             hitReactionRemaining = Mathf.Max(hitReactionRemaining, Mathf.Max(0.01f, duration));
+            if (!reducedMotion) visualHoldRemaining = Mathf.Max(visualHoldRemaining, 0.035f);
         }
 
         internal void PlayAttackReaction(float duration = 0.18f)
@@ -616,6 +633,8 @@ namespace Game.Presentation
             var delta = Mathf.Max(0f, unscaledDeltaTime);
             if (hitReactionRemaining > 0f)
                 hitReactionRemaining = Mathf.Max(0f, hitReactionRemaining - delta);
+            if (visualHoldRemaining > 0f)
+                visualHoldRemaining = Mathf.Max(0f, visualHoldRemaining - delta);
             if (attackReactionRemaining > 0f)
             {
                 attackReactionRemaining = Mathf.Max(0f, attackReactionRemaining - delta);
@@ -677,7 +696,8 @@ namespace Game.Presentation
             var boss = ProfileId.IsValid && ProfileId.Value.IndexOf(".boss.", StringComparison.Ordinal) >= 0;
             var phase = (Time.unscaledTime * (moving ? 8.5f : 3.1f)) + (Binding.Handle.Index * 0.37f);
             var wave = Mathf.Sin(phase);
-            var bob = wave * (moving ? 0.055f : boss ? 0.036f : 0.022f);
+            var motionScale = reducedMotion ? 0.22f : 1f;
+            var bob = wave * (moving ? 0.055f : boss ? 0.036f : 0.022f) * motionScale;
             if (spriteRenderer.transform == transform)
             {
                 // The renderer currently lives on the pooled entity root. Preserve the XZ
@@ -687,7 +707,7 @@ namespace Game.Presentation
             }
             else
                 spriteRenderer.transform.localPosition = new Vector3(0f, bob, 0f);
-            var squash = wave * (moving ? 0.035f : boss ? 0.022f : 0.012f);
+            var squash = wave * (moving ? 0.035f : boss ? 0.022f : 0.012f) * motionScale;
             transform.localScale = new Vector3(
                 baseScale.x * densityScale * (1f + squash),
                 baseScale.y * densityScale * (1f - squash),
@@ -734,6 +754,7 @@ namespace Game.Presentation
             }
             else if (recovering)
                 swing = (weaponRecoveryRemaining / 0.14f) * 18f;
+            if (reducedMotion) swing *= 0.28f;
 
             Vector3 socketPosition;
             float baseRotation;
@@ -782,7 +803,7 @@ namespace Game.Presentation
                 : HeldWeaponState == HeldWeaponPresentationState.Recovery
                     ? new Color(0.78f, 1f, 0.94f, 1f)
                     : Color.white;
-            if (heldWeaponTrail != null) heldWeaponTrail.emitting = attacking;
+            if (heldWeaponTrail != null) heldWeaponTrail.emitting = attacking && !reducedMotion;
         }
 
         private void UpdateDepthSort(float simulationY)

@@ -9,7 +9,8 @@ namespace Game.Presentation
     {
         Hit = 1,
         Death = 2,
-        Status = 3
+        Status = 3,
+        Pickup = 4
     }
 
     /// <summary>Presentation-only request translated from immutable simulation events.</summary>

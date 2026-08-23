@@ -25,6 +25,7 @@ namespace Game.Presentation
         private EntityViewPool<AreaView> areas;
         private EntityViewPool<PickupView> pickups;
         private VfxRequestPool vfx;
+        private StagedPresentationEffectSequencer stagedVfx;
         private DamageNumberPool damageNumbers;
         private AudioRequestRouter audioRouter;
         private ProceduralMapPresentation mapPresentation;
@@ -35,11 +36,16 @@ namespace Game.Presentation
         private DirectionalSpriteCatalog directionalSprites;
         private Game.Core.ContentId defaultFormalPickupProfileId;
         private ColorVisionMode lastColorVision;
+        private bool lastScreenShakeEnabled;
+        private float lastFlashIntensity;
         private PresentationMixState mixState;
         private long consumedTick = -1;
         private int lastMechanicTier = -1;
         private int lastBossPhase = -1;
         private bool lastHadBoss;
+        private float pendingCameraImpulseAmplitude;
+        private float pendingCameraImpulseDuration;
+        private float cameraImpulseCooldown;
         private bool initialized;
 
         public int ActiveViewCount => views.Count;
@@ -47,6 +53,7 @@ namespace Game.Presentation
         public int LastHitRequestCount { get; private set; }
         public int LastDeathRequestCount { get; private set; }
         public int LastStatusRequestCount { get; private set; }
+        public int LastPickupRequestCount { get; private set; }
         public int MissingProfileFallbackCount { get; private set; }
         public int ActiveVfxCount => vfx?.ActiveCount ?? 0;
         public int ActiveDamageNumberCount => damageNumbers?.ActiveCount ?? 0;
@@ -58,7 +65,16 @@ namespace Game.Presentation
         public int AudioReservedCriticalCapacity => audioRouter?.ReservedCriticalCapacity ?? 0;
         public bool FormalAudioLoaded => audioRouter?.FormalCatalogLoaded == true;
         public long DroppedVfxRequestCount => vfx?.DroppedRequestCount ?? 0;
+        public long DroppedCriticalVfxRequestCount => vfx?.GetDroppedCount(PresentationPriority.CriticalDanger) ?? 0;
+        public int PeakActiveVfxCount => vfx?.PeakActiveCount ?? 0;
+        public long EvictedLowerPriorityVfxCount => vfx?.EvictedLowerPriorityCount ?? 0;
+        public long MergedCriticalVfxCount => vfx?.MergedCriticalCount ?? 0;
         public long DroppedAudioRequestCount => audioRouter?.DroppedRequestCount ?? 0;
+        public long DroppedCriticalAudioRequestCount => audioRouter?.GetDroppedCount(PresentationPriority.CriticalDanger) ?? 0;
+        public int PeakActiveAudioCount => audioRouter?.PeakActiveCount ?? 0;
+        public long SuppressedAudioCooldownCount => audioRouter?.SuppressedCooldownCount ?? 0;
+        public long EvictedLowerPriorityAudioCount => audioRouter?.EvictedLowerPriorityCount ?? 0;
+        public long MergedCriticalAudioCount => audioRouter?.MergedCriticalCount ?? 0;
         public int MapMarkerCount => mapPresentation?.MarkerCount ?? 0;
         public int MapGroundTileCount => mapPresentation?.GroundTileCount ?? 0;
         public int FormalMapGroundTileCount => mapPresentation?.FormalGroundTileCount ?? 0;
@@ -77,7 +93,24 @@ namespace Game.Presentation
         public long TotalHitRequestCount { get; private set; }
         public long TotalDeathRequestCount { get; private set; }
         public long TotalStatusRequestCount { get; private set; }
+        public long TotalPickupRequestCount { get; private set; }
         public long FormalVfxSpawnCount { get; private set; }
+        public int ActiveStagedVfxSequenceCount => stagedVfx?.ActiveCount ?? 0;
+        public long BegunStagedVfxSequenceCount => stagedVfx?.BegunSequenceCount ?? 0;
+        public long CompletedStagedVfxSequenceCount => stagedVfx?.CompletedSequenceCount ?? 0;
+        public long DroppedStagedVfxSequenceCount => stagedVfx?.DroppedSequenceCount ?? 0;
+        public long DroppedCriticalStagedVfxSequenceCount => stagedVfx?.GetDroppedCount(PresentationPriority.CriticalDanger) ?? 0;
+        public long EvictedLowerPriorityStagedVfxSequenceCount => stagedVfx?.EvictedLowerPrioritySequenceCount ?? 0;
+        public long MergedCriticalStagedVfxSequenceCount => stagedVfx?.MergedCriticalSequenceCount ?? 0;
+        public long ReducedMotionStageSpawnCount => stagedVfx?.ReducedMotionStageSpawnCount ?? 0;
+        public long AnticipationVfxStageCount => stagedVfx?.GetStageSpawnCount(PresentationVfxStage.Anticipation) ?? 0;
+        public long LaunchVfxStageCount => stagedVfx?.GetStageSpawnCount(PresentationVfxStage.Launch) ?? 0;
+        public long TravelVfxStageCount => stagedVfx?.GetStageSpawnCount(PresentationVfxStage.Travel) ?? 0;
+        public long ImpactVfxStageCount => stagedVfx?.GetStageSpawnCount(PresentationVfxStage.Impact) ?? 0;
+        public long ResidueVfxStageCount => stagedVfx?.GetStageSpawnCount(PresentationVfxStage.Residue) ?? 0;
+        public bool ReducedMotionActive => initialized && !settings.ScreenShakeEnabled;
+        public long PresentationHitStopCount { get; private set; }
+        public long CameraImpulseRequestCount { get; private set; }
         public long DirectionalAnimationFrameChangeCount => actors?.AnimationFrameChangeCount ?? 0;
         public int DirectionalSpriteSetCount => directionalSprites?.Count ?? 0;
         public int BossPhaseSpriteSetCount => directionalSprites?.BossPhaseSetCount ?? 0;
@@ -162,9 +195,12 @@ namespace Game.Presentation
             areas = new EntityViewPool<AreaView>(transform, EntityKind.Area, catalog, proceduralProfiles, settings, fallback, directionalSprites, 8);
             pickups = new EntityViewPool<PickupView>(transform, EntityKind.Pickup, catalog, proceduralProfiles, settings, fallback, directionalSprites, 16);
             vfx = new VfxRequestPool(transform, fallback, 200, 32);
+            stagedVfx = new StagedPresentationEffectSequencer(vfx);
             damageNumbers = new DamageNumberPool(sharedCanvas);
             audioRouter = new AudioRequestRouter(transform, formalAudio);
             lastColorVision = settings.ColorVision;
+            lastScreenShakeEnabled = settings.ScreenShakeEnabled;
+            lastFlashIntensity = settings.FlashIntensity;
             initialized = true;
         }
 
@@ -172,9 +208,13 @@ namespace Game.Presentation
         {
             if (!initialized) throw new InvalidOperationException("PresentationCoordinator must be initialized.");
             if (snapshot == null) throw new ArgumentNullException(nameof(snapshot));
-            if (lastColorVision != settings.ColorVision)
+            if (lastColorVision != settings.ColorVision ||
+                lastScreenShakeEnabled != settings.ScreenShakeEnabled ||
+                !Mathf.Approximately(lastFlashIntensity, settings.FlashIntensity))
             {
                 lastColorVision = settings.ColorVision;
+                lastScreenShakeEnabled = settings.ScreenShakeEnabled;
+                lastFlashIntensity = settings.FlashIntensity;
                 RefreshAllStyles(session);
             }
             var activePickupCount = 0;
@@ -223,16 +263,16 @@ namespace Game.Presentation
                         var castColor = castStyle.Color;
                         castColor.a = Mathf.Max(0.32f, settings.FlashIntensity * 0.65f);
                         castStyle = castStyle.WithColor(castColor, castStyle.OutlineColor);
-                        var castRequest = new ProceduralVfxRequest(
+                        TryResolveFormalEffectSprite(visualProfileId, entry.Entity.Kind, out var castSprite);
+                        if (stagedVfx.TryBegin(
+                            visualProfileId,
                             new Vector2(entry.CurrentPosition.X, entry.CurrentPosition.Y),
                             castStyle,
                             0.42f,
-                            0.16f);
-                        if (TryResolveFormalEffectSprite(visualProfileId, entry.Entity.Kind, out var castSprite))
-                        {
-                            if (vfx.TrySpawn(castRequest, castSprite)) FormalVfxSpawnCount++;
-                        }
-                        else vfx.TrySpawn(castRequest);
+                            0f,
+                            castSprite,
+                            ReducedMotionActive) && castSprite != null)
+                            FormalVfxSpawnCount++;
                     }
                     else if (entry.Entity.Kind == EntityKind.Area)
                         TriggerNearestActorAttack(entry.CurrentPosition.X, entry.CurrentPosition.Y);
@@ -295,6 +335,7 @@ namespace Game.Presentation
             LastHitRequestCount = 0;
             LastDeathRequestCount = 0;
             LastStatusRequestCount = 0;
+            LastPickupRequestCount = 0;
 
             releaseBuffer.Clear();
             if (simulationEvents != null)
@@ -303,8 +344,22 @@ namespace Game.Presentation
                 {
                     var item = simulationEvents.GetAt(index);
                     var removed = new SpatialEntity(item.EntityKind, item.Handle);
-                    if (item.Type == SimulationEventType.Removed && views.ContainsKey(removed))
-                        releaseBuffer.Add(removed);
+                    if (item.Type != SimulationEventType.Removed || !views.ContainsKey(removed)) continue;
+                    if (item.EntityKind == EntityKind.Pickup)
+                    {
+                        var playerPosition = FindPlayerPosition();
+                        var deltaX = item.Position.X - playerPosition.x;
+                        var deltaY = item.Position.Y - playerPosition.y;
+                        if ((deltaX * deltaX) + (deltaY * deltaY) <= 4f)
+                            requests.Add(new PresentationRequest(
+                                PresentationRequestType.Pickup,
+                                removed,
+                                item.Position,
+                                1f,
+                                true,
+                                defaultFormalPickupProfileId));
+                    }
+                    releaseBuffer.Add(removed);
                 }
             }
 
@@ -364,15 +419,27 @@ namespace Game.Presentation
                 settings.EffectsVolume,
                 mixState);
             foreach (var pair in views) pair.Value.TickVisual(unscaledDeltaTime);
+            stagedVfx.Tick(unscaledDeltaTime, ReducedMotionActive);
             vfx.Tick(unscaledDeltaTime);
             damageNumbers.Tick(unscaledDeltaTime);
             audioRouter.Tick(unscaledDeltaTime);
+            cameraImpulseCooldown = Mathf.Max(0f, cameraImpulseCooldown - Mathf.Max(0f, unscaledDeltaTime));
         }
 
         public void SetMixState(PresentationMixState value) => mixState = value;
 
         public bool RouteUiCue(PresentationAudioCue cue) =>
             initialized && audioRouter.Route(cue, PresentationPriority.Mechanic, 0.72f);
+
+        /// <summary>Consumes the strongest queued presentation-only camera impulse.</summary>
+        public bool TryConsumeCameraImpulse(out float amplitude, out float duration)
+        {
+            amplitude = pendingCameraImpulseAmplitude;
+            duration = pendingCameraImpulseDuration;
+            pendingCameraImpulseAmplitude = 0f;
+            pendingCameraImpulseDuration = 0f;
+            return amplitude > 0f && duration > 0f;
+        }
 
         public void SetMap(ProceduralMapConfiguration configuration)
         {
@@ -425,6 +492,7 @@ namespace Game.Presentation
                     true);
                 vfx.TrySpawn(new ProceduralVfxRequest(position, style, 3.2f, 0.55f));
                 audioRouter.Route(style.AudioCue, style.Priority, 0.8f);
+                QueueCameraImpulse(0.12f, 0.18f);
             }
             lastHadBoss = snapshot.HasBoss;
             lastBossPhase = snapshot.HasBoss ? snapshot.BossPhase : -1;
@@ -438,10 +506,14 @@ namespace Game.Presentation
             foreach (var pair in views) releaseBuffer.Add(pair.Key);
             for (var index = 0; index < releaseBuffer.Count; index++) Release(releaseBuffer[index]);
             requests.Clear();
+            stagedVfx.Clear();
             consumedTick = -1;
             lastMechanicTier = -1;
             lastBossPhase = -1;
             lastHadBoss = false;
+            pendingCameraImpulseAmplitude = 0f;
+            pendingCameraImpulseDuration = 0f;
+            cameraImpulseCooldown = 0f;
             DensePickupPresentationActive = false;
             DensityGroupedPickupViewCount = 0;
             DensityEmphasisPickupViewCount = 0;
@@ -511,6 +583,18 @@ namespace Game.Presentation
             nearest?.PlayAttackReaction();
         }
 
+        private void QueueCameraImpulse(float amplitude, float duration)
+        {
+            if (!settings.ScreenShakeEnabled) return;
+            var boundedAmplitude = Mathf.Clamp(amplitude * Mathf.Max(0.25f, settings.FlashIntensity), 0f, 0.12f);
+            if (cameraImpulseCooldown > 0f && boundedAmplitude < 0.07f) return;
+            if (boundedAmplitude <= pendingCameraImpulseAmplitude) return;
+            pendingCameraImpulseAmplitude = boundedAmplitude;
+            pendingCameraImpulseDuration = Mathf.Clamp(duration, 0.04f, 0.2f);
+            cameraImpulseCooldown = boundedAmplitude >= 0.07f ? 0.12f : 0.08f;
+            CameraImpulseRequestCount++;
+        }
+
         private void RouteRequests()
         {
             for (var index = 0; index < requests.Count; index++)
@@ -523,7 +607,12 @@ namespace Game.Presentation
                     case PresentationRequestType.Hit:
                         LastHitRequestCount++;
                         TotalHitRequestCount++;
-                        if (views.TryGetValue(request.Target, out var hitView)) hitView.PlayHitReaction();
+                        if (views.TryGetValue(request.Target, out var hitView))
+                        {
+                            hitView.PlayHitReaction();
+                            PresentationHitStopCount++;
+                        }
+                        QueueCameraImpulse(request.Emphasized ? 0.045f : 0.025f, 0.06f);
                         if (settings.FlashIntensity > 0f || style.Priority == PresentationPriority.CriticalDanger)
                         {
                             var color = style.Color;
@@ -558,6 +647,21 @@ namespace Game.Presentation
                             deathSprite);
                         if (deathSpawned && deathSprite != null) FormalVfxSpawnCount++;
                         audioRouter.Route(PresentationAudioCue.Death, style.Priority, 0.5f);
+                        QueueCameraImpulse(0.075f, 0.12f);
+                        break;
+                    case PresentationRequestType.Pickup:
+                        LastPickupRequestCount++;
+                        TotalPickupRequestCount++;
+                        var pickupColor = style.Color;
+                        pickupColor.a = Mathf.Max(0.55f, settings.FlashIntensity * 0.75f);
+                        style = style.WithColor(pickupColor, style.OutlineColor);
+                        var pickupEffect = new ProceduralVfxRequest(position, style, 0.68f, 0.24f, 45f, false);
+                        if (TryResolveFormalEffectSprite(request.ContentId, EntityKind.Pickup, out var pickupSprite))
+                        {
+                            if (vfx.TrySpawn(pickupEffect, pickupSprite)) FormalVfxSpawnCount++;
+                        }
+                        else vfx.TrySpawn(pickupEffect);
+                        audioRouter.Route(PresentationAudioCue.Pickup, PresentationPriority.Mechanic, 0.42f);
                         break;
                     case PresentationRequestType.Status:
                         LastStatusRequestCount++;

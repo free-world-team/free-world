@@ -172,6 +172,8 @@ namespace Game.Tests.EditMode
             Assert.That(router.PeakActiveCount, Is.EqualTo(4));
             Assert.That(router.SuppressedCooldownCount, Is.EqualTo(1));
             Assert.That(router.DroppedRequestCount, Is.EqualTo(1));
+            Assert.That(router.GetDroppedCount(PresentationPriority.Combat), Is.EqualTo(1));
+            Assert.That(router.GetDroppedCount(PresentationPriority.CriticalDanger), Is.Zero);
             Assert.That(router.EvictedLowerPriorityCount, Is.EqualTo(3));
             Assert.That(router.MergedCriticalCount, Is.EqualTo(1));
             router.Dispose();

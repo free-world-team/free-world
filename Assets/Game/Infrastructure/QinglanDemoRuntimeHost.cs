@@ -158,12 +158,12 @@ namespace Game.Infrastructure
                         session.RenderSnapshot.Tick,
                         session.SimulationEvents,
                         session.CombatEvents);
-                    if (Presentation.LastDeathRequestCount > 0 && Flow.Settings.ScreenShakeEnabled)
-                        cameraRig.RequestShake(0.18f * Flow.Settings.FlashIntensity, 0.2f);
                 }
                 Presentation.Sync(session.RenderSnapshot, session.InterpolationAlpha, session);
                 if (Presentation.TryGetView(session.Player, out var playerView)) cameraRig.SetTarget(playerView.transform);
                 Presentation.SyncRunState(presenter.CurrentHud);
+                if (Presentation.TryConsumeCameraImpulse(out var amplitude, out var duration))
+                    cameraRig.RequestShake(amplitude, duration);
             }
             Presentation.SetMixState(ResolveMixState());
             Presentation.TickEffects((float)elapsedSeconds);

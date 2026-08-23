@@ -5,6 +5,8 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using Game.Application;
+using Game.Core;
+using Game.Presentation;
 using Game.Simulation;
 using Game.UI;
 using TMPro;
@@ -15,7 +17,7 @@ using UnityEngine.UI;
 namespace Game.Infrastructure
 {
     /// <summary>
-    /// Opt-in visible Player driver for the G4.0 sixty-second and G4.2-A ninety-second
+    /// Opt-in visible Player driver for the G4.0 sixty-second and G4.2 production
     /// visual acceptance gates.
     /// It exercises one real card click, the production flow, simulation and presentation,
     /// and captures five rendered frames without introducing a second gameplay state path.
@@ -73,6 +75,27 @@ namespace Game.Infrastructure
             "qinglan.skill.weapon.lihuo_wheel",
             "qinglan.skill.weapon.yellow_talisman"
         };
+        private static readonly string[] G42MajorPresentationProfiles =
+        {
+            "qinglan.presentation.skill.yufeng_sword",
+            "qinglan.presentation.skill.yellow_talisman",
+            "qinglan.presentation.skill.lihuo_wheel",
+            "qinglan.presentation.skill.tide_orb",
+            "qinglan.presentation.skill.zhenyue_seal",
+            "qinglan.presentation.skill.spirit_vine_seed"
+        };
+
+        private static int CountDistinctMajorSkillSignatures()
+        {
+            var signatures = new HashSet<int>();
+            for (var index = 0; index < G42MajorPresentationProfiles.Length; index++)
+            {
+                var id = ContentId.Create(G42MajorPresentationProfiles[index]);
+                if (id.IsSuccess)
+                    signatures.Add(StagedPresentationEffectSequencer.BuildNonColorSignature(id.Value));
+            }
+            return signatures.Count;
+        }
 
         internal static bool IsRequested()
         {
@@ -93,8 +116,8 @@ namespace Game.Infrastructure
             var host = GetComponent<QinglanDemoRuntimeHost>();
             var result = new QinglanG40VisualAcceptanceResult
             {
-                schemaVersion = g42 ? 2 : 1,
-                milestone = g42 ? "G4.2-A" : "G4.0",
+                schemaVersion = g42 ? 3 : 1,
+                milestone = g42 ? "G4.2-E" : "G4.0",
                 generatedAtUtc = DateTime.UtcNow.ToString("O", CultureInfo.InvariantCulture),
                 status = "FAIL",
                 requiredWallClockSeconds = requiredWallClockSeconds,
@@ -103,7 +126,8 @@ namespace Game.Infrastructure
                 screenHeight = Screen.height,
                 humanVisualSignoff = false,
                 runSeed = g42 ? G42RunSeed.ToString("X16", CultureInfo.InvariantCulture) : string.Empty,
-                rewardSeed = g42 ? G42RewardSeed.ToString("X16", CultureInfo.InvariantCulture) : string.Empty
+                rewardSeed = g42 ? G42RewardSeed.ToString("X16", CultureInfo.InvariantCulture) : string.Empty,
+                majorSkillNonColorSignatureCount = g42 ? CountDistinctMajorSkillSignatures() : 0
             };
             if (host == null)
             {
@@ -251,8 +275,34 @@ namespace Game.Infrastructure
             result.totalHitRequestCount = host.Presentation.TotalHitRequestCount;
             result.totalDeathRequestCount = host.Presentation.TotalDeathRequestCount;
             result.totalStatusRequestCount = host.Presentation.TotalStatusRequestCount;
+            result.totalPickupRequestCount = host.Presentation.TotalPickupRequestCount;
             result.formalVfxSpawnCount = host.Presentation.FormalVfxSpawnCount;
             result.createdVfxCount = host.Presentation.CreatedVfxCount;
+            result.peakActiveVfx = host.Presentation.PeakActiveVfxCount;
+            result.droppedVfxRequestCount = host.Presentation.DroppedVfxRequestCount;
+            result.droppedCriticalVfxRequestCount = host.Presentation.DroppedCriticalVfxRequestCount;
+            result.evictedLowerPriorityVfxCount = host.Presentation.EvictedLowerPriorityVfxCount;
+            result.mergedCriticalVfxCount = host.Presentation.MergedCriticalVfxCount;
+            result.begunStagedVfxSequenceCount = host.Presentation.BegunStagedVfxSequenceCount;
+            result.completedStagedVfxSequenceCount = host.Presentation.CompletedStagedVfxSequenceCount;
+            result.droppedStagedVfxSequenceCount = host.Presentation.DroppedStagedVfxSequenceCount;
+            result.droppedCriticalStagedVfxSequenceCount = host.Presentation.DroppedCriticalStagedVfxSequenceCount;
+            result.evictedLowerPriorityStagedVfxSequenceCount = host.Presentation.EvictedLowerPriorityStagedVfxSequenceCount;
+            result.mergedCriticalStagedVfxSequenceCount = host.Presentation.MergedCriticalStagedVfxSequenceCount;
+            result.reducedMotionStageSpawnCount = host.Presentation.ReducedMotionStageSpawnCount;
+            result.anticipationVfxStageCount = host.Presentation.AnticipationVfxStageCount;
+            result.launchVfxStageCount = host.Presentation.LaunchVfxStageCount;
+            result.travelVfxStageCount = host.Presentation.TravelVfxStageCount;
+            result.impactVfxStageCount = host.Presentation.ImpactVfxStageCount;
+            result.residueVfxStageCount = host.Presentation.ResidueVfxStageCount;
+            result.presentationHitStopCount = host.Presentation.PresentationHitStopCount;
+            result.cameraImpulseRequestCount = host.Presentation.CameraImpulseRequestCount;
+            result.peakActiveAudio = host.Presentation.PeakActiveAudioCount;
+            result.droppedAudioRequestCount = host.Presentation.DroppedAudioRequestCount;
+            result.droppedCriticalAudioRequestCount = host.Presentation.DroppedCriticalAudioRequestCount;
+            result.suppressedAudioCooldownCount = host.Presentation.SuppressedAudioCooldownCount;
+            result.evictedLowerPriorityAudioCount = host.Presentation.EvictedLowerPriorityAudioCount;
+            result.mergedCriticalAudioCount = host.Presentation.MergedCriticalAudioCount;
             result.missingProfileFallbackCount = host.Presentation.MissingProfileFallbackCount;
             var sharedAutomaticGate = result.formalVisualsLoaded && result.formalAudioLoaded &&
                                          result.formalFontsLoaded && result.realCardClicks > 0 &&
@@ -272,6 +322,7 @@ namespace Game.Infrastructure
                                          result.actorViewAcquireCount > result.createdActorViewCount &&
                                          result.totalHitRequestCount > 0 &&
                                          result.totalDeathRequestCount > 0 &&
+                                         result.totalPickupRequestCount > 0 &&
                                          result.formalVfxSpawnCount > 0 &&
                                          result.usesTiltedOrthographicCamera && result.usesXzGroundPlane &&
                                          result.raisedMapGeometryCount > 0 &&
@@ -290,6 +341,22 @@ namespace Game.Infrastructure
                                          result.maxDensityEmphasisPickupViews > 0 &&
                                          result.maxActorViews >= 103 && result.maxPickupViews >= 268 &&
                                          result.maxActiveVfx >= 42 &&
+                                         result.majorSkillNonColorSignatureCount == 6 &&
+                                         result.begunStagedVfxSequenceCount > 0 &&
+                                         result.completedStagedVfxSequenceCount > 0 &&
+                                         result.anticipationVfxStageCount > 0 &&
+                                         result.launchVfxStageCount > 0 &&
+                                         result.travelVfxStageCount > 0 &&
+                                         result.impactVfxStageCount > 0 &&
+                                         result.residueVfxStageCount > 0 &&
+                                         result.droppedCriticalVfxRequestCount == 0 &&
+                                         result.droppedCriticalStagedVfxSequenceCount == 0 &&
+                                         result.droppedCriticalAudioRequestCount == 0 &&
+                                         result.presentationHitStopCount > 0 &&
+                                         result.cameraImpulseRequestCount > 0 &&
+                                         result.peakActiveAudio > 0 &&
+                                         result.reducedMotionAlternativeObserved &&
+                                         result.reducedMotionStageSpawnCount > 0 &&
                                          result.accessibilityScreenshotCount == 8 &&
                                          !result.accessibilityTextOverflowObserved &&
                                          result.grayscaleReviewScreenshotCount == 1);
@@ -591,6 +658,18 @@ namespace Game.Infrastructure
             settings.SetFlashIntensity(0f);
             host.Ui.ApplyAccessibility(settings);
             host.TickRuntime(0d);
+            for (var tick = 0; tick < 120; tick++)
+            {
+                host.TickRuntime(SimulationClock.TickDurationSeconds);
+                yield return null;
+            }
+            EntityView reducedMotionPlayerView = null;
+            var reducedMotionViewReady = host.Flow.Session != null &&
+                                         host.Presentation.TryGetView(host.Flow.Session.Player, out reducedMotionPlayerView);
+            result.reducedMotionAlternativeObserved =
+                host.Presentation.ReducedMotionActive && reducedMotionViewReady &&
+                reducedMotionPlayerView.ReducedMotionActive &&
+                !reducedMotionPlayerView.HeldWeaponAttackTrailActive;
             SampleAccessibilityOverflow(host, result, "reduce-motion");
             yield return CaptureScreenshot(result, "accessibility-reduce-motion", screenshotVariable, true, false);
 
@@ -800,8 +879,36 @@ namespace Game.Infrastructure
             public long totalHitRequestCount;
             public long totalDeathRequestCount;
             public long totalStatusRequestCount;
+            public long totalPickupRequestCount;
             public long formalVfxSpawnCount;
             public int createdVfxCount;
+            public int peakActiveVfx;
+            public long droppedVfxRequestCount;
+            public long droppedCriticalVfxRequestCount;
+            public long evictedLowerPriorityVfxCount;
+            public long mergedCriticalVfxCount;
+            public int majorSkillNonColorSignatureCount;
+            public long begunStagedVfxSequenceCount;
+            public long completedStagedVfxSequenceCount;
+            public long droppedStagedVfxSequenceCount;
+            public long droppedCriticalStagedVfxSequenceCount;
+            public long evictedLowerPriorityStagedVfxSequenceCount;
+            public long mergedCriticalStagedVfxSequenceCount;
+            public long reducedMotionStageSpawnCount;
+            public long anticipationVfxStageCount;
+            public long launchVfxStageCount;
+            public long travelVfxStageCount;
+            public long impactVfxStageCount;
+            public long residueVfxStageCount;
+            public bool reducedMotionAlternativeObserved;
+            public long presentationHitStopCount;
+            public long cameraImpulseRequestCount;
+            public int peakActiveAudio;
+            public long droppedAudioRequestCount;
+            public long droppedCriticalAudioRequestCount;
+            public long suppressedAudioCooldownCount;
+            public long evictedLowerPriorityAudioCount;
+            public long mergedCriticalAudioCount;
             public int missingProfileFallbackCount;
             public bool usesTiltedOrthographicCamera;
             public bool cameraOrthographic;

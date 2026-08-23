@@ -391,6 +391,7 @@ namespace Game.Presentation
         private readonly Transform root;
         private readonly AudioClip[] cueClips;
         private readonly float[] cooldowns;
+        private readonly long[] droppedByPriority = new long[4];
         private readonly int transientCapacity;
         private readonly int reservedCriticalCapacity;
         private readonly AudioSource[] stemSources;
@@ -487,6 +488,7 @@ namespace Game.Presentation
         public long SuppressedCooldownCount { get; private set; }
         public long EvictedLowerPriorityCount { get; private set; }
         public long MergedCriticalCount { get; private set; }
+        public long GetDroppedCount(PresentationPriority priority) => droppedByPriority[(int)priority];
 
         public void Route(PresentationRequestType type, float volume)
         {
@@ -511,6 +513,7 @@ namespace Game.Presentation
             if (priority != PresentationPriority.CriticalDanger && active.Count >= ordinaryLimit)
             {
                 DroppedRequestCount++;
+                droppedByPriority[(int)priority]++;
                 return false;
             }
             if (available.Count > 0) item = available.Pop();
@@ -538,6 +541,7 @@ namespace Game.Presentation
                 else
                 {
                     DroppedRequestCount++;
+                    droppedByPriority[(int)priority]++;
                     return false;
                 }
             }
