@@ -39,6 +39,8 @@ namespace Game.Infrastructure
         private const double G42FinalRequiredWallClockSeconds = 720d;
         private const double AcceptanceSimulationScale = 3.25d;
         private const double FinalAcceptanceSimulationScale = 1d;
+        private const int FinalMetricSampleStride = 5;
+        private const double FinalHeartbeatIntervalSeconds = 60d;
         private const ulong G42RunSeed = 0x4734324156495355UL;
         private const ulong G42RewardSeed = 0x514C414E47523432UL;
         private static readonly double[] G40ScreenshotTimes = { 0.5d, 15d, 30d, 45d, 60d };
@@ -233,6 +235,8 @@ namespace Game.Infrastructure
             var waypointIndex = 0;
             var nextScreenshot = 0;
             var previousElapsed = 0d;
+            var metricSampleFrame = 0;
+            var nextHeartbeat = FinalHeartbeatIntervalSeconds;
             while (true)
             {
                 var now = Time.realtimeSinceStartupAsDouble;
@@ -251,7 +255,25 @@ namespace Game.Infrastructure
                     result,
                     enemyProfiles,
                     observedViews);
-                CollectMetrics(host, result, enemyProfiles, observedViews);
+                if (!finalAcceptance || metricSampleFrame++ % FinalMetricSampleStride == 0)
+                    CollectMetrics(host, result, enemyProfiles, observedViews);
+                result.completedSimulationTicks = drivenSimulationTicks;
+                result.lastObservedSimulationSeconds =
+                    drivenSimulationTicks * SimulationClock.TickDurationSeconds;
+                result.finalFlowStage = host.Flow.Stage.ToString();
+                if (finalAcceptance && elapsed >= nextHeartbeat)
+                {
+                    result.lastHeartbeatWallClockSeconds = elapsed;
+                    Debug.Log(
+                        "[Qinglan G4.2-F Heartbeat] wall=" +
+                        elapsed.ToString("F1", CultureInfo.InvariantCulture) +
+                        "s simulation=" +
+                        result.lastObservedSimulationSeconds.ToString("F1", CultureInfo.InvariantCulture) +
+                        "s ticks=" + drivenSimulationTicks.ToString(CultureInfo.InvariantCulture) +
+                        " stage=" + result.finalFlowStage +
+                        " views=" + host.Presentation.ActiveViewCount.ToString(CultureInfo.InvariantCulture));
+                    nextHeartbeat += FinalHeartbeatIntervalSeconds;
+                }
                 RecordPerformanceSample(
                     result,
                     wallFrameSamples,
@@ -300,6 +322,13 @@ namespace Game.Infrastructure
                 yield return CaptureGrayscaleReview(result, screenshotVariable);
             }
             result.wallClockSeconds = Time.realtimeSinceStartupAsDouble - startedAt;
+            result.completedSimulationTicks = drivenSimulationTicks;
+            result.lastObservedSimulationSeconds =
+                drivenSimulationTicks * SimulationClock.TickDurationSeconds;
+            result.simulationLagSeconds = Math.Max(
+                0d,
+                result.wallClockSeconds - result.lastObservedSimulationSeconds);
+            result.finalFlowStage = host.Flow.Stage.ToString();
             var uiSnapshot = new RunUiSnapshot();
             if (host.Flow.Session != null && host.Flow.Session.CaptureUiSnapshot(uiSnapshot))
                 result.simulationSeconds = uiSnapshot.DurationSeconds;
@@ -528,7 +557,6 @@ namespace Game.Infrastructure
                                 drivenSimulationTicks,
                                 host.Flow.Session.Runner.Clock.TickCount);
                         if (host.Flow.Stage == DemoFlowStage.Ending) host.TickRuntime(0d);
-                        CollectMetrics(host, result, enemyProfiles, observedViews);
                         break;
                     case DemoFlowStage.UpgradePaused:
                         host.Flow.Execute(
@@ -1054,6 +1082,11 @@ namespace Game.Infrastructure
             public double acceptanceSimulationScale;
             public double wallClockSeconds;
             public double simulationSeconds;
+            public long completedSimulationTicks;
+            public double lastObservedSimulationSeconds;
+            public double lastHeartbeatWallClockSeconds;
+            public double simulationLagSeconds;
+            public string finalFlowStage;
             public int screenWidth;
             public int screenHeight;
             public string graphicsDeviceName;
