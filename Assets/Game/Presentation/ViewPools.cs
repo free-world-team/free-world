@@ -50,6 +50,9 @@ namespace Game.Presentation
         public int CreatedCount => all.Count;
         public int AvailableCount => available.Count;
         public int ActiveCount => all.Count - available.Count;
+        public long AcquireCount { get; private set; }
+        public long PoolHitCount { get; private set; }
+        public long ExpansionCount { get; private set; }
         public long AnimationFrameChangeCount
         {
             get
@@ -67,7 +70,11 @@ namespace Game.Presentation
             out bool usedFallback)
         {
             if (entity.Kind != kind) throw new ArgumentException("Entity kind does not match this pool.", nameof(entity));
-            var view = available.Count > 0 ? available.Pop() : Create();
+            var reused = available.Count > 0;
+            var view = reused ? available.Pop() : Create();
+            AcquireCount++;
+            if (reused) PoolHitCount++;
+            else ExpansionCount++;
             if (profiles.TryResolve(visualProfileId, kind, out var profile))
             {
                 ConfigureFormal(view, profile, playerStyle);
@@ -86,7 +93,7 @@ namespace Game.Presentation
             view.SetStyleIdentity(visualProfileId, playerStyle);
             view.ConfigureAnimation(
                 directionalSprites.TryResolve(visualProfileId, out var spriteSet) ? spriteSet : null);
-            view.ConfigureHeldWeapon(playerStyle ? heldWeaponSprite : null);
+            view.ConfigureHeldWeapon(playerStyle ? heldWeaponSprite : null, fallback.TrailMaterial);
             if (kind == EntityKind.Projectile) view.ConfigureProjectileTrail(fallback.TrailMaterial);
             view.Bind(entity);
             view.ConfigureQingciReadability(
@@ -156,8 +163,10 @@ namespace Game.Presentation
                     StringComparison.Ordinal);
             if (kind == EntityKind.Actor)
             {
-                var scale = playerStyle ? 1.65f :
-                    profile.StableId.IndexOf(".boss.", StringComparison.Ordinal) >= 0 ? 2.2f : 1.4f;
+                var scale = playerStyle ? QinglanPresentationTheme.PlayerActorScale :
+                    profile.StableId.IndexOf(".boss.", StringComparison.Ordinal) >= 0
+                        ? QinglanPresentationTheme.BossActorScale
+                        : QinglanPresentationTheme.EnemyActorScale;
                 size *= scale;
             }
             else if (defaultExperiencePickup)

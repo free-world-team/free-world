@@ -5,6 +5,14 @@ using UnityEngine;
 
 namespace Game.Presentation
 {
+    public enum HeldWeaponPresentationState : byte
+    {
+        None = 0,
+        Idle = 1,
+        Move = 2,
+        Attack = 3,
+        Recovery = 4
+    }
     /// <summary>Optional presentation-only profile resolved outside simulation truth.</summary>
     [CreateAssetMenu(menuName = "Free World/Presentation/Visual Profile")]
     public sealed class VisualProfile : ScriptableObject
@@ -61,6 +69,8 @@ namespace Game.Presentation
         private SpriteRenderer rimRenderer;
         private SpriteRenderer shadowRenderer;
         private SpriteRenderer heldWeaponRenderer;
+        private Transform heldWeaponSocket;
+        private TrailRenderer heldWeaponTrail;
         private SpriteRenderer telegraphFillRenderer;
         private SpriteRenderer telegraphDirectionRenderer;
         private TrailRenderer projectileTrail;
@@ -74,6 +84,8 @@ namespace Game.Presentation
         private float densityAlpha = 1f;
         private float hitReactionRemaining;
         private float attackReactionRemaining;
+        private float weaponRecoveryRemaining;
+        private int bossPhase = -1;
 
         public SpatialEntity Binding { get; private set; }
         public bool IsBound => Binding.IsValid;
@@ -89,6 +101,13 @@ namespace Game.Presentation
         public PresentationPose CurrentPose { get; private set; } = PresentationPose.Idle;
         public bool HitReactionActive => hitReactionRemaining > 0f;
         public bool HeldWeaponVisible => heldWeaponRenderer != null && heldWeaponRenderer.gameObject.activeSelf;
+        public HeldWeaponPresentationState HeldWeaponState { get; private set; }
+        public bool HeldWeaponAttackTrailActive => heldWeaponTrail != null && heldWeaponTrail.emitting;
+        public float HeldWeaponScale => heldWeaponRenderer == null ? 0f : heldWeaponRenderer.transform.localScale.x;
+        public bool IsBossStyle => ProfileId.IsValid &&
+            ProfileId.Value.IndexOf(".boss.", StringComparison.Ordinal) >= 0;
+        public int AppliedBossPhase => bossPhase;
+        public bool BossPhaseFrameActive => bossPhase >= 0 && animationSet?.HasBossPhaseFrames == true;
         public bool ProjectileTrailActive => projectileTrail != null && projectileTrail.emitting;
         public bool QingciOutlineActive => outlineRenderer != null && outlineRenderer.gameObject.activeSelf;
         public bool PlayerRimActive => rimRenderer != null && rimRenderer.gameObject.activeSelf;
@@ -302,16 +321,37 @@ namespace Game.Presentation
         internal void ConfigureAnimation(DirectionalSpriteSet value)
         {
             animationSet = value;
+            bossPhase = -1;
             CurrentFacing = PresentationFacing.Down;
             CurrentPose = PresentationPose.Idle;
         }
 
-        internal void ConfigureHeldWeapon(Sprite sprite)
+        internal void SetBossPhase(int phase)
+        {
+            bossPhase = phase >= 0 && IsBossStyle && animationSet?.HasBossPhaseFrames == true
+                ? Mathf.Clamp(phase, 0, DirectionalSpriteSet.BossPhaseCount - 1)
+                : -1;
+        }
+
+        internal void ConfigureHeldWeapon(Sprite sprite, Material trailMaterial = null)
         {
             if (sprite == null)
             {
+                HeldWeaponState = HeldWeaponPresentationState.None;
                 if (heldWeaponRenderer != null) heldWeaponRenderer.gameObject.SetActive(false);
+                if (heldWeaponSocket != null) heldWeaponSocket.gameObject.SetActive(false);
+                if (heldWeaponTrail != null)
+                {
+                    heldWeaponTrail.emitting = false;
+                    heldWeaponTrail.Clear();
+                }
                 return;
+            }
+            if (heldWeaponSocket == null)
+            {
+                var socket = new GameObject("WeaponSocket_YufengSword");
+                socket.transform.SetParent(transform, false);
+                heldWeaponSocket = socket.transform;
             }
             if (heldWeaponRenderer == null)
             {
@@ -319,10 +359,33 @@ namespace Game.Presentation
                 child.transform.SetParent(transform, false);
                 heldWeaponRenderer = child.AddComponent<SpriteRenderer>();
             }
+            heldWeaponSocket.gameObject.SetActive(true);
             heldWeaponRenderer.sprite = sprite;
             heldWeaponRenderer.color = Color.white;
-            heldWeaponRenderer.transform.localScale = Vector3.one * 0.32f;
+            heldWeaponRenderer.transform.localScale = Vector3.one * QinglanPresentationTheme.HeldWeaponIdleScale;
             heldWeaponRenderer.gameObject.SetActive(true);
+            HeldWeaponState = HeldWeaponPresentationState.Idle;
+
+            if (trailMaterial != null && heldWeaponTrail == null)
+            {
+                var tip = new GameObject("YufengSwordTrailTip");
+                tip.transform.SetParent(heldWeaponRenderer.transform, false);
+                tip.transform.localPosition = new Vector3(0.68f, 0f, 0f);
+                heldWeaponTrail = tip.AddComponent<TrailRenderer>();
+                heldWeaponTrail.time = 0.14f;
+                heldWeaponTrail.minVertexDistance = 0.025f;
+                heldWeaponTrail.startWidth = 0.13f;
+                heldWeaponTrail.endWidth = 0.015f;
+                heldWeaponTrail.alignment = LineAlignment.View;
+                heldWeaponTrail.textureMode = LineTextureMode.Stretch;
+                heldWeaponTrail.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+                heldWeaponTrail.receiveShadows = false;
+                heldWeaponTrail.sortingOrder = 1902;
+                heldWeaponTrail.sharedMaterial = trailMaterial;
+                heldWeaponTrail.startColor = new Color(0.72f, 1f, 0.94f, 0.88f);
+                heldWeaponTrail.endColor = new Color(0.12f, 0.72f, 0.68f, 0f);
+                heldWeaponTrail.emitting = false;
+            }
         }
 
         internal void ConfigureProjectileTrail(Material material)
@@ -404,7 +467,10 @@ namespace Game.Presentation
             PickupClusterEmphasis = false;
             hitReactionRemaining = 0f;
             attackReactionRemaining = 0f;
+            weaponRecoveryRemaining = 0f;
+            bossPhase = -1;
             CurrentPose = PresentationPose.Idle;
+            HeldWeaponState = HeldWeaponPresentationState.None;
             if (spriteRenderer != null)
             {
                 spriteRenderer.color = baseColor;
@@ -412,6 +478,12 @@ namespace Game.Presentation
             }
             transform.localScale = new Vector3(baseScale.x, baseScale.y, 1f);
             if (heldWeaponRenderer != null) heldWeaponRenderer.gameObject.SetActive(false);
+            if (heldWeaponSocket != null) heldWeaponSocket.gameObject.SetActive(false);
+            if (heldWeaponTrail != null)
+            {
+                heldWeaponTrail.emitting = false;
+                heldWeaponTrail.Clear();
+            }
             if (projectileTrail != null)
             {
                 projectileTrail.emitting = false;
@@ -526,9 +598,10 @@ namespace Game.Presentation
             hitReactionRemaining = Mathf.Max(hitReactionRemaining, Mathf.Max(0.01f, duration));
         }
 
-        internal void PlayAttackReaction(float duration = 0.16f)
+        internal void PlayAttackReaction(float duration = 0.18f)
         {
             attackReactionRemaining = Mathf.Max(attackReactionRemaining, Mathf.Max(0.01f, duration));
+            weaponRecoveryRemaining = 0f;
         }
 
         internal Sprite ResolvePoseSprite(PresentationPose pose)
@@ -540,10 +613,16 @@ namespace Game.Presentation
 
         internal void TickVisual(float unscaledDeltaTime)
         {
+            var delta = Mathf.Max(0f, unscaledDeltaTime);
             if (hitReactionRemaining > 0f)
-                hitReactionRemaining = Mathf.Max(0f, hitReactionRemaining - Mathf.Max(0f, unscaledDeltaTime));
+                hitReactionRemaining = Mathf.Max(0f, hitReactionRemaining - delta);
             if (attackReactionRemaining > 0f)
-                attackReactionRemaining = Mathf.Max(0f, attackReactionRemaining - Mathf.Max(0f, unscaledDeltaTime));
+            {
+                attackReactionRemaining = Mathf.Max(0f, attackReactionRemaining - delta);
+                if (attackReactionRemaining <= 0f && HeldWeaponVisible) weaponRecoveryRemaining = 0.14f;
+            }
+            else if (weaponRecoveryRemaining > 0f)
+                weaponRecoveryRemaining = Mathf.Max(0f, weaponRecoveryRemaining - delta);
             if (spriteRenderer == null) return;
             var displayColor = DensityColor();
             if (hitReactionRemaining > 0f)
@@ -568,6 +647,10 @@ namespace Game.Presentation
             if (animationSet != null)
             {
                 var nextSprite = animationSet.Resolve(CurrentFacing, CurrentPose, spriteRenderer.sprite);
+                if (bossPhase >= 0 &&
+                    CurrentPose != PresentationPose.Hit &&
+                    CurrentPose != PresentationPose.Attack)
+                    nextSprite = animationSet.ResolveBossPhase(CurrentFacing, bossPhase, nextSprite);
                 if (nextSprite != null && nextSprite != spriteRenderer.sprite) AnimationFrameChangeCount++;
                 spriteRenderer.sprite = nextSprite;
                 if (outlineRenderer != null && outlineRenderer.gameObject.activeSelf)
@@ -632,32 +715,74 @@ namespace Game.Presentation
         private void UpdateHeldWeapon(float facingRadians)
         {
             if (heldWeaponRenderer == null || !heldWeaponRenderer.gameObject.activeSelf || spriteRenderer == null) return;
-            var swing = attackReactionRemaining > 0f
-                ? Mathf.Sin((1f - (attackReactionRemaining / 0.16f)) * Mathf.PI) * 54f
-                : Mathf.Sin(Time.unscaledTime * 3.5f) * 4f;
+            var attacking = attackReactionRemaining > 0f;
+            var recovering = !attacking && weaponRecoveryRemaining > 0f;
+            HeldWeaponState = attacking
+                ? HeldWeaponPresentationState.Attack
+                : recovering
+                    ? HeldWeaponPresentationState.Recovery
+                    : CurrentPose == PresentationPose.Move
+                        ? HeldWeaponPresentationState.Move
+                        : HeldWeaponPresentationState.Idle;
+
+            var swing = Mathf.Sin(Time.unscaledTime * (HeldWeaponState == HeldWeaponPresentationState.Move ? 5.5f : 3.5f)) *
+                        (HeldWeaponState == HeldWeaponPresentationState.Move ? 7f : 3f);
+            if (attacking)
+            {
+                var progress = 1f - Mathf.Clamp01(attackReactionRemaining / 0.18f);
+                swing = Mathf.Sin(progress * Mathf.PI) * QinglanPresentationTheme.HeldWeaponAttackArcDegrees;
+            }
+            else if (recovering)
+                swing = (weaponRecoveryRemaining / 0.14f) * 18f;
+
+            Vector3 socketPosition;
+            float baseRotation;
+            var sortingOffset = 2;
             switch (CurrentFacing)
             {
                 case PresentationFacing.Left:
-                    heldWeaponRenderer.transform.localPosition = new Vector3(-0.5f, 0.02f, 0f);
-                    heldWeaponRenderer.transform.localRotation = Quaternion.Euler(0f, 0f, 195f - swing);
-                    heldWeaponRenderer.sortingOrder = spriteRenderer.sortingOrder + 2;
+                    socketPosition = new Vector3(-0.58f, 0.04f, 0f);
+                    baseRotation = 195f;
+                    swing = -swing;
                     break;
                 case PresentationFacing.Up:
-                    heldWeaponRenderer.transform.localPosition = new Vector3(0.34f, 0.22f, 0f);
-                    heldWeaponRenderer.transform.localRotation = Quaternion.Euler(0f, 0f, 78f + swing);
-                    heldWeaponRenderer.sortingOrder = spriteRenderer.sortingOrder - 2;
+                    socketPosition = new Vector3(0.38f, 0.25f, 0f);
+                    baseRotation = 78f;
+                    sortingOffset = -2;
                     break;
                 case PresentationFacing.Down:
-                    heldWeaponRenderer.transform.localPosition = new Vector3(-0.34f, -0.06f, 0f);
-                    heldWeaponRenderer.transform.localRotation = Quaternion.Euler(0f, 0f, -72f - swing);
-                    heldWeaponRenderer.sortingOrder = spriteRenderer.sortingOrder + 2;
+                    socketPosition = new Vector3(-0.38f, -0.06f, 0f);
+                    baseRotation = -72f;
+                    swing = -swing;
                     break;
                 default:
-                    heldWeaponRenderer.transform.localPosition = new Vector3(0.5f, 0.02f, 0f);
-                    heldWeaponRenderer.transform.localRotation = Quaternion.Euler(0f, 0f, -15f + swing);
-                    heldWeaponRenderer.sortingOrder = spriteRenderer.sortingOrder + 2;
+                    socketPosition = new Vector3(0.58f, 0.04f, 0f);
+                    baseRotation = -15f;
                     break;
             }
+
+            var rotation = Quaternion.Euler(0f, 0f, baseRotation + swing);
+            heldWeaponRenderer.transform.localPosition = socketPosition;
+            heldWeaponRenderer.transform.localRotation = rotation;
+            heldWeaponRenderer.sortingOrder = spriteRenderer.sortingOrder + sortingOffset;
+            if (heldWeaponSocket != null)
+            {
+                heldWeaponSocket.localPosition = socketPosition;
+                heldWeaponSocket.localRotation = rotation;
+            }
+
+            var scale = HeldWeaponState == HeldWeaponPresentationState.Attack
+                ? QinglanPresentationTheme.HeldWeaponAttackScale
+                : HeldWeaponState == HeldWeaponPresentationState.Move
+                    ? QinglanPresentationTheme.HeldWeaponMoveScale
+                    : QinglanPresentationTheme.HeldWeaponIdleScale;
+            heldWeaponRenderer.transform.localScale = Vector3.one * scale;
+            heldWeaponRenderer.color = HeldWeaponState == HeldWeaponPresentationState.Attack
+                ? new Color(1f, 0.93f, 0.58f, 1f)
+                : HeldWeaponState == HeldWeaponPresentationState.Recovery
+                    ? new Color(0.78f, 1f, 0.94f, 1f)
+                    : Color.white;
+            if (heldWeaponTrail != null) heldWeaponTrail.emitting = attacking;
         }
 
         private void UpdateDepthSort(float simulationY)

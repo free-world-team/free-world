@@ -61,6 +61,9 @@ namespace Game.Tests.PlayMode
             Assert.That(player.OutlineScale,
                 Is.EqualTo(QinglanPresentationTheme.PlayerOutlineScale).Within(0.001f));
             Assert.That(player.transform.Find("HeldWeapon_YufengSword"), Is.Not.Null);
+            Assert.That(player.transform.Find("WeaponSocket_YufengSword"), Is.Not.Null);
+            Assert.That(player.transform.Find("HeldWeapon_YufengSword/YufengSwordTrailTip"), Is.Not.Null);
+            Assert.That(player.HeldWeaponScale, Is.GreaterThanOrEqualTo(QinglanPresentationTheme.HeldWeaponIdleScale));
             var movementStart = player.transform.position;
             host.SetVisualAcceptanceMovement(Vector2.right);
             for (var index = 0; index < 30; index++)
@@ -83,8 +86,13 @@ namespace Game.Tests.PlayMode
             Assert.That(player.Shape, Is.EqualTo(ProceduralShape.Triangle));
             Assert.That(player.DisplayColor, Is.Not.EqualTo(standardColor));
 
+            var weaponAttackTrailObserved = false;
             for (var index = 0; index < 360; index++)
+            {
                 host.TickRuntime(SimulationClock.TickDurationSeconds);
+                if (host.Presentation.TryGetView(host.Flow.Session.Player, out var currentPlayer))
+                    weaponAttackTrailObserved |= currentPlayer.HeldWeaponAttackTrailActive;
+            }
             yield return null;
 
             Assert.That(host.Presentation.CreatedVfxCount, Is.LessThanOrEqualTo(200));
@@ -94,6 +102,10 @@ namespace Game.Tests.PlayMode
             Assert.That(host.Presentation.ProjectileTrailSpawnCount, Is.GreaterThan(0));
             Assert.That(host.Presentation.DirectionalAnimationFrameChangeCount, Is.GreaterThan(0));
             Assert.That(host.Presentation.HeldWeaponViewCount, Is.EqualTo(1));
+            Assert.That(weaponAttackTrailObserved, Is.True);
+            Assert.That(host.Presentation.ActorViewPoolHitCount, Is.GreaterThan(0));
+            Assert.That(host.Presentation.ActorViewPoolExpansionCount,
+                Is.LessThanOrEqualTo(host.Presentation.CreatedActorViewCount));
         }
 
         private static void DestroyBootstrapInstances()

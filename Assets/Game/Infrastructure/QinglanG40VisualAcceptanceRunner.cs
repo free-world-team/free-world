@@ -241,6 +241,13 @@ namespace Game.Infrastructure
             result.projectileTrailSpawnCount = host.Presentation.ProjectileTrailSpawnCount;
             result.directionalAnimationFrameChangeCount =
                 host.Presentation.DirectionalAnimationFrameChangeCount;
+            result.directionalSpriteSetCount = host.Presentation.DirectionalSpriteSetCount;
+            result.bossPhaseSpriteSetCount = host.Presentation.BossPhaseSpriteSetCount;
+            result.bossPhaseStateSpriteCount = host.Presentation.BossPhaseStateSpriteCount;
+            result.createdActorViewCount = host.Presentation.CreatedActorViewCount;
+            result.actorViewAcquireCount = host.Presentation.ActorViewAcquireCount;
+            result.actorViewPoolHitCount = host.Presentation.ActorViewPoolHitCount;
+            result.actorViewPoolExpansionCount = host.Presentation.ActorViewPoolExpansionCount;
             result.totalHitRequestCount = host.Presentation.TotalHitRequestCount;
             result.totalDeathRequestCount = host.Presentation.TotalDeathRequestCount;
             result.totalStatusRequestCount = host.Presentation.TotalStatusRequestCount;
@@ -257,6 +264,12 @@ namespace Game.Infrastructure
                                          result.maxHeldWeaponViews > 0 &&
                                          result.projectileTrailSpawnCount > 0 &&
                                          result.directionalAnimationFrameChangeCount > 0 &&
+                                         result.directionalSpriteSetCount == 9 &&
+                                         result.bossPhaseSpriteSetCount == 2 &&
+                                         result.bossPhaseStateSpriteCount == 24 &&
+                                         result.maxHeldWeaponAttackTrailViews > 0 &&
+                                         result.actorViewPoolHitCount > 0 &&
+                                         result.actorViewAcquireCount > result.createdActorViewCount &&
                                          result.totalHitRequestCount > 0 &&
                                          result.totalDeathRequestCount > 0 &&
                                          result.formalVfxSpawnCount > 0 &&
@@ -447,6 +460,9 @@ namespace Game.Infrastructure
             result.maxPickupViews = Math.Max(result.maxPickupViews, host.Presentation.ActivePickupViewCount);
             result.maxActiveVfx = Math.Max(result.maxActiveVfx, host.Presentation.ActiveVfxCount);
             result.maxHeldWeaponViews = Math.Max(result.maxHeldWeaponViews, host.Presentation.HeldWeaponViewCount);
+            result.maxHeldWeaponAttackTrailViews = Math.Max(
+                result.maxHeldWeaponAttackTrailViews,
+                host.Presentation.HeldWeaponAttackTrailViewCount);
             result.maxVisibleFormalMapMarkers = Math.Max(
                 result.maxVisibleFormalMapMarkers,
                 host.Presentation.VisibleFormalMapMarkerCount);
@@ -766,6 +782,14 @@ namespace Game.Infrastructure
             public int maxPickupViews;
             public int maxActiveVfx;
             public int maxHeldWeaponViews;
+            public int maxHeldWeaponAttackTrailViews;
+            public int directionalSpriteSetCount;
+            public int bossPhaseSpriteSetCount;
+            public int bossPhaseStateSpriteCount;
+            public int createdActorViewCount;
+            public long actorViewAcquireCount;
+            public long actorViewPoolHitCount;
+            public long actorViewPoolExpansionCount;
             public bool playerOutlineObserved;
             public bool playerRimObserved;
             public bool densePickupPresentationObserved;

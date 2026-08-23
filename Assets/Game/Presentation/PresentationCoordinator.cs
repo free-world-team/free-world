@@ -79,6 +79,13 @@ namespace Game.Presentation
         public long TotalStatusRequestCount { get; private set; }
         public long FormalVfxSpawnCount { get; private set; }
         public long DirectionalAnimationFrameChangeCount => actors?.AnimationFrameChangeCount ?? 0;
+        public int DirectionalSpriteSetCount => directionalSprites?.Count ?? 0;
+        public int BossPhaseSpriteSetCount => directionalSprites?.BossPhaseSetCount ?? 0;
+        public int BossPhaseStateSpriteCount => directionalSprites?.BossPhaseSpriteCount ?? 0;
+        public int CreatedActorViewCount => actors?.CreatedCount ?? 0;
+        public long ActorViewAcquireCount => actors?.AcquireCount ?? 0;
+        public long ActorViewPoolHitCount => actors?.PoolHitCount ?? 0;
+        public long ActorViewPoolExpansionCount => actors?.ExpansionCount ?? 0;
         public int ActiveActorViewCount => CountViews(EntityKind.Actor);
         public int ActiveProjectileViewCount => CountViews(EntityKind.Projectile);
         public int ActiveAreaViewCount => CountViews(EntityKind.Area);
@@ -93,6 +100,34 @@ namespace Game.Presentation
                 var count = 0;
                 foreach (var pair in views) if (pair.Value.HeldWeaponVisible) count++;
                 return count;
+            }
+        }
+        public int HeldWeaponAttackTrailViewCount
+        {
+            get
+            {
+                var count = 0;
+                foreach (var pair in views) if (pair.Value.HeldWeaponAttackTrailActive) count++;
+                return count;
+            }
+        }
+        public int BossPhaseViewCount
+        {
+            get
+            {
+                var count = 0;
+                foreach (var pair in views) if (pair.Value.BossPhaseFrameActive) count++;
+                return count;
+            }
+        }
+        public int MaximumAppliedBossPhase
+        {
+            get
+            {
+                var phase = -1;
+                foreach (var pair in views)
+                    if (pair.Value.AppliedBossPhase > phase) phase = pair.Value.AppliedBossPhase;
+                return phase;
             }
         }
 
@@ -354,6 +389,9 @@ namespace Game.Presentation
         public void SyncRunState(RunUiSnapshot snapshot)
         {
             if (!initialized || snapshot == null) return;
+            var appliedBossPhase = snapshot.HasBoss ? snapshot.BossPhase : -1;
+            foreach (var pair in views)
+                if (pair.Key.Kind == EntityKind.Actor) pair.Value.SetBossPhase(appliedBossPhase);
             audioRouter.SetStemState(snapshot.DurationSeconds, snapshot.HasBoss, snapshot.BossId, snapshot.BossPhase);
             if (lastMechanicTier < 0) lastMechanicTier = snapshot.MechanicTier;
             else if (snapshot.MechanicTier > lastMechanicTier)

@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Reflection;
 using Game.Application;
 using Game.Core;
 using Game.Presentation;
@@ -103,6 +104,109 @@ namespace Game.Tests.EditMode
             Assert.That(DirectionalSpriteCatalog.FacingFromRadians(Mathf.PI), Is.EqualTo(PresentationFacing.Left));
             Assert.That(DirectionalSpriteCatalog.FacingFromRadians(Mathf.PI * 0.5f), Is.EqualTo(PresentationFacing.Up));
             Assert.That(DirectionalSpriteCatalog.FacingFromRadians(-Mathf.PI * 0.5f), Is.EqualTo(PresentationFacing.Down));
+        }
+
+        [Test]
+        public void BossPhasesAndYufengSwordUseFormalStatefulPooledPresentation()
+        {
+            root = new GameObject("G42DActorPresentation");
+            var texture = new Texture2D(4, 4);
+            var baseSprites = new Sprite[DirectionalSpriteSet.FacingCount * DirectionalSpriteSet.PoseCount];
+            var phaseSprites = new Sprite[DirectionalSpriteSet.FacingCount * DirectionalSpriteSet.BossPhaseCount];
+            var libraryType = typeof(ActorView).Assembly.GetType("Game.Presentation.ProceduralVisualLibrary");
+            Assert.That(libraryType, Is.Not.Null);
+            var library = Activator.CreateInstance(libraryType);
+            var trailMaterial = (Material)libraryType.GetProperty(
+                "TrailMaterial",
+                BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic)?.GetValue(library);
+            try
+            {
+                for (var index = 0; index < baseSprites.Length; index++)
+                    baseSprites[index] = Sprite.Create(texture, new Rect(0f, 0f, 4f, 4f), Vector2.one * 0.5f, 4f);
+                for (var index = 0; index < phaseSprites.Length; index++)
+                    phaseSprites[index] = Sprite.Create(texture, new Rect(0f, 0f, 4f, 4f), Vector2.one * 0.5f, 4f);
+
+                var bossObject = new GameObject("Boss");
+                bossObject.transform.SetParent(root.transform, false);
+                var boss = bossObject.AddComponent<ActorView>();
+                var bossId = ContentId.Create("qinglan.enemy.boss.tingfeng").Value;
+                InvokeEntityView(boss, "Configure",
+                    new[] { typeof(Sprite), typeof(Color), typeof(Vector2) },
+                    baseSprites[0], Color.white, Vector2.one);
+                InvokeEntityView(boss, "SetStyleIdentity",
+                    new[] { typeof(ContentId), typeof(bool) }, bossId, false);
+                InvokeEntityView(boss, "ConfigureAnimation",
+                    new[] { typeof(DirectionalSpriteSet) },
+                    new DirectionalSpriteSet(bossId, baseSprites, phaseSprites));
+                var bossEntity = new SpatialEntity(EntityKind.Actor, new EntityHandle(10, 1));
+                boss.Bind(bossEntity);
+                InvokeEntityView(boss, "SetBossPhase", new[] { typeof(int) }, 2);
+                var bossSnapshot = new RenderEntitySnapshot(
+                    bossEntity,
+                    NumericsVector2.Zero,
+                    NumericsVector2.Zero,
+                    0f,
+                    0f,
+                    SimulationStateFlags.Active,
+                    SimulationStateFlags.Active);
+                Assert.That(boss.Apply(bossSnapshot, 1f, 1), Is.True);
+                Assert.That(boss.BossPhaseFrameActive, Is.True);
+                Assert.That(boss.AppliedBossPhase, Is.EqualTo(2));
+                Assert.That(boss.GetComponent<SpriteRenderer>().sprite,
+                    Is.SameAs(phaseSprites[((int)PresentationFacing.Right * 3) + 2]));
+
+                var playerObject = new GameObject("Player");
+                playerObject.transform.SetParent(root.transform, false);
+                var player = playerObject.AddComponent<ActorView>();
+                var playerId = ContentId.Create("qinglan.character.lu_qingye").Value;
+                InvokeEntityView(player, "Configure",
+                    new[] { typeof(Sprite), typeof(Color), typeof(Vector2) },
+                    baseSprites[0], Color.white, Vector2.one);
+                InvokeEntityView(player, "SetStyleIdentity",
+                    new[] { typeof(ContentId), typeof(bool) }, playerId, true);
+                InvokeEntityView(player, "ConfigureAnimation",
+                    new[] { typeof(DirectionalSpriteSet) },
+                    new DirectionalSpriteSet(playerId, baseSprites));
+                InvokeEntityView(player, "ConfigureHeldWeapon",
+                    new[] { typeof(Sprite), typeof(Material) }, baseSprites[0], trailMaterial);
+                var playerEntity = new SpatialEntity(EntityKind.Actor, new EntityHandle(11, 1));
+                player.Bind(playerEntity);
+                var movingSnapshot = new RenderEntitySnapshot(
+                    playerEntity,
+                    NumericsVector2.Zero,
+                    NumericsVector2.UnitX,
+                    0f,
+                    0f,
+                    SimulationStateFlags.Active,
+                    SimulationStateFlags.Active | SimulationStateFlags.Moving);
+                Assert.That(player.Apply(movingSnapshot, 1f, 2), Is.True);
+                Assert.That(player.HeldWeaponState, Is.EqualTo(HeldWeaponPresentationState.Move));
+                Assert.That(player.HeldWeaponScale, Is.EqualTo(QinglanPresentationTheme.HeldWeaponMoveScale).Within(0.001f));
+                Assert.That(player.transform.Find("WeaponSocket_YufengSword"), Is.Not.Null);
+                Assert.That(player.transform.Find("HeldWeapon_YufengSword/YufengSwordTrailTip"), Is.Not.Null);
+
+                InvokeEntityView(player, "PlayAttackReaction", new[] { typeof(float) }, 0.18f);
+                player.Apply(movingSnapshot, 1f, 3);
+                Assert.That(player.HeldWeaponState, Is.EqualTo(HeldWeaponPresentationState.Attack));
+                Assert.That(player.HeldWeaponAttackTrailActive, Is.True);
+                Assert.That(player.HeldWeaponScale, Is.EqualTo(QinglanPresentationTheme.HeldWeaponAttackScale).Within(0.001f));
+                InvokeEntityView(player, "TickVisual", new[] { typeof(float) }, 0.18f);
+                player.Apply(movingSnapshot, 1f, 4);
+                Assert.That(player.HeldWeaponState, Is.EqualTo(HeldWeaponPresentationState.Recovery));
+                Assert.That(player.HeldWeaponAttackTrailActive, Is.False);
+                player.Unbind();
+                Assert.That(player.HeldWeaponVisible, Is.False);
+                Assert.That(player.HeldWeaponAttackTrailActive, Is.False);
+            }
+            finally
+            {
+                (library as IDisposable)?.Dispose();
+                for (var index = 0; index < baseSprites.Length; index++)
+                    if (baseSprites[index] != null) Object.DestroyImmediate(baseSprites[index]);
+                for (var index = 0; index < phaseSprites.Length; index++)
+                    if (phaseSprites[index] != null) Object.DestroyImmediate(phaseSprites[index]);
+                Object.DestroyImmediate(texture);
+            }
         }
 
         [Test]
@@ -253,6 +357,22 @@ namespace Game.Tests.EditMode
             Assert.That(buffer.GetAt(0).Target, Is.EqualTo(target));
             buffer.Clear();
             Assert.That(buffer.Count, Is.Zero);
+        }
+
+        private static object InvokeEntityView(
+            EntityView target,
+            string methodName,
+            Type[] signature,
+            params object[] arguments)
+        {
+            var method = typeof(EntityView).GetMethod(
+                methodName,
+                BindingFlags.Instance | BindingFlags.NonPublic,
+                null,
+                signature,
+                null);
+            Assert.That(method, Is.Not.Null, methodName);
+            return method.Invoke(target, arguments);
         }
     }
 }

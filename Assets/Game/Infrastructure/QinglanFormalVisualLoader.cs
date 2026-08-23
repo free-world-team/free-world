@@ -246,10 +246,12 @@ namespace Game.Infrastructure
             LoadDirectionalSet(sets, "qinglan.enemy.stone_lantern_guard", "qinglan/enemy/stone-lantern-guard/directional-animation-atlas", "qinglan.enemy.stone-lantern-guard", "move", "move", "attack-windup", "hit", "death", "move");
             LoadDirectionalSet(sets, "qinglan.enemy.wind_bell_spirit", "qinglan/enemy/wind-bell-spirit/directional-animation-atlas", "qinglan.enemy.wind-bell-spirit", "move", "move", "attack-windup", "hit", "death", "move");
             LoadDirectionalSet(sets, "qinglan.enemy.explosive_seed_pod", "qinglan/enemy/explosive-seed-pod/directional-animation-atlas", "qinglan.enemy.explosive-seed-pod", "move", "move", "attack-windup", "hit", "death", "move");
-            LoadDirectionalSet(sets, "qinglan.enemy.boss.tingfeng", "qinglan/boss/tingfeng/animation-atlas", "qinglan.boss.tingfeng", "move", "move", "phase-1-windup", "hit", "defeated", "transition-3");
-            LoadDirectionalSet(sets, "qinglan.enemy.boss.zhezhi", "qinglan/boss/zhezhi/animation-atlas", "qinglan.boss.zhezhi", "move", "move", "phase-1-windup", "hit", "defeated", "transition-3");
+            LoadDirectionalSet(sets, "qinglan.enemy.boss.tingfeng", "qinglan/boss/tingfeng/animation-atlas", "qinglan.boss.tingfeng", "move", "move", "phase-1-windup", "hit", "defeated", "transition-3", "phase-1-windup", "phase-2-windup", "phase-3-windup");
+            LoadDirectionalSet(sets, "qinglan.enemy.boss.zhezhi", "qinglan/boss/zhezhi/animation-atlas", "qinglan.boss.zhezhi", "move", "move", "phase-1-windup", "hit", "defeated", "transition-3", "phase-1-windup", "phase-2-windup", "phase-3-windup");
             DirectionalSprites = new DirectionalSpriteCatalog(sets.ToArray());
-            Debug.Log("[Qinglan Formal Visuals] Directional sprite sets=" + DirectionalSprites.Count + ".");
+            Debug.Log("[Qinglan Formal Visuals] Directional sprite sets=" + DirectionalSprites.Count +
+                      ", boss phase sets=" + DirectionalSprites.BossPhaseSetCount +
+                      ", boss phase sprites=" + DirectionalSprites.BossPhaseSpriteCount + ".");
         }
 
         private void LoadDirectionalSet(
@@ -262,7 +264,10 @@ namespace Game.Infrastructure
             string attack,
             string hit,
             string death,
-            string victory)
+            string victory,
+            string bossPhase1 = null,
+            string bossPhase2 = null,
+            string bossPhase3 = null)
         {
             var id = ContentId.Create(profileId);
             if (!id.IsSuccess) return;
@@ -295,7 +300,27 @@ namespace Game.Infrastructure
                         sprites[(directionIndex * DirectionalSpriteSet.PoseCount) + poseIndex] = sprite;
                 }
             }
-            target.Add(new DirectionalSpriteSet(id.Value, sprites));
+            Sprite[] phaseSprites = null;
+            if (!string.IsNullOrEmpty(bossPhase1) &&
+                !string.IsNullOrEmpty(bossPhase2) &&
+                !string.IsNullOrEmpty(bossPhase3))
+            {
+                var phases = new[] { bossPhase1, bossPhase2, bossPhase3 };
+                phaseSprites = new Sprite[DirectionalSpriteSet.FacingCount * DirectionalSpriteSet.BossPhaseCount];
+                for (var directionIndex = 0; directionIndex < directions.Length; directionIndex++)
+                {
+                    for (var phaseIndex = 0; phaseIndex < phases.Length; phaseIndex++)
+                    {
+                        var spriteName = spritePrefix + "." + directions[directionIndex] + "." + phases[phaseIndex];
+                        var operation = Addressables.LoadAssetAsync<Sprite>(address + "[" + spriteName + "]");
+                        spriteHandles.Add(operation);
+                        var sprite = operation.WaitForCompletion();
+                        if (operation.Status == AsyncOperationStatus.Succeeded)
+                            phaseSprites[(directionIndex * DirectionalSpriteSet.BossPhaseCount) + phaseIndex] = sprite;
+                    }
+                }
+            }
+            target.Add(new DirectionalSpriteSet(id.Value, sprites, phaseSprites));
         }
 
         private void ReleaseHandle()

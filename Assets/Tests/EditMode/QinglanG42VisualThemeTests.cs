@@ -33,6 +33,18 @@ namespace Game.Tests.EditMode
             Assert.That(QinglanUiTheme.MotionInstantSeconds, Is.LessThan(QinglanUiTheme.MotionFastSeconds));
             Assert.That(QinglanUiTheme.MotionFastSeconds, Is.LessThan(QinglanUiTheme.MotionBaseSeconds));
             Assert.That(QinglanUiTheme.MotionBaseSeconds, Is.LessThan(QinglanUiTheme.MotionSlowSeconds));
+            const float pixelsPerWorldUnitAt1080p = 1080f / (8.6f * 2f);
+            Assert.That(QinglanPresentationTheme.PlayerActorScale * pixelsPerWorldUnitAt1080p,
+                Is.InRange(96f, 120f));
+            Assert.That(QinglanPresentationTheme.EnemyActorScale * pixelsPerWorldUnitAt1080p,
+                Is.InRange(72f, 104f));
+            Assert.That(QinglanPresentationTheme.BossActorScale * pixelsPerWorldUnitAt1080p,
+                Is.InRange(180f, 280f));
+            Assert.That(QinglanPresentationTheme.HeldWeaponAttackScale,
+                Is.GreaterThan(QinglanPresentationTheme.HeldWeaponMoveScale));
+            Assert.That(QinglanPresentationTheme.HeldWeaponMoveScale,
+                Is.GreaterThan(QinglanPresentationTheme.HeldWeaponIdleScale));
+            Assert.That(QinglanPresentationTheme.HeldWeaponAttackArcDegrees, Is.EqualTo(72f));
         }
 
         [Test]

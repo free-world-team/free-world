@@ -123,7 +123,12 @@ if ($result.status -ne 'PASS' -or -not [bool]$result.passedAutomaticGate -or
     [int]$result.accessibilityScreenshotCount -ne 8 -or [bool]$result.accessibilityTextOverflowObserved -or
     [int]$result.grayscaleReviewScreenshotCount -ne 1 -or
     [int]$result.maxActorViews -lt 103 -or [int]$result.maxPickupViews -lt 268 -or
-    [int]$result.maxActiveVfx -lt 42 -or -not [bool]$result.playerOutlineObserved -or
+    [int]$result.maxActiveVfx -lt 42 -or [int]$result.maxHeldWeaponAttackTrailViews -le 0 -or
+    [int]$result.directionalSpriteSetCount -ne 9 -or
+    [int]$result.bossPhaseSpriteSetCount -ne 2 -or [int]$result.bossPhaseStateSpriteCount -ne 24 -or
+    [long]$result.actorViewPoolHitCount -le 0 -or
+    [long]$result.actorViewAcquireCount -le [int]$result.createdActorViewCount -or
+    -not [bool]$result.playerOutlineObserved -or
     -not [bool]$result.playerRimObserved -or -not [bool]$result.densePickupPresentationObserved -or
     [int]$result.maxDensityGroupedPickupViews -le 0 -or
     [int]$result.maxDensityEmphasisPickupViews -le 0 -or

@@ -11,6 +11,13 @@ namespace Game.Presentation
         public const float PlayerOutlineScale = 1.18f;
         public const float EnemyOutlineScale = 1.11f;
         public const float DangerFillAlpha = 0.24f;
+        public const float PlayerActorScale = 1.75f;
+        public const float EnemyActorScale = 1.45f;
+        public const float BossActorScale = 3.15f;
+        public const float HeldWeaponIdleScale = 0.72f;
+        public const float HeldWeaponMoveScale = 0.76f;
+        public const float HeldWeaponAttackScale = 0.84f;
+        public const float HeldWeaponAttackArcDegrees = 72f;
 
         public static readonly Color32 Ink950 = new Color32(16, 42, 45, 255);
         public static readonly Color32 Ink800 = new Color32(28, 66, 67, 255);

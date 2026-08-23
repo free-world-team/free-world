@@ -92,6 +92,8 @@ namespace Game.Tests.EditMode
                 Assert.That(loader.IsLoaded, Is.True);
                 Assert.That(loader.Catalog.EntityProfileCount, Is.EqualTo(34));
                 Assert.That(loader.DirectionalSprites.Count, Is.EqualTo(9));
+                Assert.That(loader.DirectionalSprites.BossPhaseSetCount, Is.EqualTo(2));
+                Assert.That(loader.DirectionalSprites.BossPhaseSpriteCount, Is.EqualTo(24));
                 Assert.That(loader.TryResolveSprite("ui.page.title", out var sprite), Is.True);
                 Assert.That(sprite, Is.Not.Null);
             }
